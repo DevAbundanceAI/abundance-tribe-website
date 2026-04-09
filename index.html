@@ -422,7 +422,7 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
     font-family: 'Cormorant Garamond', serif;
     font-size: 52px;
     font-weight: 700;
-    color: rgba(181,135,83,0.15);
+    color: var(--stone);
     line-height: 1;
     margin-bottom: 20px;
     display: block;
@@ -1427,7 +1427,37 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
   <p>&copy; 2026 Abundance.AI All Rights Reserved. &nbsp;&middot;&nbsp; <a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms</a> &nbsp;&middot;&nbsp; <a href="#">Disclaimer</a></p>
 </footer>
 
+<!-- LEAD CAPTURE POPUP -->
+<div id="lead-popup" style="display:none;position:fixed;inset:0;z-index:1000;align-items:center;justify-content:center;">
+  <div id="lead-popup-overlay" style="position:absolute;inset:0;background:rgba(20,20,20,0.75);backdrop-filter:blur(4px);"></div>
+  <div style="position:relative;z-index:1;background:var(--warm-white);border-radius:6px;width:90%;max-width:520px;max-height:90vh;overflow-y:auto;padding:40px 36px 36px;">
+    <button id="lead-popup-close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--stone);">&times;</button>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">You're one step away</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;line-height:1.2;color:var(--dark);margin-bottom:8px;">Enter your details to join<br><em>Abundance Tribe</em></h2>
+    <p style="font-size:13px;color:var(--stone);margin-bottom:24px;">$97/month &middot; Cancel anytime &middot; Instant access</p>
+    <iframe
+      src="https://my.premierelinks.com/widget/form/hlC2H89Ahe0gpn43mX1j"
+      style="width:100%;border:none;border-radius:3px;min-height:420px;"
+      id="inline-hlC2H89Ahe0gpn43mX1j"
+      data-layout="{'id':'INLINE'}"
+      data-trigger-type="alwaysShow"
+      data-trigger-value=""
+      data-activation-type="alwaysActivated"
+      data-activation-value=""
+      data-deactivation-type="neverDeactivate"
+      data-deactivation-value=""
+      data-form-name="Abundance - New Lead Form - Lead Magnet"
+      data-height="420"
+      data-layout-iframe-id="inline-hlC2H89Ahe0gpn43mX1j"
+      data-form-id="hlC2H89Ahe0gpn43mX1j"
+      title="Abundance - New Lead Form - Lead Magnet">
+    </iframe>
+    <script src="https://my.premierelinks.com/js/form_embed.js"></script>
+  </div>
+</div>
+
 <script>
+  // FAQ accordion
   document.querySelectorAll('.faq-q').forEach(q => {
     q.addEventListener('click', () => {
       const item = q.parentElement;
@@ -1436,6 +1466,41 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
       if (!wasOpen) item.classList.add('open');
     });
   });
+
+  // Popup
+  const popup = document.getElementById('lead-popup');
+
+  function openPopup() {
+    popup.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePopup() {
+    popup.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  // Trigger on all CTA clicks
+  document.querySelectorAll('a[href="#join"], .nav-cta, .btn-primary, .btn-gold').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      openPopup();
+    });
+  });
+
+  // Close on X or overlay click
+  document.getElementById('lead-popup-close').addEventListener('click', closePopup);
+  document.getElementById('lead-popup-overlay').addEventListener('click', closePopup);
+
+  // UTM passthrough — store UTMs for GHL on form submit
+  (function() {
+    const params = new URLSearchParams(window.location.search);
+    const utms = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    utms.forEach(key => {
+      const val = params.get(key);
+      if (val) sessionStorage.setItem(key, val);
+    });
+  })();
 </script>
 </body>
 </html>
