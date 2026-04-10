@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Carousel — What Is a Selling System? | Abundance</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&family=DM+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #F8F6EC;
+    --gold: #B58753;
+    --dark: #1B1B1B;
+    --stone: #9a8f80;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #c8c4bc;
+    font-family: 'DM Sans', sans-serif;
+    padding: 48px 40px;
+  }
+
+  .instructions {
+    width: 1080px;
+    margin: 0 auto 40px;
+    background: var(--dark);
+    color: var(--cream);
+    padding: 20px 28px;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+  }
+
+  .instructions strong { color: var(--gold); }
+
+  .slides-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .slide-num-label {
+    width: 1080px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.4);
+    padding-left: 4px;
+    margin-bottom: 4px;
+  }
+
+  /* ── SLIDE BASE ───────────────────────── */
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    background: var(--warm-white);
+    position: relative;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-image:
+      linear-gradient(rgba(27,27,27,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(27,27,27,0.05) 1px, transparent 1px);
+    background-size: 44px 44px;
+    margin-bottom: 40px;
+  }
+
+  /* ── LOGO ─────────────────────────────── */
+  .slide-logo {
+    height: 34px;
+    width: auto;
+    display: block;
+    margin-bottom: 88px;
+    flex-shrink: 0;
+  }
+
+  /* ── CONTENT ──────────────────────────── */
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Label — MYTH: TRUTH: etc. */
+  .tag {
+    font-size: 80px;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .tag-sm {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  /* Main headline */
+  .h {
+    font-size: 78px;
+    font-weight: 800;
+    color: var(--dark);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+  }
+
+  .h-lg { font-size: 78px; }
+  .h-md { font-size: 64px; }
+  .h-sm { font-size: 56px; }
+
+  /* Highlight box — gold bg, cream text */
+  .hl {
+    background: var(--gold);
+    color: var(--cream);
+    padding: 2px 10px 6px;
+    display: inline;
+    line-height: 1.15;
+  }
+
+  /* Gold text */
+  .gc { color: var(--gold); }
+
+  /* Divider */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(27,27,27,0.14);
+    margin: 52px 0 40px;
+    flex-shrink: 0;
+  }
+
+  /* Supporting text */
+  .sub {
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--dark);
+    line-height: 1.6;
+  }
+
+  .sub strong { font-weight: 700; }
+  .sub .gc { color: var(--gold); }
+  .sub em { font-style: italic; }
+
+  /* ── SWIPE BUTTON ─────────────────────── */
+  .swipe {
+    position: absolute;
+    bottom: 80px;
+    right: 80px;
+    background: var(--gold);
+    color: var(--cream);
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 18px 36px 18px 28px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .swipe-line {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .swipe-line span {
+    display: block;
+    width: 36px;
+    height: 2px;
+    background: rgba(245,240,232,0.55);
+    position: relative;
+  }
+
+  .swipe-line span::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: -4px;
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid rgba(245,240,232,0.55);
+    border-top: 2px solid rgba(245,240,232,0.55);
+    transform: rotate(45deg);
+  }
+
+  /* ── CTA SLIDE EXTRAS ─────────────────── */
+  .cta-action {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1.4;
+  }
+
+  .cta-fine {
+    font-size: 24px;
+    color: var(--stone);
+    margin-top: 28px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="instructions">
+  <strong>How to use:</strong> Open this file in Chrome → zoom out until each slide fits your screen → screenshot each slide individually. Each slide is 1080×1350px (standard Instagram carousel ratio). Slide labels above each card are for reference only and won't appear in screenshots.
+</div>
+
+<div class="slides-wrapper">
+
+  <!-- ─────────────────────────────────── -->
+  <!-- SLIDE 1 — HOOK (MYTH)              -->
+  <!-- ─────────────────────────────────── -->
+  <div class="slide-num-label">Slide 1 — Hook</div>
+  <div class="slide">
+    <img src="assets/images/logo-dark-wordmark.svg" class="slide-logo" alt="Abundance">
+    <div class="slide-content">
+      <span class="tag">MYTH:</span>
+      <h2 class="h h-lg">Scaling your business is about working <span class="hl">harder.</span></h2>
+      <div class="divider"></div>
+      <p class="sub">
+        More hustle.<br>
+        More hours.<br>
+        More of the same results.
+      </p>
+    </div>
+    <div class="swipe"><div class="swipe-line"><span></span></div> SWIPE</div>
+  </div>
+
+  <!-- ─────────────────────────────────── -->
+  <!-- SLIDE 2 — REFRAME                  -->
+  <!-- ─────────────────────────────────── -->
+  <div class="slide-num-label">Slide 2 — Reframe</div>
+  <div class="slide">
+    <img src="assets/images/logo-dark-wordmark.svg" class="slide-logo" alt="Abundance">
+    <div class="slide-content">
+      <h2 class="h h-lg">The #1 reason you're not scaling has <span class="gc">nothing to do</span> with your work ethic.</h2>
+      <div class="divider"></div>
+      <p class="sub">
+        Every founder we've worked with was already putting in the hours.<br><br>
+        That was <strong>never</strong> the problem.
+      </p>
+    </div>
+    <div class="swipe"><div class="swipe-line"><span></span></div> SWIPE</div>
+  </div>
+
+  <!-- ─────────────────────────────────── -->
+  <!-- SLIDE 3 — NAME THE PROBLEM         -->
+  <!-- ─────────────────────────────────── -->
+  <div class="slide-num-label">Slide 3 — Name the Problem</div>
+  <div class="slide">
+    <img src="assets/images/logo-dark-wordmark.svg" class="slide-logo" alt="Abundance">
+    <div class="slide-content">
+      <span class="tag-sm">The real problem:</span>
+      <h2 class="h h-lg">You don't have a <span class="hl">Selling System.</span></h2>
+      <div class="divider"></div>
+      <p class="sub">
+        And without one, more effort just creates more chaos.
+      </p>
+    </div>
+    <div class="swipe"><div class="swipe-line"><span></span></div> SWIPE</div>
+  </div>
+
+  <!-- ─────────────────────────────────── -->
+  <!-- SLIDE 4 — DEFINE IT                -->
+  <!-- ─────────────────────────────────── -->
+  <div class="slide-num-label">Slide 4 — Define It</div>
+  <div class="slide">
+    <img src="assets/images/logo-dark-wordmark.svg" class="slide-logo" alt="Abundance">
+    <div class="slide-content">
+      <h2 class="h h-md">A Selling System is the complete infrastructure that generates <span class="gc">consistent revenue</span> — without you being the bottleneck.</h2>
+      <div class="divider"></div>
+      <p class="sub">
+        Most founders don't have one.<br>
+        They're just winging it — and wondering why nothing compounds.
+      </p>
+    </div>
+    <div class="swipe"><div class="swipe-line"><span></span></div> SWIPE</div>
+  </div>
+
+  <!-- ─────────────────────────────────── -->
+  <!-- SLIDE 5 — TRUTH                    -->
+  <!-- ─────────────────────────────────── -->
+  <div class="slide-num-label">Slide 5 — Truth</div>
+  <div class="slide">
+    <img src="assets/images/logo-dark-wordmark.svg" class="slide-logo" alt="Abundance">
+    <div class="slide-content">
+      <span class="tag">TRUTH:</span>
+      <h2 class="h h-lg">Scaling <span class="hl">rewards</span> systems — not personal effort.</h2>
+      <div class="divider"></div>
+      <p class="sub">
+        <strong>Structure beats hustle.</strong><br>
+        Every single time.
+      </p>
+    </div>
+    <div class="swipe"><div class="swipe-line"><span></span></div> SWIPE</div>
+  </div>
+
+  <!-- ─────────────────────────────────── -->
+  <!-- SLIDE 6 — AGITATION                -->
+  <!-- ─────────────────────────────────── -->
+  <div class="slide-num-label">Slide 6 — Agitation</div>
+  <div class="slide">
+    <img src="assets/images/logo-dark-wordmark.svg" class="slide-logo" alt="Abundance">
+    <div class="slide-content">
+      <h2 class="h h-lg">Without a system, you're not running a business.</h2>
+      <h2 class="h h-lg gc" style="margin-top: 14px;">You're doing a job.</h2>
+      <div class="divider"></div>
+      <p class="sub">
+        For yourself. With no days off.<br><br>
+        <strong>Sound familiar?</strong>
+      </p>
+    </div>
+    <div class="swipe"><div class="swipe-line"><span></span></div> SWIPE</div>
+  </div>
+
+  <!-- ─────────────────────────────────── -->
+  <!-- SLIDE 7 — BRIDGE / GOOD NEWS       -->
+  <!-- ─────────────────────────────────── -->
+  <div class="slide-num-label">Slide 7 — Bridge</div>
+  <div class="slide">
+    <img src="assets/images/logo-dark-wordmark.svg" class="slide-logo" alt="Abundance">
+    <div class="slide-content">
+      <h2 class="h h-lg">The good news?<br><span class="gc">Your Selling System is buildable.</span></h2>
+      <div class="divider"></div>
+      <p class="sub">
+        You don't need more content.<br>
+        You don't need more clients.<br>
+        You don't need more hustle.<br><br>
+        You need the right framework — built in the right order.
+      </p>
+    </div>
+    <div class="swipe"><div class="swipe-line"><span></span></div> SWIPE</div>
+  </div>
+
+  <!-- ─────────────────────────────────── -->
+  <!-- SLIDE 8 — CTA                      -->
+  <!-- ─────────────────────────────────── -->
+  <div class="slide-num-label">Slide 8 — CTA</div>
+  <div class="slide">
+    <img src="assets/images/logo-dark-wordmark.svg" class="slide-logo" alt="Abundance">
+    <div class="slide-content">
+      <h2 class="h h-sm">I built a free 30-minute training that breaks down exactly what a Selling System is — and what yours is <span class="hl">missing.</span></h2>
+      <div class="divider"></div>
+      <p class="cta-action">
+        Comment <strong>"SYSTEM"</strong> below<br>and I'll send it to you.
+      </p>
+      <p class="cta-fine">
+        For coaches, consultants, and service founders<br>
+        who are done guessing.
+      </p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
