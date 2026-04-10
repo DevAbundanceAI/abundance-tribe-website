@@ -756,9 +756,22 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
     max-width: 1100px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
+    grid-template-columns: 400px 1fr;
+    gap: 80px;
     align-items: start;
+  }
+
+  .about-photo-wrap {
+    position: sticky;
+    top: 88px;
+  }
+
+  .about-photo {
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 24px 64px rgba(0,0,0,0.10);
   }
 
   .about-body { font-size: 16px; color: var(--dark-stone); line-height: 1.8; margin-bottom: 16px; }
@@ -1007,7 +1020,13 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
 
     .new-way-inner, .about-section, .who-inner {
       grid-template-columns: 1fr;
-      gap: 48px;
+      gap: 40px;
+    }
+
+    .about-photo-wrap {
+      position: static;
+      max-width: 280px;
+      margin: 0 auto;
     }
 
     .stuck-grid, .steps-grid, .comparison-grid, .testimonials-grid, .get-grid {
@@ -1212,7 +1231,7 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
   <div class="steps-grid">
     <div class="step-card">
       <span class="step-num">Step 01</span>
-      <h3>Join and Get Your Bearings</h3>
+      <h3>Join, Connect, Learn, and Get Your Bearings</h3>
       <p>From day one you'll know where you are in your Selling System, what's missing, and what to focus on first. No more wondering what to work on next.</p>
     </div>
     <div class="step-card">
@@ -1306,6 +1325,9 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
 
 <!-- ABOUT -->
 <section class="about-section">
+  <div class="about-photo-wrap">
+    <img src="assets/images/ryan-frost.jpg" alt="Ryan Frost — Founder, Abundance" class="about-photo">
+  </div>
   <div>
     <span class="section-label">Your guide</span>
     <h2 class="section-heading">Meet<br><em>Ryan Frost</em></h2>
@@ -1317,9 +1339,7 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
       <div class="cred-item"><span class="cred-check">&#10022;</span><span>Built complete GTM systems generating $1M+ from scratch</span></div>
       <div class="cred-item"><span class="cred-check">&#10022;</span><span>CMO and Head of GTM across multiple 7-figure brands</span></div>
     </div>
-  </div>
-  <div>
-    <div class="about-quote-card">
+    <div class="about-quote-card" style="margin-top: 36px;">
       <blockquote>"Abundance Tribe exists for one reason: to give founders the clarity they need to stop guessing and start building the right thing, in the right order."</blockquote>
       <span class="about-quote-attr">&mdash; Ryan Frost &middot; Founder, Abundance</span>
     </div>
