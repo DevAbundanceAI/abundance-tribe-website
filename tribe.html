@@ -597,18 +597,24 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
   }
 
   /* 3 STEPS */
+  .steps-outer { background: var(--dark); }
   .steps-section { padding: 110px 40px; max-width: 1100px; margin: 0 auto; }
   .steps-header { max-width: 560px; margin-bottom: 64px; }
+  .steps-header .section-label { color: var(--gold); }
+  .steps-header .section-heading { color: var(--cream); }
+  .steps-header .section-heading em { color: var(--gold); }
 
   .steps-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1px;
-    background: var(--border-light);
-    border: 1px solid var(--border-light);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 4px;
+    overflow: hidden;
   }
 
-  .step-card { background: var(--warm-white); padding: 44px 36px; }
+  .step-card { background: var(--black); padding: 44px 36px; }
 
   .step-num {
     font-size: 10px;
@@ -620,8 +626,8 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
     display: block;
   }
 
-  .step-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; line-height: 1.3; color: var(--dark); }
-  .step-card p { font-size: 14px; color: var(--dark-stone); line-height: 1.75; }
+  .step-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; line-height: 1.3; color: var(--cream); }
+  .step-card p { font-size: 14px; color: var(--stone); line-height: 1.75; }
 
   /* PILLARS */
   .pillars-section {
@@ -1197,6 +1203,7 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
 </section>
 
 <!-- 3 STEPS -->
+<div class="steps-outer">
 <section class="steps-section">
   <div class="steps-header">
     <span class="section-label">How it works</span>
@@ -1220,6 +1227,7 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
     </div>
   </div>
 </section>
+</div>
 
 <!-- PILLARS -->
 <section class="pillars-section">
