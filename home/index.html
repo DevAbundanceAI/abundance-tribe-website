@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abundance — The Systems Company for Service Founders</title>
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #F8F6EC;
+    --sand: #e8e0d0;
+    --stone: #9a8f80;
+    --dark-stone: #6b6058;
+    --brown: #62441F;
+    --dark: #1B1B1B;
+    --black: #141414;
+    --gold: #B58753;
+    --gold-light: #c9a06a;
+    --gold-dim: rgba(181,135,83,0.12);
+    --border: rgba(181,135,83,0.2);
+    --border-light: rgba(98,68,31,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--warm-white);
+    color: var(--dark);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  .nav {
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-light);
+    background: var(--warm-white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-cta {
+    display: inline-block;
+    background: var(--dark);
+    color: var(--cream);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--brown); }
+
+  /* HERO */
+  .hero {
+    padding: 100px 40px 110px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+  }
+
+  .hero-left {}
+
+  .hero-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.1s forwards;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(44px, 5vw, 72px);
+    font-weight: 700;
+    line-height: 1.06;
+    color: var(--dark);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.2s forwards;
+  }
+
+  .hero h1 em { font-style: italic; color: var(--gold); }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--dark-stone);
+    line-height: 1.75;
+    margin-bottom: 40px;
+    font-weight: 300;
+    max-width: 480px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.3s forwards;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.4s forwards;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--dark);
+    color: var(--cream);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 18px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--brown); transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--dark-stone);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--gold); }
+  .btn-ghost-arrow {
+    font-size: 16px;
+    transition: transform 0.2s;
+  }
+  .btn-ghost:hover .btn-ghost-arrow { transform: translateX(3px); }
+
+  /* HERO RIGHT — stat card */
+  .hero-right {
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.45s forwards;
+  }
+
+  .hero-card {
+    background: var(--dark);
+    border-radius: 4px;
+    padding: 52px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 80% 20%, rgba(181,135,83,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: block;
+  }
+
+  .hero-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.25;
+    margin-bottom: 32px;
+  }
+
+  .hero-card h2 em { font-style: italic; color: var(--gold-light); }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 36px;
+  }
+
+  .hero-stat {
+    background: rgba(255,255,255,0.03);
+    padding: 20px 24px;
+  }
+
+  .hero-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .hero-stat-label {
+    font-size: 11px;
+    color: var(--stone);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-card-cta {
+    display: block;
+    background: var(--gold);
+    color: var(--dark);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.2s;
+  }
+  .hero-card-cta:hover { background: var(--gold-light); }
+
+  /* LOGO BAR */
+  .logo-bar {
+    background: var(--cream);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    padding: 24px 40px;
+  }
+  .logo-bar-label {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 18px;
+    display: block;
+  }
+  .logo-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .logo-item {
+    padding: 6px 28px;
+    border-right: 1px solid var(--border-light);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--stone);
+    white-space: nowrap;
+  }
+  .logo-item:last-child { border-right: none; }
+
+  /* WHAT IS ABUNDANCE */
+  .what-section {
+    padding: 110px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+  }
+
+  .section-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.06;
+    color: var(--dark);
+    margin-bottom: 20px;
+  }
+  .section-heading em { font-style: italic; color: var(--gold); }
+  .section-body { font-size: 16px; color: var(--dark-stone); line-height: 1.8; }
+
+  .what-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border-light);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .what-item {
+    background: var(--warm-white);
+    padding: 28px 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .what-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold);
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .what-text h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .what-text p {
+    font-size: 14px;
+    color: var(--dark-stone);
+    line-height: 1.6;
+  }
+
+  /* FLAGSHIP — TRIBE */
+  .tribe-section {
+    background: var(--dark);
+    padding: 110px 40px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .tribe-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .tribe-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 56px;
+    gap: 40px;
+  }
+
+  .tribe-section .section-label { color: var(--gold); }
+  .tribe-section .section-heading { color: var(--cream); margin-bottom: 0; }
+  .tribe-section .section-heading em { color: var(--gold-light); }
+
+  .tribe-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stone);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 8px 18px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .tribe-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .tribe-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    padding: 40px 36px;
+    transition: border-color 0.2s;
+  }
+  .tribe-card:hover { border-color: rgba(181,135,83,0.4); }
+
+  .tribe-card-icon {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .tribe-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .tribe-card p {
+    font-size: 14px;
+    color: var(--stone);
+    line-height: 1.75;
+  }
+
+  .tribe-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .btn-gold {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 18px 48px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .tribe-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--cream);
+  }
+
+  .tribe-price span {
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--stone);
+    font-weight: 400;
+  }
+
+  /* FREE TRAINING */
+  .free-section {
+    padding: 110px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .free-card {
+    background: var(--cream);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    padding: 80px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .free-card .section-heading { margin-bottom: 16px; }
+
+  .free-card p {
+    font-size: 16px;
+    color: var(--dark-stone);
+    line-height: 1.8;
+    margin-bottom: 40px;
+  }
+
+  .btn-outline {
+    display: inline-block;
+    border: 1.5px solid var(--dark);
+    color: var(--dark);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 16px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { background: var(--dark); color: var(--cream); }
+
+  /* FINAL CTA */
+  .final-cta {
+    background: var(--dark);
+    padding: 130px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(181,135,83,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .final-cta h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 700;
+    color: var(--cream);
+    max-width: 680px;
+    margin: 0 auto 20px;
+    line-height: 1.06;
+    position: relative;
+  }
+  .final-cta h2 em { font-style: italic; color: var(--gold-light); }
+  .final-cta p {
+    font-size: 16px;
+    color: var(--stone);
+    max-width: 440px;
+    margin: 0 auto 48px;
+    line-height: 1.75;
+    position: relative;
+  }
+  .final-cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--dark-stone);
+    letter-spacing: 0.04em;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer a { color: var(--dark-stone); text-decoration: underline; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .sa {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s cubic-bezier(0.16,1,0.3,1),
+                transform 0.55s cubic-bezier(0.16,1,0.3,1);
+    transition-delay: var(--sa-delay, 0ms);
+  }
+  .sa.in { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .nav { padding: 14px 20px; }
+    .nav > span { display: none; }
+
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 48px;
+      padding: 52px 20px 72px;
+    }
+
+    .hero-sub { max-width: 100%; }
+
+    .what-section {
+      grid-template-columns: 1fr;
+      gap: 48px;
+      padding: 72px 20px;
+    }
+
+    .tribe-section { padding: 72px 20px; }
+    .tribe-header { flex-direction: column; align-items: flex-start; }
+    .tribe-grid { grid-template-columns: 1fr; }
+    .tribe-cta-row { flex-direction: column; align-items: flex-start; }
+
+    .free-section { padding: 72px 20px; }
+    .free-card { padding: 48px 28px; }
+
+    .final-cta { padding: 80px 20px; }
+    footer { padding: 20px; flex-direction: column; text-align: center; }
+  }
+
+  @media (max-width: 540px) {
+    .hero-actions { flex-direction: column; align-items: flex-start; }
+    .btn-primary, .btn-gold { width: 100%; text-align: center; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <img src="/assets/images/logo-dark-wordmark.svg" alt="Abundance" height="30" style="display:block;">
+  <span style="font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--stone);">AI-Powered Growth Systems For Founders</span>
+  <a href="/tribe" class="nav-cta">Join the Tribe</a>
+</nav>
+
+<!-- HERO -->
+<section>
+  <div class="hero">
+    <div class="hero-left">
+      <span class="hero-label">For coaches · consultants · agencies</span>
+      <h1>Your Business Isn't Scaling Because You're Missing <em>One Thing.</em></h1>
+      <p class="hero-sub">A Selling System is the complete infrastructure behind every consistently growing service business. We teach you how to build yours — in the right order.</p>
+      <div class="hero-actions">
+        <a href="/tribe" class="btn-primary">Join Abundance Tribe</a>
+        <a href="/free/selling-system" class="btn-ghost">Get the free training <span class="btn-ghost-arrow">→</span></a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <span class="hero-card-label">Flagship Program</span>
+        <h2>The community where founders build their <em>Selling System.</em></h2>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-num">$12M+</span>
+            <span class="hero-stat-label">Revenue generated</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">10</span>
+            <span class="hero-stat-label">Core pillars</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">5+</span>
+            <span class="hero-stat-label">Years building</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">$97</span>
+            <span class="hero-stat-label">Per month</span>
+          </div>
+        </div>
+        <a href="/tribe" class="hero-card-cta">View Abundance Tribe →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO BAR -->
+<div class="logo-bar">
+  <span class="logo-bar-label">Founders from these companies are building their Selling System</span>
+  <div class="logo-track">
+    <span class="logo-item">Acquisition Network</span>
+    <span class="logo-item">Smart Sellers Academy</span>
+    <span class="logo-item">Expert Health</span>
+    <span class="logo-item">+ More</span>
+  </div>
+</div>
+
+<!-- WHAT IS ABUNDANCE -->
+<section>
+  <div class="what-section">
+    <div class="what-left">
+      <span class="section-label">What we do</span>
+      <h2 class="section-heading">We Build the System.<br>You Run <em>the Business.</em></h2>
+      <p class="section-body" style="margin-bottom:20px;">Most service founders are talented, hardworking, and completely stuck. Not because of effort — because nobody has ever shown them what a real Selling System looks like or what to build first.</p>
+      <p class="section-body">Abundance exists to fix that. We give founders the framework, the training, and the community to build the business that scales without them.</p>
+    </div>
+    <div class="what-right">
+      <div class="what-item">
+        <span class="what-num">01</span>
+        <div class="what-text">
+          <h4>Learn the Framework</h4>
+          <p>Understand what a Selling System is, what yours is missing, and where to start. Free training available now.</p>
+        </div>
+      </div>
+      <div class="what-item">
+        <span class="what-num">02</span>
+        <div class="what-text">
+          <h4>Build With the Tribe</h4>
+          <p>Join Abundance Tribe and work through the 10-pillar Selling System with weekly live coaching and a community of serious founders.</p>
+        </div>
+      </div>
+      <div class="what-item">
+        <span class="what-num">03</span>
+        <div class="what-text">
+          <h4>Scale Without You</h4>
+          <p>When your system is built in the right order, revenue becomes consistent. Growth stops depending on your personal output.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLAGSHIP: TRIBE -->
+<section class="tribe-section">
+  <div class="tribe-inner">
+    <div class="tribe-header">
+      <div>
+        <span class="section-label">Flagship program</span>
+        <h2 class="section-heading">Abundance <em>Tribe</em></h2>
+      </div>
+      <span class="tribe-tag">$97 / month · Cancel anytime</span>
+    </div>
+    <div class="tribe-grid">
+      <div class="tribe-card">
+        <span class="tribe-card-icon">Training Library</span>
+        <h3>The Selling System Training Library</h3>
+        <p>The complete 10-pillar framework every service founder needs to build consistent, scalable revenue. Work through it at your own pace or use the guided path.</p>
+      </div>
+      <div class="tribe-card">
+        <span class="tribe-card-icon">Live Coaching</span>
+        <h3>Weekly Live Coaching Calls</h3>
+        <p>Bring your real situation. Get real direction. Every call is focused on actual member questions — no scripted content, no fluff. This is where clarity happens in real time.</p>
+      </div>
+      <div class="tribe-card">
+        <span class="tribe-card-icon">Community</span>
+        <h3>Private Founder Community</h3>
+        <p>A room full of serious founders at the same stage doing the same work. The conversations here are worth the price alone. No lurkers. No beginners just browsing.</p>
+      </div>
+      <div class="tribe-card">
+        <span class="tribe-card-icon">Direct Access</span>
+        <h3>Direct Access to Ryan Frost</h3>
+        <p>Ask questions, get feedback on your actual business, and get answers from someone who has built and scaled these systems across multiple 7-figure companies.</p>
+      </div>
+    </div>
+    <div class="tribe-cta-row">
+      <a href="/tribe" class="btn-gold">Join Abundance Tribe</a>
+      <div class="tribe-price">$97 <span>/ month · no contracts</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE TRAINING -->
+<section class="free-section">
+  <div class="free-card">
+    <span class="section-label" style="text-align:center;">Free training</span>
+    <h2 class="section-heading">Not Ready to Join Yet?<br><em>Start Here.</em></h2>
+    <p>Watch the free 30-minute training — "What Is a Selling System?" — and understand exactly what your business is missing and where to start building.</p>
+    <a href="/free/selling-system" class="btn-outline">Watch the Free Training</a>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>Stop Guessing.<br>Start Building <em>the Right Thing.</em></h2>
+  <p>Join the founders who are building their Selling System — in the right order, with the right support.</p>
+  <div class="final-cta-actions">
+    <a href="/tribe" class="btn-gold">Join Abundance Tribe — $97/mo</a>
+    <a href="/free/selling-system" class="btn-ghost" style="color:var(--stone);">Start free instead <span class="btn-ghost-arrow">→</span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="/assets/images/logo-light-wordmark.svg" alt="Abundance" height="22">
+  <span>© 2025 Abundance.AI · <a href="/tribe">Abundance Tribe</a> · <a href="/free">Free Training</a></span>
+  <span>findabundance.ai</span>
+</footer>
+
+<script>
+  // Scroll animations
+  (function() {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    function sa(sel) {
+      document.querySelectorAll(sel).forEach(el => { el.classList.add('sa'); obs.observe(el); });
+    }
+    function saStagger(sel, gap) {
+      document.querySelectorAll(sel).forEach(parent => {
+        Array.from(parent.children).forEach((child, i) => {
+          child.classList.add('sa');
+          child.style.setProperty('--sa-delay', (i * gap) + 'ms');
+          obs.observe(child);
+        });
+      });
+    }
+
+    sa('.logo-bar');
+    sa('.what-left');
+    sa('.final-cta h2');
+    sa('.final-cta p');
+    sa('.final-cta-actions');
+    sa('.free-card');
+    sa('.tribe-header');
+    saStagger('.what-right', 80);
+    saStagger('.tribe-grid', 80);
+    saStagger('.logo-track', 50);
+  })();
+</script>
+</body>
+</html>
