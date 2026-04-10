@@ -1662,6 +1662,13 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
   document.getElementById('lead-popup-close').addEventListener('click', closePopup);
   document.getElementById('lead-popup-overlay').addEventListener('click', closePopup);
 
+  // A/B variant tracking — tells PostHog which variant this page is
+  // When creating a new variant (tribe-b.html), change 'control' to 'b', 'c', etc.
+  posthog.capture('experiment_viewed', {
+    experiment: 'tribe-hero',
+    variant: 'control'
+  });
+
   // UTM passthrough — store UTMs for GHL on form submit
   (function() {
     const params = new URLSearchParams(window.location.search);
