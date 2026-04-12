@@ -428,17 +428,17 @@
     <div class="grid-header sa">
       <span class="grid-count">3 Trainings Available</span>
       <div class="grid-filters">
-        <button class="filter-btn active">All</button>
-        <button class="filter-btn">Systems</button>
-        <button class="filter-btn">Marketing</button>
-        <button class="filter-btn">Sales</button>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="systems">Systems</button>
+        <button class="filter-btn" data-filter="marketing">Marketing</button>
+        <button class="filter-btn" data-filter="sales">Sales</button>
       </div>
     </div>
 
     <div class="training-grid">
 
       <!-- Card 1 -->
-      <a href="/free/you-dont-have-a-business" class="training-card sa" style="--sa-delay:60ms;">
+      <a href="/free/you-dont-have-a-business" class="training-card sa" data-category="systems" style="--sa-delay:60ms;">
         <div class="card-top">
           <span class="card-category">Systems</span>
           <span class="card-duration">20-25 min</span>
@@ -452,7 +452,7 @@
       </a>
 
       <!-- Card 2 -->
-      <a href="/free/inside-a-7-figure-system" class="training-card sa" style="--sa-delay:120ms;">
+      <a href="/free/inside-a-7-figure-system" class="training-card sa" data-category="systems" style="--sa-delay:120ms;">
         <div class="card-top">
           <span class="card-category">Systems</span>
           <span class="card-duration">20-25 min</span>
@@ -466,7 +466,7 @@
       </a>
 
       <!-- Card 3 -->
-      <a href="/free/everybodys-closeable" class="training-card sa" style="--sa-delay:180ms;">
+      <a href="/free/everybodys-closeable" class="training-card sa" data-category="marketing sales" style="--sa-delay:180ms;">
         <div class="card-top">
           <span class="card-category">Marketing and Sales</span>
           <span class="card-duration">20-25 min</span>
@@ -514,11 +514,18 @@
     document.querySelectorAll('.sa').forEach(el => obs.observe(el));
   })();
 
-  // Filter buttons (UI only for now — wired up when categories expand)
+  // Category filter
+  const cards = document.querySelectorAll('.training-card');
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', function() {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       this.classList.add('active');
+      const filter = this.dataset.filter;
+      cards.forEach(card => {
+        const cats = card.dataset.category || '';
+        const show = filter === 'all' || cats.split(' ').includes(filter);
+        card.style.display = show ? '' : 'none';
+      });
     });
   });
 </script>
