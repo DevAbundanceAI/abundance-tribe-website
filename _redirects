@@ -1,6 +1,4 @@
 # Cloudflare Pages redirects
 # Format: /old-path  /new-path  301
 
-# Example redirects — uncomment and edit as needed
-# /old-landing    /              301
-# /apply          /apply.html    200
+/home             /              301
