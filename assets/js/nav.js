@@ -55,9 +55,9 @@
       display: block;
     }
     .snav-logo-tagline {
-      font-size: 9px;
+      font-size: 8px;
       font-weight: 600;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--nav-stone);
       line-height: 1;
@@ -306,7 +306,7 @@
     <div class="snav-inner">
       <a class="snav-logo" href="/">
         <img src="/assets/images/logo-dark-wordmark.svg" alt="Abundance">
-        <span class="snav-logo-tagline">AI-Powered Growth Systems</span>
+        <span class="snav-logo-tagline">Growth Systems for Founders</span>
       </a>
 
       <nav class="snav-links" aria-label="Main navigation">
