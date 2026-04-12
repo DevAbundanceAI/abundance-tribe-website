@@ -76,52 +76,7 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
     letter-spacing: 0.1em;
   }
 
-  .nav {
-    padding: 20px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--border-light);
-    background: var(--warm-white);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--dark);
-    letter-spacing: -0.01em;
-    line-height: 1;
-  }
-
-  .nav-logo sup {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--gold);
-    vertical-align: super;
-    margin-left: 1px;
-  }
-
-  .nav-cta {
-    display: inline-block;
-    background: var(--dark);
-    color: var(--cream);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 12px 28px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-
-  .nav-cta:hover { background: var(--brown); }
+  /* ── NAV — handled by /assets/js/nav.js ── */
 
   /* HERO */
   .hero {
@@ -1055,9 +1010,6 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
   /* ── TABLET (≤900px) ─────────────────────────────────── */
   @media (max-width: 900px) {
 
-    /* NAV — hide middle tagline, it overflows */
-    .nav { padding: 14px 20px; }
-    .nav > span { display: none; }
     footer { padding: 16px 20px; }
 
     /* HERO */
@@ -1151,7 +1103,7 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
       text-align: center;
       padding: 18px 24px;
     }
-    .nav-cta { padding: 10px 16px; font-size: 11px; }
+
 
     /* LOGO BAR — tighter */
     .logo-item { padding: 4px 10px; font-size: 12px; }
@@ -1182,11 +1134,7 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
 <div class="urgency-bar">Founding Member Pricing &mdash; Lock In Before It Increases</div>
 
 <!-- NAV -->
-<nav class="nav">
-  <img src="/assets/images/logo-dark-wordmark.svg" alt="Abundance.AI" height="30" style="display:block;">
-  <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--stone);">AI-Powered Growth Systems For Founders</span>
-  <a href="#join" class="nav-cta">Join the Tribe</a>
-</nav>
+<div id="site-nav" data-cta-href="#join" data-cta-label="Join the Tribe"></div>
 
 <!-- HERO -->
 <section style="background: var(--warm-white);">
@@ -1651,7 +1599,7 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
   }
 
   // Trigger on all CTA clicks
-  document.querySelectorAll('a[href="#join"], .nav-cta, .btn-primary, .btn-gold').forEach(btn => {
+  document.querySelectorAll('a[href="#join"], .snav-cta, .btn-primary, .btn-gold').forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.preventDefault();
       openPopup();
@@ -1784,5 +1732,6 @@ src="https://www.facebook.com/tr?id=1676685240147082&ev=PageView&noscript=1"
     });
   })();
 </script>
+<script src="/assets/js/nav.js" defer></script>
 </body>
 </html>

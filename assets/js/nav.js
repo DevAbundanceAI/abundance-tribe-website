@@ -42,14 +42,26 @@
     /* ── LOGO ── */
     .snav-logo {
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      justify-content: center;
       flex-shrink: 0;
       margin-right: 40px;
+      text-decoration: none;
+      gap: 3px;
     }
     .snav-logo img {
-      height: 28px;
+      height: 26px;
       width: auto;
       display: block;
+    }
+    .snav-logo-tagline {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--nav-stone);
+      line-height: 1;
+      white-space: nowrap;
     }
 
     /* ── MAIN LINKS ── */
@@ -294,6 +306,7 @@
     <div class="snav-inner">
       <a class="snav-logo" href="/">
         <img src="/assets/images/logo-dark-wordmark.svg" alt="Abundance">
+        <span class="snav-logo-tagline">AI-Powered Growth Systems</span>
       </a>
 
       <nav class="snav-links" aria-label="Main navigation">
@@ -348,7 +361,17 @@
   `;
 
   const mount = document.getElementById('site-nav');
-  if (mount) mount.innerHTML = html;
+  if (!mount) return;
+
+  // Allow per-page CTA override via data attributes
+  const ctaHref  = mount.dataset.ctaHref  || '/tribe';
+  const ctaLabel = mount.dataset.ctaLabel || 'Join the Tribe';
+  const finalHtml = html
+    .replace(/href="\/tribe" class="snav-cta"/g,  `href="${ctaHref}" class="snav-cta"`)
+    .replace(/href="\/tribe" class="snav-drawer-cta"/g, `href="${ctaHref}" class="snav-drawer-cta"`)
+    .replace(/>Join the Tribe<\/a>/g, `>${ctaLabel}</a>`);
+
+  mount.innerHTML = finalHtml;
 
   /* ── JS INTERACTIONS ── */
   // Hamburger toggle
