@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abundance Tribe — Build Your Selling System</title>
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #080808;
+    --bg-1:      #0f0f0f;
+    --bg-2:      #141414;
+    --bg-3:      #1a1a1a;
+    --border:    rgba(255,255,255,0.07);
+    --border-hi: rgba(255,255,255,0.14);
+    --text:      #f2f0ec;
+    --muted:     #6b6b6b;
+    --muted-hi:  #999;
+    --gold:      #c49a4a;
+    --gold-dim:  rgba(196,154,74,0.12);
+    --gold-glow: rgba(196,154,74,0.25);
+    --white:     #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── DOT GRID BACKGROUND ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  * { position: relative; z-index: 1; }
+
+  /* ── NAV ── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    background: rgba(8,8,8,0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo img { height: 22px; filter: invert(1); opacity: 0.9; }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted-hi);
+    text-decoration: none;
+    transition: color 0.15s;
+    letter-spacing: 0.02em;
+  }
+  .nav-link:hover { color: var(--text); }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: #000;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 9px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 120px 40px 100px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold-dim);
+    border: 1px solid rgba(196,154,74,0.25);
+    border-radius: 100px;
+    padding: 6px 14px 6px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 40px;
+  }
+
+  .hero-badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 7vw, 84px);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    margin-bottom: 28px;
+  }
+
+  .hero h1 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: -0.01em;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--muted-hi);
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto 52px;
+    font-weight: 400;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 64px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: #000;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-3);
+    color: var(--muted-hi);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 16px 28px;
+    border-radius: 8px;
+    border: 1px solid var(--border-hi);
+    text-decoration: none;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .btn-ghost:hover { color: var(--text); border-color: rgba(255,255,255,0.25); }
+
+  .hero-proof {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-proof-item {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .hero-proof-item::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── VSL ── */
+  .vsl-section {
+    padding: 0 40px 120px;
+  }
+
+  .vsl-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-hi);
+    box-shadow:
+      0 0 0 1px rgba(196,154,74,0.1),
+      0 32px 80px rgba(0,0,0,0.6),
+      0 0 80px rgba(196,154,74,0.06);
+    background: var(--bg-2);
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .vsl-play {
+    width: 72px;
+    height: 72px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .vsl-wrap:hover .vsl-play { transform: scale(1.08); opacity: 0.9; }
+
+  .vsl-play svg { width: 28px; height: 28px; fill: #000; margin-left: 4px; }
+
+  .vsl-label {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ── STATS ── */
+  .stats-section {
+    padding: 0 40px 120px;
+  }
+
+  .stats-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .stat {
+    background: var(--bg-1);
+    padding: 36px 32px;
+    text-align: center;
+    transition: background 0.2s;
+  }
+  .stat:hover { background: var(--bg-2); }
+
+  .stat-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 42px;
+    font-weight: 500;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+    display: block;
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .section-tag::before {
+    content: '//';
+    opacity: 0.5;
+  }
+
+  /* ── WHAT YOU GET ── */
+  .get-section {
+    padding: 0 40px 120px;
+  }
+
+  .get-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .get-header {
+    margin-bottom: 56px;
+  }
+
+  .get-header h2 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    line-height: 1.04;
+    margin-bottom: 16px;
+  }
+
+  .get-header h2 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: -0.01em;
+  }
+
+  .get-header p {
+    font-size: 16px;
+    color: var(--muted-hi);
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  .get-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .get-card {
+    background: var(--bg-1);
+    padding: 40px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: background 0.2s;
+    border-bottom: 2px solid transparent;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .get-card:hover { background: var(--bg-2); border-bottom-color: var(--gold); }
+
+  .get-card-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--gold-dim);
+    border: 1px solid rgba(196,154,74,0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .get-card-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .get-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.01em;
+  }
+
+  .get-card p {
+    font-size: 14px;
+    color: var(--muted-hi);
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  .get-card-mono {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-top: 4px;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .how-section {
+    padding: 0 40px 120px;
+  }
+
+  .how-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .how-header {
+    margin-bottom: 56px;
+  }
+
+  .how-header h2 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    line-height: 1.04;
+  }
+
+  .how-header h2 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .how-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .how-step {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: center;
+    gap: 40px;
+    padding: 36px 40px;
+    background: var(--bg-1);
+    transition: background 0.2s;
+  }
+  .how-step:hover { background: var(--bg-2); }
+
+  .how-step-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--border-hi);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .how-step-body h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .how-step-body p {
+    font-size: 14px;
+    color: var(--muted-hi);
+    line-height: 1.65;
+    max-width: 480px;
+  }
+
+  .how-step-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  /* ── RYAN ── */
+  .ryan-section {
+    padding: 0 40px 120px;
+  }
+
+  .ryan-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .ryan-photo-wrap {
+    position: sticky;
+    top: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-hi);
+  }
+
+  .ryan-photo {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: grayscale(20%);
+  }
+
+  .ryan-right {}
+
+  .ryan-right h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    line-height: 1.06;
+    margin-bottom: 28px;
+  }
+
+  .ryan-right h2 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .ryan-right p {
+    font-size: 15px;
+    color: var(--muted-hi);
+    line-height: 1.85;
+    margin-bottom: 20px;
+  }
+  .ryan-right p strong { color: var(--text); font-weight: 600; }
+  .ryan-right p:last-of-type { margin-bottom: 0; }
+
+  .ryan-quote {
+    margin-top: 40px;
+    padding: 32px 36px;
+    background: var(--bg-1);
+    border: 1px solid var(--border-hi);
+    border-left: 2px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .ryan-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .ryan-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 36px;
+  }
+
+  .ryan-stat {
+    background: var(--bg-1);
+    padding: 24px 20px;
+    text-align: center;
+  }
+
+  .ryan-stat-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .ryan-stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ── PRICING ── */
+  .pricing-section {
+    padding: 0 40px 120px;
+    text-align: center;
+  }
+
+  .pricing-inner {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .pricing-section .section-tag { justify-content: center; margin-bottom: 20px; }
+
+  .pricing-section h2 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    line-height: 1.04;
+    margin-bottom: 48px;
+  }
+
+  .pricing-section h2 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .pricing-card {
+    background: var(--bg-1);
+    border: 1px solid var(--border-hi);
+    border-radius: 12px;
+    padding: 52px 48px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .pricing-card::after {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(196,154,74,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .pricing-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .pricing-price {
+    font-family: 'DM Mono', monospace;
+    font-size: 72px;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .pricing-per {
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 36px;
+  }
+
+  .pricing-divider {
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 32px;
+  }
+
+  .pricing-includes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .pricing-includes li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--muted-hi);
+    line-height: 1.5;
+  }
+
+  .pricing-includes li::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 13px;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .pricing-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--gold);
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+    position: relative;
+  }
+  .pricing-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  .pricing-fine {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 20px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  footer img { height: 20px; filter: invert(1); opacity: 0.4; }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .footer-links a {
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.15s;
+  }
+  .footer-links a:hover { color: var(--muted-hi); }
+
+  .footer-copy {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── ANIMATIONS ── */
+  .sa {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1),
+                transform 0.6s cubic-bezier(0.16,1,0.3,1);
+    transition-delay: var(--sa-delay, 0ms);
+  }
+  .sa.in { opacity: 1; transform: translateY(0); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-badge  { animation: fadeUp 0.5s ease 0.1s both; }
+  .hero h1     { animation: fadeUp 0.6s ease 0.2s both; }
+  .hero-sub    { animation: fadeUp 0.6s ease 0.3s both; }
+  .hero-actions{ animation: fadeUp 0.6s ease 0.4s both; }
+  .hero-proof  { animation: fadeUp 0.6s ease 0.5s both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .nav { padding: 0 20px; }
+    .nav-links { display: none; }
+
+    .hero { padding: 80px 20px 64px; }
+    .vsl-section { padding: 0 20px 80px; }
+    .stats-section { padding: 0 20px 80px; }
+    .stats-inner { grid-template-columns: 1fr; }
+
+    .get-section, .how-section, .ryan-section, .pricing-section { padding: 0 20px 80px; }
+    .get-grid { grid-template-columns: 1fr; }
+
+    .how-step { grid-template-columns: 48px 1fr; gap: 20px; padding: 28px 24px; }
+    .how-step-tag { display: none; }
+
+    .ryan-inner { grid-template-columns: 1fr; gap: 40px; }
+    .ryan-photo-wrap { position: static; max-height: 320px; overflow: hidden; }
+    .ryan-photo { aspect-ratio: 3/2; object-position: center 15%; }
+    .ryan-stats { grid-template-columns: repeat(3, 1fr); }
+
+    .pricing-card { padding: 36px 28px; }
+    .pricing-price { font-size: 56px; }
+
+    footer { padding: 20px; flex-direction: column; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+
+  @media (max-width: 540px) {
+    .hero-proof { flex-direction: column; gap: 12px; }
+    .ryan-stats { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo" href="/">
+    <img src="/assets/images/logo-dark-wordmark.svg" alt="Abundance">
+  </a>
+  <div class="nav-links">
+    <a href="/free" class="nav-link">Free Training</a>
+    <a href="/" class="nav-link">Home</a>
+  </div>
+  <a href="#join" class="nav-cta">Join the Tribe</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">
+    <span class="hero-badge-dot"></span>
+    Founding Member Pricing
+  </div>
+  <h1>Stop being the<br>bottleneck in your<br><em>own business.</em></h1>
+  <p class="hero-sub">Abundance Tribe is the monthly membership for service founders who are done guessing and ready to build a real Selling System.</p>
+  <div class="hero-actions">
+    <a href="#join" class="btn-primary">Join Abundance Tribe</a>
+    <a href="/free" class="btn-ghost">Watch free training first</a>
+  </div>
+  <div class="hero-proof">
+    <span class="hero-proof-item">$97 per month</span>
+    <span class="hero-proof-item">Cancel anytime</span>
+    <span class="hero-proof-item">Instant access</span>
+    <span class="hero-proof-item">Founding member pricing</span>
+  </div>
+</section>
+
+<!-- VSL -->
+<section class="vsl-section">
+  <div class="vsl-wrap">
+    <div class="vsl-play">
+      <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+    <span class="vsl-label">Watch before you join · 8 minutes</span>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="stats-inner sa">
+    <div class="stat">
+      <span class="stat-num">$12M+</span>
+      <span class="stat-label">Revenue Built</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">5+</span>
+      <span class="stat-label">Clients at $1M+</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">5yr</span>
+      <span class="stat-label">Actively Building</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="get-section">
+  <div class="get-inner">
+    <div class="get-header">
+      <span class="section-tag">What's included</span>
+      <h2>Everything to build your<br><em>Selling System.</em></h2>
+      <p>Not a course library you'll never finish. A structured membership designed around what service founders actually need to scale.</p>
+    </div>
+    <div class="get-grid">
+
+      <div class="get-card sa">
+        <div class="get-card-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>Live Monthly Sessions</h3>
+        <p>Real-time builds, strategy sessions, and Q&A. Watch the system get built live, not on a slide deck from three years ago.</p>
+        <span class="get-card-mono">// monthly · recorded · on-demand</span>
+      </div>
+
+      <div class="get-card sa" style="--sa-delay:60ms">
+        <div class="get-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>The Full Selling System</h3>
+        <p>The 10-pillar framework built in the right order. Offer, lead flow, sales, funnels, automation. Everything connected, nothing skipped.</p>
+        <span class="get-card-mono">// structured · sequenced · complete</span>
+      </div>
+
+      <div class="get-card sa" style="--sa-delay:120ms">
+        <div class="get-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Founder Community</h3>
+        <p>A private community of service founders building alongside you. Accountability, feedback, and people who get what you're trying to do.</p>
+        <span class="get-card-mono">// private · active · vetted</span>
+      </div>
+
+      <div class="get-card sa" style="--sa-delay:60ms">
+        <div class="get-card-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>AI and Automation Builds</h3>
+        <p>Watch real automations get built with GHL and AI. Take them, install them, run them in your own business. No theory — just the actual thing.</p>
+        <span class="get-card-mono">// real builds · copy-paste ready</span>
+      </div>
+
+      <div class="get-card sa" style="--sa-delay:120ms">
+        <div class="get-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Direct Coaching Access</h3>
+        <p>Submit your questions, your offers, your funnels. Get real feedback from someone who's built what you're trying to build.</p>
+        <span class="get-card-mono">// async · direct · honest</span>
+      </div>
+
+      <div class="get-card sa" style="--sa-delay:180ms">
+        <div class="get-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3>Frameworks and Playbooks</h3>
+        <p>The actual documents, templates, and SOPs behind the Selling System. Yours to adapt and deploy without starting from scratch.</p>
+        <span class="get-card-mono">// downloadable · battle-tested</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="how-inner">
+    <div class="how-header">
+      <span class="section-tag">How it works</span>
+      <h2>Built in the <em>right order.</em></h2>
+    </div>
+    <div class="how-steps">
+
+      <div class="how-step sa">
+        <span class="how-step-num">01</span>
+        <div class="how-step-body">
+          <h3>Diagnose what's actually missing</h3>
+          <p>Most founders try to fix symptoms. We start by identifying the real gap in your Selling System so you stop working on the wrong thing.</p>
+        </div>
+        <span class="how-step-tag">week one</span>
+      </div>
+
+      <div class="how-step sa">
+        <span class="how-step-num">02</span>
+        <div class="how-step-body">
+          <h3>Build the foundational layer</h3>
+          <p>Offer clarity, positioning, and lead flow first. You can't automate chaos. We get the core right before we build on top of it.</p>
+        </div>
+        <span class="how-step-tag">month one</span>
+      </div>
+
+      <div class="how-step sa">
+        <span class="how-step-num">03</span>
+        <div class="how-step-body">
+          <h3>Add the sales and conversion layer</h3>
+          <p>Once leads are flowing, we build the sales system. Scripts, processes, follow-up sequences. A predictable path from lead to client.</p>
+        </div>
+        <span class="how-step-tag">month two</span>
+      </div>
+
+      <div class="how-step sa">
+        <span class="how-step-num">04</span>
+        <div class="how-step-body">
+          <h3>Automate and delegate everything else</h3>
+          <p>GHL, AI, and the right team structure. Your role becomes oversight, not execution. The system runs. You build.</p>
+        </div>
+        <span class="how-step-tag">ongoing</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RYAN -->
+<section class="ryan-section">
+  <div class="ryan-inner">
+    <div class="ryan-left">
+      <div class="ryan-photo-wrap">
+        <img src="/assets/images/Ryan-Frost-Profile-Picture.jpg" alt="Ryan Frost" class="ryan-photo">
+      </div>
+    </div>
+    <div class="ryan-right">
+      <span class="section-tag">Your guide</span>
+      <h2>Built by a founder<br>still <em>in the arena.</em></h2>
+      <p>I'm Ryan Frost. I've spent 5+ years building the sales and marketing systems behind <strong>$12M+ in revenue</strong> across coaching, consulting, and service businesses.</p>
+      <p>What I share inside Abundance comes from what I'm actively building right now. Not a framework I packaged years ago. The systems, the automations, the real decisions. You get a front-row seat as I build.</p>
+      <p>Abundance Tribe isn't a course library. It's closer to an apprenticeship — where you learn by watching someone do it live, then do it yourself.</p>
+      <div class="ryan-quote">
+        <p>"Most memberships give you content to consume. This one gives you a founder to watch build in real time — and a community building alongside you."</p>
+      </div>
+      <div class="ryan-stats">
+        <div class="ryan-stat">
+          <span class="ryan-stat-num">$12M+</span>
+          <span class="ryan-stat-label">Revenue Built</span>
+        </div>
+        <div class="ryan-stat">
+          <span class="ryan-stat-num">5+</span>
+          <span class="ryan-stat-label">Years Building</span>
+        </div>
+        <div class="ryan-stat">
+          <span class="ryan-stat-num">5+</span>
+          <span class="ryan-stat-label">Clients at $1M+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="join">
+  <div class="pricing-inner">
+    <span class="section-tag">Pricing</span>
+    <h2>Simple.<br><em>No surprises.</em></h2>
+    <div class="pricing-card sa">
+      <span class="pricing-label">Abundance Tribe · Founding Member</span>
+      <span class="pricing-price">$97</span>
+      <span class="pricing-per">per month · billed monthly · cancel anytime</span>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-includes">
+        <li>Full access to the Selling System framework</li>
+        <li>Monthly live sessions with Ryan (recorded)</li>
+        <li>Private founder community</li>
+        <li>AI and automation builds you can deploy directly</li>
+        <li>Frameworks, playbooks, and SOPs</li>
+        <li>Direct coaching and feedback access</li>
+        <li>All future content and trainings included</li>
+      </ul>
+      <a href="#" class="pricing-cta">Join Abundance Tribe — $97/mo</a>
+      <p class="pricing-fine">Founding member pricing. Rate locks in for as long as you stay active.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="/assets/images/logo-dark-wordmark.svg" alt="Abundance">
+  <div class="footer-links">
+    <a href="/tribe">Abundance Tribe</a>
+    <a href="/free">Free Training</a>
+    <a href="/">Home</a>
+  </div>
+  <span class="footer-copy">© 2026 Abundance.AI</span>
+</footer>
+
+<script>
+  (function () {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.06, rootMargin: '0px 0px -32px 0px' });
+    document.querySelectorAll('.sa').forEach(el => obs.observe(el));
+  })();
+</script>
+</body>
+</html>
