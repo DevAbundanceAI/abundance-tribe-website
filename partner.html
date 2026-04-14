@@ -411,10 +411,10 @@
 
   .what-inner {
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 0 auto 80px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 100px;
+    gap: 80px;
     align-items: start;
   }
 
@@ -436,7 +436,6 @@
     margin-bottom: 16px;
   }
   .what-left p:last-of-type { margin-bottom: 0; }
-  .what-left strong { color: var(--dark); font-weight: 600; }
 
   .outcomes-list {
     margin-top: 36px;
@@ -478,71 +477,138 @@
     margin-left: 4px;
   }
 
-  .what-right {}
+  /* Right callout card */
+  .what-right {
+    position: sticky;
+    top: 100px;
+  }
 
-  .what-card {
+  .what-callout {
     background: var(--dark);
-    border-radius: 4px;
-    padding: 44px 40px;
+    border-radius: 12px;
+    padding: 56px 48px;
+    border: 1px solid rgba(181,135,83,0.2);
     position: relative;
     overflow: hidden;
   }
 
-  .what-card::before {
+  .what-callout::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(181,135,83,0.1) 0%, transparent 70%);
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(181,135,83,0.1) 0%, transparent 70%);
     pointer-events: none;
   }
 
-  .what-card-label {
+  .what-callout-label {
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 28px;
     display: block;
+    margin-bottom: 24px;
     position: relative;
   }
 
-  .what-card-items {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 4px;
+  .what-callout-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 3.5vw, 48px);
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    position: relative;
+  }
+
+  .what-callout-text em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  /* Six systems full-width card */
+  .what-systems {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .what-systems-card {
+    background: var(--dark);
+    border-radius: 16px;
+    padding: 64px 72px;
+    border: 1px solid rgba(181,135,83,0.18);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .what-systems-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(181,135,83,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .what-systems-header {
+    margin-bottom: 52px;
+    position: relative;
+  }
+
+  .what-systems-header .section-label {
+    color: var(--gold);
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .what-systems-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 56px);
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .what-systems-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .what-systems-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
     overflow: hidden;
     position: relative;
   }
 
-  .what-card-item {
+  .what-system-item {
+    background: rgba(255,255,255,0.02);
+    padding: 32px 28px;
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 20px 24px;
-    background: rgba(255,255,255,0.03);
+    flex-direction: column;
+    gap: 14px;
     transition: background 0.2s;
   }
-  .what-card-item:hover { background: rgba(255,255,255,0.06); }
+  .what-system-item:hover { background: rgba(255,255,255,0.05); }
 
-  .what-card-item-icon {
-    width: 32px;
-    height: 32px;
-    background: var(--gold-dim);
+  .what-system-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(181,135,83,0.1);
     border: 1px solid rgba(181,135,83,0.2);
-    border-radius: 4px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    margin-top: 2px;
   }
 
-  .what-card-item-icon svg {
-    width: 14px;
-    height: 14px;
+  .what-system-icon svg {
+    width: 16px;
+    height: 16px;
     stroke: var(--gold);
     fill: none;
     stroke-width: 1.6;
@@ -550,20 +616,17 @@
     stroke-linejoin: round;
   }
 
-  .what-card-item-body {}
-
-  .what-card-item-title {
-    font-size: 14px;
+  .what-system-title {
+    font-size: 15px;
     font-weight: 700;
     color: var(--cream);
-    display: block;
-    margin-bottom: 3px;
+    line-height: 1.3;
   }
 
-  .what-card-item-desc {
-    font-size: 12px;
-    color: rgba(245,240,232,0.5);
-    line-height: 1.6;
+  .what-system-desc {
+    font-size: 13px;
+    color: rgba(245,240,232,0.45);
+    line-height: 1.65;
   }
 
   /* ── FOR WHO ── */
@@ -1347,8 +1410,11 @@
     .cases-compact { grid-template-columns: 1fr; }
     .case-card { padding: 40px 28px; }
 
-    .what-section { padding: 72px 20px; }
-    .what-inner { grid-template-columns: 1fr; gap: 52px; }
+    .what-section { padding: 300px 20px 72px; }
+    .what-inner { grid-template-columns: 1fr; gap: 52px; margin-bottom: 48px; }
+    .what-right { position: static; }
+    .what-systems-card { padding: 40px 28px; }
+    .what-systems-grid { grid-template-columns: 1fr; }
 
     .who-section { padding: 72px 20px; }
     .who-grid { grid-template-columns: 1fr; }
@@ -1493,14 +1559,14 @@
 
 <!-- WHAT IT IS -->
 <section class="what-section" id="what">
+
+  <!-- Two-col: text left, callout right -->
   <div class="what-inner">
     <div class="what-left">
       <span class="section-label sa">What this is</span>
       <h2 class="sa">Not an agency.<br>Not a coach.<br><em>An embedded GTM authority.</em></h2>
       <p class="sa">Agencies execute tasks. Coaches teach frameworks. Ryan does neither. He embeds into your business as the strategic authority who leads your GTM team directly on your behalf, from content to close.</p>
       <p class="sa">Six core systems. Built with your team, not handed to them. Every person on your team knows the standard, knows their role, and knows who they answer to. That is what makes it stick.</p>
-      <p class="sa"><strong>You stop being the growth engine. Your team becomes one.</strong></p>
-
       <div class="outcomes-list sa">
         <div class="outcome-item">
           <span class="outcome-label">Increase revenue <span class="outcome-desc">More leads, better conversion, higher close rates.</span></span>
@@ -1520,67 +1586,67 @@
       </div>
     </div>
     <div class="what-right sa">
-      <div class="what-card">
-        <span class="what-card-label">Six systems installed</span>
-        <div class="what-card-items">
-          <div class="what-card-item">
-            <div class="what-card-item-icon">
-              <svg viewBox="0 0 24 24"><path d="M15 10l-4 4-4-4"/><path d="M4 6h16M4 12h10M4 18h7"/></svg>
-            </div>
-            <div class="what-card-item-body">
-              <span class="what-card-item-title">Organic Content System</span>
-              <span class="what-card-item-desc">Short and long form engine. SOPs, workflows, and accountability for your team to execute consistently.</span>
-            </div>
+      <div class="what-callout">
+        <span class="what-callout-label">The outcome</span>
+        <p class="what-callout-text">You stop being the growth engine.<br><em>Your team becomes one.</em></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full-width six systems card -->
+  <div class="what-systems">
+    <div class="what-systems-card sa">
+      <div class="what-systems-header">
+        <span class="section-label">Six systems installed</span>
+        <h3 class="what-systems-title">Every system we install<br><em>into your current team.</em></h3>
+      </div>
+      <div class="what-systems-grid">
+        <div class="what-system-item">
+          <div class="what-system-icon">
+            <svg viewBox="0 0 24 24"><path d="M15 10l-4 4-4-4"/><path d="M4 6h16M4 12h10M4 18h7"/></svg>
           </div>
-          <div class="what-card-item">
-            <div class="what-card-item-icon">
-              <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            </div>
-            <div class="what-card-item-body">
-              <span class="what-card-item-title">Paid GTM System</span>
-              <span class="what-card-item-desc">Meta acquisition strategy and structure. Your team runs it. Ryan sets the standard and reviews the numbers.</span>
-            </div>
+          <span class="what-system-title">Organic Content System</span>
+          <span class="what-system-desc">Short and long form engine. SOPs, workflows, and accountability for your team to execute consistently.</span>
+        </div>
+        <div class="what-system-item">
+          <div class="what-system-icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
-          <div class="what-card-item">
-            <div class="what-card-item-icon">
-              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </div>
-            <div class="what-card-item-body">
-              <span class="what-card-item-title">Conversion System</span>
-              <span class="what-card-item-desc">CRM pipeline design and optimization. Every lead is tracked, followed up, and moved toward a decision.</span>
-            </div>
+          <span class="what-system-title">Paid GTM System</span>
+          <span class="what-system-desc">Meta acquisition strategy and structure. Your team runs it. Ryan sets the standard and reviews the numbers.</span>
+        </div>
+        <div class="what-system-item">
+          <div class="what-system-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </div>
-          <div class="what-card-item">
-            <div class="what-card-item-icon">
-              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1 19.36 19.36 0 0 1 1.64 4.5 2 2 0 0 1 3.6 2.28h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
-            </div>
-            <div class="what-card-item-body">
-              <span class="what-card-item-title">Sales Process Optimization</span>
-              <span class="what-card-item-desc">Scripts, objection handling, follow-up cadences. Your team closes more with less effort.</span>
-            </div>
+          <span class="what-system-title">Conversion System</span>
+          <span class="what-system-desc">CRM pipeline design and optimization. Every lead is tracked, followed up, and moved toward a decision.</span>
+        </div>
+        <div class="what-system-item">
+          <div class="what-system-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1 19.36 19.36 0 0 1 1.64 4.5 2 2 0 0 1 3.6 2.28h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
           </div>
-          <div class="what-card-item">
-            <div class="what-card-item-icon">
-              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <div class="what-card-item-body">
-              <span class="what-card-item-title">Funnel Architecture</span>
-              <span class="what-card-item-desc">Built to convert, not just look good. Designed around your offer, your ICP, your real numbers.</span>
-            </div>
+          <span class="what-system-title">Sales Process Optimization</span>
+          <span class="what-system-desc">Scripts, objection handling, follow-up cadences. Your team closes more with less effort.</span>
+        </div>
+        <div class="what-system-item">
+          <div class="what-system-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           </div>
-          <div class="what-card-item">
-            <div class="what-card-item-icon">
-              <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-            </div>
-            <div class="what-card-item-body">
-              <span class="what-card-item-title">Number Clarity System</span>
-              <span class="what-card-item-desc">KPI dashboards, weekly reporting cadence, the right metrics for your stage. Most founders are busy but blind. This fixes that.</span>
-            </div>
+          <span class="what-system-title">Funnel Architecture</span>
+          <span class="what-system-desc">Built to convert, not just look good. Designed around your offer, your ICP, your real numbers.</span>
+        </div>
+        <div class="what-system-item">
+          <div class="what-system-icon">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
           </div>
+          <span class="what-system-title">Number Clarity System</span>
+          <span class="what-system-desc">KPI dashboards, weekly reporting cadence, the right metrics for your stage. Most founders are busy but blind. This fixes that.</span>
         </div>
       </div>
     </div>
   </div>
+
 </section>
 
 <!-- CASE STUDIES -->
