@@ -1011,6 +1011,76 @@
   .sa.in { opacity: 1; transform: translateY(0); }
 
   /* ── RESPONSIVE ── */
+  /* ── COMPACT CASE CARDS ── */
+  .cases-compact {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 2px;
+  }
+
+  .case-compact-card {
+    background: rgba(255,255,255,0.015);
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: background 0.2s;
+  }
+  .case-compact-card:hover { background: rgba(255,255,255,0.035); }
+
+  .case-compact-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(181,135,83,0.6);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .case-compact-company {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .case-compact-result {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .case-compact-result-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.25);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .case-compact-desc {
+    font-size: 13px;
+    color: rgba(245,240,232,0.45);
+    line-height: 1.6;
+    font-weight: 300;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
   @media (max-width: 900px) {
     .hero { padding: 72px 20px 80px; }
     .hero h1 { font-size: clamp(38px, 8vw, 60px); }
@@ -1021,6 +1091,7 @@
 
     .cases-section { padding: 72px 20px; }
     .cases-grid { grid-template-columns: 1fr; }
+    .cases-compact { grid-template-columns: 1fr; }
     .case-card { padding: 40px 28px; }
 
     .what-section { padding: 72px 20px; }
@@ -1075,12 +1146,12 @@
         <span class="hero-limit-label">Active partners at a time</span>
       </div>
       <div class="hero-limit-item">
-        <span class="hero-limit-num">$12M+</span>
-        <span class="hero-limit-label">Revenue built across clients</span>
+        <span class="hero-limit-num">$11M+</span>
+        <span class="hero-limit-label">Revenue generated across clients</span>
       </div>
       <div class="hero-limit-item">
-        <span class="hero-limit-num">5+</span>
-        <span class="hero-limit-label">Clients taken past $1M/yr</span>
+        <span class="hero-limit-num">5</span>
+        <span class="hero-limit-label">Client partnerships built</span>
       </div>
     </div>
   </div>
@@ -1196,17 +1267,17 @@
   <div class="cases-inner">
     <div class="cases-header">
       <span class="section-label sa">Results</span>
-      <h2 class="sa">What happens when the<br>system gets <em>installed.</em></h2>
+      <h2 class="sa">$11M+ generated.<br>Five companies.<br><em>One system.</em></h2>
     </div>
     <div class="cases-grid">
 
       <!-- Case 1: Acquisition Network -->
       <div class="case-card sa">
-        <span class="case-tag">GTM Partnership · 2.5 Years</span>
+        <span class="case-tag">GTM Partnership · 2023–Present</span>
         <span class="case-company">Acquisition Network</span>
         <div class="case-stats">
           <div class="case-stat">
-            <span class="case-stat-num">$2.6M</span>
+            <span class="case-stat-num">$2.8M</span>
             <span class="case-stat-label">Revenue Generated</span>
           </div>
           <div class="case-stat">
@@ -1225,14 +1296,14 @@
           </div>
           <div class="case-row">
             <span class="case-row-label">The Outcome</span>
-            <span class="case-row-text">$0 to $2.6M over 2.5 years, averaging $135k per month. A business with a real system that compounds rather than depending on one person's effort.</span>
+            <span class="case-row-text">$0 to $2.8M and still growing, averaging $135k per month. A business with a real system that compounds rather than depending on one person's effort.</span>
           </div>
         </div>
       </div>
 
       <!-- Case 2: Smart Sellers Academy -->
       <div class="case-card sa" style="--sa-delay:80ms">
-        <span class="case-tag">GTM Partnership · 15 Months</span>
+        <span class="case-tag">GTM Partnership · 2025–Present</span>
         <span class="case-company">Smart Sellers Academy</span>
         <div class="case-stats">
           <div class="case-stat">
@@ -1261,6 +1332,36 @@
       </div>
 
     </div>
+
+    <!-- Compact: Additional Results -->
+    <div class="cases-compact">
+
+      <div class="case-compact-card sa">
+        <span class="case-compact-tag">Marketing Systems Lead · 2022–2024</span>
+        <span class="case-compact-company">All Done Consulting</span>
+        <span class="case-compact-result">$4.6M</span>
+        <span class="case-compact-result-label">Revenue Generated · 2.5 Years</span>
+        <span class="case-compact-desc">Built GTM infrastructure from scratch for a consulting business with no existing systems. Webinar funnels, book-a-call funnels, email automation, and full launch systems across 2.5 years.</span>
+      </div>
+
+      <div class="case-compact-card sa" style="--sa-delay:60ms">
+        <span class="case-compact-tag">Growth Marketing Consultant · 2023–2024</span>
+        <span class="case-compact-company">Malik Consolidated</span>
+        <span class="case-compact-result">$1.6M</span>
+        <span class="case-compact-result-label">Revenue Generated</span>
+        <span class="case-compact-desc">Built initial go-to-market and revenue systems from limited infrastructure. Funnel strategy, CRM workflows, campaign execution, and full lead-to-close conversion systems.</span>
+      </div>
+
+      <div class="case-compact-card sa" style="--sa-delay:120ms">
+        <span class="case-compact-tag">Growth Operations Lead · 2020–2021</span>
+        <span class="case-compact-company">Big Little Gyms</span>
+        <span class="case-compact-result">15→189</span>
+        <span class="case-compact-result-label">Clients in 11 Months · $989K Revenue</span>
+        <span class="case-compact-desc">Scaled a coaching business from 15 to 189 clients in 11 months during COVID. Built acquisition, fulfillment, and client experience systems that handled 12x growth without breaking.</span>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
@@ -1367,21 +1468,21 @@
     <div class="ryan-right">
       <span class="section-label sa" style="color: var(--gold);">Who you are working with</span>
       <h2 class="sa">Ryan Frost.<br><em>Still building.</em></h2>
-      <p class="sa">I have spent 5+ years building the GTM systems behind <strong>$12M+ in revenue</strong> across coaching, consulting, and service businesses. Acquisition Network from zero to $2.6M. Smart Sellers Academy from zero infrastructure to $1.3M in 15 months. This is not theory. It is what I do.</p>
-      <p class="sa">When you bring me in, I am not a vendor you manage. I operate above your team. I set the standard. I decide what gets built first, what gets cut, and who is executing at the level required. You get my full attention on your business and a clear read on exactly what is and is not working.</p>
+      <p class="sa">I have spent 5+ years building the GTM systems behind <strong>$11M+ in revenue</strong> across five client partnerships in coaching, consulting, and service businesses. All Done Consulting. Acquisition Network. Smart Sellers Academy. Malik Consolidated. Big Little Gyms. Every one of them started with no real GTM infrastructure and I built it from scratch.</p>
+      <p class="sa">When you bring me in, I am not a vendor you manage. I operate above your team. I set the standard. I decide what gets built first, what gets cut, and who is executing at the level required. You get my full attention on your business and a clear read on what is and is not working.</p>
       <p class="sa"><strong>I take on 1 to 2 Growth Partners at a time.</strong> That is not a sales tactic. It is the only way to do this work at the level it requires.</p>
       <div class="ryan-stats sa">
         <div class="ryan-stat">
-          <span class="ryan-stat-num">$12M+</span>
-          <span class="ryan-stat-label">Revenue Built</span>
+          <span class="ryan-stat-num">$11M+</span>
+          <span class="ryan-stat-label">Revenue Generated</span>
+        </div>
+        <div class="ryan-stat">
+          <span class="ryan-stat-num">5</span>
+          <span class="ryan-stat-label">Client Partnerships</span>
         </div>
         <div class="ryan-stat">
           <span class="ryan-stat-num">5+</span>
           <span class="ryan-stat-label">Years Building</span>
-        </div>
-        <div class="ryan-stat">
-          <span class="ryan-stat-num">5+</span>
-          <span class="ryan-stat-label">Clients at $1M+</span>
         </div>
       </div>
     </div>
