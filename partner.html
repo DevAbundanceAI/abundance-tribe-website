@@ -90,6 +90,56 @@
   .btn-ghost span { transition: transform 0.2s; }
   .btn-ghost:hover span { transform: translateX(3px); }
 
+  /* ── URGENCY BAR ── */
+  .urgency-bar {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(181,135,83,0.25);
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .urgency-bar-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.75);
+  }
+
+  .urgency-bar-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+
+  .urgency-bar-cta {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(181,135,83,0.4);
+    padding-bottom: 1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .urgency-bar-cta:hover { color: var(--gold-light); border-color: var(--gold-light); }
+
+  @media (max-width: 540px) {
+    .urgency-bar { padding: 10px 20px; gap: 12px; }
+    .urgency-bar-text { font-size: 11px; }
+  }
+
   /* ── HERO ── */
   .hero {
     background: var(--black);
@@ -97,16 +147,6 @@
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid rgba(181,135,83,0.18);
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 30% 40% at 98% 30%, rgba(181,135,83,0.12) 0%, transparent 55%),
-      radial-gradient(ellipse 20% 25% at 2% 85%, rgba(181,135,83,0.05) 0%, transparent 55%);
-    pointer-events: none;
   }
 
   .hero-inner {
@@ -666,17 +706,7 @@
   .problem-section {
     background: var(--black);
     padding: 100px 40px;
-    position: relative;
-    overflow: hidden;
     border-bottom: 1px solid rgba(181,135,83,0.12);
-  }
-
-  .problem-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 22% 30% at 3% 20%, rgba(181,135,83,0.07) 0%, transparent 55%);
-    pointer-events: none;
   }
 
   .problem-inner {
@@ -1167,6 +1197,15 @@
 </style>
 </head>
 <body>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <span class="urgency-bar-text">
+    <span class="urgency-bar-dot"></span>
+    1 Growth Partnership spot currently available
+  </span>
+  <a href="#apply" class="urgency-bar-cta">Book a Call →</a>
+</div>
 
 <!-- NAV -->
 <div id="site-nav" data-cta-href="#apply" data-cta-label="Book a Call"></div>
