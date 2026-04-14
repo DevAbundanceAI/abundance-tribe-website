@@ -231,7 +231,7 @@
     gap: 24px;
     flex-wrap: wrap;
     opacity: 0;
-    animation: fadeUp 0.6s ease 0.4s forwards;
+    animation: fadeUp 0.6s ease 0.55s forwards;
   }
 
   .btn-ghost-light {
@@ -247,6 +247,50 @@
   .btn-ghost-light:hover { color: var(--cream); }
   .btn-ghost-light span { transition: transform 0.2s; }
   .btn-ghost-light:hover span { transform: translateX(3px); }
+
+  .hero-quote {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 52px;
+    max-width: 520px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.45s forwards;
+  }
+
+  .hero-quote-bar {
+    width: 2px;
+    min-height: 100%;
+    background: var(--gold);
+    flex-shrink: 0;
+    opacity: 0.6;
+    align-self: stretch;
+  }
+
+  .hero-quote-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .hero-quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 2vw, 22px);
+    font-weight: 600;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.45;
+  }
+
+  .hero-quote-attr {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.7;
+  }
 
   .hero-limit {
     margin-top: 64px;
@@ -1278,7 +1322,13 @@
     </div>
     <p class="hero-descriptor">Ryan Frost embeds into your business as your GTM authority. He leads your team directly, builds the full growth system with them, and steps back when it runs without you.</p>
     <h1>You have the team.<br><em>Growth still depends on you.</em></h1>
-    <p class="hero-sub">It is not a people problem. It is a system problem. And it has one fix.</p>
+    <div class="hero-quote">
+      <div class="hero-quote-bar"></div>
+      <div class="hero-quote-body">
+        <span class="hero-quote-text">"It's not a people problem. It's a system problem."</span>
+        <span class="hero-quote-attr">Ryan Frost</span>
+      </div>
+    </div>
     <div class="hero-actions">
       <a href="#apply" class="btn-gold">Book a Call</a>
       <a href="#problem" class="btn-ghost-light">See if this is you <span>→</span></a>
