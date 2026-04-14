@@ -369,22 +369,20 @@
 
   /* ── SECTION BRIDGE ── */
   .section-bridge-wrap {
-    background: linear-gradient(to bottom, var(--black) 50%, var(--warm-white) 50%);
-    padding: 72px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    z-index: 10;
+    max-width: 880px;
+    margin: -130px auto 80px;
+    padding: 0 40px;
   }
 
   .section-bridge {
     background: var(--black);
     border-radius: 16px;
-    padding: 72px 80px;
+    padding: 72px 72px;
     text-align: center;
     border: 1px solid rgba(181,135,83,0.22);
-    box-shadow: 0 24px 80px rgba(0,0,0,0.45);
-    max-width: 880px;
-    width: 100%;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,0,0,0.2);
   }
 
   .section-bridge-text {
@@ -405,7 +403,7 @@
 
   /* ── WHAT IT IS ── */
   .what-section {
-    padding: 100px 40px;
+    padding: 0 40px 100px;
     background: var(--warm-white);
     border-bottom: 1px solid var(--border-light);
   }
@@ -1485,15 +1483,13 @@
 
 </div><!-- end .grid-surface -->
 
-<!-- SECTION BRIDGE -->
-<div class="section-bridge-wrap">
-  <div class="section-bridge">
-    <p class="section-bridge-text sa">Better systems. Stronger leadership. <em>That's the answer.</em></p>
-  </div>
-</div>
-
 <!-- WHAT IT IS -->
 <section class="what-section" id="what">
+  <div class="section-bridge-wrap">
+    <div class="section-bridge">
+      <p class="section-bridge-text sa">Better systems. Stronger leadership. <em>That's the answer.</em></p>
+    </div>
+  </div>
   <div class="what-inner">
     <div class="what-left">
       <span class="section-label sa">What this is</span>
