@@ -821,6 +821,115 @@
     font-weight: 300;
   }
 
+  /* ── MID-PAGE CTA STRIP ── */
+  .mid-cta {
+    background: var(--dark);
+    border-top: 1px solid rgba(181,135,83,0.15);
+    border-bottom: 1px solid rgba(181,135,83,0.15);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .mid-cta-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .mid-cta-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .mid-cta-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .mid-cta-headline em { font-style: italic; color: var(--gold); }
+
+  /* ── PULL QUOTE ── */
+  .quote-section {
+    background: var(--black);
+    padding: 100px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quote-section::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 40px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 240px;
+    font-weight: 700;
+    color: rgba(181,135,83,0.06);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .quote-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(26px, 3.5vw, 44px);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    margin-bottom: 40px;
+  }
+
+  .quote-text em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .quote-attr {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .quote-attr-line {
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  .quote-attr-name {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.4);
+  }
+
+  @media (max-width: 900px) {
+    .mid-cta { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
+    .quote-section { padding: 72px 20px; }
+    .quote-section::before { font-size: 160px; }
+  }
+
   /* ── CTA ── */
   .cta-section {
     padding: 120px 40px;
@@ -945,7 +1054,7 @@
 <body>
 
 <!-- NAV -->
-<div id="site-nav" data-cta-href="#book-a-call" data-cta-label="Book a Call"></div>
+<div id="site-nav" data-cta-href="#apply" data-cta-label="Book a Call"></div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1015,7 +1124,7 @@
       <span class="section-label sa">What this is</span>
       <h2 class="sa">Not an agency.<br>Not a coach.<br><em>An embedded GTM authority.</em></h2>
       <p class="sa">Ryan comes in above your team. Not as a vendor. Not as an advisor who sends a deck once a month. As the strategic authority responsible for how your entire GTM operation runs.</p>
-      <p class="sa">He installs six core systems into your business, trains your team on how to execute each one, tracks the numbers that tell you if it is working, and holds everyone — including you — to the standard required to scale.</p>
+      <p class="sa">He installs six core systems into your business, trains your team on how to execute each one, tracks the numbers that tell you if it is working, and holds everyone, including you, to the standard required to scale.</p>
       <p class="sa"><strong>You get clarity on what to fix, a team that executes without you, and a business that grows on a system instead of on your effort.</strong></p>
     </div>
     <div class="what-right sa">
@@ -1116,7 +1225,7 @@
           </div>
           <div class="case-row">
             <span class="case-row-label">The Outcome</span>
-            <span class="case-row-text">$0 to $2.6M over 2.5 years, averaging $135k per month. A business with a real system that compound rather than depending on one person's effort.</span>
+            <span class="case-row-text">$0 to $2.6M over 2.5 years, averaging $135k per month. A business with a real system that compounds rather than depending on one person's effort.</span>
           </div>
         </div>
       </div>
@@ -1155,6 +1264,26 @@
   </div>
 </section>
 
+<!-- MID-PAGE CTA -->
+<div class="mid-cta">
+  <div class="mid-cta-text sa">
+    <span class="mid-cta-label">One spot available now</span>
+    <span class="mid-cta-headline">Ready to install the system<br>in <em>your</em> business?</span>
+  </div>
+  <a href="#apply" class="btn-gold sa" style="--sa-delay:80ms">Book a Call</a>
+</div>
+
+<!-- PULL QUOTE -->
+<section class="quote-section">
+  <div class="quote-inner">
+    <p class="quote-text sa">Every founder I have worked with had the same realization in the first 30 days. The bottleneck was never the team. It was the <em>absence of a standard above them.</em></p>
+    <div class="quote-attr sa" style="--sa-delay:80ms">
+      <span class="quote-attr-line"></span>
+      <span class="quote-attr-name">Ryan Frost, Abundance Growth Partnership</span>
+    </div>
+  </div>
+</section>
+
 <!-- FOR WHO -->
 <section class="who-section">
   <div class="who-inner">
@@ -1166,11 +1295,11 @@
       <div class="who-col sa">
         <span class="who-col-label">This is for you if</span>
         <ul class="who-list who-list-yes">
-          <li>You have revenue, an offer, and a team but no real GTM system holding it together</li>
-          <li>You are still the one making every growth decision and you are tired of it</li>
-          <li>You want someone installed above your team who sets the standard and enforces it</li>
-          <li>You are open to your team being held accountable, reorganized, or replaced if needed</li>
-          <li>You want to understand who on your team can actually scale your business</li>
+          <li>You are generating consistent revenue but growth still runs through you personally</li>
+          <li>You have a team and you know the system is missing, not the people</li>
+          <li>You want a real GTM authority above your team, not another consultant who emails PDFs</li>
+          <li>You are ready for someone to tell you exactly who on your team can execute and who cannot</li>
+          <li>You want to be the founder who oversees the machine, not the one holding it together</li>
         </ul>
       </div>
       <div class="who-col sa" style="--sa-delay:80ms">
@@ -1238,9 +1367,9 @@
     <div class="ryan-right">
       <span class="section-label sa" style="color: var(--gold);">Who you are working with</span>
       <h2 class="sa">Ryan Frost.<br><em>Still building.</em></h2>
-      <p class="sa">I have spent 5+ years building the sales and marketing systems behind <strong>$12M+ in revenue</strong> across coaching, consulting, and service businesses. This is not a framework I built years ago. It is what I am actively building and refining right now.</p>
-      <p class="sa">In a Growth Partnership you are not hiring an agency or a coach. You are bringing in a strategic authority who operates above your team, installs the system, and holds everyone to the standard. The same thinking I apply to everything I build gets applied to your business.</p>
-      <p class="sa"><strong>I take on 1 to 2 Growth Partners at a time.</strong> That is not a sales tactic. It is the only way to operate at the level this work requires.</p>
+      <p class="sa">I have spent 5+ years building the GTM systems behind <strong>$12M+ in revenue</strong> across coaching, consulting, and service businesses. Acquisition Network from zero to $2.6M. Smart Sellers Academy from zero infrastructure to $1.3M in 15 months. This is not theory. It is what I do.</p>
+      <p class="sa">When you bring me in, I am not a vendor you manage. I operate above your team. I set the standard. I decide what gets built first, what gets cut, and who is executing at the level required. You get my full attention on your business and a clear read on exactly what is and is not working.</p>
+      <p class="sa"><strong>I take on 1 to 2 Growth Partners at a time.</strong> That is not a sales tactic. It is the only way to do this work at the level it requires.</p>
       <div class="ryan-stats sa">
         <div class="ryan-stat">
           <span class="ryan-stat-num">$12M+</span>
