@@ -441,7 +441,7 @@
     margin-top: 36px;
     display: flex;
     flex-direction: column;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(98,68,31,0.12);
   }
 
   .outcome-item {
@@ -449,7 +449,7 @@
     align-items: baseline;
     gap: 14px;
     padding: 14px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(98,68,31,0.12);
   }
 
   .outcome-item::before {
@@ -466,13 +466,13 @@
   .outcome-label {
     font-size: 14px;
     font-weight: 600;
-    color: var(--cream);
+    color: var(--dark);
     line-height: 1.5;
   }
 
   .outcome-desc {
     font-size: 13px;
-    color: rgba(245,240,232,0.45);
+    color: var(--stone);
     font-weight: 400;
     margin-left: 4px;
   }
@@ -484,20 +484,13 @@
   }
 
   .what-callout {
-    background: var(--brown);
+    background: var(--parchment);
     border-radius: 12px;
     padding: 56px 48px;
-    border: 1px solid rgba(181,135,83,0.4);
+    border: 1px solid rgba(98,68,31,0.14);
     position: relative;
     overflow: hidden;
-  }
-
-  .what-callout::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(181,135,83,0.1) 0%, transparent 70%);
-    pointer-events: none;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
   }
 
   .what-callout-label {
@@ -508,17 +501,15 @@
     color: var(--gold);
     display: block;
     margin-bottom: 24px;
-    position: relative;
   }
 
   .what-callout-text {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(32px, 3.5vw, 48px);
     font-weight: 700;
-    color: var(--cream);
+    color: var(--dark);
     line-height: 1.1;
     letter-spacing: -0.02em;
-    position: relative;
   }
 
   .what-callout-text em {
