@@ -405,8 +405,8 @@
           </div>
         </div>
 
-        <!-- Partner (standalone) -->
-        <a href="/partner" class="snav-link snav-link-partner">Partner</a>
+        <!-- Growth Partnership (standalone) -->
+        <a href="/partner" class="snav-link snav-link-partner">Growth Partnership</a>
 
       </nav>
 
@@ -454,10 +454,10 @@
       </div>
 
       <div class="snav-drawer-section">
-        <span class="snav-drawer-label">Partnership</span>
+        <span class="snav-drawer-label">Growth Partnership</span>
         <a href="/partner" class="snav-drawer-link">
-          Abundance Partner
-          <span class="snav-drawer-desc">Done-for-you GTM systems for established founders</span>
+          Abundance Growth Partnership
+          <span class="snav-drawer-desc">Embedded GTM strategy and leadership for established founders</span>
         </a>
       </div>
 
