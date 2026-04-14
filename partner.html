@@ -142,14 +142,19 @@
     .urgency-bar-text { font-size: 11px; }
   }
 
-  /* ── HERO ── */
-  .hero {
+  /* ── GRID SURFACE (hero + problem unified) ── */
+  .grid-surface {
     background-color: var(--black);
     background-image:
-      radial-gradient(ellipse 80% 40% at 50% 0%, rgba(181,135,83,0.13) 0%, transparent 70%),
       linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: auto, 60px 60px, 60px 60px;
+    background-size: 60px 60px;
+    background-position: 0 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background-image: radial-gradient(ellipse 80% 40% at 50% 0%, rgba(181,135,83,0.13) 0%, transparent 70%);
     padding: 120px 40px 0;
     position: relative;
     overflow: hidden;
@@ -324,9 +329,11 @@
   }
 
   .hero-stat-divider {
-    width: 1px;
-    height: 40px;
-    background: rgba(181,135,83,0.2);
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    opacity: 0.35;
+    transform: rotate(45deg);
     flex-shrink: 0;
   }
 
@@ -783,11 +790,7 @@
 
   /* ── PROBLEM SECTION ── */
   .problem-section {
-    background-color: var(--black);
-    background-image:
-      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 60px 60px;
+    background: transparent;
     padding: 80px 40px;
     border-top: none;
     border-bottom: 1px solid rgba(181,135,83,0.18);
@@ -1340,6 +1343,7 @@
 <!-- NAV -->
 <div id="site-nav" data-cta-href="#apply" data-cta-label="Book a Call"></div>
 
+<div class="grid-surface">
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
@@ -1428,6 +1432,8 @@
     </div>
   </div>
 </section>
+
+</div><!-- end .grid-surface -->
 
 <!-- WHAT IT IS -->
 <section class="what-section" id="what">
