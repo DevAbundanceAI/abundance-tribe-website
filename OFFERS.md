@@ -157,17 +157,20 @@ The naming system tells a complete emotional journey:
 
 ---
 
-### Abundance Partner
+### Abundance Growth Partnership
 - **URL:** /partner
 - **Price:** Custom *(not displayed publicly)*
-- **Format:** Done-For-You / embedded partnership
-- **Core Promise:** A true growth partner embedded in your business
-- **Target:** Established founders who want full GTM systems built and run
-- **Scope:** Full GTM from lead to close — offer, lead flow, sales systems, automation
+- **Format:** Consulting / embedded strategic leadership — Ryan installs himself above the client's team, not as an executor
+- **Core Promise:** Your team gets the system. You get your business back.
+- **Target:** Established founders with a team and revenue who need strategic GTM leadership, not someone to do the work for them
+- **Scope:** Six systems installed across the team — Organic Content, Paid GTM (Meta), Conversion (CRM), Sales Process, Funnel Architecture, Brand Consistency
+- **How Ryan operates:** Above the team. Sets the standard, holds everyone accountable, vets who can execute. His framework, their execution.
+- **DFY upsells *(internal only, not on page)*:** Project-based DFY work available on top of the base engagement (e.g. funnel builds, ad creative, CRM setup). Scoped and priced separately per project. Never mentioned publicly.
+- **Recruiting support *(internal only)*:** Can assist sourcing execution talent if client does not have the right team in place. Surfaces in the sales call, not on the page.
 - **CTA:** Book a Call
 - **Primary Lead Source:** Closers.io network and mastermind communities
-- **Note:** Maximum 1-2 active clients at a time to protect Ryan's time and content bandwidth
-- **Status:** Active — primary revenue source currently
+- **Note:** Maximum 1-2 active clients at a time by design — quality of engagement over volume
+- **Status:** Active — primary revenue source currently. Career shift from DFY executor to strategic consulting model.
 
 ---
 
