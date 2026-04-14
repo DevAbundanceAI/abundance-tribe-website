@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abundance Partner — Embedded Growth Partnership</title>
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #F8F6EC;
+    --sand: #e8e0d0;
+    --stone: #9a8f80;
+    --dark-stone: #6b6058;
+    --brown: #62441F;
+    --dark: #1B1B1B;
+    --black: #141414;
+    --gold: #B58753;
+    --gold-light: #c9a06a;
+    --gold-dim: rgba(181,135,83,0.12);
+    --border-light: rgba(98,68,31,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--warm-white);
+    color: var(--dark);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── SHARED ── */
+  .section-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .btn-gold {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 18px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-dark {
+    display: inline-block;
+    background: var(--dark);
+    color: var(--cream);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 18px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-dark:hover { background: var(--brown); transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--dark-stone);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--gold); }
+  .btn-ghost span { transition: transform 0.2s; }
+  .btn-ghost:hover span { transform: translateX(3px); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--black);
+    padding: 100px 40px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 100% 50%, rgba(181,135,83,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 0% 100%, rgba(181,135,83,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.5s ease 0.1s forwards;
+  }
+
+  .hero-label-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2.5s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(44px, 6vw, 80px);
+    font-weight: 700;
+    line-height: 1.04;
+    color: var(--cream);
+    margin-bottom: 28px;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.2s forwards;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: rgba(245,240,232,0.6);
+    line-height: 1.75;
+    max-width: 600px;
+    margin-bottom: 52px;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.3s forwards;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.4s forwards;
+  }
+
+  .btn-ghost-light {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: rgba(245,240,232,0.5);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .btn-ghost-light:hover { color: var(--cream); }
+  .btn-ghost-light span { transition: transform 0.2s; }
+  .btn-ghost-light:hover span { transform: translateX(3px); }
+
+  .hero-limit {
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(181,135,83,0.15);
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.5s forwards;
+  }
+
+  .hero-limit-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hero-limit-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .hero-limit-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.4);
+  }
+
+  /* ── WHAT IT IS ── */
+  .what-section {
+    padding: 100px 40px;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .what-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+
+  .what-left h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 700;
+    line-height: 1.06;
+    color: var(--dark);
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .what-left h2 em { font-style: italic; color: var(--gold); }
+
+  .what-left p {
+    font-size: 16px;
+    color: var(--dark-stone);
+    line-height: 1.85;
+    margin-bottom: 16px;
+  }
+  .what-left p:last-of-type { margin-bottom: 0; }
+  .what-left strong { color: var(--dark); font-weight: 600; }
+
+  .what-right {}
+
+  .what-card {
+    background: var(--dark);
+    border-radius: 4px;
+    padding: 44px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .what-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(181,135,83,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .what-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: block;
+    position: relative;
+  }
+
+  .what-card-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .what-card-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px;
+    background: rgba(255,255,255,0.03);
+    transition: background 0.2s;
+  }
+  .what-card-item:hover { background: rgba(255,255,255,0.06); }
+
+  .what-card-item-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--gold-dim);
+    border: 1px solid rgba(181,135,83,0.2);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .what-card-item-icon svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .what-card-item-body {}
+
+  .what-card-item-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cream);
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .what-card-item-desc {
+    font-size: 12px;
+    color: rgba(245,240,232,0.5);
+    line-height: 1.6;
+  }
+
+  /* ── FOR WHO ── */
+  .who-section {
+    background: var(--cream);
+    padding: 100px 40px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .who-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .who-header {
+    max-width: 640px;
+    margin-bottom: 64px;
+  }
+
+  .who-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 700;
+    line-height: 1.06;
+    color: var(--dark);
+    letter-spacing: -0.02em;
+  }
+  .who-header h2 em { font-style: italic; color: var(--gold); }
+
+  .who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border-light);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .who-col {
+    background: var(--warm-white);
+    padding: 44px 40px;
+  }
+
+  .who-col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: block;
+  }
+
+  .who-col-label-no { color: var(--stone); }
+
+  .who-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .who-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 15px;
+    color: var(--dark-stone);
+    line-height: 1.5;
+  }
+  .who-list li:last-child { border-bottom: none; }
+
+  .who-list-yes li::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 13px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .who-list-no li {
+    color: var(--stone);
+  }
+
+  .who-list-no li::before {
+    content: '✕';
+    color: var(--stone);
+    font-weight: 700;
+    font-size: 12px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .how-section {
+    padding: 100px 40px;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .how-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .how-header {
+    max-width: 640px;
+    margin-bottom: 64px;
+  }
+
+  .how-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 700;
+    line-height: 1.06;
+    color: var(--dark);
+    letter-spacing: -0.02em;
+  }
+  .how-header h2 em { font-style: italic; color: var(--gold); }
+
+  .how-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border-light);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .how-step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 40px;
+    padding: 40px 44px;
+    background: var(--warm-white);
+    align-items: start;
+    transition: background 0.2s;
+  }
+  .how-step:hover { background: var(--cream); }
+
+  .how-step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--gold);
+    opacity: 0.3;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .how-step-body h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .how-step-body p {
+    font-size: 14px;
+    color: var(--dark-stone);
+    line-height: 1.75;
+    max-width: 560px;
+  }
+
+  /* ── RYAN ── */
+  .ryan-section {
+    background: var(--dark);
+    padding: 100px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ryan-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 50% 60% at 100% 50%, rgba(181,135,83,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .ryan-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 80px;
+    align-items: start;
+    position: relative;
+  }
+
+  .ryan-photo-wrap {
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    position: sticky;
+    top: 100px;
+  }
+
+  .ryan-photo {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .ryan-right {}
+
+  .ryan-right h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.06;
+    color: var(--cream);
+    margin-bottom: 32px;
+    letter-spacing: -0.02em;
+  }
+  .ryan-right h2 em { font-style: italic; color: var(--gold-light); }
+
+  .ryan-right p {
+    font-size: 16px;
+    color: rgba(245,240,232,0.65);
+    line-height: 1.85;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+  .ryan-right p:last-of-type { margin-bottom: 0; }
+  .ryan-right strong { color: var(--cream); font-weight: 600; }
+
+  .ryan-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 48px;
+  }
+
+  .ryan-stat {
+    background: rgba(255,255,255,0.02);
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .ryan-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .ryan-stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.3);
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    padding: 120px 40px;
+    background: var(--warm-white);
+    text-align: center;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .cta-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .cta-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 700;
+    line-height: 1.06;
+    color: var(--dark);
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+  .cta-section h2 em { font-style: italic; color: var(--gold); }
+
+  .cta-section p {
+    font-size: 16px;
+    color: var(--dark-stone);
+    line-height: 1.8;
+    margin-bottom: 48px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+  .cta-note {
+    font-size: 13px;
+    color: var(--stone);
+    font-style: italic;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--dark-stone);
+    letter-spacing: 0.04em;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer a { color: var(--dark-stone); text-decoration: underline; }
+  footer a:hover { color: var(--stone); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .sa {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s cubic-bezier(0.16,1,0.3,1),
+                transform 0.55s cubic-bezier(0.16,1,0.3,1);
+    transition-delay: var(--sa-delay, 0ms);
+  }
+  .sa.in { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { padding: 72px 20px 80px; }
+    .hero h1 { font-size: clamp(38px, 8vw, 60px); }
+    .hero-limit { gap: 24px; }
+
+    .what-section { padding: 72px 20px; }
+    .what-inner { grid-template-columns: 1fr; gap: 52px; }
+
+    .who-section { padding: 72px 20px; }
+    .who-grid { grid-template-columns: 1fr; }
+
+    .how-section { padding: 72px 20px; }
+    .how-step { grid-template-columns: 48px 1fr; gap: 24px; padding: 32px 24px; }
+
+    .ryan-section { padding: 72px 20px; }
+    .ryan-inner { grid-template-columns: 1fr; gap: 48px; }
+    .ryan-photo-wrap { position: static; max-height: 340px; overflow: hidden; }
+    .ryan-photo { aspect-ratio: 3/2; object-position: center 15%; }
+    .ryan-stats { grid-template-columns: repeat(3, 1fr); }
+
+    .cta-section { padding: 80px 20px; }
+    .cta-actions { flex-direction: column; }
+    .btn-gold, .btn-dark { width: 100%; text-align: center; }
+
+    footer { padding: 20px; flex-direction: column; text-align: center; }
+  }
+
+  @media (max-width: 540px) {
+    .ryan-stats { grid-template-columns: 1fr; }
+    .hero-limit { flex-direction: column; gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div id="site-nav" data-cta-href="#book-a-call" data-cta-label="Book a Call"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">
+      <span class="hero-label-dot"></span>
+      Abundance Partner
+    </div>
+    <h1>We build your<br>Selling System.<br><em>You scale.</em></h1>
+    <p class="hero-sub">A true growth partnership for established founders who want their full GTM built and running. Lead generation, sales systems, automation. Done with you and for you.</p>
+    <div class="hero-actions">
+      <a href="#apply" class="btn-gold">Book a Call</a>
+      <a href="#what" class="btn-ghost-light">See how it works <span>→</span></a>
+    </div>
+    <div class="hero-limit">
+      <div class="hero-limit-item">
+        <span class="hero-limit-num">1–2</span>
+        <span class="hero-limit-label">Active Partners at a time</span>
+      </div>
+      <div class="hero-limit-item">
+        <span class="hero-limit-num">$12M+</span>
+        <span class="hero-limit-label">Revenue built across clients</span>
+      </div>
+      <div class="hero-limit-item">
+        <span class="hero-limit-num">5+</span>
+        <span class="hero-limit-label">Clients taken past $1M/yr</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IT IS -->
+<section class="what-section" id="what">
+  <div class="what-inner">
+    <div class="what-left">
+      <span class="section-label sa">What this is</span>
+      <h2 class="sa">Not consulting.<br>Not coaching.<br><em>A partnership.</em></h2>
+      <p class="sa">Most founders who come to us have tried hiring agencies, buying courses, and figuring it out alone. None of it worked because none of it was built around their specific business.</p>
+      <p class="sa">Partner is different. Ryan is embedded in your business. Your lead generation, your sales process, your automations. Built from scratch, tuned to your offer, running in your systems.</p>
+      <p class="sa"><strong>You don't get a strategy deck. You get a working Selling System.</strong></p>
+    </div>
+    <div class="what-right sa">
+      <div class="what-card">
+        <span class="what-card-label">What gets built</span>
+        <div class="what-card-items">
+          <div class="what-card-item">
+            <div class="what-card-item-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <div class="what-card-item-body">
+              <span class="what-card-item-title">Offer Positioning</span>
+              <span class="what-card-item-desc">Sharpened, differentiated, built to convert without you explaining it every time.</span>
+            </div>
+          </div>
+          <div class="what-card-item">
+            <div class="what-card-item-icon">
+              <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div class="what-card-item-body">
+              <span class="what-card-item-title">Lead Generation System</span>
+              <span class="what-card-item-desc">Consistent inbound. Not dependent on your network or your posting schedule.</span>
+            </div>
+          </div>
+          <div class="what-card-item">
+            <div class="what-card-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="what-card-item-body">
+              <span class="what-card-item-title">Sales Process</span>
+              <span class="what-card-item-desc">Scripts, sequences, follow-up. A predictable path from lead to close.</span>
+            </div>
+          </div>
+          <div class="what-card-item">
+            <div class="what-card-item-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <div class="what-card-item-body">
+              <span class="what-card-item-title">Funnels and Automations</span>
+              <span class="what-card-item-desc">Built in your systems. Moves leads toward a decision while you focus on delivery.</span>
+            </div>
+          </div>
+          <div class="what-card-item">
+            <div class="what-card-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="what-card-item-body">
+              <span class="what-card-item-title">AI-Powered Systems</span>
+              <span class="what-card-item-desc">Automation and AI replace what used to require a team. More leverage, less overhead.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section class="who-section">
+  <div class="who-inner">
+    <div class="who-header">
+      <span class="section-label sa">Who this is for</span>
+      <h2 class="sa">Built for founders who are <em>ready to move.</em></h2>
+    </div>
+    <div class="who-grid">
+      <div class="who-col sa">
+        <span class="who-col-label">This is for you if</span>
+        <ul class="who-list who-list-yes">
+          <li>You have an offer and clients but no real system behind your growth</li>
+          <li>You are generating revenue but it depends entirely on your personal effort</li>
+          <li>You want the system built, not just explained to you</li>
+          <li>You are ready to invest seriously in infrastructure that compounds</li>
+          <li>You want direct access to someone who has done it at a high level</li>
+        </ul>
+      </div>
+      <div class="who-col sa" style="--sa-delay:80ms">
+        <span class="who-col-label who-col-label-no">This is not for you if</span>
+        <ul class="who-list who-list-no">
+          <li>You are looking for someone to do the work while you stay uninvolved</li>
+          <li>You do not have an established offer or consistent revenue yet</li>
+          <li>You want a report and a slide deck, not a working system</li>
+          <li>You are not open to changing how you think about your business</li>
+          <li>You expect overnight results without putting in the work alongside us</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="how-inner">
+    <div class="how-header">
+      <span class="section-label sa">How it works</span>
+      <h2 class="sa">From first call to<br>full <em>Selling System.</em></h2>
+    </div>
+    <div class="how-steps">
+      <div class="how-step sa">
+        <span class="how-step-num">01</span>
+        <div class="how-step-body">
+          <h3>We talk first</h3>
+          <p>Book a call. We learn your business, your offer, your current numbers, and where the real gaps are. If it is a fit we move forward. If it is not we will tell you honestly.</p>
+        </div>
+      </div>
+      <div class="how-step sa">
+        <span class="how-step-num">02</span>
+        <div class="how-step-body">
+          <h3>We audit and diagnose</h3>
+          <p>A full review of your current offer, lead flow, and sales process. We identify the highest-leverage gaps and build a sequenced roadmap before writing a line of copy or building a single funnel.</p>
+        </div>
+      </div>
+      <div class="how-step sa">
+        <span class="how-step-num">03</span>
+        <div class="how-step-body">
+          <h3>We build your Selling System</h3>
+          <p>Offer positioning, lead generation, sales process, funnels, automations. Built in your systems, tuned to your ICP, tested against your real numbers. Not a template. Your system.</p>
+        </div>
+      </div>
+      <div class="how-step sa">
+        <span class="how-step-num">04</span>
+        <div class="how-step-body">
+          <h3>We optimize and scale</h3>
+          <p>Once the system is running we improve it continuously. Data in, adjustments out. Your role shifts from doing everything to overseeing a machine that runs without you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RYAN -->
+<section class="ryan-section">
+  <div class="ryan-inner">
+    <div class="ryan-left">
+      <div class="ryan-photo-wrap sa">
+        <img src="/assets/images/Ryan-Frost-Profile-Picture.jpg" alt="Ryan Frost" class="ryan-photo">
+      </div>
+    </div>
+    <div class="ryan-right">
+      <span class="section-label sa" style="color: var(--gold);">Who you are working with</span>
+      <h2 class="sa">Ryan Frost.<br><em>Still building.</em></h2>
+      <p class="sa">I have spent 5+ years building the sales and marketing systems behind <strong>$12M+ in revenue</strong> across coaching, consulting, and service businesses. This is not a framework I built years ago. It is what I am actively building and refining right now.</p>
+      <p class="sa">As a Partner client you are not hiring an agency. You are working directly with me. I am embedded in your business alongside you. The systems we build are built with the same thinking I apply to everything I run.</p>
+      <p class="sa"><strong>I take on 1 to 2 Partner clients at a time.</strong> That is not a sales tactic. It is the only way to do this work at the level it deserves.</p>
+      <div class="ryan-stats sa">
+        <div class="ryan-stat">
+          <span class="ryan-stat-num">$12M+</span>
+          <span class="ryan-stat-label">Revenue Built</span>
+        </div>
+        <div class="ryan-stat">
+          <span class="ryan-stat-num">5+</span>
+          <span class="ryan-stat-label">Years Building</span>
+        </div>
+        <div class="ryan-stat">
+          <span class="ryan-stat-num">5+</span>
+          <span class="ryan-stat-label">Clients at $1M+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="apply">
+  <div class="cta-inner">
+    <span class="section-label sa" style="display:block; text-align:center;">Apply to work together</span>
+    <h2 class="sa">Let's see if it's<br>the right <em>fit.</em></h2>
+    <p class="sa">Book a call. We will learn about your business and tell you honestly whether Partnership is the right next step. No pressure. No pitch. Just a real conversation.</p>
+    <div class="cta-actions sa">
+      <a href="#" class="btn-dark">Book a Call</a>
+    </div>
+    <p class="cta-note sa">Currently accepting 1 new Partner client. Spots are limited by design.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="/assets/images/logo-light-wordmark.svg" alt="Abundance" height="22">
+  <span>© 2026 Abundance.AI &nbsp;·&nbsp; <a href="/tribe">Abundance Tribe</a> &nbsp;·&nbsp; <a href="/free">Free Training</a></span>
+  <span>findabundance.ai</span>
+</footer>
+
+<script>
+  (function () {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.sa').forEach(el => obs.observe(el));
+  })();
+</script>
+<script src="/assets/js/nav.js" defer></script>
+</body>
+</html>

@@ -2,6 +2,7 @@
    Abundance — Global Mega Nav
    Usage: add <div id="site-nav"></div> as the first element in
    <body>, then load this script with defer.
+   Per-page CTA override: <div id="site-nav" data-cta-href="/foo" data-cta-label="Label">
    ───────────────────────────────────────────────────────────── */
 
 (function () {
@@ -112,12 +113,31 @@
       flex-shrink: 0;
     }
 
+    /* ── SOON BADGE ── */
+    .snav-soon {
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--nav-stone);
+      background: rgba(154,143,128,0.15);
+      padding: 2px 5px;
+      border-radius: 3px;
+      line-height: 1.4;
+    }
+
+    /* ── PARTNER LINK (gold accent) ── */
+    .snav-link-partner {
+      color: var(--nav-dark);
+    }
+    .snav-link-partner:hover { color: var(--nav-gold); }
+
     /* ── DROPDOWN ── */
     .snav-dropdown {
       position: absolute;
-      top: calc(100% + 0px);
+      top: 100%;
       left: 0;
-      min-width: 280px;
+      min-width: 320px;
       background: var(--nav-bg);
       border: 1px solid var(--nav-border);
       border-top: 2px solid var(--nav-gold);
@@ -141,12 +161,19 @@
       transform: rotate(180deg);
     }
 
+    /* ── DROPDOWN DIVIDER ── */
+    .snav-dd-divider {
+      height: 1px;
+      background: var(--nav-border);
+      margin: 6px 8px;
+    }
+
     /* ── DROPDOWN ITEM ── */
     .snav-dd-item {
       display: flex;
       align-items: flex-start;
       gap: 14px;
-      padding: 14px 16px;
+      padding: 12px 16px;
       border-radius: 4px;
       text-decoration: none;
       color: var(--nav-dark);
@@ -155,8 +182,8 @@
     .snav-dd-item:hover { background: rgba(181,135,83,0.08); }
 
     .snav-dd-icon {
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       background: rgba(181,135,83,0.1);
       border-radius: 4px;
       display: flex;
@@ -165,8 +192,8 @@
       flex-shrink: 0;
     }
     .snav-dd-icon svg {
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       stroke: var(--nav-gold);
       fill: none;
       stroke-width: 1.5;
@@ -174,14 +201,14 @@
 
     .snav-dd-text {}
     .snav-dd-title {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--nav-dark);
       display: block;
       line-height: 1.3;
     }
     .snav-dd-desc {
-      font-size: 12px;
+      font-size: 11px;
       color: var(--nav-stone);
       display: block;
       margin-top: 2px;
@@ -256,14 +283,14 @@
     }
     .snav-drawer-link {
       display: flex;
-      align-items: center;
-      gap: 12px;
+      flex-direction: column;
       padding: 12px 0;
       text-decoration: none;
       color: var(--nav-dark);
       font-size: 15px;
       font-weight: 600;
       border-bottom: 1px solid var(--nav-border);
+      gap: 2px;
     }
     .snav-drawer-link:last-child { border-bottom: none; }
 
@@ -290,7 +317,7 @@
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 860px) {
+    @media (max-width: 900px) {
       .snav-inner { padding: 0 20px; }
       .snav-links { display: none; }
       .snav-cta { display: none; }
@@ -300,8 +327,6 @@
   document.head.appendChild(style);
 
   /* ── HTML ── */
-  const currentPath = window.location.pathname;
-
   const html = `
     <div class="snav-inner">
       <a class="snav-logo" href="/">
@@ -311,6 +336,12 @@
 
       <nav class="snav-links" aria-label="Main navigation">
 
+        <!-- Start a Business -->
+        <a href="/shift" class="snav-link">
+          Start a Business
+          <span class="snav-soon">Soon</span>
+        </a>
+
         <!-- Grow a Business -->
         <div class="snav-item">
           <button class="snav-trigger" aria-haspopup="true" aria-expanded="false">
@@ -318,24 +349,68 @@
             <svg viewBox="0 0 10 6" aria-hidden="true"><polyline points="1,1 5,5 9,1"/></svg>
           </button>
           <div class="snav-dropdown" role="menu">
+
+            <a href="/free" class="snav-dd-item" role="menuitem">
+              <div class="snav-dd-icon">
+                <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+              <div class="snav-dd-text">
+                <span class="snav-dd-title">Free Training</span>
+                <span class="snav-dd-desc">3 video trainings covering the core Selling System.</span>
+              </div>
+            </a>
+
             <a href="/tribe" class="snav-dd-item" role="menuitem">
               <div class="snav-dd-icon">
                 <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
               </div>
               <div class="snav-dd-text">
                 <span class="snav-dd-title">Abundance Tribe</span>
-                <span class="snav-dd-desc">Monthly membership with frameworks, coaching, and community for service founders.</span>
+                <span class="snav-dd-desc">Monthly membership. Frameworks, coaching, and community.</span>
               </div>
             </a>
+
+            <div class="snav-dd-divider"></div>
+
+            <a href="/shift" class="snav-dd-item" role="menuitem">
+              <div class="snav-dd-icon">
+                <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </div>
+              <div class="snav-dd-text">
+                <span class="snav-dd-title">Abundance Shift</span>
+                <span class="snav-dd-desc">4-month program. Build the foundation, stop being the bottleneck.</span>
+              </div>
+            </a>
+
+            <a href="/unlocked" class="snav-dd-item" role="menuitem">
+              <div class="snav-dd-icon">
+                <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+              </div>
+              <div class="snav-dd-text">
+                <span class="snav-dd-title">Abundance Unlocked</span>
+                <span class="snav-dd-desc">Coaching and done-with-you. Remove the ceiling, scale to $100k/mo.</span>
+              </div>
+            </a>
+
+            <a href="/freedom" class="snav-dd-item" role="menuitem">
+              <div class="snav-dd-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <div class="snav-dd-text">
+                <span class="snav-dd-title">Abundance Freedom</span>
+                <span class="snav-dd-desc">Mastermind for founders operating at $100k+/mo.</span>
+              </div>
+            </a>
+
           </div>
         </div>
 
-        <!-- Free Training -->
-        <a href="/free" class="snav-link">Free Training</a>
+        <!-- Partner (standalone) -->
+        <a href="/partner" class="snav-link snav-link-partner">Partner</a>
 
       </nav>
 
-      <a href="/tribe" class="snav-cta">Join the Tribe</a>
+      <a href="__CTA_HREF__" class="snav-cta">__CTA_LABEL__</a>
 
       <!-- Hamburger -->
       <button class="snav-hamburger" aria-label="Open menu" aria-expanded="false">
@@ -343,38 +418,66 @@
       </button>
     </div>
 
-    <!-- Mobile Drawer (appended to #site-nav, outside snav-inner) -->
+    <!-- Mobile Drawer -->
     <div class="snav-drawer" id="snav-drawer" aria-hidden="true">
+
       <div class="snav-drawer-section">
-        <span class="snav-drawer-label">Grow a Business</span>
-        <a href="/tribe" class="snav-drawer-link">
-          Abundance Tribe
-          <span class="snav-drawer-desc">Membership for service founders</span>
+        <span class="snav-drawer-label">Start a Business</span>
+        <a href="/shift" class="snav-drawer-link">
+          Start a Business
+          <span class="snav-drawer-desc">Coming soon — inquiries directed to Abundance Shift</span>
         </a>
       </div>
+
       <div class="snav-drawer-section">
-        <span class="snav-drawer-label">Learn</span>
-        <a href="/free" class="snav-drawer-link">Free Training</a>
+        <span class="snav-drawer-label">Grow a Business</span>
+        <a href="/free" class="snav-drawer-link">
+          Free Training
+          <span class="snav-drawer-desc">3 video trainings on the Selling System</span>
+        </a>
+        <a href="/tribe" class="snav-drawer-link">
+          Abundance Tribe
+          <span class="snav-drawer-desc">Monthly membership for service founders</span>
+        </a>
+        <a href="/shift" class="snav-drawer-link">
+          Abundance Shift
+          <span class="snav-drawer-desc">4-month coaching program</span>
+        </a>
+        <a href="/unlocked" class="snav-drawer-link">
+          Abundance Unlocked
+          <span class="snav-drawer-desc">Scale to $100k/mo</span>
+        </a>
+        <a href="/freedom" class="snav-drawer-link">
+          Abundance Freedom
+          <span class="snav-drawer-desc">Mastermind at the top level</span>
+        </a>
       </div>
-      <a href="/tribe" class="snav-drawer-cta">Join the Tribe</a>
+
+      <div class="snav-drawer-section">
+        <span class="snav-drawer-label">Partnership</span>
+        <a href="/partner" class="snav-drawer-link">
+          Abundance Partner
+          <span class="snav-drawer-desc">Done-for-you GTM systems for established founders</span>
+        </a>
+      </div>
+
+      <a href="__CTA_HREF__" class="snav-drawer-cta">__CTA_LABEL__</a>
     </div>
   `;
 
   const mount = document.getElementById('site-nav');
   if (!mount) return;
 
-  // Allow per-page CTA override via data attributes
+  // Per-page CTA override via data attributes
   const ctaHref  = mount.dataset.ctaHref  || '/tribe';
   const ctaLabel = mount.dataset.ctaLabel || 'Join the Tribe';
   const finalHtml = html
-    .replace(/href="\/tribe" class="snav-cta"/g,  `href="${ctaHref}" class="snav-cta"`)
-    .replace(/href="\/tribe" class="snav-drawer-cta"/g, `href="${ctaHref}" class="snav-drawer-cta"`)
-    .replace(/>Join the Tribe<\/a>/g, `>${ctaLabel}</a>`);
+    .replace(/__CTA_HREF__/g, ctaHref)
+    .replace(/__CTA_LABEL__/g, ctaLabel);
 
   mount.innerHTML = finalHtml;
 
   /* ── JS INTERACTIONS ── */
-  // Hamburger toggle
   const hamburger = document.querySelector('.snav-hamburger');
   const drawer = document.getElementById('snav-drawer');
 
@@ -399,7 +502,7 @@
     }
   });
 
-  // Close drawer when a link inside it is clicked
+  // Close drawer when a link is clicked
   if (drawer) {
     drawer.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
@@ -409,7 +512,7 @@
     });
   }
 
-  // Keyboard: close dropdown on Escape
+  // Keyboard: close on Escape
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       if (drawer && drawer.classList.contains('open')) {
