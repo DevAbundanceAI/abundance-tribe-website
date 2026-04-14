@@ -368,23 +368,34 @@
   }
 
   /* ── SECTION BRIDGE ── */
+  .section-bridge-wrap {
+    position: relative;
+    z-index: 10;
+    max-width: 960px;
+    margin: -72px auto -72px;
+    padding: 0 40px;
+  }
+
   .section-bridge {
-    background: var(--black);
-    padding: 100px 40px;
+    background-color: var(--black);
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    border-radius: 16px;
+    padding: 72px 80px;
     text-align: center;
-    border-top: 1px solid rgba(181,135,83,0.18);
-    border-bottom: 1px solid rgba(181,135,83,0.18);
+    border: 1px solid rgba(181,135,83,0.22);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.5);
   }
 
   .section-bridge-text {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(52px, 9vw, 120px);
+    font-size: clamp(44px, 7vw, 96px);
     font-weight: 700;
     color: var(--cream);
     line-height: 1.0;
     letter-spacing: -0.03em;
-    max-width: 1000px;
-    margin: 0 auto;
   }
 
   .section-bridge-text em {
@@ -396,7 +407,7 @@
 
   /* ── WHAT IT IS ── */
   .what-section {
-    padding: 100px 40px;
+    padding: 172px 40px 100px;
     background: var(--warm-white);
     border-bottom: 1px solid var(--border-light);
   }
@@ -1477,8 +1488,10 @@
 </div><!-- end .grid-surface -->
 
 <!-- SECTION BRIDGE -->
-<div class="section-bridge">
-  <p class="section-bridge-text sa">Better systems. Stronger leadership. <em>That's the answer.</em></p>
+<div class="section-bridge-wrap">
+  <div class="section-bridge">
+    <p class="section-bridge-text sa">Better systems. Stronger leadership. <em>That's the answer.</em></p>
+  </div>
 </div>
 
 <!-- WHAT IT IS -->
