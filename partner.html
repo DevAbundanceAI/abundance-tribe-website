@@ -11,12 +11,14 @@
 <style>
   :root {
     --cream: #F5F0E8;
+    --parchment: #F5F0E8;
     --warm-white: #F8F6EC;
     --sand: #e8e0d0;
     --stone: #9a8f80;
     --dark-stone: #6b6058;
     --brown: #62441F;
     --dark: #1B1B1B;
+    --carbon: #1B1B1B;
     --black: #141414;
     --gold: #B58753;
     --gold-light: #c9a06a;
@@ -704,17 +706,21 @@
 
   /* ── PROBLEM SECTION ── */
   .problem-section {
-    background: var(--warm-white);
-    padding: 100px 40px;
-    border-bottom: 1px solid rgba(98,68,31,0.1);
+    background: var(--carbon);
+    padding: 80px 40px;
+    border-top: 1px solid rgba(181,135,83,0.12);
+    border-bottom: 1px solid rgba(181,135,83,0.12);
   }
 
   .problem-inner {
     max-width: 1100px;
     margin: 0 auto;
+    background: var(--parchment);
+    border-radius: 12px;
+    padding: 64px 72px;
     display: grid;
-    grid-template-columns: 340px 1fr;
-    gap: 0 80px;
+    grid-template-columns: 300px 1fr;
+    gap: 0 72px;
     align-items: start;
   }
 
@@ -731,9 +737,9 @@
 
   .problem-left h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(32px, 3.5vw, 48px);
+    font-size: clamp(28px, 3vw, 42px);
     font-weight: 700;
-    line-height: 1.08;
+    line-height: 1.1;
     color: #1B1B1B;
     letter-spacing: -0.02em;
     margin-bottom: 32px;
@@ -742,17 +748,17 @@
 
   .problem-pivot {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(16px, 1.6vw, 20px);
+    font-size: clamp(15px, 1.4vw, 18px);
     font-weight: 600;
     font-style: italic;
     color: var(--gold);
     padding-top: 24px;
     border-top: 1px solid rgba(181,135,83,0.3);
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
   .problem-right {
-    padding-top: 8px;
+    padding-top: 4px;
   }
 
   .problem-list {
@@ -762,9 +768,9 @@
 
   .problem-item {
     display: grid;
-    grid-template-columns: 56px 1fr;
-    gap: 0 24px;
-    padding: 32px 0;
+    grid-template-columns: 48px 1fr;
+    gap: 0 20px;
+    padding: 28px 0;
     border-bottom: 1px solid rgba(98,68,31,0.1);
     align-items: start;
   }
@@ -772,10 +778,10 @@
 
   .problem-item-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 700;
     color: var(--gold);
-    opacity: 0.2;
+    opacity: 0.25;
     line-height: 1;
     text-align: right;
     padding-top: 2px;
@@ -784,12 +790,12 @@
   .problem-item-content {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 7px;
   }
 
   .problem-item-headline {
     font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     color: #1B1B1B;
     line-height: 1.4;
@@ -798,7 +804,7 @@
 
   .problem-item-body {
     font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 400;
     color: #6b6058;
     line-height: 1.75;
@@ -1196,12 +1202,12 @@
     .hero h1 { font-size: clamp(38px, 8vw, 60px); }
     .hero-limit { gap: 24px; }
 
-    .problem-section { padding: 72px 20px; }
-    .problem-inner { grid-template-columns: 1fr; gap: 48px; }
+    .problem-section { padding: 40px 16px; }
+    .problem-inner { grid-template-columns: 1fr; gap: 40px; padding: 40px 28px; border-radius: 10px; }
     .problem-left { position: static; }
-    .problem-item { grid-template-columns: 44px 1fr; gap: 0 16px; padding: 24px 0; }
-    .problem-item-num { font-size: 36px; }
-    .problem-item-headline { font-size: 15px; }
+    .problem-item { grid-template-columns: 40px 1fr; gap: 0 14px; padding: 22px 0; }
+    .problem-item-num { font-size: 32px; }
+    .problem-item-headline { font-size: 14px; }
     .problem-item-body { font-size: 13px; }
 
     .cases-section { padding: 72px 20px; }
