@@ -729,33 +729,52 @@
   .problem-list {
     display: flex;
     flex-direction: column;
-    gap: 1px;
     margin-bottom: 56px;
   }
 
   .problem-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 24px;
-    padding: 28px 0;
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 0 28px;
+    padding: 36px 0;
     border-bottom: 1px solid rgba(255,255,255,0.06);
-    font-size: 17px;
-    color: rgba(245,240,232,0.65);
-    line-height: 1.65;
-    font-weight: 300;
+    align-items: start;
   }
   .problem-item:last-child { border-bottom: none; }
 
   .problem-item-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
+    font-size: 56px;
     font-weight: 700;
     color: var(--gold);
-    opacity: 0.4;
-    line-height: 1.4;
-    flex-shrink: 0;
-    width: 28px;
+    opacity: 0.12;
+    line-height: 1;
     text-align: right;
+    padding-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .problem-item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .problem-item-headline {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--cream);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+
+  .problem-item-body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(245,240,232,0.5);
+    line-height: 1.7;
   }
 
   .problem-pivot {
@@ -1161,7 +1180,10 @@
     .hero-limit { gap: 24px; }
 
     .problem-section { padding: 72px 20px; }
-    .problem-item { font-size: 15px; gap: 16px; }
+    .problem-item { grid-template-columns: 52px 1fr; gap: 0 16px; padding: 28px 0; }
+    .problem-item-num { font-size: 40px; }
+    .problem-item-headline { font-size: 15px; }
+    .problem-item-body { font-size: 13px; }
 
     .cases-section { padding: 72px 20px; }
     .cases-grid { grid-template-columns: 1fr; }
@@ -1248,23 +1270,38 @@
     <div class="problem-list">
       <div class="problem-item sa">
         <span class="problem-item-num">1</span>
-        <span>Every real growth decision routes back to you. Your team executes tasks. Nobody owns the strategy. The business only moves when you push it.</span>
+        <div class="problem-item-content">
+          <span class="problem-item-headline">Every growth decision still routes back to you.</span>
+          <span class="problem-item-body">Your team executes tasks. Nobody owns the strategy. The business only moves when you push it. That is not a delegation problem. That is a leadership gap above the team.</span>
+        </div>
       </div>
       <div class="problem-item sa" style="--sa-delay:60ms">
         <span class="problem-item-num">2</span>
-        <span>You have tactics. You do not have a system. Content, ads, follow-up. None of it connects. You are busy. The numbers are not moving proportionally.</span>
+        <div class="problem-item-content">
+          <span class="problem-item-headline">You have tactics. You do not have a system.</span>
+          <span class="problem-item-body">Content, ads, follow-up, DMs. None of it connects into one coordinated engine. You are putting in effort. The output is not proportional. That gap is a systems problem.</span>
+        </div>
       </div>
       <div class="problem-item sa" style="--sa-delay:120ms">
         <span class="problem-item-num">3</span>
-        <span>You do not know your real numbers. Revenue, yes. But CAC, close rate, lead-to-call conversion — either unknown or ignored. You are making decisions blind.</span>
+        <div class="problem-item-content">
+          <span class="problem-item-headline">You are making growth decisions blind.</span>
+          <span class="problem-item-body">Revenue, yes. But CAC, close rate, lead-to-call conversion, offer efficiency — either unknown or ignored. Without the numbers, you cannot know what to fix first.</span>
+        </div>
       </div>
       <div class="problem-item sa" style="--sa-delay:180ms">
         <span class="problem-item-num">4</span>
-        <span>You have hired. You have delegated. Results were inconsistent. Not because the people were wrong. Because no one above them had a standard and held it.</span>
+        <div class="problem-item-content">
+          <span class="problem-item-headline">You have hired. Results were inconsistent.</span>
+          <span class="problem-item-body">Not because the people were wrong. Because no one above them had a standard and held it. Accountability without a clear GTM framework produces noise, not results.</span>
+        </div>
       </div>
       <div class="problem-item sa" style="--sa-delay:240ms">
         <span class="problem-item-num">5</span>
-        <span>You can see exactly what a bigger version of your business looks like. You just cannot close the gap. And you are exhausted from trying to figure out why.</span>
+        <div class="problem-item-content">
+          <span class="problem-item-headline">You can see what the next level looks like.</span>
+          <span class="problem-item-body">You just cannot close the gap. You have been trying to figure out why for longer than you should have. That is not a motivation problem. That is a missing operating layer.</span>
+        </div>
       </div>
     </div>
     <p class="problem-pivot sa">That is not a hustle problem. That is a system problem. And it has one fix.</p>
