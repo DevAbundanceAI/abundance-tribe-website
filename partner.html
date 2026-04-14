@@ -621,6 +621,206 @@
     color: rgba(245,240,232,0.3);
   }
 
+  /* ── PROBLEM SECTION ── */
+  .problem-section {
+    background: var(--black);
+    padding: 100px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .problem-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 50% 60% at 0% 50%, rgba(181,135,83,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .problem-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .problem-inner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 700;
+    line-height: 1.06;
+    color: var(--cream);
+    margin-bottom: 56px;
+    letter-spacing: -0.02em;
+  }
+  .problem-inner h2 em { font-style: italic; color: var(--gold); }
+
+  .problem-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    margin-bottom: 56px;
+  }
+
+  .problem-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 17px;
+    color: rgba(245,240,232,0.65);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+  .problem-item:last-child { border-bottom: none; }
+
+  .problem-item-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold);
+    opacity: 0.4;
+    line-height: 1.4;
+    flex-shrink: 0;
+    width: 28px;
+    text-align: right;
+  }
+
+  .problem-pivot {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--cream);
+    padding-top: 12px;
+    border-top: 1px solid rgba(181,135,83,0.2);
+  }
+
+  /* ── CASE STUDIES ── */
+  .cases-section {
+    background: var(--black);
+    padding: 100px 40px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .cases-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .cases-header {
+    max-width: 640px;
+    margin-bottom: 64px;
+  }
+
+  .cases-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 700;
+    line-height: 1.06;
+    color: var(--cream);
+    letter-spacing: -0.02em;
+  }
+  .cases-header h2 em { font-style: italic; color: var(--gold); }
+
+  .cases-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .case-card {
+    background: rgba(255,255,255,0.02);
+    padding: 52px 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: background 0.2s;
+  }
+  .case-card:hover { background: rgba(255,255,255,0.04); }
+
+  .case-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .case-company {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+
+  .case-stats {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .case-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .case-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .case-stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.3);
+  }
+
+  .case-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .case-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .case-row-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.3);
+  }
+
+  .case-row-text {
+    font-size: 14px;
+    color: rgba(245,240,232,0.6);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
   /* ── CTA ── */
   .cta-section {
     padding: 120px 40px;
@@ -707,6 +907,13 @@
     .hero h1 { font-size: clamp(38px, 8vw, 60px); }
     .hero-limit { gap: 24px; }
 
+    .problem-section { padding: 72px 20px; }
+    .problem-item { font-size: 15px; gap: 16px; }
+
+    .cases-section { padding: 72px 20px; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .case-card { padding: 40px 28px; }
+
     .what-section { padding: 72px 20px; }
     .what-inner { grid-template-columns: 1fr; gap: 52px; }
 
@@ -747,16 +954,16 @@
       <span class="hero-label-dot"></span>
       Abundance Growth Partnership
     </div>
-    <h1>Your team gets<br>the system.<br><em>You get your business back.</em></h1>
-    <p class="hero-sub">Ryan embeds into your business as your GTM authority. He installs the full growth system, leads your team, and holds everyone accountable until it runs without him.</p>
+    <h1>Your team can execute.<br>They just need someone<br>to <em>install the system.</em></h1>
+    <p class="hero-sub">Ryan embeds into your business as your GTM authority. He installs the full growth system across your team, sets the standard, holds everyone accountable, and steps back when it runs without him.</p>
     <div class="hero-actions">
       <a href="#apply" class="btn-gold">Book a Call</a>
-      <a href="#what" class="btn-ghost-light">See how it works <span>→</span></a>
+      <a href="#problem" class="btn-ghost-light">See if this is you <span>→</span></a>
     </div>
     <div class="hero-limit">
       <div class="hero-limit-item">
         <span class="hero-limit-num">1–2</span>
-        <span class="hero-limit-label">Active Partners at a time</span>
+        <span class="hero-limit-label">Active partners at a time</span>
       </div>
       <div class="hero-limit-item">
         <span class="hero-limit-num">$12M+</span>
@@ -770,15 +977,46 @@
   </div>
 </section>
 
+<!-- PROBLEM -->
+<section class="problem-section" id="problem">
+  <div class="problem-inner">
+    <span class="section-label sa">Sound familiar</span>
+    <h2 class="sa">You have revenue.<br>You have a team.<br><em>Growth still depends on you.</em></h2>
+    <div class="problem-list">
+      <div class="problem-item sa">
+        <span class="problem-item-num">1</span>
+        <span>Your team is active but no one owns the strategy. Every real growth decision routes back to you because no one else has the full picture.</span>
+      </div>
+      <div class="problem-item sa" style="--sa-delay:60ms">
+        <span class="problem-item-num">2</span>
+        <span>You are running ads, posting content, following up on leads — but none of it is connected into a system. You are doing marketing. You do not have a GTM engine.</span>
+      </div>
+      <div class="problem-item sa" style="--sa-delay:120ms">
+        <span class="problem-item-num">3</span>
+        <span>You do not know your real numbers. You know revenue. But your CAC, your close rate, your lead-to-call conversion — those numbers are either unknown or not being used to make decisions.</span>
+      </div>
+      <div class="problem-item sa" style="--sa-delay:180ms">
+        <span class="problem-item-num">4</span>
+        <span>You have hired people. You have tried delegating. The results were inconsistent because no one installed a standard above the team and held it. You got effort. Not a system.</span>
+      </div>
+      <div class="problem-item sa" style="--sa-delay:240ms">
+        <span class="problem-item-num">5</span>
+        <span>You know what a scaled version of your business looks like. You can see it. But the gap between here and there has never been clearly mapped, and you are tired of running experiments while the business stays flat.</span>
+      </div>
+    </div>
+    <p class="problem-pivot sa">This is not a hustle problem. It is a system problem. That is exactly what the Growth Partnership is built to fix.</p>
+  </div>
+</section>
+
 <!-- WHAT IT IS -->
 <section class="what-section" id="what">
   <div class="what-inner">
     <div class="what-left">
       <span class="section-label sa">What this is</span>
-      <h2 class="sa">Not an agency.<br>Not a coach.<br><em>An embedded strategic partner.</em></h2>
-      <p class="sa">Most founders have a team that does not know what to do or in what order. They have tried hiring, delegating, and figuring it out. Nothing sticks because no one is installed above the team with a real standard.</p>
-      <p class="sa">The Growth Partnership is different. Ryan comes in above your team, installs the full GTM system across six disciplines, and holds everyone accountable to executing it. His framework. His standard. Your business.</p>
-      <p class="sa"><strong>You don't get a report. You get a new operating system installed into your team.</strong></p>
+      <h2 class="sa">Not an agency.<br>Not a coach.<br><em>An embedded GTM authority.</em></h2>
+      <p class="sa">Ryan comes in above your team. Not as a vendor. Not as an advisor who sends a deck once a month. As the strategic authority responsible for how your entire GTM operation runs.</p>
+      <p class="sa">He installs six core systems into your business, trains your team on how to execute each one, tracks the numbers that tell you if it is working, and holds everyone — including you — to the standard required to scale.</p>
+      <p class="sa"><strong>You get clarity on what to fix, a team that executes without you, and a business that grows on a system instead of on your effort.</strong></p>
     </div>
     <div class="what-right sa">
       <div class="what-card">
@@ -831,15 +1069,88 @@
           </div>
           <div class="what-card-item">
             <div class="what-card-item-icon">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
             </div>
             <div class="what-card-item-body">
-              <span class="what-card-item-title">Brand Consistency</span>
-              <span class="what-card-item-desc">Voice, positioning, and visual alignment across every channel. One message, everywhere.</span>
+              <span class="what-card-item-title">Number Clarity System</span>
+              <span class="what-card-item-desc">KPI dashboards, weekly reporting cadence, the right metrics for your stage. Most founders are busy but blind. This fixes that.</span>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="cases-section" id="results">
+  <div class="cases-inner">
+    <div class="cases-header">
+      <span class="section-label sa">Results</span>
+      <h2 class="sa">What happens when the<br>system gets <em>installed.</em></h2>
+    </div>
+    <div class="cases-grid">
+
+      <!-- Case 1: Acquisition Network -->
+      <div class="case-card sa">
+        <span class="case-tag">GTM Consulting Partnership</span>
+        <span class="case-company">Acquisition Network</span>
+        <div class="case-stats">
+          <div class="case-stat">
+            <span class="case-stat-num"><!-- TODO: e.g. $2.4M --></span>
+            <span class="case-stat-label">Revenue Generated</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat-num"><!-- TODO: e.g. 3.2x --></span>
+            <span class="case-stat-label">Growth Multiplier</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-row">
+            <span class="case-row-label">The Situation</span>
+            <span class="case-row-text"><!-- TODO: 1-2 sentences on what was happening before Ryan engaged --></span>
+          </div>
+          <div class="case-row">
+            <span class="case-row-label">What Changed</span>
+            <span class="case-row-text"><!-- TODO: 1-2 sentences on what systems were installed and how the team changed --></span>
+          </div>
+          <div class="case-row">
+            <span class="case-row-label">The Outcome</span>
+            <span class="case-row-text"><!-- TODO: 1-2 sentences on the measurable result --></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 2: Smart Sellers Academy -->
+      <div class="case-card sa" style="--sa-delay:80ms">
+        <span class="case-tag">GTM Consulting Partnership</span>
+        <span class="case-company">Smart Sellers Academy</span>
+        <div class="case-stats">
+          <div class="case-stat">
+            <span class="case-stat-num"><!-- TODO: e.g. $1.8M --></span>
+            <span class="case-stat-label">Revenue Generated</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat-num"><!-- TODO: e.g. 4x --></span>
+            <span class="case-stat-label">Close Rate Improvement</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-row">
+            <span class="case-row-label">The Situation</span>
+            <span class="case-row-text"><!-- TODO: 1-2 sentences on what was happening before Ryan engaged --></span>
+          </div>
+          <div class="case-row">
+            <span class="case-row-label">What Changed</span>
+            <span class="case-row-text"><!-- TODO: 1-2 sentences on what systems were installed and how the team changed --></span>
+          </div>
+          <div class="case-row">
+            <span class="case-row-label">The Outcome</span>
+            <span class="case-row-text"><!-- TODO: 1-2 sentences on the measurable result --></span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -951,13 +1262,14 @@
 <!-- CTA -->
 <section class="cta-section" id="apply">
   <div class="cta-inner">
-    <span class="section-label sa" style="display:block; text-align:center;">Apply to work together</span>
-    <h2 class="sa">Let's see if it's<br>the right <em>fit.</em></h2>
-    <p class="sa">Book a call. We will learn about your business, your team, and where the real gaps are. If the Growth Partnership is the right next step we will tell you. If it is not we will tell you that too.</p>
+    <span class="section-label sa" style="display:block; text-align:center;">One spot open</span>
+    <h2 class="sa">If your business should<br>be bigger than it is,<br><em>this call is the next step.</em></h2>
+    <p class="sa">Book a 30-minute call. We will look at your offer, your team, and your current numbers together. If there is a clear path to install the Growth Partnership and it makes sense for both sides, we will tell you how that looks. If it is not the right fit, we will tell you that too and point you toward what is.</p>
+    <p class="sa" style="font-size:15px; color:var(--stone); margin-bottom: 0;">No pitch. No pressure. A real conversation with someone who has built GTM systems at this level before.</p>
     <div class="cta-actions sa">
       <a href="#" class="btn-dark">Book a Call</a>
     </div>
-    <p class="cta-note sa">Currently accepting 1 new Growth Partner. Spots are limited by design.</p>
+    <p class="cta-note sa">Currently accepting 1 new Growth Partner. There are no shortcuts to doing this at the level it deserves.</p>
   </div>
 </section>
 
