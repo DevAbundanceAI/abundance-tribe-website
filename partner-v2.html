@@ -10,38 +10,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #F5F8FC;
-    --parchment: #FFFFFF;
-    --warm-white: #F5F8FC;
-    --sand: #E8EFFC;
-    --stone: #5A6B85;
-    --dark-stone: #3B4A65;
-    --brown: #0F1D3A;
-    --dark: #0F1D3A;
-    --carbon: #0F1D3A;
-    --black: #0F1D3A;
-    --gold: #2B5CE6;
-    --gold-light: #4D7AFF;
-    --gold-dim: rgba(43,92,230,0.12);
-    --border-light: rgba(15,29,58,0.08);
-    --card-shadow: 0 2px 8px rgba(15,29,58,0.04), 0 8px 32px rgba(15,29,58,0.06);
-    --card-shadow-lg: 0 4px 16px rgba(15,29,58,0.06), 0 24px 64px rgba(15,29,58,0.1);
+    /* Exact MultiplyClients-style palette (Tailwind blue/slate family) */
+    --cream: #F8FAFC;          /* slate-50 — page bg */
+    --parchment: #FFFFFF;      /* pure white cards */
+    --warm-white: #F8FAFC;
+    --sand: #EFF6FF;           /* blue-50 — soft highlight */
+    --stone: #64748B;           /* slate-500 — secondary text */
+    --dark-stone: #475569;      /* slate-600 */
+    --brown: #0F172A;           /* slate-900 */
+    --dark: #0F172A;            /* slate-900 — primary text */
+    --carbon: #0F172A;
+    --black: #0F172A;
+    --gold: #2563EB;            /* blue-600 — primary accent */
+    --gold-light: #3B82F6;      /* blue-500 */
+    --gold-dim: rgba(37,99,235,0.12);
+    --border-light: #E2E8F0;    /* slate-200 */
+    --card-shadow: 0 1px 3px rgba(15,23,42,0.04), 0 4px 16px rgba(15,23,42,0.05);
+    --card-shadow-lg: 0 4px 12px rgba(15,23,42,0.05), 0 16px 48px rgba(15,23,42,0.08);
 
-    --blue-deep: #1E3A8A;
-    --blue: #3366FF;
-    --blue-mid: #4D7AFF;
-    --blue-light: #6FA8FF;
-    --blue-ice: #B8D4FF;
-    --blue-sky: #E6F0FF;
-    --blue-mist: #F0F7FF;
+    /* Blue scale (Tailwind) */
+    --blue-deep: #1E40AF;       /* blue-800 */
+    --blue: #2563EB;            /* blue-600 */
+    --blue-mid: #3B82F6;        /* blue-500 */
+    --blue-light: #60A5FA;      /* blue-400 */
+    --blue-ice: #93C5FD;        /* blue-300 */
+    --blue-sky: #DBEAFE;        /* blue-100 */
+    --blue-mist: #EFF6FF;       /* blue-50 */
 
-    --gradient-text: linear-gradient(135deg, #3366FF 0%, #6FA8FF 70%, #8EC0FF 100%);
-    --gradient-btn: linear-gradient(135deg, #3366FF 0%, #4D7AFF 100%);
-    --gradient-btn-hover: linear-gradient(135deg, #2551E0 0%, #3366FF 100%);
-    --gradient-hero: radial-gradient(ellipse 90% 60% at 50% 0%, #D9E8FF 0%, #E8F1FF 30%, #F5F8FC 70%, #FFFFFF 100%);
-    --gradient-section: linear-gradient(180deg, #FFFFFF 0%, #F5F8FC 100%);
-    --shadow-blue: 0 8px 32px rgba(51,102,255,0.15), 0 2px 8px rgba(51,102,255,0.08);
-    --shadow-blue-lg: 0 16px 48px rgba(51,102,255,0.18), 0 4px 16px rgba(51,102,255,0.1);
+    /* Gradients (exact match to reference) */
+    --gradient-text: linear-gradient(135deg, #2563EB 0%, #3B82F6 50%, #60A5FA 100%);
+    --gradient-btn: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+    --gradient-btn-hover: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%);
+    --gradient-hero: radial-gradient(ellipse 100% 60% at 50% 0%, #DBEAFE 0%, #EFF6FF 35%, #F8FAFC 70%, #FFFFFF 100%);
+    --gradient-section: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+    --shadow-blue: 0 4px 16px rgba(37,99,235,0.12);
+    --shadow-blue-lg: 0 8px 32px rgba(37,99,235,0.15);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1334,15 +1337,27 @@
   }
 
   /* ═══════════════════════════════════════════════════════════
-     V2 DESIGN LAYER — Gradient SaaS aesthetic (MultiplyClients-style)
-     Light blue gradients, gradient-text italics, gradient buttons,
-     ambient blue glows throughout.
+     V2 DESIGN LAYER — Restrained light SaaS
+     Gradient text ONLY on main headline ems. Solid colors elsewhere.
+     One ambient glow in hero. Neutral shadows. Clean and quiet.
      ═══════════════════════════════════════════════════════════ */
 
   body { background: #FFFFFF; color: var(--dark); }
 
-  /* Gradient text utility — applies to every italic em */
-  em {
+  /* Gradient text ONLY where explicitly applied below */
+  .gradient-text,
+  .hero h1 em,
+  .hero-h2 em,
+  .problem-left h2 em,
+  .cases-header h2 em,
+  .who-header h2 em,
+  .how-header h2 em,
+  .what-left h2 em,
+  .what-callout-text em,
+  .what-systems-title em,
+  .section-bridge-text em,
+  .cta-bridge-text em,
+  .cta-section h2 em {
     background: var(--gradient-text);
     -webkit-background-clip: text;
     background-clip: text;
@@ -1350,116 +1365,92 @@
     color: transparent;
   }
 
-  /* Grid surface becomes an ambient blue-to-white wash */
+  /* Grid surface — very light plain, no radial (hero handles the glow) */
   .grid-surface {
     background-color: #FFFFFF;
     background-image:
-      radial-gradient(ellipse 120% 70% at 50% 0%, rgba(110,168,255,0.18) 0%, rgba(230,240,255,0.45) 30%, transparent 70%),
-      linear-gradient(rgba(51,102,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(51,102,255,0.03) 1px, transparent 1px);
+      linear-gradient(rgba(51,102,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(51,102,255,0.025) 1px, transparent 1px);
   }
 
-  /* Urgency bar — white with blue dot */
+  /* Urgency bar */
   .urgency-bar {
     background: #FFFFFF;
     border-bottom: 1px solid var(--border-light);
     color: var(--dark);
   }
   .urgency-bar-text { color: var(--dark); }
-  .urgency-bar-dot { background: var(--blue); box-shadow: 0 0 0 4px rgba(51,102,255,0.18); }
+  .urgency-bar-dot { background: var(--blue); box-shadow: 0 0 0 3px rgba(51,102,255,0.15); }
 
-  /* Hero — ambient radial blue wash */
-  .hero {
-    background-image: var(--gradient-hero);
-  }
+  /* Hero — the one place with the ambient blue glow */
+  .hero { background-image: var(--gradient-hero); }
   .hero h1 { color: var(--dark); }
   .hero-h2 { color: var(--dark-stone); }
   .hero-sub { color: var(--stone); }
   .hero-label {
     background: #FFFFFF;
-    border: 1px solid rgba(51,102,255,0.2);
+    border: 1px solid var(--border-light);
     color: var(--dark);
-    box-shadow: var(--shadow-blue);
+    box-shadow: var(--card-shadow);
   }
   .hero-label-dot { background: var(--blue); }
-  .hero-availability {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  .hero-availability { color: var(--blue); }
   .hero-quote-text { color: var(--stone); }
-  .hero-quote-attr { color: var(--blue); }
-  .hero-quote-divider { background: rgba(51,102,255,0.3); }
-  .hero-stat-num {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  .hero-quote-attr { color: var(--blue); opacity: 0.7; }
+  .hero-quote-divider { background: rgba(51,102,255,0.25); }
+  .hero-stat-num { color: var(--dark); }
   .hero-stat-label { color: var(--stone); }
-  .hero-stat-divider { background: var(--blue); opacity: 0.5; }
+  .hero-stat-divider { background: var(--blue); opacity: 0.4; }
 
-  /* Buttons — gradient primary with blue glow */
+  /* Buttons */
   .btn-gold {
     background: var(--gradient-btn);
     color: #FFFFFF;
     border: none;
-    box-shadow: var(--shadow-blue);
-    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(51,102,255,0.22);
+    transition: all 0.2s ease;
   }
   .btn-gold:hover {
     background: var(--gradient-btn-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-blue-lg);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgba(51,102,255,0.3);
   }
   .btn-ghost-light {
-    background: #FFFFFF;
+    background: transparent;
     color: var(--dark);
     border: 1px solid var(--border-light);
   }
-  .btn-ghost-light:hover { background: var(--blue-mist); border-color: rgba(51,102,255,0.3); }
+  .btn-ghost-light:hover { background: var(--cream); }
   .btn-dark { background: var(--dark); color: #FFFFFF; }
   .btn-ghost { border: 1px solid var(--border-light); color: var(--dark); }
 
-  /* Problem section card */
+  /* Problem section */
   .problem-inner {
     background: #FFFFFF;
     box-shadow: var(--card-shadow);
     border: 1px solid var(--border-light);
   }
   .problem-item { border-bottom: 1px solid var(--border-light); }
-  .problem-item-num {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    opacity: 0.5;
-  }
+  .problem-item-num { color: var(--blue); opacity: 0.25; }
   .problem-item-headline { color: var(--dark); }
   .problem-item-body { color: var(--stone); }
 
-  /* Section bridge — white card with blue glow shadow */
+  /* Section bridge */
   .section-bridge {
     background: #FFFFFF;
-    border: 1px solid rgba(51,102,255,0.12);
-    box-shadow: var(--shadow-blue-lg);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--card-shadow-lg);
   }
   .section-bridge-text { color: var(--dark); }
 
   /* What It Is */
-  .what-section { background: linear-gradient(180deg, #FFFFFF 0%, #F5F8FC 100%); }
+  .what-section { background: var(--cream); }
   .what-callout {
     background: #FFFFFF;
-    border: 1px solid rgba(51,102,255,0.15);
-    box-shadow: var(--shadow-blue);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--card-shadow);
   }
-  .what-callout-label {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  .what-callout-label { color: var(--blue); }
   .what-callout-text { color: var(--dark); }
   .outcomes-list { border-top: 1px solid var(--border-light); }
   .outcome-item { border-bottom: 1px solid var(--border-light); }
@@ -1467,116 +1458,56 @@
   .outcome-desc { color: var(--stone); }
   .outcome-item::before { color: var(--blue); }
 
-  /* What systems — white card with blue ambient glow */
+  /* What systems */
   .what-systems-card {
     background: #FFFFFF;
-    border: 1px solid rgba(51,102,255,0.12);
-    box-shadow: var(--shadow-blue-lg);
-    position: relative;
-    overflow: hidden;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--card-shadow-lg);
   }
-  .what-systems-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 200px;
-    background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(110,168,255,0.18) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-    display: block;
-    opacity: 1;
-  }
-  .what-systems-header, .what-systems-grid { position: relative; z-index: 1; }
+  .what-systems-card::before { display: none; }
   .what-systems-title { color: var(--dark); }
   .what-systems-grid {
-    background: rgba(51,102,255,0.08);
+    background: var(--border-light);
     border-radius: 12px;
     overflow: hidden;
   }
-  .what-system-item { background: #FFFFFF; transition: background 0.2s; }
-  .what-system-item:hover { background: var(--blue-mist); }
+  .what-system-item { background: #FFFFFF; transition: background 0.15s; }
+  .what-system-item:hover { background: var(--cream); }
   .what-system-title { color: var(--dark); }
   .what-system-desc { color: var(--stone); }
 
-  /* Case cards — white with blue-tinted shadow, subtle gradient on top border */
+  /* Case cards */
   .case-card {
     background: #FFFFFF;
     border: 1px solid var(--border-light);
     box-shadow: var(--card-shadow);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    transition: all 0.2s ease;
   }
-  .case-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: var(--gradient-btn);
-    opacity: 0;
-    transition: opacity 0.25s;
+  .case-card:hover {
+    box-shadow: var(--card-shadow-lg);
+    transform: translateY(-2px);
   }
-  .case-card:hover { box-shadow: var(--shadow-blue); transform: translateY(-2px); border-color: rgba(51,102,255,0.18); }
-  .case-card:hover::before { opacity: 1; }
   .case-left { border-right: 1px solid var(--border-light); }
-  .case-tag {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  .case-tag { color: var(--blue); }
   .case-company { color: var(--dark); }
-  .case-stat-num {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  .case-stat-num { color: var(--blue); }
   .case-stat-label { color: var(--stone); }
   .case-row { border-bottom: 1px solid var(--border-light); }
-  .case-row-label {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  .case-row-label { color: var(--blue); opacity: 0.75; }
   .case-row-text { color: var(--stone); }
   .cases-header h2 { color: var(--dark); }
 
-  /* CTA Bridge — white card with big blue glow */
+  /* CTA Bridge */
   .cta-bridge {
     background: #FFFFFF;
-    border: 1px solid rgba(51,102,255,0.15);
-    box-shadow: var(--shadow-blue-lg);
-    position: relative;
-    overflow: hidden;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--card-shadow-lg);
   }
-  .cta-bridge::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 200%;
-    background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(110,168,255,0.12) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .cta-bridge > * { position: relative; z-index: 1; }
-  .cta-bridge-label {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    opacity: 1;
-  }
+  .cta-bridge-label { color: var(--blue); opacity: 0.85; }
   .cta-bridge-text { color: var(--dark); }
 
   /* Who This Is For */
-  .who-section { background: linear-gradient(180deg, #F5F8FC 0%, #FFFFFF 100%); }
+  .who-section { background: var(--cream); }
   .who-col {
     background: #FFFFFF;
     border: 1px solid var(--border-light);
@@ -1585,44 +1516,30 @@
     padding: 44px 40px;
   }
 
-  /* Ryan founder section */
-  .ryan-section { background: linear-gradient(180deg, #FFFFFF 0%, #F5F8FC 100%); }
+  /* Ryan */
+  .ryan-section { background: var(--cream); }
   .ryan-card, .ryan-photo-wrap { box-shadow: var(--card-shadow); border-radius: 20px; overflow: hidden; }
 
   /* Final CTA */
-  .cta-section {
-    background: radial-gradient(ellipse 80% 60% at 50% 50%, #E6F0FF 0%, #F5F8FC 60%, #FFFFFF 100%);
-  }
+  .cta-section { background: #FFFFFF; }
 
   /* Footer */
   footer { background: #FFFFFF; border-top: 1px solid var(--border-light); color: var(--stone); }
 
   /* How It Works */
-  .how-section { background: linear-gradient(180deg, #F5F8FC 0%, #FFFFFF 100%); }
+  .how-section { background: var(--cream); }
   .how-step {
     background: #FFFFFF;
     border: 1px solid var(--border-light);
     box-shadow: var(--card-shadow);
     border-radius: 20px;
-    transition: all 0.25s;
   }
-  .how-step:hover { box-shadow: var(--shadow-blue); border-color: rgba(51,102,255,0.15); }
-  .how-step-num {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  .how-step-num { color: var(--blue); opacity: 0.6; }
 
-  /* Section labels — gradient */
-  .section-label {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  /* Section labels — solid blue, not gradient */
+  .section-label { color: var(--blue); }
 
-  /* Rounded corner refinement */
+  /* Rounded corners */
   .problem-inner, .what-callout, .what-systems-card, .case-card, .section-bridge, .cta-bridge { border-radius: 20px; }
 </style>
 </head>
