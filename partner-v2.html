@@ -26,6 +26,22 @@
     --border-light: rgba(15,29,58,0.08);
     --card-shadow: 0 2px 8px rgba(15,29,58,0.04), 0 8px 32px rgba(15,29,58,0.06);
     --card-shadow-lg: 0 4px 16px rgba(15,29,58,0.06), 0 24px 64px rgba(15,29,58,0.1);
+
+    --blue-deep: #1E3A8A;
+    --blue: #3366FF;
+    --blue-mid: #4D7AFF;
+    --blue-light: #6FA8FF;
+    --blue-ice: #B8D4FF;
+    --blue-sky: #E6F0FF;
+    --blue-mist: #F0F7FF;
+
+    --gradient-text: linear-gradient(135deg, #3366FF 0%, #6FA8FF 70%, #8EC0FF 100%);
+    --gradient-btn: linear-gradient(135deg, #3366FF 0%, #4D7AFF 100%);
+    --gradient-btn-hover: linear-gradient(135deg, #2551E0 0%, #3366FF 100%);
+    --gradient-hero: radial-gradient(ellipse 90% 60% at 50% 0%, #D9E8FF 0%, #E8F1FF 30%, #F5F8FC 70%, #FFFFFF 100%);
+    --gradient-section: linear-gradient(180deg, #FFFFFF 0%, #F5F8FC 100%);
+    --shadow-blue: 0 8px 32px rgba(51,102,255,0.15), 0 2px 8px rgba(51,102,255,0.08);
+    --shadow-blue-lg: 0 16px 48px rgba(51,102,255,0.18), 0 4px 16px rgba(51,102,255,0.1);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1318,153 +1334,296 @@
   }
 
   /* ═══════════════════════════════════════════════════════════
-     V2 DESIGN LAYER — Light SaaS aesthetic (MultiplyClients-style)
-     Flips all dark-background surfaces to white cards on pale blue.
+     V2 DESIGN LAYER — Gradient SaaS aesthetic (MultiplyClients-style)
+     Light blue gradients, gradient-text italics, gradient buttons,
+     ambient blue glows throughout.
      ═══════════════════════════════════════════════════════════ */
 
-  body { background: var(--cream); color: var(--dark); }
+  body { background: #FFFFFF; color: var(--dark); }
 
-  /* Grid surface: light with faint blue grid (was dark) */
-  .grid-surface {
-    background-color: var(--cream);
-    background-image:
-      linear-gradient(rgba(43,92,230,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(43,92,230,0.05) 1px, transparent 1px);
+  /* Gradient text utility — applies to every italic em */
+  em {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 
-  /* Urgency bar — clean white pill */
+  /* Grid surface becomes an ambient blue-to-white wash */
+  .grid-surface {
+    background-color: #FFFFFF;
+    background-image:
+      radial-gradient(ellipse 120% 70% at 50% 0%, rgba(110,168,255,0.18) 0%, rgba(230,240,255,0.45) 30%, transparent 70%),
+      linear-gradient(rgba(51,102,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(51,102,255,0.03) 1px, transparent 1px);
+  }
+
+  /* Urgency bar — white with blue dot */
   .urgency-bar {
     background: #FFFFFF;
     border-bottom: 1px solid var(--border-light);
     color: var(--dark);
   }
   .urgency-bar-text { color: var(--dark); }
-  .urgency-bar-dot { background: var(--gold); box-shadow: 0 0 0 4px rgba(43,92,230,0.18); }
+  .urgency-bar-dot { background: var(--blue); box-shadow: 0 0 0 4px rgba(51,102,255,0.18); }
 
-  /* Hero */
-  .hero { background-image: radial-gradient(ellipse 80% 40% at 50% 0%, rgba(43,92,230,0.08) 0%, transparent 70%); }
+  /* Hero — ambient radial blue wash */
+  .hero {
+    background-image: var(--gradient-hero);
+  }
   .hero h1 { color: var(--dark); }
-  .hero h1 em { color: var(--gold); }
   .hero-h2 { color: var(--dark-stone); }
-  .hero-h2 em { color: var(--gold); }
   .hero-sub { color: var(--stone); }
-  .hero-label { background: #FFFFFF; border: 1px solid var(--border-light); color: var(--dark); box-shadow: var(--card-shadow); }
-  .hero-label-dot { background: var(--gold); }
-  .hero-availability { color: var(--gold); }
+  .hero-label {
+    background: #FFFFFF;
+    border: 1px solid rgba(51,102,255,0.2);
+    color: var(--dark);
+    box-shadow: var(--shadow-blue);
+  }
+  .hero-label-dot { background: var(--blue); }
+  .hero-availability {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   .hero-quote-text { color: var(--stone); }
-  .hero-quote-attr { color: var(--gold); }
-  .hero-quote-divider { background: rgba(43,92,230,0.25); }
-  .hero-stat-num { color: var(--dark); }
+  .hero-quote-attr { color: var(--blue); }
+  .hero-quote-divider { background: rgba(51,102,255,0.3); }
+  .hero-stat-num {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   .hero-stat-label { color: var(--stone); }
-  .hero-stat-divider { background: var(--gold); }
+  .hero-stat-divider { background: var(--blue); opacity: 0.5; }
 
-  /* Buttons */
-  .btn-gold { background: var(--gold); color: #FFFFFF; border: none; box-shadow: 0 4px 12px rgba(43,92,230,0.25); }
-  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(43,92,230,0.35); }
-  .btn-ghost-light { background: transparent; color: var(--dark); border: 1px solid var(--border-light); }
-  .btn-ghost-light:hover { background: #FFFFFF; }
+  /* Buttons — gradient primary with blue glow */
+  .btn-gold {
+    background: var(--gradient-btn);
+    color: #FFFFFF;
+    border: none;
+    box-shadow: var(--shadow-blue);
+    transition: all 0.25s ease;
+  }
+  .btn-gold:hover {
+    background: var(--gradient-btn-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-blue-lg);
+  }
+  .btn-ghost-light {
+    background: #FFFFFF;
+    color: var(--dark);
+    border: 1px solid var(--border-light);
+  }
+  .btn-ghost-light:hover { background: var(--blue-mist); border-color: rgba(51,102,255,0.3); }
   .btn-dark { background: var(--dark); color: #FFFFFF; }
   .btn-ghost { border: 1px solid var(--border-light); color: var(--dark); }
 
-  /* Problem section card — stays clean white */
-  .problem-inner { background: #FFFFFF; box-shadow: var(--card-shadow); border: 1px solid var(--border-light); }
+  /* Problem section card */
+  .problem-inner {
+    background: #FFFFFF;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-light);
+  }
   .problem-item { border-bottom: 1px solid var(--border-light); }
-  .problem-item-num { color: var(--gold); opacity: 0.4; }
+  .problem-item-num {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.5;
+  }
   .problem-item-headline { color: var(--dark); }
   .problem-item-body { color: var(--stone); }
 
-  /* Section bridge — white card with shadow */
+  /* Section bridge — white card with blue glow shadow */
   .section-bridge {
     background: #FFFFFF;
-    border: 1px solid var(--border-light);
-    box-shadow: var(--card-shadow-lg);
+    border: 1px solid rgba(51,102,255,0.12);
+    box-shadow: var(--shadow-blue-lg);
   }
   .section-bridge-text { color: var(--dark); }
-  .section-bridge-text em { color: var(--gold); }
 
-  /* What It Is section */
-  .what-section { background: var(--cream); }
-  .what-callout { background: #FFFFFF; border: 1px solid var(--border-light); box-shadow: var(--card-shadow); }
-  .what-callout-label { color: var(--gold); }
+  /* What It Is */
+  .what-section { background: linear-gradient(180deg, #FFFFFF 0%, #F5F8FC 100%); }
+  .what-callout {
+    background: #FFFFFF;
+    border: 1px solid rgba(51,102,255,0.15);
+    box-shadow: var(--shadow-blue);
+  }
+  .what-callout-label {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   .what-callout-text { color: var(--dark); }
-  .what-callout-text em { color: var(--gold); }
   .outcomes-list { border-top: 1px solid var(--border-light); }
   .outcome-item { border-bottom: 1px solid var(--border-light); }
   .outcome-label { color: var(--dark); }
   .outcome-desc { color: var(--stone); }
-  .outcome-item::before { color: var(--gold); }
+  .outcome-item::before { color: var(--blue); }
 
-  /* What systems card — white with shadow */
+  /* What systems — white card with blue ambient glow */
   .what-systems-card {
     background: #FFFFFF;
-    border: 1px solid var(--border-light);
-    box-shadow: var(--card-shadow-lg);
+    border: 1px solid rgba(51,102,255,0.12);
+    box-shadow: var(--shadow-blue-lg);
+    position: relative;
+    overflow: hidden;
   }
-  .what-systems-card::before { display: none; }
+  .what-systems-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 200px;
+    background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(110,168,255,0.18) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    display: block;
+    opacity: 1;
+  }
+  .what-systems-header, .what-systems-grid { position: relative; z-index: 1; }
   .what-systems-title { color: var(--dark); }
-  .what-systems-title em { color: var(--gold); }
   .what-systems-grid {
-    background: var(--border-light);
+    background: rgba(51,102,255,0.08);
     border-radius: 12px;
     overflow: hidden;
   }
-  .what-system-item { background: #FFFFFF; }
-  .what-system-item:hover { background: var(--cream); }
+  .what-system-item { background: #FFFFFF; transition: background 0.2s; }
+  .what-system-item:hover { background: var(--blue-mist); }
   .what-system-title { color: var(--dark); }
   .what-system-desc { color: var(--stone); }
 
-  /* Case cards — white with shadow */
+  /* Case cards — white with blue-tinted shadow, subtle gradient on top border */
   .case-card {
     background: #FFFFFF;
     border: 1px solid var(--border-light);
     box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
   }
-  .case-card:hover { background: #FFFFFF; box-shadow: var(--card-shadow-lg); transform: translateY(-2px); }
+  .case-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gradient-btn);
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+  .case-card:hover { box-shadow: var(--shadow-blue); transform: translateY(-2px); border-color: rgba(51,102,255,0.18); }
+  .case-card:hover::before { opacity: 1; }
   .case-left { border-right: 1px solid var(--border-light); }
-  .case-tag { color: var(--gold); }
+  .case-tag {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   .case-company { color: var(--dark); }
-  .case-stat-num { color: var(--gold); }
+  .case-stat-num {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   .case-stat-label { color: var(--stone); }
   .case-row { border-bottom: 1px solid var(--border-light); }
-  .case-row-label { color: var(--gold); }
+  .case-row-label {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   .case-row-text { color: var(--stone); }
   .cases-header h2 { color: var(--dark); }
-  .cases-header h2 em { color: var(--gold); }
 
-  /* CTA Bridge — white card with shadow */
+  /* CTA Bridge — white card with big blue glow */
   .cta-bridge {
     background: #FFFFFF;
-    border: 1px solid var(--border-light);
-    box-shadow: var(--card-shadow-lg);
+    border: 1px solid rgba(51,102,255,0.15);
+    box-shadow: var(--shadow-blue-lg);
+    position: relative;
+    overflow: hidden;
   }
-  .cta-bridge-label { color: var(--gold); }
+  .cta-bridge::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 200%;
+    background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(110,168,255,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-bridge > * { position: relative; z-index: 1; }
+  .cta-bridge-label {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+  }
   .cta-bridge-text { color: var(--dark); }
-  .cta-bridge-text em { color: var(--gold); }
 
   /* Who This Is For */
-  .who-section { background: var(--cream); }
-  .who-col { background: #FFFFFF; border: 1px solid var(--border-light); box-shadow: var(--card-shadow); border-radius: 16px; padding: 40px 36px; }
+  .who-section { background: linear-gradient(180deg, #F5F8FC 0%, #FFFFFF 100%); }
+  .who-col {
+    background: #FFFFFF;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--card-shadow);
+    border-radius: 20px;
+    padding: 44px 40px;
+  }
 
   /* Ryan founder section */
-  .ryan-section { background: var(--cream); }
-  .ryan-card, .ryan-photo-wrap { box-shadow: var(--card-shadow); }
+  .ryan-section { background: linear-gradient(180deg, #FFFFFF 0%, #F5F8FC 100%); }
+  .ryan-card, .ryan-photo-wrap { box-shadow: var(--card-shadow); border-radius: 20px; overflow: hidden; }
 
   /* Final CTA */
-  .cta-section { background: var(--cream); }
+  .cta-section {
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, #E6F0FF 0%, #F5F8FC 60%, #FFFFFF 100%);
+  }
 
   /* Footer */
   footer { background: #FFFFFF; border-top: 1px solid var(--border-light); color: var(--stone); }
 
   /* How It Works */
-  .how-section { background: var(--cream); }
-  .how-step { background: #FFFFFF; border: 1px solid var(--border-light); box-shadow: var(--card-shadow); border-radius: 16px; }
-  .how-step-num { color: var(--gold); }
+  .how-section { background: linear-gradient(180deg, #F5F8FC 0%, #FFFFFF 100%); }
+  .how-step {
+    background: #FFFFFF;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--card-shadow);
+    border-radius: 20px;
+    transition: all 0.25s;
+  }
+  .how-step:hover { box-shadow: var(--shadow-blue); border-color: rgba(51,102,255,0.15); }
+  .how-step-num {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-  /* Section labels */
-  .section-label { color: var(--gold); }
+  /* Section labels — gradient */
+  .section-label {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-  /* Global — rounded corners refinement */
-  .problem-inner, .what-callout, .what-systems-card, .case-card, .section-bridge, .cta-bridge { border-radius: 16px; }
+  /* Rounded corner refinement */
+  .problem-inner, .what-callout, .what-systems-card, .case-card, .section-bridge, .cta-bridge { border-radius: 20px; }
 </style>
 </head>
 <body>
