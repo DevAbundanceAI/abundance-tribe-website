@@ -10,20 +10,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #F5F0E8;
-    --parchment: #F5F0E8;
-    --warm-white: #F8F6EC;
-    --sand: #e8e0d0;
-    --stone: #9a8f80;
-    --dark-stone: #6b6058;
-    --brown: #62441F;
-    --dark: #1B1B1B;
-    --carbon: #1B1B1B;
-    --black: #141414;
-    --gold: #B58753;
-    --gold-light: #c9a06a;
-    --gold-dim: rgba(181,135,83,0.12);
-    --border-light: rgba(98,68,31,0.12);
+    --cream: #F5F8FC;
+    --parchment: #FFFFFF;
+    --warm-white: #F5F8FC;
+    --sand: #E8EFFC;
+    --stone: #5A6B85;
+    --dark-stone: #3B4A65;
+    --brown: #0F1D3A;
+    --dark: #0F1D3A;
+    --carbon: #0F1D3A;
+    --black: #0F1D3A;
+    --gold: #2B5CE6;
+    --gold-light: #4D7AFF;
+    --gold-dim: rgba(43,92,230,0.12);
+    --border-light: rgba(15,29,58,0.08);
+    --card-shadow: 0 2px 8px rgba(15,29,58,0.04), 0 8px 32px rgba(15,29,58,0.06);
+    --card-shadow-lg: 0 4px 16px rgba(15,29,58,0.06), 0 24px 64px rgba(15,29,58,0.1);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1314,6 +1316,155 @@
     .hero-stat { padding: 16px 0; }
     .hero-stat-divider { width: 40px; height: 1px; }
   }
+
+  /* ═══════════════════════════════════════════════════════════
+     V2 DESIGN LAYER — Light SaaS aesthetic (MultiplyClients-style)
+     Flips all dark-background surfaces to white cards on pale blue.
+     ═══════════════════════════════════════════════════════════ */
+
+  body { background: var(--cream); color: var(--dark); }
+
+  /* Grid surface: light with faint blue grid (was dark) */
+  .grid-surface {
+    background-color: var(--cream);
+    background-image:
+      linear-gradient(rgba(43,92,230,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43,92,230,0.05) 1px, transparent 1px);
+  }
+
+  /* Urgency bar — clean white pill */
+  .urgency-bar {
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--dark);
+  }
+  .urgency-bar-text { color: var(--dark); }
+  .urgency-bar-dot { background: var(--gold); box-shadow: 0 0 0 4px rgba(43,92,230,0.18); }
+
+  /* Hero */
+  .hero { background-image: radial-gradient(ellipse 80% 40% at 50% 0%, rgba(43,92,230,0.08) 0%, transparent 70%); }
+  .hero h1 { color: var(--dark); }
+  .hero h1 em { color: var(--gold); }
+  .hero-h2 { color: var(--dark-stone); }
+  .hero-h2 em { color: var(--gold); }
+  .hero-sub { color: var(--stone); }
+  .hero-label { background: #FFFFFF; border: 1px solid var(--border-light); color: var(--dark); box-shadow: var(--card-shadow); }
+  .hero-label-dot { background: var(--gold); }
+  .hero-availability { color: var(--gold); }
+  .hero-quote-text { color: var(--stone); }
+  .hero-quote-attr { color: var(--gold); }
+  .hero-quote-divider { background: rgba(43,92,230,0.25); }
+  .hero-stat-num { color: var(--dark); }
+  .hero-stat-label { color: var(--stone); }
+  .hero-stat-divider { background: var(--gold); }
+
+  /* Buttons */
+  .btn-gold { background: var(--gold); color: #FFFFFF; border: none; box-shadow: 0 4px 12px rgba(43,92,230,0.25); }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(43,92,230,0.35); }
+  .btn-ghost-light { background: transparent; color: var(--dark); border: 1px solid var(--border-light); }
+  .btn-ghost-light:hover { background: #FFFFFF; }
+  .btn-dark { background: var(--dark); color: #FFFFFF; }
+  .btn-ghost { border: 1px solid var(--border-light); color: var(--dark); }
+
+  /* Problem section card — stays clean white */
+  .problem-inner { background: #FFFFFF; box-shadow: var(--card-shadow); border: 1px solid var(--border-light); }
+  .problem-item { border-bottom: 1px solid var(--border-light); }
+  .problem-item-num { color: var(--gold); opacity: 0.4; }
+  .problem-item-headline { color: var(--dark); }
+  .problem-item-body { color: var(--stone); }
+
+  /* Section bridge — white card with shadow */
+  .section-bridge {
+    background: #FFFFFF;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--card-shadow-lg);
+  }
+  .section-bridge-text { color: var(--dark); }
+  .section-bridge-text em { color: var(--gold); }
+
+  /* What It Is section */
+  .what-section { background: var(--cream); }
+  .what-callout { background: #FFFFFF; border: 1px solid var(--border-light); box-shadow: var(--card-shadow); }
+  .what-callout-label { color: var(--gold); }
+  .what-callout-text { color: var(--dark); }
+  .what-callout-text em { color: var(--gold); }
+  .outcomes-list { border-top: 1px solid var(--border-light); }
+  .outcome-item { border-bottom: 1px solid var(--border-light); }
+  .outcome-label { color: var(--dark); }
+  .outcome-desc { color: var(--stone); }
+  .outcome-item::before { color: var(--gold); }
+
+  /* What systems card — white with shadow */
+  .what-systems-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--card-shadow-lg);
+  }
+  .what-systems-card::before { display: none; }
+  .what-systems-title { color: var(--dark); }
+  .what-systems-title em { color: var(--gold); }
+  .what-systems-grid {
+    background: var(--border-light);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .what-system-item { background: #FFFFFF; }
+  .what-system-item:hover { background: var(--cream); }
+  .what-system-title { color: var(--dark); }
+  .what-system-desc { color: var(--stone); }
+
+  /* Case cards — white with shadow */
+  .case-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--card-shadow);
+  }
+  .case-card:hover { background: #FFFFFF; box-shadow: var(--card-shadow-lg); transform: translateY(-2px); }
+  .case-left { border-right: 1px solid var(--border-light); }
+  .case-tag { color: var(--gold); }
+  .case-company { color: var(--dark); }
+  .case-stat-num { color: var(--gold); }
+  .case-stat-label { color: var(--stone); }
+  .case-row { border-bottom: 1px solid var(--border-light); }
+  .case-row-label { color: var(--gold); }
+  .case-row-text { color: var(--stone); }
+  .cases-header h2 { color: var(--dark); }
+  .cases-header h2 em { color: var(--gold); }
+
+  /* CTA Bridge — white card with shadow */
+  .cta-bridge {
+    background: #FFFFFF;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--card-shadow-lg);
+  }
+  .cta-bridge-label { color: var(--gold); }
+  .cta-bridge-text { color: var(--dark); }
+  .cta-bridge-text em { color: var(--gold); }
+
+  /* Who This Is For */
+  .who-section { background: var(--cream); }
+  .who-col { background: #FFFFFF; border: 1px solid var(--border-light); box-shadow: var(--card-shadow); border-radius: 16px; padding: 40px 36px; }
+
+  /* Ryan founder section */
+  .ryan-section { background: var(--cream); }
+  .ryan-card, .ryan-photo-wrap { box-shadow: var(--card-shadow); }
+
+  /* Final CTA */
+  .cta-section { background: var(--cream); }
+
+  /* Footer */
+  footer { background: #FFFFFF; border-top: 1px solid var(--border-light); color: var(--stone); }
+
+  /* How It Works */
+  .how-section { background: var(--cream); }
+  .how-step { background: #FFFFFF; border: 1px solid var(--border-light); box-shadow: var(--card-shadow); border-radius: 16px; }
+  .how-step-num { color: var(--gold); }
+
+  /* Section labels */
+  .section-label { color: var(--gold); }
+
+  /* Global — rounded corners refinement */
+  .problem-inner, .what-callout, .what-systems-card, .case-card, .section-bridge, .cta-bridge { border-radius: 16px; }
 </style>
 </head>
 <body>
