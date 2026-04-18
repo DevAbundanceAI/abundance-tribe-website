@@ -1299,9 +1299,9 @@
     font-weight: 700;
   }
 
-  /* Hero H1 — Medium (500) so Neo Contact naturally dominates (since Neo Contact is single-weight) */
+  /* Hero H1 — Bold (700) */
   .hero h1 {
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: -0.02em;
   }
 
@@ -1334,6 +1334,7 @@
   /* ═══════════════════════════════════════════════════════════
      NEO CONTACT — logo font, applied ONLY to emphasis words
      Replaces the Cormorant italic. Mixed case. Keeps gradient color.
+     Headline ems render on their own line for signature moments.
      ═══════════════════════════════════════════════════════════ */
   em,
   h1 em, h2 em, h3 em {
@@ -1346,6 +1347,12 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
+  }
+
+  /* Put every headline Neo Contact accent on its own line */
+  h1 em, h2 em, h3 em {
+    display: block;
+    margin-top: 0.08em;
   }
 
   /* Pillar taglines used Cormorant italic for body flavor — keep those as regular italic so only emphasis headline moments use Neo Contact */
