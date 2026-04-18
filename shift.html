@@ -10,6 +10,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <style>
+  @font-face {
+    font-family: 'Neo Contact';
+    src: url('/assets/fonts/neo-contact/neo-contact-lt-pro.woff2') format('woff2');
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
   :root {
     /* V5 — MultiplyClients light blue aesthetic */
     --bg: #F8FAFC;
@@ -1263,6 +1271,77 @@
   .dark .proof-total { background: #FFFFFF; color: var(--ink); }
   .dark .proof-total .proof-total-num { background: var(--gradient-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
   .dark .proof-total .proof-total-label { color: var(--ink-muted); }
+
+  /* ═══════════════════════════════════════════════════════════
+     NEO CONTACT — logo font applied to major headlines
+     Marlboro-style bold condensed display, all caps
+     ═══════════════════════════════════════════════════════════ */
+  .hero h1,
+  .system-header h2,
+  .math-inner h2,
+  .proof-header h2,
+  .install-header h2,
+  .pricing-inner h2,
+  .ryan-content h2,
+  .who-header h2,
+  .faq-header h2,
+  .cta-inner h2,
+  .pillars-header h2,
+  .pillar-bonus h3 {
+    font-family: 'Neo Contact', 'Impact', 'Arial Narrow Bold', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+    line-height: 1.02;
+  }
+
+  /* Hero gets the most presence */
+  .hero h1 {
+    font-size: clamp(48px, 7.5vw, 96px);
+    letter-spacing: -0.005em;
+    line-height: 0.98;
+    margin-bottom: 32px;
+  }
+
+  /* Italic ems inside Neo Contact headlines — keep gradient, drop serif italic */
+  .hero h1 em,
+  .system-header h2 em,
+  .math-inner h2 em,
+  .proof-header h2 em,
+  .install-header h2 em,
+  .pricing-inner h2 em,
+  .ryan-content h2 em,
+  .who-header h2 em,
+  .cta-inner h2 em,
+  .pillars-header h2 em,
+  .pillar-bonus h3 em {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Highlight pills inside Neo Contact H1s — keep but tighten */
+  .hero h1 .highlight,
+  h2 .highlight {
+    text-transform: uppercase;
+    font-size: 0.88em;
+    padding: 0.06em 0.42em;
+  }
+
+  /* Dark mode headline color — Neo Contact on dark should be bright white */
+  .dark .system-header h2,
+  .dark .math-inner h2,
+  .dark .proof-header h2,
+  .dark .ryan-content h2,
+  .dark .cta-inner h2 {
+    color: #FFFFFF;
+  }
 
   /* ═══════════════════════════════════════════════════════════
      RESPONSIVE
