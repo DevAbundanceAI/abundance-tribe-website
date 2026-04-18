@@ -944,6 +944,217 @@
   footer a { color: var(--blue-600); text-decoration: none; }
 
   /* ═══════════════════════════════════════════════════════════
+     THE 10 PILLARS
+     ═══════════════════════════════════════════════════════════ */
+  .pillars-section {
+    padding: 120px 40px;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+  }
+  .pillars-inner { max-width: 1100px; margin: 0 auto; }
+  .pillars-header {
+    max-width: 760px;
+    margin: 0 auto 72px;
+    text-align: center;
+  }
+  .pillars-header h2 {
+    font-size: clamp(32px, 4.2vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .pillars-header p {
+    font-size: 17px;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+
+  .pillar-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .pillar-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px 44px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 0 56px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+    align-items: start;
+  }
+  .pillar-card:hover {
+    box-shadow: var(--shadow);
+    border-color: var(--blue-300);
+  }
+
+  .pillar-left {
+    padding-right: 40px;
+    border-right: 1px solid var(--border);
+    min-height: 100%;
+  }
+  .pillar-num {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 18px;
+  }
+  .pillar-left h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.22;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+  }
+  .pillar-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink-mid);
+    border-left: 2px solid var(--blue-400);
+    padding-left: 14px;
+  }
+
+  .pillar-right { display: flex; flex-direction: column; gap: 20px; }
+  .pillar-desc {
+    font-size: 15px;
+    color: var(--ink-mid);
+    line-height: 1.7;
+  }
+  .pillar-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+    background: var(--bg);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .pillar-compare-col {
+    padding: 18px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pillar-compare-col + .pillar-compare-col {
+    border-left: 1px solid var(--border);
+  }
+  .pillar-compare-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .pillar-compare-label-bad { color: #B91C1C; }
+  .pillar-compare-label-good { color: #059669; }
+  .pillar-compare ul { list-style: none; display: flex; flex-direction: column; gap: 8px; padding: 0; margin: 0; }
+  .pillar-compare li {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--ink-mid);
+    padding-left: 14px;
+    position: relative;
+  }
+  .pillar-compare-col.bad li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: #B91C1C;
+    font-weight: 700;
+  }
+  .pillar-compare-col.good li::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    color: #059669;
+    font-weight: 700;
+  }
+
+  .pillar-bottomline {
+    padding: 16px 20px;
+    background: var(--ink);
+    color: #FFFFFF;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .pillar-bottomline strong {
+    color: var(--blue-400);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  /* Bonus block */
+  .pillar-bonus {
+    margin-top: 32px;
+    padding: 48px 52px;
+    background: var(--gradient-btn);
+    color: #FFFFFF;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-blue);
+    position: relative;
+    overflow: hidden;
+  }
+  .pillar-bonus::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,255,255,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .pillar-bonus > * { position: relative; z-index: 1; }
+  .pillar-bonus-label {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.22);
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 18px;
+    backdrop-filter: blur(4px);
+  }
+  .pillar-bonus h3 {
+    font-size: clamp(24px, 3.2vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: #FFFFFF;
+    letter-spacing: -0.01em;
+  }
+  .pillar-bonus p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.92);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .pillar-bonus .highlight-inline {
+    display: inline-block;
+    background: #FFFFFF;
+    color: var(--blue-600);
+    padding: 1px 10px;
+    border-radius: 8px;
+    font-weight: 700;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
      DARK-MODE SECTION VARIANTS
      Same design theory, inverted surfaces.
      ═══════════════════════════════════════════════════════════ */
@@ -1146,6 +1357,338 @@
         <h3>A reverse sales process closing 40–50%</h3>
         <p>Pre-sold leads don't need to be convinced. We install a reverse process — the prospect articulates their own problem, their own urgency, their own desire to fix it. You present the solution. Close rates land at <span class="highlight-blue">40–50%</span>.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE 10 PILLARS -->
+<section class="pillars-section" id="pillars">
+  <div class="pillars-inner">
+    <div class="pillars-header">
+      <span class="section-label sa">The 10 Systems</span>
+      <h2 class="sa">Every system we install. <em>End to end.</em></h2>
+      <p class="sa" style="--sa-delay:60ms">Ten proprietary systems designed to take cold prospects and have them pre-sold before they ever reach a sales call — so closing feels like leadership, not pressure.</p>
+    </div>
+
+    <div class="pillar-list">
+
+      <!-- 01 -->
+      <article class="pillar-card sa">
+        <div class="pillar-left">
+          <span class="pillar-num">01</span>
+          <h3>Inevitable Offer System</h3>
+          <p class="pillar-tagline">Build an offer so precisely matched to your dream client's desire that saying yes feels like the only logical choice.</p>
+        </div>
+        <div class="pillar-right">
+          <p class="pillar-desc">Most founders have a service. Very few have an offer. This system walks you through architecting an offer that speaks directly to the specific pains, desires, and objections of your ideal client so that when they see it, it feels like it was built specifically for them. Because it was.</p>
+          <div class="pillar-compare">
+            <div class="pillar-compare-col bad">
+              <span class="pillar-compare-label pillar-compare-label-bad">Without this you're stuck</span>
+              <ul>
+                <li>Attracting unqualified leads who can't afford you or aren't serious</li>
+                <li>Competing on price because your offer looks like everyone else's</li>
+                <li>Struggling to articulate your value on sales calls</li>
+              </ul>
+            </div>
+            <div class="pillar-compare-col good">
+              <span class="pillar-compare-label pillar-compare-label-good">With this you get</span>
+              <ul>
+                <li>An offer that pre-sells your prospect before they ever speak to you</li>
+                <li>Premium positioning that commands higher prices without pushback</li>
+                <li>Clarity on exactly what you deliver and why it's worth every dollar</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pillar-bottomline"><strong>The Bottom Line —</strong> When your offer is built correctly, everything downstream (ads, calls, closes) gets easier. This is where the system starts.</div>
+        </div>
+      </article>
+
+      <!-- 02 -->
+      <article class="pillar-card sa">
+        <div class="pillar-left">
+          <span class="pillar-num">02</span>
+          <h3>AI-Powered Conviction Copy System</h3>
+          <p class="pillar-tagline">Copy that resonates so deeply with your dream client that your message feels like it was written about them, not at them.</p>
+        </div>
+        <div class="pillar-right">
+          <p class="pillar-desc">Conviction copy is not about fancy writing. It is about saying the exact right thing to the exact right person at the exact right moment. This system uses AI to craft messaging, hooks, headlines, and ad copy that cuts through the noise and creates immediate emotional resonance with your ideal client. The result is copy that converts cold strangers into warm, curious prospects who want to know more.</p>
+          <div class="pillar-compare">
+            <div class="pillar-compare-col bad">
+              <span class="pillar-compare-label pillar-compare-label-bad">Without this you're stuck</span>
+              <ul>
+                <li>Writing ad copy that gets ignored because it sounds like every other ad</li>
+                <li>Spending hours trying to figure out what to say and how to say it</li>
+                <li>Low click-through rates and high cost per lead because the message misses</li>
+              </ul>
+            </div>
+            <div class="pillar-compare-col good">
+              <span class="pillar-compare-label pillar-compare-label-good">With this you get</span>
+              <ul>
+                <li>AI-powered messaging that speaks directly to your dream client's exact pain</li>
+                <li>Hooks and headlines that stop the scroll and demand attention</li>
+                <li>Copy that builds desire before the prospect ever reaches your funnel</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pillar-bottomline"><strong>The Bottom Line —</strong> The right message to the right person at the right time is worth more than any ad budget. This system makes sure yours resonates every time.</div>
+        </div>
+      </article>
+
+      <!-- 03 -->
+      <article class="pillar-card sa">
+        <div class="pillar-left">
+          <span class="pillar-num">03</span>
+          <h3>Precision Client Targeting System</h3>
+          <p class="pillar-tagline">Stop wasting ad spend on the wrong people. Identify and reach exactly who is most likely to become your best client.</p>
+        </div>
+        <div class="pillar-right">
+          <p class="pillar-desc">The best offer and the best copy in the world means nothing if it reaches the wrong audience. This system maps out a precise profile of your dream client — demographics, psychographics, behaviors, and digital footprint — so your ads reach the people most likely to buy. No guessing. No wasted spend. Just surgical precision.</p>
+          <div class="pillar-compare">
+            <div class="pillar-compare-col bad">
+              <span class="pillar-compare-label pillar-compare-label-bad">Without this you're stuck</span>
+              <ul>
+                <li>Burning ad spend reaching people who will never buy from you</li>
+                <li>Getting leads that look right on paper but are completely wrong in reality</li>
+                <li>Having no idea who you are actually talking to in your marketing</li>
+              </ul>
+            </div>
+            <div class="pillar-compare-col good">
+              <span class="pillar-compare-label pillar-compare-label-good">With this you get</span>
+              <ul>
+                <li>A crystal-clear dream client profile that guides every marketing decision</li>
+                <li>Ad targeting that puts your offer in front of your highest-probability buyers</li>
+                <li>Lower cost per lead because your message reaches the right people every time</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pillar-bottomline"><strong>The Bottom Line —</strong> Precision targeting is the difference between throwing money at ads and investing in a system that predictably returns more than it costs.</div>
+        </div>
+      </article>
+
+      <!-- 04 -->
+      <article class="pillar-card sa">
+        <div class="pillar-left">
+          <span class="pillar-num">04</span>
+          <h3>AI-Powered Meta Ads Engine</h3>
+          <p class="pillar-tagline">Use Meta's most powerful AI infrastructure to generate consistent, qualified leads on autopilot for as little as $100 per day.</p>
+        </div>
+        <div class="pillar-right">
+          <p class="pillar-desc">Meta's AI has fundamentally changed how ads work. The old rules of detailed targeting and constant manual optimization are gone. Today, the businesses winning on Meta are the ones who understand how to give the algorithm the right inputs and let it do the heavy lifting. This system sets up your campaigns, creative strategy, and ad architecture so Meta's AI works for you around the clock — finding and converting your ideal clients at the lowest possible cost.</p>
+          <div class="pillar-compare">
+            <div class="pillar-compare-col bad">
+              <span class="pillar-compare-label pillar-compare-label-bad">Without this you're stuck</span>
+              <ul>
+                <li>Paying a high-priced agency that runs the same cookie-cutter strategy for every client</li>
+                <li>Burning money on ads that generate low-quality, unqualified leads</li>
+                <li>Having no predictable, consistent source of new client inquiries</li>
+              </ul>
+            </div>
+            <div class="pillar-compare-col good">
+              <span class="pillar-compare-label pillar-compare-label-good">With this you get</span>
+              <ul>
+                <li>A fully optimized Meta ad campaign that runs and improves on autopilot</li>
+                <li>Consistent, qualified lead flow that doesn't depend on referrals or organic content</li>
+                <li>A scalable acquisition channel you can turn up as your revenue grows</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pillar-bottomline"><strong>The Bottom Line —</strong> Ads are the most consistent, scalable, and controllable way to grow a service business. This system makes them work the way they were always supposed to.</div>
+        </div>
+      </article>
+
+      <!-- 05 -->
+      <article class="pillar-card sa">
+        <div class="pillar-left">
+          <span class="pillar-num">05</span>
+          <h3>Vibe-Coded Cold-to-Sold Pipeline System</h3>
+          <p class="pillar-tagline">A fully AI-built funnel, VSL, and landing page that turns cold traffic into booked calls on autopilot.</p>
+        </div>
+        <div class="pillar-right">
+          <p class="pillar-desc">This is the conversion infrastructure that bridges your ads and your sales calls. Built using the latest AI tools in days rather than months, this system includes a high-converting landing page, a video sales letter that pre-sells your offer, and a frictionless application process that qualifies leads before they ever reach your calendar. Cold prospects enter. Pre-sold, motivated prospects exit.</p>
+          <div class="pillar-compare">
+            <div class="pillar-compare-col bad">
+              <span class="pillar-compare-label pillar-compare-label-bad">Without this you're stuck</span>
+              <ul>
+                <li>Sending cold traffic directly to a booking page with no pre-selling and a terrible show rate</li>
+                <li>Spending weeks or months building funnels that miss the mark and have to be rebuilt</li>
+                <li>Losing leads because there is no system to capture, nurture, and convert them</li>
+              </ul>
+            </div>
+            <div class="pillar-compare-col good">
+              <span class="pillar-compare-label pillar-compare-label-good">With this you get</span>
+              <ul>
+                <li>A complete cold-to-sold pipeline built with AI and live in days, not months</li>
+                <li>A VSL that does the selling before anyone picks up the phone</li>
+                <li>Prospects who show up to calls already knowing your price and ready to move forward</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pillar-bottomline"><strong>The Bottom Line —</strong> The funnel is the machine that converts attention into revenue. Ours is built fast, built smart, and built to convert.</div>
+        </div>
+      </article>
+
+      <!-- 06 -->
+      <article class="pillar-card sa">
+        <div class="pillar-left">
+          <span class="pillar-num">06</span>
+          <h3>AI-Powered Client Qualification System</h3>
+          <p class="pillar-tagline">An intelligent application and grading system that filters out tire-kickers and puts only your highest-intent prospects on your calendar.</p>
+        </div>
+        <div class="pillar-right">
+          <p class="pillar-desc">Not every lead deserves your time. This system uses a structured application process with an AI-powered grading system to evaluate prospects against your ideal client criteria before they ever book a call. The result is a calendar full of people who are financially qualified, emotionally ready, and genuinely serious about solving their problem.</p>
+          <div class="pillar-compare">
+            <div class="pillar-compare-col bad">
+              <span class="pillar-compare-label pillar-compare-label-bad">Without this you're stuck</span>
+              <ul>
+                <li>Wasting hours on calls with people who cannot afford you or were never going to buy</li>
+                <li>Letting unqualified leads drain your energy and lower your close rate</li>
+                <li>Having no system to distinguish a serious buyer from a curious tire-kicker</li>
+              </ul>
+            </div>
+            <div class="pillar-compare-col good">
+              <span class="pillar-compare-label pillar-compare-label-good">With this you get</span>
+              <ul>
+                <li>An automated qualification process that screens every lead before they reach your calendar</li>
+                <li>A calendar filled exclusively with high-intent, financially qualified prospects</li>
+                <li>More time for closing because you spend zero time on leads who were never going to buy</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pillar-bottomline"><strong>The Bottom Line —</strong> The quality of your sales calls determines the quality of your clients. This system makes sure only the right people get through.</div>
+        </div>
+      </article>
+
+      <!-- 07 -->
+      <article class="pillar-card sa">
+        <div class="pillar-left">
+          <span class="pillar-num">07</span>
+          <h3>Triple Threat Appointment Confirmation</h3>
+          <p class="pillar-tagline">Confirm, nurture, and pre-sell every booked prospect so they show up to your call ready to say yes.</p>
+        </div>
+        <div class="pillar-right">
+          <p class="pillar-desc">Booking a call is not the same as having a call. Most programs ignore what happens between the booking and the conversation. This system uses a three-channel confirmation and nurture sequence — email, SMS, and strategic content delivery — to dramatically increase show rates, reduce no-shows, and have your prospects so warmed up and pre-sold by the time they arrive that your job on the call is simply to confirm the details.</p>
+          <div class="pillar-compare">
+            <div class="pillar-compare-col bad">
+              <span class="pillar-compare-label pillar-compare-label-bad">Without this you're stuck</span>
+              <ul>
+                <li>Losing 30–50% of your booked calls to no-shows who ghost you</li>
+                <li>Prospects showing up cold, skeptical, and needing to be resold from scratch</li>
+                <li>Wasting your energy and time on calls that were never going to convert</li>
+              </ul>
+            </div>
+            <div class="pillar-compare-col good">
+              <span class="pillar-compare-label pillar-compare-label-good">With this you get</span>
+              <ul>
+                <li>Show rates above 80% because every prospect is confirmed across three touchpoints</li>
+                <li>Prospects who arrive pre-sold and pre-committed to moving forward</li>
+                <li>Sales calls that feel like a natural next step rather than a cold pitch</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pillar-bottomline"><strong>The Bottom Line —</strong> The sale does not start on the call. It starts the moment they book. This system makes sure they arrive ready.</div>
+        </div>
+      </article>
+
+      <!-- 08 -->
+      <article class="pillar-card sa">
+        <div class="pillar-left">
+          <span class="pillar-num">08</span>
+          <h3>Leadership Conversion System</h3>
+          <p class="pillar-tagline">Lead every prospect through a values-based sales conversation that guides them to the right decision for them — whether or not that is buying from you.</p>
+        </div>
+        <div class="pillar-right">
+          <p class="pillar-desc">True leadership in sales means you are never pressuring, never manipulating, and never chasing. You are guiding. This system installs a structured sales conversation framework built on authority, empathy, and conviction that leads prospects through a clear decision-making process. The best clients close themselves. Your job is to lead them there with integrity.</p>
+          <div class="pillar-compare">
+            <div class="pillar-compare-col bad">
+              <span class="pillar-compare-label pillar-compare-label-bad">Without this you're stuck</span>
+              <ul>
+                <li>Feeling like you have to pressure or hard-close prospects to get them to say yes</li>
+                <li>Losing deals because you did not have a clear, repeatable sales process to follow</li>
+                <li>Taking on bad-fit clients because you were not confident enough to disqualify them</li>
+              </ul>
+            </div>
+            <div class="pillar-compare-col good">
+              <span class="pillar-compare-label pillar-compare-label-good">With this you get</span>
+              <ul>
+                <li>A structured, repeatable sales conversation that feels natural and confident every time</li>
+                <li>The ability to lead prospects to the right decision without ever feeling pushy</li>
+                <li>Higher close rates because prospects feel guided, not sold</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pillar-bottomline"><strong>The Bottom Line —</strong> Leadership is not just a sales technique. It is a philosophy that starts with your first ad and carries through every touchpoint. This system makes it systematic.</div>
+        </div>
+      </article>
+
+      <!-- 09 -->
+      <article class="pillar-card sa">
+        <div class="pillar-left">
+          <span class="pillar-num">09</span>
+          <h3>Follow-Up Enforcement System</h3>
+          <p class="pillar-tagline">Recover every deal that did not close on the first call through a systematic, persistent, and professional follow-up process.</p>
+        </div>
+        <div class="pillar-right">
+          <p class="pillar-desc">The fortune is in the follow-up. Most sales are lost not because the prospect said no, but because no one followed up consistently enough or professionally enough. This system creates an automated, structured follow-up sequence that keeps you in front of every unconverted prospect until they buy, refer someone, or explicitly opt out. No lead left behind.</p>
+          <div class="pillar-compare">
+            <div class="pillar-compare-col bad">
+              <span class="pillar-compare-label pillar-compare-label-bad">Without this you're stuck</span>
+              <ul>
+                <li>Losing deals to prospects who needed a few more touchpoints before they were ready</li>
+                <li>Relying on memory or manual follow-up that falls through the cracks</li>
+                <li>Leaving revenue on the table because your team stops following up after one or two attempts</li>
+              </ul>
+            </div>
+            <div class="pillar-compare-col good">
+              <span class="pillar-compare-label pillar-compare-label-good">With this you get</span>
+              <ul>
+                <li>An automated follow-up system that nurtures every unconverted lead until they make a decision</li>
+                <li>Consistent, professional touchpoints that keep you top of mind without being annoying</li>
+                <li>Recovered revenue from deals that were lost simply because nobody followed up</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pillar-bottomline"><strong>The Bottom Line —</strong> Most people give up after two follow-ups. Most deals close after five or more. This system makes sure you are always the one who follows up one more time.</div>
+        </div>
+      </article>
+
+      <!-- 10 -->
+      <article class="pillar-card sa">
+        <div class="pillar-left">
+          <span class="pillar-num">10</span>
+          <h3>AI-Powered Profit Intelligence System</h3>
+          <p class="pillar-tagline">Know exactly where every dollar is going, where every lead is coming from, and which part of your system to optimize next.</p>
+        </div>
+        <div class="pillar-right">
+          <p class="pillar-desc">You cannot scale what you cannot measure. This system builds a real-time profit intelligence dashboard that tracks your key metrics — ad spend, cost per lead, show rate, close rate, and client LTV — so every decision you make is driven by data, not guesswork. The AI layer identifies where your system is leaking and tells you exactly where to focus to maximize profit.</p>
+          <div class="pillar-compare">
+            <div class="pillar-compare-col bad">
+              <span class="pillar-compare-label pillar-compare-label-bad">Without this you're stuck</span>
+              <ul>
+                <li>Making decisions based on gut feel because you have no real data to work with</li>
+                <li>Having no idea which part of your funnel or sales process is costing you money</li>
+                <li>Scaling the wrong things because you cannot see which numbers actually matter</li>
+              </ul>
+            </div>
+            <div class="pillar-compare-col good">
+              <span class="pillar-compare-label pillar-compare-label-good">With this you get</span>
+              <ul>
+                <li>A real-time dashboard that shows you exactly what is working and what is not</li>
+                <li>AI-powered insights that identify your biggest profit leaks before they become problems</li>
+                <li>Confidence to scale because your decisions are driven by data, not assumptions</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pillar-bottomline"><strong>The Bottom Line —</strong> Profit intelligence is what separates businesses that scale from businesses that stay stuck. This system makes sure you always know your numbers and what to do about them.</div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- BONUS: TEAM TAKEOVER PROTOCOL -->
+    <div class="pillar-bonus sa">
+      <span class="pillar-bonus-label">Bonus · Post-Sprint</span>
+      <h3>Team Takeover Protocol</h3>
+      <p>After the 90-day Shift sprint, your team takes ownership of the Selling System. We document every process, train your internal team on how to operate and optimize each of the 10 systems, and hand off a fully operational growth machine. Ongoing support continues at <span class="highlight-inline">$1,500/mo</span> through the coaching program — or upgrade to a fully done-for-you tier above.</p>
     </div>
   </div>
 </section>
