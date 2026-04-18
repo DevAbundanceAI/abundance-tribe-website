@@ -17,6 +17,27 @@
     font-style: normal;
     font-display: swap;
   }
+  @font-face {
+    font-family: 'Greycliff CF';
+    src: url('/assets/fonts/greycliff-cf/greycliff-cf-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Greycliff CF';
+    src: url('/assets/fonts/greycliff-cf/greycliff-cf-bold-italic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Greycliff CF';
+    src: url('/assets/fonts/greycliff-cf/greycliff-cf-extrabold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
 
   :root {
     /* V5 — MultiplyClients light blue aesthetic */
@@ -1271,6 +1292,40 @@
   .dark .proof-total { background: #FFFFFF; color: var(--ink); }
   .dark .proof-total .proof-total-num { background: var(--gradient-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
   .dark .proof-total .proof-total-label { color: var(--ink-muted); }
+
+  /* ═══════════════════════════════════════════════════════════
+     GREYCLIFF CF — brand sans for all headlines
+     Softly rounded geometric, replaces DM Sans on H1/H2/H3
+     ═══════════════════════════════════════════════════════════ */
+  h1, h2, h3,
+  .hero h1,
+  .system-header h2,
+  .system-card h3,
+  .math-inner h2,
+  .proof-header h2,
+  .proof-name,
+  .install-header h2,
+  .install-item h3,
+  .pricing-inner h2,
+  .ryan-content h2,
+  .who-header h2,
+  .faq-header h2,
+  .cta-inner h2,
+  .pillars-header h2,
+  .pillar-left h3,
+  .pillar-bonus h3,
+  .what-system-title,
+  .problem-item-headline,
+  .outcome-label {
+    font-family: 'Greycliff CF', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 700;
+  }
+
+  /* Hero H1 benefits from ExtraBold (800) — more presence */
+  .hero h1 {
+    font-weight: 800;
+    letter-spacing: -0.025em;
+  }
 
   /* ═══════════════════════════════════════════════════════════
      NEO CONTACT — logo font, applied ONLY to emphasis words
