@@ -13,39 +13,39 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* V4 — Dark tech mode + warm amber (Linear/Haystock aesthetic) */
+    /* V4 — Pure monochrome dark (Haystock / Linear / Vercel)
+       Color comes from content/images ONLY. UI chrome stays neutral. */
     --cream: #0A0A0B;          /* near-black page bg */
-    --parchment: #111113;      /* slightly lifted surface for cards */
+    --parchment: #111113;      /* slightly lifted card surface */
     --warm-white: #0A0A0B;
-    --sand: #17171A;            /* raised surface */
-    --stone: #8B8B93;           /* secondary text (mid-gray) */
-    --dark-stone: #A4A4AC;      /* tertiary text (lighter gray) */
+    --sand: #17171A;            /* raised surface / hover */
+    --stone: #8B8B93;           /* secondary text (mid silver) */
+    --dark-stone: #A4A4AC;      /* tertiary text (lighter silver) */
     --brown: #F5F5F2;
-    --dark: #F5F5F2;            /* near-white primary text */
+    --dark: #EDEDED;            /* near-white primary text */
     --carbon: #F5F5F2;
     --black: #0A0A0B;
 
-    /* Amber accent — warm, glowy on dark */
-    --gold: #F59E0B;            /* amber-500 */
-    --gold-light: #FBBF24;      /* amber-400 */
-    --gold-dim: rgba(245,158,11,0.12);
+    /* Monochrome "accent" — just white/silver */
+    --gold: #EDEDED;            /* primary white accent */
+    --gold-light: #FFFFFF;      /* pure white highlight */
+    --gold-dim: rgba(255,255,255,0.08);
     --border-light: rgba(255,255,255,0.08);
 
     --card-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 4px 12px rgba(0,0,0,0.25);
     --card-shadow-lg: 0 4px 16px rgba(0,0,0,0.35), 0 16px 48px rgba(0,0,0,0.3);
 
-    /* Amber scale */
-    --amber-deep: #92400E;      /* amber-800 */
-    --amber: #F59E0B;           /* amber-500 */
-    --amber-mid: #FBBF24;       /* amber-400 */
-    --amber-light: #FCD34D;     /* amber-300 */
-    --amber-dim: rgba(245,158,11,0.15);
+    /* Silver scale for text hierarchy */
+    --silver-bright: #FFFFFF;
+    --silver: #EDEDED;
+    --silver-mid: #A4A4AC;
+    --silver-dim: #6B6B73;
 
-    /* Gradients */
-    --gradient-text: linear-gradient(135deg, #F59E0B 0%, #FBBF24 50%, #FCD34D 100%);
-    --gradient-btn: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
-    --gradient-btn-hover: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
-    --gradient-hero: radial-gradient(ellipse 90% 50% at 50% 0%, rgba(245,158,11,0.12) 0%, rgba(245,158,11,0.04) 30%, transparent 70%);
+    /* Subtle monochrome gradients (for depth, not color) */
+    --gradient-text: linear-gradient(180deg, #FFFFFF 0%, #C4C4CC 100%);
+    --gradient-btn: #FFFFFF;
+    --gradient-btn-hover: #EDEDED;
+    --gradient-hero: radial-gradient(ellipse 90% 50% at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 70%);
 
     /* Fonts */
     --font-display: 'Boska', Georgia, 'Times New Roman', serif;
@@ -1442,7 +1442,7 @@
     color: var(--dark);
   }
   .urgency-bar-text { color: var(--dark); }
-  .urgency-bar-dot { background: var(--gold); box-shadow: 0 0 0 3px rgba(245,158,11,0.22); }
+  .urgency-bar-dot { background: #FFFFFF; box-shadow: 0 0 0 3px rgba(255,255,255,0.12); }
 
   /* Hero — warm ambient emerald glow */
   .hero { background-image: var(--gradient-hero); }
@@ -1461,35 +1461,35 @@
   .hero-availability { color: var(--gold); }
   .hero-quote-text { color: var(--stone); font-family: var(--font-display); font-style: italic; }
   .hero-quote-attr { color: var(--gold); opacity: 0.8; }
-  .hero-quote-divider { background: rgba(245,158,11,0.3); }
+  .hero-quote-divider { background: rgba(255,255,255,0.15); }
   .hero-stat-num { color: var(--dark); }
   .hero-stat-label { color: var(--stone); }
   .hero-stat-divider { background: var(--gold); opacity: 0.4; }
 
   /* Buttons */
   .btn-gold {
-    background: var(--gradient-btn);
+    background: #FFFFFF;
     color: #0A0A0B;
     border: none;
     font-family: var(--font-body);
     font-weight: 600;
     letter-spacing: -0.005em;
-    box-shadow: 0 2px 12px rgba(245,158,11,0.35), 0 0 0 1px rgba(245,158,11,0.25) inset;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
     transition: all 0.2s ease;
   }
   .btn-gold:hover {
-    background: var(--gradient-btn-hover);
+    background: #EDEDED;
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(245,158,11,0.45);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   }
   .btn-ghost-light {
     background: transparent;
     color: var(--dark);
-    border: 1px solid var(--border-light);
+    border: 1px solid rgba(255,255,255,0.15);
     font-family: var(--font-body);
     font-weight: 500;
   }
-  .btn-ghost-light:hover { background: var(--sand); border-color: rgba(245,158,11,0.35); }
+  .btn-ghost-light:hover { background: var(--sand); border-color: rgba(255,255,255,0.25); }
   .btn-dark {
     background: var(--sand);
     color: var(--dark);
@@ -1615,7 +1615,7 @@
 
   /* Final CTA */
   .cta-section {
-    background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(245,158,11,0.08) 0%, transparent 60%), var(--cream);
+    background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(255,255,255,0.04) 0%, transparent 60%), var(--cream);
   }
 
   /* Footer */
@@ -1644,6 +1644,52 @@
     letter-spacing: 0.08em;
     padding: 10px 18px;
   }
+
+  /* ── Silver/gray hierarchy for labels & secondary elements ── */
+
+  .section-label,
+  .case-tag,
+  .case-compact-tag,
+  .case-row-label,
+  .hero-availability,
+  .hero-quote-attr,
+  .what-callout-label,
+  .cta-bridge-label,
+  .mid-cta-label,
+  .who-col-label,
+  .hero-stat-label,
+  .case-stat-label,
+  .case-compact-result-label,
+  .outcome-desc {
+    color: var(--silver-mid);
+  }
+
+  /* Big stats and display numbers — bright silver/white */
+  .hero-stat-num,
+  .case-stat-num,
+  .case-compact-result {
+    color: var(--silver);
+  }
+
+  .problem-item-num,
+  .how-step-num {
+    color: var(--silver-dim);
+    opacity: 1;
+  }
+
+  /* Dots and decorative marks stay subtle */
+  .hero-label-dot { background: var(--silver); opacity: 0.5; }
+  .hero-stat-divider { background: rgba(255,255,255,0.12); }
+  .outcome-item::before { color: var(--silver); opacity: 0.7; }
+  .section-label::before { opacity: 0.35; }
+
+  /* Subtle card hover lift */
+  .case-card:hover, .what-system-item:hover {
+    background: var(--sand);
+  }
+
+  /* Urgency bar text */
+  .urgency-bar-text { color: var(--silver-mid); }
 </style>
 </head>
 <body>
