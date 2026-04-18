@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abundance Shift — AI-Powered Selling System · 90 Days · $0 Down</title>
+<meta name="description" content="Install an AI-Powered Selling System that fills your calendar with pre-sold sales calls. 90-day done-for-you sprint. $0 down. Built for coaches, consultants, and agency owners.">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* V5 — MultiplyClients light blue aesthetic */
+    --bg: #F8FAFC;
+    --bg-subtle: #EFF6FF;
+    --card: #FFFFFF;
+    --ink: #0F172A;
+    --ink-light: #334155;
+    --ink-mid: #475569;
+    --ink-muted: #64748B;
+    --border: #E2E8F0;
+    --border-strong: #CBD5E1;
+
+    --blue-900: #1E3A8A;
+    --blue-700: #1D4ED8;
+    --blue-600: #2563EB;
+    --blue-500: #3B82F6;
+    --blue-400: #60A5FA;
+    --blue-300: #93C5FD;
+    --blue-100: #DBEAFE;
+    --blue-50: #EFF6FF;
+
+    --gradient-text: linear-gradient(135deg, #2563EB 0%, #3B82F6 50%, #60A5FA 100%);
+    --gradient-btn: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+    --gradient-btn-hover: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%);
+    --gradient-hero: radial-gradient(ellipse 100% 50% at 50% 0%, #DBEAFE 0%, #EFF6FF 30%, #F8FAFC 70%, #FFFFFF 100%);
+
+    --shadow-sm: 0 1px 2px rgba(15,23,42,0.04);
+    --shadow: 0 1px 3px rgba(15,23,42,0.05), 0 4px 12px rgba(15,23,42,0.06);
+    --shadow-lg: 0 4px 12px rgba(15,23,42,0.06), 0 16px 40px rgba(15,23,42,0.08);
+    --shadow-blue: 0 4px 16px rgba(37,99,235,0.18), 0 1px 3px rgba(37,99,235,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── SIGNATURE MOVES ── */
+
+  /* Blue gradient italic emphasis */
+  em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Dark rounded-corner highlight pill — the Kong/Selling System move */
+  .highlight {
+    display: inline-block;
+    background: var(--ink);
+    color: #FFFFFF;
+    padding: 0.08em 0.38em;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(15,23,42,0.18), 0 1px 3px rgba(15,23,42,0.1);
+    white-space: nowrap;
+  }
+  .highlight-blue {
+    background: var(--gradient-btn);
+    color: #FFFFFF;
+    box-shadow: var(--shadow-blue);
+  }
+  .highlight-white {
+    background: #FFFFFF;
+    color: var(--ink);
+    box-shadow: 0 4px 14px rgba(15,23,42,0.12), 0 1px 3px rgba(15,23,42,0.06);
+  }
+
+  /* ── BUTTONS ── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 32px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--gradient-btn);
+    color: #FFFFFF;
+    box-shadow: var(--shadow-blue);
+  }
+  .btn-primary:hover {
+    background: var(--gradient-btn-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(37,99,235,0.28);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover {
+    background: #FFFFFF;
+    border-color: var(--blue-600);
+  }
+  .btn-lg {
+    padding: 20px 40px;
+    font-size: 16px;
+  }
+
+  /* ── SHARED ── */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue-600);
+    margin-bottom: 20px;
+  }
+  .section-label::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue-600);
+  }
+
+  h1, h2, h3 { font-family: inherit; letter-spacing: -0.02em; }
+
+  /* ── SCROLL-IN ANIMATIONS ── */
+  .sa { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; transition-delay: var(--sa-delay, 0ms); }
+  .sa.in { opacity: 1; transform: translateY(0); }
+
+  /* ═══════════════════════════════════════════════════════════
+     URGENCY BAR
+     ═══════════════════════════════════════════════════════════ */
+  .urgency-bar {
+    background: var(--ink);
+    color: #FFFFFF;
+    padding: 12px 24px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .urgency-bar-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #60A5FA;
+    box-shadow: 0 0 0 3px rgba(96,165,250,0.3);
+    vertical-align: middle;
+    margin-right: 10px;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════════ */
+  .hero {
+    padding: 80px 40px 100px;
+    background: var(--gradient-hero);
+    text-align: center;
+    position: relative;
+  }
+  .hero-inner {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  .hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 8px 18px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 36px;
+  }
+  .hero-label-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--blue-600);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.18);
+  }
+  .hero h1 {
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  .hero h1 .highlight { font-size: 0.92em; }
+  .hero-sub {
+    font-size: clamp(18px, 2.2vw, 22px);
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.5;
+    max-width: 720px;
+    margin: 0 auto 40px;
+  }
+  .hero-sub strong { font-weight: 700; color: var(--ink); }
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 56px;
+  }
+
+  /* VSL video embed */
+  .vsl-wrap {
+    max-width: 880px;
+    margin: 0 auto 40px;
+    position: relative;
+  }
+  .vsl-player {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--ink);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+  }
+  .vsl-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: rgba(255,255,255,0.6);
+  }
+  .vsl-play-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gradient-btn);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-blue);
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .vsl-play-btn:hover { transform: scale(1.05); }
+  .vsl-play-btn svg { width: 26px; height: 26px; fill: #FFFFFF; margin-left: 4px; }
+  .vsl-warning {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.95);
+    color: var(--ink);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+  }
+  .vsl-warning::before {
+    content: '⚠';
+    color: var(--blue-600);
+  }
+
+  .hero-trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    color: var(--ink-muted);
+    font-size: 14px;
+  }
+  .hero-trust strong { color: var(--ink); font-weight: 700; }
+  .hero-trust-avatars {
+    display: flex;
+    align-items: center;
+  }
+  .hero-trust-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #DBEAFE, #60A5FA);
+    border: 2px solid #FFFFFF;
+    margin-left: -8px;
+  }
+  .hero-trust-avatar:first-child { margin-left: 0; }
+
+  /* ═══════════════════════════════════════════════════════════
+     THE 3-STEP SYSTEM
+     ═══════════════════════════════════════════════════════════ */
+  .system-section {
+    padding: 120px 40px;
+    background: #FFFFFF;
+  }
+  .system-inner { max-width: 1180px; margin: 0 auto; }
+  .system-header {
+    max-width: 760px;
+    margin: 0 auto 72px;
+    text-align: center;
+  }
+  .system-header h2 {
+    font-size: clamp(32px, 4.2vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .system-header p {
+    font-size: 18px;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+  .system-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .system-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px 36px;
+    box-shadow: var(--shadow);
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .system-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--blue-300);
+  }
+  .system-card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--blue-50);
+    color: var(--blue-600);
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 24px;
+  }
+  .system-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .system-card p {
+    font-size: 15px;
+    color: var(--ink-mid);
+    line-height: 1.65;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     THE MATH
+     ═══════════════════════════════════════════════════════════ */
+  .math-section {
+    padding: 100px 40px;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+  }
+  .math-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .math-inner h2 {
+    font-size: clamp(28px, 3.6vw, 44px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 48px;
+  }
+  .math-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .math-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  .math-card-num {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    font-family: 'Cormorant Garamond', serif;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .math-card-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink-muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .math-note {
+    font-size: 15px;
+    color: var(--ink-muted);
+    margin-top: 32px;
+    font-style: italic;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     PROOF
+     ═══════════════════════════════════════════════════════════ */
+  .proof-section {
+    padding: 120px 40px;
+    background: #FFFFFF;
+    border-top: 1px solid var(--border);
+  }
+  .proof-inner { max-width: 1180px; margin: 0 auto; }
+  .proof-header {
+    max-width: 760px;
+    margin: 0 auto 64px;
+    text-align: center;
+  }
+  .proof-header h2 {
+    font-size: clamp(32px, 4.2vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .proof-header p {
+    font-size: 18px;
+    color: var(--ink-mid);
+  }
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .proof-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 32px;
+    transition: all 0.2s;
+  }
+  .proof-card:hover {
+    border-color: var(--blue-300);
+    transform: translateY(-2px);
+  }
+  .proof-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue-600);
+    margin-bottom: 14px;
+    display: block;
+  }
+  .proof-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+  .proof-stat {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 6px;
+  }
+  .proof-stat-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .proof-desc {
+    font-size: 14px;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  .proof-total {
+    text-align: center;
+    margin-top: 56px;
+    padding: 32px 40px;
+    background: var(--ink);
+    color: #FFFFFF;
+    border-radius: 20px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .proof-total-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 700;
+    background: linear-gradient(135deg, #60A5FA 0%, #93C5FD 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .proof-total-label {
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     WHAT'S INSTALLED IN 90 DAYS
+     ═══════════════════════════════════════════════════════════ */
+  .install-section {
+    padding: 120px 40px;
+    background: var(--bg);
+  }
+  .install-inner { max-width: 1100px; margin: 0 auto; }
+  .install-header {
+    max-width: 760px;
+    margin: 0 auto 64px;
+    text-align: center;
+  }
+  .install-header h2 {
+    font-size: clamp(32px, 4.2vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .install-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  .install-item {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 40px;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    align-items: start;
+    box-shadow: var(--shadow-sm);
+  }
+  .install-item-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--gradient-btn);
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 700;
+    box-shadow: var(--shadow-blue);
+  }
+  .install-item h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+  .install-item p {
+    font-size: 15px;
+    color: var(--ink-mid);
+    line-height: 1.65;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     PRICING / $0 DOWN
+     ═══════════════════════════════════════════════════════════ */
+  .pricing-section {
+    padding: 120px 40px;
+    background: #FFFFFF;
+    border-top: 1px solid var(--border);
+  }
+  .pricing-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .pricing-inner h2 {
+    font-size: clamp(40px, 5.5vw, 72px);
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  .pricing-sub {
+    font-size: clamp(17px, 2vw, 20px);
+    color: var(--ink-mid);
+    max-width: 720px;
+    margin: 0 auto 48px;
+    line-height: 1.6;
+  }
+  .pricing-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 48px 48px;
+    max-width: 720px;
+    margin: 0 auto 48px;
+    text-align: left;
+    box-shadow: var(--shadow);
+  }
+  .pricing-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    gap: 16px;
+  }
+  .pricing-row:last-child { border-bottom: none; }
+  .pricing-row-label {
+    font-size: 15px;
+    color: var(--ink-mid);
+  }
+  .pricing-row-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .pricing-row-value strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .pricing-note {
+    font-size: 14px;
+    color: var(--ink-muted);
+    font-style: italic;
+    margin-top: 32px;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     RYAN CREDIBILITY
+     ═══════════════════════════════════════════════════════════ */
+  .ryan-section {
+    padding: 120px 40px;
+    background: var(--bg);
+  }
+  .ryan-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .ryan-photo-wrap {
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--blue-100), var(--blue-50));
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-muted);
+    font-size: 14px;
+  }
+  .ryan-content h2 {
+    font-size: clamp(28px, 3.8vw, 48px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .ryan-content p {
+    font-size: 16px;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .ryan-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+  .ryan-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .ryan-stat-label {
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-weight: 500;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     WHO IT'S FOR
+     ═══════════════════════════════════════════════════════════ */
+  .who-section {
+    padding: 120px 40px;
+    background: #FFFFFF;
+    border-top: 1px solid var(--border);
+  }
+  .who-inner { max-width: 1100px; margin: 0 auto; }
+  .who-header {
+    max-width: 760px;
+    margin: 0 auto 64px;
+    text-align: center;
+  }
+  .who-header h2 {
+    font-size: clamp(32px, 4.2vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+  .who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .who-col {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px 36px;
+  }
+  .who-col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .who-col-label-yes { color: var(--blue-600); }
+  .who-col-label-no { color: var(--ink-muted); }
+  .who-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .who-list li {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 12px;
+    align-items: start;
+    font-size: 15px;
+    color: var(--ink-mid);
+    line-height: 1.55;
+  }
+  .who-list li::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-top: 4px;
+  }
+  .who-list-yes li::before { background: var(--blue-600); }
+  .who-list-no li::before { background: var(--border-strong); }
+
+  /* ═══════════════════════════════════════════════════════════
+     FAQ
+     ═══════════════════════════════════════════════════════════ */
+  .faq-section {
+    padding: 120px 40px;
+    background: var(--bg);
+  }
+  .faq-inner { max-width: 840px; margin: 0 auto; }
+  .faq-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .faq-header h2 {
+    font-size: clamp(32px, 4.2vw, 48px);
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .faq-item {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 28px;
+    transition: all 0.2s;
+  }
+  .faq-item:hover { border-color: var(--blue-300); }
+  .faq-item summary {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--blue-600);
+    transition: transform 0.2s;
+  }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item p {
+    font-size: 15px;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     FINAL CTA
+     ═══════════════════════════════════════════════════════════ */
+  .cta-section {
+    padding: 120px 40px;
+    background: radial-gradient(ellipse 80% 50% at 50% 50%, #DBEAFE 0%, #EFF6FF 50%, #F8FAFC 100%);
+    text-align: center;
+  }
+  .cta-inner { max-width: 860px; margin: 0 auto; }
+  .cta-inner h2 {
+    font-size: clamp(40px, 5.5vw, 72px);
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .cta-inner p {
+    font-size: 18px;
+    color: var(--ink-mid);
+    max-width: 640px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+  }
+  .cta-stack {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════ */
+  footer {
+    background: #FFFFFF;
+    border-top: 1px solid var(--border);
+    padding: 32px 40px;
+    text-align: center;
+    color: var(--ink-muted);
+    font-size: 13px;
+  }
+  footer a { color: var(--blue-600); text-decoration: none; }
+
+  /* ═══════════════════════════════════════════════════════════
+     RESPONSIVE
+     ═══════════════════════════════════════════════════════════ */
+  @media (max-width: 900px) {
+    .hero { padding: 56px 20px 72px; }
+    .system-section, .proof-section, .install-section, .pricing-section, .ryan-section, .who-section, .faq-section, .cta-section { padding: 72px 20px; }
+    .system-grid, .math-grid, .proof-grid { grid-template-columns: 1fr; }
+    .ryan-inner { grid-template-columns: 1fr; gap: 40px; }
+    .ryan-photo-wrap { max-height: 400px; }
+    .who-grid { grid-template-columns: 1fr; }
+    .install-item { grid-template-columns: 1fr; gap: 16px; padding: 28px 24px; }
+    .pricing-card { padding: 32px 28px; }
+    .pricing-row { flex-direction: column; gap: 6px; align-items: flex-start; }
+    .ryan-stats { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .hero-actions, .cta-stack { flex-direction: column; }
+    .btn { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <span class="urgency-bar-dot"></span>
+  New AI-Powered Selling System · Built for Coaches, Consultants &amp; Agency Owners
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-label sa">
+      <span class="hero-label-dot"></span>
+      For coaches, consultants &amp; agency owners doing $5k–$50k/mo
+    </div>
+    <h1 class="sa" style="--sa-delay:60ms">
+      Install an <em>AI-Powered Selling System</em> that fills your calendar with <span class="highlight">pre-sold sales calls</span>
+    </h1>
+    <p class="hero-sub sa" style="--sa-delay:120ms">
+      90 days done-for-you. <strong>$0 down.</strong> Ads live in <strong>7 days.</strong> Pay from the revenue the system generates.
+    </p>
+    <div class="hero-actions sa" style="--sa-delay:180ms">
+      <a href="#apply" class="btn btn-primary btn-lg">Apply Now →</a>
+      <a href="#system" class="btn btn-ghost btn-lg">See how it works</a>
+    </div>
+
+    <div class="vsl-wrap sa" style="--sa-delay:240ms">
+      <div class="vsl-player">
+        <div class="vsl-warning">Watch before you apply</div>
+        <div class="vsl-placeholder">
+          <div class="vsl-play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span>VSL — 14 min</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-trust sa" style="--sa-delay:300ms">
+      <div class="hero-trust-avatars">
+        <div class="hero-trust-avatar"></div>
+        <div class="hero-trust-avatar"></div>
+        <div class="hero-trust-avatar"></div>
+        <div class="hero-trust-avatar"></div>
+      </div>
+      <span>Trusted by coaches, consultants &amp; agency owners generating <strong>$12M+</strong> in revenue</span>
+    </div>
+  </div>
+</section>
+
+<!-- THE 3-STEP SYSTEM -->
+<section class="system-section" id="system">
+  <div class="system-inner">
+    <div class="system-header">
+      <span class="section-label sa">The System</span>
+      <h2 class="sa">Three things installed. <em>One compounding outcome.</em></h2>
+      <p class="sa" style="--sa-delay:60ms">Across 5 businesses, 5 industries, and $12M in revenue — these three pieces were the difference every single time. Miss any one and the math breaks.</p>
+    </div>
+    <div class="system-grid">
+      <div class="system-card sa">
+        <div class="system-card-num">1</div>
+        <h3>An offer that converts cold strangers</h3>
+        <p>Not your promise. Not your guarantee. An offer built around your market's pre-existing desires — what they already want to buy. Get this right and your cost per call drops, show rate climbs, close rate climbs. Everything compounds from one thing.</p>
+      </div>
+      <div class="system-card sa" style="--sa-delay:80ms">
+        <div class="system-card-num">2</div>
+        <h3>AI-powered Meta ads that pre-sell</h3>
+        <p>Cold traffic doesn't convert on a booking page. We manufacture the know-like-trust factor <em>before</em> a prospect ever hits your calendar. They show up already pre-sold. Under <span class="highlight-blue">$150 per qualified booking</span> across every business we've built.</p>
+      </div>
+      <div class="system-card sa" style="--sa-delay:160ms">
+        <div class="system-card-num">3</div>
+        <h3>A reverse sales process closing 40–50%</h3>
+        <p>Pre-sold leads don't need to be convinced. We install a reverse process — the prospect articulates their own problem, their own urgency, their own desire to fix it. You present the solution. Close rates land at <span class="highlight-blue">40–50%</span>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE MATH -->
+<section class="math-section">
+  <div class="math-inner">
+    <span class="section-label sa">The Math</span>
+    <h2 class="sa">20 calls. <em>40% close.</em> $5k offer.</h2>
+    <div class="math-grid">
+      <div class="math-card sa">
+        <div class="math-card-num">$40k</div>
+        <div class="math-card-label">20 calls / mo · 40% close</div>
+      </div>
+      <div class="math-card sa" style="--sa-delay:60ms">
+        <div class="math-card-num">$80k</div>
+        <div class="math-card-label">40 calls / mo · same close</div>
+      </div>
+      <div class="math-card sa" style="--sa-delay:120ms">
+        <div class="math-card-num">$128k</div>
+        <div class="math-card-label">40 calls · $8k offer</div>
+      </div>
+    </div>
+    <p class="math-note sa" style="--sa-delay:180ms">A stronger offer supports a higher price. The same 40 calls compound differently when every piece works together.</p>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof-section">
+  <div class="proof-inner">
+    <div class="proof-header">
+      <span class="section-label sa">Results</span>
+      <h2 class="sa">Five businesses. <em>All started from zero.</em></h2>
+      <p class="sa" style="--sa-delay:60ms">No funnel. No lead system. No sales process. Built from scratch every single time.</p>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-card sa">
+        <span class="proof-tag">2023–Present</span>
+        <div class="proof-name">Acquisition Network</div>
+        <div class="proof-stat">$2.8M</div>
+        <span class="proof-stat-label">Revenue · $135k / month avg</span>
+        <p class="proof-desc">Zero to $2.8M. Built full GTM from scratch — offer, organic and paid lead gen, sales process, CRM, and reporting.</p>
+      </div>
+      <div class="proof-card sa" style="--sa-delay:60ms">
+        <span class="proof-tag">2025–Present</span>
+        <div class="proof-name">Smart Sellers Academy</div>
+        <div class="proof-stat">$1.3M</div>
+        <span class="proof-stat-label">Revenue · $225k / month avg</span>
+        <p class="proof-desc">$1.3M in 15 months. Faster ramp than the first business because the system was sharper by then.</p>
+      </div>
+      <div class="proof-card sa" style="--sa-delay:120ms">
+        <span class="proof-tag">2022–2024</span>
+        <div class="proof-name">All Done Consulting</div>
+        <div class="proof-stat">$4.6M</div>
+        <span class="proof-stat-label">Revenue · 2.5 years</span>
+        <p class="proof-desc">Full GTM infrastructure from scratch. Webinar funnels, book-a-call funnels, email automation, launch systems.</p>
+      </div>
+      <div class="proof-card sa">
+        <span class="proof-tag">2023–2024</span>
+        <div class="proof-name">Malik Consolidated</div>
+        <div class="proof-stat">$1.6M</div>
+        <span class="proof-stat-label">Revenue</span>
+        <p class="proof-desc">Funnel strategy, CRM workflows, campaign execution, and full lead-to-close conversion systems from limited infrastructure.</p>
+      </div>
+      <div class="proof-card sa" style="--sa-delay:60ms">
+        <span class="proof-tag">2020–2021</span>
+        <div class="proof-name">Big Little Gyms</div>
+        <div class="proof-stat">15→189</div>
+        <span class="proof-stat-label">Clients in 11 months · $989K</span>
+        <p class="proof-desc">Scaled a coaching business 12x during COVID. Acquisition, fulfillment, and client experience systems built from the ground up.</p>
+      </div>
+      <div class="proof-card sa" style="--sa-delay:120ms" style="background: var(--ink); color: #FFFFFF;">
+        <span class="proof-tag" style="color: var(--blue-400);">5 Years · Across All Clients</span>
+        <div class="proof-name" style="color: #FFFFFF;">Total revenue generated</div>
+        <div class="proof-stat" style="background: linear-gradient(135deg, #60A5FA 0%, #93C5FD 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">$12M+</div>
+        <span class="proof-stat-label" style="color: rgba(255,255,255,0.5);">Built from scratch, every time</span>
+        <p class="proof-desc" style="color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.1);">Same three-step system. Same compounding result. Now packaged as a 90-day done-for-you sprint.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSTALLED IN 90 DAYS -->
+<section class="install-section">
+  <div class="install-inner">
+    <div class="install-header">
+      <span class="section-label sa">What Gets Installed</span>
+      <h2 class="sa">In 90 days — everything you need to scale past <em>$100k / month</em>.</h2>
+    </div>
+    <div class="install-list">
+      <div class="install-item sa">
+        <div class="install-item-num">01</div>
+        <div>
+          <h3>AI-powered Meta ad system, done for you</h3>
+          <p>Ad creative, copy, targeting structure, and the full pre-sell sequence that turns cold traffic into qualified, ready-to-buy sales calls on your calendar every single day.</p>
+        </div>
+      </div>
+      <div class="install-item sa" style="--sa-delay:60ms">
+        <div class="install-item-num">02</div>
+        <div>
+          <h3>Offer, VSL &amp; sales process optimization</h3>
+          <p>We'll work directly with you to sharpen your offer, build or rebuild your VSL, and install a reverse sales process engineered to close 40–50% of the calls we generate.</p>
+        </div>
+      </div>
+      <div class="install-item sa" style="--sa-delay:120ms">
+        <div class="install-item-num">03</div>
+        <div>
+          <h3>Full system live within <span class="highlight">7 days</span></h3>
+          <p>Ads live. Funnel running. Calendar filling. You're generating calls inside week one — and you're doing it with <strong>$0 down</strong>, funded from the revenue the system produces.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING / $0 DOWN -->
+<section class="pricing-section">
+  <div class="pricing-inner">
+    <span class="section-label sa">Pricing</span>
+    <h2 class="sa"><em>$0 down.</em> Pay from the revenue the system generates.</h2>
+    <p class="pricing-sub sa" style="--sa-delay:60ms">Most consultants charge $15k–$25k upfront for a build like this. You pay in full. You take all the risk. And you're cash-strapped when it's time to reinvest in the ads that actually make the system work. That's not how this runs.</p>
+
+    <div class="pricing-card sa" style="--sa-delay:120ms">
+      <div class="pricing-row">
+        <span class="pricing-row-label">90-day done-for-you sprint</span>
+        <span class="pricing-row-value"><strong>$6,000</strong></span>
+      </div>
+      <div class="pricing-row">
+        <span class="pricing-row-label">Upfront</span>
+        <span class="pricing-row-value"><span class="highlight-blue">$0 down</span></span>
+      </div>
+      <div class="pricing-row">
+        <span class="pricing-row-label">Ads live by</span>
+        <span class="pricing-row-value">Day 7</span>
+      </div>
+      <div class="pricing-row">
+        <span class="pricing-row-label">Timeline</span>
+        <span class="pricing-row-value">90 days</span>
+      </div>
+    </div>
+
+    <a href="#apply" class="btn btn-primary btn-lg sa" style="--sa-delay:180ms">Apply Now →</a>
+    <p class="pricing-note sa" style="--sa-delay:240ms">Limited to a small number of clients at a time. Not a sales tactic — the only way to do this work at the level it requires.</p>
+  </div>
+</section>
+
+<!-- RYAN -->
+<section class="ryan-section">
+  <div class="ryan-inner">
+    <div class="ryan-photo-wrap sa">Ryan Frost photo</div>
+    <div class="ryan-content">
+      <span class="section-label sa">Who's Building This</span>
+      <h2 class="sa" style="--sa-delay:60ms">5 years. <em>$12M generated.</em> Every business started at zero.</h2>
+      <p class="sa" style="--sa-delay:120ms">I've spent the last five years building the go-to-market systems behind $12 million in revenue across coaching businesses, consulting firms, and agencies — and every single one of them started with zero infrastructure when I arrived.</p>
+      <p class="sa" style="--sa-delay:180ms">I'm currently running GTM for two businesses simultaneously — one averaging <strong>$135k/month</strong> in new cash collected, the other averaging <strong>$225k/month</strong>. Both were at zero when we started. Now I'm packaging the exact system I run inside those businesses into a 90-day sprint.</p>
+      <div class="ryan-stats sa" style="--sa-delay:240ms">
+        <div>
+          <div class="ryan-stat-num">$12M+</div>
+          <div class="ryan-stat-label">Revenue generated</div>
+        </div>
+        <div>
+          <div class="ryan-stat-num">5</div>
+          <div class="ryan-stat-label">Businesses built from zero</div>
+        </div>
+        <div>
+          <div class="ryan-stat-num">5 yrs</div>
+          <div class="ryan-stat-label">GTM systems experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="who-section">
+  <div class="who-inner">
+    <div class="who-header">
+      <span class="section-label sa">Who This Is For</span>
+      <h2 class="sa">Built for operators who want a <em>system — not another course.</em></h2>
+    </div>
+    <div class="who-grid">
+      <div class="who-col sa">
+        <span class="who-col-label who-col-label-yes">This is for you if</span>
+        <ul class="who-list who-list-yes">
+          <li>You're a coach, consultant, or agency owner doing $5k–$50k per month and you want to scale past $100k/month</li>
+          <li>You're tired of relying on referrals, cold outreach, or posting and praying</li>
+          <li>You want a real system that generates qualified inbound calls on autopilot</li>
+          <li>You're willing to show up for the calls — the system handles everything else</li>
+          <li>You want to get ads live in 7 days, not 7 months</li>
+        </ul>
+      </div>
+      <div class="who-col sa" style="--sa-delay:80ms">
+        <span class="who-col-label who-col-label-no">This is not for you if</span>
+        <ul class="who-list who-list-no">
+          <li>You're still finding product–market fit or haven't generated consistent revenue yet</li>
+          <li>You want someone to guarantee a result without your involvement</li>
+          <li>You think the problem is one missing tactic or one new tool</li>
+          <li>You're not ready to run paid traffic or don't believe in the channel</li>
+          <li>You want someone to confirm that what you're already doing is right</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <span class="section-label sa">FAQ</span>
+      <h2 class="sa">Questions before you apply</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item sa">
+        <summary>What exactly does "$0 down" mean?</summary>
+        <p>You don't pay anything upfront to get started. We install the full system, get your ads live, and start generating calls — you pay from the revenue the system produces over the 90-day sprint. The total investment is $6,000, paid from revenue as it comes in.</p>
+      </details>
+      <details class="faq-item sa">
+        <summary>How long until ads are actually live?</summary>
+        <p>Within 7 days of kickoff. We build your ad creative, copy, targeting, and pre-sell sequence in week one. Your calendar starts filling from week two onward.</p>
+      </details>
+      <details class="faq-item sa">
+        <summary>Do I need an existing offer or VSL?</summary>
+        <p>No. If your offer isn't converting cold traffic, we'll rebuild it. If you don't have a VSL, we'll build one. If your sales process is leaking, we plug it. The sprint covers the full GTM stack.</p>
+      </details>
+      <details class="faq-item sa">
+        <summary>How much ad spend should I expect?</summary>
+        <p>Plan for at least $100–$150 per qualified call as your cost baseline. We'll size your ad spend to your revenue targets on the kickoff call — no surprises.</p>
+      </details>
+      <details class="faq-item sa">
+        <summary>What if I'm not a coach / consultant / agency?</summary>
+        <p>The system has been built across five different business models. If you sell a high-ticket service or information product to business buyers, it almost certainly applies. Book a call and we'll tell you straight if it's not a fit.</p>
+      </details>
+      <details class="faq-item sa">
+        <summary>How many clients do you take at once?</summary>
+        <p>A small number — by design. This is hands-on, not a course. When slots are full, they're full. If you're reading this, the application is still open.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section" id="apply">
+  <div class="cta-inner">
+    <h2 class="sa">Ready to install your <em>AI-Powered Selling System?</em></h2>
+    <p class="sa" style="--sa-delay:60ms">$0 down. 90 days. Ads live in 7. Apply below, fill out the short form on the next page, and book a call.</p>
+    <div class="cta-stack sa" style="--sa-delay:120ms">
+      <a href="#apply" class="btn btn-primary btn-lg">Apply Now →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Abundance.AI · <a href="/">Home</a> · <a href="/partner">Growth Partnership</a></p>
+</footer>
+
+<script>
+  // Scroll-in animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.sa').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
