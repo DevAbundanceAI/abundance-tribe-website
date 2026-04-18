@@ -944,6 +944,116 @@
   footer a { color: var(--blue-600); text-decoration: none; }
 
   /* ═══════════════════════════════════════════════════════════
+     DARK-MODE SECTION VARIANTS
+     Same design theory, inverted surfaces.
+     ═══════════════════════════════════════════════════════════ */
+  .dark {
+    background: #0A0A0B !important;
+    color: #EDEDED;
+    border-top: none !important;
+  }
+  .dark h2, .dark h3 { color: #FFFFFF; }
+  .dark p { color: #A4A4AC; }
+  .dark .section-label { color: var(--blue-400); }
+  .dark .section-label::before { background: var(--blue-400); }
+
+  /* Dark cards */
+  .dark .system-card,
+  .dark .math-card,
+  .dark .proof-card,
+  .dark .install-item,
+  .dark .pricing-card,
+  .dark .faq-item,
+  .dark .who-col {
+    background: #111113;
+    border-color: rgba(255,255,255,0.08);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.25);
+  }
+  .dark .system-card:hover,
+  .dark .proof-card:hover { border-color: var(--blue-500); background: #17171A; }
+
+  .dark .system-card h3,
+  .dark .math-card-num,
+  .dark .install-item h3,
+  .dark .pricing-row-value,
+  .dark .ryan-content h2,
+  .dark .ryan-stat-num { color: #FFFFFF; }
+
+  .dark .system-card p,
+  .dark .install-item p,
+  .dark .math-card-label,
+  .dark .pricing-row-label,
+  .dark .ryan-content p,
+  .dark .ryan-stat-label { color: #A4A4AC; }
+
+  /* Proof cards on dark */
+  .dark .proof-card { background: #111113; border-color: rgba(255,255,255,0.08); }
+  .dark .proof-name { color: #FFFFFF; }
+  .dark .proof-desc { color: #A4A4AC; border-color: rgba(255,255,255,0.08); }
+  .dark .proof-stat-label { color: #8B8B93; }
+
+  /* System numbered chip on dark */
+  .dark .system-card-num {
+    background: rgba(37,99,235,0.15);
+    color: var(--blue-400);
+  }
+
+  /* Install numbered chip stays blue gradient (already pops on dark) */
+
+  /* Highlight pills invert on dark */
+  .dark .highlight {
+    background: #FFFFFF;
+    color: #0A0A0B;
+    box-shadow: 0 4px 14px rgba(255,255,255,0.15), 0 1px 3px rgba(0,0,0,0.3);
+  }
+
+  /* Buttons on dark — ghost becomes white-outline */
+  .dark .btn-ghost {
+    color: #FFFFFF;
+    border-color: rgba(255,255,255,0.15);
+  }
+  .dark .btn-ghost:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: var(--blue-400);
+  }
+
+  /* Hero-trust pattern reused on dark CTA sections */
+  .dark .pricing-sub,
+  .dark .pricing-note,
+  .dark .math-note { color: #A4A4AC; }
+
+  /* Ryan photo placeholder on dark */
+  .dark .ryan-photo-wrap {
+    background: linear-gradient(135deg, #1E3A8A, #0A0A0B);
+    border-color: rgba(255,255,255,0.08);
+    color: #A4A4AC;
+  }
+
+  /* Who-list dots on dark */
+  .dark .who-list-yes li::before { background: var(--blue-400); }
+  .dark .who-list-no li::before { background: rgba(255,255,255,0.2); }
+  .dark .who-list li { color: #A4A4AC; }
+  .dark .who-col-label-yes { color: var(--blue-400); }
+  .dark .who-col-label-no { color: #8B8B93; }
+
+  /* FAQ on dark */
+  .dark .faq-item { background: #111113; }
+  .dark .faq-item summary { color: #FFFFFF; }
+  .dark .faq-item summary::after { color: var(--blue-400); }
+  .dark .faq-item p { color: #A4A4AC; border-color: rgba(255,255,255,0.08); }
+
+  /* Final CTA (dark) radial gradient */
+  .dark.cta-section {
+    background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(37,99,235,0.25) 0%, rgba(37,99,235,0.08) 40%, #0A0A0B 80%) !important;
+  }
+  .dark .cta-inner p { color: #A4A4AC; }
+
+  /* Proof total card inside dark proof section — flip to light card */
+  .dark .proof-total { background: #FFFFFF; color: var(--ink); }
+  .dark .proof-total .proof-total-num { background: var(--gradient-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .dark .proof-total .proof-total-label { color: var(--ink-muted); }
+
+  /* ═══════════════════════════════════════════════════════════
      RESPONSIVE
      ═══════════════════════════════════════════════════════════ */
   @media (max-width: 900px) {
@@ -1013,7 +1123,7 @@
 </section>
 
 <!-- THE 3-STEP SYSTEM -->
-<section class="system-section" id="system">
+<section class="system-section dark" id="system">
   <div class="system-inner">
     <div class="system-header">
       <span class="section-label sa">The System</span>
@@ -1041,7 +1151,7 @@
 </section>
 
 <!-- THE MATH -->
-<section class="math-section">
+<section class="math-section dark">
   <div class="math-inner">
     <span class="section-label sa">The Math</span>
     <h2 class="sa">20 calls. <em>40% close.</em> $5k offer.</h2>
@@ -1064,7 +1174,7 @@
 </section>
 
 <!-- PROOF -->
-<section class="proof-section">
+<section class="proof-section dark">
   <div class="proof-inner">
     <div class="proof-header">
       <span class="section-label sa">Results</span>
@@ -1183,7 +1293,7 @@
 </section>
 
 <!-- RYAN -->
-<section class="ryan-section">
+<section class="ryan-section dark">
   <div class="ryan-inner">
     <div class="ryan-photo-wrap sa">Ryan Frost photo</div>
     <div class="ryan-content">
@@ -1278,7 +1388,7 @@
 </section>
 
 <!-- FINAL CTA -->
-<section class="cta-section" id="apply">
+<section class="cta-section dark" id="apply">
   <div class="cta-inner">
     <h2 class="sa">Ready to install your <em>AI-Powered Selling System?</em></h2>
     <p class="sa" style="--sa-delay:60ms">$0 down. 90 days. Ads live in 7. Apply below, fill out the short form on the next page, and book a call.</p>
