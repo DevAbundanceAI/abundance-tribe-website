@@ -129,22 +129,27 @@
     background: var(--blue-600);
   }
 
+  h1, h2, h3 {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 700;
+  }
   h1 {
     font-size: clamp(36px, 5vw, 64px);
-    font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.05;
     margin-bottom: 24px;
   }
   h2 {
     font-size: clamp(26px, 3vw, 36px);
-    font-weight: 700;
     letter-spacing: -0.015em;
     margin-bottom: 16px;
   }
   h3 {
     font-size: 18px;
-    font-weight: 700;
     letter-spacing: -0.01em;
     margin-bottom: 8px;
   }
@@ -381,7 +386,7 @@
     line-height: 1.6;
   }
 
-  /* BUTTONS */
+  /* BUTTONS — all variants carry gradient */
   .btn {
     display: inline-flex;
     align-items: center;
@@ -406,15 +411,36 @@
     background: var(--gradient-btn-hover);
     box-shadow: 0 8px 20px rgba(37,99,235,0.3);
   }
+  /* Ghost button — white fill, gradient border, solid blue text */
   .btn-ghost {
-    background: transparent;
-    color: var(--ink);
-    border: 1px solid var(--border);
+    background:
+      linear-gradient(#FFFFFF, #FFFFFF) padding-box,
+      var(--gradient-btn) border-box;
+    border: 1.5px solid transparent;
+    padding: 10.5px 22.5px;
+    color: #2563EB;
+    font-weight: 600;
   }
-  .btn-ghost:hover { background: var(--card); border-color: var(--blue-600); }
+  .btn-ghost:hover {
+    background:
+      linear-gradient(#EFF6FF, #EFF6FF) padding-box,
+      var(--gradient-btn-hover) border-box;
+    box-shadow: 0 4px 14px rgba(37,99,235,0.15);
+  }
+  /* Dark button variant — matte black fill, gradient border, white text */
   .btn-dark {
-    background: var(--ink);
+    background:
+      linear-gradient(#141414, #141414) padding-box,
+      var(--gradient-btn) border-box;
+    border: 1.5px solid transparent;
+    padding: 10.5px 22.5px;
     color: #FFFFFF;
+  }
+  .btn-dark:hover {
+    background:
+      linear-gradient(#1F1F1F, #1F1F1F) padding-box,
+      var(--gradient-btn-hover) border-box;
+    box-shadow: 0 4px 14px rgba(37,99,235,0.2);
   }
 
   /* HIGHLIGHT PILLS */
