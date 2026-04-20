@@ -18,45 +18,45 @@
   }
 
   :root {
-    /* ── LIGHT MODE ── */
+    /* LIGHT MODE */
     --bg: #F8FAFC;
     --bg-subtle: #EFF6FF;
-    --ink: #141414;            /* matte black — primary text */
-    --ink-body: #4A4A4A;       /* neutral gray body */
-    --ink-muted: #7A7A7A;      /* neutral gray muted */
+    --ink: #141414;
+    --ink-body: #4A4A4A;
+    --ink-muted: #7A7A7A;
     --border: #E5E5E5;
     --border-strong: #C8C8C8;
 
-    /* ── DARK MODE ── pure matte black, zero navy ── */
+    /* DARK MODE — pure matte black */
     --dark-bg: #0A0A0A;
-    --dark-card-1: #141414;    /* card gradient start */
-    --dark-card-2: #1A1A1A;    /* card gradient end */
+    --dark-card-1: #141414;
+    --dark-card-2: #1A1A1A;
     --dark-raised: #1F1F1F;
     --dark-text: #EDEDED;
     --dark-body: #A4A4A4;
     --dark-muted: #8B8B8B;
     --dark-border: rgba(255,255,255,0.08);
 
-    /* ── BLUE SCALE ── */
+    /* BLUE SCALE */
     --blue-900: #1E3A8A;
     --blue-800: #1E40AF;
     --blue-700: #1D4ED8;
     --blue-600: #2563EB;
     --blue-500: #3B82F6;
+    --blue-bright: #3E96FA;
     --blue-100: #DBEAFE;
     --blue-50: #EFF6FF;
 
-    /* ── GRADIENTS ── 45° dark → light ── */
+    /* GRADIENTS — 45° dark → light */
     --gradient-text: linear-gradient(45deg, #1E3A8A 0%, #2563EB 45%, #3E96FA 100%);
     --gradient-btn: linear-gradient(45deg, #1E40AF 0%, #3E96FA 100%);
     --gradient-btn-hover: linear-gradient(45deg, #1E3A8A 0%, #2563EB 100%);
     --gradient-hero: radial-gradient(ellipse 100% 55% at 50% 0%, #DBEAFE 0%, #EFF6FF 30%, #F8FAFC 70%, #FFFFFF 100%);
 
-    /* ── CARD GRADIENTS ── subtle 45° ── */
+    /* CARD GRADIENTS — subtle 135° */
     --gradient-card: linear-gradient(135deg, #FFFFFF 0%, #F5F8FC 100%);
     --gradient-card-dark: linear-gradient(135deg, #141414 0%, #1A1A1A 100%);
 
-    /* ── SHADOWS ── */
     --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
     --shadow: 0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.06);
     --shadow-lg: 0 4px 12px rgba(0,0,0,0.06), 0 16px 40px rgba(0,0,0,0.08);
@@ -74,31 +74,18 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── TYPOGRAPHY DEFAULTS ── */
+  /* TYPOGRAPHY */
   h1, h2, h3 {
     color: var(--ink);
     font-weight: 700;
     letter-spacing: -0.015em;
   }
-  h1 {
-    font-size: clamp(36px, 5vw, 64px);
-    line-height: 1.05;
-    margin-bottom: 24px;
-  }
-  h2 {
-    font-size: clamp(26px, 3vw, 40px);
-    line-height: 1.1;
-    margin-bottom: 16px;
-  }
-  h3 {
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
+  h1 { font-size: clamp(36px, 5vw, 64px); line-height: 1.05; margin-bottom: 24px; }
+  h2 { font-size: clamp(26px, 3vw, 40px); line-height: 1.1; margin-bottom: 16px; }
+  h3 { font-size: 18px; margin-bottom: 8px; }
   p { color: var(--ink-body); max-width: 720px; }
   p + p { margin-top: 12px; }
 
-  /* ── ACCENT UTILITIES ── */
-  /* .gradient — applies gradient text color to any element */
   .gradient {
     background: var(--gradient-text);
     -webkit-background-clip: text;
@@ -107,7 +94,6 @@
     color: transparent;
   }
 
-  /* Neo Contact em — rare big accent, always on own line */
   em {
     font-family: 'Neo Contact', 'Impact', sans-serif;
     font-style: normal;
@@ -126,59 +112,46 @@
     margin-top: 0.12em;
   }
 
-  /* ── NAV ── */
+  /* NAV */
   nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    position: sticky; top: 0; z-index: 100;
     background: rgba(248,250,252,0.88);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     padding: 16px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; justify-content: space-between; align-items: center;
   }
   .nav-logo { height: 24px; }
-  .nav-links { display: flex; gap: 28px; font-size: 13px; font-weight: 500; color: var(--ink-body); }
+  .nav-links { display: flex; gap: 24px; font-size: 13px; font-weight: 500; color: var(--ink-body); flex-wrap: wrap; }
   .nav-links a { color: inherit; text-decoration: none; transition: color 0.15s; }
   .nav-links a:hover { color: var(--blue-600); }
 
-  /* ── SECTIONS ── */
   section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
   section.full-width { max-width: none; padding-left: 40px; padding-right: 40px; }
   section + section { border-top: 1px solid var(--border); }
 
   .section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--blue-600);
     margin-bottom: 20px;
   }
   .section-label::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--blue-600);
+    content: ''; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--blue-600);
   }
 
-  /* ── HERO ── */
+  /* HERO */
   .hero {
     background: var(--gradient-hero);
     padding: 100px 40px 80px;
-    max-width: none;
-    text-align: center;
+    max-width: none; text-align: center;
   }
   .hero-inner { max-width: 900px; margin: 0 auto; }
   .hero p { margin: 0 auto; max-width: 640px; font-size: 17px; }
 
-  /* ── COLOR SWATCHES ── */
+  /* SWATCH GRID */
   .swatch-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -196,22 +169,17 @@
   .swatch:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
   .swatch-color {
     height: 120px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    display: flex; align-items: flex-end; justify-content: space-between;
     padding: 12px 14px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
     color: rgba(255,255,255,0.5);
   }
   .swatch-info { padding: 14px 18px; }
   .swatch-name { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
   .swatch-hex {
     font-family: "greycliff-cf", monospace;
-    font-size: 12px;
-    color: var(--ink-muted);
+    font-size: 12px; color: var(--ink-muted);
     letter-spacing: 0.02em;
   }
   .swatch-role { font-size: 11px; color: var(--ink-muted); margin-top: 4px; line-height: 1.4; }
@@ -224,12 +192,13 @@
   .swatch-dark .swatch-hex { color: var(--dark-body); }
   .swatch-dark .swatch-role { color: var(--dark-muted); }
 
-  /* ── DARK SECTION ── */
+  /* DARK SECTION UTILITY */
   .dark-section {
     background: var(--dark-bg);
     color: var(--dark-text);
     max-width: none;
     padding: 80px 40px;
+    border-top: 1px solid var(--border);
   }
   .dark-section-inner { max-width: 1200px; margin: 0 auto; }
   .dark-section h2, .dark-section h3 { color: #FFFFFF; }
@@ -237,12 +206,11 @@
   .dark-section .section-label { color: var(--blue-500); }
   .dark-section .section-label::before { background: var(--blue-500); }
 
-  /* ── GRADIENT SPECIMEN CARDS ── */
+  /* GRADIENT DISPLAY */
   .gradient-display {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 32px;
+    gap: 20px; margin-top: 32px;
   }
   .gradient-card {
     background: var(--gradient-card);
@@ -250,10 +218,12 @@
     border-radius: 20px;
     overflow: hidden;
   }
-  .gradient-strip { height: 140px; position: relative; display: flex; align-items: center; justify-content: center; }
+  .gradient-strip {
+    height: 140px;
+    display: flex; align-items: center; justify-content: center;
+  }
   .gradient-strip-big {
-    font-size: 64px;
-    font-weight: 700;
+    font-size: 64px; font-weight: 700;
     font-family: 'Neo Contact', sans-serif;
     letter-spacing: -0.01em;
   }
@@ -261,8 +231,7 @@
   .gradient-info .swatch-name { margin-bottom: 6px; }
   .gradient-info code {
     display: block;
-    font-size: 11px;
-    font-family: "greycliff-cf", monospace;
+    font-size: 11px; font-family: "greycliff-cf", monospace;
     color: var(--ink-muted);
     background: #FFFFFF;
     padding: 8px 10px;
@@ -272,7 +241,7 @@
     line-height: 1.5;
   }
 
-  /* ── TYPOGRAPHY SECTION ── */
+  /* TYPOGRAPHY SECTION */
   .type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
   .type-card {
     background: var(--gradient-card);
@@ -280,19 +249,12 @@
     border-radius: 20px;
     padding: 36px 36px;
   }
-  .type-specimen {
-    font-size: 88px;
-    line-height: 1;
-    margin-bottom: 24px;
-    letter-spacing: -0.02em;
-  }
+  .type-specimen { font-size: 88px; line-height: 1; margin-bottom: 24px; letter-spacing: -0.02em; }
   .type-specimen-greycliff { font-family: "greycliff-cf"; font-weight: 700; color: var(--ink); }
   .type-specimen-neo {
-    font-family: 'Neo Contact', sans-serif;
-    font-weight: 700;
+    font-family: 'Neo Contact', sans-serif; font-weight: 700;
     background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
+    -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   .type-name { font-size: 20px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
@@ -302,12 +264,8 @@
   .type-weight-label { font-size: 11px; color: var(--ink-muted); font-weight: 600; }
   .type-weight-sample { font-size: 17px; color: var(--ink); }
 
-  /* ── HEADLINE USAGE EXAMPLES ── */
-  .usage-grid {
-    display: grid;
-    gap: 16px;
-    margin-top: 32px;
-  }
+  /* HEADLINE USAGE */
+  .usage-grid { display: grid; gap: 16px; margin-top: 32px; }
   .usage-card {
     background: var(--gradient-card);
     border: 1px solid var(--border);
@@ -315,24 +273,15 @@
     padding: 36px 40px;
   }
   .usage-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--blue-600);
-    margin-bottom: 16px;
-    display: block;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--blue-600); margin-bottom: 16px; display: block;
   }
   .usage-demo { margin-bottom: 14px; }
   .usage-desc { font-size: 13px; color: var(--ink-muted); }
 
-  /* ── COMPONENTS ── */
-  .components-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-top: 32px;
-  }
+  /* COMPONENTS */
+  .components-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
   .component-card {
     background: var(--gradient-card);
     border: 1px solid var(--border);
@@ -340,20 +289,14 @@
     padding: 36px 32px;
   }
   .component-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-    margin-bottom: 20px;
-    display: block;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-muted); margin-bottom: 20px; display: block;
   }
   .component-demo {
     padding: 16px 0 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
+    display: flex; flex-direction: column;
+    align-items: flex-start; gap: 14px;
   }
   .component-code {
     font-family: "greycliff-cf", monospace;
@@ -366,21 +309,16 @@
     line-height: 1.6;
   }
 
-  /* ── BUTTONS ── */
+  /* BUTTONS */
   .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+    display: inline-flex; align-items: center; gap: 6px;
     padding: 12px 24px;
     border-radius: 10px;
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 600;
+    font-family: inherit; font-size: 14px; font-weight: 600;
     letter-spacing: -0.005em;
     text-decoration: none;
     transition: all 0.2s ease;
-    cursor: pointer;
-    white-space: nowrap;
+    cursor: pointer; white-space: nowrap;
   }
   .btn-primary {
     background: var(--gradient-btn);
@@ -392,7 +330,6 @@
     background: var(--gradient-btn-hover);
     box-shadow: 0 8px 24px rgba(37,99,235,0.3);
   }
-  /* Ghost — white fill, gradient border, solid blue text */
   .btn-ghost {
     background:
       linear-gradient(#FFFFFF, #FFFFFF) padding-box,
@@ -406,7 +343,6 @@
       linear-gradient(#EFF6FF, #EFF6FF) padding-box,
       var(--gradient-btn-hover) border-box;
   }
-  /* Dark — matte fill, gradient border, white text */
   .btn-dark {
     background:
       linear-gradient(#141414, #141414) padding-box,
@@ -421,13 +357,12 @@
       var(--gradient-btn-hover) border-box;
   }
 
-  /* ── HIGHLIGHT PILLS ── */
+  /* HIGHLIGHT PILLS */
   .highlight, .highlight-blue, .highlight-white {
     display: inline-block;
     padding: 0.12em 0.5em;
     border-radius: 20px;
-    font-style: normal;
-    font-weight: 700;
+    font-style: normal; font-weight: 700;
     white-space: nowrap;
   }
   .highlight {
@@ -446,27 +381,155 @@
     border: 1px solid var(--border);
     box-shadow: 0 4px 14px rgba(0,0,0,0.08);
   }
+  /* Dark-mode pill inverts */
+  .dark-section .highlight,
+  .example-dark .highlight {
+    background: #FFFFFF;
+    color: var(--ink);
+  }
+  .dark-section .highlight-white,
+  .example-dark .highlight-white {
+    background: rgba(255,255,255,0.06);
+    color: #FFFFFF;
+    border-color: rgba(255,255,255,0.15);
+  }
 
-  /* ── LOGOS ── */
+  /* ═══════════════════════════════════════════════════════════
+     EXAMPLE SECTIONS — every design element in one view
+     ═══════════════════════════════════════════════════════════ */
+  .example {
+    padding: 100px 40px;
+    max-width: none;
+  }
+  .example-inner { max-width: 1200px; margin: 0 auto; }
+  .example-light { background: var(--bg); }
+  .example-dark {
+    background: var(--dark-bg);
+    color: var(--dark-text);
+  }
+  .example-dark h2, .example-dark h3 { color: #FFFFFF; }
+  .example-dark p { color: var(--dark-body); }
+  .example-dark .section-label { color: var(--blue-500); }
+  .example-dark .section-label::before { background: var(--blue-500); }
+
+  .example-hero { max-width: 900px; margin: 0 auto 64px; text-align: center; }
+  .example-hero h2 {
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    margin-bottom: 24px;
+  }
+  .example-hero p {
+    font-size: 18px;
+    max-width: 640px;
+    margin: 0 auto 36px;
+  }
+  .example-actions {
+    display: flex; gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Stats row */
+  .example-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 64px 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stat-card {
+    background: var(--gradient-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 28px;
+    text-align: center;
+  }
+  .example-dark .stat-card {
+    background: var(--gradient-card-dark);
+    border-color: var(--dark-border);
+  }
+  .stat-num {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 1;
+    background: var(--gradient-text);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+  .stat-label {
+    font-size: 12px; font-weight: 600;
+    color: var(--ink-muted);
+    letter-spacing: 0.04em; text-transform: uppercase;
+  }
+  .example-dark .stat-label { color: var(--dark-muted); }
+
+  /* Feature cards grid */
+  .example-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .feature-card {
+    background: var(--gradient-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 32px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+  .example-dark .feature-card {
+    background: var(--gradient-card-dark);
+    border-color: var(--dark-border);
+  }
+  .feature-num {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    width: 44px; height: 44px;
+    border-radius: 20px;
+    background: var(--blue-50);
+    color: var(--blue-600);
+    font-weight: 700; font-size: 15px;
+    margin-bottom: 18px;
+  }
+  .example-dark .feature-num {
+    background: rgba(37,99,235,0.15);
+    color: var(--blue-500);
+  }
+  .feature-card h3 {
+    font-size: 20px; font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.25;
+  }
+  .example-dark .feature-card h3 { color: #FFFFFF; }
+  .feature-card p {
+    font-size: 14px;
+    color: var(--ink-body);
+    line-height: 1.6;
+  }
+  .example-dark .feature-card p { color: var(--dark-body); }
+
+  /* LOGOS */
   .logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
   .logo-card {
     border: 1px solid var(--border);
     border-radius: 20px;
     padding: 80px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
   }
   .logo-card-label {
-    position: absolute;
-    top: 16px;
-    left: 20px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    position: absolute; top: 16px; left: 20px;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--ink-muted);
   }
   .logo-card-light { background: var(--gradient-card); }
@@ -474,36 +537,33 @@
   .logo-card-dark .logo-card-label { color: var(--dark-muted); }
   .logo-card img { max-width: 280px; height: auto; }
 
-  /* ── RADIUS TOKEN ── */
+  /* RADIUS DEMO */
   .radius-demo { display: flex; gap: 20px; margin-top: 24px; flex-wrap: wrap; }
   .radius-box {
-    width: 120px;
-    height: 120px;
+    width: 120px; height: 120px;
     background: var(--gradient-card);
     border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700;
     color: var(--ink-muted);
     box-shadow: var(--shadow-sm);
   }
 
-  /* ── FOOTER ── */
+  /* FOOTER */
   footer {
-    text-align: center;
-    padding: 40px;
-    color: var(--ink-muted);
-    font-size: 13px;
+    text-align: center; padding: 40px;
+    color: var(--ink-muted); font-size: 13px;
     border-top: 1px solid var(--border);
   }
   footer a { color: var(--blue-600); text-decoration: none; }
 
+  /* RESPONSIVE */
   @media (max-width: 900px) {
     section { padding: 56px 20px; }
+    .example { padding: 64px 20px; }
     .hero { padding: 64px 20px 56px; }
     .type-grid, .logo-grid, .components-grid { grid-template-columns: 1fr; }
+    .example-stats, .example-features { grid-template-columns: 1fr; }
     .nav-links { display: none; }
   }
 </style>
@@ -516,9 +576,11 @@
   <div class="nav-links">
     <a href="#colors">Colors</a>
     <a href="#gradient">Gradient</a>
-    <a href="#type">Typography</a>
+    <a href="#type">Type</a>
     <a href="#headlines">Headlines</a>
     <a href="#components">Components</a>
+    <a href="#example-light">Light Example</a>
+    <a href="#example-dark">Dark Example</a>
     <a href="#logos">Logos</a>
   </div>
 </nav>
@@ -539,70 +601,14 @@
   <p>Neutral foundation: matte black text, neutral grays, pure white cards. No navy tint anywhere.</p>
 
   <div class="swatch-grid">
-    <div class="swatch" data-copy="#F8FAFC">
-      <div class="swatch-color" style="background: #F8FAFC; color: #7A7A7A; border-bottom: 1px solid var(--border);">Page BG</div>
-      <div class="swatch-info">
-        <div class="swatch-name">Background</div>
-        <div class="swatch-hex">#F8FAFC</div>
-        <div class="swatch-role">Page background</div>
-      </div>
-    </div>
-    <div class="swatch" data-copy="#FFFFFF">
-      <div class="swatch-color" style="background: #FFFFFF; color: #7A7A7A; border-bottom: 1px solid var(--border);">Card</div>
-      <div class="swatch-info">
-        <div class="swatch-name">Card Base</div>
-        <div class="swatch-hex">#FFFFFF</div>
-        <div class="swatch-role">Top of card gradient</div>
-      </div>
-    </div>
-    <div class="swatch" data-copy="#EFF6FF">
-      <div class="swatch-color" style="background: #EFF6FF; color: #7A7A7A; border-bottom: 1px solid var(--border);">Subtle</div>
-      <div class="swatch-info">
-        <div class="swatch-name">Subtle Surface</div>
-        <div class="swatch-hex">#EFF6FF</div>
-        <div class="swatch-role">Soft fills, chip backgrounds</div>
-      </div>
-    </div>
-    <div class="swatch" data-copy="#141414">
-      <div class="swatch-color" style="background: #141414;">Ink</div>
-      <div class="swatch-info">
-        <div class="swatch-name">Ink · Primary Text</div>
-        <div class="swatch-hex">#141414</div>
-        <div class="swatch-role">Matte black. Default headline color.</div>
-      </div>
-    </div>
-    <div class="swatch" data-copy="#4A4A4A">
-      <div class="swatch-color" style="background: #4A4A4A;">Body</div>
-      <div class="swatch-info">
-        <div class="swatch-name">Body Text</div>
-        <div class="swatch-hex">#4A4A4A</div>
-        <div class="swatch-role">Paragraph copy</div>
-      </div>
-    </div>
-    <div class="swatch" data-copy="#7A7A7A">
-      <div class="swatch-color" style="background: #7A7A7A;">Muted</div>
-      <div class="swatch-info">
-        <div class="swatch-name">Muted Text</div>
-        <div class="swatch-hex">#7A7A7A</div>
-        <div class="swatch-role">Labels, captions</div>
-      </div>
-    </div>
-    <div class="swatch" data-copy="#E5E5E5">
-      <div class="swatch-color" style="background: #E5E5E5; color: #7A7A7A;">Border</div>
-      <div class="swatch-info">
-        <div class="swatch-name">Border</div>
-        <div class="swatch-hex">#E5E5E5</div>
-        <div class="swatch-role">Card borders, dividers</div>
-      </div>
-    </div>
-    <div class="swatch" data-copy="#C8C8C8">
-      <div class="swatch-color" style="background: #C8C8C8; color: #7A7A7A;">Border Strong</div>
-      <div class="swatch-info">
-        <div class="swatch-name">Border Strong</div>
-        <div class="swatch-hex">#C8C8C8</div>
-        <div class="swatch-role">Emphasized dividers</div>
-      </div>
-    </div>
+    <div class="swatch" data-copy="#F8FAFC"><div class="swatch-color" style="background:#F8FAFC;color:#7A7A7A;border-bottom:1px solid var(--border);">Page BG</div><div class="swatch-info"><div class="swatch-name">Background</div><div class="swatch-hex">#F8FAFC</div><div class="swatch-role">Page background</div></div></div>
+    <div class="swatch" data-copy="#FFFFFF"><div class="swatch-color" style="background:#FFFFFF;color:#7A7A7A;border-bottom:1px solid var(--border);">Card</div><div class="swatch-info"><div class="swatch-name">Card Base</div><div class="swatch-hex">#FFFFFF</div><div class="swatch-role">Top of card gradient</div></div></div>
+    <div class="swatch" data-copy="#EFF6FF"><div class="swatch-color" style="background:#EFF6FF;color:#7A7A7A;border-bottom:1px solid var(--border);">Subtle</div><div class="swatch-info"><div class="swatch-name">Subtle Surface</div><div class="swatch-hex">#EFF6FF</div><div class="swatch-role">Soft fills, chip backgrounds</div></div></div>
+    <div class="swatch" data-copy="#141414"><div class="swatch-color" style="background:#141414;">Ink</div><div class="swatch-info"><div class="swatch-name">Ink · Primary Text</div><div class="swatch-hex">#141414</div><div class="swatch-role">Matte black. Default headline color.</div></div></div>
+    <div class="swatch" data-copy="#4A4A4A"><div class="swatch-color" style="background:#4A4A4A;">Body</div><div class="swatch-info"><div class="swatch-name">Body Text</div><div class="swatch-hex">#4A4A4A</div><div class="swatch-role">Paragraph copy</div></div></div>
+    <div class="swatch" data-copy="#7A7A7A"><div class="swatch-color" style="background:#7A7A7A;">Muted</div><div class="swatch-info"><div class="swatch-name">Muted Text</div><div class="swatch-hex">#7A7A7A</div><div class="swatch-role">Labels, captions</div></div></div>
+    <div class="swatch" data-copy="#E5E5E5"><div class="swatch-color" style="background:#E5E5E5;color:#7A7A7A;">Border</div><div class="swatch-info"><div class="swatch-name">Border</div><div class="swatch-hex">#E5E5E5</div><div class="swatch-role">Card borders, dividers</div></div></div>
+    <div class="swatch" data-copy="#C8C8C8"><div class="swatch-color" style="background:#C8C8C8;color:#7A7A7A;">Border Strong</div><div class="swatch-info"><div class="swatch-name">Border Strong</div><div class="swatch-hex">#C8C8C8</div><div class="swatch-role">Emphasized dividers</div></div></div>
   </div>
 </section>
 
@@ -611,73 +617,17 @@
   <div class="dark-section-inner">
     <span class="section-label">Color System</span>
     <h2>Dark mode</h2>
-    <p>Pure matte black. No navy. Used for proof, data-heavy sections, cinematic moments, final CTAs. Triggered via <code style="background: rgba(255,255,255,0.06); padding: 2px 8px; border-radius: 6px; font-size: 13px;">.dark</code> class.</p>
+    <p>Pure matte black. No navy. Used for proof, data-heavy sections, cinematic moments, final CTAs.</p>
 
     <div class="swatch-grid" style="margin-top: 32px;">
-      <div class="swatch swatch-dark" data-copy="#0A0A0A">
-        <div class="swatch-color" style="background: #0A0A0A;">Page BG</div>
-        <div class="swatch-info">
-          <div class="swatch-name">Background · Matte Black</div>
-          <div class="swatch-hex">#0A0A0A</div>
-          <div class="swatch-role">Pure matte black. Zero navy tint.</div>
-        </div>
-      </div>
-      <div class="swatch swatch-dark" data-copy="#141414">
-        <div class="swatch-color" style="background: #141414;">Card 1</div>
-        <div class="swatch-info">
-          <div class="swatch-name">Card Start</div>
-          <div class="swatch-hex">#141414</div>
-          <div class="swatch-role">Top of dark card gradient</div>
-        </div>
-      </div>
-      <div class="swatch swatch-dark" data-copy="#1A1A1A">
-        <div class="swatch-color" style="background: #1A1A1A;">Card 2</div>
-        <div class="swatch-info">
-          <div class="swatch-name">Card End</div>
-          <div class="swatch-hex">#1A1A1A</div>
-          <div class="swatch-role">Bottom of dark card gradient</div>
-        </div>
-      </div>
-      <div class="swatch swatch-dark" data-copy="#1F1F1F">
-        <div class="swatch-color" style="background: #1F1F1F;">Raised</div>
-        <div class="swatch-info">
-          <div class="swatch-name">Raised / Hover</div>
-          <div class="swatch-hex">#1F1F1F</div>
-          <div class="swatch-role">Hover states, elevated surfaces</div>
-        </div>
-      </div>
-      <div class="swatch swatch-dark" data-copy="#EDEDED">
-        <div class="swatch-color" style="background: #EDEDED; color: #141414;">Text</div>
-        <div class="swatch-info">
-          <div class="swatch-name">Primary Text</div>
-          <div class="swatch-hex">#EDEDED</div>
-          <div class="swatch-role">Headlines on dark</div>
-        </div>
-      </div>
-      <div class="swatch swatch-dark" data-copy="#A4A4A4">
-        <div class="swatch-color" style="background: #A4A4A4; color: #141414;">Body</div>
-        <div class="swatch-info">
-          <div class="swatch-name">Body Text</div>
-          <div class="swatch-hex">#A4A4A4</div>
-          <div class="swatch-role">Paragraph copy on dark</div>
-        </div>
-      </div>
-      <div class="swatch swatch-dark" data-copy="#8B8B8B">
-        <div class="swatch-color" style="background: #8B8B8B; color: #141414;">Muted</div>
-        <div class="swatch-info">
-          <div class="swatch-name">Muted Text</div>
-          <div class="swatch-hex">#8B8B8B</div>
-          <div class="swatch-role">Labels, captions on dark</div>
-        </div>
-      </div>
-      <div class="swatch swatch-dark" data-copy="rgba(255,255,255,0.08)">
-        <div class="swatch-color" style="background: rgba(255,255,255,0.08); color: #A4A4A4;">Border</div>
-        <div class="swatch-info">
-          <div class="swatch-name">Border</div>
-          <div class="swatch-hex">rgba(255,255,255,0.08)</div>
-          <div class="swatch-role">8% white</div>
-        </div>
-      </div>
+      <div class="swatch swatch-dark" data-copy="#0A0A0A"><div class="swatch-color" style="background:#0A0A0A;">Page BG</div><div class="swatch-info"><div class="swatch-name">Background · Matte Black</div><div class="swatch-hex">#0A0A0A</div><div class="swatch-role">Pure matte. Zero navy tint.</div></div></div>
+      <div class="swatch swatch-dark" data-copy="#141414"><div class="swatch-color" style="background:#141414;">Card 1</div><div class="swatch-info"><div class="swatch-name">Card Start</div><div class="swatch-hex">#141414</div><div class="swatch-role">Top of dark card gradient</div></div></div>
+      <div class="swatch swatch-dark" data-copy="#1A1A1A"><div class="swatch-color" style="background:#1A1A1A;">Card 2</div><div class="swatch-info"><div class="swatch-name">Card End</div><div class="swatch-hex">#1A1A1A</div><div class="swatch-role">Bottom of dark card gradient</div></div></div>
+      <div class="swatch swatch-dark" data-copy="#1F1F1F"><div class="swatch-color" style="background:#1F1F1F;">Raised</div><div class="swatch-info"><div class="swatch-name">Raised / Hover</div><div class="swatch-hex">#1F1F1F</div><div class="swatch-role">Hover states, elevated surfaces</div></div></div>
+      <div class="swatch swatch-dark" data-copy="#EDEDED"><div class="swatch-color" style="background:#EDEDED;color:#141414;">Text</div><div class="swatch-info"><div class="swatch-name">Primary Text</div><div class="swatch-hex">#EDEDED</div><div class="swatch-role">Headlines on dark</div></div></div>
+      <div class="swatch swatch-dark" data-copy="#A4A4A4"><div class="swatch-color" style="background:#A4A4A4;color:#141414;">Body</div><div class="swatch-info"><div class="swatch-name">Body Text</div><div class="swatch-hex">#A4A4A4</div><div class="swatch-role">Paragraph copy on dark</div></div></div>
+      <div class="swatch swatch-dark" data-copy="#8B8B8B"><div class="swatch-color" style="background:#8B8B8B;color:#141414;">Muted</div><div class="swatch-info"><div class="swatch-name">Muted Text</div><div class="swatch-hex">#8B8B8B</div><div class="swatch-role">Labels, captions on dark</div></div></div>
+      <div class="swatch swatch-dark" data-copy="rgba(255,255,255,0.08)"><div class="swatch-color" style="background:rgba(255,255,255,0.08);color:#A4A4A4;">Border</div><div class="swatch-info"><div class="swatch-name">Border</div><div class="swatch-hex">rgba(255,255,255,0.08)</div><div class="swatch-role">8% white</div></div></div>
     </div>
   </div>
 </section>
@@ -686,104 +636,47 @@
 <section id="gradient">
   <span class="section-label">The Gradient</span>
   <h2>Blue gradient · 45° · dark to light</h2>
-  <p>Every gradient across the site follows the same rules: 45° angle, dark blue on the bottom-left to light blue on the top-right. Three blue stops — no washed-out blue-400.</p>
+  <p>Every gradient follows the same rules: 45° angle, deep navy-blue on the bottom-left to saturated bright blue on the top-right. Three stops.</p>
 
   <div class="gradient-display">
-    <!-- TEXT GRADIENT -->
     <div class="gradient-card">
-      <div class="gradient-strip">
-        <div class="gradient-strip-big" style="background: var(--gradient-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Abundance</div>
-      </div>
-      <div class="gradient-info">
-        <div class="swatch-name">Text Gradient · 3-stop</div>
-        <p style="font-size: 13px; margin: 6px 0 0;">Applied to Neo Contact ems and any accent moment that needs the brand gradient.</p>
-        <code>linear-gradient(45deg,<br>&nbsp;&nbsp;#1E3A8A 0%,<br>&nbsp;&nbsp;#2563EB 45%,<br>&nbsp;&nbsp;#3E96FA 100%)</code>
-      </div>
+      <div class="gradient-strip"><div class="gradient-strip-big" style="background:var(--gradient-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">Abundance</div></div>
+      <div class="gradient-info"><div class="swatch-name">Text Gradient · 3-stop</div><p style="font-size:13px;margin:6px 0 0;">Applied to Neo Contact ems and any accent moment that needs the gradient.</p><code>linear-gradient(45deg,<br>&nbsp;&nbsp;#1E3A8A 0%,<br>&nbsp;&nbsp;#2563EB 45%,<br>&nbsp;&nbsp;#3E96FA 100%)</code></div>
     </div>
-
-    <!-- BUTTON GRADIENT -->
     <div class="gradient-card">
-      <div class="gradient-strip" style="background: var(--gradient-btn); color: #FFFFFF; font-weight: 700; font-size: 20px;">Apply Now →</div>
-      <div class="gradient-info">
-        <div class="swatch-name">Button Gradient · 2-stop</div>
-        <p style="font-size: 13px; margin: 6px 0 0;">Primary CTA fill. Full range from deep to bright.</p>
-        <code>linear-gradient(45deg,<br>&nbsp;&nbsp;#1E40AF 0%,<br>&nbsp;&nbsp;#3E96FA 100%)</code>
-      </div>
+      <div class="gradient-strip" style="background:var(--gradient-btn);color:#FFFFFF;font-weight:700;font-size:20px;">Apply Now →</div>
+      <div class="gradient-info"><div class="swatch-name">Button Gradient · 2-stop</div><p style="font-size:13px;margin:6px 0 0;">Primary CTA fill.</p><code>linear-gradient(45deg,<br>&nbsp;&nbsp;#1E40AF 0%,<br>&nbsp;&nbsp;#3E96FA 100%)</code></div>
     </div>
-
-    <!-- BUTTON HOVER -->
     <div class="gradient-card">
-      <div class="gradient-strip" style="background: var(--gradient-btn-hover); color: #FFFFFF; font-weight: 700; font-size: 20px;">On Hover</div>
-      <div class="gradient-info">
-        <div class="swatch-name">Button Hover · 2-stop</div>
-        <p style="font-size: 13px; margin: 6px 0 0;">Darkens one step on hover.</p>
-        <code>linear-gradient(45deg,<br>&nbsp;&nbsp;#1E3A8A 0%,<br>&nbsp;&nbsp;#2563EB 100%)</code>
-      </div>
+      <div class="gradient-strip" style="background:var(--gradient-btn-hover);color:#FFFFFF;font-weight:700;font-size:20px;">On Hover</div>
+      <div class="gradient-info"><div class="swatch-name">Button Hover · 2-stop</div><p style="font-size:13px;margin:6px 0 0;">Darkens one step on hover.</p><code>linear-gradient(45deg,<br>&nbsp;&nbsp;#1E3A8A 0%,<br>&nbsp;&nbsp;#2563EB 100%)</code></div>
     </div>
-
-    <!-- HERO GLOW -->
     <div class="gradient-card">
-      <div class="gradient-strip" style="background: var(--gradient-hero);"></div>
-      <div class="gradient-info">
-        <div class="swatch-name">Hero Glow · 4-stop Radial</div>
-        <p style="font-size: 13px; margin: 6px 0 0;">Soft ambient blue fade for hero sections.</p>
-        <code>radial-gradient(ellipse 100% 55% at 50% 0%,<br>&nbsp;&nbsp;#DBEAFE 0%, #EFF6FF 30%,<br>&nbsp;&nbsp;#F8FAFC 70%, #FFFFFF 100%)</code>
-      </div>
+      <div class="gradient-strip" style="background:var(--gradient-hero);"></div>
+      <div class="gradient-info"><div class="swatch-name">Hero Glow · 4-stop Radial</div><p style="font-size:13px;margin:6px 0 0;">Soft ambient blue fade for hero sections.</p><code>radial-gradient(ellipse 100% 55% at 50% 0%,<br>&nbsp;&nbsp;#DBEAFE 0%, #EFF6FF 30%,<br>&nbsp;&nbsp;#F8FAFC 70%, #FFFFFF 100%)</code></div>
     </div>
-
-    <!-- CARD GRADIENT LIGHT -->
     <div class="gradient-card">
-      <div class="gradient-strip" style="background: var(--gradient-card); border-bottom: 1px solid var(--border);"></div>
-      <div class="gradient-info">
-        <div class="swatch-name">Card BG · Light · 135°</div>
-        <p style="font-size: 13px; margin: 6px 0 0;">Super subtle gradient on every card. White to slate-50.</p>
-        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#FFFFFF 0%,<br>&nbsp;&nbsp;#F5F8FC 100%)</code>
-      </div>
+      <div class="gradient-strip" style="background:var(--gradient-card);border-bottom:1px solid var(--border);"></div>
+      <div class="gradient-info"><div class="swatch-name">Card BG · Light · 135°</div><p style="font-size:13px;margin:6px 0 0;">Super subtle gradient on every card.</p><code>linear-gradient(135deg,<br>&nbsp;&nbsp;#FFFFFF 0%,<br>&nbsp;&nbsp;#F5F8FC 100%)</code></div>
     </div>
-
-    <!-- CARD GRADIENT DARK -->
     <div class="gradient-card">
-      <div class="gradient-strip" style="background: var(--gradient-card-dark);"></div>
-      <div class="gradient-info">
-        <div class="swatch-name">Card BG · Dark · 135°</div>
-        <p style="font-size: 13px; margin: 6px 0 0;">Matching subtle gradient for cards on dark.</p>
-        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#141414 0%,<br>&nbsp;&nbsp;#1A1A1A 100%)</code>
-      </div>
+      <div class="gradient-strip" style="background:var(--gradient-card-dark);"></div>
+      <div class="gradient-info"><div class="swatch-name">Card BG · Dark · 135°</div><p style="font-size:13px;margin:6px 0 0;">Matching subtle gradient for dark cards.</p><code>linear-gradient(135deg,<br>&nbsp;&nbsp;#141414 0%,<br>&nbsp;&nbsp;#1A1A1A 100%)</code></div>
     </div>
   </div>
 
   <h3 style="margin-top: 56px; margin-bottom: 8px;">Full blue scale</h3>
-  <p style="margin-bottom: 24px;">Blue-400 (#60A5FA) and Blue-300 (#93C5FD) are intentionally excluded — too washed out for the brand.</p>
+  <p style="margin-bottom: 24px;">Blue-400 (#60A5FA) and Blue-300 are excluded — too washed out. Sky-400 (#38BDF8) also excluded — too neon.</p>
 
   <div class="swatch-grid">
-    <div class="swatch" data-copy="#1E3A8A">
-      <div class="swatch-color" style="background: #1E3A8A;">Blue 900</div>
-      <div class="swatch-info"><div class="swatch-name">Blue · 900</div><div class="swatch-hex">#1E3A8A</div></div>
-    </div>
-    <div class="swatch" data-copy="#1E40AF">
-      <div class="swatch-color" style="background: #1E40AF;">Blue 800</div>
-      <div class="swatch-info"><div class="swatch-name">Blue · 800</div><div class="swatch-hex">#1E40AF</div><div class="swatch-role">Hover start</div></div>
-    </div>
-    <div class="swatch" data-copy="#1D4ED8">
-      <div class="swatch-color" style="background: #1D4ED8;">Blue 700</div>
-      <div class="swatch-info"><div class="swatch-name">Blue · 700 ★</div><div class="swatch-hex">#1D4ED8</div><div class="swatch-role">Gradient start</div></div>
-    </div>
-    <div class="swatch" data-copy="#2563EB">
-      <div class="swatch-color" style="background: #2563EB;">Blue 600</div>
-      <div class="swatch-info"><div class="swatch-name">Blue · 600 ★</div><div class="swatch-hex">#2563EB</div><div class="swatch-role">Primary accent · Gradient mid</div></div>
-    </div>
-    <div class="swatch" data-copy="#3B82F6">
-      <div class="swatch-color" style="background: #3B82F6;">Blue 500</div>
-      <div class="swatch-info"><div class="swatch-name">Blue · 500 ★</div><div class="swatch-hex">#3B82F6</div><div class="swatch-role">Gradient end</div></div>
-    </div>
-    <div class="swatch" data-copy="#DBEAFE">
-      <div class="swatch-color" style="background: #DBEAFE; color: #141414;">Blue 100</div>
-      <div class="swatch-info"><div class="swatch-name">Blue · 100</div><div class="swatch-hex">#DBEAFE</div><div class="swatch-role">Hero glow</div></div>
-    </div>
-    <div class="swatch" data-copy="#EFF6FF">
-      <div class="swatch-color" style="background: #EFF6FF; color: #141414;">Blue 50</div>
-      <div class="swatch-info"><div class="swatch-name">Blue · 50</div><div class="swatch-hex">#EFF6FF</div><div class="swatch-role">Soft fills</div></div>
-    </div>
+    <div class="swatch" data-copy="#1E3A8A"><div class="swatch-color" style="background:#1E3A8A;">Blue 900</div><div class="swatch-info"><div class="swatch-name">Blue · 900 ★</div><div class="swatch-hex">#1E3A8A</div><div class="swatch-role">Gradient start</div></div></div>
+    <div class="swatch" data-copy="#1E40AF"><div class="swatch-color" style="background:#1E40AF;">Blue 800</div><div class="swatch-info"><div class="swatch-name">Blue · 800</div><div class="swatch-hex">#1E40AF</div><div class="swatch-role">Button gradient start</div></div></div>
+    <div class="swatch" data-copy="#1D4ED8"><div class="swatch-color" style="background:#1D4ED8;">Blue 700</div><div class="swatch-info"><div class="swatch-name">Blue · 700</div><div class="swatch-hex">#1D4ED8</div></div></div>
+    <div class="swatch" data-copy="#2563EB"><div class="swatch-color" style="background:#2563EB;">Blue 600</div><div class="swatch-info"><div class="swatch-name">Blue · 600 ★</div><div class="swatch-hex">#2563EB</div><div class="swatch-role">Primary accent · Gradient mid</div></div></div>
+    <div class="swatch" data-copy="#3B82F6"><div class="swatch-color" style="background:#3B82F6;">Blue 500</div><div class="swatch-info"><div class="swatch-name">Blue · 500</div><div class="swatch-hex">#3B82F6</div><div class="swatch-role">Dark-mode accent</div></div></div>
+    <div class="swatch" data-copy="#3E96FA"><div class="swatch-color" style="background:#3E96FA;">Blue Bright</div><div class="swatch-info"><div class="swatch-name">Blue Bright ★</div><div class="swatch-hex">#3E96FA</div><div class="swatch-role">Gradient end</div></div></div>
+    <div class="swatch" data-copy="#DBEAFE"><div class="swatch-color" style="background:#DBEAFE;color:#141414;">Blue 100</div><div class="swatch-info"><div class="swatch-name">Blue · 100</div><div class="swatch-hex">#DBEAFE</div><div class="swatch-role">Hero glow</div></div></div>
+    <div class="swatch" data-copy="#EFF6FF"><div class="swatch-color" style="background:#EFF6FF;color:#141414;">Blue 50</div><div class="swatch-info"><div class="swatch-name">Blue · 50</div><div class="swatch-hex">#EFF6FF</div><div class="swatch-role">Soft fills</div></div></div>
   </div>
 </section>
 
@@ -791,7 +684,7 @@
 <section id="type">
   <span class="section-label">Typography</span>
   <h2>Two fonts. <em>One system.</em></h2>
-  <p>Greycliff CF handles everything — body, headlines, labels, stats, UI. Neo Contact is used rarely, only for accent emphasis words inside headlines. Never both in the same moment.</p>
+  <p>Greycliff CF handles everything — body, headlines, labels, stats, UI. Neo Contact is used rarely, only for accent emphasis words inside headlines.</p>
 
   <div class="type-grid">
     <div class="type-card">
@@ -799,21 +692,20 @@
       <div class="type-name">Greycliff CF</div>
       <div class="type-role">Primary typeface · Adobe Fonts · body, headlines, labels, UI, stats</div>
       <div class="type-weights">
-        <div class="type-weight-row"><span class="type-weight-label">400 · Regular</span><span class="type-weight-sample" style="font-weight: 400;">Body copy default weight</span></div>
-        <div class="type-weight-row"><span class="type-weight-label">500 · Medium</span><span class="type-weight-sample" style="font-weight: 500;">Labels, subtle emphasis</span></div>
-        <div class="type-weight-row"><span class="type-weight-label">600 · SemiBold</span><span class="type-weight-sample" style="font-weight: 600;">Secondary headlines</span></div>
-        <div class="type-weight-row"><span class="type-weight-label">700 · Bold</span><span class="type-weight-sample" style="font-weight: 700;">Primary headlines</span></div>
-        <div class="type-weight-row"><span class="type-weight-label">800 · ExtraBold</span><span class="type-weight-sample" style="font-weight: 800;">Display numbers, stats</span></div>
+        <div class="type-weight-row"><span class="type-weight-label">400 · Regular</span><span class="type-weight-sample" style="font-weight:400;">Body copy default weight</span></div>
+        <div class="type-weight-row"><span class="type-weight-label">500 · Medium</span><span class="type-weight-sample" style="font-weight:500;">Labels, subtle emphasis</span></div>
+        <div class="type-weight-row"><span class="type-weight-label">600 · SemiBold</span><span class="type-weight-sample" style="font-weight:600;">Secondary headlines</span></div>
+        <div class="type-weight-row"><span class="type-weight-label">700 · Bold</span><span class="type-weight-sample" style="font-weight:700;">Primary headlines</span></div>
+        <div class="type-weight-row"><span class="type-weight-label">800 · ExtraBold</span><span class="type-weight-sample" style="font-weight:800;">Display numbers, stats</span></div>
       </div>
     </div>
-
     <div class="type-card">
       <div class="type-specimen type-specimen-neo">Aa</div>
       <div class="type-name">Neo Contact LT Pro</div>
       <div class="type-role">Accent · self-hosted · logo font · rare usage</div>
       <div class="type-weights">
-        <div class="type-weight-row"><span class="type-weight-label">Single weight</span><span class="type-weight-sample" style="font-family: 'Neo Contact', sans-serif; font-weight: 700;">AI-Powered Selling System</span></div>
-        <div class="type-weight-row"><span class="type-weight-label">Rule</span><span class="type-weight-sample" style="font-size: 13px; color: var(--ink-body); line-height: 1.55;">Only inside headline <code>&lt;em&gt;</code>. Always on its own line. Always 1.2× the surrounding Greycliff size. Always with gradient color.</span></div>
+        <div class="type-weight-row"><span class="type-weight-label">Single weight</span><span class="type-weight-sample" style="font-family:'Neo Contact',sans-serif;font-weight:700;">AI-Powered Selling System</span></div>
+        <div class="type-weight-row"><span class="type-weight-label">Rule</span><span class="type-weight-sample" style="font-size:13px;color:var(--ink-body);line-height:1.55;">Only inside headline <code>&lt;em&gt;</code>. Always on its own line. 1.2× surrounding Greycliff size. Gradient color.</span></div>
       </div>
     </div>
   </div>
@@ -823,25 +715,23 @@
 <section id="headlines">
   <span class="section-label">Headlines · Usage Rules</span>
   <h2>How headlines are structured</h2>
-  <p>The default headline is solid matte black Greycliff. Gradient appears only on specific elements: inline accent words via <code style="background: #FFFFFF; padding: 2px 8px; border-radius: 6px; border: 1px solid var(--border); font-size: 13px;">.gradient</code>, or Neo Contact ems on their own line.</p>
+  <p>Default headline is solid matte black Greycliff. Gradient appears only on specific elements: inline accent via <code style="background:#FFFFFF;padding:2px 8px;border-radius:6px;border:1px solid var(--border);font-size:13px;">.gradient</code>, or Neo Contact ems on their own line.</p>
 
   <div class="usage-grid">
     <div class="usage-card">
       <span class="usage-label">Default · Solid matte black</span>
-      <h2 class="usage-demo" style="margin-bottom: 8px;">Scale your business with consistent new clients every month.</h2>
-      <p class="usage-desc">Standard H1/H2/H3. Greycliff Bold 700, solid matte black (#141414). Most headlines on the site use this style.</p>
+      <h2 class="usage-demo" style="margin-bottom:8px;">Scale your business with consistent new clients every month.</h2>
+      <p class="usage-desc">Standard H1/H2/H3. Greycliff Bold 700, solid matte black (#141414).</p>
     </div>
-
     <div class="usage-card">
       <span class="usage-label">With inline gradient accent</span>
-      <h2 class="usage-demo" style="margin-bottom: 8px;">Scale your business with <span class="gradient">Meta Ads</span> — done for you.</h2>
-      <p class="usage-desc">Use <code style="font-size: 12px; background: #FFFFFF; padding: 2px 6px; border-radius: 6px; border: 1px solid var(--border);">&lt;span class="gradient"&gt;</code> to color specific words inline. MultiplyClients-style accent.</p>
+      <h2 class="usage-demo" style="margin-bottom:8px;">Scale your business with <span class="gradient">Meta Ads</span> — done for you.</h2>
+      <p class="usage-desc">Use <code style="font-size:12px;background:#FFFFFF;padding:2px 6px;border-radius:6px;border:1px solid var(--border);">&lt;span class="gradient"&gt;</code> to color specific words inline.</p>
     </div>
-
     <div class="usage-card">
       <span class="usage-label">With Neo Contact emphasis · on its own line</span>
-      <h2 class="usage-demo" style="margin-bottom: 8px;">Install an <em>AI-Powered Selling System</em> that fills your calendar.</h2>
-      <p class="usage-desc">Use <code style="font-size: 12px; background: #FFFFFF; padding: 2px 6px; border-radius: 6px; border: 1px solid var(--border);">&lt;em&gt;</code> for the BIG accent moment. Auto-renders Neo Contact, gradient color, 1.2× size, on its own line. Use rarely — once per page max.</p>
+      <h2 class="usage-demo" style="margin-bottom:8px;">Install an <em>AI-Powered Selling System</em> that fills your calendar.</h2>
+      <p class="usage-desc">Use <code style="font-size:12px;background:#FFFFFF;padding:2px 6px;border-radius:6px;border:1px solid var(--border);">&lt;em&gt;</code> for the BIG accent moment. Use rarely — once per page max.</p>
     </div>
   </div>
 </section>
@@ -850,7 +740,7 @@
 <section id="components">
   <span class="section-label">Components</span>
   <h2>Buttons &amp; highlight pills</h2>
-  <p>Three button variants, three pill variants. Every card, pill, and button uses the 20px radius standard.</p>
+  <p>Three button variants, three pill variants. Every card, pill, and button uses 20px radius standard.</p>
 
   <div class="components-grid">
     <div class="component-card">
@@ -862,7 +752,6 @@
       </div>
       <div class="component-code">.btn-primary · gradient fill<br>.btn-ghost · white fill, gradient border<br>.btn-dark · matte fill, gradient border</div>
     </div>
-
     <div class="component-card">
       <span class="component-label">Highlight pills · 20px radius</span>
       <div class="component-demo">
@@ -874,12 +763,120 @@
     </div>
   </div>
 
-  <h3 style="margin-top: 56px; margin-bottom: 8px;">Corner radius · 20px standard</h3>
-  <p style="margin-bottom: 16px;">All cards, containers, and highlighted text use 20px radius. Exceptions: buttons (10px, distinct element), pill labels (100px, intentional pill shape).</p>
+  <h3 style="margin-top:56px;margin-bottom:8px;">Corner radius · 20px standard</h3>
+  <p style="margin-bottom:16px;">All cards, containers, and highlighted text use 20px. Exceptions: buttons (10px), pill labels (100px).</p>
   <div class="radius-demo">
-    <div class="radius-box" style="border-radius: 20px;">20px · default</div>
-    <div class="radius-box" style="border-radius: 10px;">10px · buttons</div>
-    <div class="radius-box" style="border-radius: 100px;">100px · pill labels</div>
+    <div class="radius-box" style="border-radius:20px;">20px · default</div>
+    <div class="radius-box" style="border-radius:10px;">10px · buttons</div>
+    <div class="radius-box" style="border-radius:100px;">100px · pill labels</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXAMPLE SECTION · LIGHT MODE
+     Every element in one view
+     ═══════════════════════════════════════════════════════════ -->
+<section id="example-light" class="example example-light full-width">
+  <div class="example-inner">
+
+    <div class="example-hero">
+      <span class="section-label">Example · Light Mode</span>
+      <h2>Install an <em>AI-Powered Selling System</em> that fills your calendar with <span class="highlight">pre-sold sales calls</span>.</h2>
+      <p>Every design token in one view — default Greycliff headline, <span class="gradient">inline gradient accent</span>, Neo Contact emphasis on its own line, dark highlight pill, body paragraph, and the full button set.</p>
+      <div class="example-actions">
+        <a href="#" class="btn btn-primary">Apply Now →</a>
+        <a href="#" class="btn btn-ghost">See how it works</a>
+        <a href="#" class="btn btn-dark">Book a call</a>
+      </div>
+    </div>
+
+    <div class="example-stats">
+      <div class="stat-card">
+        <div class="stat-num">$12M+</div>
+        <div class="stat-label">Revenue generated</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">90</div>
+        <div class="stat-label">Days to launch</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">40–50%</div>
+        <div class="stat-label">Close rate</div>
+      </div>
+    </div>
+
+    <div class="example-features">
+      <div class="feature-card">
+        <div class="feature-num">01</div>
+        <h3>Inevitable Offer System</h3>
+        <p>An offer so precisely matched to your dream client's desire that saying yes feels like the only logical choice.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">02</div>
+        <h3>AI-Powered Meta Ads</h3>
+        <p>Cold traffic pre-sold before they ever hit your calendar. Under <span class="highlight-blue">$150 per booking</span> across every business.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">03</div>
+        <h3>Leadership Conversion</h3>
+        <p>A reverse sales process that closes <span class="highlight-blue">40–50%</span> of qualified calls — without pressure or hard selling.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXAMPLE SECTION · DARK MODE
+     Every element in one view
+     ═══════════════════════════════════════════════════════════ -->
+<section id="example-dark" class="example example-dark full-width">
+  <div class="example-inner">
+
+    <div class="example-hero">
+      <span class="section-label">Example · Dark Mode</span>
+      <h2>Install an <em>AI-Powered Selling System</em> that fills your calendar with <span class="highlight">pre-sold sales calls</span>.</h2>
+      <p>Same design system on matte black — default Greycliff headline (white on dark), <span class="gradient">inline gradient accent</span>, Neo Contact emphasis on its own line, white highlight pill, and the full button set.</p>
+      <div class="example-actions">
+        <a href="#" class="btn btn-primary">Apply Now →</a>
+        <a href="#" class="btn btn-ghost">See how it works</a>
+        <a href="#" class="btn btn-dark">Book a call</a>
+      </div>
+    </div>
+
+    <div class="example-stats">
+      <div class="stat-card">
+        <div class="stat-num">$12M+</div>
+        <div class="stat-label">Revenue generated</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">90</div>
+        <div class="stat-label">Days to launch</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">40–50%</div>
+        <div class="stat-label">Close rate</div>
+      </div>
+    </div>
+
+    <div class="example-features">
+      <div class="feature-card">
+        <div class="feature-num">01</div>
+        <h3>Inevitable Offer System</h3>
+        <p>An offer so precisely matched to your dream client's desire that saying yes feels like the only logical choice.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">02</div>
+        <h3>AI-Powered Meta Ads</h3>
+        <p>Cold traffic pre-sold before they ever hit your calendar. Under <span class="highlight-blue">$150 per booking</span> across every business.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">03</div>
+        <h3>Leadership Conversion</h3>
+        <p>A reverse sales process that closes <span class="highlight-blue">40–50%</span> of qualified calls — without pressure or hard selling.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -887,7 +884,7 @@
 <section id="logos">
   <span class="section-label">Logos</span>
   <h2>Wordmark lockups</h2>
-  <p>Primary logos. Dark wordmark on light surfaces. Light wordmark on dark surfaces. Never light-on-light or dark-on-dark.</p>
+  <p>Dark wordmark on light surfaces. Light wordmark on dark surfaces. Never light-on-light or dark-on-dark.</p>
 
   <div class="logo-grid">
     <div class="logo-card logo-card-light">
@@ -907,7 +904,6 @@
 </footer>
 
 <script>
-  // Copy hex on click
   document.querySelectorAll('.swatch[data-copy]').forEach(el => {
     el.addEventListener('click', () => {
       const val = el.getAttribute('data-copy');
@@ -919,7 +915,6 @@
       setTimeout(() => toast.remove(), 1600);
     });
   });
-
   const style = document.createElement('style');
   style.textContent = '@keyframes fadeInOut { 0% { opacity: 0; transform: translateX(-50%) translateY(8px); } 15%, 85% { opacity: 1; transform: translateX(-50%) translateY(0); } 100% { opacity: 0; transform: translateX(-50%) translateY(-8px); } }';
   document.head.appendChild(style);
