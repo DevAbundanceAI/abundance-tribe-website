@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Guidelines — Abundance.AI</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
+<style>
+  @font-face {
+    font-family: 'Neo Contact';
+    src: url('/assets/fonts/neo-contact/neo-contact-lt-pro.woff2') format('woff2');
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    /* LIGHT MODE */
+    --bg: #F8FAFC;
+    --bg-subtle: #EFF6FF;
+    --card: #FFFFFF;
+    --ink: #0F172A;
+    --ink-body: #475569;
+    --ink-muted: #64748B;
+    --border: #E2E8F0;
+    --border-strong: #CBD5E1;
+
+    /* DARK MODE */
+    --dark-bg: #0A0A0B;
+    --dark-card: #111113;
+    --dark-raised: #17171A;
+    --dark-text: #EDEDED;
+    --dark-body: #A4A4AC;
+    --dark-muted: #8B8B93;
+    --dark-border: rgba(255,255,255,0.08);
+
+    /* BLUE SCALE */
+    --blue-900: #1E3A8A;
+    --blue-700: #1D4ED8;
+    --blue-600: #2563EB;
+    --blue-500: #3B82F6;
+    --blue-400: #60A5FA;
+    --blue-300: #93C5FD;
+    --blue-100: #DBEAFE;
+    --blue-50: #EFF6FF;
+
+    /* GRADIENTS */
+    --gradient-text: linear-gradient(135deg, #2563EB 0%, #3B82F6 50%, #60A5FA 100%);
+    --gradient-btn: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+    --gradient-btn-hover: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%);
+    --gradient-hero: radial-gradient(ellipse 100% 50% at 50% 0%, #DBEAFE 0%, #EFF6FF 30%, #F8FAFC 70%, #FFFFFF 100%);
+
+    --shadow-sm: 0 1px 2px rgba(15,23,42,0.04);
+    --shadow: 0 1px 3px rgba(15,23,42,0.05), 0 4px 12px rgba(15,23,42,0.06);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "greycliff-cf", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  em {
+    font-family: 'Neo Contact', 'Impact', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(248,250,252,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-logo { height: 24px; }
+  .nav-links { display: flex; gap: 28px; font-size: 13px; font-weight: 500; color: var(--ink-body); }
+  .nav-links a { color: inherit; text-decoration: none; transition: color 0.15s; }
+  .nav-links a:hover { color: var(--blue-600); }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  section.full-width {
+    max-width: none;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  section + section { border-top: 1px solid var(--border); }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue-600);
+    margin-bottom: 20px;
+  }
+  .section-label::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue-600);
+  }
+
+  h1 {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin-bottom: 24px;
+  }
+  h2 {
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin-bottom: 16px;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+  p { color: var(--ink-body); max-width: 720px; }
+  p + p { margin-top: 12px; }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--gradient-hero);
+    padding: 100px 40px 80px;
+    max-width: none;
+    text-align: center;
+  }
+  .hero-inner { max-width: 900px; margin: 0 auto; }
+  .hero p { margin: 0 auto; max-width: 640px; font-size: 17px; }
+
+  /* ── COLOR SWATCHES ── */
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .swatch {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: pointer;
+  }
+  .swatch:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .swatch-color {
+    height: 120px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 12px 14px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+  .swatch-info {
+    padding: 14px 18px;
+  }
+  .swatch-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .swatch-hex {
+    font-family: "greycliff-cf", monospace;
+    font-size: 12px;
+    color: var(--ink-muted);
+    letter-spacing: 0.02em;
+  }
+  .swatch-role {
+    font-size: 11px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  /* Swatch on dark — for dark mode demos */
+  .swatch-dark {
+    background: var(--dark-card);
+    border-color: var(--dark-border);
+  }
+  .swatch-dark .swatch-name { color: #FFFFFF; }
+  .swatch-dark .swatch-hex { color: var(--dark-body); }
+  .swatch-dark .swatch-role { color: var(--dark-muted); }
+
+  /* ── DARK SECTION ── */
+  .dark-mode-section {
+    background: var(--dark-bg);
+    color: var(--dark-text);
+    max-width: none;
+    padding: 80px 40px;
+  }
+  .dark-mode-inner { max-width: 1200px; margin: 0 auto; }
+  .dark-mode-section h2 { color: #FFFFFF; }
+  .dark-mode-section p { color: var(--dark-body); }
+  .dark-mode-section .section-label { color: var(--blue-400); }
+  .dark-mode-section .section-label::before { background: var(--blue-400); }
+
+  /* ── GRADIENT DISPLAY ── */
+  .gradient-display {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .gradient-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .gradient-strip {
+    height: 140px;
+    position: relative;
+  }
+  .gradient-strip-text {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    font-weight: 700;
+    font-family: 'Neo Contact', sans-serif;
+    letter-spacing: -0.01em;
+  }
+  .gradient-info {
+    padding: 18px 22px;
+    border-top: 1px solid var(--border);
+  }
+  .gradient-info .swatch-name { margin-bottom: 6px; }
+  .gradient-info code {
+    display: block;
+    font-size: 11px;
+    font-family: "greycliff-cf", monospace;
+    color: var(--ink-muted);
+    background: var(--bg);
+    padding: 8px 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    word-break: break-all;
+    line-height: 1.5;
+  }
+
+  /* ── TYPOGRAPHY DISPLAY ── */
+  .type-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .type-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 36px;
+  }
+  .type-specimen {
+    font-size: 80px;
+    line-height: 1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .type-specimen-greycliff { font-family: "greycliff-cf"; font-weight: 700; }
+  .type-specimen-neo {
+    font-family: 'Neo Contact', sans-serif;
+    font-weight: 700;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .type-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .type-role {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-bottom: 20px;
+  }
+  .type-weights {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  .type-weight-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 16px;
+    align-items: baseline;
+  }
+  .type-weight-label {
+    font-size: 11px;
+    color: var(--ink-muted);
+    font-weight: 600;
+  }
+  .type-weight-sample {
+    font-size: 18px;
+    color: var(--ink);
+  }
+
+  /* ── BUTTONS & HIGHLIGHTS ── */
+  .components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .component-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 32px;
+  }
+  .component-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 16px;
+    display: block;
+  }
+  .component-demo {
+    padding: 28px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .component-code {
+    font-family: "greycliff-cf", monospace;
+    font-size: 11px;
+    background: var(--bg);
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: var(--ink-body);
+    border: 1px solid var(--border);
+    word-break: break-all;
+    line-height: 1.6;
+  }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--gradient-btn);
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(37,99,235,0.22);
+  }
+  .btn-primary:hover {
+    background: var(--gradient-btn-hover);
+    box-shadow: 0 8px 20px rgba(37,99,235,0.3);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover { background: var(--card); border-color: var(--blue-600); }
+  .btn-dark {
+    background: var(--ink);
+    color: #FFFFFF;
+  }
+
+  /* HIGHLIGHT PILLS */
+  .highlight, .highlight-blue, .highlight-white {
+    display: inline-block;
+    padding: 0.12em 0.5em;
+    border-radius: 20px;
+    font-style: normal;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .highlight {
+    background: var(--ink);
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(15,23,42,0.18);
+  }
+  .highlight-blue {
+    background: var(--gradient-btn);
+    color: #FFFFFF;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.2);
+  }
+  .highlight-white {
+    background: #FFFFFF;
+    color: var(--ink);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 14px rgba(15,23,42,0.08);
+  }
+
+  /* ── LOGO DISPLAY ── */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .logo-card {
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 80px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .logo-card-label {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .logo-card-light {
+    background: var(--card);
+  }
+  .logo-card-dark {
+    background: var(--dark-bg);
+  }
+  .logo-card-dark .logo-card-label { color: var(--dark-muted); }
+  .logo-card img {
+    max-width: 280px;
+    height: auto;
+  }
+
+  /* ── RADIUS TOKEN ── */
+  .radius-demo {
+    display: flex;
+    gap: 20px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+  .radius-box {
+    width: 120px;
+    height: 120px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink-muted);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--ink-muted);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+  }
+  footer a { color: var(--blue-600); text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    section { padding: 56px 20px; }
+    .hero { padding: 64px 20px 56px; }
+    .type-grid, .logo-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <img src="/assets/images/logo-dark-wordmark.svg" alt="Abundance.AI" class="nav-logo">
+  <div class="nav-links">
+    <a href="#colors">Colors</a>
+    <a href="#gradient">Gradient</a>
+    <a href="#typography">Typography</a>
+    <a href="#components">Components</a>
+    <a href="#logos">Logos</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero full-width">
+  <div class="hero-inner">
+    <span class="section-label">Brand Guidelines · v2</span>
+    <h1>The Abundance.AI <em>Design System</em></h1>
+    <p>Live reference for the color palette, gradients, typography, and components used across every Abundance.AI property. Click any swatch to copy the hex value.</p>
+  </div>
+</section>
+
+<!-- LIGHT MODE COLORS -->
+<section id="colors">
+  <span class="section-label">Color System</span>
+  <h2>Light mode</h2>
+  <p>Foundation palette for `/shift`, `/brand`, landing pages, and all content-heavy surfaces.</p>
+
+  <div class="swatch-grid">
+    <div class="swatch" onclick="navigator.clipboard.writeText('#F8FAFC')">
+      <div class="swatch-color" style="background: #F8FAFC; color: #64748B; border-bottom: 1px solid var(--border);">Page BG</div>
+      <div class="swatch-info">
+        <div class="swatch-name">Background</div>
+        <div class="swatch-hex">#F8FAFC</div>
+        <div class="swatch-role">Page background, default surface</div>
+      </div>
+    </div>
+
+    <div class="swatch" onclick="navigator.clipboard.writeText('#FFFFFF')">
+      <div class="swatch-color" style="background: #FFFFFF; color: #64748B; border-bottom: 1px solid var(--border);">Card</div>
+      <div class="swatch-info">
+        <div class="swatch-name">Card / Surface</div>
+        <div class="swatch-hex">#FFFFFF</div>
+        <div class="swatch-role">Card backgrounds, elevated surfaces</div>
+      </div>
+    </div>
+
+    <div class="swatch" onclick="navigator.clipboard.writeText('#EFF6FF')">
+      <div class="swatch-color" style="background: #EFF6FF; color: #64748B; border-bottom: 1px solid var(--border);">Subtle</div>
+      <div class="swatch-info">
+        <div class="swatch-name">Subtle Surface</div>
+        <div class="swatch-hex">#EFF6FF</div>
+        <div class="swatch-role">Soft fills, chip backgrounds, glow areas</div>
+      </div>
+    </div>
+
+    <div class="swatch" onclick="navigator.clipboard.writeText('#0F172A')">
+      <div class="swatch-color" style="background: #0F172A;">Ink</div>
+      <div class="swatch-info">
+        <div class="swatch-name">Ink · Primary Text</div>
+        <div class="swatch-hex">#0F172A</div>
+        <div class="swatch-role">Headlines, primary text on light</div>
+      </div>
+    </div>
+
+    <div class="swatch" onclick="navigator.clipboard.writeText('#475569')">
+      <div class="swatch-color" style="background: #475569;">Body</div>
+      <div class="swatch-info">
+        <div class="swatch-name">Body Text</div>
+        <div class="swatch-hex">#475569</div>
+        <div class="swatch-role">Paragraph copy, descriptions</div>
+      </div>
+    </div>
+
+    <div class="swatch" onclick="navigator.clipboard.writeText('#64748B')">
+      <div class="swatch-color" style="background: #64748B;">Muted</div>
+      <div class="swatch-info">
+        <div class="swatch-name">Muted Text</div>
+        <div class="swatch-hex">#64748B</div>
+        <div class="swatch-role">Labels, captions, secondary info</div>
+      </div>
+    </div>
+
+    <div class="swatch" onclick="navigator.clipboard.writeText('#E2E8F0')">
+      <div class="swatch-color" style="background: #E2E8F0; color: #64748B;">Border</div>
+      <div class="swatch-info">
+        <div class="swatch-name">Border</div>
+        <div class="swatch-hex">#E2E8F0</div>
+        <div class="swatch-role">Card borders, dividers</div>
+      </div>
+    </div>
+
+    <div class="swatch" onclick="navigator.clipboard.writeText('#CBD5E1')">
+      <div class="swatch-color" style="background: #CBD5E1; color: #64748B;">Border Strong</div>
+      <div class="swatch-info">
+        <div class="swatch-name">Border Strong</div>
+        <div class="swatch-hex">#CBD5E1</div>
+        <div class="swatch-role">Hover states, emphasized dividers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DARK MODE COLORS -->
+<section class="dark-mode-section full-width">
+  <div class="dark-mode-inner">
+    <span class="section-label">Color System</span>
+    <h2>Dark mode</h2>
+    <p>Used for "system" sections — proof, data-heavy content, cinematic founder moments, final CTA. Triggered via the <code style="background: rgba(255,255,255,0.06); padding: 2px 8px; border-radius: 6px; font-size: 13px;">.dark</code> class.</p>
+
+    <div class="swatch-grid" style="margin-top: 32px;">
+      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#0A0A0B')">
+        <div class="swatch-color" style="background: #0A0A0B;">Page BG</div>
+        <div class="swatch-info">
+          <div class="swatch-name">Background</div>
+          <div class="swatch-hex">#0A0A0B</div>
+          <div class="swatch-role">Dark page background</div>
+        </div>
+      </div>
+
+      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#111113')">
+        <div class="swatch-color" style="background: #111113;">Card</div>
+        <div class="swatch-info">
+          <div class="swatch-name">Card / Lifted Surface</div>
+          <div class="swatch-hex">#111113</div>
+          <div class="swatch-role">Cards, elevated surfaces on dark</div>
+        </div>
+      </div>
+
+      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#17171A')">
+        <div class="swatch-color" style="background: #17171A;">Raised</div>
+        <div class="swatch-info">
+          <div class="swatch-name">Raised / Hover</div>
+          <div class="swatch-hex">#17171A</div>
+          <div class="swatch-role">Hover states, higher elevation</div>
+        </div>
+      </div>
+
+      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#EDEDED')">
+        <div class="swatch-color" style="background: #EDEDED; color: #111113;">Text</div>
+        <div class="swatch-info">
+          <div class="swatch-name">Primary Text</div>
+          <div class="swatch-hex">#EDEDED</div>
+          <div class="swatch-role">Headlines, primary text on dark</div>
+        </div>
+      </div>
+
+      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#A4A4AC')">
+        <div class="swatch-color" style="background: #A4A4AC; color: #111113;">Body</div>
+        <div class="swatch-info">
+          <div class="swatch-name">Body · Silver Mid</div>
+          <div class="swatch-hex">#A4A4AC</div>
+          <div class="swatch-role">Paragraph copy on dark</div>
+        </div>
+      </div>
+
+      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#8B8B93')">
+        <div class="swatch-color" style="background: #8B8B93; color: #111113;">Muted</div>
+        <div class="swatch-info">
+          <div class="swatch-name">Muted · Silver Dim</div>
+          <div class="swatch-hex">#8B8B93</div>
+          <div class="swatch-role">Labels, captions on dark</div>
+        </div>
+      </div>
+
+      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('rgba(255,255,255,0.08)')">
+        <div class="swatch-color" style="background: rgba(255,255,255,0.08); color: #A4A4AC;">Border</div>
+        <div class="swatch-info">
+          <div class="swatch-name">Border</div>
+          <div class="swatch-hex">rgba(255,255,255,0.08)</div>
+          <div class="swatch-role">8% white — card borders on dark</div>
+        </div>
+      </div>
+
+      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#60A5FA')">
+        <div class="swatch-color" style="background: #60A5FA; color: #111113;">Accent</div>
+        <div class="swatch-info">
+          <div class="swatch-name">Dark-Mode Accent</div>
+          <div class="swatch-hex">#60A5FA</div>
+          <div class="swatch-role">Blue-400 · section labels, accents on dark</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRADIENT -->
+<section id="gradient">
+  <span class="section-label">The Gradient</span>
+  <h2>Blue gradient · <em>the signature move</em></h2>
+  <p>Every gradient across the site builds from the same 3-stop blue. Used on headline emphasis (ems), primary buttons, display numbers, section labels, and hover glows.</p>
+
+  <div class="gradient-display">
+    <!-- TEXT GRADIENT -->
+    <div class="gradient-card">
+      <div class="gradient-strip-text">Abundance</div>
+      <div class="gradient-info">
+        <div class="swatch-name">Text Gradient · 3-stop</div>
+        <p style="font-size: 13px; margin: 6px 0 0;">Applied to all headline emphasis words (<code>em</code>), stat numbers, and gradient text labels.</p>
+        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#2563EB 0%,<br>&nbsp;&nbsp;#3B82F6 50%,<br>&nbsp;&nbsp;#60A5FA 100%)</code>
+      </div>
+    </div>
+
+    <!-- BUTTON GRADIENT -->
+    <div class="gradient-card">
+      <div class="gradient-strip" style="background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%); display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-weight: 700; font-size: 18px;">Apply Now →</div>
+      <div class="gradient-info">
+        <div class="swatch-name">Button Gradient · 2-stop</div>
+        <p style="font-size: 13px; margin: 6px 0 0;">Primary CTA buttons. Tighter gradient than text for solid fill.</p>
+        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#2563EB 0%,<br>&nbsp;&nbsp;#3B82F6 100%)</code>
+      </div>
+    </div>
+
+    <!-- BUTTON HOVER -->
+    <div class="gradient-card">
+      <div class="gradient-strip" style="background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%); display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-weight: 700; font-size: 18px;">On Hover</div>
+      <div class="gradient-info">
+        <div class="swatch-name">Button Hover · 2-stop</div>
+        <p style="font-size: 13px; margin: 6px 0 0;">Darkens one step on hover for feedback.</p>
+        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#1D4ED8 0%,<br>&nbsp;&nbsp;#2563EB 100%)</code>
+      </div>
+    </div>
+
+    <!-- HERO GLOW -->
+    <div class="gradient-card">
+      <div class="gradient-strip" style="background: radial-gradient(ellipse 100% 70% at 50% 0%, #DBEAFE 0%, #EFF6FF 30%, #F8FAFC 70%, #FFFFFF 100%);"></div>
+      <div class="gradient-info">
+        <div class="swatch-name">Hero Glow · 4-stop Radial</div>
+        <p style="font-size: 13px; margin: 6px 0 0;">Soft ambient blue fade on hero sections.</p>
+        <code>radial-gradient(ellipse 100% 50% at 50% 0%,<br>&nbsp;&nbsp;#DBEAFE 0%,<br>&nbsp;&nbsp;#EFF6FF 30%,<br>&nbsp;&nbsp;#F8FAFC 70%,<br>&nbsp;&nbsp;#FFFFFF 100%)</code>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 56px; margin-bottom: 8px;">Full blue scale</h3>
+  <p style="margin-bottom: 24px;">All blues used across the system — pulled from the Tailwind blue family for consistency and accessibility.</p>
+
+  <div class="swatch-grid">
+    <div class="swatch" onclick="navigator.clipboard.writeText('#1E3A8A')">
+      <div class="swatch-color" style="background: #1E3A8A;">Blue 900</div>
+      <div class="swatch-info"><div class="swatch-name">Blue · 900</div><div class="swatch-hex">#1E3A8A</div></div>
+    </div>
+    <div class="swatch" onclick="navigator.clipboard.writeText('#1D4ED8')">
+      <div class="swatch-color" style="background: #1D4ED8;">Blue 700</div>
+      <div class="swatch-info"><div class="swatch-name">Blue · 700 · Hover start</div><div class="swatch-hex">#1D4ED8</div></div>
+    </div>
+    <div class="swatch" onclick="navigator.clipboard.writeText('#2563EB')">
+      <div class="swatch-color" style="background: #2563EB;">Blue 600</div>
+      <div class="swatch-info"><div class="swatch-name">Blue · 600 · Primary ★</div><div class="swatch-hex">#2563EB</div><div class="swatch-role">Gradient anchor. Primary accent.</div></div>
+    </div>
+    <div class="swatch" onclick="navigator.clipboard.writeText('#3B82F6')">
+      <div class="swatch-color" style="background: #3B82F6;">Blue 500</div>
+      <div class="swatch-info"><div class="swatch-name">Blue · 500 · Gradient mid</div><div class="swatch-hex">#3B82F6</div></div>
+    </div>
+    <div class="swatch" onclick="navigator.clipboard.writeText('#60A5FA')">
+      <div class="swatch-color" style="background: #60A5FA; color: #0F172A;">Blue 400</div>
+      <div class="swatch-info"><div class="swatch-name">Blue · 400 · Gradient end</div><div class="swatch-hex">#60A5FA</div><div class="swatch-role">Dark-mode accent text.</div></div>
+    </div>
+    <div class="swatch" onclick="navigator.clipboard.writeText('#93C5FD')">
+      <div class="swatch-color" style="background: #93C5FD; color: #0F172A;">Blue 300</div>
+      <div class="swatch-info"><div class="swatch-name">Blue · 300</div><div class="swatch-hex">#93C5FD</div></div>
+    </div>
+    <div class="swatch" onclick="navigator.clipboard.writeText('#DBEAFE')">
+      <div class="swatch-color" style="background: #DBEAFE; color: #0F172A;">Blue 100</div>
+      <div class="swatch-info"><div class="swatch-name">Blue · 100</div><div class="swatch-hex">#DBEAFE</div></div>
+    </div>
+    <div class="swatch" onclick="navigator.clipboard.writeText('#EFF6FF')">
+      <div class="swatch-color" style="background: #EFF6FF; color: #0F172A;">Blue 50</div>
+      <div class="swatch-info"><div class="swatch-name">Blue · 50</div><div class="swatch-hex">#EFF6FF</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section id="typography">
+  <span class="section-label">Typography</span>
+  <h2>Two fonts. <em>One system.</em></h2>
+  <p>Greycliff CF handles everything — body, headlines, labels. Neo Contact is used exclusively for emphasis accent words in headlines (inherited from the logo).</p>
+
+  <div class="type-grid">
+    <div class="type-card">
+      <div class="type-specimen type-specimen-greycliff">Aa</div>
+      <div class="type-name">Greycliff CF</div>
+      <div class="type-role">Primary brand typeface · via Adobe Fonts · all body, headlines, labels, UI</div>
+      <div class="type-weights">
+        <div class="type-weight-row">
+          <span class="type-weight-label">400 · Regular</span>
+          <span class="type-weight-sample" style="font-weight: 400;">Body copy default weight</span>
+        </div>
+        <div class="type-weight-row">
+          <span class="type-weight-label">500 · Medium</span>
+          <span class="type-weight-sample" style="font-weight: 500;">Labels, subtle emphasis</span>
+        </div>
+        <div class="type-weight-row">
+          <span class="type-weight-label">600 · SemiBold</span>
+          <span class="type-weight-sample" style="font-weight: 600;">Secondary headlines</span>
+        </div>
+        <div class="type-weight-row">
+          <span class="type-weight-label">700 · Bold</span>
+          <span class="type-weight-sample" style="font-weight: 700;">Primary headlines</span>
+        </div>
+        <div class="type-weight-row">
+          <span class="type-weight-label">800 · ExtraBold</span>
+          <span class="type-weight-sample" style="font-weight: 800;">Display numbers, stats</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="type-card">
+      <div class="type-specimen type-specimen-neo">Aa</div>
+      <div class="type-name">Neo Contact LT Pro</div>
+      <div class="type-role">Accent typeface · self-hosted · logo font · emphasis only</div>
+      <div class="type-weights">
+        <div class="type-weight-row" style="grid-template-columns: 80px 1fr;">
+          <span class="type-weight-label">700 · Single weight</span>
+          <span class="type-weight-sample" style="font-family: 'Neo Contact', sans-serif; font-weight: 700;">AI-Powered Selling System</span>
+        </div>
+        <div class="type-weight-row" style="grid-template-columns: 80px 1fr;">
+          <span class="type-weight-label">Usage</span>
+          <span class="type-weight-sample" style="font-size: 14px; color: var(--ink-body);">Only used inside headline <code>&lt;em&gt;</code> elements with the blue gradient applied. Always 1.2× the surrounding Greycliff size. Always on its own line in headlines.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPONENTS -->
+<section id="components">
+  <span class="section-label">Components</span>
+  <h2>Buttons &amp; Highlight pills</h2>
+  <p>Every CTA and highlight-text element across the site uses these three button styles and three pill styles. 20px radius is standard for all highlighted text backgrounds.</p>
+
+  <div class="components-grid" style="grid-template-columns: 1fr 1fr;">
+    <div class="component-card">
+      <span class="component-label">Buttons</span>
+      <div class="component-demo">
+        <a href="#" class="btn btn-primary">Primary · Apply Now →</a>
+        <a href="#" class="btn btn-ghost">Ghost · See how it works</a>
+        <a href="#" class="btn btn-dark">Dark · Secondary</a>
+      </div>
+      <div class="component-code">.btn-primary · gradient blue · shadow glow<br>.btn-ghost · transparent · border<br>.btn-dark · solid ink</div>
+    </div>
+
+    <div class="component-card">
+      <span class="component-label">Highlight Pills · 20px radius</span>
+      <div class="component-demo">
+        <span>Pre-sold <span class="highlight">sales calls</span></span>
+        <span>Under <span class="highlight-blue">$150 per booking</span></span>
+        <span>Ads live in <span class="highlight-white">7 days</span></span>
+      </div>
+      <div class="component-code">.highlight · dark ink bg · white text<br>.highlight-blue · blue gradient bg · white<br>.highlight-white · white bg · ink text</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 56px; margin-bottom: 8px;">Corner radius · <em>20px standard</em></h3>
+  <p style="margin-bottom: 16px;">All cards, containers, and highlight pills use 20px radius. Only exceptions: buttons (10px, distinct UI element), pill-shape labels (100px, intentional pill).</p>
+  <div class="radius-demo">
+    <div class="radius-box" style="border-radius: 20px;">20px · default</div>
+    <div class="radius-box" style="border-radius: 10px;">10px · buttons only</div>
+    <div class="radius-box" style="border-radius: 100px;">100px · pill labels</div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<section id="logos">
+  <span class="section-label">Logos</span>
+  <h2>Wordmark <em>lockups</em></h2>
+  <p>Primary logos. Dark wordmark on light surfaces. Light wordmark on dark surfaces. Never place light-on-light or dark-on-dark.</p>
+
+  <div class="logo-grid">
+    <div class="logo-card logo-card-light">
+      <span class="logo-card-label">Dark wordmark · on light</span>
+      <img src="/assets/images/logo-dark-wordmark.svg" alt="Abundance.AI dark wordmark">
+    </div>
+    <div class="logo-card logo-card-dark">
+      <span class="logo-card-label">Light wordmark · on dark</span>
+      <img src="/assets/images/logo-light-wordmark.svg" alt="Abundance.AI light wordmark">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Abundance.AI · Brand Guidelines v2 · Reference for <a href="/shift">/shift</a>, <a href="/partner">/partner</a>, and all properties</p>
+</footer>
+
+<script>
+  // Copy hex on click with tiny toast
+  document.querySelectorAll('.swatch').forEach(el => {
+    el.addEventListener('click', () => {
+      const hex = el.querySelector('.swatch-hex')?.textContent;
+      if (!hex) return;
+      const toast = document.createElement('div');
+      toast.textContent = 'Copied ' + hex;
+      toast.style.cssText = 'position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#0F172A;color:#FFFFFF;padding:10px 18px;border-radius:20px;font-size:13px;font-weight:600;box-shadow:0 4px 16px rgba(15,23,42,0.2);z-index:1000;animation:fadeInOut 1.6s ease forwards;';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 1600);
+    });
+  });
+
+  const style = document.createElement('style');
+  style.textContent = '@keyframes fadeInOut { 0% { opacity: 0; transform: translateX(-50%) translateY(8px); } 15%, 85% { opacity: 1; transform: translateX(-50%) translateY(0); } 100% { opacity: 0; transform: translateX(-50%) translateY(-8px); } }';
+  document.head.appendChild(style);
+</script>
+
+</body>
+</html>
