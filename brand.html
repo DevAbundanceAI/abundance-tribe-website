@@ -18,43 +18,42 @@
   }
 
   :root {
-    /* LIGHT MODE */
+    /* LIGHT MODE — matte black text instead of slate navy */
     --bg: #F8FAFC;
     --bg-subtle: #EFF6FF;
     --card: #FFFFFF;
-    --ink: #0F172A;
-    --ink-body: #475569;
-    --ink-muted: #64748B;
-    --border: #E2E8F0;
-    --border-strong: #CBD5E1;
+    --ink: #141414;         /* was #0F172A · now pure matte black */
+    --ink-body: #4A4A4A;    /* was #475569 · neutral gray body */
+    --ink-muted: #7A7A7A;   /* was #64748B · neutral gray muted */
+    --border: #E5E5E5;      /* was #E2E8F0 · neutral gray border */
+    --border-strong: #C8C8C8;
 
-    /* DARK MODE */
-    --dark-bg: #0A0A0B;
-    --dark-card: #111113;
-    --dark-raised: #17171A;
+    /* DARK MODE — pure matte black, no navy */
+    --dark-bg: #0A0A0A;      /* was #0A0A0B */
+    --dark-card: #141414;    /* was #111113 · matte black card */
+    --dark-raised: #1F1F1F;  /* was #17171A */
     --dark-text: #EDEDED;
-    --dark-body: #A4A4AC;
-    --dark-muted: #8B8B93;
+    --dark-body: #A4A4A4;
+    --dark-muted: #8B8B8B;
     --dark-border: rgba(255,255,255,0.08);
 
-    /* BLUE SCALE */
+    /* BLUE SCALE — deeper anchors, kill blue-400 */
     --blue-900: #1E3A8A;
+    --blue-800: #1E40AF;
     --blue-700: #1D4ED8;
     --blue-600: #2563EB;
     --blue-500: #3B82F6;
-    --blue-400: #60A5FA;
-    --blue-300: #93C5FD;
     --blue-100: #DBEAFE;
     --blue-50: #EFF6FF;
 
-    /* GRADIENTS */
-    --gradient-text: linear-gradient(135deg, #2563EB 0%, #3B82F6 50%, #60A5FA 100%);
-    --gradient-btn: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
-    --gradient-btn-hover: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%);
+    /* GRADIENTS — deeper 3-stop, no blue-400 */
+    --gradient-text: linear-gradient(135deg, #1D4ED8 0%, #2563EB 50%, #3B82F6 100%);
+    --gradient-btn: linear-gradient(135deg, #1D4ED8 0%, #3B82F6 100%);
+    --gradient-btn-hover: linear-gradient(135deg, #1E40AF 0%, #2563EB 100%);
     --gradient-hero: radial-gradient(ellipse 100% 50% at 50% 0%, #DBEAFE 0%, #EFF6FF 30%, #F8FAFC 70%, #FFFFFF 100%);
 
-    --shadow-sm: 0 1px 2px rgba(15,23,42,0.04);
-    --shadow: 0 1px 3px rgba(15,23,42,0.05), 0 4px 12px rgba(15,23,42,0.06);
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+    --shadow: 0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.06);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -580,47 +579,47 @@
       </div>
     </div>
 
-    <div class="swatch" onclick="navigator.clipboard.writeText('#0F172A')">
-      <div class="swatch-color" style="background: #0F172A;">Ink</div>
+    <div class="swatch" onclick="navigator.clipboard.writeText('#141414')">
+      <div class="swatch-color" style="background: #141414;">Ink</div>
       <div class="swatch-info">
         <div class="swatch-name">Ink · Primary Text</div>
-        <div class="swatch-hex">#0F172A</div>
-        <div class="swatch-role">Headlines, primary text on light</div>
+        <div class="swatch-hex">#141414</div>
+        <div class="swatch-role">Matte black. Headlines, primary text on light.</div>
       </div>
     </div>
 
-    <div class="swatch" onclick="navigator.clipboard.writeText('#475569')">
-      <div class="swatch-color" style="background: #475569;">Body</div>
+    <div class="swatch" onclick="navigator.clipboard.writeText('#4A4A4A')">
+      <div class="swatch-color" style="background: #4A4A4A;">Body</div>
       <div class="swatch-info">
         <div class="swatch-name">Body Text</div>
-        <div class="swatch-hex">#475569</div>
-        <div class="swatch-role">Paragraph copy, descriptions</div>
+        <div class="swatch-hex">#4A4A4A</div>
+        <div class="swatch-role">Neutral gray, paragraph copy</div>
       </div>
     </div>
 
-    <div class="swatch" onclick="navigator.clipboard.writeText('#64748B')">
-      <div class="swatch-color" style="background: #64748B;">Muted</div>
+    <div class="swatch" onclick="navigator.clipboard.writeText('#7A7A7A')">
+      <div class="swatch-color" style="background: #7A7A7A;">Muted</div>
       <div class="swatch-info">
         <div class="swatch-name">Muted Text</div>
-        <div class="swatch-hex">#64748B</div>
+        <div class="swatch-hex">#7A7A7A</div>
         <div class="swatch-role">Labels, captions, secondary info</div>
       </div>
     </div>
 
-    <div class="swatch" onclick="navigator.clipboard.writeText('#E2E8F0')">
-      <div class="swatch-color" style="background: #E2E8F0; color: #64748B;">Border</div>
+    <div class="swatch" onclick="navigator.clipboard.writeText('#E5E5E5')">
+      <div class="swatch-color" style="background: #E5E5E5; color: #7A7A7A;">Border</div>
       <div class="swatch-info">
         <div class="swatch-name">Border</div>
-        <div class="swatch-hex">#E2E8F0</div>
+        <div class="swatch-hex">#E5E5E5</div>
         <div class="swatch-role">Card borders, dividers</div>
       </div>
     </div>
 
-    <div class="swatch" onclick="navigator.clipboard.writeText('#CBD5E1')">
-      <div class="swatch-color" style="background: #CBD5E1; color: #64748B;">Border Strong</div>
+    <div class="swatch" onclick="navigator.clipboard.writeText('#C8C8C8')">
+      <div class="swatch-color" style="background: #C8C8C8; color: #7A7A7A;">Border Strong</div>
       <div class="swatch-info">
         <div class="swatch-name">Border Strong</div>
-        <div class="swatch-hex">#CBD5E1</div>
+        <div class="swatch-hex">#C8C8C8</div>
         <div class="swatch-role">Hover states, emphasized dividers</div>
       </div>
     </div>
@@ -635,35 +634,35 @@
     <p>Used for "system" sections — proof, data-heavy content, cinematic founder moments, final CTA. Triggered via the <code style="background: rgba(255,255,255,0.06); padding: 2px 8px; border-radius: 6px; font-size: 13px;">.dark</code> class.</p>
 
     <div class="swatch-grid" style="margin-top: 32px;">
-      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#0A0A0B')">
-        <div class="swatch-color" style="background: #0A0A0B;">Page BG</div>
+      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#0A0A0A')">
+        <div class="swatch-color" style="background: #0A0A0A;">Page BG</div>
         <div class="swatch-info">
-          <div class="swatch-name">Background</div>
-          <div class="swatch-hex">#0A0A0B</div>
-          <div class="swatch-role">Dark page background</div>
+          <div class="swatch-name">Background · Matte Black</div>
+          <div class="swatch-hex">#0A0A0A</div>
+          <div class="swatch-role">Pure matte black. Zero navy tint.</div>
         </div>
       </div>
 
-      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#111113')">
-        <div class="swatch-color" style="background: #111113;">Card</div>
+      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#141414')">
+        <div class="swatch-color" style="background: #141414;">Card</div>
         <div class="swatch-info">
           <div class="swatch-name">Card / Lifted Surface</div>
-          <div class="swatch-hex">#111113</div>
-          <div class="swatch-role">Cards, elevated surfaces on dark</div>
+          <div class="swatch-hex">#141414</div>
+          <div class="swatch-role">Matte black, slightly lifted from bg</div>
         </div>
       </div>
 
-      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#17171A')">
-        <div class="swatch-color" style="background: #17171A;">Raised</div>
+      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#1F1F1F')">
+        <div class="swatch-color" style="background: #1F1F1F;">Raised</div>
         <div class="swatch-info">
           <div class="swatch-name">Raised / Hover</div>
-          <div class="swatch-hex">#17171A</div>
+          <div class="swatch-hex">#1F1F1F</div>
           <div class="swatch-role">Hover states, higher elevation</div>
         </div>
       </div>
 
       <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#EDEDED')">
-        <div class="swatch-color" style="background: #EDEDED; color: #111113;">Text</div>
+        <div class="swatch-color" style="background: #EDEDED; color: #141414;">Text</div>
         <div class="swatch-info">
           <div class="swatch-name">Primary Text</div>
           <div class="swatch-hex">#EDEDED</div>
@@ -671,26 +670,26 @@
         </div>
       </div>
 
-      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#A4A4AC')">
-        <div class="swatch-color" style="background: #A4A4AC; color: #111113;">Body</div>
+      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#A4A4A4')">
+        <div class="swatch-color" style="background: #A4A4A4; color: #141414;">Body</div>
         <div class="swatch-info">
-          <div class="swatch-name">Body · Silver Mid</div>
-          <div class="swatch-hex">#A4A4AC</div>
-          <div class="swatch-role">Paragraph copy on dark</div>
+          <div class="swatch-name">Body</div>
+          <div class="swatch-hex">#A4A4A4</div>
+          <div class="swatch-role">Neutral gray, paragraph copy on dark</div>
         </div>
       </div>
 
-      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#8B8B93')">
-        <div class="swatch-color" style="background: #8B8B93; color: #111113;">Muted</div>
+      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#8B8B8B')">
+        <div class="swatch-color" style="background: #8B8B8B; color: #141414;">Muted</div>
         <div class="swatch-info">
-          <div class="swatch-name">Muted · Silver Dim</div>
-          <div class="swatch-hex">#8B8B93</div>
+          <div class="swatch-name">Muted</div>
+          <div class="swatch-hex">#8B8B8B</div>
           <div class="swatch-role">Labels, captions on dark</div>
         </div>
       </div>
 
       <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('rgba(255,255,255,0.08)')">
-        <div class="swatch-color" style="background: rgba(255,255,255,0.08); color: #A4A4AC;">Border</div>
+        <div class="swatch-color" style="background: rgba(255,255,255,0.08); color: #A4A4A4;">Border</div>
         <div class="swatch-info">
           <div class="swatch-name">Border</div>
           <div class="swatch-hex">rgba(255,255,255,0.08)</div>
@@ -698,12 +697,12 @@
         </div>
       </div>
 
-      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#60A5FA')">
-        <div class="swatch-color" style="background: #60A5FA; color: #111113;">Accent</div>
+      <div class="swatch swatch-dark" onclick="navigator.clipboard.writeText('#3B82F6')">
+        <div class="swatch-color" style="background: #3B82F6;">Accent</div>
         <div class="swatch-info">
           <div class="swatch-name">Dark-Mode Accent</div>
-          <div class="swatch-hex">#60A5FA</div>
-          <div class="swatch-role">Blue-400 · section labels, accents on dark</div>
+          <div class="swatch-hex">#3B82F6</div>
+          <div class="swatch-role">Blue-500 · section labels, accents on dark</div>
         </div>
       </div>
     </div>
@@ -722,28 +721,28 @@
       <div class="gradient-strip-text">Abundance</div>
       <div class="gradient-info">
         <div class="swatch-name">Text Gradient · 3-stop</div>
-        <p style="font-size: 13px; margin: 6px 0 0;">Applied to all headline emphasis words (<code>em</code>), stat numbers, and gradient text labels.</p>
-        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#2563EB 0%,<br>&nbsp;&nbsp;#3B82F6 50%,<br>&nbsp;&nbsp;#60A5FA 100%)</code>
+        <p style="font-size: 13px; margin: 6px 0 0;">Deeper, richer blues. Applied to all headline emphasis words (<code>em</code>), stat numbers, and gradient labels.</p>
+        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#1D4ED8 0%,<br>&nbsp;&nbsp;#2563EB 50%,<br>&nbsp;&nbsp;#3B82F6 100%)</code>
       </div>
     </div>
 
     <!-- BUTTON GRADIENT -->
     <div class="gradient-card">
-      <div class="gradient-strip" style="background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%); display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-weight: 700; font-size: 18px;">Apply Now →</div>
+      <div class="gradient-strip" style="background: linear-gradient(135deg, #1D4ED8 0%, #3B82F6 100%); display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-weight: 700; font-size: 18px;">Apply Now →</div>
       <div class="gradient-info">
         <div class="swatch-name">Button Gradient · 2-stop</div>
-        <p style="font-size: 13px; margin: 6px 0 0;">Primary CTA buttons. Tighter gradient than text for solid fill.</p>
-        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#2563EB 0%,<br>&nbsp;&nbsp;#3B82F6 100%)</code>
+        <p style="font-size: 13px; margin: 6px 0 0;">Primary CTA buttons. Full range from deep to bright.</p>
+        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#1D4ED8 0%,<br>&nbsp;&nbsp;#3B82F6 100%)</code>
       </div>
     </div>
 
     <!-- BUTTON HOVER -->
     <div class="gradient-card">
-      <div class="gradient-strip" style="background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%); display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-weight: 700; font-size: 18px;">On Hover</div>
+      <div class="gradient-strip" style="background: linear-gradient(135deg, #1E40AF 0%, #2563EB 100%); display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-weight: 700; font-size: 18px;">On Hover</div>
       <div class="gradient-info">
         <div class="swatch-name">Button Hover · 2-stop</div>
         <p style="font-size: 13px; margin: 6px 0 0;">Darkens one step on hover for feedback.</p>
-        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#1D4ED8 0%,<br>&nbsp;&nbsp;#2563EB 100%)</code>
+        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#1E40AF 0%,<br>&nbsp;&nbsp;#2563EB 100%)</code>
       </div>
     </div>
 
@@ -764,37 +763,34 @@
   <div class="swatch-grid">
     <div class="swatch" onclick="navigator.clipboard.writeText('#1E3A8A')">
       <div class="swatch-color" style="background: #1E3A8A;">Blue 900</div>
-      <div class="swatch-info"><div class="swatch-name">Blue · 900</div><div class="swatch-hex">#1E3A8A</div></div>
+      <div class="swatch-info"><div class="swatch-name">Blue · 900</div><div class="swatch-hex">#1E3A8A</div><div class="swatch-role">Deepest blue, rare</div></div>
+    </div>
+    <div class="swatch" onclick="navigator.clipboard.writeText('#1E40AF')">
+      <div class="swatch-color" style="background: #1E40AF;">Blue 800</div>
+      <div class="swatch-info"><div class="swatch-name">Blue · 800 · Hover start</div><div class="swatch-hex">#1E40AF</div></div>
     </div>
     <div class="swatch" onclick="navigator.clipboard.writeText('#1D4ED8')">
       <div class="swatch-color" style="background: #1D4ED8;">Blue 700</div>
-      <div class="swatch-info"><div class="swatch-name">Blue · 700 · Hover start</div><div class="swatch-hex">#1D4ED8</div></div>
+      <div class="swatch-info"><div class="swatch-name">Blue · 700 · Gradient start ★</div><div class="swatch-hex">#1D4ED8</div><div class="swatch-role">Deep anchor of text gradient.</div></div>
     </div>
     <div class="swatch" onclick="navigator.clipboard.writeText('#2563EB')">
       <div class="swatch-color" style="background: #2563EB;">Blue 600</div>
-      <div class="swatch-info"><div class="swatch-name">Blue · 600 · Primary ★</div><div class="swatch-hex">#2563EB</div><div class="swatch-role">Gradient anchor. Primary accent.</div></div>
+      <div class="swatch-info"><div class="swatch-name">Blue · 600 · Primary ★</div><div class="swatch-hex">#2563EB</div><div class="swatch-role">Primary accent. Gradient middle.</div></div>
     </div>
     <div class="swatch" onclick="navigator.clipboard.writeText('#3B82F6')">
       <div class="swatch-color" style="background: #3B82F6;">Blue 500</div>
-      <div class="swatch-info"><div class="swatch-name">Blue · 500 · Gradient mid</div><div class="swatch-hex">#3B82F6</div></div>
-    </div>
-    <div class="swatch" onclick="navigator.clipboard.writeText('#60A5FA')">
-      <div class="swatch-color" style="background: #60A5FA; color: #0F172A;">Blue 400</div>
-      <div class="swatch-info"><div class="swatch-name">Blue · 400 · Gradient end</div><div class="swatch-hex">#60A5FA</div><div class="swatch-role">Dark-mode accent text.</div></div>
-    </div>
-    <div class="swatch" onclick="navigator.clipboard.writeText('#93C5FD')">
-      <div class="swatch-color" style="background: #93C5FD; color: #0F172A;">Blue 300</div>
-      <div class="swatch-info"><div class="swatch-name">Blue · 300</div><div class="swatch-hex">#93C5FD</div></div>
+      <div class="swatch-info"><div class="swatch-name">Blue · 500 · Gradient end ★</div><div class="swatch-hex">#3B82F6</div><div class="swatch-role">Brightest blue in use. Stops here.</div></div>
     </div>
     <div class="swatch" onclick="navigator.clipboard.writeText('#DBEAFE')">
-      <div class="swatch-color" style="background: #DBEAFE; color: #0F172A;">Blue 100</div>
-      <div class="swatch-info"><div class="swatch-name">Blue · 100</div><div class="swatch-hex">#DBEAFE</div></div>
+      <div class="swatch-color" style="background: #DBEAFE; color: #141414;">Blue 100</div>
+      <div class="swatch-info"><div class="swatch-name">Blue · 100 · Hero glow</div><div class="swatch-hex">#DBEAFE</div></div>
     </div>
     <div class="swatch" onclick="navigator.clipboard.writeText('#EFF6FF')">
-      <div class="swatch-color" style="background: #EFF6FF; color: #0F172A;">Blue 50</div>
-      <div class="swatch-info"><div class="swatch-name">Blue · 50</div><div class="swatch-hex">#EFF6FF</div></div>
+      <div class="swatch-color" style="background: #EFF6FF; color: #141414;">Blue 50</div>
+      <div class="swatch-info"><div class="swatch-name">Blue · 50 · Soft fills</div><div class="swatch-hex">#EFF6FF</div></div>
     </div>
   </div>
+  <p style="margin-top: 16px; font-size: 13px; color: var(--ink-muted);">Blue-400 (#60A5FA) and Blue-300 (#93C5FD) are intentionally excluded — too washed out for the brand.</p>
 </section>
 
 <!-- TYPOGRAPHY -->
