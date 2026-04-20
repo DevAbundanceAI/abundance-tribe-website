@@ -49,6 +49,7 @@
 
     /* GRADIENTS — 45° dark → light */
     --gradient-text: linear-gradient(45deg, #1E3A8A 0%, #2563EB 45%, #3E96FA 100%);
+    --gradient-text-dark: linear-gradient(45deg, #2563EB 0%, #3B82F6 45%, #5AA0F8 100%);  /* shifted brighter for matte black bg */
     --gradient-btn: linear-gradient(45deg, #1E40AF 0%, #3E96FA 100%);
     --gradient-btn-hover: linear-gradient(45deg, #1E3A8A 0%, #2563EB 100%);
     --gradient-hero: radial-gradient(ellipse 100% 55% at 50% 0%, #DBEAFE 0%, #EFF6FF 30%, #F8FAFC 70%, #FFFFFF 100%);
@@ -214,6 +215,17 @@
   .dark-section p { color: var(--dark-body); }
   .dark-section .section-label { color: var(--blue-500); }
   .dark-section .section-label::before { background: var(--blue-500); }
+  .dark-section em,
+  .dark-section .gradient,
+  .example-dark em,
+  .example-dark .gradient {
+    background-image: var(--gradient-text-dark);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
   /* GRADIENT DISPLAY */
   .gradient-display {
