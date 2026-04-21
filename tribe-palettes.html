@@ -328,6 +328,98 @@
   }
 
   /* ─────────────────────────────────────── */
+  /* ═════ HYBRID 1 — MONOCHROME + BLUE EM ═════ */
+  /* ─────────────────────────────────────── */
+  #hybrid-1::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    opacity: 0.7;
+  }
+  #hybrid-1 .watermark {
+    position: absolute;
+    top: 40px;
+    left: -20px;
+    right: -20px;
+    font-family: 'Neo Contact', sans-serif;
+    font-weight: 700;
+    font-size: clamp(120px, 22vw, 260px);
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+    color: var(--cream);
+    opacity: 0.03;
+    pointer-events: none;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  #hybrid-1 .palette-badge {
+    background: linear-gradient(45deg, #1E3A8A 0%, #2563EB 45%, #3E96FA 100%);
+    color: var(--cream);
+  }
+  #hybrid-1 .eyebrow { color: var(--cream-muted); }
+  #hybrid-1 .eyebrow::before { background: var(--cream-muted); }
+  #hybrid-1 h1 em {
+    background-image: linear-gradient(45deg, #1E3A8A 0%, #2563EB 45%, #3E96FA 100%);
+  }
+  #hybrid-1 .btn-primary {
+    background: var(--cream);
+    color: var(--bg);
+  }
+  #hybrid-1 .btn-primary:hover { background: var(--cream-warm); }
+  #hybrid-1 .demo-card-stamp { background: var(--cream); color: var(--bg); }
+  #hybrid-1 .demo-card-sub { color: var(--cream-muted); }
+  #hybrid-1 .demo-card li::before { background: var(--cream-muted); }
+
+  /* ─────────────────────────────────────── */
+  /* ═════ HYBRID 2 — MONOCHROME + FOREST EM ═════ */
+  /* ─────────────────────────────────────── */
+  #hybrid-2::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    opacity: 0.7;
+  }
+  #hybrid-2 .watermark {
+    position: absolute;
+    top: 40px;
+    left: -20px;
+    right: -20px;
+    font-family: 'Neo Contact', sans-serif;
+    font-weight: 700;
+    font-size: clamp(120px, 22vw, 260px);
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+    color: var(--cream);
+    opacity: 0.03;
+    pointer-events: none;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  #hybrid-2 .palette-badge {
+    background: linear-gradient(45deg, #2D4A3A 0%, #4A6B53 50%, #6A8A71 100%);
+    color: var(--cream);
+  }
+  #hybrid-2 .eyebrow { color: var(--cream-muted); }
+  #hybrid-2 .eyebrow::before { background: var(--cream-muted); }
+  #hybrid-2 h1 em {
+    background-image: linear-gradient(45deg, #2D4A3A 0%, #4A6B53 50%, #6A8A71 100%);
+  }
+  #hybrid-2 .btn-primary {
+    background: var(--cream);
+    color: var(--bg);
+  }
+  #hybrid-2 .btn-primary:hover { background: var(--cream-warm); }
+  #hybrid-2 .demo-card-stamp { background: var(--cream); color: var(--bg); }
+  #hybrid-2 .demo-card-sub { color: var(--cream-muted); }
+  #hybrid-2 .demo-card li::before { background: var(--cream-muted); }
+
+  /* ─────────────────────────────────────── */
   /* ═════ PALETTE A — EDITORIAL MONOCHROME ═════ */
   /* ─────────────────────────────────────── */
   #palette-a::before {
@@ -479,6 +571,8 @@
   <div class="top-bar-inner">
     <span class="top-bar-title">Tribe · Palette Comparison</span>
     <div class="top-bar-nav">
+      <a href="#hybrid-1" class="jump-link">H1 · Mono + Blue</a>
+      <a href="#hybrid-2" class="jump-link">H2 · Mono + Forest</a>
       <a href="#palette-a" class="jump-link">A · Monochrome</a>
       <a href="#palette-b1" class="jump-link">B1 · Oxblood</a>
       <a href="#palette-b2" class="jump-link">B2 · Honey</a>
@@ -487,6 +581,142 @@
     </div>
   </div>
 </div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- HYBRID 1 — MONOCHROME + BLUE EM            -->
+<!-- ══════════════════════════════════════════ -->
+<section class="palette" id="hybrid-1">
+  <div class="watermark">ABUNDANCE</div>
+  <div class="palette-inner">
+    <div class="palette-label">
+      <span class="palette-badge">Hybrid 1</span>
+      <span class="palette-name">Monochrome + Signature Blue</span>
+      <span class="palette-desc">Matte black canvas · blue gradient only on h1 em</span>
+    </div>
+
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#141414;"></div>
+        <span class="swatch-label">Matte Black</span>
+        <span class="swatch-hex">#141414</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#1B1B1B;"></div>
+        <span class="swatch-label">Surface 1</span>
+        <span class="swatch-hex">#1B1B1B</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#F5F0E8;"></div>
+        <span class="swatch-label">Cream</span>
+        <span class="swatch-hex">#F5F0E8</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#D5CFC4;"></div>
+        <span class="swatch-label">Cream Body</span>
+        <span class="swatch-hex">#D5CFC4</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#9C968C;"></div>
+        <span class="swatch-label">Cream Muted</span>
+        <span class="swatch-hex">#9C968C</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:linear-gradient(45deg,#1E3A8A 0%,#2563EB 45%,#3E96FA 100%);"></div>
+        <span class="swatch-label">Em Gradient</span>
+        <span class="swatch-hex">h1 em only</span>
+      </div>
+    </div>
+
+    <div class="demo-grid">
+      <div class="demo-hero">
+        <span class="eyebrow">For scaling founders</span>
+        <h1>Scaling is harder than <em>it should be.</em></h1>
+        <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+        <a href="#" class="btn btn-primary">Join the Tribe →</a>
+      </div>
+      <div class="demo-card">
+        <span class="demo-card-stamp">Founding Members</span>
+        <div class="demo-card-price">$97<span>/mo</span></div>
+        <div class="demo-card-sub">Cancel anytime</div>
+        <ul>
+          <li>Weekly live workshops with Ryan</li>
+          <li>Every Selling System framework</li>
+          <li>Private founder community</li>
+          <li>Monthly live audits</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Join the Tribe</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- HYBRID 2 — MONOCHROME + FOREST EM          -->
+<!-- ══════════════════════════════════════════ -->
+<section class="palette" id="hybrid-2">
+  <div class="watermark">ABUNDANCE</div>
+  <div class="palette-inner">
+    <div class="palette-label">
+      <span class="palette-badge">Hybrid 2</span>
+      <span class="palette-name">Monochrome + Forest Green</span>
+      <span class="palette-desc">Matte black canvas · forest gradient only on h1 em</span>
+    </div>
+
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#141414;"></div>
+        <span class="swatch-label">Matte Black</span>
+        <span class="swatch-hex">#141414</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#1B1B1B;"></div>
+        <span class="swatch-label">Surface 1</span>
+        <span class="swatch-hex">#1B1B1B</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#F5F0E8;"></div>
+        <span class="swatch-label">Cream</span>
+        <span class="swatch-hex">#F5F0E8</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#D5CFC4;"></div>
+        <span class="swatch-label">Cream Body</span>
+        <span class="swatch-hex">#D5CFC4</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#9C968C;"></div>
+        <span class="swatch-label">Cream Muted</span>
+        <span class="swatch-hex">#9C968C</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:linear-gradient(45deg,#2D4A3A 0%,#4A6B53 50%,#6A8A71 100%);"></div>
+        <span class="swatch-label">Em Gradient</span>
+        <span class="swatch-hex">h1 em only</span>
+      </div>
+    </div>
+
+    <div class="demo-grid">
+      <div class="demo-hero">
+        <span class="eyebrow">For scaling founders</span>
+        <h1>Scaling is harder than <em>it should be.</em></h1>
+        <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+        <a href="#" class="btn btn-primary">Join the Tribe →</a>
+      </div>
+      <div class="demo-card">
+        <span class="demo-card-stamp">Founding Members</span>
+        <div class="demo-card-price">$97<span>/mo</span></div>
+        <div class="demo-card-sub">Cancel anytime</div>
+        <ul>
+          <li>Weekly live workshops with Ryan</li>
+          <li>Every Selling System framework</li>
+          <li>Private founder community</li>
+          <li>Monthly live audits</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Join the Tribe</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══════════════════════════════════════════ -->
 <!-- PALETTE A — EDITORIAL MONOCHROME           -->
