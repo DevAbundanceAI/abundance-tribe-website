@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abundance Tribe — Clarity Through Systems</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
+<style>
+  @font-face {
+    font-family: 'Neo Contact';
+    src: url('/assets/fonts/neo-contact/neo-contact-lt-pro.woff2') format('woff2');
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    /* MATTE BLACK SHADES — subtle variation */
+    --bg: #141414;           /* primary page matte black */
+    --surface-1: #1B1B1B;    /* cards */
+    --surface-2: #222222;    /* raised */
+    --surface-3: #2A2A2A;    /* hover */
+
+    /* CREAMS */
+    --cream: #F5F0E8;
+    --cream-warm: #F8F6EC;
+    --cream-body: #D5CFC4;   /* muted cream for body */
+    --cream-muted: #9C968C;  /* tertiary cream */
+
+    /* GOLD — used sparingly */
+    --gold: #B58753;
+    --gold-light: #C9A06A;
+    --gold-soft: rgba(181, 135, 83, 0.5);
+
+    --border: rgba(245, 240, 232, 0.08);
+    --border-strong: rgba(245, 240, 232, 0.18);
+    --border-gold: rgba(181, 135, 83, 0.35);
+
+    --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 4px 20px rgba(0,0,0,0.25);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.35), 0 20px 60px rgba(0,0,0,0.3);
+
+    /* Gold gradient for Neo Contact emphasis — subtle 45° */
+    --gradient-gold: linear-gradient(45deg, #8A6436 0%, #B58753 50%, #C9A06A 100%);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: "greycliff-cf", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Typography */
+  h1, h2, h3 {
+    color: var(--cream);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    font-family: "greycliff-cf", sans-serif;
+  }
+  h1 { font-size: clamp(44px, 6.5vw, 92px); line-height: 1.02; margin-bottom: 28px; }
+  h2 { font-size: clamp(32px, 4.5vw, 60px); line-height: 1.05; margin-bottom: 20px; }
+  h3 { font-size: 22px; line-height: 1.25; margin-bottom: 12px; }
+  p { color: var(--cream-body); max-width: 720px; }
+
+  /* Neo Contact emphasis — only use, always own line */
+  em {
+    font-family: 'Neo Contact', 'Impact', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    background-image: var(--gradient-gold);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  h1 em, h2 em, h3 em {
+    display: block;
+    font-size: 1.2em;
+    line-height: 1;
+    margin-top: 0.12em;
+    background-image: var(--gradient-gold);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* ── URGENCY BAR ── */
+  .urgency-bar {
+    background: var(--surface-1);
+    color: var(--cream-body);
+    padding: 11px 24px;
+    text-align: center;
+    font-family: 'Neo Contact', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border-gold);
+  }
+  .urgency-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 3px rgba(181,135,83,0.2);
+    margin-right: 12px;
+    vertical-align: middle;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+  /* ── NAV ── */
+  nav {
+    background: rgba(20, 20, 20, 0.88);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .nav-logo { height: 22px; opacity: 0.9; }
+  .nav-cta {
+    background: transparent;
+    color: var(--cream);
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-family: 'Neo Contact', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid var(--border-gold);
+  }
+  .nav-cta:hover {
+    background: var(--gold);
+    color: var(--bg);
+    border-color: var(--gold);
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 120px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  section.full-width { max-width: none; padding-left: 40px; padding-right: 40px; }
+
+  .eyebrow {
+    display: inline-block;
+    font-family: 'Neo Contact', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    position: relative;
+    padding-left: 28px;
+  }
+  .eyebrow::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  /* Thin gold hairline divider */
+  .hairline {
+    width: 80px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
+    margin: 40px auto;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--bg);
+    padding: 100px 40px 120px;
+    max-width: none;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 45% at 50% 0%, rgba(181,135,83,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 8px 18px;
+    font-family: 'Neo Contact', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 32px;
+  }
+  .hero-badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 3px rgba(181,135,83,0.2);
+  }
+
+  .hero-sub {
+    font-size: clamp(17px, 2vw, 21px);
+    color: var(--cream-body);
+    max-width: 680px;
+    margin: 0 auto 40px;
+    line-height: 1.55;
+  }
+  .hero-sub strong { color: var(--cream); font-weight: 600; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 32px;
+    border-radius: 20px;
+    font-family: 'Neo Contact', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    white-space: nowrap;
+    border: none;
+  }
+  .btn-gold {
+    background: var(--gold);
+    color: var(--bg);
+    box-shadow: 0 4px 20px rgba(181,135,83,0.2);
+  }
+  .btn-gold:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 28px rgba(181,135,83,0.3);
+  }
+  .btn-cream {
+    background: var(--cream);
+    color: var(--bg);
+  }
+  .btn-cream:hover {
+    background: var(--cream-warm);
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid var(--border-strong);
+  }
+  .btn-ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+  }
+  .btn-lg { padding: 20px 40px; font-size: 14px; }
+
+  .cta-row {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .cta-note {
+    font-size: 13px;
+    color: var(--cream-muted);
+    font-style: italic;
+  }
+
+  /* ── VSL ── */
+  .vsl-wrap {
+    max-width: 920px;
+    margin: 64px auto 0;
+    position: relative;
+  }
+  .vsl-player {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--surface-1);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-gold);
+  }
+  .vsl-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: var(--cream-muted);
+  }
+  .vsl-play-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 24px rgba(181,135,83,0.4);
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .vsl-play-btn:hover { transform: scale(1.05); }
+  .vsl-play-btn svg { width: 26px; height: 26px; fill: var(--bg); margin-left: 4px; }
+  .vsl-caption {
+    font-family: 'Neo Contact', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cream);
+  }
+
+  /* ── LOGO BAR ── */
+  .logo-bar {
+    background: var(--surface-1);
+    color: var(--cream);
+    padding: 28px 40px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+  .logo-bar-label {
+    font-family: 'Neo Contact', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 16px;
+  }
+  .logo-track {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .logo-item {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--cream);
+    opacity: 0.7;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── PROBLEM SECTION ── */
+  .stuck-section {
+    background: var(--bg);
+    max-width: none;
+    padding: 140px 40px;
+  }
+  .stuck-inner { max-width: 1180px; margin: 0 auto; }
+  .stuck-header {
+    max-width: 820px;
+    margin: 0 auto 80px;
+    text-align: center;
+  }
+  .stuck-header h2 { font-size: clamp(34px, 4.5vw, 56px); }
+  .stuck-header p { margin: 24px auto 0; max-width: 560px; }
+
+  .stuck-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .stuck-card {
+    background: var(--surface-1);
+    padding: 48px 40px;
+    transition: background 0.3s;
+  }
+  .stuck-card:hover { background: var(--surface-2); }
+  .stuck-num {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    font-size: 52px;
+    line-height: 1;
+    color: var(--gold);
+    opacity: 0.9;
+    margin-bottom: 24px;
+    display: block;
+  }
+  .stuck-card h3 {
+    color: var(--cream);
+    margin-bottom: 14px;
+    font-size: 20px;
+    line-height: 1.25;
+  }
+  .stuck-card p {
+    font-size: 15px;
+    color: var(--cream-body);
+    line-height: 1.65;
+  }
+
+  /* ── NEW WAY SECTION ── */
+  .new-way-section {
+    background: var(--surface-1);
+    max-width: none;
+    padding: 140px 40px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .new-way-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .new-way-section h2 { font-size: clamp(34px, 4.5vw, 60px); }
+  .new-way-list {
+    list-style: none;
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+  .new-way-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px 0;
+    font-size: 16px;
+    color: var(--cream-body);
+    line-height: 1.55;
+  }
+  .nw-check {
+    flex-shrink: 0;
+    color: var(--gold);
+    font-size: 16px;
+    margin-top: 2px;
+  }
+  .new-way-right {
+    background: var(--bg);
+    color: var(--cream);
+    padding: 52px 44px;
+    border-radius: 20px;
+    border: 1px solid var(--border-gold);
+    position: relative;
+    overflow: hidden;
+  }
+  .new-way-right::before {
+    content: '"';
+    position: absolute;
+    top: -24px;
+    left: 24px;
+    font-family: "greycliff-cf", serif;
+    font-size: 200px;
+    color: var(--gold);
+    opacity: 0.1;
+    line-height: 1;
+  }
+  .new-way-right blockquote {
+    font-family: "greycliff-cf", sans-serif;
+    font-style: italic;
+    font-size: clamp(22px, 2.8vw, 28px);
+    line-height: 1.4;
+    color: var(--cream);
+    position: relative;
+    margin-bottom: 28px;
+    font-weight: 500;
+  }
+  .new-way-right blockquote em {
+    display: block;
+    margin-top: 12px;
+    font-size: 1.2em;
+    line-height: 1;
+  }
+  .new-way-attr {
+    font-family: 'Neo Contact', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    position: relative;
+  }
+
+  /* ── VALUE / PRICING ── */
+  .value-section {
+    background: var(--bg);
+    max-width: none;
+    padding: 140px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .value-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(181,135,83,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .value-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+  .value-section h2 { font-size: clamp(38px, 5vw, 68px); }
+
+  .value-card {
+    background: var(--surface-1);
+    color: var(--cream);
+    border-radius: 20px;
+    padding: 56px 48px;
+    margin: 48px auto 0;
+    max-width: 680px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-gold);
+    position: relative;
+    text-align: left;
+  }
+  .value-card-stamp {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--bg);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-family: 'Neo Contact', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .value-card-price {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    font-size: 92px;
+    line-height: 1;
+    color: var(--cream);
+    margin: 0;
+    text-align: center;
+  }
+  .value-card-price-mo {
+    font-size: 32px;
+    color: var(--cream-muted);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .value-card-price-sub {
+    font-family: 'Neo Contact', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 10px;
+    text-align: center;
+  }
+  .value-card-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 36px -20px;
+  }
+  .value-list {
+    list-style: none;
+    margin-bottom: 36px;
+  }
+  .value-list li {
+    padding: 14px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 15px;
+    color: var(--cream-body);
+    border-bottom: 1px solid var(--border);
+  }
+  .value-list li:last-child { border-bottom: none; }
+  .value-list li::before {
+    content: '';
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 10px;
+  }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    background: var(--bg);
+    padding: 160px 40px;
+    text-align: center;
+    max-width: none;
+    border-top: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(181,135,83,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .final-cta h2 {
+    font-size: clamp(44px, 6.5vw, 88px);
+    line-height: 1.02;
+    max-width: 960px;
+    margin: 0 auto 28px;
+    position: relative;
+  }
+  .final-cta p {
+    font-size: 18px;
+    color: var(--cream-body);
+    max-width: 580px;
+    margin: 0 auto 40px;
+    position: relative;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--surface-1);
+    color: var(--cream-muted);
+    padding: 48px 40px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  footer p {
+    font-size: 13px;
+    color: var(--cream-muted);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    section, .stuck-section, .new-way-section, .value-section, .final-cta { padding: 88px 20px; }
+    .hero { padding: 64px 20px 88px; }
+    .stuck-grid { grid-template-columns: 1fr; }
+    .new-way-inner { grid-template-columns: 1fr; gap: 48px; }
+    .cta-row { flex-direction: column; align-items: stretch; }
+    .btn { width: 100%; }
+    .value-card { padding: 44px 28px; }
+    .logo-track { gap: 24px; }
+    .logo-item { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <span class="urgency-dot"></span>
+  Now accepting founders · Clarity guaranteed or money back
+</div>
+
+<!-- NAV -->
+<nav>
+  <img src="/assets/images/logo-light-wordmark.svg" alt="Abundance.AI" class="nav-logo">
+  <a href="#join" class="nav-cta">Join the Tribe</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero full-width">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      A Clarity Tribe for Scaling Founders
+    </div>
+
+    <h1>Scaling your business is harder than <em>it should be.</em></h1>
+
+    <p class="hero-sub">Not because you're doing something wrong. Because you're doing everything without a system. <strong>Abundance Tribe</strong> is where that stops.</p>
+
+    <div class="cta-row">
+      <a href="#join" class="btn btn-gold btn-lg">Join the Tribe →</a>
+      <a href="#watch" class="btn btn-ghost btn-lg">Watch the intro</a>
+    </div>
+    <p class="cta-note">No contracts · Cancel anytime · Instant access</p>
+
+    <div class="vsl-wrap" id="watch">
+      <div class="vsl-player">
+        <div class="vsl-placeholder">
+          <div class="vsl-play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="vsl-caption">Watch before you join · 8 minutes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO BAR -->
+<div class="logo-bar">
+  <span class="logo-bar-label">Founders from these companies are already inside</span>
+  <div class="logo-track">
+    <span class="logo-item">Acquisition Network</span>
+    <span class="logo-item">Smart Sellers Academy</span>
+    <span class="logo-item">Expert Health</span>
+    <span class="logo-item">&amp; more</span>
+  </div>
+</div>
+
+<!-- WHY YOU'RE STUCK -->
+<section class="stuck-section full-width">
+  <div class="stuck-inner">
+    <div class="stuck-header">
+      <span class="eyebrow">Why you're still stuck</span>
+      <h2>You're not lazy. You're just missing <em>the right system.</em></h2>
+      <p>Every founder we've worked with was working hard. The problem was never effort. It was always the same three things.</p>
+    </div>
+
+    <div class="stuck-grid">
+      <div class="stuck-card">
+        <span class="stuck-num">01</span>
+        <h3>You are the system</h3>
+        <p>Every lead, follow-up, sale, and decision flows through you. Nothing moves without your involvement. That's not a business. That's a job you built for yourself.</p>
+      </div>
+      <div class="stuck-card">
+        <span class="stuck-num">02</span>
+        <h3>You're chasing tactics</h3>
+        <p>New funnel this month. New content strategy next month. Nothing connects. You're busy but nothing compounds. Tactics without a system create expensive noise.</p>
+      </div>
+      <div class="stuck-card">
+        <span class="stuck-num">03</span>
+        <h3>No order of operations</h3>
+        <p>You know something needs to change. But without a clear sequence, you're fixing the wrong things in the wrong order and wondering why nothing sticks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE NEW WAY -->
+<section class="new-way-section full-width">
+  <div class="new-way-inner">
+    <div>
+      <span class="eyebrow">The new way that works</span>
+      <h2>What your business looks like with <em>a selling system.</em></h2>
+      <p style="margin-top: 20px;">The founders who scale aren't doing more. They built the right systems in the right order. Growth stopped depending on them doing everything.</p>
+      <ul class="new-way-list">
+        <li class="new-way-item"><span class="nw-check">✦</span>You know exactly what to build next and why.</li>
+        <li class="new-way-item"><span class="nw-check">✦</span>Leads come in without you manually chasing.</li>
+        <li class="new-way-item"><span class="nw-check">✦</span>Sales happen through a process, not personality.</li>
+        <li class="new-way-item"><span class="nw-check">✦</span>You eliminate before you automate, automate before you delegate.</li>
+        <li class="new-way-item"><span class="nw-check">✦</span>Growth adds revenue, not chaos.</li>
+      </ul>
+    </div>
+    <div class="new-way-right">
+      <blockquote>Most founders try to scale by doing more. The ones who actually scale do it by building systems that do the work <em>for them.</em></blockquote>
+      <div class="new-way-attr">Ryan Frost · Founder, Abundance.AI</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="value-section full-width" id="join">
+  <div class="value-inner">
+    <span class="eyebrow">Everything inside</span>
+    <h2>The Tribe. <em>One price.</em></h2>
+
+    <div class="value-card">
+      <div class="value-card-stamp">Founding Members</div>
+      <div class="value-card-price">$97<span class="value-card-price-mo">/mo</span></div>
+      <div class="value-card-price-sub">Cancel anytime</div>
+
+      <div class="value-card-divider"></div>
+
+      <ul class="value-list">
+        <li>Weekly live workshops with Ryan &amp; the team</li>
+        <li>Access to every Selling System framework, template, and playbook</li>
+        <li>Private community of founders building real systems</li>
+        <li>Monthly audits of your business on live calls</li>
+        <li>Direct access to ask questions and get feedback</li>
+        <li>All future courses, workshops, and updates included</li>
+      </ul>
+
+      <a href="#apply" class="btn btn-gold btn-lg" style="width: 100%;">Join the Tribe →</a>
+      <p class="cta-note" style="margin-top: 16px; text-align: center;">No contracts · Cancel anytime · Instant access</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta full-width">
+  <span class="eyebrow">Your move</span>
+  <h2>This is what <em>abundance</em> actually looks like.</h2>
+  <p>Clarity on what to build. A system that runs. A business that doesn't depend on you doing everything.</p>
+  <div class="cta-row" style="margin-top: 32px;">
+    <a href="#join" class="btn btn-gold btn-lg">Join Abundance Tribe</a>
+    <a href="#watch" class="btn btn-ghost btn-lg">Watch the video first</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Abundance.AI · The clarity tribe for founders who want to scale.</p>
+</footer>
+
+</body>
+</html>
