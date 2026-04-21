@@ -72,7 +72,8 @@
     gap: 16px;
   }
   .top-bar-title {
-    font-family: 'Neo Contact', sans-serif;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
     font-size: 12px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -84,7 +85,8 @@
     flex-wrap: wrap;
   }
   .jump-link {
-    font-family: 'Neo Contact', sans-serif;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -120,7 +122,8 @@
     border-bottom: 1px solid var(--border-strong);
   }
   .palette-badge {
-    font-family: 'Neo Contact', sans-serif;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
     font-size: 12px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
@@ -130,7 +133,8 @@
     border-radius: 20px;
   }
   .palette-name {
-    font-family: 'Neo Contact', sans-serif;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
     font-size: 13px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -163,7 +167,8 @@
     border: 1px solid var(--border-strong);
   }
   .swatch-label {
-    font-family: 'Neo Contact', sans-serif;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
     font-size: 10px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -192,7 +197,7 @@
   }
   .demo-hero .eyebrow {
     display: inline-block;
-    font-family: 'Neo Contact', sans-serif;
+    font-family: "greycliff-cf", sans-serif;
     font-weight: 700;
     font-size: 10px;
     letter-spacing: 0.22em;
@@ -226,7 +231,7 @@
     gap: 8px;
     padding: 14px 28px;
     border-radius: 20px;
-    font-family: 'Neo Contact', sans-serif;
+    font-family: "greycliff-cf", sans-serif;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.14em;
@@ -251,7 +256,7 @@
     transform: translateX(-50%);
     padding: 6px 14px;
     border-radius: 20px;
-    font-family: 'Neo Contact', sans-serif;
+    font-family: "greycliff-cf", sans-serif;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.16em;
@@ -274,7 +279,8 @@
     font-weight: 500;
   }
   .demo-card-sub {
-    font-family: 'Neo Contact', sans-serif;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
     font-size: 10px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -307,15 +313,23 @@
     width: 100%;
   }
 
+  /* Neo Contact only for <em> inside h1 */
+  h1 em {
+    font-family: 'Neo Contact', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    display: block;
+    font-size: 1.25em;
+    line-height: 1;
+    margin-top: 0.1em;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   /* ─────────────────────────────────────── */
   /* ═════ PALETTE A — EDITORIAL MONOCHROME ═════ */
   /* ─────────────────────────────────────── */
-  #palette-a {
-    --accent: #F5F0E8;
-    --accent-dim: #D5CFC4;
-    --gradient-em: linear-gradient(45deg, #B8B2A6 0%, #F5F0E8 50%, #FFFFFF 100%);
-  }
-  /* Film grain texture overlay */
   #palette-a::before {
     content: '';
     position: absolute;
@@ -325,7 +339,6 @@
     mix-blend-mode: overlay;
     opacity: 0.7;
   }
-  /* Oversized background watermark */
   #palette-a .watermark {
     position: absolute;
     top: 40px;
@@ -345,18 +358,8 @@
   #palette-a .palette-badge { background: var(--cream); color: var(--bg); }
   #palette-a .eyebrow { color: var(--cream-muted); }
   #palette-a .eyebrow::before { background: var(--cream-muted); }
-  #palette-a em {
-    font-family: 'Neo Contact', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    display: block;
-    font-size: 1.25em;
-    line-height: 1;
-    margin-top: 0.1em;
-    background-image: var(--gradient-em);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  #palette-a h1 em {
+    background-image: linear-gradient(45deg, #B8B2A6 0%, #F5F0E8 50%, #FFFFFF 100%);
   }
   #palette-a .btn-primary {
     background: var(--cream);
@@ -370,27 +373,11 @@
   /* ─────────────────────────────────────── */
   /* ═════ PALETTE B1 — OXBLOOD ═════ */
   /* ─────────────────────────────────────── */
-  #palette-b1 {
-    --accent: #8B3A3A;
-    --accent-bright: #A54B4B;
-    --accent-deep: #5A1F1C;
-    --gradient-em: linear-gradient(45deg, #5A1F1C 0%, #8B3A3A 50%, #A54B4B 100%);
-  }
   #palette-b1 .palette-badge { background: #8B3A3A; color: var(--cream); }
   #palette-b1 .eyebrow { color: #A54B4B; }
   #palette-b1 .eyebrow::before { background: #A54B4B; }
-  #palette-b1 em {
-    font-family: 'Neo Contact', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    display: block;
-    font-size: 1.25em;
-    line-height: 1;
-    margin-top: 0.1em;
-    background-image: var(--gradient-em);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  #palette-b1 h1 em {
+    background-image: linear-gradient(45deg, #5A1F1C 0%, #8B3A3A 50%, #A54B4B 100%);
   }
   #palette-b1 .btn-primary {
     background: #8B3A3A;
@@ -407,27 +394,11 @@
   /* ─────────────────────────────────────── */
   /* ═════ PALETTE B2 — HONEY CREAM ═════ */
   /* ─────────────────────────────────────── */
-  #palette-b2 {
-    --accent: #D4A574;
-    --accent-bright: #E8BF8D;
-    --accent-deep: #A67A4A;
-    --gradient-em: linear-gradient(45deg, #A67A4A 0%, #D4A574 50%, #E8BF8D 100%);
-  }
   #palette-b2 .palette-badge { background: #D4A574; color: var(--bg); }
   #palette-b2 .eyebrow { color: #D4A574; }
   #palette-b2 .eyebrow::before { background: #D4A574; }
-  #palette-b2 em {
-    font-family: 'Neo Contact', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    display: block;
-    font-size: 1.25em;
-    line-height: 1;
-    margin-top: 0.1em;
-    background-image: var(--gradient-em);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  #palette-b2 h1 em {
+    background-image: linear-gradient(45deg, #A67A4A 0%, #D4A574 50%, #E8BF8D 100%);
   }
   #palette-b2 .btn-primary {
     background: #D4A574;
@@ -444,27 +415,11 @@
   /* ─────────────────────────────────────── */
   /* ═════ PALETTE C — FOREST GREEN ═════ */
   /* ─────────────────────────────────────── */
-  #palette-c {
-    --accent: #4A6B53;
-    --accent-bright: #6A8A71;
-    --accent-deep: #2D4A3A;
-    --gradient-em: linear-gradient(45deg, #2D4A3A 0%, #4A6B53 50%, #6A8A71 100%);
-  }
   #palette-c .palette-badge { background: #4A6B53; color: var(--cream); }
   #palette-c .eyebrow { color: #6A8A71; }
   #palette-c .eyebrow::before { background: #6A8A71; }
-  #palette-c em {
-    font-family: 'Neo Contact', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    display: block;
-    font-size: 1.25em;
-    line-height: 1;
-    margin-top: 0.1em;
-    background-image: var(--gradient-em);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  #palette-c h1 em {
+    background-image: linear-gradient(45deg, #2D4A3A 0%, #4A6B53 50%, #6A8A71 100%);
   }
   #palette-c .btn-primary {
     background: #4A6B53;
@@ -477,6 +432,36 @@
   #palette-c .demo-card li::before { background: #4A6B53; }
   #palette-c .demo-hero { border-color: rgba(74,107,83,0.25); }
   #palette-c .demo-card { border-color: rgba(74,107,83,0.25); }
+
+  /* ─────────────────────────────────────── */
+  /* ═════ PALETTE D — SIGNATURE BLUE ═════ */
+  /* ─────────────────────────────────────── */
+  #palette-d .palette-badge {
+    background: linear-gradient(45deg, #1E3A8A 0%, #2563EB 45%, #3E96FA 100%);
+    color: var(--cream);
+  }
+  #palette-d .eyebrow { color: #3E96FA; }
+  #palette-d .eyebrow::before { background: #3E96FA; }
+  #palette-d h1 em {
+    background-image: linear-gradient(45deg, #1E3A8A 0%, #2563EB 45%, #3E96FA 100%);
+  }
+  #palette-d .btn-primary {
+    background: linear-gradient(45deg, #1E3A8A 0%, #2563EB 45%, #3E96FA 100%);
+    color: var(--cream);
+    box-shadow: 0 4px 20px rgba(37,99,235,0.3);
+  }
+  #palette-d .btn-primary:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+  }
+  #palette-d .demo-card-stamp {
+    background: linear-gradient(45deg, #1E3A8A 0%, #2563EB 45%, #3E96FA 100%);
+    color: var(--cream);
+  }
+  #palette-d .demo-card-sub { color: #3E96FA; }
+  #palette-d .demo-card li::before { background: #2563EB; }
+  #palette-d .demo-hero { border-color: rgba(62,150,250,0.25); }
+  #palette-d .demo-card { border-color: rgba(62,150,250,0.25); }
 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {
@@ -498,6 +483,7 @@
       <a href="#palette-b1" class="jump-link">B1 · Oxblood</a>
       <a href="#palette-b2" class="jump-link">B2 · Honey</a>
       <a href="#palette-c" class="jump-link">C · Forest</a>
+      <a href="#palette-d" class="jump-link">D · Signature Blue</a>
     </div>
   </div>
 </div>
@@ -745,6 +731,78 @@
         <div class="swatch-chip" style="background:#6A8A71;"></div>
         <span class="swatch-label">Forest Light</span>
         <span class="swatch-hex">#6A8A71</span>
+      </div>
+    </div>
+
+    <div class="demo-grid">
+      <div class="demo-hero">
+        <span class="eyebrow">For scaling founders</span>
+        <h1>Scaling is harder than <em>it should be.</em></h1>
+        <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+        <a href="#" class="btn btn-primary">Join the Tribe →</a>
+      </div>
+      <div class="demo-card">
+        <span class="demo-card-stamp">Founding Members</span>
+        <div class="demo-card-price">$97<span>/mo</span></div>
+        <div class="demo-card-sub">Cancel anytime</div>
+        <ul>
+          <li>Weekly live workshops with Ryan</li>
+          <li>Every Selling System framework</li>
+          <li>Private founder community</li>
+          <li>Monthly live audits</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Join the Tribe</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PALETTE D — SIGNATURE BLUE                 -->
+<!-- ══════════════════════════════════════════ -->
+<section class="palette" id="palette-d">
+  <div class="palette-inner">
+    <div class="palette-label">
+      <span class="palette-badge">Option D</span>
+      <span class="palette-name">Signature Blue</span>
+      <span class="palette-desc">The brand gradient · navy → blue → saturated bright</span>
+    </div>
+
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#141414;"></div>
+        <span class="swatch-label">Matte Black</span>
+        <span class="swatch-hex">#141414</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#1B1B1B;"></div>
+        <span class="swatch-label">Surface 1</span>
+        <span class="swatch-hex">#1B1B1B</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#F5F0E8;"></div>
+        <span class="swatch-label">Cream</span>
+        <span class="swatch-hex">#F5F0E8</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#1E3A8A;"></div>
+        <span class="swatch-label">Blue Deep</span>
+        <span class="swatch-hex">#1E3A8A</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#2563EB;"></div>
+        <span class="swatch-label">Blue Mid</span>
+        <span class="swatch-hex">#2563EB</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#3E96FA;"></div>
+        <span class="swatch-label">Blue Bright</span>
+        <span class="swatch-hex">#3E96FA</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:linear-gradient(45deg,#1E3A8A 0%,#2563EB 45%,#3E96FA 100%);"></div>
+        <span class="swatch-label">Gradient</span>
+        <span class="swatch-hex">45° / 3-stop</span>
       </div>
     </div>
 
