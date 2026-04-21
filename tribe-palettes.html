@@ -328,6 +328,165 @@
   }
 
   /* ─────────────────────────────────────── */
+  /* ═════ HYBRID 4 — COLOR VIA IMAGERY (haystock approach) ═════ */
+  /* ─────────────────────────────────────── */
+  #hybrid-4::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    opacity: 0.6;
+  }
+  #hybrid-4 .palette-badge { background: var(--cream); color: var(--bg); }
+  #hybrid-4 .eyebrow { color: var(--cream-muted); }
+  #hybrid-4 .eyebrow::before { background: var(--cream-muted); }
+  #hybrid-4 h1 em {
+    background-image: linear-gradient(45deg, #B8B2A6 0%, #F5F0E8 50%, #FFFFFF 100%);
+  }
+  #hybrid-4 .btn-primary {
+    background: var(--cream);
+    color: var(--bg);
+  }
+  #hybrid-4 .btn-primary:hover { background: var(--cream-warm); }
+  #hybrid-4 .demo-card-stamp { background: var(--cream); color: var(--bg); }
+  #hybrid-4 .demo-card-sub { color: var(--cream-muted); }
+  #hybrid-4 .demo-card li::before { background: var(--cream-muted); }
+
+  /* Avatar strip — placeholder headshots with colorful gradients */
+  #hybrid-4 .avatar-strip {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+  #hybrid-4 .avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 16px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  #hybrid-4 .avatar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.55) 100%);
+  }
+  #hybrid-4 .avatar-label {
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    right: 10px;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+    z-index: 2;
+  }
+  #hybrid-4 .av-1 { background: radial-gradient(circle at 30% 30%, #F472B6, #9D174D 70%, #3F0A29); }
+  #hybrid-4 .av-2 { background: radial-gradient(circle at 70% 40%, #60A5FA, #1E40AF 70%, #0F1E52); }
+  #hybrid-4 .av-3 { background: radial-gradient(circle at 50% 60%, #FBBF24, #B45309 70%, #3D1D04); }
+  #hybrid-4 .av-4 { background: radial-gradient(circle at 40% 50%, #34D399, #065F46 70%, #022C1E); }
+  #hybrid-4 .av-5 { background: radial-gradient(circle at 60% 30%, #C084FC, #6B21A8 70%, #2E0C4D); }
+  #hybrid-4 .av-6 { background: radial-gradient(circle at 30% 70%, #FB923C, #9A3412 70%, #3A1204); }
+  #hybrid-4 .av-7 { background: radial-gradient(circle at 50% 40%, #F87171, #991B1B 70%, #3D0808); }
+
+  /* Tile grid — where color really lives */
+  #hybrid-4 .tile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+  }
+  #hybrid-4 .content-tile {
+    border-radius: 20px;
+    padding: 32px 28px;
+    min-height: 220px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border: 1px solid var(--border);
+  }
+  #hybrid-4 .content-tile::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  #hybrid-4 .content-tile::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.6) 100%);
+    z-index: 1;
+  }
+  #hybrid-4 .content-tile > * { position: relative; z-index: 2; }
+  #hybrid-4 .tile-coral::before {
+    background: radial-gradient(ellipse at 30% 20%, #FB7185 0%, #BE123C 40%, #3F1020 100%);
+  }
+  #hybrid-4 .tile-violet::before {
+    background: radial-gradient(ellipse at 70% 30%, #A78BFA 0%, #6D28D9 45%, #1E1540 100%);
+  }
+  #hybrid-4 .tile-lime::before {
+    background: radial-gradient(ellipse at 50% 70%, #BEF264 0%, #16A34A 45%, #052E14 100%);
+  }
+  #hybrid-4 .tile-sky::before {
+    background: radial-gradient(ellipse at 40% 60%, #38BDF8 0%, #1D4ED8 50%, #0B1E4D 100%);
+  }
+  #hybrid-4 .tile-label {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.75);
+    margin-bottom: 8px;
+  }
+  #hybrid-4 .tile-title {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.25;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+  }
+
+  /* Section notes */
+  #hybrid-4 .section-note {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin: 48px 0 16px;
+    padding-left: 24px;
+    position: relative;
+  }
+  #hybrid-4 .section-note::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 1px;
+    background: var(--cream-muted);
+  }
+
+  @media (max-width: 700px) {
+    #hybrid-4 .tile-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ─────────────────────────────────────── */
   /* ═════ HYBRID 3 — HERITAGE EARTH (forest + saddle brown) ═════ */
   /* ─────────────────────────────────────── */
   #hybrid-3::before {
@@ -623,6 +782,7 @@
   <div class="top-bar-inner">
     <span class="top-bar-title">Tribe · Palette Comparison</span>
     <div class="top-bar-nav">
+      <a href="#hybrid-4" class="jump-link">H4 · Color via Imagery</a>
       <a href="#hybrid-3" class="jump-link">H3 · Heritage Earth</a>
       <a href="#hybrid-1" class="jump-link">H1 · Mono + Blue</a>
       <a href="#hybrid-2" class="jump-link">H2 · Mono + Forest</a>
@@ -634,6 +794,108 @@
     </div>
   </div>
 </div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- HYBRID 4 — COLOR VIA IMAGERY (haystock)     -->
+<!-- ══════════════════════════════════════════ -->
+<section class="palette" id="hybrid-4">
+  <div class="palette-inner">
+    <div class="palette-label">
+      <span class="palette-badge">Hybrid 4</span>
+      <span class="palette-name">Color via Imagery</span>
+      <span class="palette-desc">Mono UI · color lives in headshots, product tiles & artwork</span>
+    </div>
+
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#141414;"></div>
+        <span class="swatch-label">Matte Black</span>
+        <span class="swatch-hex">#141414</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#1B1B1B;"></div>
+        <span class="swatch-label">Surface 1</span>
+        <span class="swatch-hex">#1B1B1B</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#F5F0E8;"></div>
+        <span class="swatch-label">Cream</span>
+        <span class="swatch-hex">#F5F0E8</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#D5CFC4;"></div>
+        <span class="swatch-label">Cream Body</span>
+        <span class="swatch-hex">#D5CFC4</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#9C968C;"></div>
+        <span class="swatch-label">Cream Muted</span>
+        <span class="swatch-hex">#9C968C</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:linear-gradient(135deg,#FB7185 0%,#A78BFA 35%,#38BDF8 70%,#BEF264 100%);"></div>
+        <span class="swatch-label">Via Imagery</span>
+        <span class="swatch-hex">open palette</span>
+      </div>
+    </div>
+
+    <!-- Member avatar strip (color comes from real headshots) -->
+    <div class="section-note">Founder Members</div>
+    <div class="avatar-strip">
+      <div class="avatar av-1"><span class="avatar-label">Ryan F.</span></div>
+      <div class="avatar av-2"><span class="avatar-label">Dominic</span></div>
+      <div class="avatar av-3"><span class="avatar-label">Luke M.</span></div>
+      <div class="avatar av-4"><span class="avatar-label">Tim S.</span></div>
+      <div class="avatar av-5"><span class="avatar-label">Max P.</span></div>
+      <div class="avatar av-6"><span class="avatar-label">Jack D.</span></div>
+      <div class="avatar av-7"><span class="avatar-label">Will B.</span></div>
+    </div>
+
+    <!-- Hero + pricing (mono UI) -->
+    <div class="section-note">Hero &amp; Pricing (UI stays mono)</div>
+    <div class="demo-grid">
+      <div class="demo-hero">
+        <span class="eyebrow">For scaling founders</span>
+        <h1>Scaling is harder than <em>it should be.</em></h1>
+        <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+        <a href="#" class="btn btn-primary">Join the Tribe →</a>
+      </div>
+      <div class="demo-card">
+        <span class="demo-card-stamp">Founding Members</span>
+        <div class="demo-card-price">$97<span>/mo</span></div>
+        <div class="demo-card-sub">Cancel anytime</div>
+        <ul>
+          <li>Weekly live workshops with Ryan</li>
+          <li>Every Selling System framework</li>
+          <li>Private founder community</li>
+          <li>Monthly live audits</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Join the Tribe</a>
+      </div>
+    </div>
+
+    <!-- Product/feature tiles (color carried by imagery) -->
+    <div class="section-note">Product Tiles · color moments</div>
+    <div class="tile-grid">
+      <div class="content-tile tile-coral">
+        <span class="tile-label">The Selling System</span>
+        <span class="tile-title">Frameworks that turn effort into revenue.</span>
+      </div>
+      <div class="content-tile tile-violet">
+        <span class="tile-label">The Tribe</span>
+        <span class="tile-title">Founders building real systems — together.</span>
+      </div>
+      <div class="content-tile tile-lime">
+        <span class="tile-label">Live Workshops</span>
+        <span class="tile-title">Every week with Ryan &amp; the team.</span>
+      </div>
+      <div class="content-tile tile-sky">
+        <span class="tile-label">Monthly Audits</span>
+        <span class="tile-title">Your business under the microscope.</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══════════════════════════════════════════ -->
 <!-- HYBRID 3 — HERITAGE EARTH (forest + saddle) -->
