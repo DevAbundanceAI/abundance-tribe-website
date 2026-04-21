@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tribe — Palette Options</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
+<style>
+  @font-face {
+    font-family: 'Neo Contact';
+    src: url('/assets/fonts/neo-contact/neo-contact-lt-pro.woff2') format('woff2');
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --bg: #141414;
+    --surface-1: #1B1B1B;
+    --surface-2: #222222;
+    --surface-3: #2A2A2A;
+    --cream: #F5F0E8;
+    --cream-warm: #F8F6EC;
+    --cream-body: #D5CFC4;
+    --cream-muted: #9C968C;
+    --border: rgba(245, 240, 232, 0.08);
+    --border-strong: rgba(245, 240, 232, 0.18);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.35), 0 20px 60px rgba(0,0,0,0.3);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: "greycliff-cf", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    color: var(--cream);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    font-family: "greycliff-cf", sans-serif;
+  }
+  h1 { font-size: clamp(44px, 6.5vw, 88px); line-height: 1.02; margin-bottom: 24px; }
+  h2 { font-size: clamp(28px, 3.5vw, 44px); line-height: 1.1; margin-bottom: 16px; }
+  p { color: var(--cream-body); max-width: 620px; }
+
+  /* ─── TOP INDEX BAR ─── */
+  .top-bar {
+    background: #0D0D0D;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+  }
+  .top-bar-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .top-bar-title {
+    font-family: 'Neo Contact', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream);
+  }
+  .top-bar-nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .jump-link {
+    font-family: 'Neo Contact', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid var(--border-strong);
+    border-radius: 20px;
+    transition: all 0.2s;
+  }
+  .jump-link:hover {
+    color: var(--cream);
+    border-color: var(--cream-muted);
+  }
+
+  /* ─── PALETTE SECTION WRAPPER ─── */
+  .palette {
+    padding: 100px 40px 140px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+  .palette-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .palette-label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-strong);
+  }
+  .palette-badge {
+    font-family: 'Neo Contact', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    background: var(--cream);
+    color: var(--bg);
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+  .palette-name {
+    font-family: 'Neo Contact', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream);
+  }
+  .palette-desc {
+    color: var(--cream-muted);
+    font-size: 14px;
+    margin-left: auto;
+    font-style: italic;
+  }
+
+  /* ─── SWATCH ROW ─── */
+  .swatches {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 56px;
+    flex-wrap: wrap;
+  }
+  .swatch {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 120px;
+  }
+  .swatch-chip {
+    width: 100%;
+    height: 80px;
+    border-radius: 12px;
+    border: 1px solid var(--border-strong);
+  }
+  .swatch-label {
+    font-family: 'Neo Contact', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+  }
+  .swatch-hex {
+    font-family: 'SF Mono', monospace;
+    font-size: 11px;
+    color: var(--cream-body);
+  }
+
+  /* ─── DEMO BLOCKS ─── */
+  .demo-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .demo-hero {
+    padding: 48px 44px;
+    border-radius: 20px;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .demo-hero .eyebrow {
+    display: inline-block;
+    font-family: 'Neo Contact', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-left: 24px;
+    position: relative;
+  }
+  .demo-hero .eyebrow::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 1px;
+  }
+  .demo-hero h1 {
+    font-size: clamp(32px, 4vw, 52px);
+    margin-bottom: 18px;
+  }
+  .demo-hero .body {
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 20px;
+    font-family: 'Neo Contact', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .demo-card {
+    padding: 40px 32px;
+    border-radius: 20px;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    position: relative;
+  }
+  .demo-card-stamp {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-family: 'Neo Contact', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .demo-card-price {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    font-size: 64px;
+    line-height: 1;
+    color: var(--cream);
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .demo-card-price span {
+    font-size: 22px;
+    color: var(--cream-muted);
+    font-weight: 500;
+  }
+  .demo-card-sub {
+    font-family: 'Neo Contact', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .demo-card ul {
+    list-style: none;
+    margin-bottom: 24px;
+  }
+  .demo-card li {
+    padding: 10px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--cream-body);
+    border-bottom: 1px solid var(--border);
+  }
+  .demo-card li:last-child { border-bottom: none; }
+  .demo-card li::before {
+    content: '';
+    flex-shrink: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin-top: 8px;
+  }
+  .demo-card .btn {
+    width: 100%;
+  }
+
+  /* ─────────────────────────────────────── */
+  /* ═════ PALETTE A — EDITORIAL MONOCHROME ═════ */
+  /* ─────────────────────────────────────── */
+  #palette-a {
+    --accent: #F5F0E8;
+    --accent-dim: #D5CFC4;
+    --gradient-em: linear-gradient(45deg, #B8B2A6 0%, #F5F0E8 50%, #FFFFFF 100%);
+  }
+  /* Film grain texture overlay */
+  #palette-a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    opacity: 0.7;
+  }
+  /* Oversized background watermark */
+  #palette-a .watermark {
+    position: absolute;
+    top: 40px;
+    left: -20px;
+    right: -20px;
+    font-family: 'Neo Contact', sans-serif;
+    font-weight: 700;
+    font-size: clamp(120px, 22vw, 260px);
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+    color: var(--cream);
+    opacity: 0.03;
+    pointer-events: none;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  #palette-a .palette-badge { background: var(--cream); color: var(--bg); }
+  #palette-a .eyebrow { color: var(--cream-muted); }
+  #palette-a .eyebrow::before { background: var(--cream-muted); }
+  #palette-a em {
+    font-family: 'Neo Contact', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    display: block;
+    font-size: 1.25em;
+    line-height: 1;
+    margin-top: 0.1em;
+    background-image: var(--gradient-em);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  #palette-a .btn-primary {
+    background: var(--cream);
+    color: var(--bg);
+  }
+  #palette-a .btn-primary:hover { background: var(--cream-warm); }
+  #palette-a .demo-card-stamp { background: var(--cream); color: var(--bg); }
+  #palette-a .demo-card-sub { color: var(--cream-muted); }
+  #palette-a .demo-card li::before { background: var(--cream-muted); }
+
+  /* ─────────────────────────────────────── */
+  /* ═════ PALETTE B1 — OXBLOOD ═════ */
+  /* ─────────────────────────────────────── */
+  #palette-b1 {
+    --accent: #8B3A3A;
+    --accent-bright: #A54B4B;
+    --accent-deep: #5A1F1C;
+    --gradient-em: linear-gradient(45deg, #5A1F1C 0%, #8B3A3A 50%, #A54B4B 100%);
+  }
+  #palette-b1 .palette-badge { background: #8B3A3A; color: var(--cream); }
+  #palette-b1 .eyebrow { color: #A54B4B; }
+  #palette-b1 .eyebrow::before { background: #A54B4B; }
+  #palette-b1 em {
+    font-family: 'Neo Contact', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    display: block;
+    font-size: 1.25em;
+    line-height: 1;
+    margin-top: 0.1em;
+    background-image: var(--gradient-em);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  #palette-b1 .btn-primary {
+    background: #8B3A3A;
+    color: var(--cream);
+    box-shadow: 0 4px 20px rgba(139,58,58,0.25);
+  }
+  #palette-b1 .btn-primary:hover { background: #A54B4B; }
+  #palette-b1 .demo-card-stamp { background: #8B3A3A; color: var(--cream); }
+  #palette-b1 .demo-card-sub { color: #A54B4B; }
+  #palette-b1 .demo-card li::before { background: #8B3A3A; }
+  #palette-b1 .demo-hero { border-color: rgba(139,58,58,0.25); }
+  #palette-b1 .demo-card { border-color: rgba(139,58,58,0.25); }
+
+  /* ─────────────────────────────────────── */
+  /* ═════ PALETTE B2 — HONEY CREAM ═════ */
+  /* ─────────────────────────────────────── */
+  #palette-b2 {
+    --accent: #D4A574;
+    --accent-bright: #E8BF8D;
+    --accent-deep: #A67A4A;
+    --gradient-em: linear-gradient(45deg, #A67A4A 0%, #D4A574 50%, #E8BF8D 100%);
+  }
+  #palette-b2 .palette-badge { background: #D4A574; color: var(--bg); }
+  #palette-b2 .eyebrow { color: #D4A574; }
+  #palette-b2 .eyebrow::before { background: #D4A574; }
+  #palette-b2 em {
+    font-family: 'Neo Contact', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    display: block;
+    font-size: 1.25em;
+    line-height: 1;
+    margin-top: 0.1em;
+    background-image: var(--gradient-em);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  #palette-b2 .btn-primary {
+    background: #D4A574;
+    color: var(--bg);
+    box-shadow: 0 4px 20px rgba(212,165,116,0.2);
+  }
+  #palette-b2 .btn-primary:hover { background: #E8BF8D; }
+  #palette-b2 .demo-card-stamp { background: #D4A574; color: var(--bg); }
+  #palette-b2 .demo-card-sub { color: #D4A574; }
+  #palette-b2 .demo-card li::before { background: #D4A574; }
+  #palette-b2 .demo-hero { border-color: rgba(212,165,116,0.3); }
+  #palette-b2 .demo-card { border-color: rgba(212,165,116,0.3); }
+
+  /* ─────────────────────────────────────── */
+  /* ═════ PALETTE C — FOREST GREEN ═════ */
+  /* ─────────────────────────────────────── */
+  #palette-c {
+    --accent: #4A6B53;
+    --accent-bright: #6A8A71;
+    --accent-deep: #2D4A3A;
+    --gradient-em: linear-gradient(45deg, #2D4A3A 0%, #4A6B53 50%, #6A8A71 100%);
+  }
+  #palette-c .palette-badge { background: #4A6B53; color: var(--cream); }
+  #palette-c .eyebrow { color: #6A8A71; }
+  #palette-c .eyebrow::before { background: #6A8A71; }
+  #palette-c em {
+    font-family: 'Neo Contact', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    display: block;
+    font-size: 1.25em;
+    line-height: 1;
+    margin-top: 0.1em;
+    background-image: var(--gradient-em);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  #palette-c .btn-primary {
+    background: #4A6B53;
+    color: var(--cream);
+    box-shadow: 0 4px 20px rgba(74,107,83,0.25);
+  }
+  #palette-c .btn-primary:hover { background: #6A8A71; }
+  #palette-c .demo-card-stamp { background: #4A6B53; color: var(--cream); }
+  #palette-c .demo-card-sub { color: #6A8A71; }
+  #palette-c .demo-card li::before { background: #4A6B53; }
+  #palette-c .demo-hero { border-color: rgba(74,107,83,0.25); }
+  #palette-c .demo-card { border-color: rgba(74,107,83,0.25); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .palette { padding: 60px 20px 88px; }
+    .demo-grid { grid-template-columns: 1fr; }
+    .palette-label { flex-direction: column; align-items: flex-start; }
+    .palette-desc { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP INDEX BAR -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <span class="top-bar-title">Tribe · Palette Comparison</span>
+    <div class="top-bar-nav">
+      <a href="#palette-a" class="jump-link">A · Monochrome</a>
+      <a href="#palette-b1" class="jump-link">B1 · Oxblood</a>
+      <a href="#palette-b2" class="jump-link">B2 · Honey</a>
+      <a href="#palette-c" class="jump-link">C · Forest</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PALETTE A — EDITORIAL MONOCHROME           -->
+<!-- ══════════════════════════════════════════ -->
+<section class="palette" id="palette-a">
+  <div class="watermark">ABUNDANCE</div>
+  <div class="palette-inner">
+    <div class="palette-label">
+      <span class="palette-badge">Option A</span>
+      <span class="palette-name">Editorial Monochrome</span>
+      <span class="palette-desc">Typography drama · film grain · no color</span>
+    </div>
+
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#141414;"></div>
+        <span class="swatch-label">Matte Black</span>
+        <span class="swatch-hex">#141414</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#1B1B1B;"></div>
+        <span class="swatch-label">Surface 1</span>
+        <span class="swatch-hex">#1B1B1B</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#2A2A2A;"></div>
+        <span class="swatch-label">Surface 3</span>
+        <span class="swatch-hex">#2A2A2A</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#F5F0E8;"></div>
+        <span class="swatch-label">Cream</span>
+        <span class="swatch-hex">#F5F0E8</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#D5CFC4;"></div>
+        <span class="swatch-label">Cream Body</span>
+        <span class="swatch-hex">#D5CFC4</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#9C968C;"></div>
+        <span class="swatch-label">Cream Muted</span>
+        <span class="swatch-hex">#9C968C</span>
+      </div>
+    </div>
+
+    <div class="demo-grid">
+      <div class="demo-hero">
+        <span class="eyebrow">For scaling founders</span>
+        <h1>Scaling is harder than <em>it should be.</em></h1>
+        <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+        <a href="#" class="btn btn-primary">Join the Tribe →</a>
+      </div>
+      <div class="demo-card">
+        <span class="demo-card-stamp">Founding Members</span>
+        <div class="demo-card-price">$97<span>/mo</span></div>
+        <div class="demo-card-sub">Cancel anytime</div>
+        <ul>
+          <li>Weekly live workshops with Ryan</li>
+          <li>Every Selling System framework</li>
+          <li>Private founder community</li>
+          <li>Monthly live audits</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Join the Tribe</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PALETTE B1 — OXBLOOD                       -->
+<!-- ══════════════════════════════════════════ -->
+<section class="palette" id="palette-b1">
+  <div class="palette-inner">
+    <div class="palette-label">
+      <span class="palette-badge">Option B1</span>
+      <span class="palette-name">Oxblood Americana</span>
+      <span class="palette-desc">Deep burgundy · vintage warmth · earned, not flashy</span>
+    </div>
+
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#141414;"></div>
+        <span class="swatch-label">Matte Black</span>
+        <span class="swatch-hex">#141414</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#1B1B1B;"></div>
+        <span class="swatch-label">Surface 1</span>
+        <span class="swatch-hex">#1B1B1B</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#F5F0E8;"></div>
+        <span class="swatch-label">Cream</span>
+        <span class="swatch-hex">#F5F0E8</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#5A1F1C;"></div>
+        <span class="swatch-label">Oxblood Deep</span>
+        <span class="swatch-hex">#5A1F1C</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#8B3A3A;"></div>
+        <span class="swatch-label">Oxblood</span>
+        <span class="swatch-hex">#8B3A3A</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#A54B4B;"></div>
+        <span class="swatch-label">Oxblood Light</span>
+        <span class="swatch-hex">#A54B4B</span>
+      </div>
+    </div>
+
+    <div class="demo-grid">
+      <div class="demo-hero">
+        <span class="eyebrow">For scaling founders</span>
+        <h1>Scaling is harder than <em>it should be.</em></h1>
+        <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+        <a href="#" class="btn btn-primary">Join the Tribe →</a>
+      </div>
+      <div class="demo-card">
+        <span class="demo-card-stamp">Founding Members</span>
+        <div class="demo-card-price">$97<span>/mo</span></div>
+        <div class="demo-card-sub">Cancel anytime</div>
+        <ul>
+          <li>Weekly live workshops with Ryan</li>
+          <li>Every Selling System framework</li>
+          <li>Private founder community</li>
+          <li>Monthly live audits</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Join the Tribe</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PALETTE B2 — HONEY CREAM                   -->
+<!-- ══════════════════════════════════════════ -->
+<section class="palette" id="palette-b2">
+  <div class="palette-inner">
+    <div class="palette-label">
+      <span class="palette-badge">Option B2</span>
+      <span class="palette-name">Honey Cream</span>
+      <span class="palette-desc">Softer than gold · warmer than cream · less flashy</span>
+    </div>
+
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#141414;"></div>
+        <span class="swatch-label">Matte Black</span>
+        <span class="swatch-hex">#141414</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#1B1B1B;"></div>
+        <span class="swatch-label">Surface 1</span>
+        <span class="swatch-hex">#1B1B1B</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#F5F0E8;"></div>
+        <span class="swatch-label">Cream</span>
+        <span class="swatch-hex">#F5F0E8</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#A67A4A;"></div>
+        <span class="swatch-label">Honey Deep</span>
+        <span class="swatch-hex">#A67A4A</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#D4A574;"></div>
+        <span class="swatch-label">Honey</span>
+        <span class="swatch-hex">#D4A574</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#E8BF8D;"></div>
+        <span class="swatch-label">Honey Light</span>
+        <span class="swatch-hex">#E8BF8D</span>
+      </div>
+    </div>
+
+    <div class="demo-grid">
+      <div class="demo-hero">
+        <span class="eyebrow">For scaling founders</span>
+        <h1>Scaling is harder than <em>it should be.</em></h1>
+        <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+        <a href="#" class="btn btn-primary">Join the Tribe →</a>
+      </div>
+      <div class="demo-card">
+        <span class="demo-card-stamp">Founding Members</span>
+        <div class="demo-card-price">$97<span>/mo</span></div>
+        <div class="demo-card-sub">Cancel anytime</div>
+        <ul>
+          <li>Weekly live workshops with Ryan</li>
+          <li>Every Selling System framework</li>
+          <li>Private founder community</li>
+          <li>Monthly live audits</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Join the Tribe</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PALETTE C — FOREST GREEN                   -->
+<!-- ══════════════════════════════════════════ -->
+<section class="palette" id="palette-c">
+  <div class="palette-inner">
+    <div class="palette-label">
+      <span class="palette-badge">Option C</span>
+      <span class="palette-name">Forest Green</span>
+      <span class="palette-desc">Natural · grounded · growth-oriented without clichés</span>
+    </div>
+
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#141414;"></div>
+        <span class="swatch-label">Matte Black</span>
+        <span class="swatch-hex">#141414</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#1B1B1B;"></div>
+        <span class="swatch-label">Surface 1</span>
+        <span class="swatch-hex">#1B1B1B</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#F5F0E8;"></div>
+        <span class="swatch-label">Cream</span>
+        <span class="swatch-hex">#F5F0E8</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#2D4A3A;"></div>
+        <span class="swatch-label">Forest Deep</span>
+        <span class="swatch-hex">#2D4A3A</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#4A6B53;"></div>
+        <span class="swatch-label">Forest</span>
+        <span class="swatch-hex">#4A6B53</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#6A8A71;"></div>
+        <span class="swatch-label">Forest Light</span>
+        <span class="swatch-hex">#6A8A71</span>
+      </div>
+    </div>
+
+    <div class="demo-grid">
+      <div class="demo-hero">
+        <span class="eyebrow">For scaling founders</span>
+        <h1>Scaling is harder than <em>it should be.</em></h1>
+        <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+        <a href="#" class="btn btn-primary">Join the Tribe →</a>
+      </div>
+      <div class="demo-card">
+        <span class="demo-card-stamp">Founding Members</span>
+        <div class="demo-card-price">$97<span>/mo</span></div>
+        <div class="demo-card-sub">Cancel anytime</div>
+        <ul>
+          <li>Weekly live workshops with Ryan</li>
+          <li>Every Selling System framework</li>
+          <li>Private founder community</li>
+          <li>Monthly live audits</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Join the Tribe</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
