@@ -30,20 +30,14 @@
     --cream-body: #D5CFC4;   /* muted cream for body */
     --cream-muted: #9C968C;  /* tertiary cream */
 
-    /* GOLD — used sparingly */
-    --gold: #B58753;
-    --gold-light: #C9A06A;
-    --gold-soft: rgba(181, 135, 83, 0.5);
-
     --border: rgba(245, 240, 232, 0.08);
     --border-strong: rgba(245, 240, 232, 0.18);
-    --border-gold: rgba(181, 135, 83, 0.35);
 
     --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 4px 20px rgba(0,0,0,0.25);
     --shadow-lg: 0 8px 32px rgba(0,0,0,0.35), 0 20px 60px rgba(0,0,0,0.3);
 
-    /* Gold gradient for Neo Contact emphasis — subtle 45° */
-    --gradient-gold: linear-gradient(45deg, #8A6436 0%, #B58753 50%, #C9A06A 100%);
+    /* Subtle cream gradient for Neo Contact emphasis — luminosity only, no hue */
+    --gradient-cream: linear-gradient(45deg, #B8B2A6 0%, #F5F0E8 50%, #FFFFFF 100%);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -75,7 +69,7 @@
     font-style: normal;
     font-weight: 700;
     letter-spacing: -0.005em;
-    background-image: var(--gradient-gold);
+    background-image: var(--gradient-cream);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     -webkit-background-clip: text;
@@ -88,7 +82,7 @@
     font-size: 1.2em;
     line-height: 1;
     margin-top: 0.12em;
-    background-image: var(--gradient-gold);
+    background-image: var(--gradient-cream);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     -webkit-background-clip: text;
@@ -108,15 +102,15 @@
     font-size: 12px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    border-bottom: 1px solid var(--border-gold);
+    border-bottom: 1px solid var(--border);
   }
   .urgency-dot {
     display: inline-block;
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--gold);
-    box-shadow: 0 0 0 3px rgba(181,135,83,0.2);
+    background: var(--cream);
+    box-shadow: 0 0 0 3px rgba(245,240,232,0.12);
     margin-right: 12px;
     vertical-align: middle;
     animation: pulse 2s ease-in-out infinite;
@@ -149,12 +143,12 @@
     text-transform: uppercase;
     text-decoration: none;
     transition: all 0.2s ease;
-    border: 1px solid var(--border-gold);
+    border: 1px solid var(--border-strong);
   }
   .nav-cta:hover {
-    background: var(--gold);
+    background: var(--cream);
     color: var(--bg);
-    border-color: var(--gold);
+    border-color: var(--cream);
   }
 
   /* ── SECTIONS ── */
@@ -173,7 +167,7 @@
     font-size: 11px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cream-muted);
     margin-bottom: 28px;
     position: relative;
     padding-left: 28px;
@@ -186,15 +180,14 @@
     transform: translateY(-50%);
     width: 18px;
     height: 1px;
-    background: var(--gold);
+    background: var(--cream-muted);
   }
 
-  /* Thin gold hairline divider */
+  /* Thin hairline divider */
   .hairline {
     width: 80px;
     height: 1px;
-    background: var(--gold);
-    opacity: 0.6;
+    background: var(--border-strong);
     margin: 40px auto;
   }
 
@@ -211,7 +204,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 70% 45% at 50% 0%, rgba(181,135,83,0.08) 0%, transparent 70%);
+    background: radial-gradient(ellipse 70% 45% at 50% 0%, rgba(245,240,232,0.04) 0%, transparent 70%);
     pointer-events: none;
   }
   .hero-inner {
@@ -239,8 +232,8 @@
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: var(--gold);
-    box-shadow: 0 0 0 3px rgba(181,135,83,0.2);
+    background: var(--cream);
+    box-shadow: 0 0 0 3px rgba(245,240,232,0.12);
   }
 
   .hero-sub {
@@ -271,23 +264,15 @@
     white-space: nowrap;
     border: none;
   }
-  .btn-gold {
-    background: var(--gold);
-    color: var(--bg);
-    box-shadow: 0 4px 20px rgba(181,135,83,0.2);
-  }
-  .btn-gold:hover {
-    background: var(--gold-light);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 28px rgba(181,135,83,0.3);
-  }
-  .btn-cream {
+  .btn-primary {
     background: var(--cream);
     color: var(--bg);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
   }
-  .btn-cream:hover {
+  .btn-primary:hover {
     background: var(--cream-warm);
     transform: translateY(-1px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.5);
   }
   .btn-ghost {
     background: transparent;
@@ -295,8 +280,8 @@
     border: 1px solid var(--border-strong);
   }
   .btn-ghost:hover {
-    border-color: var(--gold);
-    color: var(--gold-light);
+    border-color: var(--cream);
+    color: var(--cream-warm);
   }
   .btn-lg { padding: 20px 40px; font-size: 14px; }
 
@@ -327,7 +312,7 @@
     border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
-    border: 1px solid var(--border-gold);
+    border: 1px solid var(--border-strong);
   }
   .vsl-placeholder {
     position: absolute;
@@ -343,11 +328,11 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: var(--gold);
+    background: var(--cream);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 6px 24px rgba(181,135,83,0.4);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
     cursor: pointer;
     transition: transform 0.2s;
   }
@@ -377,7 +362,7 @@
     font-size: 11px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cream-muted);
     display: block;
     margin-bottom: 16px;
   }
@@ -432,8 +417,8 @@
     letter-spacing: -0.03em;
     font-size: 52px;
     line-height: 1;
-    color: var(--gold);
-    opacity: 0.9;
+    color: var(--cream-muted);
+    opacity: 0.5;
     margin-bottom: 24px;
     display: block;
   }
@@ -483,7 +468,7 @@
   }
   .nw-check {
     flex-shrink: 0;
-    color: var(--gold);
+    color: var(--cream-muted);
     font-size: 16px;
     margin-top: 2px;
   }
@@ -492,7 +477,7 @@
     color: var(--cream);
     padding: 52px 44px;
     border-radius: 20px;
-    border: 1px solid var(--border-gold);
+    border: 1px solid var(--border-strong);
     position: relative;
     overflow: hidden;
   }
@@ -503,8 +488,8 @@
     left: 24px;
     font-family: "greycliff-cf", serif;
     font-size: 200px;
-    color: var(--gold);
-    opacity: 0.1;
+    color: var(--cream);
+    opacity: 0.06;
     line-height: 1;
   }
   .new-way-right blockquote {
@@ -529,7 +514,7 @@
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cream-muted);
     position: relative;
   }
 
@@ -545,7 +530,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(181,135,83,0.06) 0%, transparent 70%);
+    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(245,240,232,0.03) 0%, transparent 70%);
     pointer-events: none;
   }
   .value-inner {
@@ -564,7 +549,7 @@
     margin: 48px auto 0;
     max-width: 680px;
     box-shadow: var(--shadow-lg);
-    border: 1px solid var(--border-gold);
+    border: 1px solid var(--border-strong);
     position: relative;
     text-align: left;
   }
@@ -573,7 +558,7 @@
     top: -16px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--gold);
+    background: var(--cream);
     color: var(--bg);
     padding: 8px 18px;
     border-radius: 20px;
@@ -606,7 +591,7 @@
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cream-muted);
     margin-top: 10px;
     text-align: center;
   }
@@ -635,7 +620,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--gold);
+    background: var(--cream-muted);
     margin-top: 10px;
   }
 
@@ -653,7 +638,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(181,135,83,0.08) 0%, transparent 70%);
+    background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(245,240,232,0.04) 0%, transparent 70%);
     pointer-events: none;
   }
   .final-cta h2 {
@@ -725,7 +710,7 @@
     <p class="hero-sub">Not because you're doing something wrong. Because you're doing everything without a system. <strong>Abundance Tribe</strong> is where that stops.</p>
 
     <div class="cta-row">
-      <a href="#join" class="btn btn-gold btn-lg">Join the Tribe →</a>
+      <a href="#join" class="btn btn-primary btn-lg">Join the Tribe →</a>
       <a href="#watch" class="btn btn-ghost btn-lg">Watch the intro</a>
     </div>
     <p class="cta-note">No contracts · Cancel anytime · Instant access</p>
@@ -827,7 +812,7 @@
         <li>All future courses, workshops, and updates included</li>
       </ul>
 
-      <a href="#apply" class="btn btn-gold btn-lg" style="width: 100%;">Join the Tribe →</a>
+      <a href="#apply" class="btn btn-primary btn-lg" style="width: 100%;">Join the Tribe →</a>
       <p class="cta-note" style="margin-top: 16px; text-align: center;">No contracts · Cancel anytime · Instant access</p>
     </div>
   </div>
@@ -839,7 +824,7 @@
   <h2>This is what <em>abundance</em> actually looks like.</h2>
   <p>Clarity on what to build. A system that runs. A business that doesn't depend on you doing everything.</p>
   <div class="cta-row" style="margin-top: 32px;">
-    <a href="#join" class="btn btn-gold btn-lg">Join Abundance Tribe</a>
+    <a href="#join" class="btn btn-primary btn-lg">Join Abundance Tribe</a>
     <a href="#watch" class="btn btn-ghost btn-lg">Watch the video first</a>
   </div>
 </section>
