@@ -327,6 +327,187 @@
     -webkit-text-fill-color: transparent;
   }
 
+  /* ─── DEMO MODE LABELS ─── */
+  .demo-mode-label {
+    display: inline-block;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin: 16px 0 24px;
+    padding-left: 22px;
+    position: relative;
+  }
+  .demo-mode-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 1px;
+    background: var(--cream-muted);
+  }
+
+  /* ─── LIGHT MODE DEMO PANEL ─── */
+  .demo-light-panel {
+    background: #FDFBF7;
+    margin: 64px -40px -140px;
+    padding: 64px 40px 120px;
+    border-top: 1px solid rgba(20,20,20,0.06);
+    position: relative;
+  }
+  .demo-light-panel .palette-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .demo-light-panel .demo-hero,
+  .demo-light-panel .demo-card {
+    background: #FFFFFF;
+    border-color: #E8DFD0;
+    box-shadow: 0 1px 3px rgba(20,20,20,0.04), 0 4px 20px rgba(20,20,20,0.03);
+  }
+  .demo-light-panel .demo-hero h1 {
+    color: #141414;
+  }
+  .demo-light-panel .demo-hero .body,
+  .demo-light-panel .demo-hero p {
+    color: #4A4A4A;
+  }
+  .demo-light-panel .demo-card-price {
+    color: #141414;
+  }
+  .demo-light-panel .demo-card-price span {
+    color: #8E7D74;
+  }
+  .demo-light-panel .demo-card li {
+    color: #4A4A4A;
+    border-bottom-color: #EFE8DA;
+  }
+  .demo-light-panel .demo-mode-label {
+    color: #8E7D74;
+  }
+  .demo-light-panel .demo-mode-label::before {
+    background: #8E7D74;
+  }
+  .demo-light-panel .palette-light-note {
+    color: #8E7D74;
+    font-size: 13px;
+    font-style: italic;
+    margin-bottom: 24px;
+    max-width: 640px;
+  }
+
+  /* Light-mode overrides per palette */
+
+  /* Palette A (editorial monochrome) — flip cream → matte black */
+  #palette-a .demo-light-panel h1 em {
+    background-image: linear-gradient(45deg, #4A4A4A 0%, #141414 100%);
+  }
+  #palette-a .demo-light-panel .btn-primary { background: #141414; color: #FFFFFF; }
+  #palette-a .demo-light-panel .btn-primary:hover { background: #000000; }
+  #palette-a .demo-light-panel .demo-card-stamp { background: #141414; color: #FFFFFF; }
+  #palette-a .demo-light-panel .demo-card li::before { background: #8E7D74; }
+  #palette-a .demo-light-panel .demo-card-sub { color: #8E7D74; }
+
+  /* Hybrid 1 (mono + blue em) — keep blue em, flip cream btn/stamp to blue gradient */
+  #hybrid-1 .demo-light-panel .btn-primary {
+    background: linear-gradient(45deg, #1E3A8A 0%, #2563EB 45%, #3E96FA 100%);
+    color: #FFFFFF;
+  }
+  #hybrid-1 .demo-light-panel .demo-card-stamp {
+    background: linear-gradient(45deg, #1E3A8A 0%, #2563EB 45%, #3E96FA 100%);
+    color: #FFFFFF;
+  }
+  #hybrid-1 .demo-light-panel .demo-card li::before { background: #2563EB; }
+
+  /* Hybrid 2 (mono + forest em) — flip cream btn/stamp to forest gradient */
+  #hybrid-2 .demo-light-panel .btn-primary {
+    background: linear-gradient(45deg, #2D4A3A 0%, #4A6B53 50%, #6A8A71 100%);
+    color: #FFFFFF;
+  }
+  #hybrid-2 .demo-light-panel .demo-card-stamp {
+    background: linear-gradient(45deg, #2D4A3A 0%, #4A6B53 50%, #6A8A71 100%);
+    color: #FFFFFF;
+  }
+  #hybrid-2 .demo-light-panel .demo-card li::before { background: #4A6B53; }
+
+  /* Hybrid 3 (heritage earth) — stamp stays saddle, flip btn to saddle */
+  #hybrid-3 .demo-light-panel .btn-primary { background: #8B6F47; color: #FFFFFF; }
+  #hybrid-3 .demo-light-panel .btn-primary:hover { background: #6F5736; }
+
+  /* Hybrid 4 (color via imagery) — pure mono flip */
+  #hybrid-4 .demo-light-panel h1 em {
+    background-image: linear-gradient(45deg, #4A4A4A 0%, #141414 100%);
+  }
+  #hybrid-4 .demo-light-panel .btn-primary { background: #141414; color: #FFFFFF; }
+  #hybrid-4 .demo-light-panel .demo-card-stamp { background: #141414; color: #FFFFFF; }
+  #hybrid-4 .demo-light-panel .demo-card li::before { background: #8E7D74; }
+  #hybrid-4 .demo-light-panel .demo-card-sub { color: #8E7D74; }
+
+  /* ─────────────────────────────────────── */
+  /* ═════ HYBRID 5 — WARM PEACH (heritage editorial) ═════ */
+  /* ─────────────────────────────────────── */
+  #hybrid-5::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(232,150,126,0.09) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  #hybrid-5 .palette-badge {
+    background: linear-gradient(45deg, #C4715E 0%, #F8C5A8 100%);
+    color: #141414;
+  }
+  #hybrid-5 .eyebrow { color: #E8967E; }
+  #hybrid-5 .eyebrow::before { background: #E8967E; }
+  #hybrid-5 h1 em {
+    background-image: linear-gradient(45deg, #C4715E 0%, #E8967E 45%, #F5F0E8 100%);
+  }
+  #hybrid-5 .btn-primary {
+    background: linear-gradient(45deg, #C4715E 0%, #F8C5A8 100%);
+    color: #141414;
+    box-shadow: 0 4px 20px rgba(196,113,94,0.28);
+  }
+  #hybrid-5 .btn-primary:hover {
+    background: linear-gradient(45deg, #A05644 0%, #E8967E 100%);
+    color: var(--cream);
+    transform: translateY(-1px);
+  }
+  #hybrid-5 .demo-card-stamp {
+    background: linear-gradient(45deg, #C4715E 0%, #F8C5A8 100%);
+    color: #141414;
+  }
+  #hybrid-5 .demo-card-sub { color: #E8967E; }
+  #hybrid-5 .demo-card li::before { background: #E8967E; }
+  #hybrid-5 .demo-hero { border-color: rgba(232,150,126,0.22); }
+  #hybrid-5 .demo-card { border-color: rgba(232,150,126,0.22); }
+
+  /* Light mode override for hybrid-5 */
+  #hybrid-5 .demo-light-panel {
+    background: #FDF9F3;
+  }
+  #hybrid-5 .demo-light-panel .demo-hero,
+  #hybrid-5 .demo-light-panel .demo-card {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FDF7EF 100%);
+    border-color: rgba(196,113,94,0.2);
+  }
+  #hybrid-5 .demo-light-panel .demo-hero h1 {
+    color: #1A1210;
+  }
+  #hybrid-5 .demo-light-panel .demo-hero .body,
+  #hybrid-5 .demo-light-panel .demo-hero p {
+    color: #5C4A42;
+  }
+  #hybrid-5 .demo-light-panel .demo-card-price { color: #1A1210; }
+  #hybrid-5 .demo-light-panel .demo-card-price span { color: #8E7D74; }
+  #hybrid-5 .demo-light-panel .demo-card li {
+    color: #5C4A42;
+    border-bottom-color: #EFE3D4;
+  }
+
   /* ─────────────────────────────────────── */
   /* ═════ HYBRID 4 — COLOR VIA IMAGERY (haystock approach) ═════ */
   /* ─────────────────────────────────────── */
@@ -782,6 +963,7 @@
   <div class="top-bar-inner">
     <span class="top-bar-title">Tribe · Palette Comparison</span>
     <div class="top-bar-nav">
+      <a href="#hybrid-5" class="jump-link">H5 · Warm Peach</a>
       <a href="#hybrid-4" class="jump-link">H4 · Color via Imagery</a>
       <a href="#hybrid-3" class="jump-link">H3 · Heritage Earth</a>
       <a href="#hybrid-1" class="jump-link">H1 · Mono + Blue</a>
@@ -794,6 +976,108 @@
     </div>
   </div>
 </div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- HYBRID 5 — WARM PEACH (heritage editorial) -->
+<!-- ══════════════════════════════════════════ -->
+<section class="palette" id="hybrid-5">
+  <div class="palette-inner">
+    <div class="palette-label">
+      <span class="palette-badge">Hybrid 5</span>
+      <span class="palette-name">Warm Peach · Heritage Editorial</span>
+      <span class="palette-desc">Cream → peach gradient · warm matte black · editorial</span>
+    </div>
+
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#0F0F0F;"></div>
+        <span class="swatch-label">Warm Black</span>
+        <span class="swatch-hex">#0F0F0F</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#161616;"></div>
+        <span class="swatch-label">Surface 1</span>
+        <span class="swatch-hex">#161616</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#F5F0E8;"></div>
+        <span class="swatch-label">Cream</span>
+        <span class="swatch-hex">#F5F0E8</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#C4715E;"></div>
+        <span class="swatch-label">Peach 500</span>
+        <span class="swatch-hex">#C4715E</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#E8967E;"></div>
+        <span class="swatch-label">Peach 400</span>
+        <span class="swatch-hex">#E8967E</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#F8C5A8;"></div>
+        <span class="swatch-label">Peach 300</span>
+        <span class="swatch-hex">#F8C5A8</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:linear-gradient(45deg,#C4715E 0%,#E8967E 45%,#F5F0E8 100%);"></div>
+        <span class="swatch-label">Em Gradient</span>
+        <span class="swatch-hex">terracotta → cream</span>
+      </div>
+    </div>
+
+    <!-- Dark mode demo -->
+    <span class="demo-mode-label">Dark Mode</span>
+    <div class="demo-grid">
+      <div class="demo-hero">
+        <span class="eyebrow">For scaling founders</span>
+        <h1>Scaling is harder than <em>it should be.</em></h1>
+        <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+        <a href="#" class="btn btn-primary">Join the Tribe →</a>
+      </div>
+      <div class="demo-card">
+        <span class="demo-card-stamp">Founding Members</span>
+        <div class="demo-card-price">$97<span>/mo</span></div>
+        <div class="demo-card-sub">Cancel anytime</div>
+        <ul>
+          <li>Weekly live workshops with Ryan</li>
+          <li>Every Selling System framework</li>
+          <li>Private founder community</li>
+          <li>Monthly live audits</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Join the Tribe</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Light mode demo -->
+  <div class="demo-light-panel">
+    <div class="palette-inner">
+      <span class="demo-mode-label">Light Mode</span>
+      <p class="palette-light-note">Same warm peach gradient on a cream canvas — ems and stamps keep their terracotta-to-cream bleed, cards sit on a subtle warm white.</p>
+      <div class="demo-grid">
+        <div class="demo-hero">
+          <span class="eyebrow">For scaling founders</span>
+          <h1>Scaling is harder than <em>it should be.</em></h1>
+          <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+          <a href="#" class="btn btn-primary">Join the Tribe →</a>
+        </div>
+        <div class="demo-card">
+          <span class="demo-card-stamp">Founding Members</span>
+          <div class="demo-card-price">$97<span>/mo</span></div>
+          <div class="demo-card-sub">Cancel anytime</div>
+          <ul>
+            <li>Weekly live workshops with Ryan</li>
+            <li>Every Selling System framework</li>
+            <li>Private founder community</li>
+            <li>Monthly live audits</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Join the Tribe</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══════════════════════════════════════════ -->
 <!-- HYBRID 4 — COLOR VIA IMAGERY (haystock)     -->
@@ -895,6 +1179,34 @@
       </div>
     </div>
   </div>
+
+  <!-- Light mode demo -->
+  <div class="demo-light-panel">
+    <div class="palette-inner">
+      <span class="demo-mode-label">Light Mode</span>
+      <p class="palette-light-note">Same mono approach on cream — accents flip from cream-on-black to matte-black-on-cream. Color still lives in tiles/imagery.</p>
+      <div class="demo-grid">
+        <div class="demo-hero">
+          <span class="eyebrow">For scaling founders</span>
+          <h1>Scaling is harder than <em>it should be.</em></h1>
+          <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+          <a href="#" class="btn btn-primary">Join the Tribe →</a>
+        </div>
+        <div class="demo-card">
+          <span class="demo-card-stamp">Founding Members</span>
+          <div class="demo-card-price">$97<span>/mo</span></div>
+          <div class="demo-card-sub">Cancel anytime</div>
+          <ul>
+            <li>Weekly live workshops with Ryan</li>
+            <li>Every Selling System framework</li>
+            <li>Private founder community</li>
+            <li>Monthly live audits</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Join the Tribe</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ══════════════════════════════════════════ -->
@@ -973,6 +1285,34 @@
       </div>
     </div>
   </div>
+
+  <!-- Light mode demo -->
+  <div class="demo-light-panel">
+    <div class="palette-inner">
+      <span class="demo-mode-label">Light Mode</span>
+      <p class="palette-light-note">Forest + saddle hold up on cream — both accents are already dark enough to read clearly against a warm white canvas.</p>
+      <div class="demo-grid">
+        <div class="demo-hero">
+          <span class="eyebrow">For scaling founders</span>
+          <h1>Scaling is harder than <em>it should be.</em></h1>
+          <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+          <a href="#" class="btn btn-primary">Join the Tribe →</a>
+        </div>
+        <div class="demo-card">
+          <span class="demo-card-stamp">Founding Members</span>
+          <div class="demo-card-price">$97<span>/mo</span></div>
+          <div class="demo-card-sub">Cancel anytime</div>
+          <ul>
+            <li>Weekly live workshops with Ryan</li>
+            <li>Every Selling System framework</li>
+            <li>Private founder community</li>
+            <li>Monthly live audits</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Join the Tribe</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ══════════════════════════════════════════ -->
@@ -1038,6 +1378,34 @@
           <li>Monthly live audits</li>
         </ul>
         <a href="#" class="btn btn-primary">Join the Tribe</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Light mode demo -->
+  <div class="demo-light-panel">
+    <div class="palette-inner">
+      <span class="demo-mode-label">Light Mode</span>
+      <p class="palette-light-note">Blue em translates cleanly to a cream canvas. Cream CTAs and stamp flip to blue gradient so they stay visible.</p>
+      <div class="demo-grid">
+        <div class="demo-hero">
+          <span class="eyebrow">For scaling founders</span>
+          <h1>Scaling is harder than <em>it should be.</em></h1>
+          <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+          <a href="#" class="btn btn-primary">Join the Tribe →</a>
+        </div>
+        <div class="demo-card">
+          <span class="demo-card-stamp">Founding Members</span>
+          <div class="demo-card-price">$97<span>/mo</span></div>
+          <div class="demo-card-sub">Cancel anytime</div>
+          <ul>
+            <li>Weekly live workshops with Ryan</li>
+            <li>Every Selling System framework</li>
+            <li>Private founder community</li>
+            <li>Monthly live audits</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Join the Tribe</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1109,6 +1477,34 @@
       </div>
     </div>
   </div>
+
+  <!-- Light mode demo -->
+  <div class="demo-light-panel">
+    <div class="palette-inner">
+      <span class="demo-mode-label">Light Mode</span>
+      <p class="palette-light-note">Forest em on cream canvas reads premium-outdoor. Cream CTAs and stamp flip to forest gradient so they stay visible.</p>
+      <div class="demo-grid">
+        <div class="demo-hero">
+          <span class="eyebrow">For scaling founders</span>
+          <h1>Scaling is harder than <em>it should be.</em></h1>
+          <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+          <a href="#" class="btn btn-primary">Join the Tribe →</a>
+        </div>
+        <div class="demo-card">
+          <span class="demo-card-stamp">Founding Members</span>
+          <div class="demo-card-price">$97<span>/mo</span></div>
+          <div class="demo-card-sub">Cancel anytime</div>
+          <ul>
+            <li>Weekly live workshops with Ryan</li>
+            <li>Every Selling System framework</li>
+            <li>Private founder community</li>
+            <li>Monthly live audits</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Join the Tribe</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ══════════════════════════════════════════ -->
@@ -1174,6 +1570,34 @@
           <li>Monthly live audits</li>
         </ul>
         <a href="#" class="btn btn-primary">Join the Tribe</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Light mode demo -->
+  <div class="demo-light-panel">
+    <div class="palette-inner">
+      <span class="demo-mode-label">Light Mode</span>
+      <p class="palette-light-note">Pure monochrome on cream — ems and CTAs flip to matte-black accents. Adds subtle shadows on cards for depth.</p>
+      <div class="demo-grid">
+        <div class="demo-hero">
+          <span class="eyebrow">For scaling founders</span>
+          <h1>Scaling is harder than <em>it should be.</em></h1>
+          <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+          <a href="#" class="btn btn-primary">Join the Tribe →</a>
+        </div>
+        <div class="demo-card">
+          <span class="demo-card-stamp">Founding Members</span>
+          <div class="demo-card-price">$97<span>/mo</span></div>
+          <div class="demo-card-sub">Cancel anytime</div>
+          <ul>
+            <li>Weekly live workshops with Ryan</li>
+            <li>Every Selling System framework</li>
+            <li>Private founder community</li>
+            <li>Monthly live audits</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Join the Tribe</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1244,6 +1668,34 @@
       </div>
     </div>
   </div>
+
+  <!-- Light mode demo -->
+  <div class="demo-light-panel">
+    <div class="palette-inner">
+      <span class="demo-mode-label">Light Mode</span>
+      <p class="palette-light-note">Oxblood holds up beautifully on cream — deep burgundy reads like a vintage wine label on aged paper.</p>
+      <div class="demo-grid">
+        <div class="demo-hero">
+          <span class="eyebrow">For scaling founders</span>
+          <h1>Scaling is harder than <em>it should be.</em></h1>
+          <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+          <a href="#" class="btn btn-primary">Join the Tribe →</a>
+        </div>
+        <div class="demo-card">
+          <span class="demo-card-stamp">Founding Members</span>
+          <div class="demo-card-price">$97<span>/mo</span></div>
+          <div class="demo-card-sub">Cancel anytime</div>
+          <ul>
+            <li>Weekly live workshops with Ryan</li>
+            <li>Every Selling System framework</li>
+            <li>Private founder community</li>
+            <li>Monthly live audits</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Join the Tribe</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ══════════════════════════════════════════ -->
@@ -1311,6 +1763,34 @@
       </div>
     </div>
   </div>
+
+  <!-- Light mode demo -->
+  <div class="demo-light-panel">
+    <div class="palette-inner">
+      <span class="demo-mode-label">Light Mode</span>
+      <p class="palette-light-note">Honey on cream needs care — the two warm tones can blend. Works when the card takes a slightly richer cream bg for separation.</p>
+      <div class="demo-grid">
+        <div class="demo-hero">
+          <span class="eyebrow">For scaling founders</span>
+          <h1>Scaling is harder than <em>it should be.</em></h1>
+          <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+          <a href="#" class="btn btn-primary">Join the Tribe →</a>
+        </div>
+        <div class="demo-card">
+          <span class="demo-card-stamp">Founding Members</span>
+          <div class="demo-card-price">$97<span>/mo</span></div>
+          <div class="demo-card-sub">Cancel anytime</div>
+          <ul>
+            <li>Weekly live workshops with Ryan</li>
+            <li>Every Selling System framework</li>
+            <li>Private founder community</li>
+            <li>Monthly live audits</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Join the Tribe</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ══════════════════════════════════════════ -->
@@ -1375,6 +1855,34 @@
           <li>Monthly live audits</li>
         </ul>
         <a href="#" class="btn btn-primary">Join the Tribe</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Light mode demo -->
+  <div class="demo-light-panel">
+    <div class="palette-inner">
+      <span class="demo-mode-label">Light Mode</span>
+      <p class="palette-light-note">Forest green stays grounded on cream — reads like a premium outdoor brand (Barbour, Filson, Aesop).</p>
+      <div class="demo-grid">
+        <div class="demo-hero">
+          <span class="eyebrow">For scaling founders</span>
+          <h1>Scaling is harder than <em>it should be.</em></h1>
+          <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+          <a href="#" class="btn btn-primary">Join the Tribe →</a>
+        </div>
+        <div class="demo-card">
+          <span class="demo-card-stamp">Founding Members</span>
+          <div class="demo-card-price">$97<span>/mo</span></div>
+          <div class="demo-card-sub">Cancel anytime</div>
+          <ul>
+            <li>Weekly live workshops with Ryan</li>
+            <li>Every Selling System framework</li>
+            <li>Private founder community</li>
+            <li>Monthly live audits</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Join the Tribe</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1447,6 +1955,34 @@
           <li>Monthly live audits</li>
         </ul>
         <a href="#" class="btn btn-primary">Join the Tribe</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Light mode demo -->
+  <div class="demo-light-panel">
+    <div class="palette-inner">
+      <span class="demo-mode-label">Light Mode</span>
+      <p class="palette-light-note">Signature blue gradient reads equally well on cream — the dark navy-to-bright bleed keeps its contrast on either canvas.</p>
+      <div class="demo-grid">
+        <div class="demo-hero">
+          <span class="eyebrow">For scaling founders</span>
+          <h1>Scaling is harder than <em>it should be.</em></h1>
+          <p class="body">Not because you're doing it wrong. Because you're doing it without a system. Abundance Tribe is where that stops.</p>
+          <a href="#" class="btn btn-primary">Join the Tribe →</a>
+        </div>
+        <div class="demo-card">
+          <span class="demo-card-stamp">Founding Members</span>
+          <div class="demo-card-price">$97<span>/mo</span></div>
+          <div class="demo-card-sub">Cancel anytime</div>
+          <ul>
+            <li>Weekly live workshops with Ryan</li>
+            <li>Every Selling System framework</li>
+            <li>Private founder community</li>
+            <li>Monthly live audits</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Join the Tribe</a>
+        </div>
       </div>
     </div>
   </div>
