@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Selling System — DFY Installation · Abundance.AI</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
+<style>
+  @font-face {
+    font-family: 'Neo Contact';
+    src: url('/assets/fonts/neo-contact/neo-contact-lt-pro.woff2') format('woff2');
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --bg: #0F0F0F;
+    --surface-1: #161616;
+    --surface-2: #1D1D1D;
+    --surface-3: #242424;
+    --cream: #F5F0E8;
+    --cream-warm: #F8F6EC;
+    --cream-body: #D5CFC4;
+    --cream-muted: #9C968C;
+    --border: rgba(245,240,232,0.08);
+    --border-strong: rgba(245,240,232,0.18);
+    --radius: 20px;
+
+    /* Per-section color glows — each is a 4-stop cream → deep variant */
+    --glow-peach:   linear-gradient(135deg, #F5F0E8 0%, #F8C5A8 40%, #E8967E 75%, #C4715E 100%);
+    --glow-violet:  linear-gradient(135deg, #F5F0E8 0%, #DDD6FE 40%, #A78BFA 75%, #7C3AED 100%);
+    --glow-lime:    linear-gradient(135deg, #F5F0E8 0%, #D9F99D 40%, #84CC16 75%, #4D7C0F 100%);
+    --glow-sky:     linear-gradient(135deg, #F5F0E8 0%, #BAE6FD 40%, #38BDF8 75%, #0369A1 100%);
+    --glow-coral:   linear-gradient(135deg, #F5F0E8 0%, #FECACA 40%, #FB7185 75%, #BE123C 100%);
+    --glow-amber:   linear-gradient(135deg, #F5F0E8 0%, #FDE68A 40%, #FBBF24 75%, #B45309 100%);
+
+    /* Section radial glow tints */
+    --glow-radial-peach:  radial-gradient(ellipse 100% 60% at 50% 0%, rgba(232,150,126,0.15) 0%, transparent 60%);
+    --glow-radial-violet: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(167,139,250,0.15) 0%, transparent 60%);
+    --glow-radial-lime:   radial-gradient(ellipse 100% 60% at 50% 0%, rgba(132,204,22,0.12) 0%, transparent 60%);
+    --glow-radial-sky:    radial-gradient(ellipse 100% 60% at 50% 0%, rgba(56,189,248,0.14) 0%, transparent 60%);
+    --glow-radial-amber:  radial-gradient(ellipse 100% 60% at 50% 0%, rgba(251,191,36,0.13) 0%, transparent 60%);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: "greycliff-cf", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 {
+    color: var(--cream);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-family: "greycliff-cf", sans-serif;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(15,15,15,0.78);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 40px;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .nav-left { display: flex; align-items: center; gap: 36px; }
+  .nav-brand {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--cream);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-brand::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
+    background: var(--glow-peach);
+  }
+  .nav-links { display: flex; gap: 24px; }
+  .nav-links a {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--cream-body);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--cream); }
+  .nav-links a.active { color: var(--cream); font-weight: 600; }
+  .nav-cta {
+    background: var(--cream);
+    color: var(--bg);
+    padding: 9px 22px;
+    border-radius: 20px;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--cream-warm); }
+
+  /* ─── HERO · PEACH GLOW ─── */
+  .hero {
+    padding: 80px 40px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1100px;
+    height: 700px;
+    background: radial-gradient(ellipse, rgba(232,150,126,0.22) 0%, rgba(248,197,168,0.08) 35%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 1000px; margin: 0 auto; position: relative; z-index: 2; }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--surface-1);
+    border: 1px solid var(--border-strong);
+    border-radius: 100px;
+    padding: 6px 16px 6px 8px;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--cream-body);
+    margin-bottom: 32px;
+  }
+  .hero-badge-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--glow-peach);
+  }
+  .hero-title {
+    font-size: clamp(64px, 10vw, 140px);
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+    background-image: var(--glow-peach);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-sub {
+    color: var(--cream-body);
+    font-size: clamp(15px, 1.6vw, 18px);
+    max-width: 580px;
+    margin: 0 auto 40px;
+  }
+  .hero-sub strong { color: var(--cream); font-weight: 600; }
+  .hero-phone-wrap {
+    position: relative;
+    margin: -40px auto 0;
+    max-width: 320px;
+    z-index: 3;
+  }
+
+  /* Phone mockup */
+  .phone {
+    width: 100%;
+    aspect-ratio: 9/19;
+    background: linear-gradient(160deg, #2A2A2A, #0A0A0A);
+    border-radius: 44px;
+    padding: 14px;
+    border: 1px solid rgba(245,240,232,0.12);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04) inset;
+    position: relative;
+  }
+  .phone::before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 28px;
+    background: #000;
+    border-radius: 20px;
+    z-index: 3;
+  }
+  .phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #0A0A0A;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 56px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .phone-card {
+    background: var(--surface-2);
+    border-radius: 18px;
+    padding: 16px;
+    border: 1px solid var(--border);
+  }
+  .phone-card-label {
+    font-size: 10px;
+    color: var(--cream-muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+  .phone-card-val {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--cream);
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .phone-ring {
+    width: 108px;
+    height: 108px;
+    margin: 6px auto;
+    border-radius: 50%;
+    background:
+      conic-gradient(from 0deg, #F8C5A8 0%, #E8967E 62%, var(--surface-3) 62%, var(--surface-3) 100%),
+      radial-gradient(circle, var(--surface-2) 54%, transparent 55%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .phone-ring::before {
+    content: '78%';
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--cream);
+  }
+  .phone-pills {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .phone-pill {
+    flex: 1;
+    background: var(--surface-3);
+    border-radius: 12px;
+    padding: 8px;
+    text-align: center;
+  }
+  .phone-pill-val { font-size: 13px; font-weight: 800; color: var(--cream); }
+  .phone-pill-lbl { font-size: 8px; color: var(--cream-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .phone-avatar {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--surface-2);
+    margin-left: -6px;
+  }
+  .phone-avatar:first-child { margin-left: 0; }
+  .pa1 { background: radial-gradient(circle, #F472B6, #831843); }
+  .pa2 { background: radial-gradient(circle, #60A5FA, #1E40AF); }
+  .pa3 { background: radial-gradient(circle, #34D399, #065F46); }
+  .pa4 { background: radial-gradient(circle, #FBBF24, #B45309); }
+
+  /* ─── CAPTURE ROW ─── */
+  .capture {
+    padding: 80px 40px 48px;
+    text-align: center;
+    position: relative;
+    z-index: 4;
+  }
+  .capture p {
+    max-width: 540px;
+    margin: 0 auto 24px;
+    color: var(--cream-body);
+    font-size: 15px;
+  }
+  .capture-form {
+    display: inline-flex;
+    gap: 8px;
+    background: var(--surface-1);
+    border: 1px solid var(--border-strong);
+    border-radius: 100px;
+    padding: 6px 6px 6px 18px;
+    align-items: center;
+    max-width: 460px;
+    width: 100%;
+  }
+  .capture-form input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--cream);
+    font-family: "greycliff-cf", sans-serif;
+    font-size: 14px;
+    padding: 10px 4px;
+    min-width: 0;
+  }
+  .capture-form input::placeholder { color: var(--cream-muted); }
+  .capture-form button {
+    background: var(--cream);
+    color: var(--bg);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .capture-form button:hover { background: var(--cream-warm); }
+
+  /* ─── TRUST BAR ─── */
+  .trust-bar {
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .trust-label {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 20px;
+  }
+  .trust-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    opacity: 0.5;
+  }
+  .trust-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    background: var(--cream-muted);
+  }
+  .trust-icon.ti2 { mask: radial-gradient(circle, black 40%, transparent 42%); -webkit-mask: radial-gradient(circle, black 40%, transparent 42%); }
+  .trust-icon.ti3 { border-radius: 50%; }
+  .trust-icon.ti4 { transform: rotate(45deg); }
+  .trust-icon.ti5 { clip-path: polygon(50% 0, 100% 100%, 0 100%); border-radius: 0; }
+
+  /* ─── EXPERIENCE SECTION · VIOLET GLOW ─── */
+  .experience {
+    padding: 140px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .experience::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 500px;
+    background: var(--glow-radial-violet);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .experience-inner { position: relative; z-index: 1; }
+  .section-title {
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 64px;
+  }
+  .section-title em {
+    font-family: 'Neo Contact', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    display: block;
+    font-size: 1.15em;
+    line-height: 1;
+    margin-top: 0.1em;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .section-title-violet em { background-image: var(--glow-violet); }
+  .section-title-peach em { background-image: var(--glow-peach); }
+  .section-title-lime em { background-image: var(--glow-lime); }
+  .section-title-sky em { background-image: var(--glow-sky); }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .feature-card {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .feature-card-step {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 12px;
+  }
+  .feature-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  .feature-card p {
+    color: var(--cream-body);
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .feature-visual {
+    margin-top: 20px;
+    background: var(--surface-2);
+    border-radius: 14px;
+    padding: 16px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .fv-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+  }
+  .fv-row:last-child { border-bottom: none; }
+  .fv-label { color: var(--cream-muted); }
+  .fv-val { color: var(--cream); font-weight: 600; }
+
+  .fv-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    height: 80px;
+    padding-top: 8px;
+  }
+  .fv-bar {
+    flex: 1;
+    background: var(--glow-violet);
+    border-radius: 4px 4px 0 0;
+    opacity: 0.9;
+  }
+  .fv-bar:nth-child(1) { height: 40%; }
+  .fv-bar:nth-child(2) { height: 65%; }
+  .fv-bar:nth-child(3) { height: 50%; }
+  .fv-bar:nth-child(4) { height: 88%; }
+  .fv-bar:nth-child(5) { height: 72%; }
+
+  .fv-ring {
+    width: 100px;
+    height: 100px;
+    margin: 4px auto;
+    border-radius: 50%;
+    background:
+      conic-gradient(from 0deg, #DDD6FE 0%, #A78BFA 70%, var(--surface-3) 70%),
+      radial-gradient(circle, var(--surface-2) 54%, transparent 55%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+  }
+
+  /* ─── INTEGRATION · MULTI-COLOR ─── */
+  .integration {
+    background: var(--surface-1);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 140px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .integration-title {
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05;
+    max-width: 720px;
+    margin: 0 auto 16px;
+  }
+  .integration-sub {
+    color: var(--cream-body);
+    max-width: 540px;
+    margin: 0 auto 64px;
+    font-size: 15px;
+  }
+  .integration-stage {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .int-phone {
+    width: 160px;
+    height: 320px;
+    background: linear-gradient(160deg, #2A2A2A, #0A0A0A);
+    border-radius: 32px;
+    padding: 10px;
+    border: 1px solid rgba(245,240,232,0.12);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 2;
+  }
+  .int-phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #0A0A0A;
+    border-radius: 22px;
+    padding: 40px 12px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .int-icon {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    color: white;
+    font-size: 26px;
+  }
+  .int-icon.i1 { top: 30px;  left: 6%;  background: linear-gradient(135deg, #FB7185, #BE123C); transform: rotate(-8deg); }
+  .int-icon.i2 { top: 60px;  left: 24%; background: linear-gradient(135deg, #DC2626, #7F1D1D); transform: rotate(4deg); }
+  .int-icon.i3 { top: 140px; left: 1%;  background: linear-gradient(135deg, #F5F0E8, #D5CFC4); color: #141414; transform: rotate(-4deg); }
+  .int-icon.i4 { top: 30px;  right: 6%; background: linear-gradient(135deg, #A78BFA, #6D28D9); transform: rotate(8deg); }
+  .int-icon.i5 { top: 60px;  right: 24%; background: linear-gradient(135deg, #FB923C, #B45309); transform: rotate(-4deg); }
+  .int-icon.i6 { top: 140px; right: 1%;  background: linear-gradient(135deg, #34D399, #047857); transform: rotate(4deg); }
+  .int-icon.i7 { bottom: 20px; left: 14%;  background: linear-gradient(135deg, #38BDF8, #1D4ED8); transform: rotate(6deg); }
+  .int-icon.i8 { bottom: 20px; right: 14%; background: linear-gradient(135deg, #FBBF24, #D97706); transform: rotate(-6deg); }
+  .integration-foot {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    color: var(--cream);
+    margin-top: 48px;
+    font-size: 15px;
+  }
+  .integration-foot span { color: var(--cream-muted); font-weight: 500; font-size: 14px; display: block; margin-top: 6px; }
+
+  /* ─── STATS · VARIED COLORS ─── */
+  .stats {
+    padding: 140px 40px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .stat-block {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 48px;
+    padding: 56px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .stat-block:last-child { border-bottom: none; }
+  .stat-num {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: clamp(64px, 9vw, 120px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+  }
+  .stat-num.n-peach  { background-image: var(--glow-peach); }
+  .stat-num.n-violet { background-image: var(--glow-violet); }
+  .stat-num.n-lime   { background-image: var(--glow-lime); }
+  .stat-num.n-sky    { background-image: var(--glow-sky); }
+
+  .stat-body h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .stat-body p {
+    color: var(--cream-body);
+    font-size: 15px;
+    max-width: 420px;
+  }
+
+  /* ─── DOWNLOAD / JOIN · PEACH GLOW ─── */
+  .download {
+    text-align: center;
+    padding: 140px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .download::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    height: 600px;
+    background: var(--glow-radial-peach);
+    pointer-events: none;
+  }
+  .download h2 {
+    font-size: clamp(44px, 6vw, 80px);
+    line-height: 1;
+    margin-bottom: 16px;
+    background-image: var(--glow-peach);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+  .download p {
+    color: var(--cream-body);
+    max-width: 500px;
+    margin: 0 auto 40px;
+    font-size: 15px;
+  }
+  .download-btns {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+  .dl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--surface-1);
+    border: 1px solid var(--border-strong);
+    border-radius: 20px;
+    padding: 14px 24px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .dl-btn:hover {
+    border-color: var(--cream-muted);
+    transform: translateY(-1px);
+  }
+  .dl-btn-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: var(--glow-peach);
+    flex-shrink: 0;
+  }
+  .dl-btn-text { text-align: left; }
+  .dl-btn-small {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+  }
+  .dl-btn-big {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--cream);
+  }
+
+  /* ─── PHONE SEQUENCE · SKY GLOW ─── */
+  .phone-seq-section {
+    position: relative;
+    padding: 60px 40px 140px;
+    overflow: hidden;
+  }
+  .phone-seq-section::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 400px;
+    background: var(--glow-radial-sky);
+    pointer-events: none;
+  }
+  .phone-seq {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 40px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+  .phone-seq .phone-wrap {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .phone-seq .phone {
+    transform: translateY(0);
+    transition: transform 0.4s;
+    max-width: 220px;
+  }
+  .phone-seq .phone-wrap:nth-child(2) .phone { transform: translateY(-30px); }
+  .phone-seq .phone-wrap:nth-child(3) .phone { transform: translateY(-10px); }
+  .hand-shadow {
+    width: 220px;
+    height: 120px;
+    background: radial-gradient(ellipse at top, rgba(0,0,0,0.6) 0%, transparent 70%);
+    margin-top: -30px;
+    border-radius: 50%;
+  }
+
+  /* ─── TILES · RAINBOW ─── */
+  .tile-section {
+    padding: 140px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .tile-section-title {
+    text-align: center;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05;
+    max-width: 720px;
+    margin: 0 auto 16px;
+  }
+  .tile-section-title em {
+    font-family: 'Neo Contact', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    display: inline;
+    background-image: var(--glow-amber);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .tile-section-sub {
+    text-align: center;
+    color: var(--cream-body);
+    max-width: 520px;
+    margin: 0 auto 56px;
+    font-size: 15px;
+  }
+  .tile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+  .tile-grid + .tile-grid { margin-top: 16px; }
+  .tile {
+    border-radius: var(--radius);
+    padding: 28px;
+    min-height: 260px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+  }
+  .tile-title {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+  .tile-sub {
+    font-size: 13px;
+    color: var(--cream-body);
+    line-height: 1.5;
+  }
+  .tile-art {
+    flex: 1;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    min-height: 110px;
+    position: relative;
+    overflow: hidden;
+  }
+  .tile.t-coral  .tile-art { background: radial-gradient(ellipse at 30% 30%, #FB7185 0%, #BE123C 45%, #3F1020 100%); }
+  .tile.t-violet .tile-art { background: radial-gradient(ellipse at 70% 30%, #A78BFA 0%, #6D28D9 45%, #1E1540 100%); }
+  .tile.t-sky    .tile-art { background: radial-gradient(ellipse at 40% 60%, #38BDF8 0%, #1D4ED8 50%, #0B1E4D 100%); }
+  .tile.t-lime   .tile-art { background: radial-gradient(ellipse at 50% 70%, #BEF264 0%, #16A34A 45%, #052E14 100%); }
+  .tile.t-amber  .tile-art { background: radial-gradient(ellipse at 40% 40%, #FBBF24 0%, #B45309 45%, #3D1D04 100%); }
+  .tile.t-peach  .tile-art { background: var(--glow-peach); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--surface-1);
+    border-top: 1px solid var(--border);
+    padding: 56px 40px;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  .footer-brand {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .footer-brand::before {
+    content: '';
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    background: var(--glow-peach);
+  }
+  .footer-tagline { color: var(--cream-muted); font-size: 13px; }
+  .footer-cols { display: flex; gap: 48px; flex-wrap: wrap; }
+  .footer-col-title {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 14px;
+  }
+  .footer-col a {
+    display: block;
+    color: var(--cream-body);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 4px 0;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--cream); }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hero { padding: 48px 20px 0; }
+    .capture { padding: 60px 20px 32px; }
+    .experience, .stats, .download, .tile-section, .integration { padding: 80px 20px; }
+    .phone-seq-section { padding: 32px 20px 80px; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .integration-stage { height: 460px; }
+    .stat-block { grid-template-columns: 1fr; gap: 16px; padding: 40px 0; }
+    .tile-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/" class="nav-brand">Abundance.AI</a>
+      <div class="nav-links">
+        <a href="/selling-system" class="active">DFY Selling System</a>
+        <a href="/tribe">Tribe</a>
+        <a href="/shift">Shift</a>
+        <a href="/about">About</a>
+      </div>
+    </div>
+    <a href="#apply" class="nav-cta">Apply Now</a>
+  </div>
+</nav>
+
+<!-- HERO · PEACH -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Done-For-You · 90-Day Install
+    </div>
+
+    <h1 class="hero-title">Meet the System.</h1>
+
+    <p class="hero-sub">We install the <strong>Abundance Selling System</strong> into your business — offers, funnels, CRM, tracking. Installed in 90 days. Compounding from day 27.</p>
+
+    <div class="hero-phone-wrap">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-card">
+            <div class="phone-card-label">Monthly Revenue</div>
+            <div class="phone-card-val">$42,580</div>
+            <div class="phone-ring"></div>
+          </div>
+          <div class="phone-pills">
+            <div class="phone-pill">
+              <div class="phone-pill-val">+18%</div>
+              <div class="phone-pill-lbl">MoM</div>
+            </div>
+            <div class="phone-pill">
+              <div class="phone-pill-val">27</div>
+              <div class="phone-pill-lbl">Days</div>
+            </div>
+            <div class="phone-pill">
+              <div class="phone-pill-val">3.2×</div>
+              <div class="phone-pill-lbl">ROI</div>
+            </div>
+          </div>
+          <div class="phone-card" style="padding: 12px;">
+            <div class="phone-card-label">Active Pipeline</div>
+            <div style="display:flex; margin-top:6px;">
+              <div class="phone-avatar pa1"></div>
+              <div class="phone-avatar pa2"></div>
+              <div class="phone-avatar pa3"></div>
+              <div class="phone-avatar pa4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPTURE -->
+<section class="capture">
+  <p>Apply to install the Selling System. Seven-figure founders only. We install end-to-end and stay until your system compounds.</p>
+  <form class="capture-form" onsubmit="event.preventDefault()">
+    <input type="email" placeholder="Enter your email">
+    <button type="submit">Apply Now</button>
+  </form>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-label">Founders already scaling with the system</div>
+  <div class="trust-icons">
+    <div class="trust-icon"></div>
+    <div class="trust-icon ti2"></div>
+    <div class="trust-icon ti3"></div>
+    <div class="trust-icon ti4"></div>
+    <div class="trust-icon ti5"></div>
+  </div>
+</div>
+
+<!-- EXPERIENCE · VIOLET -->
+<section class="experience">
+  <div class="experience-inner">
+    <h2 class="section-title section-title-violet">Experience your business <em>as it compounds.</em></h2>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div>
+          <div class="feature-card-step">Step 01</div>
+          <h3>Clarity Audit &amp; System Map</h3>
+          <p>We map your current selling system — offers, funnels, pipeline, delivery — and identify where revenue is leaking before we build a single thing.</p>
+        </div>
+        <div class="feature-visual">
+          <div class="fv-row"><span class="fv-label">Current Offers</span><span class="fv-val">3</span></div>
+          <div class="fv-row"><span class="fv-label">Active Funnels</span><span class="fv-val">2</span></div>
+          <div class="fv-row"><span class="fv-label">Leakage (mo)</span><span class="fv-val" style="color:#A78BFA;">~$18K</span></div>
+          <div class="fv-row"><span class="fv-label">Priority</span><span class="fv-val">Offer → Funnel</span></div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div>
+          <div class="feature-card-step">Step 02</div>
+          <h3>Offers, Funnels &amp; Playbooks</h3>
+          <p>Every Selling System framework delivered and installed — the offer, the script, the funnel, the follow-up cadence. Plug-and-go.</p>
+        </div>
+        <div class="feature-visual">
+          <div class="fv-ring">72%</div>
+          <div style="text-align:center; font-size:10px; color:var(--cream-muted); letter-spacing:0.1em; text-transform:uppercase; margin-top:4px;">System Install</div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div>
+          <div class="feature-card-step">Step 03</div>
+          <h3>CRM, Pipeline &amp; Tracking</h3>
+          <p>We build and tune your sales CRM, automate the follow-up, and wire every metric into a single live dashboard.</p>
+        </div>
+        <div class="feature-visual">
+          <div class="fv-bars">
+            <div class="fv-bar"></div>
+            <div class="fv-bar"></div>
+            <div class="fv-bar"></div>
+            <div class="fv-bar"></div>
+            <div class="fv-bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRATION · MULTI-COLOR -->
+<section class="integration">
+  <h2 class="integration-title">Plugs into your stack.</h2>
+  <p class="integration-sub">Bring your CRM, ad accounts, calendar, and anywhere else your business lives. No stack overhaul required.</p>
+
+  <div class="integration-stage">
+    <div class="int-icon i1">F</div>
+    <div class="int-icon i2">H</div>
+    <div class="int-icon i3">S</div>
+    <div class="int-icon i4">C</div>
+    <div class="int-icon i5">O</div>
+    <div class="int-icon i6">G</div>
+    <div class="int-icon i7">M</div>
+    <div class="int-icon i8">A</div>
+
+    <div class="int-phone">
+      <div class="int-phone-screen">
+        <div class="phone-card" style="padding: 10px;">
+          <div class="phone-card-label" style="font-size:8px;">System</div>
+          <div class="phone-card-val" style="font-size:16px; margin-bottom: 0;">$42,580</div>
+        </div>
+        <div class="phone-pill" style="background: var(--surface-3); padding: 6px;">
+          <div class="phone-pill-val" style="font-size:11px;">+18% MoM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="integration-foot">
+    Integrates with your workflow, no stack overhaul required.
+    <span>Every data point pipes into one dashboard — so you stop guessing and start compounding.</span>
+  </div>
+</section>
+
+<!-- STATS · VARIED -->
+<section class="stats">
+  <div class="stat-block">
+    <div class="stat-num n-peach">$40k</div>
+    <div class="stat-body">
+      <h3>MRR lift in 27 days.</h3>
+      <p>Members reach $0 → $40k/mo in under a month using the Selling System frameworks. Not a case study — the average.</p>
+    </div>
+  </div>
+
+  <div class="stat-block">
+    <div class="stat-num n-violet">10×</div>
+    <div class="stat-body">
+      <h3>Time reclaimed per week.</h3>
+      <p>One cohesive system replaces tactic-hopping. Owners get their calendar back while output multiplies.</p>
+    </div>
+  </div>
+
+  <div class="stat-block">
+    <div class="stat-num n-lime">$0</div>
+    <div class="stat-body">
+      <h3>Extra ad spend required.</h3>
+      <p>The system compounds with what you already spend. New campaigns, new funnels, new scale — all optional.</p>
+    </div>
+  </div>
+
+  <div class="stat-block">
+    <div class="stat-num n-sky">9.8</div>
+    <div class="stat-body">
+      <h3>Average member rating.</h3>
+      <p>Out of 10, taken from active installs after 30+ days. The system that actually delivers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD / APPLY · PEACH -->
+<section class="download" id="apply">
+  <h2>Install the System.</h2>
+  <p>Apply to install the Abundance Selling System. We audit, build, and stay until it compounds.</p>
+  <div class="download-btns">
+    <a href="#" class="dl-btn">
+      <div class="dl-btn-icon"></div>
+      <div class="dl-btn-text">
+        <div class="dl-btn-small">Start with</div>
+        <div class="dl-btn-big">The Clarity Call</div>
+      </div>
+    </a>
+    <a href="#" class="dl-btn">
+      <div class="dl-btn-icon"></div>
+      <div class="dl-btn-text">
+        <div class="dl-btn-small">Or watch</div>
+        <div class="dl-btn-big">The 8-min Overview</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- PHONE SEQUENCE · SKY -->
+<section class="phone-seq-section">
+  <div class="phone-seq">
+    <div class="phone-wrap">
+      <div class="phone" style="max-width:200px;">
+        <div class="phone-screen" style="padding:40px 12px 12px;">
+          <div class="phone-card" style="padding:12px;">
+            <div class="phone-card-label" style="font-size:8px;">Revenue</div>
+            <div class="phone-card-val" style="font-size:18px;">$42,580</div>
+            <div class="phone-ring" style="width:80px; height:80px; margin:6px auto;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="hand-shadow"></div>
+    </div>
+    <div class="phone-wrap">
+      <div class="phone" style="max-width:200px;">
+        <div class="phone-screen" style="padding:40px 12px 12px;">
+          <div class="phone-card" style="padding:12px;">
+            <div class="phone-card-label" style="font-size:8px;">Pipeline</div>
+            <div class="phone-card-val" style="font-size:18px;">28 Deals</div>
+          </div>
+          <div class="phone-pill" style="padding:8px;">
+            <div class="phone-pill-val" style="font-size:11px;">$312K open</div>
+          </div>
+        </div>
+      </div>
+      <div class="hand-shadow"></div>
+    </div>
+    <div class="phone-wrap">
+      <div class="phone" style="max-width:200px;">
+        <div class="phone-screen" style="padding:40px 12px 12px;">
+          <div class="phone-card" style="padding:12px;">
+            <div class="phone-card-label" style="font-size:8px;">Audit</div>
+            <div class="phone-card-val" style="font-size:16px;">Wed · 2pm</div>
+            <div style="display:flex; margin-top:8px;">
+              <div class="phone-avatar pa1"></div>
+              <div class="phone-avatar pa2"></div>
+              <div class="phone-avatar pa3"></div>
+              <div class="phone-avatar pa4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hand-shadow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TILE SECTION · RAINBOW -->
+<section class="tile-section">
+  <h2 class="tile-section-title">Take control of your business <em>with the System.</em></h2>
+  <p class="tile-section-sub">Six core installs, one compounding machine. Every framework ships fully built, fully yours.</p>
+
+  <div class="tile-grid">
+    <div class="tile t-coral">
+      <div class="tile-art"></div>
+      <div>
+        <div class="tile-title">The Clarity Audit</div>
+        <div class="tile-sub">Live map of where revenue is leaking — before we build anything.</div>
+      </div>
+    </div>
+    <div class="tile t-violet">
+      <div class="tile-art"></div>
+      <div>
+        <div class="tile-title">The Offer System</div>
+        <div class="tile-sub">Rebuilt offer, pricing, and positioning — done for you.</div>
+      </div>
+    </div>
+    <div class="tile t-sky">
+      <div class="tile-art"></div>
+      <div>
+        <div class="tile-title">AI-Powered Meta Ads</div>
+        <div class="tile-sub">Cold traffic pre-sold before they hit your calendar.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tile-grid">
+    <div class="tile t-lime">
+      <div class="tile-art"></div>
+      <div>
+        <div class="tile-title">Pipeline CRM</div>
+        <div class="tile-sub">Installed, automated, and tuned to close.</div>
+      </div>
+    </div>
+    <div class="tile t-amber">
+      <div class="tile-art"></div>
+      <div>
+        <div class="tile-title">Tracking Dashboard</div>
+        <div class="tile-sub">Every KPI in one live board. Stop guessing.</div>
+      </div>
+    </div>
+    <div class="tile t-peach">
+      <div class="tile-art"></div>
+      <div>
+        <div class="tile-title">All Updates Forever</div>
+        <div class="tile-sub">New frameworks, new playbooks, new drops — always included.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Abundance.AI</div>
+      <div class="footer-tagline">© 2026 Abundance.AI · The Selling System for founders who want to scale.</div>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <div class="footer-col-title">Offers</div>
+        <a href="/selling-system">DFY Selling System</a>
+        <a href="/tribe">The Tribe</a>
+        <a href="/shift">The Shift</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="/about">About</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Legal</div>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
