@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abundance Tribe — Real Systems for Scaling Founders</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
+<style>
+  @font-face {
+    font-family: 'Neo Contact';
+    src: url('/assets/fonts/neo-contact/neo-contact-lt-pro.woff2') format('woff2');
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --bg: #0F0F0F;
+    --surface-1: #161616;
+    --surface-2: #1D1D1D;
+    --surface-3: #242424;
+    --cream: #F5F0E8;
+    --cream-warm: #F8F6EC;
+    --cream-body: #D5CFC4;
+    --cream-muted: #9C968C;
+    --border: rgba(245,240,232,0.08);
+    --border-strong: rgba(245,240,232,0.18);
+    --warm-grad: linear-gradient(135deg, #F5F0E8 0%, #F8C5A8 40%, #E8967E 75%, #C4715E 100%);
+    --radius: 20px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: "greycliff-cf", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 {
+    color: var(--cream);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-family: "greycliff-cf", sans-serif;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(15,15,15,0.78);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 40px;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .nav-brand {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--cream);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-brand::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
+    background: var(--warm-grad);
+  }
+  .nav-cta {
+    background: var(--cream);
+    color: var(--bg);
+    padding: 9px 22px;
+    border-radius: 20px;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--cream-warm); }
+
+  /* ─── BUTTONS ─── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--cream);
+    color: var(--bg);
+    padding: 14px 36px;
+    border-radius: 20px;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover {
+    background: var(--cream-warm);
+    transform: translateY(-1px);
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 80px 40px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    height: 700px;
+    background: radial-gradient(ellipse, rgba(232,150,126,0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+  .hero-tag {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 24px;
+  }
+  .hero-title {
+    font-size: clamp(40px, 5.8vw, 78px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 14px;
+  }
+  .hero-title .grad {
+    background-image: var(--warm-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-italic {
+    font-family: "greycliff-cf", sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(20px, 2vw, 26px);
+    color: var(--cream-body);
+    margin-bottom: 22px;
+  }
+  .hero-body {
+    color: var(--cream-body);
+    max-width: 540px;
+    margin: 0 auto 40px;
+    font-size: 15px;
+  }
+  .hero-body strong { color: var(--cream); font-weight: 600; }
+
+  /* ─── VIDEO CARD ─── */
+  .video-card {
+    max-width: 720px;
+    margin: 0 auto 28px;
+    background: linear-gradient(160deg, #241814, #0A0A0A 80%);
+    border-radius: var(--radius);
+    aspect-ratio: 16/9;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-strong);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .video-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 45%, rgba(232,150,126,0.22) 0%, transparent 55%);
+  }
+  .video-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    z-index: 2;
+  }
+  .video-play:hover { transform: translate(-50%, -50%) scale(1.06); }
+  .video-play svg { width: 22px; height: 22px; fill: var(--bg); margin-left: 3px; }
+  .video-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "greycliff-cf", sans-serif;
+    font-size: 13px;
+    color: var(--cream-body);
+    white-space: nowrap;
+    text-align: center;
+    z-index: 2;
+  }
+  .trust-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .trust-avatars {
+    display: flex;
+  }
+  .avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 2px solid var(--bg);
+    margin-left: -6px;
+  }
+  .avatar:first-child { margin-left: 0; }
+  .a1 { background: radial-gradient(circle at 30% 30%, #F472B6, #831843); }
+  .a2 { background: radial-gradient(circle at 70% 40%, #60A5FA, #1E40AF); }
+  .a3 { background: radial-gradient(circle at 50% 60%, #FBBF24, #B45309); }
+  .a4 { background: radial-gradient(circle at 40% 50%, #34D399, #065F46); }
+  .a5 { background: radial-gradient(circle at 60% 30%, #C084FC, #6B21A8); }
+  .a6 { background: radial-gradient(circle at 30% 70%, #FB923C, #9A3412); }
+  .trust-text {
+    font-family: "greycliff-cf", sans-serif;
+    font-size: 13px;
+    color: var(--cream-muted);
+  }
+  .trust-text strong { color: var(--cream); font-weight: 700; }
+
+  /* ─── SECTION FRAMES ─── */
+  .section {
+    padding: 120px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .section-eyebrow {
+    display: block;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-size: clamp(34px, 4.5vw, 52px);
+    line-height: 1.1;
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 56px;
+  }
+  .section-title .italic {
+    display: block;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--cream-body);
+    font-size: 0.72em;
+    margin-top: 8px;
+  }
+  .section-title em {
+    font-family: 'Neo Contact', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    display: inline;
+    background-image: var(--warm-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* ─── CASE STUDY GRID ─── */
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .case-card {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .case-video {
+    aspect-ratio: 16/10;
+    position: relative;
+    background: linear-gradient(160deg, #2A1E1A, #0A0A0A 80%);
+    overflow: hidden;
+  }
+  .case-video::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 55%, rgba(232,150,126,0.18) 0%, transparent 60%);
+  }
+  .case-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  .case-play svg { width: 18px; height: 18px; fill: var(--bg); margin-left: 2px; }
+  .case-person {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(15,15,15,0.7);
+    backdrop-filter: blur(10px);
+    padding: 6px 12px 6px 6px;
+    border-radius: 100px;
+    z-index: 2;
+  }
+  .case-person-pic {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+  }
+  .case-person-name {
+    font-family: "greycliff-cf", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--cream);
+  }
+  .case-person-role {
+    font-size: 10px;
+    color: var(--cream-muted);
+    letter-spacing: 0.04em;
+  }
+  .case-body {
+    padding: 24px 24px 28px;
+  }
+  .case-headline {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    margin-bottom: 4px;
+    background-image: var(--warm-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+  }
+  .case-sub {
+    font-size: 13px;
+    color: var(--cream-body);
+    margin-bottom: 20px;
+  }
+  .case-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .case-metric {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 16px;
+  }
+  .case-metric-label {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 4px;
+  }
+  .case-metric-value {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--cream);
+  }
+
+  /* ─── TESTIMONIAL STAT ROW ─── */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .stat-card {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .stat-card-num {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    background-image: var(--warm-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .stat-card-quote {
+    font-size: 13px;
+    color: var(--cream-body);
+    line-height: 1.55;
+    flex: 1;
+  }
+  .stat-card-attr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .stat-card-person {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .stat-card-name {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .stat-card-stars {
+    color: #F8C5A8;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  /* ─── CTA BAR ─── */
+  .cta-bar {
+    text-align: center;
+    padding: 64px 40px;
+  }
+
+  /* ─── HOW IT WORKS ─── */
+  .how {
+    padding: 120px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .how-intro {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 80px;
+    color: var(--cream-body);
+    font-size: 15px;
+  }
+  .how-step {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+    padding: 64px 0;
+    border-top: 1px solid var(--border);
+  }
+  .how-step:first-of-type { border-top: none; }
+  .how-step.reverse { grid-template-columns: 1.2fr 1fr; }
+  .how-step.reverse .how-step-text { order: 2; }
+  .how-step.reverse .how-step-visual { order: 1; }
+  .how-step-num {
+    display: inline-block;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: var(--cream-muted);
+    margin-bottom: 16px;
+  }
+  .how-step h3 {
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.15;
+    margin-bottom: 14px;
+    letter-spacing: -0.02em;
+  }
+  .how-step p {
+    color: var(--cream-body);
+    font-size: 15px;
+    max-width: 440px;
+  }
+  .how-step-visual {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    min-height: 280px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Visual blocks */
+  .viz-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+  .viz-row:last-child { border-bottom: none; }
+  .viz-label { color: var(--cream-muted); }
+  .viz-val { color: var(--cream); font-weight: 700; }
+  .viz-chip {
+    display: inline-block;
+    background: var(--surface-3);
+    border-radius: 100px;
+    padding: 4px 10px;
+    font-size: 11px;
+    color: var(--cream-body);
+    margin-right: 6px;
+    margin-bottom: 6px;
+  }
+  .viz-chip.hot { background: rgba(232,150,126,0.18); color: #F8C5A8; }
+  .viz-ring-big {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 8px auto;
+    background:
+      conic-gradient(from 0deg, #F8C5A8 0%, #E8967E 65%, var(--surface-3) 65%, var(--surface-3) 100%),
+      radial-gradient(circle, var(--surface-1) 60%, transparent 61%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .viz-ring-big .val {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    color: var(--cream);
+  }
+  .viz-ring-big .lbl {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--cream-muted);
+    text-transform: uppercase;
+  }
+  .viz-pipeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .viz-col {
+    background: var(--surface-2);
+    border-radius: 12px;
+    padding: 10px 8px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .viz-col-head {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 2px;
+  }
+  .viz-card-mini {
+    background: var(--surface-3);
+    border-radius: 8px;
+    padding: 6px 8px;
+    font-size: 10px;
+    color: var(--cream-body);
+  }
+  .viz-eco {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .viz-eco-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: var(--warm-grad);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    color: var(--bg);
+    font-size: 14px;
+  }
+  .viz-eco-node {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--surface-2);
+    border: 1px solid var(--border-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--cream-body);
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.1;
+  }
+  .viz-eco-node.n1 { top: 0; left: 50%; transform: translateX(-50%); }
+  .viz-eco-node.n2 { top: 35%; right: 0; }
+  .viz-eco-node.n3 { bottom: 0; left: 50%; transform: translateX(-50%); }
+  .viz-eco-node.n4 { top: 35%; left: 0; }
+  .viz-eco::before {
+    content: '';
+    position: absolute;
+    inset: 20px;
+    border-radius: 50%;
+    border: 1px dashed var(--border-strong);
+  }
+  .viz-stats-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .viz-stat {
+    background: var(--surface-2);
+    border-radius: 10px;
+    padding: 12px 8px;
+    text-align: center;
+  }
+  .viz-stat-val {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--cream);
+  }
+  .viz-stat-lbl {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-top: 2px;
+  }
+
+  /* ─── AGGREGATE STATS BAR ─── */
+  .agg-bar {
+    background: var(--surface-1);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 56px 40px;
+  }
+  .agg-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+  .agg-item { text-align: center; }
+  .agg-val {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 3.5vw, 40px);
+    letter-spacing: -0.02em;
+    background-image: var(--warm-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 4px;
+  }
+  .agg-lbl {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+  }
+
+  /* ─── FOUNDERS ─── */
+  .founders-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .founder-card {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .founder-photo {
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, #3A2A22, #1A0F0A);
+    position: relative;
+    overflow: hidden;
+  }
+  .founder-photo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 40% 30%, rgba(248,197,168,0.25) 0%, transparent 55%);
+  }
+  .founder-photo-label {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    font-family: "greycliff-cf", sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    padding: 4px 10px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 100px;
+    backdrop-filter: blur(6px);
+  }
+  .founder-body { padding: 28px; }
+  .founder-name {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .founder-role {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 16px;
+  }
+  .founder-bio {
+    color: var(--cream-body);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ─── ABOUT ─── */
+  .about {
+    padding: 120px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .about h2 {
+    font-size: clamp(34px, 4.5vw, 52px);
+    margin-bottom: 14px;
+    background-image: var(--warm-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+  .about-tagline {
+    font-family: "greycliff-cf", sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--cream-body);
+    font-size: 18px;
+    margin-bottom: 28px;
+  }
+  .about-body {
+    color: var(--cream-body);
+    font-size: 15px;
+    max-width: 640px;
+    margin: 0 auto 48px;
+  }
+  .about-photo {
+    aspect-ratio: 16/7;
+    background: linear-gradient(135deg, #2A1E1A 0%, #1A1211 50%, #0A0A0A 100%);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .about-photo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(248,197,168,0.15) 0%, transparent 55%);
+  }
+  .about-photo-label {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    font-family: "greycliff-cf", sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    padding: 4px 10px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 100px;
+    backdrop-filter: blur(6px);
+  }
+
+  /* ─── READY TO SCALE CTA ─── */
+  .ready {
+    padding: 120px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .ready-card {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 48px 40px;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .ready-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, #3A2A22, #1A0F0A);
+    position: relative;
+    overflow: hidden;
+  }
+  .ready-photo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 40% 30%, rgba(248,197,168,0.3) 0%, transparent 60%);
+  }
+  .ready-photo-label {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-family: "greycliff-cf", sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    padding: 3px 8px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 100px;
+  }
+  .ready-text h2 {
+    font-size: clamp(28px, 3.5vw, 40px);
+    margin-bottom: 10px;
+    line-height: 1.1;
+  }
+  .ready-text h2 em {
+    font-family: "greycliff-cf", sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    background-image: var(--warm-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .ready-text p {
+    color: var(--cream-body);
+    font-size: 14px;
+    margin-bottom: 20px;
+    max-width: 440px;
+  }
+
+  /* ─── FAQ ─── */
+  .faq {
+    padding: 120px 40px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .faq h2 {
+    font-size: clamp(34px, 4.5vw, 52px);
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .faq-item {
+    border-top: 1px solid var(--border);
+    padding: 20px 0;
+    cursor: pointer;
+  }
+  .faq-item:last-of-type { border-bottom: 1px solid var(--border); }
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--cream);
+  }
+  .faq-q::after {
+    content: '+';
+    color: var(--cream-muted);
+    font-size: 22px;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .faq-item.open .faq-q::after { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    color: var(--cream-body);
+    font-size: 14px;
+    line-height: 1.6;
+    transition: max-height 0.3s, padding 0.3s;
+  }
+  .faq-item.open .faq-a {
+    max-height: 400px;
+    padding-top: 14px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--surface-1);
+    border-top: 1px solid var(--border);
+    padding: 40px;
+    text-align: center;
+  }
+  .footer-brand {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--cream);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .footer-brand::before {
+    content: '';
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: var(--warm-grad);
+  }
+  footer p {
+    color: var(--cream-muted);
+    font-size: 12px;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .section, .how, .about, .ready, .faq { padding: 80px 20px; }
+    .hero { padding: 48px 20px 60px; }
+    .case-grid { grid-template-columns: 1fr; }
+    .stat-row { grid-template-columns: 1fr; }
+    .how-step, .how-step.reverse { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; }
+    .how-step.reverse .how-step-text { order: 1; }
+    .how-step.reverse .how-step-visual { order: 2; }
+    .agg-inner { grid-template-columns: repeat(2, 1fr); }
+    .founders-grid { grid-template-columns: 1fr; }
+    .ready-card { grid-template-columns: 1fr; text-align: center; }
+    .ready-photo { margin: 0 auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">Abundance Tribe</a>
+    <a href="#apply" class="nav-cta">Apply Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">For Founders Scaling Past $50K/mo</div>
+    <h1 class="hero-title">Real Systems, Real Founders.<br><span class="grad">Or You Don't Stay.</span></h1>
+    <p class="hero-italic">Done-With-You</p>
+    <p class="hero-body">We install the <strong>Abundance Selling System</strong> — frameworks, live audits, and a tribe of real operators. Result: a business that compounds without depending on you doing everything.</p>
+
+    <div class="video-card">
+      <div class="video-play">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <div class="video-caption">clarity, real systems, and a tribe that actually builds</div>
+    </div>
+
+    <a href="#apply" class="btn-primary">Apply Now →</a>
+
+    <div class="trust-row">
+      <div class="trust-avatars">
+        <div class="avatar a1"></div>
+        <div class="avatar a2"></div>
+        <div class="avatar a3"></div>
+        <div class="avatar a4"></div>
+      </div>
+      <div class="trust-text">Trusted by <strong>247+</strong> founders</div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="section">
+  <span class="section-eyebrow">Member Results</span>
+  <h2 class="section-title">Founders We've Built <em>With.</em></h2>
+
+  <div class="case-grid">
+    <div class="case-card">
+      <div class="case-video">
+        <div class="case-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="case-person">
+          <div class="case-person-pic a1"></div>
+          <div>
+            <div class="case-person-name">Eric Rice</div>
+            <div class="case-person-role">B2B Dental Supply</div>
+          </div>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-headline">$10K/mo → $70K/mo</div>
+        <p class="case-sub">Cracked the offer, rebuilt the funnel, ran a proper audit cycle. 7× top-line in a single quarter.</p>
+        <div class="case-metrics">
+          <div class="case-metric">
+            <div class="case-metric-label">Close Rate</div>
+            <div class="case-metric-value">43%</div>
+          </div>
+          <div class="case-metric">
+            <div class="case-metric-label">Days to Result</div>
+            <div class="case-metric-value">120</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-video">
+        <div class="case-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="case-person">
+          <div class="case-person-pic a2"></div>
+          <div>
+            <div class="case-person-name">Charline M.</div>
+            <div class="case-person-role">B2B Agency Owner</div>
+          </div>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-headline">$29K/mo → $72K/mo</div>
+        <p class="case-sub">Eliminated the manual grind, automated the sales pipeline, delegated client ops. Owner hours halved.</p>
+        <div class="case-metrics">
+          <div class="case-metric">
+            <div class="case-metric-label">Close Rate</div>
+            <div class="case-metric-value">36%</div>
+          </div>
+          <div class="case-metric">
+            <div class="case-metric-label">Days to Result</div>
+            <div class="case-metric-value">90</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-video">
+        <div class="case-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="case-person">
+          <div class="case-person-pic a3"></div>
+          <div>
+            <div class="case-person-name">Mathew K.</div>
+            <div class="case-person-role">B2B Agency Owner</div>
+          </div>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-headline">$7K/mo → $20K in 4 Days</div>
+        <p class="case-sub">New offer, new angle, one launch window. Revenue multiplier landed inside the first month.</p>
+        <div class="case-metrics">
+          <div class="case-metric">
+            <div class="case-metric-label">Launch Revenue</div>
+            <div class="case-metric-value">$20K</div>
+          </div>
+          <div class="case-metric">
+            <div class="case-metric-label">Days to Result</div>
+            <div class="case-metric-value">4</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-video">
+        <div class="case-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="case-person">
+          <div class="case-person-pic a4"></div>
+          <div>
+            <div class="case-person-name">Dominic G.</div>
+            <div class="case-person-role">B2B Service Provider</div>
+          </div>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-headline">Close Rate 40% → 60%</div>
+        <p class="case-sub">Rewrote the sales script, retooled the discovery call, installed a proper follow-up cadence. Same leads, way better close.</p>
+        <div class="case-metrics">
+          <div class="case-metric">
+            <div class="case-metric-label">Avg Deal Size</div>
+            <div class="case-metric-value">$24K</div>
+          </div>
+          <div class="case-metric">
+            <div class="case-metric-label">Days to Result</div>
+            <div class="case-metric-value">63</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL STAT ROW -->
+<section class="section" style="padding-top: 0;">
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-card-num">$88K</div>
+      <p class="stat-card-quote">"Helped The Magic Strands disrupt the AI market with the Abundance Selling System — rebuilt the offer and the creative top to bottom, drove $88K qualified pipeline in a week."</p>
+      <div class="stat-card-attr">
+        <div class="stat-card-person">
+          <div class="avatar a5"></div>
+          <div class="stat-card-name">Mathew</div>
+        </div>
+        <div class="stat-card-stars">★★★★★</div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-card-num">$70K</div>
+      <p class="stat-card-quote">"Looking at the numbers, we did $70K in the last 40 days, which is a good bounce. I'm honest off and just let the team sprint."</p>
+      <div class="stat-card-attr">
+        <div class="stat-card-person">
+          <div class="avatar a1"></div>
+          <div class="stat-card-name">Eric Rice</div>
+        </div>
+        <div class="stat-card-stars">★★★★★</div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-card-num">11.9×</div>
+      <p class="stat-card-quote">"Abundance Tribe — we were relying purely on referrals to grow. Plus the repeat work. In three months we flipped from reactive to a proper outbound-inbound blend generated constructive."</p>
+      <div class="stat-card-attr">
+        <div class="stat-card-person">
+          <div class="avatar a2"></div>
+          <div class="stat-card-name">Charline</div>
+        </div>
+        <div class="stat-card-stars">★★★★★</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-bar">
+    <a href="#apply" class="btn-primary">Apply Now →</a>
+    <div class="trust-row" style="margin-top: 20px;">
+      <div class="trust-avatars">
+        <div class="avatar a3"></div>
+        <div class="avatar a4"></div>
+        <div class="avatar a5"></div>
+        <div class="avatar a6"></div>
+      </div>
+      <div class="trust-text">Trusted by <strong>247+</strong> founders</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <span class="section-eyebrow">How It Works</span>
+  <h2 class="section-title">A Real System. <em>Not Another Course.</em><span class="italic">All Done-With-You.</span></h2>
+
+  <p class="how-intro">We install the Abundance Selling System piece by piece — your frameworks, your automations, your pipeline, your tracking. You keep what we build. Every step below, in the order that compounds.</p>
+
+  <!-- Step 01 -->
+  <div class="how-step">
+    <div class="how-step-text">
+      <div class="how-step-num">01</div>
+      <h3>Clarity Audit &amp; System Mapping</h3>
+      <p>We map your current selling system — offers, funnels, pipeline, delivery — and identify where revenue is actually leaking. Before we build a single thing.</p>
+    </div>
+    <div class="how-step-visual">
+      <div class="viz-row"><span class="viz-label">Current Offers</span><span class="viz-val">3</span></div>
+      <div class="viz-row"><span class="viz-label">Active Funnels</span><span class="viz-val">2</span></div>
+      <div class="viz-row"><span class="viz-label">Leakage (monthly)</span><span class="viz-val" style="color:#F8C5A8;">~$18K</span></div>
+      <div class="viz-row"><span class="viz-label">Fix Priority</span><span class="viz-val">Offer &rarr; Funnel</span></div>
+      <div style="margin-top: 20px;">
+        <span class="viz-chip hot">Hot lead leak</span>
+        <span class="viz-chip">Missing follow-up</span>
+        <span class="viz-chip">Pricing drift</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 02 -->
+  <div class="how-step reverse">
+    <div class="how-step-text">
+      <div class="how-step-num">02</div>
+      <h3>Frameworks, Playbooks &amp; Offer Rebuild</h3>
+      <p>Every Selling System framework delivered — the offer, the script, the funnel, the follow-up cadence. Every playbook is plug-and-go.</p>
+    </div>
+    <div class="how-step-visual">
+      <div class="viz-ring-big">
+        <span class="val">72%</span>
+        <span class="lbl">System Install</span>
+      </div>
+      <div style="display:flex; gap: 8px; margin-top: 10px;">
+        <div class="viz-chip">Offer v2</div>
+        <div class="viz-chip">Funnel OS</div>
+        <div class="viz-chip">Script Rebuild</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 03 -->
+  <div class="how-step">
+    <div class="how-step-text">
+      <div class="how-step-num">03</div>
+      <h3>Sales CRM &amp; Pipeline Optimisation</h3>
+      <p>We build and tune your CRM pipeline, automate the follow-up, and make sure every lead gets worked — not dropped.</p>
+    </div>
+    <div class="how-step-visual">
+      <div class="viz-pipeline">
+        <div class="viz-col">
+          <div class="viz-col-head">New</div>
+          <div class="viz-card-mini">Lead · 8</div>
+          <div class="viz-card-mini">Lead · 4</div>
+          <div class="viz-card-mini">Lead · 2</div>
+        </div>
+        <div class="viz-col">
+          <div class="viz-col-head">Qualified</div>
+          <div class="viz-card-mini">Call · 6</div>
+          <div class="viz-card-mini">Call · 3</div>
+        </div>
+        <div class="viz-col">
+          <div class="viz-col-head">Proposal</div>
+          <div class="viz-card-mini">$24K</div>
+          <div class="viz-card-mini">$18K</div>
+        </div>
+        <div class="viz-col" style="background: linear-gradient(180deg, rgba(232,150,126,0.18), var(--surface-2));">
+          <div class="viz-col-head" style="color:#F8C5A8;">Closed</div>
+          <div class="viz-card-mini">$32K</div>
+          <div class="viz-card-mini">$21K</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 04 -->
+  <div class="how-step reverse">
+    <div class="how-step-text">
+      <div class="how-step-num">04</div>
+      <h3>Re-Engagement Ecosystem</h3>
+      <p>Prospects who ghost don't disappear — they get re-engaged through a proper ecosystem of content, nurture, and warm re-entry.</p>
+    </div>
+    <div class="how-step-visual">
+      <div class="viz-eco">
+        <div class="viz-eco-center">T</div>
+        <div class="viz-eco-node n1">Cold<br>Email</div>
+        <div class="viz-eco-node n2">Content</div>
+        <div class="viz-eco-node n3">Retarget<br>Ads</div>
+        <div class="viz-eco-node n4">DM<br>Flow</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 05 -->
+  <div class="how-step">
+    <div class="how-step-text">
+      <div class="how-step-num">05</div>
+      <h3>Centralised Data Tracking</h3>
+      <p>CPL, cost-per-booking, show rate, close rate, and revenue — all unified in one dashboard. Every decision backed by live data.</p>
+    </div>
+    <div class="how-step-visual">
+      <div class="viz-stats-row">
+        <div class="viz-stat"><div class="viz-stat-val">$18</div><div class="viz-stat-lbl">CPL</div></div>
+        <div class="viz-stat"><div class="viz-stat-val">$1.43</div><div class="viz-stat-lbl">CPC</div></div>
+        <div class="viz-stat"><div class="viz-stat-val">76%</div><div class="viz-stat-lbl">Show</div></div>
+        <div class="viz-stat"><div class="viz-stat-val">38%</div><div class="viz-stat-lbl">Close</div></div>
+        <div class="viz-stat"><div class="viz-stat-val">$127K</div><div class="viz-stat-lbl">Rev</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-bar" style="padding: 48px 0 0;">
+    <a href="#apply" class="btn-primary">Apply Now →</a>
+    <div class="trust-row" style="margin-top: 20px;">
+      <div class="trust-avatars">
+        <div class="avatar a1"></div>
+        <div class="avatar a2"></div>
+        <div class="avatar a3"></div>
+        <div class="avatar a4"></div>
+      </div>
+      <div class="trust-text">Trusted by <strong>247+</strong> founders</div>
+    </div>
+  </div>
+</section>
+
+<!-- AGGREGATE STATS BAR -->
+<div class="agg-bar">
+  <div class="agg-inner">
+    <div class="agg-item">
+      <div class="agg-val">247+</div>
+      <div class="agg-lbl">Founders Inside</div>
+    </div>
+    <div class="agg-item">
+      <div class="agg-val">$40M+</div>
+      <div class="agg-lbl">Tracked Revenue</div>
+    </div>
+    <div class="agg-item">
+      <div class="agg-val">9.8</div>
+      <div class="agg-lbl">Member Rating</div>
+    </div>
+    <div class="agg-item">
+      <div class="agg-val">27d</div>
+      <div class="agg-lbl">Avg First Win</div>
+    </div>
+    <div class="agg-item">
+      <div class="agg-val">3×</div>
+      <div class="agg-lbl">Avg MRR Lift</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOUNDERS -->
+<section class="section">
+  <span class="section-eyebrow">Leadership</span>
+  <h2 class="section-title"><em>Founders</em></h2>
+
+  <div class="founders-grid">
+    <div class="founder-card">
+      <div class="founder-photo">
+        <div class="founder-photo-label">Ryan Frost</div>
+      </div>
+      <div class="founder-body">
+        <div class="founder-name">Ryan Frost</div>
+        <div class="founder-role">Founder, Abundance.AI</div>
+        <p class="founder-bio">Ten years building and scaling offers for founders from $0 to $40K/mo in under 30 days. Obsessed with the system behind the outcome. Ryan runs the live audits and framework drops inside the Tribe.</p>
+      </div>
+    </div>
+
+    <div class="founder-card">
+      <div class="founder-photo">
+        <div class="founder-photo-label">Partner</div>
+      </div>
+      <div class="founder-body">
+        <div class="founder-name">Nathan Hastings</div>
+        <div class="founder-role">Head of Systems</div>
+        <p class="founder-bio">Ten years in B2B pipeline and CRM ops. Nathan builds every sales system inside the Tribe — from the first discovery script to the final retention loop. No theory, only frameworks that have shipped.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-bar" style="padding: 48px 0 0;">
+    <a href="#apply" class="btn-primary">Apply Now →</a>
+    <div class="trust-row" style="margin-top: 20px;">
+      <div class="trust-avatars">
+        <div class="avatar a5"></div>
+        <div class="avatar a6"></div>
+        <div class="avatar a1"></div>
+        <div class="avatar a2"></div>
+      </div>
+      <div class="trust-text">Trusted by <strong>247+</strong> founders</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <span class="section-eyebrow">About</span>
+  <h2>Abundance.AI</h2>
+  <p class="about-tagline">Real systems for founders who want to scale.</p>
+  <p class="about-body">Abundance.AI is a done-with-you partner for founders scaling past $50K/mo. Founded in 2022, we've installed the Selling System across 247+ businesses and tracked $40M+ in direct member revenue. Every framework is shipped — not taught. Every audit is live — not async. Every system we build compounds.</p>
+  <div class="about-photo">
+    <div class="about-photo-label">Tribe HQ · London</div>
+  </div>
+</section>
+
+<!-- READY TO SCALE -->
+<section class="ready" id="apply">
+  <div class="ready-card">
+    <div class="ready-photo">
+      <div class="ready-photo-label">Ryan Frost</div>
+    </div>
+    <div class="ready-text">
+      <h2>Ready To <em>Scale?</em></h2>
+      <p>Book a free strategy call and we'll audit your current marketing, show you exactly where you're leaking revenue on the table, and map out how you'd build your premium system — add, funnel, CRM, and retargeting — all done for you.</p>
+      <a href="#" class="btn-primary">Apply Now →</a>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="section" style="padding-top: 40px;">
+  <div style="max-width: 720px; margin: 0 auto; text-align: center;">
+    <p style="font-family: 'greycliff-cf', sans-serif; font-style: italic; font-size: 18px; color: var(--cream-body); line-height: 1.6; margin-bottom: 24px;">
+      "Most competitors use cheat code, creatives, and sales pitches as shallow gimmicks. We take pitch them the extra mile to systems — actually building ones for them. We don't run campaigns; we build pipelines that keep running. Based on AI-driven offers, refined conversion, relentless measuring. Nothing on this page is built in a vacuum or the theoretical or business outdoor. Everything is shipped."
+    </p>
+    <div class="trust-row" style="justify-content: center;">
+      <div class="trust-avatars">
+        <div class="avatar a4"></div>
+      </div>
+      <div class="trust-text"><strong>Ryan Frost</strong> · Founder, Abundance.AI</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <span class="section-eyebrow">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Who is this for?</div>
+    <div class="faq-a">Founders scaling past $50K/mo who want to install a real selling system, not just consume another course. You already have an offer and some revenue — we compound it.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How long does it take to get live?</div>
+    <div class="faq-a">Most members see their first real revenue lift inside 27 days. Full system install (offer, funnel, CRM, tracking) completes in 60–90 days.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How quickly can I see results?</div>
+    <div class="faq-a">Depends on where you're starting. Founders with an existing offer and traffic typically see wins in the first 2–4 weeks. Earlier-stage founders should expect 60 days.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">What makes this different from a traditional agency?</div>
+    <div class="faq-a">Agencies run campaigns and bill you monthly forever. We install a system you own, audit it live, and move on. The Tribe keeps you accountable — you don't stay dependent on us.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Is there a minimum contract?</div>
+    <div class="faq-a">No. Cancel anytime. If you don't see clarity and compounding results, you don't stay — that's the guarantee.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Is this done-for-you or done-with-you?</div>
+    <div class="faq-a">Done-with-you. We build the frameworks, run the audits, and install the system — but you stay in the driver's seat so you own the outcome and can replicate it.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Abundance Tribe</div>
+  <p>© 2026 Abundance.AI · Real systems for founders who want to scale.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => item.classList.toggle('open'));
+  });
+</script>
+
+</body>
+</html>
