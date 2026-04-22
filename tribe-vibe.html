@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abundance Tribe — Meet Your System</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
+<style>
+  @font-face {
+    font-family: 'Neo Contact';
+    src: url('/assets/fonts/neo-contact/neo-contact-lt-pro.woff2') format('woff2');
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --bg: #0F0F0F;
+    --surface-1: #161616;
+    --surface-2: #1D1D1D;
+    --surface-3: #242424;
+    --cream: #F5F0E8;
+    --cream-warm: #F8F6EC;
+    --cream-body: #D5CFC4;
+    --cream-muted: #9C968C;
+    --border: rgba(245,240,232,0.08);
+    --border-strong: rgba(245,240,232,0.18);
+    --warm-grad: linear-gradient(135deg, #F5F0E8 0%, #F8C5A8 40%, #E8967E 75%, #C4715E 100%);
+    --radius: 20px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: "greycliff-cf", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    color: var(--cream);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-family: "greycliff-cf", sans-serif;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(15,15,15,0.78);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 40px;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .nav-left { display: flex; align-items: center; gap: 36px; }
+  .nav-brand {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-brand::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
+    background: var(--warm-grad);
+  }
+  .nav-links {
+    display: flex;
+    gap: 24px;
+  }
+  .nav-links a {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--cream-body);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--cream); }
+  .nav-cta {
+    background: var(--cream);
+    color: var(--bg);
+    padding: 9px 20px;
+    border-radius: 20px;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--cream-warm); }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 80px 40px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 600px;
+    background: radial-gradient(ellipse, rgba(232,150,126,0.18) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface-1);
+    border: 1px solid var(--border-strong);
+    border-radius: 100px;
+    padding: 6px 14px 6px 8px;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--cream-body);
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-badge-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--warm-grad);
+  }
+  .hero-title {
+    font-size: clamp(64px, 11vw, 160px);
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 2;
+    background-image: var(--warm-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-phone-wrap {
+    position: relative;
+    margin: -120px auto 0;
+    max-width: 320px;
+    z-index: 3;
+  }
+  .phone {
+    width: 100%;
+    aspect-ratio: 9/19;
+    background: linear-gradient(160deg, #2A2A2A, #0A0A0A);
+    border-radius: 44px;
+    padding: 14px;
+    border: 1px solid rgba(245,240,232,0.12);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04) inset;
+    position: relative;
+  }
+  .phone::before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 28px;
+    background: #000;
+    border-radius: 20px;
+    z-index: 3;
+  }
+  .phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #0A0A0A;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 56px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .phone-card {
+    background: var(--surface-2);
+    border-radius: 18px;
+    padding: 18px;
+    border: 1px solid var(--border);
+  }
+  .phone-card-label {
+    font-size: 10px;
+    color: var(--cream-muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .phone-card-val {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--cream);
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .phone-ring {
+    width: 110px;
+    height: 110px;
+    margin: 10px auto;
+    border-radius: 50%;
+    background:
+      conic-gradient(from 0deg, #F8C5A8 0%, #E8967E 60%, transparent 80%, transparent 100%),
+      radial-gradient(circle, var(--surface-2) 55%, transparent 56%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .phone-ring::before {
+    content: '80%';
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--cream);
+  }
+  .phone-pills {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .phone-pill {
+    flex: 1;
+    min-width: 60px;
+    background: var(--surface-3);
+    border-radius: 12px;
+    padding: 8px;
+    text-align: center;
+  }
+  .phone-pill-val {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--cream);
+  }
+  .phone-pill-lbl {
+    font-size: 8px;
+    color: var(--cream-muted);
+    letter-spacing: 0.06em;
+  }
+  .phone-avatars {
+    display: flex;
+    margin-top: 8px;
+  }
+  .phone-avatar {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--surface-2);
+    margin-left: -6px;
+  }
+  .phone-avatar:first-child { margin-left: 0; }
+  .phone-avatar.a1 { background: radial-gradient(circle, #F472B6, #831843); }
+  .phone-avatar.a2 { background: radial-gradient(circle, #60A5FA, #1E40AF); }
+  .phone-avatar.a3 { background: radial-gradient(circle, #34D399, #065F46); }
+  .phone-avatar.a4 { background: radial-gradient(circle, #FBBF24, #B45309); }
+
+  /* ─── EMAIL CAPTURE ─── */
+  .capture {
+    padding: 80px 40px 48px;
+    text-align: center;
+    position: relative;
+    z-index: 4;
+  }
+  .capture p {
+    max-width: 520px;
+    margin: 0 auto 24px;
+    color: var(--cream-body);
+    font-size: 15px;
+  }
+  .capture-form {
+    display: inline-flex;
+    gap: 8px;
+    background: var(--surface-1);
+    border: 1px solid var(--border-strong);
+    border-radius: 100px;
+    padding: 6px 6px 6px 18px;
+    align-items: center;
+    max-width: 440px;
+    width: 100%;
+  }
+  .capture-form input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--cream);
+    font-family: "greycliff-cf", sans-serif;
+    font-size: 14px;
+    padding: 10px 4px;
+    min-width: 0;
+  }
+  .capture-form input::placeholder { color: var(--cream-muted); }
+  .capture-form button {
+    background: var(--cream);
+    color: var(--bg);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .capture-form button:hover { background: var(--cream-warm); }
+
+  /* ─── TRUST BAR ─── */
+  .trust-bar {
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-top: 40px;
+  }
+  .trust-label {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 20px;
+  }
+  .trust-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    opacity: 0.6;
+  }
+  .trust-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    background: var(--cream-muted);
+    opacity: 0.5;
+  }
+  .trust-icon:nth-child(2) { mask: radial-gradient(circle, black 40%, transparent 42%); -webkit-mask: radial-gradient(circle, black 40%, transparent 42%); }
+  .trust-icon:nth-child(3) { border-radius: 50%; }
+  .trust-icon:nth-child(4) { transform: rotate(45deg); }
+  .trust-icon:nth-child(5) { clip-path: polygon(50% 0, 100% 100%, 0 100%); border-radius: 0; }
+
+  /* ─── SECTION HEADINGS ─── */
+  .section { padding: 120px 40px; max-width: 1200px; margin: 0 auto; }
+  .section-title {
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 64px;
+  }
+  .section-title em {
+    font-family: 'Neo Contact', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    display: block;
+    font-size: 1.15em;
+    line-height: 1;
+    margin-top: 0.1em;
+    background-image: var(--warm-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* ─── 3-COL FEATURE GRID ─── */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .feature-card {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .feature-card-step {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 12px;
+  }
+  .feature-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  .feature-card p {
+    color: var(--cream-body);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .feature-visual {
+    margin-top: 20px;
+    background: var(--surface-2);
+    border-radius: 14px;
+    padding: 16px;
+    border: 1px solid var(--border);
+  }
+  .fv-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+  }
+  .fv-row:last-child { border-bottom: none; }
+  .fv-row-label { color: var(--cream-muted); }
+  .fv-row-val { color: var(--cream); font-weight: 600; }
+  .fv-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    height: 80px;
+    padding-top: 8px;
+  }
+  .fv-bar {
+    flex: 1;
+    background: var(--warm-grad);
+    border-radius: 4px 4px 0 0;
+    opacity: 0.9;
+  }
+  .fv-bar:nth-child(1) { height: 40%; }
+  .fv-bar:nth-child(2) { height: 70%; }
+  .fv-bar:nth-child(3) { height: 55%; }
+  .fv-bar:nth-child(4) { height: 90%; }
+  .fv-bar:nth-child(5) { height: 65%; }
+
+  .feature-wide {
+    grid-column: span 2;
+  }
+  .fv-chart {
+    position: relative;
+    height: 120px;
+    margin-top: 16px;
+  }
+  .fv-chart svg { width: 100%; height: 100%; }
+  .fv-chart-line {
+    fill: none;
+    stroke: url(#chartGrad);
+    stroke-width: 2.5;
+  }
+  .fv-chart-fill {
+    fill: url(#chartFill);
+    opacity: 0.3;
+  }
+
+  /* ─── INTEGRATION SECTION ─── */
+  .integration {
+    background: var(--surface-1);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 120px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .integration-title {
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05;
+    max-width: 720px;
+    margin: 0 auto 16px;
+  }
+  .integration-sub {
+    color: var(--cream-body);
+    max-width: 520px;
+    margin: 0 auto 64px;
+    font-size: 15px;
+  }
+  .integration-stage {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .int-phone {
+    width: 160px;
+    height: 320px;
+    background: linear-gradient(160deg, #2A2A2A, #0A0A0A);
+    border-radius: 32px;
+    padding: 10px;
+    border: 1px solid rgba(245,240,232,0.12);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 2;
+  }
+  .int-phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #0A0A0A;
+    border-radius: 22px;
+    padding: 40px 12px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .int-icon {
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    color: white;
+    font-size: 24px;
+  }
+  .int-icon.i1 { top: 30px; left: 8%; background: linear-gradient(135deg, #F472B6, #EC4899); transform: rotate(-8deg); }
+  .int-icon.i2 { top: 60px; left: 26%; background: linear-gradient(135deg, #DC2626, #991B1B); transform: rotate(4deg); }
+  .int-icon.i3 { top: 140px; left: 3%; background: linear-gradient(135deg, #F5F0E8, #D5CFC4); color: #141414; transform: rotate(-4deg); }
+  .int-icon.i4 { top: 30px; right: 8%; background: linear-gradient(135deg, #A78BFA, #6D28D9); transform: rotate(8deg); }
+  .int-icon.i5 { top: 60px; right: 26%; background: linear-gradient(135deg, #FB923C, #EA580C); transform: rotate(-4deg); }
+  .int-icon.i6 { top: 140px; right: 3%; background: linear-gradient(135deg, #34D399, #059669); transform: rotate(4deg); }
+  .int-icon.i7 { bottom: 20px; left: 15%; background: linear-gradient(135deg, #60A5FA, #2563EB); transform: rotate(6deg); }
+  .int-icon.i8 { bottom: 20px; right: 15%; background: linear-gradient(135deg, #FBBF24, #D97706); transform: rotate(-6deg); }
+  .integration-footnote {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    color: var(--cream);
+    margin-top: 48px;
+    font-size: 15px;
+  }
+  .integration-footnote span { color: var(--cream-muted); font-weight: 500; font-size: 14px; display: block; margin-top: 6px; }
+
+  /* ─── STATS COLUMN ─── */
+  .stats {
+    padding: 120px 40px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .stat-block {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    padding: 48px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .stat-block:last-child { border-bottom: none; }
+  .stat-num {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: clamp(64px, 9vw, 120px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    background-image: var(--warm-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+  }
+  .stat-body h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .stat-body p {
+    color: var(--cream-body);
+    font-size: 15px;
+    max-width: 420px;
+  }
+
+  /* ─── DOWNLOAD CTA ─── */
+  .download {
+    text-align: center;
+    padding: 120px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .download::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(232,150,126,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .download h2 {
+    font-size: clamp(44px, 6vw, 76px);
+    line-height: 1;
+    margin-bottom: 16px;
+    background-image: var(--warm-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+  .download p {
+    color: var(--cream-body);
+    max-width: 480px;
+    margin: 0 auto 40px;
+    font-size: 15px;
+  }
+  .download-btns {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+  .dl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--surface-1);
+    border: 1px solid var(--border-strong);
+    border-radius: 20px;
+    padding: 14px 24px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .dl-btn:hover {
+    border-color: var(--cream-muted);
+    transform: translateY(-1px);
+  }
+  .dl-btn-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: var(--warm-grad);
+    flex-shrink: 0;
+  }
+  .dl-btn-text {
+    text-align: left;
+    font-family: "greycliff-cf", sans-serif;
+  }
+  .dl-btn-small {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+  }
+  .dl-btn-big {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--cream);
+  }
+
+  /* ─── PHONE SEQUENCE ─── */
+  .phone-seq {
+    padding: 40px 40px 120px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .phone-seq .phone-wrap {
+    width: 220px;
+    display: flex;
+    justify-content: center;
+  }
+  .phone-seq .phone {
+    transform: translateY(0);
+    transition: transform 0.4s;
+  }
+  .phone-seq .phone-wrap:nth-child(2) .phone { transform: translateY(-30px); }
+  .phone-seq .phone-wrap:nth-child(3) .phone { transform: translateY(-10px); }
+  .phone-seq .phone-wrap .hand-shadow {
+    width: 220px;
+    height: 120px;
+    background: radial-gradient(ellipse at top, rgba(0,0,0,0.6) 0%, transparent 70%);
+    margin-top: -30px;
+    border-radius: 50%;
+  }
+
+  /* ─── FEATURE TILES (bottom grid) ─── */
+  .tile-section {
+    padding: 120px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .tile-section-title {
+    text-align: center;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05;
+    max-width: 640px;
+    margin: 0 auto 16px;
+  }
+  .tile-section-sub {
+    text-align: center;
+    color: var(--cream-body);
+    max-width: 520px;
+    margin: 0 auto 56px;
+    font-size: 15px;
+  }
+  .tile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+  .tile-grid-row-2 {
+    margin-top: 16px;
+  }
+  .tile {
+    border-radius: var(--radius);
+    padding: 28px;
+    min-height: 240px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--border);
+  }
+  .tile-title {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+  .tile-sub {
+    font-size: 13px;
+    color: var(--cream-body);
+    line-height: 1.5;
+  }
+  .tile-art {
+    flex: 1;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    min-height: 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .tile-coral { background: var(--surface-1); }
+  .tile-coral .tile-art { background: radial-gradient(ellipse at 30% 30%, #FB7185 0%, #BE123C 45%, #3F1020 100%); }
+  .tile-violet { background: var(--surface-1); }
+  .tile-violet .tile-art { background: radial-gradient(ellipse at 70% 30%, #A78BFA 0%, #6D28D9 45%, #1E1540 100%); }
+  .tile-sky { background: var(--surface-1); }
+  .tile-sky .tile-art { background: radial-gradient(ellipse at 40% 60%, #38BDF8 0%, #1D4ED8 50%, #0B1E4D 100%); }
+  .tile-lime { background: var(--surface-1); }
+  .tile-lime .tile-art { background: radial-gradient(ellipse at 50% 70%, #BEF264 0%, #16A34A 45%, #052E14 100%); }
+  .tile-amber { background: var(--surface-1); }
+  .tile-amber .tile-art { background: radial-gradient(ellipse at 40% 40%, #FBBF24 0%, #B45309 45%, #3D1D04 100%); }
+  .tile-cream { background: var(--surface-1); }
+  .tile-cream .tile-art { background: var(--warm-grad); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--surface-1);
+    border-top: 1px solid var(--border);
+    padding: 56px 40px;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  .footer-brand {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .footer-brand::before {
+    content: '';
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    background: var(--warm-grad);
+  }
+  .footer-tagline {
+    color: var(--cream-muted);
+    font-size: 13px;
+  }
+  .footer-cols { display: flex; gap: 48px; flex-wrap: wrap; }
+  .footer-col-title {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 14px;
+  }
+  .footer-col a {
+    display: block;
+    color: var(--cream-body);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 4px 0;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--cream); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hero { padding: 48px 20px 0; }
+    .capture { padding: 60px 20px 32px; }
+    .section { padding: 80px 20px; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .feature-wide { grid-column: span 1; }
+    .integration { padding: 80px 20px; }
+    .integration-stage { height: 420px; }
+    .stats { padding: 80px 20px; }
+    .stat-block { grid-template-columns: 1fr; gap: 16px; padding: 32px 0; }
+    .download { padding: 80px 20px; }
+    .tile-section { padding: 80px 20px; }
+    .tile-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="#" class="nav-brand">Tribe</a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#blog">Blog</a>
+      </div>
+    </div>
+    <a href="#" class="nav-cta">Sign up</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">
+    <span class="hero-badge-dot"></span>
+    A system for scaling founders
+  </div>
+
+  <h1 class="hero-title">Meet Tribe+</h1>
+
+  <div class="hero-phone-wrap">
+    <div class="phone">
+      <div class="phone-screen">
+        <div class="phone-card">
+          <div class="phone-card-label">MONTHLY REVENUE</div>
+          <div class="phone-card-val">$42,580</div>
+          <div class="phone-ring"></div>
+        </div>
+        <div class="phone-pills">
+          <div class="phone-pill">
+            <div class="phone-pill-val">+18%</div>
+            <div class="phone-pill-lbl">MoM</div>
+          </div>
+          <div class="phone-pill">
+            <div class="phone-pill-val">27</div>
+            <div class="phone-pill-lbl">Days</div>
+          </div>
+          <div class="phone-pill">
+            <div class="phone-pill-val">3.2×</div>
+            <div class="phone-pill-lbl">ROI</div>
+          </div>
+        </div>
+        <div class="phone-card" style="padding: 12px;">
+          <div class="phone-card-label">TRIBE INSIDE</div>
+          <div class="phone-avatars">
+            <div class="phone-avatar a1"></div>
+            <div class="phone-avatar a2"></div>
+            <div class="phone-avatar a3"></div>
+            <div class="phone-avatar a4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL CAPTURE -->
+<section class="capture">
+  <p>Effortlessly build, track, and scale your business with the Tribe. Clear systems, proven frameworks, and founders who get it.</p>
+  <form class="capture-form" onsubmit="event.preventDefault()">
+    <input type="email" placeholder="Enter your email">
+    <button type="submit">Start Free Trial</button>
+  </form>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-label">Trusted by founders already scaling</div>
+  <div class="trust-icons">
+    <div class="trust-icon"></div>
+    <div class="trust-icon"></div>
+    <div class="trust-icon"></div>
+    <div class="trust-icon"></div>
+    <div class="trust-icon"></div>
+  </div>
+</div>
+
+<!-- FEATURE GRID -->
+<section class="section" id="features">
+  <h2 class="section-title">Experience your business <em>as you build it.</em></h2>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div>
+        <div class="feature-card-step">Step 1</div>
+        <h3>Frameworks on tap</h3>
+        <p>Every Selling System framework, template, and playbook. Use what you need, skip what you don't.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="fv-row"><span class="fv-row-label">Offers</span><span class="fv-row-val">12</span></div>
+        <div class="fv-row"><span class="fv-row-label">Funnels</span><span class="fv-row-val">08</span></div>
+        <div class="fv-row"><span class="fv-row-label">Playbooks</span><span class="fv-row-val">24</span></div>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div>
+        <div class="feature-card-step">Step 2</div>
+        <h3>Audit your numbers</h3>
+        <p>Monthly audits with Ryan and the team. Your business under the microscope, on a live call.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="fv-bars">
+          <div class="fv-bar"></div>
+          <div class="fv-bar"></div>
+          <div class="fv-bar"></div>
+          <div class="fv-bar"></div>
+          <div class="fv-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div>
+        <div class="feature-card-step">Step 3</div>
+        <h3>Tribe you can trust</h3>
+        <p>Private community of founders building real systems — not another Slack full of guru noise.</p>
+      </div>
+      <div class="feature-visual" style="padding: 20px;">
+        <div style="display:flex; margin-bottom: 10px;">
+          <div class="phone-avatar a1" style="width:28px; height:28px; border: 2px solid var(--surface-2);"></div>
+          <div class="phone-avatar a2" style="width:28px; height:28px; border: 2px solid var(--surface-2); margin-left:-8px;"></div>
+          <div class="phone-avatar a3" style="width:28px; height:28px; border: 2px solid var(--surface-2); margin-left:-8px;"></div>
+          <div class="phone-avatar a4" style="width:28px; height:28px; border: 2px solid var(--surface-2); margin-left:-8px;"></div>
+        </div>
+        <div class="fv-row" style="padding: 6px 0;"><span class="fv-row-label">Members</span><span class="fv-row-val">247</span></div>
+        <div class="fv-row" style="padding: 6px 0;"><span class="fv-row-label">Online now</span><span class="fv-row-val" style="color:#BEF264;">● 38</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRATION STAGE -->
+<section class="integration">
+  <h2 class="integration-title">Plugs into your stack.</h2>
+  <p class="integration-sub">Bring your CRM, calendar, analytics, and anywhere else your business lives. Nothing to re-learn.</p>
+
+  <div class="integration-stage">
+    <div class="int-icon i1">F</div>
+    <div class="int-icon i2">S</div>
+    <div class="int-icon i3">W</div>
+    <div class="int-icon i4">A</div>
+    <div class="int-icon i5">H</div>
+    <div class="int-icon i6">G</div>
+    <div class="int-icon i7">L</div>
+    <div class="int-icon i8">N</div>
+
+    <div class="int-phone">
+      <div class="int-phone-screen">
+        <div class="phone-card" style="padding: 10px;">
+          <div class="phone-card-label" style="font-size:8px;">TRIBE</div>
+          <div class="phone-card-val" style="font-size:16px; margin-bottom: 0;">$42,580</div>
+        </div>
+        <div class="phone-pill" style="background: var(--surface-3); padding: 6px;">
+          <div class="phone-pill-val" style="font-size:11px;">+18% MoM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="integration-footnote">
+    Integrates with your workflow, no stack overhaul required.
+    <span>Fly through your daily review with keyboard shortcuts for everything.</span>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stat-block">
+    <div class="stat-num">$40k</div>
+    <div class="stat-body">
+      <h3>MRR lift in 27 days.</h3>
+      <p>Founders inside the Tribe have gone from $0 to $40k/mo in less than a month using the Selling System frameworks.</p>
+    </div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-num">10×</div>
+    <div class="stat-body">
+      <h3>Time reclaimed per week.</h3>
+      <p>Members average 10× the output with half the hours by killing tactic-hopping and running one cohesive system.</p>
+    </div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-num">$0</div>
+    <div class="stat-body">
+      <h3>Extra ad spend to start.</h3>
+      <p>The system works with what you already have. New funnels, new content, new spend — all optional, never required.</p>
+    </div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-num">9.8</div>
+    <div class="stat-body">
+      <h3>Average member rating.</h3>
+      <p>Out of 10. Taken from active members after 30+ days inside. The Tribe that actually delivers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD / JOIN CTA -->
+<section class="download">
+  <h2>Start using Tribe now</h2>
+  <p>Start your free trial and see how easy it is to track, manage, and scale your business.</p>
+  <div class="download-btns">
+    <a href="#" class="dl-btn">
+      <div class="dl-btn-icon"></div>
+      <div class="dl-btn-text">
+        <div class="dl-btn-small">Join on</div>
+        <div class="dl-btn-big">The Web</div>
+      </div>
+    </a>
+    <a href="#" class="dl-btn">
+      <div class="dl-btn-icon"></div>
+      <div class="dl-btn-text">
+        <div class="dl-btn-small">Get it on</div>
+        <div class="dl-btn-big">iOS / Android</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- PHONE SEQUENCE -->
+<div class="phone-seq">
+  <div class="phone-wrap">
+    <div class="phone" style="max-width:200px;">
+      <div class="phone-screen" style="padding: 40px 12px 12px;">
+        <div class="phone-card" style="padding: 12px;">
+          <div class="phone-card-label" style="font-size: 8px;">REVENUE</div>
+          <div class="phone-card-val" style="font-size: 18px;">$42,580</div>
+          <div class="phone-ring" style="width: 80px; height: 80px; margin: 6px auto;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="hand-shadow"></div>
+  </div>
+  <div class="phone-wrap">
+    <div class="phone" style="max-width:200px;">
+      <div class="phone-screen" style="padding: 40px 12px 12px;">
+        <div class="phone-card" style="padding: 12px;">
+          <div class="phone-card-label" style="font-size: 8px;">WORKSHOPS</div>
+          <div class="phone-card-val" style="font-size: 18px;">Wed · 2pm</div>
+        </div>
+        <div class="phone-pill" style="padding: 8px;">
+          <div class="phone-pill-val" style="font-size: 11px;">Join live →</div>
+        </div>
+      </div>
+    </div>
+    <div class="hand-shadow"></div>
+  </div>
+  <div class="phone-wrap">
+    <div class="phone" style="max-width:200px;">
+      <div class="phone-screen" style="padding: 40px 12px 12px;">
+        <div class="phone-card" style="padding: 12px;">
+          <div class="phone-card-label" style="font-size: 8px;">TRIBE</div>
+          <div class="phone-card-val" style="font-size: 16px;">247 founders</div>
+          <div style="display:flex; margin-top: 8px;">
+            <div class="phone-avatar a1"></div>
+            <div class="phone-avatar a2"></div>
+            <div class="phone-avatar a3"></div>
+            <div class="phone-avatar a4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hand-shadow"></div>
+  </div>
+</div>
+
+<!-- TILE GRID -->
+<section class="tile-section">
+  <h2 class="tile-section-title">Take control of your business with Tribe.</h2>
+  <p class="tile-section-sub">Start your free trial and see how easy it is to track, manage, and optimize your business.</p>
+
+  <div class="tile-grid">
+    <div class="tile tile-coral">
+      <div class="tile-art"></div>
+      <div>
+        <div class="tile-title">Frameworks</div>
+        <div class="tile-sub">Every Selling System playbook and template.</div>
+      </div>
+    </div>
+    <div class="tile tile-violet">
+      <div class="tile-art"></div>
+      <div>
+        <div class="tile-title">Live Audits</div>
+        <div class="tile-sub">Monthly reviews with Ryan and the team.</div>
+      </div>
+    </div>
+    <div class="tile tile-sky">
+      <div class="tile-art"></div>
+      <div>
+        <div class="tile-title">Private Tribe</div>
+        <div class="tile-sub">Founders, not followers. No guru noise.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tile-grid tile-grid-row-2">
+    <div class="tile tile-lime">
+      <div class="tile-art"></div>
+      <div>
+        <div class="tile-title">Weekly Workshops</div>
+        <div class="tile-sub">Live builds with the full Tribe every week.</div>
+      </div>
+    </div>
+    <div class="tile tile-amber">
+      <div class="tile-art"></div>
+      <div>
+        <div class="tile-title">Direct Access</div>
+        <div class="tile-sub">Ask questions, get answers, keep moving.</div>
+      </div>
+    </div>
+    <div class="tile tile-cream">
+      <div class="tile-art"></div>
+      <div>
+        <div class="tile-title">All Future Drops</div>
+        <div class="tile-sub">Courses, templates, updates — always included.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Tribe</div>
+      <div class="footer-tagline">© 2026 Abundance.AI · Systems for founders who want to scale.</div>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <div class="footer-col-title">Product</div>
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+        <a href="#">Changelog</a>
+        <a href="#">Roadmap</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Legal</div>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
