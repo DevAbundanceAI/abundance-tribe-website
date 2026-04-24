@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>12 Glow Options — Abundance.AI</title>
+<title>18 Glow Options — Abundance.AI</title>
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
@@ -91,6 +91,19 @@
   }
   .jump:hover { color: var(--cream); border-color: var(--cream-muted); }
   .jump-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .jump-final { border-color: var(--cream); color: var(--cream); }
+  .jump-divider {
+    display: inline-flex;
+    align-items: center;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    padding: 0 6px;
+    opacity: 0.5;
+  }
 
   /* ─── INTRO ─── */
   .intro {
@@ -109,6 +122,40 @@
     max-width: 620px;
     margin: 0 auto;
     font-size: 16px;
+  }
+  .intro p + p { margin-top: 16px; }
+
+  /* ─── BAND DIVIDER (between Final 6 and Alternates) ─── */
+  .band {
+    padding: 100px 40px 60px;
+    text-align: center;
+    border-top: 1px solid var(--border-strong);
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(245,240,232,0.02) 0%, transparent 100%);
+  }
+  .band-label {
+    display: inline-block;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 18px;
+    padding: 4px 14px;
+    border: 1px solid var(--border-strong);
+    border-radius: 100px;
+  }
+  .band h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+  .band p {
+    color: var(--cream-body);
+    max-width: 580px;
+    margin: 0 auto;
+    font-size: 15px;
   }
 
   /* ─── COLOR SECTION ─── */
@@ -157,6 +204,18 @@
     font-size: 24px;
     color: var(--cream);
     letter-spacing: -0.01em;
+  }
+  .color-role {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: rgba(245,240,232,0.08);
+    border: 1px solid var(--border-strong);
+    padding: 4px 10px;
+    border-radius: 100px;
   }
   .color-desc {
     color: var(--cream-muted);
@@ -375,7 +434,7 @@
   /* PER-COLOR DEFINITIONS                       */
   /* ═══════════════════════════════════════════ */
 
-  /* 01 · Peach */
+  /* Peach */
   #peach::before { background: radial-gradient(ellipse, rgba(232,150,126,0.22) 0%, rgba(248,197,168,0.08) 35%, transparent 65%); }
   #peach .gradient-strip,
   #peach .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #F8C5A8 40%, #E8967E 75%, #C4715E 100%); }
@@ -384,79 +443,7 @@
   #peach .phone-mini-ring { background: conic-gradient(from 0deg, #F8C5A8 0%, #E8967E 70%, var(--surface-3) 70%); }
   #peach .jump-dot { background: #E8967E; }
 
-  /* 02 · Coral */
-  #coral::before { background: radial-gradient(ellipse, rgba(251,113,133,0.22) 0%, rgba(252,165,165,0.08) 35%, transparent 65%); }
-  #coral .gradient-strip,
-  #coral .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #FECACA 40%, #FB7185 75%, #BE123C 100%); }
-  #coral .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #FECACA 40%, #FB7185 75%, #BE123C 100%); }
-  #coral .btn-primary { background: linear-gradient(135deg, #FB7185 0%, #FECACA 100%); color: #3F0A1C; }
-  #coral .phone-mini-ring { background: conic-gradient(from 0deg, #FECACA 0%, #FB7185 70%, var(--surface-3) 70%); }
-  #coral .jump-dot { background: #FB7185; }
-
-  /* 03 · Rose */
-  #rose::before { background: radial-gradient(ellipse, rgba(244,114,182,0.22) 0%, rgba(251,207,232,0.08) 35%, transparent 65%); }
-  #rose .gradient-strip,
-  #rose .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #FBCFE8 40%, #F472B6 75%, #9D174D 100%); }
-  #rose .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #FBCFE8 40%, #F472B6 75%, #9D174D 100%); }
-  #rose .btn-primary { background: linear-gradient(135deg, #F472B6 0%, #FBCFE8 100%); color: #3F0827; }
-  #rose .phone-mini-ring { background: conic-gradient(from 0deg, #FBCFE8 0%, #F472B6 70%, var(--surface-3) 70%); }
-  #rose .jump-dot { background: #F472B6; }
-
-  /* 04 · Magenta */
-  #magenta::before { background: radial-gradient(ellipse, rgba(217,70,239,0.22) 0%, rgba(245,208,254,0.08) 35%, transparent 65%); }
-  #magenta .gradient-strip,
-  #magenta .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #F5D0FE 40%, #D946EF 75%, #86198F 100%); }
-  #magenta .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #F5D0FE 40%, #D946EF 75%, #86198F 100%); }
-  #magenta .btn-primary { background: linear-gradient(135deg, #D946EF 0%, #F5D0FE 100%); color: #3A0A3D; }
-  #magenta .phone-mini-ring { background: conic-gradient(from 0deg, #F5D0FE 0%, #D946EF 70%, var(--surface-3) 70%); }
-  #magenta .jump-dot { background: #D946EF; }
-
-  /* 05 · Violet */
-  #violet::before { background: radial-gradient(ellipse, rgba(167,139,250,0.22) 0%, rgba(221,214,254,0.08) 35%, transparent 65%); }
-  #violet .gradient-strip,
-  #violet .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #DDD6FE 40%, #A78BFA 75%, #7C3AED 100%); }
-  #violet .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #DDD6FE 40%, #A78BFA 75%, #7C3AED 100%); }
-  #violet .btn-primary { background: linear-gradient(135deg, #A78BFA 0%, #DDD6FE 100%); color: #1E1540; }
-  #violet .phone-mini-ring { background: conic-gradient(from 0deg, #DDD6FE 0%, #A78BFA 70%, var(--surface-3) 70%); }
-  #violet .jump-dot { background: #A78BFA; }
-
-  /* 06 · Indigo */
-  #indigo::before { background: radial-gradient(ellipse, rgba(129,140,248,0.22) 0%, rgba(199,210,254,0.08) 35%, transparent 65%); }
-  #indigo .gradient-strip,
-  #indigo .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #C7D2FE 40%, #818CF8 75%, #3730A3 100%); }
-  #indigo .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #C7D2FE 40%, #818CF8 75%, #3730A3 100%); }
-  #indigo .btn-primary { background: linear-gradient(135deg, #818CF8 0%, #C7D2FE 100%); color: #1E1B4B; }
-  #indigo .phone-mini-ring { background: conic-gradient(from 0deg, #C7D2FE 0%, #818CF8 70%, var(--surface-3) 70%); }
-  #indigo .jump-dot { background: #818CF8; }
-
-  /* 07 · Sky */
-  #sky::before { background: radial-gradient(ellipse, rgba(56,189,248,0.22) 0%, rgba(186,230,253,0.08) 35%, transparent 65%); }
-  #sky .gradient-strip,
-  #sky .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #BAE6FD 40%, #38BDF8 75%, #0369A1 100%); }
-  #sky .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #BAE6FD 40%, #38BDF8 75%, #0369A1 100%); }
-  #sky .btn-primary { background: linear-gradient(135deg, #38BDF8 0%, #BAE6FD 100%); color: #0B1E4D; }
-  #sky .phone-mini-ring { background: conic-gradient(from 0deg, #BAE6FD 0%, #38BDF8 70%, var(--surface-3) 70%); }
-  #sky .jump-dot { background: #38BDF8; }
-
-  /* 08 · Teal */
-  #teal::before { background: radial-gradient(ellipse, rgba(45,212,191,0.22) 0%, rgba(153,246,228,0.08) 35%, transparent 65%); }
-  #teal .gradient-strip,
-  #teal .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #99F6E4 40%, #2DD4BF 75%, #0F766E 100%); }
-  #teal .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #99F6E4 40%, #2DD4BF 75%, #0F766E 100%); }
-  #teal .btn-primary { background: linear-gradient(135deg, #2DD4BF 0%, #99F6E4 100%); color: #042F2E; }
-  #teal .phone-mini-ring { background: conic-gradient(from 0deg, #99F6E4 0%, #2DD4BF 70%, var(--surface-3) 70%); }
-  #teal .jump-dot { background: #2DD4BF; }
-
-  /* 09 · Emerald */
-  #emerald::before { background: radial-gradient(ellipse, rgba(52,211,153,0.22) 0%, rgba(167,243,208,0.08) 35%, transparent 65%); }
-  #emerald .gradient-strip,
-  #emerald .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #A7F3D0 40%, #34D399 75%, #047857 100%); }
-  #emerald .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #A7F3D0 40%, #34D399 75%, #047857 100%); }
-  #emerald .btn-primary { background: linear-gradient(135deg, #34D399 0%, #A7F3D0 100%); color: #022C1E; }
-  #emerald .phone-mini-ring { background: conic-gradient(from 0deg, #A7F3D0 0%, #34D399 70%, var(--surface-3) 70%); }
-  #emerald .jump-dot { background: #34D399; }
-
-  /* 11 · Amber */
+  /* Amber */
   #amber::before { background: radial-gradient(ellipse, rgba(251,191,36,0.22) 0%, rgba(253,230,138,0.08) 35%, transparent 65%); }
   #amber .gradient-strip,
   #amber .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #FDE68A 40%, #FBBF24 75%, #B45309 100%); }
@@ -465,16 +452,34 @@
   #amber .phone-mini-ring { background: conic-gradient(from 0deg, #FDE68A 0%, #FBBF24 70%, var(--surface-3) 70%); }
   #amber .jump-dot { background: #FBBF24; }
 
-  /* 12 · Gold */
-  #gold::before { background: radial-gradient(ellipse, rgba(212,165,116,0.22) 0%, rgba(254,243,199,0.08) 35%, transparent 65%); }
-  #gold .gradient-strip,
-  #gold .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #FEF3C7 40%, #D4A574 75%, #92702A 100%); }
-  #gold .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #FEF3C7 40%, #D4A574 75%, #92702A 100%); }
-  #gold .btn-primary { background: linear-gradient(135deg, #D4A574 0%, #FEF3C7 100%); color: #3A2408; }
-  #gold .phone-mini-ring { background: conic-gradient(from 0deg, #FEF3C7 0%, #D4A574 70%, var(--surface-3) 70%); }
-  #gold .jump-dot { background: #D4A574; }
+  /* Violet */
+  #violet::before { background: radial-gradient(ellipse, rgba(167,139,250,0.22) 0%, rgba(221,214,254,0.08) 35%, transparent 65%); }
+  #violet .gradient-strip,
+  #violet .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #DDD6FE 40%, #A78BFA 75%, #7C3AED 100%); }
+  #violet .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #DDD6FE 40%, #A78BFA 75%, #7C3AED 100%); }
+  #violet .btn-primary { background: linear-gradient(135deg, #A78BFA 0%, #DDD6FE 100%); color: #1E1540; }
+  #violet .phone-mini-ring { background: conic-gradient(from 0deg, #DDD6FE 0%, #A78BFA 70%, var(--surface-3) 70%); }
+  #violet .jump-dot { background: #A78BFA; }
 
-  /* 14 · Rust */
+  /* Emerald */
+  #emerald::before { background: radial-gradient(ellipse, rgba(52,211,153,0.22) 0%, rgba(167,243,208,0.08) 35%, transparent 65%); }
+  #emerald .gradient-strip,
+  #emerald .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #A7F3D0 40%, #34D399 75%, #047857 100%); }
+  #emerald .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #A7F3D0 40%, #34D399 75%, #047857 100%); }
+  #emerald .btn-primary { background: linear-gradient(135deg, #34D399 0%, #A7F3D0 100%); color: #022C1E; }
+  #emerald .phone-mini-ring { background: conic-gradient(from 0deg, #A7F3D0 0%, #34D399 70%, var(--surface-3) 70%); }
+  #emerald .jump-dot { background: #34D399; }
+
+  /* Charcoal */
+  #charcoal::before { background: radial-gradient(ellipse, rgba(75,70,67,0.22) 0%, rgba(209,204,197,0.08) 35%, transparent 65%); }
+  #charcoal .gradient-strip,
+  #charcoal .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #D1CCC5 40%, #4B4643 75%, #1C1917 100%); }
+  #charcoal .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #D1CCC5 40%, #4B4643 75%, #1C1917 100%); }
+  #charcoal .btn-primary { background: linear-gradient(135deg, #4B4643 0%, #D1CCC5 100%); color: #FFFFFF; }
+  #charcoal .phone-mini-ring { background: conic-gradient(from 0deg, #D1CCC5 0%, #4B4643 70%, var(--surface-3) 70%); }
+  #charcoal .jump-dot { background: #4B4643; }
+
+  /* Rust */
   #rust::before { background: radial-gradient(ellipse, rgba(184,69,31,0.22) 0%, rgba(242,197,163,0.08) 35%, transparent 65%); }
   #rust .gradient-strip,
   #rust .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #F2C5A3 40%, #B8451F 75%, #6B2010 100%); }
@@ -483,7 +488,70 @@
   #rust .phone-mini-ring { background: conic-gradient(from 0deg, #F2C5A3 0%, #B8451F 70%, var(--surface-3) 70%); }
   #rust .jump-dot { background: #B8451F; }
 
-  /* 15 · Sunset */
+  /* Coral */
+  #coral::before { background: radial-gradient(ellipse, rgba(251,113,133,0.22) 0%, rgba(252,165,165,0.08) 35%, transparent 65%); }
+  #coral .gradient-strip,
+  #coral .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #FECACA 40%, #FB7185 75%, #BE123C 100%); }
+  #coral .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #FECACA 40%, #FB7185 75%, #BE123C 100%); }
+  #coral .btn-primary { background: linear-gradient(135deg, #FB7185 0%, #FECACA 100%); color: #3F0A1C; }
+  #coral .phone-mini-ring { background: conic-gradient(from 0deg, #FECACA 0%, #FB7185 70%, var(--surface-3) 70%); }
+  #coral .jump-dot { background: #FB7185; }
+
+  /* Rose */
+  #rose::before { background: radial-gradient(ellipse, rgba(244,114,182,0.22) 0%, rgba(251,207,232,0.08) 35%, transparent 65%); }
+  #rose .gradient-strip,
+  #rose .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #FBCFE8 40%, #F472B6 75%, #9D174D 100%); }
+  #rose .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #FBCFE8 40%, #F472B6 75%, #9D174D 100%); }
+  #rose .btn-primary { background: linear-gradient(135deg, #F472B6 0%, #FBCFE8 100%); color: #3F0827; }
+  #rose .phone-mini-ring { background: conic-gradient(from 0deg, #FBCFE8 0%, #F472B6 70%, var(--surface-3) 70%); }
+  #rose .jump-dot { background: #F472B6; }
+
+  /* Magenta */
+  #magenta::before { background: radial-gradient(ellipse, rgba(217,70,239,0.22) 0%, rgba(245,208,254,0.08) 35%, transparent 65%); }
+  #magenta .gradient-strip,
+  #magenta .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #F5D0FE 40%, #D946EF 75%, #86198F 100%); }
+  #magenta .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #F5D0FE 40%, #D946EF 75%, #86198F 100%); }
+  #magenta .btn-primary { background: linear-gradient(135deg, #D946EF 0%, #F5D0FE 100%); color: #3A0A3D; }
+  #magenta .phone-mini-ring { background: conic-gradient(from 0deg, #F5D0FE 0%, #D946EF 70%, var(--surface-3) 70%); }
+  #magenta .jump-dot { background: #D946EF; }
+
+  /* Indigo */
+  #indigo::before { background: radial-gradient(ellipse, rgba(129,140,248,0.22) 0%, rgba(199,210,254,0.08) 35%, transparent 65%); }
+  #indigo .gradient-strip,
+  #indigo .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #C7D2FE 40%, #818CF8 75%, #3730A3 100%); }
+  #indigo .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #C7D2FE 40%, #818CF8 75%, #3730A3 100%); }
+  #indigo .btn-primary { background: linear-gradient(135deg, #818CF8 0%, #C7D2FE 100%); color: #1E1B4B; }
+  #indigo .phone-mini-ring { background: conic-gradient(from 0deg, #C7D2FE 0%, #818CF8 70%, var(--surface-3) 70%); }
+  #indigo .jump-dot { background: #818CF8; }
+
+  /* Sky */
+  #sky::before { background: radial-gradient(ellipse, rgba(56,189,248,0.22) 0%, rgba(186,230,253,0.08) 35%, transparent 65%); }
+  #sky .gradient-strip,
+  #sky .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #BAE6FD 40%, #38BDF8 75%, #0369A1 100%); }
+  #sky .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #BAE6FD 40%, #38BDF8 75%, #0369A1 100%); }
+  #sky .btn-primary { background: linear-gradient(135deg, #38BDF8 0%, #BAE6FD 100%); color: #0B1E4D; }
+  #sky .phone-mini-ring { background: conic-gradient(from 0deg, #BAE6FD 0%, #38BDF8 70%, var(--surface-3) 70%); }
+  #sky .jump-dot { background: #38BDF8; }
+
+  /* Teal */
+  #teal::before { background: radial-gradient(ellipse, rgba(45,212,191,0.22) 0%, rgba(153,246,228,0.08) 35%, transparent 65%); }
+  #teal .gradient-strip,
+  #teal .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #99F6E4 40%, #2DD4BF 75%, #0F766E 100%); }
+  #teal .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #99F6E4 40%, #2DD4BF 75%, #0F766E 100%); }
+  #teal .btn-primary { background: linear-gradient(135deg, #2DD4BF 0%, #99F6E4 100%); color: #042F2E; }
+  #teal .phone-mini-ring { background: conic-gradient(from 0deg, #99F6E4 0%, #2DD4BF 70%, var(--surface-3) 70%); }
+  #teal .jump-dot { background: #2DD4BF; }
+
+  /* Gold */
+  #gold::before { background: radial-gradient(ellipse, rgba(212,165,116,0.22) 0%, rgba(254,243,199,0.08) 35%, transparent 65%); }
+  #gold .gradient-strip,
+  #gold .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #FEF3C7 40%, #D4A574 75%, #92702A 100%); }
+  #gold .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #FEF3C7 40%, #D4A574 75%, #92702A 100%); }
+  #gold .btn-primary { background: linear-gradient(135deg, #D4A574 0%, #FEF3C7 100%); color: #3A2408; }
+  #gold .phone-mini-ring { background: conic-gradient(from 0deg, #FEF3C7 0%, #D4A574 70%, var(--surface-3) 70%); }
+  #gold .jump-dot { background: #D4A574; }
+
+  /* Sunset */
   #sunset::before { background: radial-gradient(ellipse, rgba(249,115,22,0.22) 0%, rgba(255,212,163,0.08) 35%, transparent 65%); }
   #sunset .gradient-strip,
   #sunset .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #FFD4A3 40%, #F97316 75%, #9A3412 100%); }
@@ -492,7 +560,7 @@
   #sunset .phone-mini-ring { background: conic-gradient(from 0deg, #FFD4A3 0%, #F97316 70%, var(--surface-3) 70%); }
   #sunset .jump-dot { background: #F97316; }
 
-  /* 19 · Peacock */
+  /* Peacock */
   #peacock::before { background: radial-gradient(ellipse, rgba(10,94,106,0.22) 0%, rgba(168,216,220,0.08) 35%, transparent 65%); }
   #peacock .gradient-strip,
   #peacock .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #A8D8DC 40%, #0A5E6A 75%, #063438 100%); }
@@ -501,7 +569,7 @@
   #peacock .phone-mini-ring { background: conic-gradient(from 0deg, #A8D8DC 0%, #0A5E6A 70%, var(--surface-3) 70%); }
   #peacock .jump-dot { background: #0A5E6A; }
 
-  /* 21 · Plum */
+  /* Plum */
   #plum::before { background: radial-gradient(ellipse, rgba(124,45,92,0.22) 0%, rgba(224,200,220,0.08) 35%, transparent 65%); }
   #plum .gradient-strip,
   #plum .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #E0C8DC 40%, #7C2D5C 75%, #3F0A2E 100%); }
@@ -510,7 +578,7 @@
   #plum .phone-mini-ring { background: conic-gradient(from 0deg, #E0C8DC 0%, #7C2D5C 70%, var(--surface-3) 70%); }
   #plum .jump-dot { background: #7C2D5C; }
 
-  /* 22 · Lavender */
+  /* Lavender */
   #lavender::before { background: radial-gradient(ellipse, rgba(184,165,232,0.22) 0%, rgba(233,226,248,0.08) 35%, transparent 65%); }
   #lavender .gradient-strip,
   #lavender .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #E9E2F8 40%, #B8A5E8 75%, #5B4A85 100%); }
@@ -519,7 +587,7 @@
   #lavender .phone-mini-ring { background: conic-gradient(from 0deg, #E9E2F8 0%, #B8A5E8 70%, var(--surface-3) 70%); }
   #lavender .jump-dot { background: #B8A5E8; }
 
-  /* 23 · Slate */
+  /* Slate */
   #slate::before { background: radial-gradient(ellipse, rgba(71,85,105,0.22) 0%, rgba(199,208,217,0.08) 35%, transparent 65%); }
   #slate .gradient-strip,
   #slate .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #C7D0D9 40%, #475569 75%, #1E293B 100%); }
@@ -527,15 +595,6 @@
   #slate .btn-primary { background: linear-gradient(135deg, #475569 0%, #C7D0D9 100%); color: #FFFFFF; }
   #slate .phone-mini-ring { background: conic-gradient(from 0deg, #C7D0D9 0%, #475569 70%, var(--surface-3) 70%); }
   #slate .jump-dot { background: #475569; }
-
-  /* 24 · Charcoal */
-  #charcoal::before { background: radial-gradient(ellipse, rgba(75,70,67,0.22) 0%, rgba(209,204,197,0.08) 35%, transparent 65%); }
-  #charcoal .gradient-strip,
-  #charcoal .demo-hero-badge-dot { background: linear-gradient(135deg, #F5F0E8 0%, #D1CCC5 40%, #4B4643 75%, #1C1917 100%); }
-  #charcoal .demo-hero-title { background-image: linear-gradient(135deg, #F5F0E8 0%, #D1CCC5 40%, #4B4643 75%, #1C1917 100%); }
-  #charcoal .btn-primary { background: linear-gradient(135deg, #4B4643 0%, #D1CCC5 100%); color: #FFFFFF; }
-  #charcoal .phone-mini-ring { background: conic-gradient(from 0deg, #D1CCC5 0%, #4B4643 70%, var(--surface-3) 70%); }
-  #charcoal .jump-dot { background: #4B4643; }
 
   @media (max-width: 900px) {
     .color-section { padding: 64px 20px 88px; }
@@ -548,45 +607,47 @@
 <!-- TOP BAR -->
 <div class="top-bar">
   <div class="top-bar-inner">
-    <span class="top-bar-title">18 Glow Options · Pick One</span>
+    <span class="top-bar-title">Final 6 + Alternates</span>
     <div class="top-bar-nav">
-      <a href="#peach"    class="jump"><span class="jump-dot"></span>01 Peach</a>
-      <a href="#coral"    class="jump"><span class="jump-dot"></span>02 Coral</a>
-      <a href="#rose"     class="jump"><span class="jump-dot"></span>03 Rose</a>
-      <a href="#magenta"  class="jump"><span class="jump-dot"></span>04 Magenta</a>
-      <a href="#violet"   class="jump"><span class="jump-dot"></span>05 Violet</a>
-      <a href="#indigo"   class="jump"><span class="jump-dot"></span>06 Indigo</a>
-      <a href="#sky"      class="jump"><span class="jump-dot"></span>07 Sky</a>
-      <a href="#teal"     class="jump"><span class="jump-dot"></span>08 Teal</a>
-      <a href="#emerald"  class="jump"><span class="jump-dot"></span>09 Emerald</a>
-      <a href="#amber"    class="jump"><span class="jump-dot"></span>10 Amber</a>
-      <a href="#gold"     class="jump"><span class="jump-dot"></span>11 Gold</a>
-      <a href="#rust"     class="jump"><span class="jump-dot"></span>12 Rust</a>
-      <a href="#sunset"   class="jump"><span class="jump-dot"></span>13 Sunset</a>
-      <a href="#peacock"  class="jump"><span class="jump-dot"></span>14 Peacock</a>
-      <a href="#plum"     class="jump"><span class="jump-dot"></span>15 Plum</a>
-      <a href="#lavender" class="jump"><span class="jump-dot"></span>16 Lavender</a>
-      <a href="#slate"    class="jump"><span class="jump-dot"></span>17 Slate</a>
-      <a href="#charcoal" class="jump"><span class="jump-dot"></span>18 Charcoal</a>
+      <a href="#peach"    class="jump jump-final"><span class="jump-dot"></span>01 Peach</a>
+      <a href="#amber"    class="jump jump-final"><span class="jump-dot"></span>02 Amber</a>
+      <a href="#violet"   class="jump jump-final"><span class="jump-dot"></span>03 Violet</a>
+      <a href="#emerald"  class="jump jump-final"><span class="jump-dot"></span>04 Emerald</a>
+      <a href="#charcoal" class="jump jump-final"><span class="jump-dot"></span>05 Charcoal</a>
+      <a href="#rust"     class="jump jump-final"><span class="jump-dot"></span>06 Rust</a>
+      <span class="jump-divider">·</span>
+      <a href="#coral"    class="jump"><span class="jump-dot"></span>07 Coral</a>
+      <a href="#rose"     class="jump"><span class="jump-dot"></span>08 Rose</a>
+      <a href="#magenta"  class="jump"><span class="jump-dot"></span>09 Magenta</a>
+      <a href="#indigo"   class="jump"><span class="jump-dot"></span>10 Indigo</a>
+      <a href="#sky"      class="jump"><span class="jump-dot"></span>11 Sky</a>
+      <a href="#teal"     class="jump"><span class="jump-dot"></span>12 Teal</a>
+      <a href="#gold"     class="jump"><span class="jump-dot"></span>13 Gold</a>
+      <a href="#sunset"   class="jump"><span class="jump-dot"></span>14 Sunset</a>
+      <a href="#peacock"  class="jump"><span class="jump-dot"></span>15 Peacock</a>
+      <a href="#plum"     class="jump"><span class="jump-dot"></span>16 Plum</a>
+      <a href="#lavender" class="jump"><span class="jump-dot"></span>17 Lavender</a>
+      <a href="#slate"    class="jump"><span class="jump-dot"></span>18 Slate</a>
     </div>
   </div>
 </div>
 
 <!-- INTRO -->
 <section class="intro">
-  <h1>18 Glow Options</h1>
-  <p>Each option is the same peach concept — 4-stop cream-to-deep gradient on a matte black canvas — but in a different hue. Each section shows the gradient strip, radial glow bg, hero title, CTA button, and phone mockup ring. Scroll to compare.</p>
+  <h1>Final 6 + Alternates</h1>
+  <p>Six colors in order, each with a role. Peach is the primary signature; the other five answer specific section types. Below the divider are the 12 alternates — kept for future flexibility, not committed to.</p>
 </section>
 
-<!-- Template structure for each section below -->
-
-<!-- 01 PEACH -->
+<!-- ═══════════════════════════════════════════ -->
+<!-- 01 PEACH · Primary Signature                 -->
+<!-- ═══════════════════════════════════════════ -->
 <section class="color-section" id="peach">
   <div class="color-inner">
     <div class="color-header">
       <span class="color-number">01</span>
       <span class="color-name">Peach</span>
-      <span class="color-desc">warm, editorial, approachable · the current signature</span>
+      <span class="color-role">Primary Signature</span>
+      <span class="color-desc">brand identity · logo, nav, hero, primary CTAs, bookends</span>
     </div>
     <div class="gradient-strip"></div>
     <div class="demo">
@@ -619,13 +680,222 @@
   </div>
 </section>
 
-<!-- 02 CORAL -->
-<section class="color-section" id="coral">
+<!-- 02 AMBER · Warm Sibling -->
+<section class="color-section" id="amber">
   <div class="color-inner">
     <div class="color-header">
       <span class="color-number">02</span>
+      <span class="color-name">Amber</span>
+      <span class="color-role">Warm Sibling</span>
+      <span class="color-desc">community, founders, Tribe vibe, continuity bookends</span>
+    </div>
+    <div class="gradient-strip"></div>
+    <div class="demo">
+      <div class="demo-hero-block">
+        <div class="demo-hero-badge"><span class="demo-hero-badge-dot"></span>Done-For-You · 90-Day Install</div>
+        <h2 class="demo-hero-title">Meet the System.</h2>
+        <p class="demo-hero-sub">We install the Abundance Selling System — offers, funnels, CRM, tracking. Compounding from day 27.</p>
+        <div class="demo-actions">
+          <a href="#" class="btn-primary">Apply Now →</a>
+          <a href="#" class="btn-ghost">Watch the 8-min</a>
+        </div>
+        <div class="color-codes">
+          <span class="code-chip"><span class="code-chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#FDE68A;"></span>#FDE68A</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#FBBF24;"></span>#FBBF24</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#B45309;"></span>#B45309</span>
+        </div>
+      </div>
+      <div class="phone-mini">
+        <div class="phone-mini-screen">
+          <div class="phone-mini-card">
+            <div class="phone-mini-label">Revenue</div>
+            <div class="phone-mini-val">$42,580</div>
+            <div class="phone-mini-ring"><span>78%</span></div>
+          </div>
+          <div class="phone-mini-chip">+18% MoM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 VIOLET · Cool Contrast -->
+<section class="color-section" id="violet">
+  <div class="color-inner">
+    <div class="color-header">
+      <span class="color-number">03</span>
+      <span class="color-name">Violet</span>
+      <span class="color-role">Cool Contrast</span>
+      <span class="color-desc">systems, features, frameworks, product UI, audit</span>
+    </div>
+    <div class="gradient-strip"></div>
+    <div class="demo">
+      <div class="demo-hero-block">
+        <div class="demo-hero-badge"><span class="demo-hero-badge-dot"></span>Done-For-You · 90-Day Install</div>
+        <h2 class="demo-hero-title">Meet the System.</h2>
+        <p class="demo-hero-sub">We install the Abundance Selling System — offers, funnels, CRM, tracking. Compounding from day 27.</p>
+        <div class="demo-actions">
+          <a href="#" class="btn-primary">Apply Now →</a>
+          <a href="#" class="btn-ghost">Watch the 8-min</a>
+        </div>
+        <div class="color-codes">
+          <span class="code-chip"><span class="code-chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#DDD6FE;"></span>#DDD6FE</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#A78BFA;"></span>#A78BFA</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#7C3AED;"></span>#7C3AED</span>
+        </div>
+      </div>
+      <div class="phone-mini">
+        <div class="phone-mini-screen">
+          <div class="phone-mini-card">
+            <div class="phone-mini-label">Revenue</div>
+            <div class="phone-mini-val">$42,580</div>
+            <div class="phone-mini-ring"><span>78%</span></div>
+          </div>
+          <div class="phone-mini-chip">+18% MoM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 EMERALD · Growth / Money -->
+<section class="color-section" id="emerald">
+  <div class="color-inner">
+    <div class="color-header">
+      <span class="color-number">04</span>
+      <span class="color-name">Emerald</span>
+      <span class="color-role">Growth / Money</span>
+      <span class="color-desc">results, stats, outcomes, money claims, before/after</span>
+    </div>
+    <div class="gradient-strip"></div>
+    <div class="demo">
+      <div class="demo-hero-block">
+        <div class="demo-hero-badge"><span class="demo-hero-badge-dot"></span>Done-For-You · 90-Day Install</div>
+        <h2 class="demo-hero-title">Meet the System.</h2>
+        <p class="demo-hero-sub">We install the Abundance Selling System — offers, funnels, CRM, tracking. Compounding from day 27.</p>
+        <div class="demo-actions">
+          <a href="#" class="btn-primary">Apply Now →</a>
+          <a href="#" class="btn-ghost">Watch the 8-min</a>
+        </div>
+        <div class="color-codes">
+          <span class="code-chip"><span class="code-chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#A7F3D0;"></span>#A7F3D0</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#34D399;"></span>#34D399</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#047857;"></span>#047857</span>
+        </div>
+      </div>
+      <div class="phone-mini">
+        <div class="phone-mini-screen">
+          <div class="phone-mini-card">
+            <div class="phone-mini-label">Revenue</div>
+            <div class="phone-mini-val">$42,580</div>
+            <div class="phone-mini-ring"><span>78%</span></div>
+          </div>
+          <div class="phone-mini-chip">+18% MoM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 CHARCOAL · Neutral Ground -->
+<section class="color-section" id="charcoal">
+  <div class="color-inner">
+    <div class="color-header">
+      <span class="color-number">05</span>
+      <span class="color-name">Charcoal</span>
+      <span class="color-role">Neutral Ground</span>
+      <span class="color-desc">pricing, FAQ, legal, comparison tables, serious sections</span>
+    </div>
+    <div class="gradient-strip"></div>
+    <div class="demo">
+      <div class="demo-hero-block">
+        <div class="demo-hero-badge"><span class="demo-hero-badge-dot"></span>Done-For-You · 90-Day Install</div>
+        <h2 class="demo-hero-title">Meet the System.</h2>
+        <p class="demo-hero-sub">We install the Abundance Selling System — offers, funnels, CRM, tracking. Compounding from day 27.</p>
+        <div class="demo-actions">
+          <a href="#" class="btn-primary">Apply Now →</a>
+          <a href="#" class="btn-ghost">Watch the 8-min</a>
+        </div>
+        <div class="color-codes">
+          <span class="code-chip"><span class="code-chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#D1CCC5;"></span>#D1CCC5</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#4B4643;"></span>#4B4643</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#1C1917;"></span>#1C1917</span>
+        </div>
+      </div>
+      <div class="phone-mini">
+        <div class="phone-mini-screen">
+          <div class="phone-mini-card">
+            <div class="phone-mini-label">Revenue</div>
+            <div class="phone-mini-val">$42,580</div>
+            <div class="phone-mini-ring"><span>78%</span></div>
+          </div>
+          <div class="phone-mini-chip">+18% MoM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 RUST · Wildcard -->
+<section class="color-section" id="rust">
+  <div class="color-inner">
+    <div class="color-header">
+      <span class="color-number">06</span>
+      <span class="color-name">Rust</span>
+      <span class="color-role">Wildcard</span>
+      <span class="color-desc">heritage moments, Partner tier, Freedom offer, long-form essays</span>
+    </div>
+    <div class="gradient-strip"></div>
+    <div class="demo">
+      <div class="demo-hero-block">
+        <div class="demo-hero-badge"><span class="demo-hero-badge-dot"></span>Done-For-You · 90-Day Install</div>
+        <h2 class="demo-hero-title">Meet the System.</h2>
+        <p class="demo-hero-sub">We install the Abundance Selling System — offers, funnels, CRM, tracking. Compounding from day 27.</p>
+        <div class="demo-actions">
+          <a href="#" class="btn-primary">Apply Now →</a>
+          <a href="#" class="btn-ghost">Watch the 8-min</a>
+        </div>
+        <div class="color-codes">
+          <span class="code-chip"><span class="code-chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#F2C5A3;"></span>#F2C5A3</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#B8451F;"></span>#B8451F</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#6B2010;"></span>#6B2010</span>
+        </div>
+      </div>
+      <div class="phone-mini">
+        <div class="phone-mini-screen">
+          <div class="phone-mini-card">
+            <div class="phone-mini-label">Revenue</div>
+            <div class="phone-mini-val">$42,580</div>
+            <div class="phone-mini-ring"><span>78%</span></div>
+          </div>
+          <div class="phone-mini-chip">+18% MoM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- DIVIDER                                      -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="band">
+  <span class="band-label">Alternates</span>
+  <h2>The 12 Alternates</h2>
+  <p>Kept for future flexibility — if any of the Final 6 roles needs a different family, these are the next candidates. Not committed to.</p>
+</section>
+
+<!-- 07 CORAL -->
+<section class="color-section" id="coral">
+  <div class="color-inner">
+    <div class="color-header">
+      <span class="color-number">07</span>
       <span class="color-name">Coral</span>
-      <span class="color-desc">punchy, energetic, warmer-than-peach · bold</span>
+      <span class="color-desc">punchy, energetic, warmer-than-peach · bold alt to primary</span>
     </div>
     <div class="gradient-strip"></div>
     <div class="demo">
@@ -658,11 +928,11 @@
   </div>
 </section>
 
-<!-- 03 ROSE -->
+<!-- 08 ROSE -->
 <section class="color-section" id="rose">
   <div class="color-inner">
     <div class="color-header">
-      <span class="color-number">03</span>
+      <span class="color-number">08</span>
       <span class="color-name">Rose</span>
       <span class="color-desc">soft, inviting, human · friendly without being saccharine</span>
     </div>
@@ -697,11 +967,11 @@
   </div>
 </section>
 
-<!-- 04 MAGENTA -->
+<!-- 09 MAGENTA -->
 <section class="color-section" id="magenta">
   <div class="color-inner">
     <div class="color-header">
-      <span class="color-number">04</span>
+      <span class="color-number">09</span>
       <span class="color-name">Magenta</span>
       <span class="color-desc">electric, AI-forward, avant-garde · high energy</span>
     </div>
@@ -736,50 +1006,11 @@
   </div>
 </section>
 
-<!-- 05 VIOLET -->
-<section class="color-section" id="violet">
-  <div class="color-inner">
-    <div class="color-header">
-      <span class="color-number">05</span>
-      <span class="color-name">Violet</span>
-      <span class="color-desc">premium, technical, creative · AI-native without being cold</span>
-    </div>
-    <div class="gradient-strip"></div>
-    <div class="demo">
-      <div class="demo-hero-block">
-        <div class="demo-hero-badge"><span class="demo-hero-badge-dot"></span>Done-For-You · 90-Day Install</div>
-        <h2 class="demo-hero-title">Meet the System.</h2>
-        <p class="demo-hero-sub">We install the Abundance Selling System — offers, funnels, CRM, tracking. Compounding from day 27.</p>
-        <div class="demo-actions">
-          <a href="#" class="btn-primary">Apply Now →</a>
-          <a href="#" class="btn-ghost">Watch the 8-min</a>
-        </div>
-        <div class="color-codes">
-          <span class="code-chip"><span class="code-chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#DDD6FE;"></span>#DDD6FE</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#A78BFA;"></span>#A78BFA</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#7C3AED;"></span>#7C3AED</span>
-        </div>
-      </div>
-      <div class="phone-mini">
-        <div class="phone-mini-screen">
-          <div class="phone-mini-card">
-            <div class="phone-mini-label">Revenue</div>
-            <div class="phone-mini-val">$42,580</div>
-            <div class="phone-mini-ring"><span>78%</span></div>
-          </div>
-          <div class="phone-mini-chip">+18% MoM</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 06 INDIGO -->
+<!-- 10 INDIGO -->
 <section class="color-section" id="indigo">
   <div class="color-inner">
     <div class="color-header">
-      <span class="color-number">06</span>
+      <span class="color-number">10</span>
       <span class="color-name">Indigo</span>
       <span class="color-desc">trust, depth, established · between blue and violet</span>
     </div>
@@ -814,11 +1045,11 @@
   </div>
 </section>
 
-<!-- 07 SKY -->
+<!-- 11 SKY -->
 <section class="color-section" id="sky">
   <div class="color-inner">
     <div class="color-header">
-      <span class="color-number">07</span>
+      <span class="color-number">11</span>
       <span class="color-name">Sky</span>
       <span class="color-desc">open, clean, tech-confident · brighter than indigo</span>
     </div>
@@ -853,11 +1084,11 @@
   </div>
 </section>
 
-<!-- 08 TEAL -->
+<!-- 12 TEAL -->
 <section class="color-section" id="teal">
   <div class="color-inner">
     <div class="color-header">
-      <span class="color-number">08</span>
+      <span class="color-number">12</span>
       <span class="color-name">Teal</span>
       <span class="color-desc">calm, modern, restorative · pairs well with editorial</span>
     </div>
@@ -892,89 +1123,11 @@
   </div>
 </section>
 
-<!-- 09 EMERALD -->
-<section class="color-section" id="emerald">
-  <div class="color-inner">
-    <div class="color-header">
-      <span class="color-number">09</span>
-      <span class="color-name">Emerald</span>
-      <span class="color-desc">growth, money, abundance · on-the-nose but classic</span>
-    </div>
-    <div class="gradient-strip"></div>
-    <div class="demo">
-      <div class="demo-hero-block">
-        <div class="demo-hero-badge"><span class="demo-hero-badge-dot"></span>Done-For-You · 90-Day Install</div>
-        <h2 class="demo-hero-title">Meet the System.</h2>
-        <p class="demo-hero-sub">We install the Abundance Selling System — offers, funnels, CRM, tracking. Compounding from day 27.</p>
-        <div class="demo-actions">
-          <a href="#" class="btn-primary">Apply Now →</a>
-          <a href="#" class="btn-ghost">Watch the 8-min</a>
-        </div>
-        <div class="color-codes">
-          <span class="code-chip"><span class="code-chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#A7F3D0;"></span>#A7F3D0</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#34D399;"></span>#34D399</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#047857;"></span>#047857</span>
-        </div>
-      </div>
-      <div class="phone-mini">
-        <div class="phone-mini-screen">
-          <div class="phone-mini-card">
-            <div class="phone-mini-label">Revenue</div>
-            <div class="phone-mini-val">$42,580</div>
-            <div class="phone-mini-ring"><span>78%</span></div>
-          </div>
-          <div class="phone-mini-chip">+18% MoM</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 11 AMBER -->
-<section class="color-section" id="amber">
-  <div class="color-inner">
-    <div class="color-header">
-      <span class="color-number">10</span>
-      <span class="color-name">Amber</span>
-      <span class="color-desc">warm, energetic, optimistic · between gold and peach</span>
-    </div>
-    <div class="gradient-strip"></div>
-    <div class="demo">
-      <div class="demo-hero-block">
-        <div class="demo-hero-badge"><span class="demo-hero-badge-dot"></span>Done-For-You · 90-Day Install</div>
-        <h2 class="demo-hero-title">Meet the System.</h2>
-        <p class="demo-hero-sub">We install the Abundance Selling System — offers, funnels, CRM, tracking. Compounding from day 27.</p>
-        <div class="demo-actions">
-          <a href="#" class="btn-primary">Apply Now →</a>
-          <a href="#" class="btn-ghost">Watch the 8-min</a>
-        </div>
-        <div class="color-codes">
-          <span class="code-chip"><span class="code-chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#FDE68A;"></span>#FDE68A</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#FBBF24;"></span>#FBBF24</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#B45309;"></span>#B45309</span>
-        </div>
-      </div>
-      <div class="phone-mini">
-        <div class="phone-mini-screen">
-          <div class="phone-mini-card">
-            <div class="phone-mini-label">Revenue</div>
-            <div class="phone-mini-val">$42,580</div>
-            <div class="phone-mini-ring"><span>78%</span></div>
-          </div>
-          <div class="phone-mini-chip">+18% MoM</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 12 GOLD — last of first batch, new colors follow below -->
+<!-- 13 GOLD -->
 <section class="color-section" id="gold">
   <div class="color-inner">
     <div class="color-header">
-      <span class="color-number">11</span>
+      <span class="color-number">13</span>
       <span class="color-name">Gold</span>
       <span class="color-desc">premium, legacy, earned · more restrained than amber</span>
     </div>
@@ -1009,50 +1162,11 @@
   </div>
 </section>
 
-<!-- 14 RUST -->
-<section class="color-section" id="rust">
-  <div class="color-inner">
-    <div class="color-header">
-      <span class="color-number">12</span>
-      <span class="color-name">Rust</span>
-      <span class="color-desc">earthy red-orange · autumn, handcrafted, warm</span>
-    </div>
-    <div class="gradient-strip"></div>
-    <div class="demo">
-      <div class="demo-hero-block">
-        <div class="demo-hero-badge"><span class="demo-hero-badge-dot"></span>Done-For-You · 90-Day Install</div>
-        <h2 class="demo-hero-title">Meet the System.</h2>
-        <p class="demo-hero-sub">We install the Abundance Selling System — offers, funnels, CRM, tracking. Compounding from day 27.</p>
-        <div class="demo-actions">
-          <a href="#" class="btn-primary">Apply Now →</a>
-          <a href="#" class="btn-ghost">Watch the 8-min</a>
-        </div>
-        <div class="color-codes">
-          <span class="code-chip"><span class="code-chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#F2C5A3;"></span>#F2C5A3</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#B8451F;"></span>#B8451F</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#6B2010;"></span>#6B2010</span>
-        </div>
-      </div>
-      <div class="phone-mini">
-        <div class="phone-mini-screen">
-          <div class="phone-mini-card">
-            <div class="phone-mini-label">Revenue</div>
-            <div class="phone-mini-val">$42,580</div>
-            <div class="phone-mini-ring"><span>78%</span></div>
-          </div>
-          <div class="phone-mini-chip">+18% MoM</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 15 SUNSET -->
+<!-- 14 SUNSET -->
 <section class="color-section" id="sunset">
   <div class="color-inner">
     <div class="color-header">
-      <span class="color-number">13</span>
+      <span class="color-number">14</span>
       <span class="color-name">Sunset</span>
       <span class="color-desc">pure orange · energy, optimism, unmissable</span>
     </div>
@@ -1087,11 +1201,11 @@
   </div>
 </section>
 
-<!-- 19 PEACOCK -->
+<!-- 15 PEACOCK -->
 <section class="color-section" id="peacock">
   <div class="color-inner">
     <div class="color-header">
-      <span class="color-number">14</span>
+      <span class="color-number">15</span>
       <span class="color-name">Peacock</span>
       <span class="color-desc">deep blue-green · dramatic, confident, distinctive</span>
     </div>
@@ -1126,11 +1240,11 @@
   </div>
 </section>
 
-<!-- 21 PLUM -->
+<!-- 16 PLUM -->
 <section class="color-section" id="plum">
   <div class="color-inner">
     <div class="color-header">
-      <span class="color-number">15</span>
+      <span class="color-number">16</span>
       <span class="color-name">Plum</span>
       <span class="color-desc">deep purple · luxurious, nocturnal, bold</span>
     </div>
@@ -1165,11 +1279,11 @@
   </div>
 </section>
 
-<!-- 22 LAVENDER -->
+<!-- 17 LAVENDER -->
 <section class="color-section" id="lavender">
   <div class="color-inner">
     <div class="color-header">
-      <span class="color-number">16</span>
+      <span class="color-number">17</span>
       <span class="color-name">Lavender</span>
       <span class="color-desc">soft pale purple · calming, feminine-coded, serene</span>
     </div>
@@ -1204,11 +1318,11 @@
   </div>
 </section>
 
-<!-- 23 SLATE -->
+<!-- 18 SLATE -->
 <section class="color-section" id="slate">
   <div class="color-inner">
     <div class="color-header">
-      <span class="color-number">17</span>
+      <span class="color-number">18</span>
       <span class="color-name">Slate</span>
       <span class="color-desc">cool blue-gray · industrial, precise, neutral</span>
     </div>
@@ -1227,45 +1341,6 @@
           <span class="code-chip"><span class="code-chip-dot" style="background:#C7D0D9;"></span>#C7D0D9</span>
           <span class="code-chip"><span class="code-chip-dot" style="background:#475569;"></span>#475569</span>
           <span class="code-chip"><span class="code-chip-dot" style="background:#1E293B;"></span>#1E293B</span>
-        </div>
-      </div>
-      <div class="phone-mini">
-        <div class="phone-mini-screen">
-          <div class="phone-mini-card">
-            <div class="phone-mini-label">Revenue</div>
-            <div class="phone-mini-val">$42,580</div>
-            <div class="phone-mini-ring"><span>78%</span></div>
-          </div>
-          <div class="phone-mini-chip">+18% MoM</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 24 CHARCOAL -->
-<section class="color-section" id="charcoal">
-  <div class="color-inner">
-    <div class="color-header">
-      <span class="color-number">18</span>
-      <span class="color-name">Charcoal</span>
-      <span class="color-desc">warm dark gray · sophisticated, mono-adjacent, timeless</span>
-    </div>
-    <div class="gradient-strip"></div>
-    <div class="demo">
-      <div class="demo-hero-block">
-        <div class="demo-hero-badge"><span class="demo-hero-badge-dot"></span>Done-For-You · 90-Day Install</div>
-        <h2 class="demo-hero-title">Meet the System.</h2>
-        <p class="demo-hero-sub">We install the Abundance Selling System — offers, funnels, CRM, tracking. Compounding from day 27.</p>
-        <div class="demo-actions">
-          <a href="#" class="btn-primary">Apply Now →</a>
-          <a href="#" class="btn-ghost">Watch the 8-min</a>
-        </div>
-        <div class="color-codes">
-          <span class="code-chip"><span class="code-chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#D1CCC5;"></span>#D1CCC5</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#4B4643;"></span>#4B4643</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#1C1917;"></span>#1C1917</span>
         </div>
       </div>
       <div class="phone-mini">
