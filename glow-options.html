@@ -699,6 +699,23 @@
   #iris .phone-mini-ring { background: conic-gradient(from 0deg, #C8C0E8 0%, #7F6FD1 70%, var(--surface-3) 70%); }
   #iris .jump-dot { background: #7F6FD1; }
 
+
+  .band-spacer {
+    height: 200px;
+    background:
+      radial-gradient(ellipse at top, rgba(245,240,232,0.04) 0%, transparent 70%),
+      var(--bg);
+    border-top: 1px solid var(--border);
+  }
+  .band-large {
+    padding: 140px 40px 100px !important;
+    border-top: 1px solid var(--border-strong) !important;
+    background: linear-gradient(180deg, rgba(245,240,232,0.03) 0%, transparent 60%) !important;
+  }
+  .band-large h2 {
+    font-size: clamp(40px, 5vw, 64px) !important;
+  }
+
   @media (max-width: 900px) {
     .color-section { padding: 64px 20px 88px; }
     .demo { grid-template-columns: 1fr; }
@@ -710,16 +727,16 @@
 <!-- TOP BAR -->
 <div class="top-bar">
   <div class="top-bar-inner">
-    <span class="top-bar-title">Final 6 · Locked Recommendation</span>
+    <span class="top-bar-title">Final 6 · Locked</span>
     <div class="top-bar-nav">
       <a href="#peach"     class="jump jump-final"><span class="jump-dot" style="background:#E8967E;"></span>01 Peach</a>
       <a href="#coral"     class="jump jump-final"><span class="jump-dot" style="background:#FB7185;"></span>02 Coral</a>
-      <a href="#rosegold"  class="jump jump-final"><span class="jump-dot" style="background:#D4927D;"></span>03 Rose Gold</a>
-      <a href="#copper"    class="jump jump-final"><span class="jump-dot" style="background:#B87333;"></span>04 Copper</a>
+      <a href="#copper"    class="jump jump-final"><span class="jump-dot" style="background:#B87333;"></span>03 Copper</a>
+      <a href="#mocha"     class="jump jump-final"><span class="jump-dot" style="background:#8B5A3C;"></span>04 Mocha</a>
       <a href="#cerulean"  class="jump jump-final"><span class="jump-dot" style="background:#2A7FB8;"></span>05 Cerulean</a>
       <a href="#slate"     class="jump jump-final"><span class="jump-dot" style="background:#475569;"></span>06 Slate</a>
-      <span class="jump-divider">·</span>
-      <a href="#mocha"     class="jump"><span class="jump-dot" style="background:#8B5A3C;"></span>07 Mocha</a>
+      <span class="jump-divider">alternates ↓</span>
+      <a href="#rosegold"  class="jump"><span class="jump-dot" style="background:#D4927D;"></span>07 Rose Gold</a>
       <a href="#cognac"    class="jump"><span class="jump-dot" style="background:#A56937;"></span>08 Cognac</a>
       <a href="#champagne" class="jump"><span class="jump-dot" style="background:#D9B97C;"></span>09 Champagne</a>
       <a href="#iris"      class="jump"><span class="jump-dot" style="background:#7F6FD1;"></span>10 Iris</a>
@@ -749,7 +766,8 @@
 <!-- INTRO -->
 <section class="intro">
   <h1>Final 6 · Locked</h1>
-  <p><strong style="color:var(--cream);">Peach · Coral · Rose Gold · Copper · Cerulean · Slate</strong> — warm-biased editorial palette with one cool anchor. No greens. The remaining 23 colors below are kept visible so you can double-check the decision.</p>
+  <p><strong style="color:var(--cream);">Peach · Coral · Copper · Mocha · Cerulean · Slate</strong> — warm-biased editorial palette with one cool hue (Cerulean) and one cool neutral (Slate). No greens, no Navy-dark, no faded pastels.</p>
+  <p style="font-size: 14px; color: var(--cream-muted); margin-top: 14px;">The 23 alternates live further down the page, pushed below a visual break.</p>
 </section>
 
 <!-- ═══════════════════════════════════════════ -->
@@ -834,51 +852,11 @@
   </div>
 </section>
 
-<!-- 03 ROSE GOLD · Pink Metallic -->
-<section class="color-section" id="rosegold">
-  <div class="color-inner">
-    <div class="color-header">
-      <span class="color-number">03</span>
-      <span class="color-name">Rose Gold</span>
-      <span class="color-role">Pink Metallic</span>
-      <span class="color-desc">luxury highlights, premium moments, Founding Members</span>
-    </div>
-    <div class="gradient-strip"></div>
-    <div class="demo">
-      <div class="demo-hero-block">
-        <div class="demo-hero-badge"><span class="demo-hero-badge-dot"></span>Done-For-You · 90-Day Install</div>
-        <h2 class="demo-hero-title">Meet the System.</h2>
-        <p class="demo-hero-sub">We install the Abundance Selling System — offers, funnels, CRM, tracking. Compounding from day 27.</p>
-        <div class="demo-actions">
-          <a href="#" class="btn-primary">Apply Now →</a>
-          <a href="#" class="btn-ghost">Watch the 8-min</a>
-        </div>
-        <div class="color-codes">
-          <span class="code-chip"><span class="code-chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#F5D5D2;"></span>#F5D5D2</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#D4927D;"></span>#D4927D</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#854A40;"></span>#854A40</span>
-        </div>
-      </div>
-      <div class="phone-mini">
-        <div class="phone-mini-screen">
-          <div class="phone-mini-card">
-            <div class="phone-mini-label">Revenue</div>
-            <div class="phone-mini-val">$42,580</div>
-            <div class="phone-mini-ring"><span>78%</span></div>
-          </div>
-          <div class="phone-mini-chip">+18% MoM</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 04 COPPER · Bronze Depth -->
+<!-- 03 COPPER · Bronze Depth -->
 <section class="color-section" id="copper">
   <div class="color-inner">
     <div class="color-header">
-      <span class="color-number">04</span>
+      <span class="color-number">03</span>
       <span class="color-name">Copper</span>
       <span class="color-role">Bronze Depth</span>
       <span class="color-desc">heritage moments, case studies, long-form essays</span>
@@ -898,6 +876,46 @@
           <span class="code-chip"><span class="code-chip-dot" style="background:#F2D4B8;"></span>#F2D4B8</span>
           <span class="code-chip"><span class="code-chip-dot" style="background:#B87333;"></span>#B87333</span>
           <span class="code-chip"><span class="code-chip-dot" style="background:#6B4120;"></span>#6B4120</span>
+        </div>
+      </div>
+      <div class="phone-mini">
+        <div class="phone-mini-screen">
+          <div class="phone-mini-card">
+            <div class="phone-mini-label">Revenue</div>
+            <div class="phone-mini-val">$42,580</div>
+            <div class="phone-mini-ring"><span>78%</span></div>
+          </div>
+          <div class="phone-mini-chip">+18% MoM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 MOCHA · Warm Grounder -->
+<section class="color-section" id="mocha">
+  <div class="color-inner">
+    <div class="color-header">
+      <span class="color-number">04</span>
+      <span class="color-name">Mocha</span>
+      <span class="color-role">Warm Grounder</span>
+      <span class="color-desc">serious-warm sections, testimonials, founder stories</span>
+    </div>
+    <div class="gradient-strip"></div>
+    <div class="demo">
+      <div class="demo-hero-block">
+        <div class="demo-hero-badge"><span class="demo-hero-badge-dot"></span>Done-For-You · 90-Day Install</div>
+        <h2 class="demo-hero-title">Meet the System.</h2>
+        <p class="demo-hero-sub">We install the Abundance Selling System — offers, funnels, CRM, tracking. Compounding from day 27.</p>
+        <div class="demo-actions">
+          <a href="#" class="btn-primary">Apply Now →</a>
+          <a href="#" class="btn-ghost">Watch the 8-min</a>
+        </div>
+        <div class="color-codes">
+          <span class="code-chip"><span class="code-chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#DDC5B3;"></span>#DDC5B3</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#8B5A3C;"></span>#8B5A3C</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#40220F;"></span>#40220F</span>
         </div>
       </div>
       <div class="phone-mini">
@@ -995,21 +1013,23 @@
 </section>
 
 <!-- ═══════════════════════════════════════════ -->
-<!-- DIVIDER                                      -->
+<!-- ALTERNATES BAND · PUSHED DOWN                -->
 <!-- ═══════════════════════════════════════════ -->
-<section class="band">
-  <span class="band-label">Alternates</span>
-  <h2>The 23 Alternates</h2>
-  <p>Kept on the page so you can double-check Final 6 decisions against everything seen. Ordered roughly by how close each is to making the cut.</p>
+<div class="band-spacer"></div>
+<section class="band band-large">
+  <span class="band-label">Alternates · Not in Final 6</span>
+  <h2>The 23 that didn't make the cut</h2>
+  <p>Kept on the page so the decision can be re-checked against everything seen. Ordered roughly by how close each is to making the cut — Rose Gold first (just barely cut), down through skippable candidates at the bottom.</p>
+  <p style="margin-top: 24px; font-size: 13px; color: var(--cream-muted);">↓ Scroll to review alternates</p>
 </section>
 
-<!-- 07 MOCHA -->
-<section class="color-section" id="mocha">
+<!-- 07 ROSE GOLD -->
+<section class="color-section" id="rosegold">
   <div class="color-inner">
     <div class="color-header">
       <span class="color-number">07</span>
-      <span class="color-name">Mocha</span>
-      <span class="color-desc">warm deep brown · Slate's warm counterpart</span>
+      <span class="color-name">Rose Gold</span>
+      <span class="color-desc">pink metallic · too close to Peach for primary, could return as luxury accent</span>
     </div>
     <div class="gradient-strip"></div>
     <div class="demo">
@@ -1023,9 +1043,9 @@
         </div>
         <div class="color-codes">
           <span class="code-chip"><span class="code-chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#DDC5B3;"></span>#DDC5B3</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#8B5A3C;"></span>#8B5A3C</span>
-          <span class="code-chip"><span class="code-chip-dot" style="background:#40220F;"></span>#40220F</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#F5D5D2;"></span>#F5D5D2</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#D4927D;"></span>#D4927D</span>
+          <span class="code-chip"><span class="code-chip-dot" style="background:#854A40;"></span>#854A40</span>
         </div>
       </div>
       <div class="phone-mini">
@@ -1048,7 +1068,7 @@
     <div class="color-header">
       <span class="color-number">08</span>
       <span class="color-name">Cognac</span>
-      <span class="color-desc">warm amber-brown · liquor-bottle warmth</span>
+      <span class="color-desc">warm amber-brown · alt to Copper/Mocha</span>
     </div>
     <div class="gradient-strip"></div>
     <div class="demo">
@@ -1204,7 +1224,7 @@
     <div class="color-header">
       <span class="color-number">12</span>
       <span class="color-name">Rose</span>
-      <span class="color-desc">pure pink · pink-forward alt to Rose Gold</span>
+      <span class="color-desc">pure pink · pink-forward alternative</span>
     </div>
     <div class="gradient-strip"></div>
     <div class="demo">
@@ -1399,7 +1419,7 @@
     <div class="color-header">
       <span class="color-number">17</span>
       <span class="color-name">Saffron</span>
-      <span class="color-desc">deep golden yellow · similar to Champagne but brighter</span>
+      <span class="color-desc">deep golden yellow · brighter than Champagne</span>
     </div>
     <div class="gradient-strip"></div>
     <div class="demo">
@@ -1899,6 +1919,8 @@
     </div>
   </div>
 </section>
+
+
 
 
 
