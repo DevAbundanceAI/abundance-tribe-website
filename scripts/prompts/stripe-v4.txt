@@ -1,0 +1,100 @@
+Photorealistic product photo of a modern iPhone 15 Pro on a solid uniform matte black #161616 background. NO scene, NO environment, NO shadows.
+
+The phone is tilted 3 degrees clockwise. The phone fills the frame: top of phone (dynamic island) at the top edge of the image; bottom 30 percent of phone extends past the bottom edge (cropped).
+
+THE iPhone SCREEN HAS EXACTLY TWO STACKED ELEMENTS — NOTHING ELSE:
+
+═══════════════════════════════════════════
+ELEMENT 1: iOS NOTIFICATION BANNER (top of screen)
+═══════════════════════════════════════════
+
+A floating dark grey rounded rectangle (#1c1c1e fill, 22px corner radius) overlapping the dynamic island. The banner is approximately as wide as the phone screen, slightly narrower than the phone bezels.
+
+Inside the banner, layout left to right:
+
+1. FAR LEFT: A square purple Stripe app icon. The icon is a vibrant purple #635BFF rounded square with a stylized white capital letter "S" centered inside. About 60px tall.
+
+2. TOP-LEFT (just to the right of the icon, top line): The word "Stripe" in BOLD WHITE text, semi-large.
+
+3. TOP-RIGHT (far right of the same top line): The timestamp "Sun 23:36" in light grey.
+
+4. BODY (two lines spanning full banner width below the top line):
+   Line A: "You received a payment of $5,000.00"
+   Line B: "USD from [LONG GREY BLUR RECTANGLE]@gmail.com"
+
+   The "[LONG GREY BLUR RECTANGLE]" is a horizontal solid medium-grey rectangle approximately 200 pixels wide by 24 pixels tall, with slightly rounded corners — it represents privacy redaction of an email username. It is NOT readable text. It is a flat opaque grey block. Only "@gmail.com" appears as readable white text after the blur block.
+
+The dollar amount must read exactly: $5,000.00 (with the digit 5 leading, then comma, then triple zero, then decimal, then double zero).
+
+═══════════════════════════════════════════
+ELEMENT 2: STRIPE TRANSACTIONS DASHBOARD (below notification)
+═══════════════════════════════════════════
+
+White background. Fills all the visible phone screen below the notification.
+
+At the very top of the dashboard:
+Column headers in medium-grey small text: "Amount" centered-left, "Payment method" centered-right.
+
+Below the headers: EXACTLY 4 transaction rows. NOT 5. NOT 6. EXACTLY 4 ROWS.
+
+Each row contains, left to right:
+[empty checkbox square] [BOLD black amount] [light grey "USD"] [green pill badge] [payment brand logo] [bullets and 4-digit number]
+
+THE 4 ROWS — each amount LEADING DIGIT MUST BE PRESENT:
+
+ROW 1 (FIRST ROW):
+☐  US$5,000.00  USD  [Succeeded ✓ pill]  [Visa logo]  ••••  6681
+The amount is "US$5,000.00" — leading digit is FIVE. Must NOT render as "US$0,000.00".
+
+ROW 2 (SECOND ROW):
+☐  US$5,000.00  USD  [Succeeded ✓ pill]  [Visa logo]  ••••  9834
+The amount is "US$5,000.00" — leading digit is FIVE. Must NOT render as "US$0,000.00".
+
+ROW 3 (THIRD ROW):
+☐  US$5,500.00  USD  [Succeeded ✓ pill]  [Apple Pay + Amex logo]  ••••  6009
+The amount is "US$5,500.00" — leading digit is FIVE. Must NOT render as "US$0,500.00".
+
+ROW 4 (FOURTH AND FINAL ROW):
+☐  US$4,000.00  USD  [Succeeded ✓ pill]  [Mastercard logo]  ••••  6629
+The amount is "US$4,000.00" — leading digit is FOUR. Must NOT render as "US$0,000.00".
+
+THE BRAND LOGOS MUST BE REAL LOGO GRAPHICS, NOT TEXT WORDS:
+- Visa logo = blue rectangle with stylized white "VISA" wordmark
+- Apple Pay icon = black square with white Apple silhouette
+- Amex (American Express) logo = blue square with "AMEX" or stylized white text
+- Mastercard logo = red circle overlapping yellow/orange circle, with the brand mark. Must be the iconic interlocking circles graphic. Do NOT write the word "Mastercard" or any garbled variant like "Masterrard".
+
+═══════════════════════════════════════════
+SPELLING LOCK — READ THIS CAREFULLY
+═══════════════════════════════════════════
+
+The text inside every green pill is the word: Succeeded
+Spelled: S-u-c-c-e-e-d-e-d (nine letters total)
+Correct: Succeeded
+Correct: Succeeded
+Correct: Succeeded
+Correct: Succeeded
+INCORRECT (do not use): Succeded (missing the second e)
+INCORRECT (do not use): Suceeded (missing one of the c's)
+INCORRECT (do not use): Successed
+The CORRECT spelling, used four times in this image, is: Succeeded
+
+═══════════════════════════════════════════
+LEADING DIGIT LOCK
+═══════════════════════════════════════════
+
+Every dollar amount must clearly display its non-zero leading digit:
+Row 1 amount: $5,000.00 — show the FIVE clearly
+Row 2 amount: $5,000.00 — show the FIVE clearly
+Row 3 amount: $5,500.00 — show the FIVE clearly
+Row 4 amount: $4,000.00 — show the FOUR clearly
+
+Do NOT render any amount as starting with zero like "$0,000.00" — every amount in this image starts with either FIVE or FOUR.
+
+═══════════════════════════════════════════
+RENDER QUALITY
+═══════════════════════════════════════════
+
+All UI text crisp and readable. No compression artifacts. No glitched lines. No scrambled or garbled characters. The image must look like a real, sharp, perfect screenshot of a real iPhone showing real Stripe app UI.
+
+Style: hyper-realistic SaaS product photography. Subtle metallic highlight on iPhone bezel. Square 1:1 aspect. Sharp focus everywhere. Professional editorial render.

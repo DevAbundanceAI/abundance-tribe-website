@@ -1,0 +1,31 @@
+A photorealistic product mockup of an iPhone 15 Pro centered on a solid matte black background.
+
+The phone is tilted 3 degrees to the right. The top of the phone is at the top of the image, and the bottom of the phone is cropped past the frame edge.
+
+The phone screen displays a payment received notification overlaying the Stripe transactions list:
+
+THE NOTIFICATION at the top of the screen is a dark grey rounded banner. Inside the banner, on the left, is a purple rounded square with a white S — the Stripe app icon. To the right of the icon, the bold word "Stripe" appears in white. On the far right, the time "Sun 23:36" appears in light grey. Below this top line, two lines of body text read: "You received a payment of $5,000.00" then "USD from ███████████@gmail.com". The username portion of the email is rendered as a long horizontal grey blur block — privacy redaction style. Only @gmail.com is readable after the blur.
+
+BELOW THE NOTIFICATION, a Stripe transactions table with white background fills the rest of the screen.
+
+The table has two column headers in light grey: "Amount" on the left, "Payment method" on the right.
+
+Below the headers are FOUR ROWS — exactly four, no more, no less.
+
+Row one: a checkbox, then "US$5,000.00" in bold black, then "USD" in light grey, then a small green pill containing the word "Succeeded" with a check mark, then a blue VISA card logo, then "•••• 6681".
+
+Row two: a checkbox, then "US$5,000.00" in bold black, then "USD" in light grey, then a small green pill containing the word "Succeeded" with a check mark, then a blue VISA card logo, then "•••• 9834".
+
+Row three: a checkbox, then "US$5,500.00" in bold black, then "USD" in light grey, then a small green pill containing the word "Succeeded" with a check mark, then a black Apple Pay icon next to a blue Amex card logo, then "•••• 6009".
+
+Row four: a checkbox, then "US$4,000.00" in bold black, then "USD" in light grey, then a small green pill containing the word "Succeeded" with a check mark, then the iconic Mastercard interlocking red and yellow circles logo, then "•••• 6629".
+
+The word inside every green pill is "Succeeded" — that is S, u, c, c, e, e, d, e, d. Nine letters, two e's in the middle. Spelled "Succeeded".
+
+Every amount displays the full dollar value with its leading digit visible. The amounts are clearly $5,000.00, $5,000.00, $5,500.00, and $4,000.00. None of them shows zero as the leading digit.
+
+The brand logos are real graphic logos, not text. Visa is the blue rectangle with the stylized VISA wordmark. Apple Pay is the white Apple silhouette on black. Amex is the blue card with white text. Mastercard is the two interlocking circles in red and orange.
+
+The render is sharp and clean. UI text is pixel-perfect. There are no glitches, no compression artifacts, no broken or garbled characters. The image looks like a real screenshot from a real iPhone showing real Stripe app UI.
+
+Square 1:1 aspect ratio. Hyper-realistic SaaS product photography style. Subtle reflection on the phone's metal bezel.
