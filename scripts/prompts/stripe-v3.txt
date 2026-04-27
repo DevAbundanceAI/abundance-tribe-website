@@ -1,0 +1,36 @@
+Photorealistic product photo of a modern iPhone 15 Pro on a uniform solid matte black #161616 background. NO scene, NO environment, NO ground shadows, NO studio backdrop. Just flat matte black behind the phone.
+
+The phone is tilted very slightly to the right (3 degrees clockwise). The phone fills the frame: top of phone (dynamic island and top bezel) starts at the very top edge of the image; bottom 30 percent of phone extends past the bottom edge of frame (cropped at frame bottom).
+
+ON THE iPhone SCREEN, two distinct stacked elements:
+
+ELEMENT 1 — iOS NOTIFICATION BANNER at the top, overlapping the dynamic island:
+A floating dark grey rounded rectangle (#1c1c1e, 22px corner radius). Inside, layout left to right:
+- LEFT: square purple Stripe app icon — vibrant purple #635BFF rounded square with stylized white letter S in center
+- TOP-LEFT after icon: 'Stripe' in BOLD WHITE, semi-large text
+- TOP-RIGHT: 'Sun 23:36' in light grey
+- BODY TEXT (full width below top line, two lines): 'You received a payment of $5,000.00 USD from [REDACTED]@gmail.com'
+
+CRITICAL EMAIL PRIVACY: The username portion of the email (before the @ sign) MUST be drawn as a small horizontal SOLID GREY BLUR / REDACTION RECTANGLE, NOT visible readable text. It should look like a privacy-blurred area — a soft grey horizontal block — followed by the visible text '@gmail.com' in normal white. This is the standard privacy redaction style used in real Stripe marketing screenshots: an opaque grey rectangle hides the username, then '@gmail.com' is legible after it. The amount '$5,000.00' must be EXACTLY $5,000.00.
+
+ELEMENT 2 — STRIPE TRANSACTIONS DASHBOARD below the notification:
+WHITE background filling the rest of the visible phone screen.
+
+At the top of dashboard: column headers in dark grey: 'Amount' centered-left, 'Payment method' centered-right.
+
+Then exactly 4 transaction rows. Each row contains, left to right: small empty checkbox square, amount in BOLD black, 'USD' in lighter grey, green pill-shaped badge 'Succeeded' with white checkmark, payment method icon, then four-digit card number prefixed with bullet dots.
+
+EXACT 4 ROWS — these are the only amounts, the only card numbers, NO substitutions or duplications:
+Row 1: US$5,000.00 USD · Succeeded · Visa logo · 6681
+Row 2: US$3,000.00 USD · Succeeded · Visa logo · 9834
+Row 3: US$5,500.00 USD · Succeeded · Apple Pay icon · 6009
+Row 4: US$4,000.00 USD · Succeeded · Mastercard logo · 6629
+
+CRITICAL TEXT RULES — DO NOT DEVIATE:
+1. The word 'Succeeded' must be spelled correctly with TWO e's in the middle: S-U-C-C-E-E-D-E-D. Do NOT spell as 'Succeded' or 'Suceeded' or 'Successed'. SUCCEEDED.
+2. Each amount must read EXACTLY as listed: 5000, 3000, 5500, 4000 — make each amount visibly DIFFERENT to avoid confusion.
+3. Each 4-digit card number must read EXACTLY: 6681, 9834, 6009, 6629
+4. NO glitches, NO broken lines, NO compression artifacts, NO garbled or scrambled text. UI must look like a real, perfect, sharp Stripe screenshot.
+5. All text crisp and pixel-sharp.
+
+Style: hyper-realistic SaaS product photography. Subtle highlight on iPhone metal bezel. Square 1:1 aspect. Sharp focus everywhere. Clean professional render. No artistic effects, no painterly look — must look like a REAL screenshot of a real iPhone.

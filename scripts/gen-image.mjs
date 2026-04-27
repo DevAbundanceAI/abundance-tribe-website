@@ -45,21 +45,40 @@ if (!API_KEY) {
 const args = process.argv.slice(2);
 const refs = [];
 const positional = [];
+let promptFile = null;
 for (let i = 0; i < args.length; i++) {
   if (args[i] === "--ref" && args[i + 1]) {
     refs.push(args[++i]);
+  } else if (args[i] === "--prompt-file" && args[i + 1]) {
+    promptFile = args[++i];
   } else {
     positional.push(args[i]);
   }
 }
 
-if (positional.length < 2) {
-  console.error("Usage: node scripts/gen-image.mjs [--ref path]... <prompt> <filename>");
-  process.exit(1);
-}
+let prompt;
+let outName;
 
-const prompt = positional[0];
-let outName = positional[1];
+if (promptFile) {
+  if (!existsSync(promptFile)) {
+    console.error(`Prompt file not found: ${promptFile}`);
+    process.exit(1);
+  }
+  prompt = readFileSync(promptFile, "utf8").trim();
+  if (positional.length < 1) {
+    console.error("Usage: node scripts/gen-image.mjs --prompt-file <path> <filename>");
+    process.exit(1);
+  }
+  outName = positional[0];
+} else {
+  if (positional.length < 2) {
+    console.error("Usage: node scripts/gen-image.mjs [--ref path]... <prompt> <filename>");
+    console.error("   OR: node scripts/gen-image.mjs --prompt-file <path> <filename>");
+    process.exit(1);
+  }
+  prompt = positional[0];
+  outName = positional[1];
+}
 if (!extname(outName)) outName += ".png";
 
 const outDir = resolve("assets/images/generated");
