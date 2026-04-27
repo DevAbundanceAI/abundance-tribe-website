@@ -1,0 +1,12 @@
+{
+  "name": "abundance-tribe-website",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "gen": "node scripts/gen-image.mjs"
+  },
+  "dependencies": {
+    "@google/genai": "^0.7.0"
+  }
+}

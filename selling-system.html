@@ -427,13 +427,74 @@
     background: var(--surface-1);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 28px;
-    min-height: 300px;
+    padding: 28px 28px 0;
+    min-height: 480px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     position: relative;
     overflow: hidden;
+  }
+  .feature-card-text { padding-bottom: 24px; }
+  .step-badge {
+    display: inline-block;
+    background: rgba(248,197,168,0.12);
+    color: #F8C5A8;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 5px 11px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+  .feature-mockup {
+    margin-top: auto;
+    margin-left: -28px;
+    margin-right: -28px;
+    margin-bottom: 0;
+    aspect-ratio: 16 / 10;
+    background: var(--surface-2);
+    border-top: 1px solid var(--border);
+    overflow: hidden;
+    position: relative;
+  }
+  .feature-mockup img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    display: block;
+  }
+  .feature-mockup-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--cream-muted);
+    font-family: "greycliff-cf", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        transparent 0,
+        transparent 12px,
+        rgba(245,240,232,0.03) 12px,
+        rgba(245,240,232,0.03) 24px
+      ),
+      var(--surface-2);
+  }
+  .feature-mockup-placeholder strong {
+    color: var(--cream);
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    text-transform: none;
   }
   .feature-card-step {
     font-family: "greycliff-cf", sans-serif;
@@ -988,52 +1049,46 @@
   </div>
 </div>
 
-<!-- EXPERIENCE · VIOLET -->
+<!-- EXPERIENCE · HOW IT WORKS · 3 STEPS (haystock-style) -->
 <section class="experience">
   <div class="experience-inner">
-    <h2 class="section-title section-title-violet">Experience your business <em>as it compounds.</em></h2>
+    <div style="text-align:center; margin-bottom: 56px;">
+      <span style="display:inline-block; padding: 6px 14px; border-radius: 100px; background: rgba(245,240,232,0.06); border: 1px solid var(--border-strong); font-family: 'greycliff-cf', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream-body); margin-bottom: 24px;">How It Works</span>
+      <h2 class="section-title section-title-peach" style="margin-bottom: 16px;">Install Your System <em>in 3 Simple Steps.</em></h2>
+      <p style="color: var(--cream-body); max-width: 540px; margin: 0 auto; font-size: 16px;">No theory, no guessing, no wasted months. Just plug it in and go.</p>
+    </div>
 
     <div class="feature-grid">
       <div class="feature-card">
-        <div>
-          <div class="feature-card-step">Step 01</div>
+        <div class="feature-card-text">
+          <span class="step-badge">Step 01</span>
           <h3>Clarity Audit &amp; System Map</h3>
           <p>We map your current selling system — offers, funnels, pipeline, delivery — and identify where revenue is leaking before we build a single thing.</p>
         </div>
-        <div class="feature-visual">
-          <div class="fv-row"><span class="fv-label">Current Offers</span><span class="fv-val">3</span></div>
-          <div class="fv-row"><span class="fv-label">Active Funnels</span><span class="fv-val">2</span></div>
-          <div class="fv-row"><span class="fv-label">Leakage (mo)</span><span class="fv-val" style="color:#A78BFA;">~$18K</span></div>
-          <div class="fv-row"><span class="fv-label">Priority</span><span class="fv-val">Offer → Funnel</span></div>
+        <div class="feature-mockup">
+          <div class="feature-mockup-placeholder"><strong>Step 01 mockup</strong>iPhone · Clarity Audit</div>
         </div>
       </div>
 
       <div class="feature-card">
-        <div>
-          <div class="feature-card-step">Step 02</div>
+        <div class="feature-card-text">
+          <span class="step-badge">Step 02</span>
           <h3>Offers, Funnels &amp; Playbooks</h3>
           <p>Every Selling System framework delivered and installed — the offer, the script, the funnel, the follow-up cadence. Plug-and-go.</p>
         </div>
-        <div class="feature-visual">
-          <div class="fv-ring">72%</div>
-          <div style="text-align:center; font-size:10px; color:var(--cream-muted); letter-spacing:0.1em; text-transform:uppercase; margin-top:4px;">System Install</div>
+        <div class="feature-mockup">
+          <div class="feature-mockup-placeholder"><strong>Step 02 mockup</strong>MacBook · Frameworks installed</div>
         </div>
       </div>
 
       <div class="feature-card">
-        <div>
-          <div class="feature-card-step">Step 03</div>
+        <div class="feature-card-text">
+          <span class="step-badge">Step 03</span>
           <h3>CRM, Pipeline &amp; Tracking</h3>
           <p>We build and tune your sales CRM, automate the follow-up, and wire every metric into a single live dashboard.</p>
         </div>
-        <div class="feature-visual">
-          <div class="fv-bars">
-            <div class="fv-bar"></div>
-            <div class="fv-bar"></div>
-            <div class="fv-bar"></div>
-            <div class="fv-bar"></div>
-            <div class="fv-bar"></div>
-          </div>
+        <div class="feature-mockup">
+          <img src="/assets/images/generated/stripe-haystock-v1.png" alt="iPhone showing Stripe payment notification of $5,000.00 with dashboard transaction rows below">
         </div>
       </div>
     </div>
