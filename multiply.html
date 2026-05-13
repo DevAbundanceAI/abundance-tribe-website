@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selling System — DFY Meta Ads Ecosystem · Abundance.AI</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
+<style>
+  @font-face {
+    font-family: 'Neo Contact';
+    src: url('/assets/fonts/neo-contact/neo-contact-lt-pro.woff2') format('woff2');
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --bg: #0F0F0F;
+    --surface-1: #161616;
+    --surface-2: #1D1D1D;
+    --surface-3: #242424;
+    --cream: #F5F0E8;
+    --cream-warm: #F8F6EC;
+    --cream-body: #D5CFC4;
+    --cream-muted: #9C968C;
+    --border: rgba(245,240,232,0.08);
+    --border-strong: rgba(245,240,232,0.18);
+    --radius: 20px;
+
+    /* Final 6 glows · cream → deep · 135° */
+    --glow-peach:    linear-gradient(135deg, #F5F0E8 0%, #F8C5A8 40%, #E8967E 75%, #C4715E 100%);
+    --glow-coral:    linear-gradient(135deg, #F5F0E8 0%, #FECACA 40%, #FB7185 75%, #BE123C 100%);
+    --glow-copper:   linear-gradient(135deg, #F5F0E8 0%, #F2D4B8 40%, #B87333 75%, #6B4120 100%);
+    --glow-mocha:    linear-gradient(135deg, #F5F0E8 0%, #DDC5B3 40%, #8B5A3C 75%, #40220F 100%);
+    --glow-cerulean: linear-gradient(135deg, #F5F0E8 0%, #B8DDEC 40%, #2A7FB8 75%, #1A4A6B 100%);
+    --glow-slate:    linear-gradient(135deg, #F5F0E8 0%, #C7D0D9 40%, #475569 75%, #1E293B 100%);
+
+    /* Section radial halos */
+    --halo-peach:    radial-gradient(ellipse 100% 60% at 50% 0%, rgba(232,150,126,0.18) 0%, transparent 60%);
+    --halo-coral:    radial-gradient(ellipse 100% 60% at 50% 0%, rgba(251,113,133,0.16) 0%, transparent 60%);
+    --halo-copper:   radial-gradient(ellipse 100% 60% at 50% 0%, rgba(184,115,51,0.16) 0%, transparent 60%);
+    --halo-mocha:    radial-gradient(ellipse 100% 60% at 50% 0%, rgba(139,90,60,0.18) 0%, transparent 60%);
+    --halo-cerulean: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(42,127,184,0.16) 0%, transparent 60%);
+    --halo-slate:    radial-gradient(ellipse 100% 60% at 50% 0%, rgba(71,85,105,0.18) 0%, transparent 60%);
+
+    /* Surface cards */
+    --card: linear-gradient(135deg, #161616, #1D1D1D);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: "greycliff-cf", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5 {
+    color: var(--cream);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-family: "greycliff-cf", sans-serif;
+  }
+  p { color: var(--cream-body); }
+
+  /* Big em moment — once per page · peach gradient · Neo Contact */
+  h1 em, h2 em {
+    font-family: 'Neo Contact', serif;
+    font-style: italic;
+    font-weight: 700;
+    display: block;
+    font-size: 1.2em;
+    line-height: 1;
+    margin-top: 0.05em;
+    background-image: var(--glow-peach);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Section primitive */
+  section { padding: 120px 40px; position: relative; overflow: hidden; }
+  .container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+  .halo {
+    position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  }
+  .halo.peach    { background: var(--halo-peach); }
+  .halo.coral    { background: var(--halo-coral); }
+  .halo.copper   { background: var(--halo-copper); }
+  .halo.mocha    { background: var(--halo-mocha); }
+  .halo.cerulean { background: var(--halo-cerulean); }
+  .halo.slate    { background: var(--halo-slate); }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--surface-1);
+    border: 1px solid var(--border-strong);
+    border-radius: 100px;
+    padding: 6px 16px 6px 8px;
+    font-weight: 600; font-size: 12px;
+    color: var(--cream-body);
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
+  }
+  .eyebrow-dot { width: 18px; height: 18px; border-radius: 50%; }
+  .eyebrow-dot.peach    { background: var(--glow-peach); }
+  .eyebrow-dot.coral    { background: var(--glow-coral); }
+  .eyebrow-dot.copper   { background: var(--glow-copper); }
+  .eyebrow-dot.mocha    { background: var(--glow-mocha); }
+  .eyebrow-dot.cerulean { background: var(--glow-cerulean); }
+  .eyebrow-dot.slate    { background: var(--glow-slate); }
+
+  /* Section heading pattern */
+  .section-head { text-align: center; max-width: 720px; margin: 0 auto 64px; }
+  .section-head h2 {
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 18px;
+  }
+  .section-head p {
+    font-size: clamp(15px, 1.4vw, 17px);
+    color: var(--cream-body);
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  /* Inline gradient span — used to color one word inside a default cream headline */
+  .grad-peach    { background-image: var(--glow-peach);    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .grad-coral    { background-image: var(--glow-coral);    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .grad-copper   { background-image: var(--glow-copper);   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .grad-mocha    { background-image: var(--glow-mocha);    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .grad-cerulean { background-image: var(--glow-cerulean); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .grad-slate    { background-image: var(--glow-slate);    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 28px; border-radius: 10px;
+    font-weight: 700; font-size: 15px;
+    text-decoration: none;
+    transition: transform 0.15s ease, filter 0.15s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, #E8967E 0%, #F8C5A8 100%);
+    color: #3A1810;
+  }
+  .btn-primary:hover { transform: translateY(-1px); filter: brightness(1.05); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid var(--border-strong);
+  }
+  .btn-ghost:hover { background: var(--surface-1); }
+  .btn-cream { background: var(--cream); color: var(--bg); }
+  .btn-cream:hover { background: var(--cream-warm); }
+  .btn-arrow { font-size: 18px; line-height: 1; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(15,15,15,0.78);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 40px;
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-brand {
+    font-weight: 800; font-size: 15px;
+    color: var(--cream); text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-brand::before {
+    content: ''; width: 24px; height: 24px;
+    border-radius: 7px;
+    background: var(--glow-peach);
+  }
+  .nav-cta {
+    background: var(--cream); color: var(--bg);
+    padding: 9px 22px; border-radius: 100px;
+    font-weight: 700; font-size: 13px;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--cream-warm); }
+
+  /* ─── HERO · PEACH ─── */
+  .hero { padding: 80px 40px 100px; text-align: center; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+  .hero h1 {
+    font-size: clamp(54px, 8vw, 108px);
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 28px;
+  }
+  .hero h1 .line { display: block; color: var(--cream); }
+  .hero-sub {
+    font-size: clamp(16px, 1.5vw, 19px);
+    max-width: 620px; margin: 0 auto 14px;
+    color: var(--cream-body);
+  }
+  .hero-result {
+    display: inline-block;
+    margin: 0 auto 36px;
+    padding: 8px 18px;
+    background: var(--surface-1);
+    border: 1px solid var(--border-strong);
+    border-radius: 100px;
+    font-size: 14px; font-weight: 600;
+    color: var(--cream);
+  }
+  .hero-result::before {
+    content: ''; display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--glow-peach);
+    margin-right: 10px;
+    transform: translateY(-1px);
+  }
+  .hero-cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px; }
+
+  .trust-row {
+    display: inline-flex; align-items: center; gap: 14px;
+    padding: 8px 20px 8px 8px;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+  }
+  .avatar-stack { display: flex; }
+  .avatar {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--surface-1);
+    margin-left: -10px;
+    background: var(--surface-3);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 11px;
+    color: var(--cream);
+  }
+  .avatar:first-child { margin-left: 0; }
+  .av1 { background: linear-gradient(135deg, #F8C5A8, #C4715E); color: #3A1810; }
+  .av2 { background: linear-gradient(135deg, #FECACA, #BE123C); color: #fff; }
+  .av3 { background: linear-gradient(135deg, #F2D4B8, #6B4120); color: #fff; }
+  .av4 { background: linear-gradient(135deg, #DDC5B3, #40220F); color: #fff; }
+  .trust-text { font-size: 13px; color: var(--cream-body); font-weight: 600; }
+  .trust-text strong { color: var(--cream); }
+
+  /* Hero halo */
+  .hero::before {
+    content: ''; position: absolute;
+    top: -120px; left: 50%; transform: translateX(-50%);
+    width: 1300px; height: 800px;
+    background: radial-gradient(ellipse, rgba(232,150,126,0.22) 0%, rgba(248,197,168,0.07) 35%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ─── LOGO STRIP ─── */
+  .logos { padding: 64px 40px; border-block: 1px solid var(--border); background: var(--bg); }
+  .logos-label {
+    text-align: center;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 32px;
+    font-weight: 600;
+  }
+  .logos-row {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 36px;
+    align-items: center; opacity: 0.7;
+  }
+  .logo-ph {
+    height: 36px;
+    border-radius: 8px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: var(--cream-muted);
+    letter-spacing: 0.12em; font-weight: 700; text-transform: uppercase;
+  }
+
+  /* ─── CASE STUDIES · CORAL ─── */
+  .case-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .case-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .case-card::after {
+    content: ''; position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 40% at 100% 0%, rgba(251,113,133,0.08), transparent 60%);
+    pointer-events: none;
+  }
+  .case-top {
+    display: flex; gap: 16px; align-items: center;
+    margin-bottom: 20px; position: relative;
+  }
+  .case-photo {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FECACA, #BE123C);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; color: #fff; font-size: 18px;
+    flex-shrink: 0;
+  }
+  .case-photo.photo-2 { background: linear-gradient(135deg, #F8C5A8, #C4715E); color: #3A1810; }
+  .case-photo.photo-3 { background: linear-gradient(135deg, #F2D4B8, #6B4120); color: #fff; }
+  .case-photo.photo-4 { background: linear-gradient(135deg, #DDC5B3, #40220F); color: #fff; }
+  .case-name {
+    font-weight: 700; font-size: 18px; color: var(--cream);
+  }
+  .case-headline {
+    font-size: 14px;
+    font-weight: 600;
+    background-image: var(--glow-coral);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .case-quote {
+    color: var(--cream-body);
+    font-size: 15px; line-height: 1.55;
+    margin-bottom: 24px;
+    position: relative;
+    padding-left: 16px;
+    border-left: 2px solid;
+    border-image: var(--glow-coral) 1;
+  }
+  .case-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    position: relative;
+  }
+  .case-stat-label {
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--cream-muted); margin-bottom: 4px; font-weight: 600;
+  }
+  .case-stat-val {
+    font-size: 18px; font-weight: 800; color: var(--cream);
+    letter-spacing: -0.02em;
+  }
+  .case-meta {
+    display: inline-flex;
+    margin-top: 4px;
+    font-size: 11px; font-weight: 600;
+    padding: 4px 10px;
+    background: var(--surface-3);
+    border-radius: 100px;
+    color: var(--cream-body);
+  }
+
+  /* ─── RESULTS CAROUSEL · COPPER ─── */
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .result-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    display: flex; flex-direction: column;
+    min-height: 380px;
+    position: relative;
+    overflow: hidden;
+  }
+  .result-card::before {
+    content: ''; position: absolute;
+    top: 0; right: 0; width: 200px; height: 200px;
+    background: radial-gradient(circle at top right, rgba(184,115,51,0.10), transparent 70%);
+    pointer-events: none;
+  }
+  .result-big {
+    font-size: clamp(40px, 4.5vw, 56px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+    background-image: var(--glow-copper);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .result-big-label {
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--cream-muted); font-weight: 600;
+    margin-bottom: 24px;
+  }
+  .result-quote {
+    font-size: 14px; line-height: 1.55;
+    color: var(--cream-body);
+    margin-bottom: 24px;
+    flex: 1;
+  }
+  .result-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  .result-tag {
+    font-size: 10px; font-weight: 600;
+    padding: 4px 10px;
+    background: var(--surface-3);
+    border-radius: 100px;
+    color: var(--cream-body);
+    letter-spacing: 0.04em;
+  }
+  .result-foot { display: flex; gap: 12px; align-items: center; }
+  .result-photo {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #F2D4B8, #6B4120);
+    flex-shrink: 0;
+  }
+  .result-photo.cu-1 { background: linear-gradient(135deg, #FECACA, #BE123C); }
+  .result-photo.cu-2 { background: linear-gradient(135deg, #B8DDEC, #1A4A6B); }
+  .result-photo.cu-3 { background: linear-gradient(135deg, #F8C5A8, #C4715E); }
+  .result-photo.cu-4 { background: linear-gradient(135deg, #DDC5B3, #40220F); }
+  .result-photo.cu-5 { background: linear-gradient(135deg, #C7D0D9, #1E293B); }
+  .result-name { font-weight: 700; font-size: 14px; color: var(--cream); }
+  .result-co { font-size: 12px; color: var(--cream-muted); }
+
+  /* ─── HOW IT WORKS · CERULEAN ─── */
+  .steps { display: flex; flex-direction: column; gap: 20px; }
+  .step {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr;
+    gap: 32px;
+    align-items: stretch;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .step:nth-child(even) { grid-template-columns: 80px 1fr 1fr; }
+  .step:nth-child(even) .step-visual { order: -1; }
+  .step-num {
+    font-size: 48px; font-weight: 800; line-height: 1;
+    letter-spacing: -0.03em;
+    background-image: var(--glow-cerulean);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .step-copy h3 {
+    font-size: 24px;
+    margin-bottom: 14px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .step-copy p { font-size: 15px; color: var(--cream-body); }
+  .step-visual {
+    border-radius: 14px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    min-height: 220px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--cream-muted);
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+  }
+  .step-visual::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(42,127,184,0.10), transparent 65%);
+  }
+  .step-visual span { position: relative; z-index: 2; }
+
+  /* Special tracker visual for step 5 */
+  .tracker {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+    width: 100%; padding: 20px;
+    position: relative; z-index: 2;
+  }
+  .tracker-cell {
+    background: var(--surface-3);
+    border-radius: 10px;
+    padding: 14px;
+    border: 1px solid var(--border);
+  }
+  .tracker-label {
+    font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--cream-muted); font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .tracker-val {
+    font-size: 22px; font-weight: 800; color: var(--cream);
+    letter-spacing: -0.02em; line-height: 1;
+  }
+  .tracker-cell.big {
+    grid-column: span 2;
+    background-image: var(--glow-cerulean);
+    border: none;
+  }
+  .tracker-cell.big .tracker-label, .tracker-cell.big .tracker-val { color: #06182A; }
+  .tracker-cell.big .tracker-val { font-size: 30px; }
+
+  /* ─── LEADERSHIP · MOCHA ─── */
+  .leaders { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .leader-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .leader-card::after {
+    content: ''; position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(139,90,60,0.12), transparent 60%);
+    pointer-events: none;
+  }
+  .leader-photo {
+    width: 100%; aspect-ratio: 4/3;
+    border-radius: 14px;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #8B5A3C, #40220F);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(245,240,232,0.45);
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+  }
+  .leader-photo.b { background: linear-gradient(135deg, #DDC5B3, #6B4120); }
+  .leader-photo::before {
+    content: ''; position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 30%, rgba(245,240,232,0.18), transparent 60%);
+  }
+  .leader-name { font-size: 24px; font-weight: 700; color: var(--cream); margin-bottom: 4px; letter-spacing: -0.02em; }
+  .leader-role {
+    font-size: 13px;
+    margin-bottom: 16px;
+    background-image: var(--glow-mocha);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    font-weight: 600;
+  }
+  .leader-bio { font-size: 15px; color: var(--cream-body); }
+
+  /* ─── ABOUT + EVENT · SLATE ─── */
+  .about-grid {
+    display: grid; grid-template-columns: 1.1fr 1fr;
+    gap: 48px; align-items: center;
+  }
+  .about-copy h2 { font-size: clamp(36px, 4.5vw, 56px); line-height: 1.05; margin-bottom: 20px; }
+  .about-copy p {
+    font-size: 16px; line-height: 1.65;
+    color: var(--cream-body);
+    margin-bottom: 16px;
+  }
+  .about-photo {
+    aspect-ratio: 4/3;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, #475569, #1E293B);
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 28px;
+  }
+  .about-photo::before {
+    content: ''; position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(245,240,232,0.12), transparent 55%);
+  }
+  .about-photo-label {
+    position: relative;
+    font-size: 13px; font-weight: 600;
+    color: var(--cream);
+    background: rgba(15,15,15,0.55);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--border-strong);
+    border-radius: 100px;
+    padding: 6px 14px;
+    display: inline-block;
+    width: fit-content;
+  }
+
+  /* ─── PULL QUOTE · MOCHA ─── */
+  .pullquote-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 56px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 36px;
+    align-items: center;
+    max-width: 980px; margin: 0 auto;
+    position: relative; overflow: hidden;
+  }
+  .pullquote-card::after {
+    content: ''; position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 0% 50%, rgba(139,90,60,0.14), transparent 60%);
+    pointer-events: none;
+  }
+  .pullquote-photo {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #DDC5B3, #40220F);
+    flex-shrink: 0;
+  }
+  .pullquote-card blockquote {
+    font-size: clamp(18px, 1.7vw, 22px);
+    line-height: 1.5;
+    color: var(--cream);
+    font-weight: 500;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .pullquote-byline { font-size: 14px; font-weight: 700; color: var(--cream); }
+  .pullquote-role {
+    font-size: 13px;
+    background-image: var(--glow-mocha);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    font-weight: 600;
+  }
+
+  /* ─── FINAL CTA · PEACH BOOKEND ─── */
+  .final-cta { text-align: center; }
+  .final-cta h2 {
+    font-size: clamp(60px, 9vw, 128px);
+    line-height: 0.9;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 28px;
+  }
+  .final-cta p {
+    max-width: 640px; margin: 0 auto 36px;
+    font-size: 17px; color: var(--cream-body); line-height: 1.6;
+  }
+
+  /* ─── FAQ · SLATE ─── */
+  .faq-list { max-width: 820px; margin: 0 auto; }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+  }
+  .faq-q {
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer;
+    font-size: 18px; font-weight: 600;
+    color: var(--cream);
+    list-style: none;
+  }
+  .faq-q::-webkit-details-marker { display: none; }
+  .faq-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--surface-3);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--cream-body);
+    font-size: 16px;
+    transition: transform 0.2s, background 0.2s;
+    flex-shrink: 0; margin-left: 16px;
+  }
+  details[open] .faq-icon { transform: rotate(45deg); background: var(--glow-slate); color: var(--cream); }
+  .faq-a {
+    padding-top: 12px;
+    color: var(--cream-body);
+    font-size: 15px; line-height: 1.6;
+    max-width: 700px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+    padding: 48px 40px 24px;
+  }
+  .footer-inner { max-width: 1100px; margin: 0 auto; }
+  .footer-brand {
+    font-weight: 800; font-size: 15px;
+    color: var(--cream);
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 28px;
+  }
+  .footer-brand::before {
+    content: ''; width: 24px; height: 24px;
+    border-radius: 7px;
+    background: var(--glow-peach);
+  }
+  .footer-disclaimer {
+    font-size: 12px; line-height: 1.7;
+    color: var(--cream-muted);
+    max-width: 920px;
+    margin-bottom: 24px;
+  }
+  .footer-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 24px; border-top: 1px solid var(--border);
+    font-size: 12px; color: var(--cream-muted);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 980px) {
+    section { padding: 80px 24px; }
+    .case-grid, .results-grid, .leaders, .about-grid { grid-template-columns: 1fr; }
+    .step { grid-template-columns: 60px 1fr; }
+    .step .step-visual { grid-column: 1 / -1; order: 2; }
+    .logos-row { grid-template-columns: repeat(3, 1fr); }
+    .pullquote-card { grid-template-columns: 1fr; text-align: center; padding: 36px 28px; }
+    .pullquote-photo { margin: 0 auto; }
+    nav { padding: 14px 20px; }
+    .hero { padding: 56px 24px 72px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Abundance.AI</a>
+    <a href="#cta" class="nav-cta">Apply Now</a>
+  </div>
+</nav>
+
+<!-- HERO · PEACH -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">
+      <span class="eyebrow-dot peach"></span>
+      For Founders &amp; Operators Doing $30K&ndash;$500K/mo
+    </div>
+    <h1>
+      <span class="line">Scale Your Business With A</span>
+      <em>Selling System</em>
+    </h1>
+    <p class="hero-sub">
+      Done-for-you ads, funnel, and CRM. We build &amp; manage the entire acquisition machine — you stay focused on closing and delivery.
+    </p>
+    <div class="hero-result">Result: Calendar full of pre-sold appointments</div>
+    <div class="hero-cta-row">
+      <a href="#cta" class="btn btn-primary">Apply Now <span class="btn-arrow">&rarr;</span></a>
+      <a href="#how" class="btn btn-ghost">See how it works</a>
+    </div>
+    <div class="trust-row">
+      <div class="avatar-stack">
+        <div class="avatar av1">RF</div>
+        <div class="avatar av2">EM</div>
+        <div class="avatar av3">JK</div>
+        <div class="avatar av4">SH</div>
+      </div>
+      <div class="trust-text"><strong>Trusted by 250+ founders</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO STRIP -->
+<section class="logos" style="padding: 64px 40px;">
+  <div class="logos-label">Companies we've worked with</div>
+  <div class="logos-row">
+    <div class="logo-ph">Logo</div>
+    <div class="logo-ph">Logo</div>
+    <div class="logo-ph">Logo</div>
+    <div class="logo-ph">Logo</div>
+    <div class="logo-ph">Logo</div>
+    <div class="logo-ph">Logo</div>
+  </div>
+</section>
+
+<!-- CASE STUDIES · CORAL -->
+<section>
+  <div class="halo coral"></div>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-dot coral"></span>Client Results</div>
+      <h2>Real founders. <span class="grad-coral">Real numbers.</span></h2>
+      <p>Four founders, four operating models, one acquisition system. Stats pulled from live dashboards inside their accounts.</p>
+    </div>
+    <div class="case-grid">
+
+      <div class="case-card">
+        <div class="case-top">
+          <div class="case-photo">ER</div>
+          <div>
+            <div class="case-name">Eric R.</div>
+            <div class="case-headline">$10K/mo &rarr; $70K/mo</div>
+          </div>
+        </div>
+        <p class="case-quote">"Looking at the numbers we did $70K in the last 40 days &mdash; which is huge because I'm hands-off now. The team operates and I review."</p>
+        <div class="case-stats">
+          <div>
+            <div class="case-stat-label">Business</div>
+            <div class="case-stat-val" style="font-size:14px;">B2B Supply</div>
+          </div>
+          <div>
+            <div class="case-stat-label">Close Rate</div>
+            <div class="case-stat-val">43%</div>
+          </div>
+          <div>
+            <div class="case-stat-label">Timeline</div>
+            <div class="case-stat-val">120 d</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-top">
+          <div class="case-photo photo-2">HW</div>
+          <div>
+            <div class="case-name">Harrison W.</div>
+            <div class="case-headline">$21K/mo &rarr; $72K/mo</div>
+          </div>
+        </div>
+        <p class="case-quote">"Closed three back-to-back $3K deals in one day. As an agency owner, that's the ceiling I was trying to break for a year."</p>
+        <div class="case-stats">
+          <div>
+            <div class="case-stat-label">Business</div>
+            <div class="case-stat-val" style="font-size:14px;">Agency</div>
+          </div>
+          <div>
+            <div class="case-stat-label">Close Rate</div>
+            <div class="case-stat-val">36%</div>
+          </div>
+          <div>
+            <div class="case-stat-label">Timeline</div>
+            <div class="case-stat-val">90 d</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-top">
+          <div class="case-photo photo-3">PT</div>
+          <div>
+            <div class="case-name">Parker T.</div>
+            <div class="case-headline">$7K spend &rarr; $20K in 4 days</div>
+          </div>
+        </div>
+        <p class="case-quote">"We ran the campaign, spent $7K, ROAS came in at 7x on that single ad. First time we've ever seen numbers like that."</p>
+        <div class="case-stats">
+          <div>
+            <div class="case-stat-label">Revenue</div>
+            <div class="case-stat-val" style="font-size:14px;">$20K / 4d</div>
+          </div>
+          <div>
+            <div class="case-stat-label">Close Rate</div>
+            <div class="case-stat-val">45%</div>
+          </div>
+          <div>
+            <div class="case-stat-label">Timeline</div>
+            <div class="case-stat-val">90 d</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-top">
+          <div class="case-photo photo-4">JD</div>
+          <div>
+            <div class="case-name">Jason D.</div>
+            <div class="case-headline">40% &rarr; 60% close rate</div>
+          </div>
+        </div>
+        <p class="case-quote">"Felt like I'd hired an internal sales team without the overhead. It's a real department in my business now &mdash; one I'd been missing."</p>
+        <div class="case-stats">
+          <div>
+            <div class="case-stat-label">Revenue</div>
+            <div class="case-stat-val">$34K</div>
+          </div>
+          <div>
+            <div class="case-stat-label">Close Rate</div>
+            <div class="case-stat-val">60%</div>
+          </div>
+          <div>
+            <div class="case-stat-label">Timeline</div>
+            <div class="case-stat-val">63 d</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS CAROUSEL · COPPER -->
+<section>
+  <div class="halo copper"></div>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-dot copper"></span>Outcomes</div>
+      <h2>Numbers from the <span class="grad-copper">last 12 months</span></h2>
+      <p>Every account has its own dashboard. These are the live receipts, not the highlight reel.</p>
+    </div>
+    <div class="results-grid">
+
+      <div class="result-card">
+        <div class="result-big">11.9x</div>
+        <div class="result-big-label">ROAS on ad spend</div>
+        <p class="result-quote">"Before this, we were running on referrals only. First $150 in spend, we signed ten clients and pulled $15K in revenue from one campaign. It opened a channel we never had."</p>
+        <div class="result-tags">
+          <span class="result-tag">Meta Ads</span>
+          <span class="result-tag">Cold Acquisition</span>
+        </div>
+        <div class="result-foot">
+          <div class="result-photo cu-1"></div>
+          <div>
+            <div class="result-name">Charline</div>
+            <div class="result-co">LaniMediaHouse.co</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-big">3.2x</div>
+        <div class="result-big-label">Blended ROAS</div>
+        <p class="result-quote">"They took care of everything &mdash; ad scripting, editing, the funnel build, CRM, even the follow-up sequences. Nothing fell to me."</p>
+        <div class="result-tags">
+          <span class="result-tag">Funnel Build</span>
+          <span class="result-tag">CRM</span>
+          <span class="result-tag">Creative</span>
+        </div>
+        <div class="result-foot">
+          <div class="result-photo cu-2"></div>
+          <div>
+            <div class="result-name">Keith H.</div>
+            <div class="result-co">B2B Service Owner</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-big">$110</div>
+        <div class="result-big-label">Cost per B2B call</div>
+        <p class="result-quote">"We rebuilt campaign structure, creative direction, and bidding logic. Within a few weeks the calendar went from cold to qualified-only."</p>
+        <div class="result-tags">
+          <span class="result-tag">Strategy</span>
+          <span class="result-tag">Creative</span>
+          <span class="result-tag">B2B</span>
+        </div>
+        <div class="result-foot">
+          <div class="result-photo cu-3"></div>
+          <div>
+            <div class="result-name">Michael S.</div>
+            <div class="result-co">GoMoyble.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-big">$205</div>
+        <div class="result-big-label">CPL for $15K offer</div>
+        <p class="result-quote">"Launched the creatives, built the funnel from scratch, started landing qualified meetings for a $15K offer. The infrastructure is what compounded."</p>
+        <div class="result-tags">
+          <span class="result-tag">High-Ticket</span>
+          <span class="result-tag">Funnel</span>
+        </div>
+        <div class="result-foot">
+          <div class="result-photo cu-4"></div>
+          <div>
+            <div class="result-name">Marc M.</div>
+            <div class="result-co">EquipSales.io</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-big">+20%</div>
+        <div class="result-big-label">Revenue lift</div>
+        <p class="result-quote">"They revamped the sales process and built marketing systems that were genuinely scalable. The compounding is the part we underestimated."</p>
+        <div class="result-tags">
+          <span class="result-tag">Sales Ops</span>
+          <span class="result-tag">SaaS</span>
+        </div>
+        <div class="result-foot">
+          <div class="result-photo cu-5"></div>
+          <div>
+            <div class="result-name">Jason O.</div>
+            <div class="result-co">OpenDispo.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-big">$70K</div>
+        <div class="result-big-label">Cash collected in 40 days</div>
+        <p class="result-quote">"Hands-off now. I review numbers in the morning, the team operates the rest of the day, and the calendar fills itself."</p>
+        <div class="result-tags">
+          <span class="result-tag">Hands-Off</span>
+          <span class="result-tag">B2B</span>
+        </div>
+        <div class="result-foot">
+          <div class="result-photo"></div>
+          <div>
+            <div class="result-name">Eric R.</div>
+            <div class="result-co">DentalOrigin.com</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS · CERULEAN -->
+<section id="how">
+  <div class="halo cerulean"></div>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-dot cerulean"></span>How it works</div>
+      <h2>A premium brand. <br>A full calendar. <span class="grad-cerulean">All done-for-you.</span></h2>
+      <p>We build the brand, run the ads, set up the CRM, and track every number — so your calendar fills with buyers who already see you as the premium choice.</p>
+    </div>
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-copy">
+          <h3>Brand identity &amp; strategy buildout</h3>
+          <p>We craft your premium positioning and creative direction — so ads attract high-value buyers who already see you as the authority before the first call.</p>
+        </div>
+        <div class="step-visual"><span>Brand &amp; positioning</span></div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-copy">
+          <h3>Meta Ads scripting, editing &amp; management</h3>
+          <p>We script, edit, and manage the full Meta Ads operation: custom creatives, campaign structure, daily optimization. End-to-end, done-for-you.</p>
+        </div>
+        <div class="step-visual"><span>Ads &amp; creative</span></div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-copy">
+          <h3>Sales CRM &amp; pipeline optimization</h3>
+          <p>We build and optimize your CRM pipeline, automations, and follow-up sequences — so every lead is tracked, nurtured, and booked without slipping.</p>
+        </div>
+        <div class="step-visual"><span>CRM &amp; follow-up</span></div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-copy">
+          <h3>Retargeting ecosystem</h3>
+          <p>Prospects get surrounded from every angle &mdash; ads, email, content, DM &mdash; until they're ready to book. Nothing leaks out of the funnel.</p>
+        </div>
+        <div class="step-visual"><span>Retargeting</span></div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">05</div>
+        <div class="step-copy">
+          <h3>Centralised data tracking</h3>
+          <p>CPL, cost-per-booked-call, show rate, close rate, revenue &mdash; all unified in one dashboard. Every decision backed by real numbers, not gut feel.</p>
+        </div>
+        <div class="step-visual">
+          <div class="tracker">
+            <div class="tracker-cell">
+              <div class="tracker-label">CPL</div>
+              <div class="tracker-val">$18</div>
+            </div>
+            <div class="tracker-cell">
+              <div class="tracker-label">CPBC</div>
+              <div class="tracker-val">$142</div>
+            </div>
+            <div class="tracker-cell">
+              <div class="tracker-label">Show</div>
+              <div class="tracker-val">78%</div>
+            </div>
+            <div class="tracker-cell">
+              <div class="tracker-label">Close</div>
+              <div class="tracker-val">38%</div>
+            </div>
+            <div class="tracker-cell big">
+              <div class="tracker-label">Revenue · last 30d</div>
+              <div class="tracker-val">$127K</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP · MOCHA -->
+<section>
+  <div class="halo mocha"></div>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-dot mocha"></span>Leadership</div>
+      <h2>Built by <span class="grad-mocha">operators</span>, not influencers</h2>
+      <p>The team that builds your acquisition system has done it inside their own companies first.</p>
+    </div>
+    <div class="leaders">
+
+      <div class="leader-card">
+        <div class="leader-photo"><span>Founder portrait · placeholder</span></div>
+        <div class="leader-name">Ryan F.</div>
+        <div class="leader-role">Founder &amp; Head of Growth</div>
+        <p class="leader-bio">Built Abundance.AI in 2024 after five years running paid acquisition for high-ticket coaches and consultants. Has managed seven-figures in ad spend and led growth at three sub-$10M founder-led companies. Lives in the dashboards.</p>
+      </div>
+
+      <div class="leader-card">
+        <div class="leader-photo b"><span>Co-founder portrait · placeholder</span></div>
+        <div class="leader-name">[Co-founder]</div>
+        <div class="leader-role">Head of Sales Systems</div>
+        <p class="leader-bio">Has built and overseen sales infrastructure for 300+ founders and high-ticket service businesses — turning booked calls into closed deals through pipeline design, scripting, and setter/closer enablement.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT + EVENT · SLATE -->
+<section>
+  <div class="halo slate"></div>
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-copy">
+        <div class="eyebrow"><span class="eyebrow-dot slate"></span>About</div>
+        <h2>One <span class="grad-slate">system</span>, not three problems.</h2>
+        <p>Abundance.AI is the done-for-you acquisition partner for established service businesses. Since 2024 we've managed seven-figures in ad spend and built Selling Systems for 250+ founders.</p>
+        <p>We handle brand, ads, funnel, CRM, and retargeting &mdash; then optimize until your calendar is full of qualified, pre-sold appointments. Every layer feeds data back into the next, so the longer it runs, the sharper it gets.</p>
+      </div>
+      <div class="about-photo">
+        <span class="about-photo-label">Live event &middot; placeholder</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE · MOCHA -->
+<section style="padding-top: 0;">
+  <div class="halo mocha"></div>
+  <div class="container">
+    <div class="pullquote-card">
+      <div class="pullquote-photo"></div>
+      <div>
+        <blockquote>
+          "Most companies treat ads, funnel, and sales as three separate problems and hire three separate people who never talk. We treat it as one system. The brand attracts the right buyer, the ads drive them in, the funnel pre-sells them, and the CRM makes sure nothing falls through. Every layer feeds the next."
+        </blockquote>
+        <div class="pullquote-byline">Ryan F.</div>
+        <div class="pullquote-role">Founder &amp; Head of Growth</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA · PEACH BOOKEND -->
+<section id="cta" class="final-cta">
+  <div class="halo peach"></div>
+  <div class="container">
+    <div class="eyebrow"><span class="eyebrow-dot peach"></span>Apply now</div>
+    <h2>
+      Ready to <em>Scale?</em>
+    </h2>
+    <p>Book a free strategy call. We'll audit your current acquisition setup, show you exactly where revenue is leaking, and map out how we'd build your Selling System &mdash; ads, funnel, CRM, retargeting &mdash; all done-for-you.</p>
+    <div class="hero-cta-row" style="justify-content: center; margin-bottom: 0;">
+      <a href="#" class="btn btn-primary">Apply Now <span class="btn-arrow">&rarr;</span></a>
+      <a href="#how" class="btn btn-ghost">See the system again</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ · SLATE -->
+<section>
+  <div class="halo slate"></div>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-dot slate"></span>FAQ</div>
+      <h2>Frequently <span class="grad-slate">asked questions</span></h2>
+    </div>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary class="faq-q">Who is this for?<span class="faq-icon">+</span></summary>
+        <div class="faq-a">Established founders and operators doing $30K&ndash;$500K/mo in revenue who already have a working offer and want to scale acquisition without hiring a marketing team in-house. Best fit: coaches, consultants, agencies, and high-ticket service businesses.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">How long does it take to get live?<span class="faq-icon">+</span></summary>
+        <div class="faq-a">Ads are running within 14 days of kickoff. Full CRM, funnel, and retargeting ecosystem is live within 30 days. You stay focused on closing &mdash; we handle the build.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">How quickly can I see results?<span class="faq-icon">+</span></summary>
+        <div class="faq-a">First booked appointments typically land in week two or three. Meaningful close-rate movement and CPL optimization is usually a 60&ndash;90 day curve as we learn your buyer and tune the system.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">What makes this different from a traditional ads agency?<span class="faq-icon">+</span></summary>
+        <div class="faq-a">Traditional agencies run ads. We build the full Selling System: brand positioning, creative, funnel, CRM, follow-up automation, and the data layer that ties it together. The ads are one layer of five &mdash; not the whole engagement.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Is there a minimum contract?<span class="faq-icon">+</span></summary>
+        <div class="faq-a">Yes. Acquisition systems compound &mdash; the first 60 days are infrastructure, the next 60 are optimization. We work in 90-day commitments so the data has room to mature. After that, month-to-month.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Is this done-for-you or done-with-you?<span class="faq-icon">+</span></summary>
+        <div class="faq-a">Done-for-you on the build and the operation. The only things we need from you are access, your offer materials, and time on camera for ad creative. We handle the rest end-to-end.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Abundance.AI</div>
+    <p class="footer-disclaimer">
+      This site and its contents are not endorsed by, affiliated with, or in any way officially connected with Meta Platforms, Inc., Google LLC, or any of their subsidiaries or affiliates. The names Facebook, Instagram, and Meta are trademarks of Meta Platforms, Inc. Results mentioned on this page are not typical and will vary based on individual effort, experience, and market conditions. Nothing on this page constitutes a guarantee of earnings or business success. This page is intended for informational purposes only.
+    </p>
+    <div class="footer-row">
+      <span>&copy; 2026 Abundance.AI &mdash; All rights reserved.</span>
+      <span>Selling System &middot; DFY</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
