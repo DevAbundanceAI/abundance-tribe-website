@@ -1905,8 +1905,75 @@
     box-shadow: 0 0 12px -2px rgba(255,107,71,0.45);
   }
 
+
+  /* ─── SECTION STANDARD — repeatable rhythm across the page ─── */
+  .section-meta {
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 1180px; margin: 0 auto 36px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-meta-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 5px 14px 5px 6px;
+    border-radius: 100px;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    font-size: 11px; font-weight: 600;
+    color: var(--ink-body); letter-spacing: 0.04em;
+  }
+  .section-meta-pill::before {
+    content: ''; width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--ink-muted);
+  }
+  .section-meta-count {
+    font-size: 11px; font-weight: 700;
+    color: var(--ink-muted);
+    letter-spacing: 0.18em;
+  }
+
+  /* Standardized 'key takeaways' row — single source of truth for bottom-of-section context */
+  .takeaways {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .takeaway {
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .takeaway-icon {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; color: var(--ink);
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+  .takeaway-title {
+    font-size: 13px; font-weight: 700;
+    color: var(--ink); letter-spacing: -0.01em;
+    margin-top: 2px;
+  }
+  .takeaway-sub {
+    font-size: 12px; color: var(--ink-muted); line-height: 1.5;
+  }
+
+  /* Optional horizontal accent rule for major sections — graphite, very subtle */
+  .rule-thin {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-strong) 30%, var(--border-strong) 70%, transparent);
+    margin: 32px auto;
+    max-width: 720px;
+  }
+
   @media (max-width: 880px) {
-    .grid-3, .grid-4, .support-grid, .stat-pair-grid, .sparkline-strip { grid-template-columns: repeat(2, 1fr); }
+    .grid-3, .grid-4, .support-grid, .stat-pair-grid, .sparkline-strip, .takeaways { grid-template-columns: repeat(2, 1fr); }
     .steps-row { grid-template-columns: repeat(2, 1fr); gap: 16px 0; }
     .step-item:nth-child(2)::after, .step-item::after { display: none; }
     .grid-2, .compare, .tier-grid { grid-template-columns: 1fr; }
@@ -1938,6 +2005,7 @@
   <div class="halo"></div>
   <div class="bg-dots"></div>
   <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">Brand v4 &middot; Discipline</span><span class="section-meta-count">01 / 11</span></div>
     <div class="eyebrow"><span class="eyebrow-dot"></span>Brand v4 · Discipline applied · Test only · Not an override</div>
     <h1>
       <span class="line">A single signature</span>
@@ -1958,6 +2026,7 @@
 <section id="palette">
   <div class="bg-grid"></div>
   <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">Palette</span><span class="section-meta-count">02 / 11</span></div>
     <div class="section-head">
       <div class="eyebrow"><span class="eyebrow-dot"></span>Palette</div>
       <h2>Four stops. <span style="color:var(--ink-body);font-weight:600;">One signature.</span></h2>
@@ -2008,6 +2077,7 @@
   <div class="halo"></div>
   <div class="bg-dots"></div>
   <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">Components</span><span class="section-meta-count">04 / 11</span></div>
     <div class="section-head">
       <div class="eyebrow"><span class="eyebrow-dot"></span>Components</div>
       <h2>The gradient <span style="color:var(--ink-body);font-weight:600;">in motion.</span></h2>
@@ -2128,6 +2198,7 @@
   <div class="halo"></div>
   <div class="bg-dots"></div>
   <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">Supporting cast</span><span class="section-meta-count">05 / 11</span></div>
     <div class="section-head">
       <div class="eyebrow"><span class="eyebrow-dot"></span>Supporting cast</div>
       <h2>One brand. <span style="color:var(--ink-body);font-weight:600;">Three gradients.</span></h2>
@@ -2248,6 +2319,7 @@
   <div class="halo"></div>
   <div class="bg-grid"></div>
   <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">In the wild</span><span class="section-meta-count">06 / 11</span></div>
     <div class="section-head">
       <div class="eyebrow"><span class="eyebrow-dot"></span>In the wild</div>
       <h2>Each gradient, <span style="color:var(--ink-body);font-weight:600;">in its lane.</span></h2>
@@ -2435,6 +2507,7 @@
   <div class="halo"></div>
   <div class="bg-dots"></div>
   <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">More patterns</span><span class="section-meta-count">09 / 11</span></div>
     <div class="section-head">
       <div class="eyebrow"><span class="eyebrow-dot"></span>More patterns</div>
       <h2>The system, <span style="color:var(--ink-body);font-weight:600;">in motion.</span></h2>
@@ -2676,6 +2749,7 @@
   <div class="halo"></div>
   <div class="bg-grid"></div>
   <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">Restraint &middot; the 80/20 rule</span><span class="section-meta-count">07 / 11</span></div>
     <div class="section-head">
       <div class="eyebrow"><span class="eyebrow-dot"></span>Restraint &middot; the 80/20 rule</div>
       <h2>Mostly silence. <span class="grad-sig">One moment of color.</span></h2>
@@ -2752,7 +2826,30 @@
     </div>
 
     <div style="margin-top: 32px; text-align: center;">
-      <p style="font-size: 14px; color: var(--ink-muted); max-width: 540px; margin: 0 auto;">Notice: each card is 95% achromatic. Tiger's blood appears once per card &mdash; on the checkmark, the publish button, the success badge. That's the rule. Brand color goes on the thing the eye should land on.</p>
+      <p style="font-size: 14px; color: var(--ink-muted); max-width: 540px; margin: 0 auto;">Each card is ~95% achromatic. Tiger's blood appears once &mdash; on the checkmark, the publish button, the success badge. That's the rule.</p>
+    </div>
+
+    <div class="takeaways">
+      <div class="takeaway">
+        <div class="takeaway-icon">①</div>
+        <div class="takeaway-title">One pop per surface.</div>
+        <div class="takeaway-sub">Card-level discipline. Never two competing brand moments on the same card.</div>
+      </div>
+      <div class="takeaway">
+        <div class="takeaway-icon">★</div>
+        <div class="takeaway-title">Earn the moment.</div>
+        <div class="takeaway-sub">Sig goes on the CTA, the result, the win. Not on labels, not on metadata.</div>
+      </div>
+      <div class="takeaway">
+        <div class="takeaway-icon">≡</div>
+        <div class="takeaway-title">Default to silence.</div>
+        <div class="takeaway-sub">If you can't justify the pop, the answer is graphite. Always default down.</div>
+      </div>
+      <div class="takeaway">
+        <div class="takeaway-icon">▶</div>
+        <div class="takeaway-title">Land on the thing.</div>
+        <div class="takeaway-sub">The eye should know where to go without thinking. That's where the color goes.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -2762,6 +2859,7 @@
   <div class="halo"></div>
   <div class="bg-grid"></div>
   <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">Depth &amp; texture</span><span class="section-meta-count">08 / 11</span></div>
     <div class="section-head">
       <div class="eyebrow"><span class="eyebrow-dot"></span>Depth &amp; texture</div>
       <h2>Frosted glass, dark depth, <span style="color:var(--ink-body);font-weight:600;">visible patterns.</span></h2>
@@ -3007,6 +3105,7 @@
 <section id="compare">
   <div class="bg-grid"></div>
   <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">Dual mode</span><span class="section-meta-count">10 / 11</span></div>
     <div class="section-head">
       <div class="eyebrow"><span class="eyebrow-dot"></span>Dual mode</div>
       <h2>One brand, <span style="color:var(--ink-body);font-weight:600;">two canvases.</span></h2>
