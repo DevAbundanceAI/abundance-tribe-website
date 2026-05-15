@@ -715,14 +715,276 @@
     font-size: 13px; color: var(--ink-muted); font-style: normal;
   }
 
+  /* ─── USE-CASE COMPONENTS ─── */
+
+  /* Pricing tier pair: featured (blood orange) + standard (graphite) */
+  .tier-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .tier {
+    border-radius: 20px;
+    padding: 28px;
+    background: var(--card-fill);
+    border: 1px solid var(--border);
+    position: relative; overflow: hidden;
+    box-shadow: 0 18px 48px -12px rgba(0,0,0,0.30);
+  }
+  body.light .tier { box-shadow: 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .tier-featured {
+    border: 1px solid transparent;
+    background:
+      var(--card-fill) padding-box,
+      linear-gradient(135deg, rgba(255,160,122,0.6), rgba(220,20,60,0.6) 60%, rgba(139,10,30,0.6)) border-box;
+    box-shadow:
+      0 0 0 1px rgba(255,107,71,0.18),
+      0 0 36px -6px rgba(255,107,71,0.20),
+      0 20px 60px -12px rgba(220,20,60,0.18);
+  }
+  .tier-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--surface-2);
+    color: var(--ink-body);
+    margin-bottom: 16px;
+  }
+  .tier-featured .tier-tag {
+    background: var(--grad-sig-soft);
+    color: #2A0A05;
+  }
+  .tier-standard .tier-tag {
+    background: var(--grad-graphite);
+    color: #F5F0E8;
+  }
+  body.light .tier-standard .tier-tag { color: #FFFFFF; }
+  .tier-name { font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.02em; }
+  .tier-price {
+    font-size: 44px; font-weight: 800; line-height: 1;
+    letter-spacing: -0.03em; margin-bottom: 4px;
+  }
+  .tier-featured .tier-price {
+    background-image: var(--grad-sig);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .tier-standard .tier-price {
+    background-image: var(--grad-graphite);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .tier-period { font-size: 12px; color: var(--ink-muted); margin-bottom: 20px; }
+  .tier ul { list-style: none; padding: 0; margin: 0 0 24px; }
+  .tier li {
+    font-size: 13px; color: var(--ink-body);
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .tier li:first-child { border-top: none; }
+  .tier li::before {
+    content: '✓'; font-size: 11px; font-weight: 800;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .tier-featured li::before {
+    background: var(--grad-sig-soft); color: #2A0A05;
+  }
+  .tier-standard li::before {
+    background: var(--surface-3); color: var(--ink-body);
+  }
+
+  /* Code block — graphite styling */
+  .code-block {
+    background:
+      linear-gradient(135deg, rgba(199,194,187,0.04), rgba(39,38,42,0.04)),
+      var(--card-fill);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .code-block::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--grad-graphite);
+  }
+  .code-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    font-size: 11px; color: var(--ink-muted);
+    letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;
+  }
+  .code-dots { display: flex; gap: 6px; }
+  .code-dots span {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--surface-3);
+  }
+  .code-dots span:first-child { background: linear-gradient(135deg, #FFA07A, #DC143C); }
+  .code-block pre {
+    padding: 18px;
+    margin: 0;
+    font-family: 'Menlo', 'Monaco', monospace;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--ink-body);
+    overflow-x: auto;
+  }
+  .code-block .k { color: #FF8A5C; font-weight: 700; }
+  .code-block .s { color: #C7C2BB; }
+  .code-block .c { color: var(--ink-muted); font-style: italic; }
+  .code-block .v { color: var(--ink); font-weight: 600; }
+
+  /* Stat-pair: current (sig) vs prior (graphite) */
+  .stat-pair-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .stat-pair {
+    padding: 18px;
+    background: var(--card-fill);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+  .stat-pair-label {
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-muted); font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .stat-pair-row { display: flex; align-items: baseline; gap: 10px; }
+  .stat-pair-now {
+    font-size: 24px; font-weight: 800; line-height: 1;
+    letter-spacing: -0.02em;
+    background-image: var(--grad-sig);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .stat-pair-was {
+    font-size: 12px; font-weight: 600; line-height: 1;
+    background-image: var(--grad-graphite);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .stat-pair-bar {
+    margin-top: 12px; height: 6px;
+    border-radius: 4px;
+    background: var(--surface-3);
+    overflow: hidden;
+    position: relative;
+  }
+  .stat-pair-bar::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--grad-graphite);
+    width: 65%;
+  }
+  .stat-pair-bar::after {
+    content: ''; position: absolute; inset: 0;
+    background: var(--grad-sig);
+    width: 88%;
+    border-radius: 4px;
+  }
+
+  /* Sparkline strip */
+  .sparkline-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .sparkline-card {
+    padding: 18px;
+    background: var(--card-fill);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+  .sparkline-label {
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-muted); font-weight: 600; margin-bottom: 6px;
+  }
+  .sparkline-val { font-size: 20px; font-weight: 800; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.02em; }
+  .sparkline-svg { width: 100%; height: 38px; display: block; }
+
+  /* Bone-themed FAQ row */
+  .faq-bone {
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(232,225,212,0.05), transparent), var(--card-fill);
+    border: 1px solid var(--border);
+    padding: 0;
+    overflow: hidden;
+  }
+  .faq-bone-item {
+    padding: 18px 22px;
+    border-top: 1px solid var(--border);
+    position: relative;
+  }
+  .faq-bone-item:first-child { border-top: none; }
+  .faq-bone-item::before {
+    content: ''; position: absolute;
+    left: 0; top: 18px; bottom: 18px;
+    width: 2px;
+    background: var(--grad-bone);
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .faq-bone-item.active::before { opacity: 1; }
+  .faq-bone-q {
+    font-size: 14px; font-weight: 700; color: var(--ink);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-bone-q-icon {
+    font-size: 18px; color: var(--ink-muted);
+  }
+  .faq-bone-item.active .faq-bone-q-icon {
+    background-image: var(--grad-bone);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .faq-bone-a {
+    font-size: 13px; color: var(--ink-body);
+    line-height: 1.6; margin-top: 10px;
+    max-width: 600px;
+  }
+
+  /* Checklist: complete (sig) + incomplete (bone) */
+  .checklist {
+    background:
+      linear-gradient(135deg, rgba(232,225,212,0.04), transparent),
+      var(--card-fill);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .checklist-item {
+    display: flex; gap: 12px; align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid var(--border);
+  }
+  .checklist-item:first-of-type { border-top: none; }
+  .check-icon {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 11px; font-weight: 800;
+  }
+  .check-icon.done {
+    background: var(--grad-sig);
+    color: #FFFFFF;
+    box-shadow: 0 0 12px -2px rgba(255,107,71,0.45);
+  }
+  .check-icon.todo {
+    background: transparent;
+    border: 1.5px solid;
+    border-image: var(--grad-bone) 1;
+    color: var(--ink-muted);
+  }
+  .check-text { font-size: 13px; color: var(--ink-body); }
+  .check-text.done {
+    color: var(--ink);
+    text-decoration: line-through;
+    text-decoration-color: rgba(156,150,140,0.5);
+  }
+
   @media (max-width: 880px) {
-    .grid-3, .grid-4, .support-grid { grid-template-columns: repeat(2, 1fr); }
-    .grid-2, .compare { grid-template-columns: 1fr; }
+    .grid-3, .grid-4, .support-grid, .stat-pair-grid, .sparkline-strip { grid-template-columns: repeat(2, 1fr); }
+    .grid-2, .compare, .tier-grid { grid-template-columns: 1fr; }
     section { padding: 64px 20px; }
     .hero { padding: 56px 20px 48px; }
   }
   @media (max-width: 580px) {
-    .support-grid { grid-template-columns: 1fr; }
+    .support-grid, .stat-pair-grid, .sparkline-strip { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -1024,6 +1286,193 @@
       <div class="quote-card">
         <blockquote>The system itself is the asset. The ads, the funnel, the CRM &mdash; they're just where it expresses itself. Once it's running, the only real question left is how much volume you want to push through it.</blockquote>
         <cite>&mdash; Founder, after 60 days inside the cohort</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IN THE WILD — use cases for each gradient -->
+<section>
+  <div class="halo"></div>
+  <div class="bg-grid"></div>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-dot"></span>In the wild</div>
+      <h2>Each gradient, <span class="grad-sig">in its lane.</span></h2>
+      <p>Real UI patterns showing how blood orange, graphite, and bone hold their roles when they share a page.</p>
+    </div>
+
+    <!-- Pricing tiers: featured (sig) + standard (graphite) -->
+    <div class="tier-grid" style="margin-bottom: 28px;">
+      <div class="tier tier-featured">
+        <div class="tier-tag">Most popular</div>
+        <div class="tier-name">Selling System Pro</div>
+        <div class="tier-price">$497</div>
+        <div class="tier-period">per month · billed annually</div>
+        <ul>
+          <li>Full DFY install &mdash; ads, funnel, CRM</li>
+          <li>Weekly strategy call with Frosty</li>
+          <li>Slack channel access &middot; 24h response</li>
+          <li>All templates, scripts, frameworks</li>
+          <li>90-day performance guarantee</li>
+        </ul>
+        <a href="#" class="btn btn-primary" style="width:100%; justify-content:center;">Apply now &rarr;</a>
+      </div>
+      <div class="tier tier-standard">
+        <div class="tier-tag">Tribe</div>
+        <div class="tier-name">Abundance Tribe</div>
+        <div class="tier-price">$97</div>
+        <div class="tier-period">per month · cancel anytime</div>
+        <ul>
+          <li>Full template + framework library</li>
+          <li>Weekly group coaching call</li>
+          <li>Private community access</li>
+          <li>All trainings, all replays</li>
+          <li>Cancel anytime, no contract</li>
+        </ul>
+        <a href="#" class="btn btn-ghost" style="width:100%; justify-content:center;">Join the Tribe</a>
+      </div>
+    </div>
+
+    <!-- Stat pair row + sparkline strip -->
+    <div class="grid-2" style="margin-bottom: 28px;">
+      <div class="card" style="padding: 28px;">
+        <div class="card-label" style="margin-bottom: 18px;">This week vs last week</div>
+        <div class="stat-pair-grid">
+          <div class="stat-pair">
+            <div class="stat-pair-label">Booked calls</div>
+            <div class="stat-pair-row">
+              <span class="stat-pair-now">42</span>
+              <span class="stat-pair-was">was 31</span>
+            </div>
+            <div class="stat-pair-bar"></div>
+          </div>
+          <div class="stat-pair">
+            <div class="stat-pair-label">Show rate</div>
+            <div class="stat-pair-row">
+              <span class="stat-pair-now">78%</span>
+              <span class="stat-pair-was">was 64%</span>
+            </div>
+            <div class="stat-pair-bar"></div>
+          </div>
+          <div class="stat-pair">
+            <div class="stat-pair-label">Closed</div>
+            <div class="stat-pair-row">
+              <span class="stat-pair-now">$48K</span>
+              <span class="stat-pair-was">was $34K</span>
+            </div>
+            <div class="stat-pair-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 28px;">
+        <div class="card-label" style="margin-bottom: 18px;">Live signal feed</div>
+        <div class="sparkline-strip">
+          <div class="sparkline-card">
+            <div class="sparkline-label">CPL</div>
+            <div class="sparkline-val">$18</div>
+            <svg class="sparkline-svg" viewBox="0 0 100 38" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="sp1" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#FF8A5C"/>
+                  <stop offset="100%" stop-color="#DC143C"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,28 L15,22 L30,25 L45,18 L60,20 L75,12 L90,8 L100,10" fill="none" stroke="url(#sp1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="sparkline-card">
+            <div class="sparkline-label">Show rate</div>
+            <div class="sparkline-val">78%</div>
+            <svg class="sparkline-svg" viewBox="0 0 100 38" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="sp2" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#C7C2BB"/>
+                  <stop offset="100%" stop-color="#6B6863"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,30 L15,28 L30,18 L45,20 L60,15 L75,10 L90,12 L100,8" fill="none" stroke="url(#sp2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="sparkline-card">
+            <div class="sparkline-label">Close</div>
+            <div class="sparkline-val">38%</div>
+            <svg class="sparkline-svg" viewBox="0 0 100 38" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="sp3" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#FF8A5C"/>
+                  <stop offset="100%" stop-color="#DC143C"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,32 L15,25 L30,28 L45,15 L60,18 L75,12 L90,15 L100,5" fill="none" stroke="url(#sp3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Code block (graphite) + checklist (sig + bone) -->
+    <div class="grid-2" style="margin-bottom: 28px;">
+      <div class="code-block">
+        <div class="code-head">
+          <span>config.js</span>
+          <div class="code-dots"><span></span><span></span><span></span></div>
+        </div>
+        <pre><span class="c">// Abundance Selling System config</span>
+<span class="k">const</span> <span class="v">offer</span> = {
+  name: <span class="s">'Selling System Pro'</span>,
+  price: <span class="s">'$497/mo'</span>,
+  guarantee: <span class="s">'90 days'</span>,
+  funnel: <span class="s">'/apply'</span>,
+};
+
+<span class="k">export default</span> <span class="v">offer</span>;</pre>
+      </div>
+
+      <div class="checklist">
+        <div class="card-label" style="margin-bottom: 14px;">Onboarding · day 1</div>
+        <div class="checklist-item">
+          <div class="check-icon done">✓</div>
+          <div class="check-text done">Connect Meta Ads account</div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon done">✓</div>
+          <div class="check-text done">Import existing offer assets</div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon done">✓</div>
+          <div class="check-text done">Set kickoff call with strategist</div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon todo"></div>
+          <div class="check-text">Record creative briefs (3 needed)</div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon todo"></div>
+          <div class="check-text">Approve initial funnel copy</div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon todo"></div>
+          <div class="check-text">Confirm tracking install</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ accordion (bone rail) -->
+    <div class="faq-bone">
+      <div class="faq-bone-item active">
+        <div class="faq-bone-q">How long until I see results? <span class="faq-bone-q-icon">−</span></div>
+        <div class="faq-bone-a">First booked appointments typically land in week two. Meaningful close-rate movement and CPL optimization is a 60–90 day curve as the system learns your buyer and tunes itself.</div>
+      </div>
+      <div class="faq-bone-item">
+        <div class="faq-bone-q">Is there a minimum contract? <span class="faq-bone-q-icon">+</span></div>
+      </div>
+      <div class="faq-bone-item">
+        <div class="faq-bone-q">What's actually done-for-you vs. done-with-you? <span class="faq-bone-q-icon">+</span></div>
+      </div>
+      <div class="faq-bone-item">
+        <div class="faq-bone-q">Can this work without paid ads? <span class="faq-bone-q-icon">+</span></div>
       </div>
     </div>
   </div>
