@@ -54,9 +54,13 @@
     --grad-sig-coal:   linear-gradient(135deg, #2D0008 0%, #0A0A0A 100%);
 
     /* Achromatic depth — subtle surface dimension without color */
-    --grad-depth:        linear-gradient(135deg, #1F1F1F 0%, #0A0A0A 100%);
-    --grad-depth-strong: linear-gradient(135deg, #2A2A2A 0%, #141414 55%, #000000 100%);
-    --spotlight:         radial-gradient(ellipse 60% 50% at 25% 18%, rgba(255,255,255,0.06), transparent 60%);
+    --grad-depth:          linear-gradient(135deg, #1F1F1F 0%, #0A0A0A 100%);
+    --grad-depth-strong:   linear-gradient(135deg, #2A2A2A 0%, #141414 55%, #000000 100%);
+    --grad-depth-elevated: linear-gradient(180deg, #242424 0%, #161616 100%);
+    --grad-depth-inner:    linear-gradient(180deg, #1A1A1A 0%, #0A0A0A 100%);
+    --grad-depth-darker:   linear-gradient(135deg, #141414 0%, #050505 100%);
+    --spotlight:           radial-gradient(ellipse 60% 50% at 25% 18%, rgba(255,255,255,0.06), transparent 60%);
+    --spotlight-corner:    radial-gradient(ellipse 50% 80% at 100% 0%, rgba(255,255,255,0.05), transparent 60%);
 
     /* Glass — frosted card on backdrop */
     --glass-bg:     rgba(20,20,20,0.55);
@@ -105,9 +109,13 @@
     --grad-sig-coal:   linear-gradient(135deg, #2D0008 0%, #0A0A0A 100%);
 
     /* Achromatic depth — flips for white canvas */
-    --grad-depth:        linear-gradient(135deg, #FAFAFA 0%, #ECECEC 100%);
-    --grad-depth-strong: linear-gradient(135deg, #FFFFFF 0%, #F0F0F0 55%, #DCDCDC 100%);
-    --spotlight:         radial-gradient(ellipse 60% 50% at 25% 18%, rgba(0,0,0,0.05), transparent 60%);
+    --grad-depth:          linear-gradient(135deg, #FAFAFA 0%, #ECECEC 100%);
+    --grad-depth-strong:   linear-gradient(135deg, #FFFFFF 0%, #F0F0F0 55%, #DCDCDC 100%);
+    --grad-depth-elevated: linear-gradient(180deg, #FFFFFF 0%, #F4F4F4 100%);
+    --grad-depth-inner:    linear-gradient(180deg, #F8F8F8 0%, #EAEAEA 100%);
+    --grad-depth-darker:   linear-gradient(135deg, #F0F0F0 0%, #DADADA 100%);
+    --spotlight:           radial-gradient(ellipse 60% 50% at 25% 18%, rgba(0,0,0,0.05), transparent 60%);
+    --spotlight-corner:    radial-gradient(ellipse 50% 80% at 100% 0%, rgba(0,0,0,0.04), transparent 60%);
 
     /* Glass — light-mode frost */
     --glass-bg:     rgba(255,255,255,0.55);
@@ -1532,6 +1540,198 @@
     opacity: 0.22;
   }
 
+
+  /* ─── ACHROMATIC PATTERNS (no brand color — quiet register) ─── */
+
+  /* Nested depth card (card inside a card with subtle elevation) */
+  .nest-card {
+    background: var(--grad-depth-elevated);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 18px 48px -12px rgba(0,0,0,0.40);
+  }
+  body.light .nest-card { box-shadow: 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .nest-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--spotlight-corner);
+    pointer-events: none;
+  }
+  .nest-card-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px; align-items: stretch;
+    position: relative; z-index: 2;
+  }
+  .nest-text { font-size: 14px; color: var(--ink-body); line-height: 1.5; max-width: 220px; }
+  .nest-inner {
+    background: var(--grad-depth-inner);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    min-height: 200px;
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+    position: relative; overflow: hidden;
+  }
+  .nest-inner::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--spotlight);
+    pointer-events: none;
+  }
+  .nest-inner > * { position: relative; z-index: 2; }
+  .nest-inner-head {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 11px; color: var(--ink-muted); font-weight: 600;
+  }
+  .nest-inner-title { font-size: 20px; font-weight: 700; color: var(--ink); margin-top: 14px; }
+  .nest-inner-sub { font-size: 12px; color: var(--ink-muted); margin-top: 4px; }
+  .nest-inner-foot { font-size: 11px; color: var(--ink-muted); margin-top: 18px; }
+  .nest-stack {
+    display: flex; gap: 0; margin-top: 12px;
+  }
+  .nest-stack-avatar {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--grad-graphite);
+    border: 2px solid var(--surface-1);
+    margin-left: -10px;
+  }
+  .nest-stack-avatar:first-child { margin-left: 0; }
+  .nest-stack-arrow {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--ink);
+    color: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800;
+    margin-left: -8px;
+  }
+
+  /* Minimal notification card (lockscreen-style) */
+  .notif-stage {
+    background: var(--grad-depth-strong);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px 32px;
+    text-align: center;
+    position: relative; overflow: hidden;
+    box-shadow: 0 18px 48px -12px rgba(0,0,0,0.40);
+  }
+  body.light .notif-stage { box-shadow: 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .notif-stage::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--spotlight);
+    pointer-events: none;
+  }
+  .notif-time {
+    font-size: 56px; font-weight: 300; color: var(--ink);
+    letter-spacing: -0.04em; line-height: 1;
+    opacity: 0.55;
+    position: relative; z-index: 2;
+  }
+  .notif-date {
+    font-size: 12px; color: var(--ink-muted);
+    margin-top: 4px; opacity: 0.7;
+    position: relative; z-index: 2;
+    margin-bottom: 28px;
+  }
+  .notif-card {
+    background: var(--grad-depth-inner);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    text-align: left;
+    max-width: 360px; margin: 0 auto;
+    position: relative; z-index: 2;
+  }
+  .notif-card-head {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 8px;
+  }
+  .notif-icon {
+    width: 28px; height: 28px;
+    background: var(--grad-graphite);
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  .notif-name { font-size: 13px; font-weight: 700; color: var(--ink); flex: 1; }
+  .notif-time-small { font-size: 11px; color: var(--ink-muted); }
+  .notif-title { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .notif-body { font-size: 12px; color: var(--ink-muted); line-height: 1.5; }
+
+  /* Achromatic data viz (sankey-style flow with no color) */
+  .flow-card {
+    background: var(--grad-depth-elevated);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    position: relative; overflow: hidden;
+    box-shadow: 0 18px 48px -12px rgba(0,0,0,0.40);
+  }
+  body.light .flow-card { box-shadow: 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .flow-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--spotlight-corner);
+    pointer-events: none;
+  }
+  .flow-card > * { position: relative; z-index: 2; }
+  .flow-head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .flow-title { font-size: 22px; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; }
+  .flow-title em { font-weight: 400; color: var(--ink-body); font-style: normal; }
+  .flow-sub { font-size: 13px; color: var(--ink-muted); max-width: 320px; margin-top: 6px; }
+  .flow-stat {
+    text-align: right;
+    font-size: 11px; color: var(--ink-muted); font-weight: 600;
+  }
+  .flow-stat-num {
+    font-size: 18px; font-weight: 700; color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .flow-body {
+    display: grid; grid-template-columns: auto 1fr auto;
+    gap: 0; align-items: stretch;
+  }
+  .flow-left { display: flex; flex-direction: column; gap: 12px; padding-right: 4px; }
+  .flow-pct {
+    background: var(--grad-depth-inner);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px 18px;
+    min-width: 110px;
+    text-align: center;
+    flex: 1;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .flow-pct-num { font-size: 26px; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; line-height: 1; }
+  .flow-pct-label { font-size: 11px; color: var(--ink-muted); margin-top: 4px; }
+  .flow-svg { width: 100%; height: 220px; display: block; color: var(--ink); }
+  .flow-right { display: flex; flex-direction: column; gap: 12px; padding-left: 4px; }
+  .flow-amount {
+    background: var(--grad-depth-inner);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px 16px;
+    min-width: 130px;
+    flex: 1;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .flow-amount-icons {
+    display: flex; flex-direction: column; gap: 4px;
+    flex-shrink: 0;
+  }
+  .flow-amount-icon {
+    width: 24px; height: 24px; border-radius: 6px;
+    background: var(--ink);
+    color: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700;
+  }
+  .flow-amount-val { font-size: 16px; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; }
+  .flow-amount-label { font-size: 11px; color: var(--ink-muted); }
+
   @media (max-width: 880px) {
     .grid-3, .grid-4, .support-grid, .stat-pair-grid, .sparkline-strip { grid-template-columns: repeat(2, 1fr); }
     .steps-row { grid-template-columns: repeat(2, 1fr); gap: 16px 0; }
@@ -2385,6 +2585,134 @@
           <span class="tag">Hero panel</span>
           <span class="tag">Dark section</span>
           <span class="tag">Anchor</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Achromatic patterns: nested depth + minimal notification + sankey flow -->
+    <div class="section-head" style="margin-bottom: 20px; margin-top: 24px;">
+      <h3 style="font-size: clamp(20px, 2.4vw, 28px); letter-spacing:-0.02em; color:var(--ink); font-weight:700;">Achromatic register &middot; <span class="grad-sig">no color, all texture.</span></h3>
+      <p style="font-size: 14px;">When the brand needs to <em>recede</em> &mdash; nested depth, minimal notifications, data flows in pure gray. Use when content needs to be present without competing with hero moments.</p>
+    </div>
+
+    <div class="grid-2" style="margin-bottom: 28px;">
+      <div class="nest-card">
+        <div class="nest-card-grid">
+          <div style="display:flex; flex-direction:column; justify-content:space-between;">
+            <p class="nest-text">The Selling System eliminates the need for multiple tools, streamlining your acquisition stack and so much more.</p>
+            <div class="nest-stack">
+              <div class="nest-stack-avatar"></div>
+              <div class="nest-stack-avatar"></div>
+              <div class="nest-stack-arrow">&rarr;</div>
+            </div>
+          </div>
+          <div class="nest-inner">
+            <div class="nest-inner-head"><span>※ ABUNDANCE</span><span>Ryan</span></div>
+            <div>
+              <div class="nest-inner-title">Pipeline</div>
+              <div class="nest-inner-sub">**** 2432</div>
+            </div>
+            <div>
+              <div class="nest-inner-foot">Balance</div>
+              <div class="nest-inner-title" style="font-size:18px;">$48,200</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="notif-stage">
+        <div class="notif-time">9:41</div>
+        <div class="notif-date">Monday, May 13</div>
+        <div class="notif-card">
+          <div class="notif-card-head">
+            <div class="notif-icon"></div>
+            <div class="notif-name">Abundance</div>
+            <div class="notif-time-small">9:41 AM</div>
+          </div>
+          <div class="notif-title">New booked call</div>
+          <div class="notif-body">Sarah J. confirmed a strategy call for Thursday 2pm. Pre-call brief auto-sent &mdash; no further action needed.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Achromatic flow viz (sankey-style with gray gradient strokes) -->
+    <div class="flow-card" style="margin-bottom: 28px;">
+      <div class="flow-head">
+        <div>
+          <div class="flow-title">Pipeline <em>Review</em></div>
+          <div class="flow-sub">Where the cohort revenue moved this month — by source &middot; destination.</div>
+        </div>
+        <div class="flow-stat">
+          <div>Total &middot; this month</div>
+          <div class="flow-stat-num">$382,400</div>
+        </div>
+      </div>
+      <div class="flow-body">
+        <div class="flow-left">
+          <div class="flow-pct">
+            <div class="flow-pct-num">27%</div>
+            <div class="flow-pct-label">Cold</div>
+          </div>
+          <div class="flow-pct">
+            <div class="flow-pct-num">73%</div>
+            <div class="flow-pct-label">Warm</div>
+          </div>
+        </div>
+
+        <svg class="flow-svg" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="achroFlow1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="currentColor" stop-opacity="0.06"/>
+              <stop offset="50%" stop-color="currentColor" stop-opacity="0.22"/>
+              <stop offset="100%" stop-color="currentColor" stop-opacity="0.06"/>
+            </linearGradient>
+            <linearGradient id="achroFlow2" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="currentColor" stop-opacity="0.04"/>
+              <stop offset="50%" stop-color="currentColor" stop-opacity="0.16"/>
+              <stop offset="100%" stop-color="currentColor" stop-opacity="0.04"/>
+            </linearGradient>
+            <linearGradient id="achroFlow3" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="currentColor" stop-opacity="0.05"/>
+              <stop offset="50%" stop-color="currentColor" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="currentColor" stop-opacity="0.05"/>
+            </linearGradient>
+          </defs>
+
+          <path d="M0,40 C200,40 400,30 600,30" fill="none" stroke="url(#achroFlow1)" stroke-width="14"/>
+          <path d="M0,80 C200,90 400,75 600,80" fill="none" stroke="url(#achroFlow2)" stroke-width="22"/>
+          <path d="M0,120 C200,110 400,140 600,130" fill="none" stroke="url(#achroFlow3)" stroke-width="18"/>
+          <path d="M0,160 C200,180 400,170 600,180" fill="none" stroke="url(#achroFlow1)" stroke-width="16"/>
+          <path d="M0,180 C200,160 400,200 600,200" fill="none" stroke="url(#achroFlow2)" stroke-width="10"/>
+        </svg>
+
+        <div class="flow-right">
+          <div class="flow-amount">
+            <div class="flow-amount-icons">
+              <div class="flow-amount-icon">P</div>
+            </div>
+            <div>
+              <div class="flow-amount-val">$108,420</div>
+              <div class="flow-amount-label">Pro tier</div>
+            </div>
+          </div>
+          <div class="flow-amount">
+            <div class="flow-amount-icons">
+              <div class="flow-amount-icon">T</div>
+            </div>
+            <div>
+              <div class="flow-amount-val">$181,250</div>
+              <div class="flow-amount-label">Tribe tier</div>
+            </div>
+          </div>
+          <div class="flow-amount">
+            <div class="flow-amount-icons">
+              <div class="flow-amount-icon">+</div>
+            </div>
+            <div>
+              <div class="flow-amount-val">$92,730</div>
+              <div class="flow-amount-label">Add-ons</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
