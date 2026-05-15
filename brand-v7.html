@@ -977,6 +977,98 @@
       0 24px 60px -20px rgba(255,23,68,0.12);
   }
 
+
+  /* ─── FROSTED GLASS — ATMOSPHERIC MOMENT ───────────────────
+     Use ONCE per page. Requires a textured backdrop (.glass-stage)
+     so the blur has something to blur. Sig backdrop only — no
+     other variants. Mode-aware glass tint. */
+  .glass-stage {
+    position: relative;
+    border-radius: var(--r-card);
+    overflow: hidden;
+    padding: var(--s-5) var(--s-3);
+    display: flex; align-items: center; justify-content: center;
+    min-height: 280px;
+    background:
+      radial-gradient(ellipse at 25% 25%, rgba(255,85,48,0.45), transparent 55%),
+      radial-gradient(ellipse at 75% 75%, rgba(255,23,68,0.42), transparent 55%),
+      linear-gradient(135deg, #FF5530 0%, #FF1744 50%, #8B0014 100%);
+  }
+  .glass {
+    background: rgba(20,20,20,0.55);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+            backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--r-inner);
+    padding: var(--s-3);
+    width: 100%; max-width: 360px;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.55);
+  }
+  body.light .glass {
+    background: rgba(255,255,255,0.55);
+    border-color: rgba(0,0,0,0.10);
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.20);
+  }
+  .glass-head {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: var(--s-2);
+  }
+  .glass-title {
+    font-size: var(--t-small); font-weight: 700;
+    color: #FFFFFF;
+  }
+  .glass-time {
+    font-size: var(--t-micro);
+    color: rgba(255,255,255,0.7);
+  }
+  body.light .glass-stage .glass-title { color: #0A0A0A; }
+  body.light .glass-stage .glass-time { color: rgba(0,0,0,0.6); }
+  .glass-row {
+    display: flex; align-items: center; gap: var(--s-1);
+    padding: 10px 12px;
+    background: rgba(255,255,255,0.10);
+    border-radius: 12px;
+    margin-bottom: 8px;
+    font-size: var(--t-micro);
+    color: #FFFFFF; font-weight: 600;
+  }
+  body.light .glass-stage .glass-row {
+    background: rgba(255,255,255,0.40);
+    color: #0A0A0A;
+  }
+  .glass-amount {
+    text-align: center;
+    padding: var(--s-2) 0;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+    margin: var(--s-1) 0;
+  }
+  body.light .glass-stage .glass-amount {
+    border-color: rgba(0,0,0,0.10);
+  }
+  .glass-amount-label {
+    font-size: var(--t-micro);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  body.light .glass-stage .glass-amount-label { color: rgba(0,0,0,0.55); }
+  .glass-amount-val {
+    font-size: 28px; font-weight: 800;
+    color: #FFFFFF; line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  body.light .glass-stage .glass-amount-val { color: #0A0A0A; }
+  .glass-foot {
+    text-align: center;
+    font-size: var(--t-micro);
+    color: rgba(255,255,255,0.65);
+    margin-top: 4px;
+  }
+  body.light .glass-stage .glass-foot { color: rgba(0,0,0,0.55); }
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 880px) {
     :root { --s-8: 80px; --s-7: 64px; }
@@ -1290,6 +1382,27 @@
           </defs>
           <path d="M0,30 L15,25 L30,28 L45,15 L60,18 L75,12 L90,15 L100,5" fill="none" stroke="url(#spC)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
+      </div>
+    </div>
+
+    <!-- Atmospheric closing — frosted glass live notification.
+         The single use of the glass effect on the page. -->
+    <div class="glass-stage" style="margin-top: var(--s-3);">
+      <div class="glass">
+        <div class="glass-head">
+          <div class="glass-title">⇄ Quick transfer</div>
+          <div class="glass-time">9:41 AM</div>
+        </div>
+        <div class="glass-row">
+          <div style="width:22px;height:22px;border-radius:50%;background:var(--grad-sig);flex-shrink:0;"></div>
+          <span style="flex:1;">Pay &middot; instant settlement</span>
+          <span>→</span>
+        </div>
+        <div class="glass-amount">
+          <div class="glass-amount-label">Enter amount</div>
+          <div class="glass-amount-val">$497.00</div>
+        </div>
+        <div class="glass-foot">Available &middot; $24,196.92</div>
       </div>
     </div>
   </div>
