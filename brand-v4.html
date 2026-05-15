@@ -31,7 +31,7 @@
     --border-strong: rgba(245,240,232,0.18);
 
     /* Blood-orange signature · pure orange → red (no cream stop) */
-    --sig-0: #FF7A4D;   /* light salmon-orange highlight */
+    --sig-0: #FF4D3A;   /* light salmon-orange highlight */
     --sig-1: #FF1744;   /* tiger's blood (the hero hue) */
     --sig-2: #FF1744;   /* crimson */
     --sig-3: #5A0014;   /* deep blood anchor */
@@ -40,8 +40,8 @@
     --cool: #4A90E2;
 
     /* Gradient primitives — no cream */
-    --grad-sig:       linear-gradient(135deg, #FF7A4D 0%, #FF6B47 28%, #FF1744 60%, #5A0014 100%);
-    --grad-sig-soft:  linear-gradient(135deg, #FF6B47 0%, #FF1744 100%);
+    --grad-sig:       linear-gradient(135deg, #FF4D3A 0%, #FF2D2D 28%, #FF1744 60%, #5A0014 100%);
+    --grad-sig-soft:  linear-gradient(135deg, #FF2D2D 0%, #FF1744 100%);
     --grad-sig-deep:  linear-gradient(135deg, #FF1744 0%, #5A0014 100%);
 
     /* Supporting cast — achromatic gradients that pair with the primary */
@@ -78,7 +78,7 @@
     --card-fill-hover: linear-gradient(135deg, #1B1B1B, #242424);
 
     /* CTA */
-    --btn-fill: linear-gradient(135deg, #FF6B47 0%, #FF1744 100%);
+    --btn-fill: linear-gradient(135deg, #FF2D2D 0%, #FF1744 100%);
     --btn-ink: #FFFFFF;
   }
 
@@ -95,8 +95,8 @@
     --border-strong: rgba(10,10,10,0.16);
 
     /* Same gradient in both modes — the hue is the brand, not the canvas */
-    --grad-sig:       linear-gradient(135deg, #FF7A4D 0%, #FF6B47 28%, #FF1744 60%, #5A0014 100%);
-    --grad-sig-soft:  linear-gradient(135deg, #FF6B47 0%, #FF1744 100%);
+    --grad-sig:       linear-gradient(135deg, #FF4D3A 0%, #FF2D2D 28%, #FF1744 60%, #5A0014 100%);
+    --grad-sig-soft:  linear-gradient(135deg, #FF2D2D 0%, #FF1744 100%);
     --grad-sig-deep:  linear-gradient(135deg, #FF1744 0%, #5A0014 100%);
 
     /* Achromatic supports — depth flipped for white canvas */
@@ -130,7 +130,7 @@
     --card-fill: linear-gradient(135deg, #F8F8F8, #F1F1F1);
     --card-fill-hover: linear-gradient(135deg, #F1F1F1, #E8E8E8);
 
-    --btn-fill: linear-gradient(135deg, #FF6B47 0%, #FF1744 100%);
+    --btn-fill: linear-gradient(135deg, #FF2D2D 0%, #FF1744 100%);
     --btn-ink: #FFFFFF;
   }
 
@@ -347,8 +347,8 @@
   /* Always-on outer color glow */
   .card.glow {
     box-shadow:
-      0 0 0 1px rgba(255,107,71,0.18),
-      0 0 36px -6px rgba(255,107,71,0.22),
+      0 0 0 1px rgba(255,45,45,0.18),
+      0 0 36px -6px rgba(255,45,45,0.22),
       0 20px 60px -12px rgba(255,23,68,0.18),
       0 1px 0 rgba(255,255,255,0.03) inset;
   }
@@ -395,8 +395,8 @@
     position: relative; overflow: hidden;
   }
   .swatch-hex { font-size: 11px; opacity: 0.75; font-weight: 500; }
-  .sw-1  { background: #FF7A4D; color: #2A0A05; }
-  .sw-2  { background: #FF6B47; }
+  .sw-1  { background: #FF4D3A; color: #2A0A05; }
+  .sw-2  { background: #FF2D2D; }
   .sw-3  { background: #FF1744; }
   .sw-4  { background: #5A0014; }
   .sw-5  { background: #3D0010; }
@@ -454,7 +454,7 @@
     background:
       conic-gradient(
         from -90deg,
-        #FFD9C2 0deg,
+        #FF5A3A 0deg,
         #FF1744 80deg,
         #FF1744 130deg,
         transparent 130deg
@@ -513,8 +513,8 @@
     top: 24%; left: 0; right: 0;
     height: 18px;
     background: linear-gradient(90deg,
-      #FF7A4D 0%,
-      #FF6B47 22%,
+      #FF4D3A 0%,
+      #FF2D2D 22%,
       #FF1744 42%,
       #FF1744 65%,
       #5A0014 85%,
@@ -544,7 +544,7 @@
     height: 14px;
     flex: 1; max-width: 220px;
     border-radius: 100px;
-    background: linear-gradient(90deg, #FF7A4D, #FF6B47, #FF1744, #5A0014, #4A90E2);
+    background: linear-gradient(90deg, #FF4D3A, #FF2D2D, #FF1744, #5A0014, #4A90E2);
     box-shadow: 0 0 32px -2px rgba(255,7,58,0.55), 0 0 80px 4px rgba(200,16,46,0.30);
   }
   .promo-headline {
@@ -567,7 +567,7 @@
     margin-top: 28px;
     display: flex; align-items: center; gap: 12px;
     background: linear-gradient(90deg,
-      rgba(255,107,71,0.12),
+      rgba(255,45,45,0.12),
       rgba(255,23,68,0.06),
       transparent);
     padding: 10px 14px;
@@ -584,7 +584,7 @@
   .activity-card { padding: 28px; }
   .activity-row.winner {
     background: linear-gradient(90deg,
-      rgba(255,107,71,0.16) 0%,
+      rgba(255,45,45,0.16) 0%,
       rgba(255,23,68,0.08) 60%,
       transparent 100%);
     border-radius: 12px;
@@ -672,14 +672,14 @@
     font-family: 'Neo Contact', serif;
     font-style: italic; font-weight: 700;
     display: block; font-size: 1.2em; line-height: 1;
-    background-image: linear-gradient(135deg, #FF7A4D 0%, #FF6B47 28%, #FF1744 60%, #5A0014 100%);
+    background-image: linear-gradient(135deg, #FF4D3A 0%, #FF2D2D 28%, #FF1744 60%, #5A0014 100%);
     -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   }
   .compare-cta {
     display: inline-block; margin-top: 20px;
     padding: 10px 20px; border-radius: 10px;
     font-weight: 700; font-size: 13px;
-    background: linear-gradient(135deg, #FF6B47, #FF1744);
+    background: linear-gradient(135deg, #FF2D2D, #FF1744);
     color: #FFFFFF;
   }
 
@@ -783,7 +783,7 @@
       var(--card-fill) padding-box,
       linear-gradient(135deg, rgba(255,77,109,0.6), rgba(200,16,46,0.6) 60%, rgba(90,0,20,0.6)) border-box;
     box-shadow:
-      0 0 0 1px rgba(255,107,71,0.18),
+      0 0 0 1px rgba(255,45,45,0.18),
       0 0 36px -6px rgba(255,7,58,0.20),
       0 20px 60px -12px rgba(255,23,68,0.18);
   }
@@ -871,7 +871,7 @@
     width: 8px; height: 8px; border-radius: 50%;
     background: var(--surface-3);
   }
-  .code-dots span:first-child { background: linear-gradient(135deg, #FF7A4D, #FF1744); }
+  .code-dots span:first-child { background: linear-gradient(135deg, #FF4D3A, #FF1744); }
   .code-block pre {
     padding: 18px;
     margin: 0;
@@ -1051,13 +1051,13 @@
     outline: none;
     border-color: transparent;
     box-shadow:
-      0 0 0 1px rgba(255,107,71,0.55),
+      0 0 0 1px rgba(255,45,45,0.55),
       0 0 24px -6px rgba(255,23,68,0.30);
   }
   body.light .form-input:focus {
     box-shadow:
       0 0 0 1px rgba(255,23,68,0.50),
-      0 0 24px -6px rgba(255,107,71,0.20);
+      0 0 24px -6px rgba(255,45,45,0.20);
   }
   .form-input::placeholder { color: var(--ink-muted); }
   .form-actions { display: flex; gap: 10px; margin-top: 4px; flex-wrap: wrap; }
@@ -1111,7 +1111,7 @@
     transition: width 0.4s ease;
   }
   .progress-fill.sig { background: var(--grad-graphite); }
-  .progress-fill.pop { background: var(--grad-sig); box-shadow: 0 0 12px -2px rgba(255,107,71,0.40); }
+  .progress-fill.pop { background: var(--grad-sig); box-shadow: 0 0 12px -2px rgba(255,45,45,0.40); }
   .progress-fill.graphite { background: var(--grad-graphite); }
   .progress-fill.bone { background: var(--grad-bone); }
 
@@ -1211,7 +1211,7 @@
   }
   .bar { flex: 1; border-radius: 6px 6px 0 0; min-height: 6px; }
   .bar.sig { background: var(--grad-graphite); }
-  .bar.pop { background: var(--grad-sig); box-shadow: 0 0 12px -2px rgba(255,107,71,0.30); }
+  .bar.pop { background: var(--grad-sig); box-shadow: 0 0 12px -2px rgba(255,45,45,0.30); }
   .bar.graphite { background: var(--grad-graphite); }
   .bar.bone { background: var(--grad-bone); }
   .bar-label {
@@ -1235,10 +1235,10 @@
   .testimonial::before {
     content: ''; position: absolute;
     top: 0; right: 0; width: 320px; height: 320px;
-    background: radial-gradient(circle, rgba(255,107,71,0.10), transparent 65%);
+    background: radial-gradient(circle, rgba(255,45,45,0.10), transparent 65%);
     pointer-events: none;
   }
-  body.light .testimonial::before { background: radial-gradient(circle, rgba(255,107,71,0.06), transparent 65%); }
+  body.light .testimonial::before { background: radial-gradient(circle, rgba(255,45,45,0.06), transparent 65%); }
   .testimonial-mark {
     font-family: 'Neo Contact', serif;
     font-size: 80px; line-height: 0.6;
@@ -1301,12 +1301,12 @@
     text-align: center;
   }
   .lb-row.top1 {
-    background: linear-gradient(90deg, rgba(255,107,71,0.10), transparent 70%);
-    box-shadow: 0 0 18px -10px rgba(255,107,71,0.18);
+    background: linear-gradient(90deg, rgba(255,45,45,0.10), transparent 70%);
+    box-shadow: 0 0 18px -10px rgba(255,45,45,0.18);
   }
   body.light .lb-row.top1 {
-    background: linear-gradient(90deg, rgba(255,107,71,0.12), rgba(255,23,68,0.03) 70%, transparent);
-    box-shadow: 0 0 24px -8px rgba(255,107,71,0.18);
+    background: linear-gradient(90deg, rgba(255,45,45,0.12), rgba(255,23,68,0.03) 70%, transparent);
+    box-shadow: 0 0 24px -8px rgba(255,45,45,0.18);
   }
   .lb-row.top1 .lb-rank {
     background: var(--grad-sig);
@@ -1315,7 +1315,7 @@
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     margin: 0 auto;
-    box-shadow: 0 0 12px -2px rgba(255,107,71,0.55);
+    box-shadow: 0 0 12px -2px rgba(255,45,45,0.55);
   }
   .lb-row.top2, .lb-row.top3 {
     background: linear-gradient(90deg, rgba(199,194,187,0.10), transparent 60%);
@@ -1377,9 +1377,9 @@
   }
   .glass-stage.sig {
     background:
-      radial-gradient(ellipse at 25% 25%, rgba(255,160,122,0.6), transparent 55%),
+      radial-gradient(ellipse at 25% 25%, rgba(255,77,58,0.6), transparent 55%),
       radial-gradient(ellipse at 75% 75%, rgba(255,23,68,0.55), transparent 55%),
-      linear-gradient(135deg, #FF7A4D 0%, #FF6B47 25%, #FF1744 55%, #5A0014 100%);
+      linear-gradient(135deg, #FF4D3A 0%, #FF2D2D 25%, #FF1744 55%, #5A0014 100%);
   }
   .glass-stage.dusk {
     background:
@@ -1433,13 +1433,13 @@
     width: 44px; height: 44px;
     border-radius: 50%;
     flex-shrink: 0;
-    background: linear-gradient(135deg, #FFA07A, #5A0014);
+    background: linear-gradient(135deg, #FF4D3A, #5A0014);
     border: 2px solid rgba(255,255,255,0.20);
   }
-  .glass-avatar:nth-child(2) { background: linear-gradient(135deg, #FFD9C2, #C8102E); }
-  .glass-avatar:nth-child(3) { background: linear-gradient(135deg, #FFC1A8, #6B0014); border-color: rgba(255,255,255,0.5); }
+  .glass-avatar:nth-child(2) { background: linear-gradient(135deg, #FF5A3A, #C8102E); }
+  .glass-avatar:nth-child(3) { background: linear-gradient(135deg, #FF4D3A, #6B0014); border-color: rgba(255,255,255,0.5); }
   .glass-avatar:nth-child(4) { background: linear-gradient(135deg, #C7C2BB, #27262A); }
-  .glass-avatar:nth-child(5) { background: linear-gradient(135deg, #FF8A5C, #8B0A1E); }
+  .glass-avatar:nth-child(5) { background: linear-gradient(135deg, #FF5A3A, #8B0A1E); }
   .glass-avatar:nth-child(6) { background: linear-gradient(135deg, #6B6863, #1A1A1A); }
   .glass-amount {
     text-align: center;
@@ -1475,7 +1475,7 @@
   .glass-btn.primary {
     background: var(--grad-sig);
     color: #FFFFFF;
-    box-shadow: 0 0 16px -4px rgba(255,107,71,0.55);
+    box-shadow: 0 0 16px -4px rgba(255,45,45,0.55);
   }
   .glass-btn.ghost {
     background: rgba(255,255,255,0.10);
@@ -1818,7 +1818,7 @@
     background: var(--grad-sig);
     display: flex; align-items: center; justify-content: center;
     color: #FFFFFF; font-size: 16px; font-weight: 800;
-    box-shadow: 0 0 20px -2px rgba(255,107,71,0.55);
+    box-shadow: 0 0 20px -2px rgba(255,45,45,0.55);
   }
 
   /* Mock 2: laptop publish */
@@ -1856,7 +1856,7 @@
     padding: 6px 14px 6px 10px;
     border-radius: 100px;
     display: flex; align-items: center; gap: 6px;
-    box-shadow: 0 0 18px -2px rgba(255,107,71,0.55);
+    box-shadow: 0 0 18px -2px rgba(255,45,45,0.55);
   }
 
   /* Mock 3: payment notification rows */
@@ -1902,7 +1902,7 @@
     color: #FFFFFF;
     font-size: 9px; font-weight: 700;
     padding: 2px 8px; border-radius: 100px;
-    box-shadow: 0 0 12px -2px rgba(255,107,71,0.45);
+    box-shadow: 0 0 12px -2px rgba(255,45,45,0.45);
   }
 
 
@@ -2034,8 +2034,8 @@
     </div>
 
     <div class="grid-4">
-      <div class="swatch sw-1">Coral-orange 0%<br><span class="swatch-hex">#FF7A4D</span></div>
-      <div class="swatch sw-2">Blood orange 28%<br><span class="swatch-hex">#FF6B47</span></div>
+      <div class="swatch sw-1">Red-coral 0%<br><span class="swatch-hex">#FF4D3A</span></div>
+      <div class="swatch sw-2">Blood orange 28%<br><span class="swatch-hex">#FF2D2D</span></div>
       <div class="swatch sw-3">Tiger's blood 60%<br><span class="swatch-hex">#FF1744</span></div>
       <div class="swatch sw-4">Deep cherry 100%<br><span class="swatch-hex">#5A0014</span></div>
     </div>
@@ -2212,7 +2212,7 @@
           <div class="support-role">Primary brand. Hero, CTAs, big numbers, em moments, primary chart series.</div>
         </div>
         <div class="support-stops">
-          <div class="support-stop" style="background:#FF7A4D"></div>
+          <div class="support-stop" style="background:#FF4D3A"></div>
           <div class="support-stop" style="background:#FF1744"></div>
           <div class="support-stop" style="background:#FF1744"></div>
           <div class="support-stop" style="background:#5A0014"></div>
@@ -2255,7 +2255,7 @@
         <svg class="chart-svg" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
           <defs>
             <linearGradient id="primaryFill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#FF6B47" stop-opacity="0.55"/>
+              <stop offset="0%" stop-color="#FF2D2D" stop-opacity="0.55"/>
               <stop offset="100%" stop-color="#5A0014" stop-opacity="0.04"/>
             </linearGradient>
             <linearGradient id="secondaryFill" x1="0" y1="0" x2="0" y2="1">
@@ -2263,7 +2263,7 @@
               <stop offset="100%" stop-color="#27262A" stop-opacity="0.04"/>
             </linearGradient>
             <linearGradient id="primaryLine" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#FF8A5C"/>
+              <stop offset="0%" stop-color="#FF5A3A"/>
               <stop offset="100%" stop-color="#FF1744"/>
             </linearGradient>
             <linearGradient id="secondaryLine" x1="0" y1="0" x2="1" y2="0">
@@ -2425,7 +2425,7 @@
             <svg class="sparkline-svg" viewBox="0 0 100 38" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="sp3" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#FF8A5C"/>
+                  <stop offset="0%" stop-color="#FF5A3A"/>
                   <stop offset="100%" stop-color="#FF1744"/>
                 </linearGradient>
               </defs>
