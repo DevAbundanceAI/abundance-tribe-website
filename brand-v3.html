@@ -649,6 +649,11 @@
   .compare-half { padding: 32px; min-height: 320px; }
   .compare-half.dk { background: #0A0A0A; color: #F5F0E8; }
   .compare-half.lt { background: #FFFFFF; color: #0A0A0A; }
+  /* Force heading colors to match each half's canvas regardless of body mode */
+  .compare-half.dk h1, .compare-half.dk h2, .compare-half.dk h3,
+  .compare-half.dk h4, .compare-half.dk h5 { color: #F5F0E8; }
+  .compare-half.lt h1, .compare-half.lt h2, .compare-half.lt h3,
+  .compare-half.lt h4, .compare-half.lt h5 { color: #0A0A0A; }
   .compare-label {
     font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
     font-weight: 700; opacity: 0.6; margin-bottom: 16px;
