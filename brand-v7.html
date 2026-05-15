@@ -213,15 +213,34 @@
   }
   .btn-ghost:hover { background: var(--surface-1); }
 
-  /* Cards — single chrome, applied uniformly */
+  /* Cards — single chrome with thin gradient border that 'stands out'.
+     Achromatic specular highlight on the border (bright top-left,
+     dim middle, slight glow bottom-right). Auto-flips with mode. */
   .card {
-    background: var(--grad-depth);
-    border: 1px solid var(--border);
+    background:
+      var(--grad-depth) padding-box,
+      linear-gradient(135deg,
+        rgba(245,240,232,0.14) 0%,
+        rgba(245,240,232,0.03) 30%,
+        rgba(245,240,232,0.03) 70%,
+        rgba(245,240,232,0.10) 100%
+      ) border-box;
+    border: 1px solid transparent;
     border-radius: var(--r-card);
     padding: var(--s-4);
     box-shadow: var(--shadow-card);
     position: relative;
     overflow: hidden;
+  }
+  body.light .card {
+    background:
+      var(--grad-depth) padding-box,
+      linear-gradient(135deg,
+        rgba(10,10,10,0.12) 0%,
+        rgba(10,10,10,0.04) 30%,
+        rgba(10,10,10,0.04) 70%,
+        rgba(10,10,10,0.09) 100%
+      ) border-box;
   }
 
   /* Trend pill — small earned indicator */
@@ -840,6 +859,61 @@
   }
   .card-body { font-size: var(--t-small); color: var(--ink-muted); margin-top: 4px; }
 
+
+  /* ─── FAQ ACCORDION ─── */
+  .faq-list {
+    display: flex; flex-direction: column;
+    gap: var(--s-1);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    border-radius: var(--r-inner);
+    background:
+      var(--grad-depth) padding-box,
+      linear-gradient(135deg, rgba(245,240,232,0.10) 0%, rgba(245,240,232,0.03) 50%, rgba(245,240,232,0.08) 100%) border-box;
+    border: 1px solid transparent;
+    overflow: hidden;
+    transition: background 0.2s ease;
+  }
+  body.light .faq-item {
+    background:
+      var(--grad-depth) padding-box,
+      linear-gradient(135deg, rgba(10,10,10,0.10) 0%, rgba(10,10,10,0.03) 50%, rgba(10,10,10,0.08) 100%) border-box;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    padding: 18px 24px;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+    display: flex; justify-content: space-between; align-items: center;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-icon {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: var(--surface-3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; color: var(--ink-muted);
+    font-weight: 600;
+    flex-shrink: 0; margin-left: var(--s-1);
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+    background: var(--grad-sig);
+    color: #FFFFFF;
+  }
+  .faq-answer {
+    padding: 0 24px 20px;
+    font-size: 14px;
+    color: var(--ink-body);
+    line-height: 1.6;
+    max-width: 620px;
+  }
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 880px) {
     :root { --s-8: 80px; --s-7: 64px; }
@@ -1181,7 +1255,45 @@
   </div>
 </section>
 
-<!-- 6. FINAL CTA -->
+<!-- 6. FAQ (contained — multi-element module of common questions) -->
+<section class="contained" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Common questions.</h2>
+      <p>The ones that come up before every kickoff call.</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How long until I see results? <span class="faq-icon">+</span></summary>
+        <div class="faq-answer">First booked appointments typically land in week 2. Meaningful close-rate movement and CPL optimization is a 60–90 day curve as the system learns your buyer.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Is there a minimum contract? <span class="faq-icon">+</span></summary>
+        <div class="faq-answer">Yes — 90 days. The first 60 are infrastructure, the next 30 are optimization. After that, month-to-month with 30-day notice.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What's done-for-you vs done-with-you? <span class="faq-icon">+</span></summary>
+        <div class="faq-answer">Done-for-you on the build and the operation. We need access, your offer materials, and ~2 hours/wk of your time on camera for ad creative. Everything else is on us.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What if my ad spend is small? <span class="faq-icon">+</span></summary>
+        <div class="faq-answer">Minimum effective spend is $3K/mo on Meta — below that, the algorithm doesn't get enough signal. If you're under that, the Tribe tier is the better fit until your revenue supports the spend.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can I see a sample dashboard? <span class="faq-icon">+</span></summary>
+        <div class="faq-answer">Yes — on the strategy call. We'll walk through a redacted client account showing the exact tracking, attribution, and reporting setup you'd have.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What if it's not working after 90 days? <span class="faq-icon">+</span></summary>
+        <div class="faq-answer">The performance guarantee: if you haven't recouped your investment in 90 days, we work for free until you do. We win when you win.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 7. FINAL CTA -->
 <section id="cta" class="final-cta">
   <div class="container narrow">
     <h2>
