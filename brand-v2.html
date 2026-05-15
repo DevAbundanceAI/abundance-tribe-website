@@ -30,58 +30,58 @@
     --border:        rgba(245,240,232,0.08);
     --border-strong: rgba(245,240,232,0.18);
 
-    /* Blood-orange signature · cream → vermillion → blood red */
-    --sig-0: #F5F0E8;   /* cream origin */
-    --sig-1: #FFD9C2;   /* pale flesh */
-    --sig-2: #FF6B47;   /* vermillion (the hero hue) */
-    --sig-3: #C8102E;   /* blood red anchor */
+    /* Blood-orange signature · pure orange → red (no cream stop) */
+    --sig-0: #FFA07A;   /* light salmon-orange highlight */
+    --sig-1: #FF6B47;   /* blood orange (the hero hue) */
+    --sig-2: #DC143C;   /* crimson */
+    --sig-3: #8B0A1E;   /* deep blood anchor */
 
     /* Cool contrast (for data viz only — keeps charts legible) */
     --cool: #4A90E2;
 
-    /* Gradient primitives */
-    --grad-sig:       linear-gradient(135deg, #F5F0E8 0%, #FFD9C2 38%, #FF6B47 72%, #C8102E 100%);
-    --grad-sig-soft:  linear-gradient(135deg, #FFD9C2 0%, #FF6B47 100%);
-    --grad-sig-deep:  linear-gradient(135deg, #FF6B47 0%, #C8102E 100%);
+    /* Gradient primitives — no cream */
+    --grad-sig:       linear-gradient(135deg, #FFA07A 0%, #FF6B47 35%, #DC143C 70%, #8B0A1E 100%);
+    --grad-sig-soft:  linear-gradient(135deg, #FFA07A 0%, #FF6B47 100%);
+    --grad-sig-deep:  linear-gradient(135deg, #DC143C 0%, #8B0A1E 100%);
 
     /* Radial halo behind hero / cards */
-    --halo: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(255,107,71,0.22) 0%, rgba(200,16,46,0.06) 35%, transparent 65%);
-    --halo-card: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(255,107,71,0.10), transparent 60%);
+    --halo: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(255,107,71,0.28) 0%, rgba(220,20,60,0.08) 35%, transparent 65%);
+    --halo-card: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(255,107,71,0.12), transparent 60%);
 
     /* Cards */
     --card-fill: linear-gradient(135deg, #141414, #1B1B1B);
     --card-fill-hover: linear-gradient(135deg, #1B1B1B, #242424);
 
     /* CTA */
-    --btn-fill: linear-gradient(135deg, #FF6B47 0%, #FFD9C2 100%);
-    --btn-ink: #2A0A05;
+    --btn-fill: linear-gradient(135deg, #FF6B47 0%, #DC143C 100%);
+    --btn-ink: #FFFFFF;
   }
 
-  /* ─── LIGHT MODE TOKENS ─── */
+  /* ─── LIGHT MODE TOKENS — clean white, same gradient ─── */
   body.light {
-    --bg:        #FAF7F0;
-    --surface-1: #F3EEE3;
-    --surface-2: #EDE6D7;
-    --surface-3: #E4DBC8;
-    --ink:       #1A0F0A;
-    --ink-body:  #4A3D34;
-    --ink-muted: #8A7E72;
-    --border:        rgba(26,15,10,0.08);
-    --border-strong: rgba(26,15,10,0.18);
+    --bg:        #FFFFFF;
+    --surface-1: #F8F8F8;
+    --surface-2: #F1F1F1;
+    --surface-3: #E8E8E8;
+    --ink:       #0A0A0A;
+    --ink-body:  #525252;
+    --ink-muted: #9A9A9A;
+    --border:        rgba(10,10,10,0.08);
+    --border-strong: rgba(10,10,10,0.16);
 
-    /* In light mode the gradient inverts depth — cream is no longer the bright stop, so it's pulled to deep end and saturated mids stay vibrant */
-    --grad-sig:       linear-gradient(135deg, #FF6B47 0%, #C8102E 50%, #8B0A1E 100%);
-    --grad-sig-soft:  linear-gradient(135deg, #FF6B47 0%, #C8102E 100%);
-    --grad-sig-deep:  linear-gradient(135deg, #C8102E 0%, #8B0A1E 100%);
+    /* Same gradient in both modes — the hue is the brand, not the canvas */
+    --grad-sig:       linear-gradient(135deg, #FFA07A 0%, #FF6B47 35%, #DC143C 70%, #8B0A1E 100%);
+    --grad-sig-soft:  linear-gradient(135deg, #FFA07A 0%, #FF6B47 100%);
+    --grad-sig-deep:  linear-gradient(135deg, #DC143C 0%, #8B0A1E 100%);
 
-    --halo: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(255,107,71,0.18) 0%, rgba(200,16,46,0.05) 35%, transparent 65%);
-    --halo-card: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(255,107,71,0.10), transparent 60%);
+    --halo: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(255,107,71,0.14) 0%, rgba(220,20,60,0.04) 35%, transparent 65%);
+    --halo-card: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(255,107,71,0.07), transparent 60%);
 
-    --card-fill: linear-gradient(135deg, #F3EEE3, #EDE6D7);
-    --card-fill-hover: linear-gradient(135deg, #EDE6D7, #E4DBC8);
+    --card-fill: linear-gradient(135deg, #F8F8F8, #F1F1F1);
+    --card-fill-hover: linear-gradient(135deg, #F1F1F1, #E8E8E8);
 
-    --btn-fill: linear-gradient(135deg, #FF6B47 0%, #C8102E 100%);
-    --btn-ink: #FFF;
+    --btn-fill: linear-gradient(135deg, #FF6B47 0%, #DC143C 100%);
+    --btn-ink: #FFFFFF;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -261,19 +261,18 @@
     padding: 16px;
     display: flex; flex-direction: column; justify-content: flex-end;
     font-weight: 700; font-size: 12px;
-    color: #2A0A05;
+    color: #FFFFFF;
     position: relative; overflow: hidden;
   }
-  .swatch.dark-ink { color: #FFF; }
-  .swatch-hex { font-size: 11px; opacity: 0.7; font-weight: 500; }
-  .sw-cream  { background: #F5F0E8; }
-  .sw-pale   { background: #FFD9C2; }
-  .sw-mid    { background: #FF6B47; color: #FFF; }
-  .sw-deep   { background: #C8102E; color: #FFF; }
+  .swatch-hex { font-size: 11px; opacity: 0.75; font-weight: 500; }
+  .sw-1  { background: #FFA07A; color: #2A0A05; }
+  .sw-2  { background: #FF6B47; }
+  .sw-3  { background: #DC143C; }
+  .sw-4  { background: #8B0A1E; }
   .sw-grad   { background: var(--grad-sig); }
-  .sw-grad-soft { background: var(--grad-sig-soft); color: #FFF; }
-  .sw-grad-deep { background: var(--grad-sig-deep); color: #FFF; }
-  .sw-cool   { background: #4A90E2; color: #FFF; }
+  .sw-grad-soft { background: var(--grad-sig-soft); color: #2A0A05; }
+  .sw-grad-deep { background: var(--grad-sig-deep); }
+  .sw-cool   { background: #4A90E2; }
 
   /* Status pills (Dev.ai style — mini gradient pills) */
   .pills { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -358,8 +357,8 @@
     -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   }
   .stat.bright { background: var(--grad-sig); border: none; }
-  .stat.bright .stat-label { color: rgba(42,10,5,0.65); }
-  .stat.bright .stat-val { color: #2A0A05; -webkit-text-fill-color: #2A0A05; background-image: none; }
+  .stat.bright .stat-label { color: rgba(255,255,255,0.85); }
+  .stat.bright .stat-val { color: #FFFFFF; -webkit-text-fill-color: #FFFFFF; background-image: none; }
 
   /* Activity feed */
   .activity-card { padding: 28px; }
@@ -403,7 +402,7 @@
   }
   .compare-half { padding: 32px; min-height: 320px; }
   .compare-half.dk { background: #0A0A0A; color: #F5F0E8; }
-  .compare-half.lt { background: #FAF7F0; color: #1A0F0A; }
+  .compare-half.lt { background: #FFFFFF; color: #0A0A0A; }
   .compare-label {
     font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
     font-weight: 700; opacity: 0.6; margin-bottom: 16px;
@@ -416,23 +415,15 @@
     font-family: 'Neo Contact', serif;
     font-style: italic; font-weight: 700;
     display: block; font-size: 1.2em; line-height: 1;
-    background-image: linear-gradient(135deg, #FFD9C2 0%, #FF6B47 50%, #C8102E 100%);
-    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-  }
-  .compare-half.lt .compare-h em {
-    background-image: linear-gradient(135deg, #FF6B47 0%, #C8102E 50%, #8B0A1E 100%);
+    background-image: linear-gradient(135deg, #FFA07A 0%, #FF6B47 35%, #DC143C 70%, #8B0A1E 100%);
     -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   }
   .compare-cta {
     display: inline-block; margin-top: 20px;
     padding: 10px 20px; border-radius: 10px;
     font-weight: 700; font-size: 13px;
-    background: linear-gradient(135deg, #FF6B47, #FFD9C2);
-    color: #2A0A05;
-  }
-  .compare-half.lt .compare-cta {
-    background: linear-gradient(135deg, #FF6B47, #C8102E);
-    color: #FFF;
+    background: linear-gradient(135deg, #FF6B47, #DC143C);
+    color: #FFFFFF;
   }
 
   /* Footer note */
@@ -476,7 +467,7 @@
       <em>Blood Orange.</em>
     </h1>
     <p class="hero-sub">
-      One luminous gradient. Two canvas modes. Cream &rarr; vermillion &rarr; blood red.
+      One signature gradient. Two canvas modes. Salmon &rarr; blood orange &rarr; crimson &rarr; deep blood.
       Toggle the moon/sun in the nav to see dark and light side-by-side.
     </p>
     <div class="hero-cta-row">
@@ -492,14 +483,14 @@
     <div class="section-head">
       <div class="eyebrow"><span class="eyebrow-dot"></span>Palette</div>
       <h2>Four stops. <span class="grad-sig">One signature.</span></h2>
-      <p>Same 4-stop logic as the locked system — only the hue range changes. Cream origin, pale flesh, vermillion mid, blood-red anchor.</p>
+      <p>No cream — the gradient lives entirely in the orange-to-red range. Light salmon highlight, blood-orange signature, crimson, deep blood anchor.</p>
     </div>
 
     <div class="grid-4">
-      <div class="swatch sw-cream">Cream 0%<br><span class="swatch-hex">#F5F0E8</span></div>
-      <div class="swatch sw-pale">Pale flesh 38%<br><span class="swatch-hex">#FFD9C2</span></div>
-      <div class="swatch sw-mid">Vermillion 72%<br><span class="swatch-hex">#FF6B47</span></div>
-      <div class="swatch sw-deep">Blood red 100%<br><span class="swatch-hex">#C8102E</span></div>
+      <div class="swatch sw-1">Salmon 0%<br><span class="swatch-hex">#FFA07A</span></div>
+      <div class="swatch sw-2">Blood orange 35%<br><span class="swatch-hex">#FF6B47</span></div>
+      <div class="swatch sw-3">Crimson 70%<br><span class="swatch-hex">#DC143C</span></div>
+      <div class="swatch sw-4">Deep blood 100%<br><span class="swatch-hex">#8B0A1E</span></div>
     </div>
 
     <div style="height: 24px;"></div>
@@ -614,7 +605,7 @@
       <div class="compare-half lt">
         <div class="compare-label">Light mode</div>
         <h3 class="compare-h">Scale your business with a <em>Selling System</em></h3>
-        <p style="color: rgba(26,15,10,0.7); font-size: 14px; max-width: 360px;">Done-for-you ads, funnel, and CRM. We build the machine, you stay on closing and delivery.</p>
+        <p style="color: #525252; font-size: 14px; max-width: 360px;">Done-for-you ads, funnel, and CRM. We build the machine, you stay on closing and delivery.</p>
         <a href="#" class="compare-cta">Apply now &rarr;</a>
       </div>
     </div>
