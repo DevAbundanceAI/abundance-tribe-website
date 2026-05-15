@@ -1,0 +1,3181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand v6 · Electric Blue · Simplified · · Blood Orange → Electric Blue · Abundance.AI</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
+<style>
+  @font-face {
+    font-family: 'Neo Contact';
+    src: url('/assets/fonts/neo-contact/neo-contact-lt-pro.woff2') format('woff2');
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* ─── DARK MODE TOKENS (default) ─── */
+  :root {
+    /* Canvas */
+    --bg:         #0A0A0A;
+    --surface-1: #141414;
+    --surface-2: #1B1B1B;
+    --surface-3: #242424;
+    --ink:       #F5F0E8;
+    --ink-body:  #C9C2B5;
+    --ink-muted: #807A70;
+    --border:        rgba(245,240,232,0.08);
+    --border-strong: rgba(245,240,232,0.18);
+
+    /* Blood-orange signature · pure orange → red (no cream stop) */
+    --sig-0: #3D9DFF;   /* light salmon-orange highlight */
+    --sig-1: #0A4FE5;   /* electric blue (the hero hue) */
+    --sig-2: #0A4FE5;   /* royal blue */
+    --sig-3: #001A66;   /* deep blood anchor */
+
+    /* Cool contrast (for data viz only — keeps charts legible) */
+    --cool: #4A90E2;
+
+    /* Gradient primitives — no cream */
+    --grad-sig:       linear-gradient(135deg, #3D9DFF 0%, #2D7FFF 28%, #0A4FE5 60%, #001A66 100%);
+    --grad-sig-soft:  linear-gradient(135deg, #2D7FFF 0%, #0A4FE5 100%);
+    --grad-sig-deep:  linear-gradient(135deg, #0A4FE5 0%, #001A66 100%);
+
+    /* Supporting cast — achromatic gradients that pair with the primary */
+    --grad-graphite:  linear-gradient(135deg, #F5F0E8 0%, #C7C2BB 35%, #6B6863 70%, #27262A 100%);
+    --grad-bone:      linear-gradient(135deg, #F5F0E8 0%, #E8E1D4 35%, #9C968C 70%, #4A453E 100%);
+
+    /* Deep variants — for footers, deep-section anchors, dark surfaces */
+    --grad-sig-night:  linear-gradient(135deg, #0A4FE5 0%, #001A66 35%, #2D0008 70%, #0F0F0F 100%);
+    --grad-sig-ember:  linear-gradient(135deg, #001A66 0%, #2D0008 100%);
+    --grad-sig-coal:   linear-gradient(135deg, #2D0008 0%, #0A0A0A 100%);
+
+    /* Achromatic depth — subtle surface dimension without color */
+    --grad-depth:          linear-gradient(135deg, #1F1F1F 0%, #0A0A0A 100%);
+    --grad-depth-strong:   linear-gradient(135deg, #2A2A2A 0%, #141414 55%, #000000 100%);
+    --grad-depth-elevated: linear-gradient(180deg, #242424 0%, #161616 100%);
+    --grad-depth-inner:    linear-gradient(180deg, #1A1A1A 0%, #0A0A0A 100%);
+    --grad-depth-darker:   linear-gradient(135deg, #141414 0%, #050505 100%);
+    --spotlight:           radial-gradient(ellipse 60% 50% at 25% 18%, rgba(255,255,255,0.06), transparent 60%);
+    --spotlight-corner:    radial-gradient(ellipse 50% 80% at 100% 0%, rgba(255,255,255,0.05), transparent 60%);
+
+    /* Glass — frosted card on backdrop */
+    --glass-bg:     rgba(20,20,20,0.55);
+    --glass-border: rgba(255,255,255,0.10);
+    --glass-blur:   blur(24px) saturate(180%);
+
+    /* Radial halo behind hero / cards */
+    --halo: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(10,79,229,0.28) 0%, rgba(10,79,229,0.08) 35%, transparent 65%);
+    --halo-card: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(10,79,229,0.12), transparent 60%);
+    --halo-graphite: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(199,194,187,0.14) 0%, transparent 65%);
+    --halo-bone:     radial-gradient(ellipse 100% 60% at 50% 0%, rgba(232,225,212,0.10) 0%, transparent 65%);
+
+    /* Cards */
+    --card-fill: linear-gradient(135deg, #141414, #1B1B1B);
+    --card-fill-hover: linear-gradient(135deg, #1B1B1B, #242424);
+
+    /* CTA */
+    --btn-fill: linear-gradient(135deg, #2D7FFF 0%, #0A4FE5 100%);
+    --btn-ink: #FFFFFF;
+  }
+
+  /* ─── LIGHT MODE TOKENS — clean white, same gradient ─── */
+  body.light {
+    --bg:        #FFFFFF;
+    --surface-1: #F8F8F8;
+    --surface-2: #F1F1F1;
+    --surface-3: #E8E8E8;
+    --ink:       #0A0A0A;
+    --ink-body:  #525252;
+    --ink-muted: #9A9A9A;
+    --border:        rgba(10,10,10,0.08);
+    --border-strong: rgba(10,10,10,0.16);
+
+    /* Same gradient in both modes — the hue is the brand, not the canvas */
+    --grad-sig:       linear-gradient(135deg, #3D9DFF 0%, #2D7FFF 28%, #0A4FE5 60%, #001A66 100%);
+    --grad-sig-soft:  linear-gradient(135deg, #2D7FFF 0%, #0A4FE5 100%);
+    --grad-sig-deep:  linear-gradient(135deg, #0A4FE5 0%, #001A66 100%);
+
+    /* Achromatic supports — depth flipped for white canvas */
+    --grad-graphite:  linear-gradient(135deg, #C7C2BB 0%, #6B6863 50%, #27262A 100%);
+    --grad-bone:      linear-gradient(135deg, #E8E1D4 0%, #9C968C 50%, #4A453E 100%);
+
+    /* Deep variants stay punchy in light mode too */
+    --grad-sig-night:  linear-gradient(135deg, #0A4FE5 0%, #001A66 35%, #2D0008 70%, #0F0F0F 100%);
+    --grad-sig-ember:  linear-gradient(135deg, #001A66 0%, #2D0008 100%);
+    --grad-sig-coal:   linear-gradient(135deg, #2D0008 0%, #0A0A0A 100%);
+
+    /* Achromatic depth — flips for white canvas */
+    --grad-depth:          linear-gradient(135deg, #FAFAFA 0%, #ECECEC 100%);
+    --grad-depth-strong:   linear-gradient(135deg, #FFFFFF 0%, #F0F0F0 55%, #DCDCDC 100%);
+    --grad-depth-elevated: linear-gradient(180deg, #FFFFFF 0%, #F4F4F4 100%);
+    --grad-depth-inner:    linear-gradient(180deg, #F8F8F8 0%, #EAEAEA 100%);
+    --grad-depth-darker:   linear-gradient(135deg, #F0F0F0 0%, #DADADA 100%);
+    --spotlight:           radial-gradient(ellipse 60% 50% at 25% 18%, rgba(0,0,0,0.05), transparent 60%);
+    --spotlight-corner:    radial-gradient(ellipse 50% 80% at 100% 0%, rgba(0,0,0,0.04), transparent 60%);
+
+    /* Glass — light-mode frost */
+    --glass-bg:     rgba(255,255,255,0.55);
+    --glass-border: rgba(10,10,10,0.08);
+    --glass-blur:   blur(24px) saturate(160%);
+
+    --halo: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(10,79,229,0.14) 0%, rgba(10,79,229,0.04) 35%, transparent 65%);
+    --halo-card: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(10,79,229,0.07), transparent 60%);
+    --halo-graphite: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(107,104,99,0.08) 0%, transparent 65%);
+    --halo-bone:     radial-gradient(ellipse 100% 60% at 50% 0%, rgba(156,150,140,0.06) 0%, transparent 65%);
+
+    --card-fill: linear-gradient(135deg, #F8F8F8, #F1F1F1);
+    --card-fill-hover: linear-gradient(135deg, #F1F1F1, #E8E8E8);
+
+    --btn-fill: linear-gradient(135deg, #2D7FFF 0%, #0A4FE5 100%);
+    --btn-ink: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "greycliff-cf", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    transition: background 0.4s ease, color 0.4s ease;
+  }
+  *, *::before, *::after { transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, fill 0.4s ease; }
+
+  h1, h2, h3, h4 {
+    color: var(--ink);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  p { color: var(--ink-body); }
+
+  /* Big em moment */
+  h1 em {
+    font-family: 'Neo Contact', serif;
+    font-style: italic;
+    font-weight: 700;
+    display: block;
+    font-size: 1.2em;
+    line-height: 1;
+    margin-top: 0.05em;
+    background-image: var(--grad-sig);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--bg) 78%, transparent);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 32px;
+  }
+  .nav-inner {
+    max-width: 1240px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-brand {
+    font-weight: 800; font-size: 15px;
+    color: var(--ink); text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-brand::before {
+    content: ''; width: 24px; height: 24px;
+    border-radius: 7px;
+    background: var(--grad-sig);
+  }
+  .nav-right { display: flex; align-items: center; gap: 14px; }
+
+  /* Mode toggle */
+  .mode-toggle {
+    width: 56px; height: 28px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    cursor: pointer;
+    padding: 3px;
+    display: flex; align-items: center;
+    position: relative;
+  }
+  .mode-knob {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--grad-sig);
+    transform: translateX(0);
+    transition: transform 0.32s cubic-bezier(.6,.0,.0,1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    color: #2A0A05;
+    font-weight: 700;
+  }
+  body.light .mode-knob { transform: translateX(28px); }
+  .mode-knob::before { content: '☾'; }
+  body.light .mode-knob::before { content: '☼'; color: #FFF; }
+
+  .nav-cta {
+    background: var(--ink); color: var(--bg);
+    padding: 9px 22px; border-radius: 100px;
+    font-weight: 700; font-size: 13px;
+    text-decoration: none;
+    border: none;
+  }
+
+  /* ─── SECTION ─── */
+  section { padding: 100px 32px; position: relative; overflow: hidden; }
+  .container { max-width: 1240px; margin: 0 auto; position: relative; z-index: 2; }
+  .halo {
+    position: absolute; inset: 0;
+    background: var(--halo);
+    pointer-events: none; z-index: 1;
+  }
+
+  /* ─── BG PATTERNS — dots & grid ─── */
+  .bg-dots, .bg-grid {
+    position: absolute; inset: 0;
+    pointer-events: none; z-index: 0;
+    color: var(--ink);
+  }
+  .bg-dots {
+    background-image: radial-gradient(circle, currentColor 1px, transparent 1.2px);
+    background-size: 28px 28px;
+    opacity: 0.10;
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 80%);
+            mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 80%);
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(currentColor 1px, transparent 1px),
+      linear-gradient(90deg, currentColor 1px, transparent 1px);
+    background-size: 64px 64px;
+    opacity: 0.07;
+    -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 0%, transparent 80%);
+            mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 0%, transparent 80%);
+  }
+  body.light .bg-dots { opacity: 0.14; }
+  body.light .bg-grid { opacity: 0.10; }
+
+  /* Glow ring — pulsing aura around brand mark + key elements */
+  .glow-ring {
+    position: relative;
+  }
+  .glow-ring::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: inherit;
+    background: var(--grad-sig);
+    opacity: 0.35;
+    filter: blur(14px);
+    z-index: -1;
+    animation: pulse 3.2s ease-in-out infinite;
+  }
+  body.light .glow-ring::after { opacity: 0.22; }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.28; transform: scale(1); }
+    50%      { opacity: 0.55; transform: scale(1.08); }
+  }
+
+  /* Eyebrow / status pill */
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--surface-1);
+    border: 1px solid var(--border-strong);
+    border-radius: 100px;
+    padding: 5px 14px 5px 6px;
+    font-weight: 600; font-size: 11px;
+    color: var(--ink-body);
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
+  }
+  .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ink-muted); }
+
+  /* ─── HERO ─── */
+  .hero { padding: 80px 32px 60px; text-align: center; }
+  .hero h1 {
+    font-size: clamp(56px, 8vw, 112px);
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+  }
+  .hero h1 .line { display: block; color: var(--ink); }
+  .hero-sub {
+    font-size: clamp(15px, 1.5vw, 18px);
+    max-width: 580px; margin: 0 auto 32px;
+    color: var(--ink-body);
+  }
+  .hero-cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 13px 26px; border-radius: 10px;
+    font-weight: 700; font-size: 14px;
+    text-decoration: none; cursor: pointer; border: 1px solid transparent;
+    transition: transform 0.15s ease, filter 0.15s ease;
+  }
+  .btn-primary { background: var(--btn-fill); color: var(--btn-ink); }
+  .btn-primary:hover { transform: translateY(-1px); filter: brightness(1.05); }
+  .btn-ghost { background: transparent; color: var(--ink); border-color: var(--border-strong); }
+  .btn-ghost:hover { background: var(--surface-1); }
+
+  /* ─── PALETTE GRID ─── */
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+  .card {
+    background: var(--card-fill);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset, 0 18px 48px -12px rgba(0,0,0,0.35);
+  }
+  body.light .card { box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .card::after {
+    content: ''; position: absolute; inset: 0;
+    background: var(--halo-card);
+    pointer-events: none;
+  }
+  /* Always-on outer color glow */
+  .card.glow {
+    box-shadow:
+      0 0 0 1px rgba(45,127,255,0.18),
+      0 0 36px -6px rgba(45,127,255,0.22),
+      0 20px 60px -12px rgba(10,79,229,0.18),
+      0 1px 0 rgba(255,255,255,0.03) inset;
+  }
+  body.light .card.glow {
+    box-shadow:
+      0 0 0 1px rgba(10,79,229,0.18),
+      0 0 36px -6px rgba(10,79,229,0.18),
+      0 20px 50px -16px rgba(10,79,229,0.10);
+  }
+  /* Gradient border via background-clip trick */
+  .card.gradient-border {
+    border: 1px solid transparent;
+    background:
+      var(--card-fill) padding-box,
+      linear-gradient(135deg, rgba(255,77,109,0.55), rgba(10,79,229,0.55) 60%, rgba(0,26,102,0.55)) border-box;
+  }
+  /* Gradient-tinted card background */
+  .card.gradient-bg {
+    background:
+      linear-gradient(135deg, rgba(10,79,229,0.10) 0%, rgba(10,79,229,0.05) 60%, transparent 100%),
+      var(--card-fill);
+  }
+  body.light .card.gradient-bg {
+    background:
+      linear-gradient(135deg, rgba(10,79,229,0.10) 0%, rgba(10,79,229,0.04) 60%, transparent 100%),
+      var(--card-fill);
+  }
+  .card-label {
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-muted); font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .card-title { font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+  .card-body { font-size: 13px; color: var(--ink-body); }
+
+  /* Swatch row */
+  .swatch {
+    border-radius: 14px;
+    aspect-ratio: 4/3;
+    padding: 16px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    font-weight: 700; font-size: 12px;
+    color: #FFFFFF;
+    position: relative; overflow: hidden;
+  }
+  .swatch-hex { font-size: 11px; opacity: 0.75; font-weight: 500; }
+  .sw-1  { background: #3D9DFF; color: #2A0A05; }
+  .sw-2  { background: #2D7FFF; }
+  .sw-3  { background: #0A4FE5; }
+  .sw-4  { background: #001A66; }
+  .sw-5  { background: #3D0010; }
+  .sw-6  { background: #2D0008; }
+  .sw-7  { background: #1A0004; }
+  .sw-8  { background: #0A0A0A; }
+  .sw-grad-night { background: var(--grad-sig-night); }
+  .sw-grad-ember { background: var(--grad-sig-ember); }
+  .sw-grad-coal  { background: var(--grad-sig-coal);  }
+  .sw-grad   { background: var(--grad-sig); }
+  .sw-grad-soft { background: var(--grad-sig-soft); color: #2A0A05; }
+  .sw-grad-deep { background: var(--grad-sig-deep); }
+  .sw-cool   { background: #4A90E2; }
+
+  /* Status pills (Dev.ai style — mini gradient pills) */
+  .pills { display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 14px 6px 8px;
+    border-radius: 100px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.06em;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--ink-body);
+    text-transform: uppercase;
+  }
+  .pill-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--ink-muted);
+  }
+  .pill.bright {
+    background: var(--grad-graphite);
+    color: #F5F0E8; border-color: transparent;
+  }
+  .pill.bright .pill-dot { background: #FFF; }
+  .pill.deep {
+    background: var(--grad-depth-strong);
+    color: var(--ink); border: 1px solid var(--border-strong);
+  }
+
+  /* Stat ring (Dev.ai sprint velocity style) */
+  .ring-card {
+    aspect-ratio: 1.4;
+    display: flex; flex-direction: column;
+  }
+  .ring-wrap {
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; margin-top: 12px;
+  }
+  .ring {
+    width: 160px; height: 90px;
+    border-radius: 160px 160px 0 0;
+    background:
+      conic-gradient(
+        from -90deg,
+        #5BB5FF 0deg,
+        #0A4FE5 80deg,
+        #0A4FE5 130deg,
+        transparent 130deg
+      );
+    -webkit-mask: radial-gradient(circle at 50% 100%, transparent 56px, black 57px);
+            mask: radial-gradient(circle at 50% 100%, transparent 56px, black 57px);
+    position: relative;
+  }
+  .ring-val {
+    position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+    font-size: 28px; font-weight: 800; color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .ring-foot {
+    display: flex; justify-content: space-between;
+    margin-top: 8px;
+    font-size: 10px; color: var(--ink-muted);
+    text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;
+  }
+
+  /* Stat blocks */
+  .stat {
+    background: var(--card-fill);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+  }
+  .stat-label {
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-muted); font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .stat-val {
+    font-size: 32px; font-weight: 800; line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .stat.bright { background: var(--grad-depth-strong); border: 1px solid var(--border-strong); }
+  .stat.bright .stat-label { color: var(--ink-muted); }
+  .stat.bright .stat-val { color: var(--ink); -webkit-text-fill-color: var(--ink); background-image: none; }
+
+  /* Promo card with horizontal gradient strip — Dev.ai "best WORK" pattern */
+  .promo-card {
+    position: relative;
+    overflow: hidden;
+    padding: 40px 32px;
+    border-radius: 20px;
+    background: var(--card-fill);
+    border: 1px solid var(--border);
+    text-align: center;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset, 0 18px 48px -12px rgba(0,0,0,0.35);
+  }
+  body.light .promo-card { box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .promo-stripe {
+    position: absolute;
+    top: 24%; left: 0; right: 0;
+    height: 18px;
+    background: linear-gradient(90deg,
+      #3D9DFF 0%,
+      #2D7FFF 22%,
+      #0A4FE5 42%,
+      #0A4FE5 65%,
+      #001A66 85%,
+      #4A90E2 100%);
+    filter: blur(0.5px);
+    box-shadow: 0 0 60px 4px rgba(10,79,229,0.45),
+                0 0 120px 12px rgba(10,79,229,0.25);
+    transform: skewY(-1.5deg);
+  }
+  .promo-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    font-size: 11px; font-weight: 700;
+    color: var(--ink-body);
+    margin-right: 6px;
+  }
+  .promo-stripe-row {
+    position: relative;
+    margin: 24px 0 32px;
+    display: flex; align-items: center; justify-content: center;
+    gap: 8px;
+  }
+  .promo-stripe-row .promo-stripe-mini {
+    height: 14px;
+    flex: 1; max-width: 220px;
+    border-radius: 100px;
+    background: linear-gradient(90deg, #3D9DFF, #2D7FFF, #0A4FE5, #001A66, #4A90E2);
+    box-shadow: 0 0 32px -2px rgba(10,79,229,0.55), 0 0 80px 4px rgba(10,79,229,0.30);
+  }
+  .promo-headline {
+    font-size: clamp(22px, 2.8vw, 32px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 8px 0 8px;
+  }
+  .promo-headline em {
+    font-family: 'Neo Contact', serif;
+    font-style: italic;
+    font-weight: 700;
+    background-image: var(--grad-sig);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    font-size: 1em;
+  }
+  .promo-foot {
+    margin-top: 28px;
+    display: flex; align-items: center; gap: 12px;
+    background: linear-gradient(90deg,
+      rgba(45,127,255,0.12),
+      rgba(10,79,229,0.06),
+      transparent);
+    padding: 10px 14px;
+    border-radius: 12px;
+  }
+  .promo-foot-num {
+    font-size: 22px; font-weight: 800;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .promo-foot-lbl { font-size: 11px; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+
+  /* Activity feed */
+  .activity-card { padding: 28px; }
+  .activity-row.winner {
+    background: linear-gradient(90deg,
+      rgba(45,127,255,0.16) 0%,
+      rgba(10,79,229,0.08) 60%,
+      transparent 100%);
+    border-radius: 12px;
+    padding: 12px;
+    margin: 4px -8px;
+    border-top: none !important;
+    position: relative;
+  }
+  .activity-row.winner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    pointer-events: none;
+    box-shadow: 0 0 24px -4px rgba(10,79,229,0.30);
+  }
+  .activity-row.winner .activity-avatar {
+    background: var(--grad-sig);
+    color: #FFFFFF;
+    box-shadow: 0 0 16px -2px rgba(10,79,229,0.55);
+  }
+  .activity-row.winner .activity-rank {
+    font-size: 11px; font-weight: 800;
+    color: #FFFFFF;
+    background: var(--grad-sig-deep);
+    width: 22px; height: 22px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .activity-row {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+  }
+  .activity-row:first-of-type { border-top: none; padding-top: 0; }
+  .activity-avatar {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--grad-graphite);
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #2A0A05; font-weight: 700; font-size: 11px;
+  }
+  .activity-text { font-size: 13px; color: var(--ink-body); flex: 1; }
+  .activity-text strong { color: var(--ink); font-weight: 700; }
+  .activity-time { font-size: 11px; color: var(--ink-muted); }
+
+  /* Section heading */
+  .section-head { text-align: center; margin-bottom: 48px; max-width: 720px; margin-left: auto; margin-right: auto; }
+  .section-head h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.05;
+    margin-bottom: 12px;
+    letter-spacing: -0.03em;
+  }
+  .grad-sig {
+    background-image: var(--grad-sig);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .section-head p { font-size: 15px; color: var(--ink-body); }
+
+  /* Comparison row */
+  .compare {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .compare-half { padding: 32px; min-height: 320px; }
+  .compare-half.dk { background: #0A0A0A; color: #F5F0E8; }
+  .compare-half.lt { background: #FFFFFF; color: #0A0A0A; }
+  /* Force heading colors to match each half's canvas regardless of body mode */
+  .compare-half.dk h1, .compare-half.dk h2, .compare-half.dk h3,
+  .compare-half.dk h4, .compare-half.dk h5 { color: #F5F0E8; }
+  .compare-half.lt h1, .compare-half.lt h2, .compare-half.lt h3,
+  .compare-half.lt h4, .compare-half.lt h5 { color: #0A0A0A; }
+  .compare-label {
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    font-weight: 700; opacity: 0.6; margin-bottom: 16px;
+  }
+  .compare-h {
+    font-size: 32px; font-weight: 800; letter-spacing: -0.03em;
+    line-height: 1; margin-bottom: 16px;
+  }
+  .compare-h em {
+    font-family: 'Neo Contact', serif;
+    font-style: italic; font-weight: 700;
+    display: block; font-size: 1.2em; line-height: 1;
+    background-image: linear-gradient(135deg, #3D9DFF 0%, #2D7FFF 28%, #0A4FE5 60%, #001A66 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .compare-cta {
+    display: inline-block; margin-top: 20px;
+    padding: 10px 20px; border-radius: 10px;
+    font-weight: 700; font-size: 13px;
+    background: linear-gradient(135deg, #2D7FFF, #0A4FE5);
+    color: #FFFFFF;
+  }
+
+  /* Footer note */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 36px 32px;
+    font-size: 12px; color: var(--ink-muted);
+    text-align: center;
+  }
+
+  /* ─── SUPPORTING CAST ─── */
+  .support-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 16px; margin-bottom: 28px;
+  }
+  .support {
+    border-radius: 16px; aspect-ratio: 5/3; padding: 24px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative; overflow: hidden;
+    box-shadow: 0 18px 48px -12px rgba(0,0,0,0.30);
+  }
+  body.light .support { box-shadow: 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .support-name { font-size: 18px; font-weight: 800; letter-spacing: -0.01em; }
+  .support-role { font-size: 11px; font-weight: 500; opacity: 0.88; line-height: 1.45; margin-top: 4px; max-width: 240px; }
+  .support-stops { display: flex; gap: 4px; margin-top: 12px; }
+  .support-stop { flex: 1; height: 6px; border-radius: 4px; }
+  .support-1 { background: var(--grad-sig); color: #FFFFFF; }
+  .support-2 { background: var(--grad-graphite); color: #F5F0E8; }
+  body.light .support-2 { color: #FFFFFF; }
+  .support-3 { background: var(--grad-bone); color: #2A2520; }
+  body.light .support-3 { color: #FFFFFF; }
+
+  /* Dual-line chart */
+  .chart-card { padding: 32px; }
+  .chart-headline {
+    display: flex; align-items: baseline; gap: 12px;
+    margin-bottom: 8px;
+  }
+  .chart-headline .chart-big {
+    font-size: 32px; font-weight: 800; letter-spacing: -0.03em;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .chart-headline .chart-prior {
+    font-size: 13px; font-weight: 600; color: var(--ink-muted);
+  }
+  .chart-svg { width: 100%; height: 240px; display: block; margin-top: 16px; color: var(--ink); }
+  .chart-legend { display: flex; gap: 20px; margin-top: 16px; }
+  .chart-legend-item { display: flex; gap: 8px; align-items: center; font-size: 12px; color: var(--ink-body); font-weight: 600; }
+  .chart-legend-dot { width: 12px; height: 12px; border-radius: 3px; }
+  .chart-legend-dot.primary { background: var(--grad-sig); }
+  .chart-legend-dot.secondary { background: var(--grad-graphite); }
+
+  /* Bone-rail quote card */
+  .quote-card {
+    position: relative;
+    padding: 36px 36px 36px 40px;
+    border-radius: 20px;
+    background:
+      linear-gradient(135deg, rgba(232,225,212,0.06), rgba(74,69,62,0.04)),
+      var(--card-fill);
+    border: 1px solid var(--border);
+    display: flex; flex-direction: column; justify-content: center;
+    box-shadow: 0 18px 48px -12px rgba(0,0,0,0.30);
+  }
+  body.light .quote-card { box-shadow: 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .quote-card::before {
+    content: '';
+    position: absolute; left: 0; top: 28px; bottom: 28px;
+    width: 3px;
+    background: var(--grad-bone);
+    border-radius: 2px;
+  }
+  .quote-card blockquote {
+    font-size: 18px; line-height: 1.5;
+    color: var(--ink); font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .quote-card cite {
+    font-size: 13px; color: var(--ink-muted); font-style: normal;
+  }
+
+  /* ─── USE-CASE COMPONENTS ─── */
+
+  /* Pricing tier pair: featured (electric blue) + standard (graphite) */
+  .tier-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .tier {
+    border-radius: 20px;
+    padding: 28px;
+    background: var(--card-fill);
+    border: 1px solid var(--border);
+    position: relative; overflow: hidden;
+    box-shadow: 0 18px 48px -12px rgba(0,0,0,0.30);
+  }
+  body.light .tier { box-shadow: 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .tier-featured {
+    border: 1px solid transparent;
+    background:
+      var(--card-fill) padding-box,
+      linear-gradient(135deg, rgba(255,77,109,0.6), rgba(10,79,229,0.6) 60%, rgba(0,26,102,0.6)) border-box;
+    box-shadow:
+      0 0 0 1px rgba(45,127,255,0.18),
+      0 0 36px -6px rgba(10,79,229,0.20),
+      0 20px 60px -12px rgba(10,79,229,0.18);
+  }
+  .tier-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--surface-2);
+    color: var(--ink-body);
+    margin-bottom: 16px;
+  }
+  .tier-featured .tier-tag {
+    background: var(--grad-sig-soft);
+    color: #2A0A05;
+  }
+  .tier-standard .tier-tag {
+    background: var(--grad-graphite);
+    color: #F5F0E8;
+  }
+  body.light .tier-standard .tier-tag { color: #FFFFFF; }
+  .tier-name { font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.02em; }
+  .tier-price {
+    font-size: 44px; font-weight: 800; line-height: 1;
+    letter-spacing: -0.03em; margin-bottom: 4px;
+  }
+  .tier-featured .tier-price { color: var(--ink); }
+  .tier-standard .tier-price { color: var(--ink); }
+  .tier-period { font-size: 12px; color: var(--ink-muted); margin-bottom: 20px; }
+  .tier ul { list-style: none; padding: 0; margin: 0 0 24px; }
+  .tier li {
+    font-size: 13px; color: var(--ink-body);
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .tier li:first-child { border-top: none; }
+  .tier li::before {
+    content: '✓'; font-size: 11px; font-weight: 800;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .tier-featured li::before {
+    background: var(--grad-sig-soft); color: #2A0A05;
+  }
+  .tier-standard li::before {
+    background: var(--surface-3); color: var(--ink-body);
+  }
+
+  /* Code block — graphite styling */
+  .code-block {
+    background:
+      linear-gradient(135deg, rgba(199,194,187,0.04), rgba(39,38,42,0.04)),
+      var(--card-fill);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .code-block::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--grad-graphite);
+  }
+  .code-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    font-size: 11px; color: var(--ink-muted);
+    letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;
+  }
+  .code-dots { display: flex; gap: 6px; }
+  .code-dots span {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--surface-3);
+  }
+  .code-dots span:first-child { background: linear-gradient(135deg, #3D9DFF, #0A4FE5); }
+  .code-block pre {
+    padding: 18px;
+    margin: 0;
+    font-family: 'Menlo', 'Monaco', monospace;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--ink-body);
+    overflow-x: auto;
+  }
+  .code-block .k { color: #5085C7; font-weight: 700; }
+  .code-block .s { color: #C7C2BB; }
+  .code-block .c { color: var(--ink-muted); font-style: italic; }
+  .code-block .v { color: var(--ink); font-weight: 600; }
+  body.light .code-block .k { color: #0A4FE5; }
+  body.light .code-block .s { color: #6B6863; }
+
+  /* Stat-pair: current (sig) vs prior (graphite) */
+  .stat-pair-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .stat-pair {
+    padding: 18px;
+    background: var(--card-fill);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+  .stat-pair-label {
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-muted); font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .stat-pair-row { display: flex; align-items: baseline; gap: 10px; }
+  .stat-pair-now {
+    font-size: 24px; font-weight: 800; line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .stat-pair-was {
+    font-size: 12px; font-weight: 600; line-height: 1;
+    background-image: var(--grad-graphite);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .stat-pair-bar {
+    margin-top: 12px; height: 6px;
+    border-radius: 4px;
+    background: var(--surface-3);
+    overflow: hidden;
+    position: relative;
+  }
+  .stat-pair-bar::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--grad-graphite);
+    width: 65%;
+  }
+  .stat-pair-bar::after {
+    content: ''; position: absolute; inset: 0;
+    background: var(--ink);
+    opacity: 0.55;
+    width: 88%;
+    border-radius: 4px;
+  }
+
+  /* Sparkline strip */
+  .sparkline-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .sparkline-card {
+    padding: 18px;
+    background: var(--card-fill);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+  .sparkline-label {
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-muted); font-weight: 600; margin-bottom: 6px;
+  }
+  .sparkline-val { font-size: 20px; font-weight: 800; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.02em; }
+  .sparkline-svg { width: 100%; height: 38px; display: block; }
+
+  /* Bone-themed FAQ row */
+  .faq-bone {
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(232,225,212,0.05), transparent), var(--card-fill);
+    border: 1px solid var(--border);
+    padding: 0;
+    overflow: hidden;
+  }
+  .faq-bone-item {
+    padding: 18px 22px;
+    border-top: 1px solid var(--border);
+    position: relative;
+  }
+  .faq-bone-item:first-child { border-top: none; }
+  .faq-bone-item::before {
+    content: ''; position: absolute;
+    left: 0; top: 18px; bottom: 18px;
+    width: 2px;
+    background: var(--grad-bone);
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .faq-bone-item.active::before { opacity: 1; }
+  .faq-bone-q {
+    font-size: 14px; font-weight: 700; color: var(--ink);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-bone-q-icon {
+    font-size: 18px; color: var(--ink-muted);
+  }
+  .faq-bone-item.active .faq-bone-q-icon {
+    background-image: var(--grad-bone);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .faq-bone-a {
+    font-size: 13px; color: var(--ink-body);
+    line-height: 1.6; margin-top: 10px;
+    max-width: 600px;
+  }
+
+  /* Checklist: complete (sig) + incomplete (bone) */
+  .checklist {
+    background:
+      linear-gradient(135deg, rgba(232,225,212,0.04), transparent),
+      var(--card-fill);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .checklist-item {
+    display: flex; gap: 12px; align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid var(--border);
+  }
+  .checklist-item:first-of-type { border-top: none; }
+  .check-icon {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 11px; font-weight: 800;
+  }
+  .check-icon.done {
+    background: var(--grad-sig);
+    color: #FFFFFF;
+    box-shadow: 0 0 12px -2px rgba(10,79,229,0.45);
+  }
+  .check-icon.todo {
+    background: transparent;
+    border: 1.5px solid;
+    border-image: var(--grad-bone) 1;
+    color: var(--ink-muted);
+  }
+  .check-text { font-size: 13px; color: var(--ink-body); }
+  .check-text.done {
+    color: var(--ink);
+    text-decoration: line-through;
+    text-decoration-color: rgba(156,150,140,0.5);
+  }
+
+
+  /* ─── FORM ─── */
+  .form-card { padding: 32px; }
+  .form-row { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+  .form-label {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-muted); font-weight: 600;
+  }
+  .form-input {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 14px;
+    color: var(--ink);
+    font-family: inherit;
+    width: 100%;
+    transition: box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+  .form-input:focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow:
+      0 0 0 1px rgba(45,127,255,0.55),
+      0 0 24px -6px rgba(10,79,229,0.30);
+  }
+  body.light .form-input:focus {
+    box-shadow:
+      0 0 0 1px rgba(10,79,229,0.50),
+      0 0 24px -6px rgba(45,127,255,0.20);
+  }
+  .form-input::placeholder { color: var(--ink-muted); }
+  .form-actions { display: flex; gap: 10px; margin-top: 4px; flex-wrap: wrap; }
+
+  /* ─── TAGS ─── */
+  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-size: 11px; font-weight: 600;
+    background: var(--surface-2);
+    color: var(--ink-body);
+    border: 1px solid var(--border);
+  }
+  .tag.sig { background: var(--grad-sig-soft); color: #FFFFFF; border: none; }
+  .tag.graphite { background: var(--grad-graphite); color: #F5F0E8; border: none; }
+  body.light .tag.graphite { color: #FFFFFF; }
+  .tag.bone { background: var(--grad-bone); color: #2A2520; border: none; }
+  body.light .tag.bone { color: #FFFFFF; }
+  .tag.outline {
+    background: transparent;
+    border: 1px solid;
+    border-image: var(--grad-sig) 1;
+    color: var(--ink);
+  }
+  .tag-section-label {
+    font-size: 11px; color: var(--ink-muted);
+    margin-bottom: 10px; font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── PROGRESS ─── */
+  .progress-row { display: flex; flex-direction: column; gap: 14px; }
+  .progress { display: flex; flex-direction: column; gap: 6px; }
+  .progress-head {
+    display: flex; justify-content: space-between;
+    font-size: 12px; font-weight: 600;
+    color: var(--ink-body);
+  }
+  .progress-bar {
+    height: 8px;
+    background: var(--surface-2);
+    border-radius: 100px;
+    overflow: hidden;
+    position: relative;
+  }
+  .progress-fill {
+    position: absolute; inset: 0 auto 0 0;
+    border-radius: 100px;
+    transition: width 0.4s ease;
+  }
+  .progress-fill.sig { background: var(--grad-graphite); }
+  .progress-fill.pop { background: var(--grad-sig); box-shadow: 0 0 12px -2px rgba(45,127,255,0.40); }
+  .progress-fill.graphite { background: var(--grad-graphite); }
+  .progress-fill.bone { background: var(--grad-bone); }
+
+  /* ─── TOAST ─── */
+  .toast {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 16px 14px 14px;
+    border-radius: 14px;
+    background: var(--card-fill);
+    border: 1px solid var(--border-strong);
+    box-shadow: 0 12px 32px -10px rgba(0,0,0,0.30);
+    position: relative;
+  }
+  body.light .toast { box-shadow: 0 12px 32px -14px rgba(10,10,10,0.15); }
+  .toast-icon {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--grad-graphite);
+    color: #FFFFFF;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .toast-text { flex: 1; font-size: 13px; color: var(--ink); font-weight: 600; line-height: 1.3; }
+  .toast-text small { display: block; font-weight: 500; color: var(--ink-muted); margin-top: 3px; font-size: 11px; }
+  .toast-close {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: var(--surface-3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; color: var(--ink-muted); cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .toast-close:hover { background: var(--surface-1); color: var(--ink); }
+
+  /* ─── STEPS ─── */
+  .steps-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  .step-item {
+    text-align: center;
+    position: relative;
+    padding: 0 6px;
+  }
+  .step-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 16px; left: 60%; right: -40%;
+    height: 2px;
+    background: var(--surface-3);
+    z-index: 0;
+  }
+  .step-item.done:not(:last-child)::after {
+    background: var(--grad-sig-soft);
+  }
+  .step-num-circle {
+    width: 32px; height: 32px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800;
+    color: var(--ink-muted);
+    position: relative; z-index: 2;
+  }
+  .step-item.done .step-num-circle {
+    background: var(--grad-graphite);
+    color: #FFFFFF;
+    border: none;
+  }
+  .step-item.active .step-num-circle {
+    background: var(--surface-1);
+    border: 1px solid;
+    border-image: var(--grad-sig-soft) 1;
+    color: var(--ink);
+    box-shadow: 0 0 18px -2px rgba(10,79,229,0.30);
+  }
+  .step-name { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 2px; letter-spacing: -0.01em; }
+  .step-meta { font-size: 10px; color: var(--ink-muted); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
+
+  /* ─── BAR CHART ─── */
+  .bar-chart {
+    display: flex; align-items: flex-end; gap: 16px;
+    height: 200px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; gap: 8px; }
+  .bar-stack {
+    display: flex; align-items: flex-end; gap: 4px;
+    height: 100%; width: 100%; max-width: 80px;
+  }
+  .bar { flex: 1; border-radius: 6px 6px 0 0; min-height: 6px; }
+  .bar.sig { background: var(--grad-graphite); }
+  .bar.pop { background: var(--grad-sig); box-shadow: 0 0 12px -2px rgba(45,127,255,0.30); }
+  .bar.graphite { background: var(--grad-graphite); }
+  .bar.bone { background: var(--grad-bone); }
+  .bar-label {
+    font-size: 11px; font-weight: 600; color: var(--ink-muted);
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .bar-legend { display: flex; gap: 16px; margin-top: 14px; flex-wrap: wrap; }
+  .bar-legend-item { display: flex; gap: 6px; align-items: center; font-size: 11px; color: var(--ink-body); font-weight: 600; }
+  .bar-legend-dot { width: 10px; height: 10px; border-radius: 2px; }
+
+  /* ─── TESTIMONIAL ─── */
+  .testimonial {
+    padding: 40px;
+    border-radius: 20px;
+    background: var(--card-fill);
+    border: 1px solid var(--border);
+    position: relative; overflow: hidden;
+    box-shadow: 0 18px 48px -12px rgba(0,0,0,0.30);
+  }
+  body.light .testimonial { box-shadow: 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .testimonial::before {
+    content: ''; position: absolute;
+    top: 0; right: 0; width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(45,127,255,0.10), transparent 65%);
+    pointer-events: none;
+  }
+  body.light .testimonial::before { background: radial-gradient(circle, rgba(45,127,255,0.06), transparent 65%); }
+  .testimonial-mark {
+    font-family: 'Neo Contact', serif;
+    font-size: 80px; line-height: 0.6;
+    background-image: var(--grad-graphite);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: -10px;
+  }
+  .testimonial blockquote {
+    font-size: clamp(20px, 2vw, 24px);
+    line-height: 1.45;
+    color: var(--ink);
+    font-weight: 500;
+    margin-bottom: 28px;
+    letter-spacing: -0.01em;
+    max-width: 720px;
+  }
+  .testimonial-foot {
+    display: flex; align-items: center; gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .testimonial-photo {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--grad-graphite);
+    flex-shrink: 0;
+  }
+  .testimonial-name { font-size: 15px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+  .testimonial-role { font-size: 12px; color: var(--ink-muted); margin-top: 2px; }
+  .testimonial-stat { margin-left: auto; text-align: right; }
+  .testimonial-stat-num {
+    font-size: 28px; font-weight: 800; line-height: 1;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .testimonial-stat-label {
+    font-size: 10px; color: var(--ink-muted);
+    letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
+    margin-top: 2px;
+  }
+
+  /* ─── LEADERBOARD ─── */
+  .leaderboard {
+    background: var(--card-fill);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 8px;
+  }
+  .lb-row {
+    display: grid; grid-template-columns: 32px 1fr auto auto;
+    gap: 14px; align-items: center;
+    padding: 14px 16px;
+    border-radius: 12px;
+    position: relative;
+  }
+  .lb-rank {
+    font-size: 13px; font-weight: 800;
+    color: var(--ink-muted);
+    text-align: center;
+  }
+  .lb-row.top1 {
+    background: linear-gradient(90deg, rgba(45,127,255,0.10), transparent 70%);
+    box-shadow: 0 0 18px -10px rgba(45,127,255,0.18);
+  }
+  body.light .lb-row.top1 {
+    background: linear-gradient(90deg, rgba(45,127,255,0.12), rgba(10,79,229,0.03) 70%, transparent);
+    box-shadow: 0 0 24px -8px rgba(45,127,255,0.18);
+  }
+  .lb-row.top1 .lb-rank {
+    background: var(--grad-sig);
+    color: #FFFFFF;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto;
+    box-shadow: 0 0 12px -2px rgba(45,127,255,0.55);
+  }
+  .lb-row.top2, .lb-row.top3 {
+    background: linear-gradient(90deg, rgba(199,194,187,0.10), transparent 60%);
+  }
+  body.light .lb-row.top2, body.light .lb-row.top3 {
+    background: linear-gradient(90deg, rgba(107,104,99,0.08), transparent 60%);
+  }
+  .lb-name { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 700; color: var(--ink); }
+  .lb-avatar {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--grad-graphite);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 700; color: #F5F0E8;
+    flex-shrink: 0;
+  }
+  body.light .lb-avatar { color: #FFFFFF; }
+  .lb-row.top1 .lb-avatar { background: var(--grad-sig); color: #FFFFFF; }
+  .lb-meta { font-size: 12px; color: var(--ink-muted); }
+  .lb-val {
+    font-size: 14px; font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .lb-row:not(.top1) .lb-val { color: var(--ink-body); }
+
+
+  /* ─── DEPTH (achromatic noir gradient cards) ─── */
+  .depth-card {
+    background: var(--grad-depth);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 18px 48px -12px rgba(0,0,0,0.40);
+  }
+  body.light .depth-card { box-shadow: 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .depth-card.strong { background: var(--grad-depth-strong); }
+  .depth-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--spotlight);
+    pointer-events: none;
+  }
+  .depth-card .card-label, .depth-card h3, .depth-card p { position: relative; z-index: 2; }
+
+  /* ─── GLASS (frosted card on vivid backdrop) ─── */
+  .glass-stage {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 56px 40px;
+    min-height: 360px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .glass-stage.sig {
+    background:
+      radial-gradient(ellipse at 25% 25%, rgba(61,157,255,0.6), transparent 55%),
+      radial-gradient(ellipse at 75% 75%, rgba(10,79,229,0.55), transparent 55%),
+      linear-gradient(135deg, #3D9DFF 0%, #2D7FFF 25%, #0A4FE5 55%, #001A66 100%);
+  }
+  .glass-stage.dusk {
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(255,200,150,0.45), transparent 55%),
+      radial-gradient(ellipse at 75% 80%, rgba(60,40,80,0.5), transparent 55%),
+      linear-gradient(180deg, #2A1A28 0%, #4A2820 45%, #6B3520 100%);
+  }
+  .glass-stage.noir {
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.06), transparent 55%),
+      var(--grad-depth-strong);
+  }
+  .glass {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: var(--glass-blur);
+            backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow:
+      0 30px 60px -20px rgba(0,0,0,0.55),
+      inset 0 1px 0 rgba(255,255,255,0.08);
+    width: 100%; max-width: 360px;
+  }
+  body.light .glass {
+    box-shadow:
+      0 30px 60px -20px rgba(0,0,0,0.20),
+      inset 0 1px 0 rgba(255,255,255,0.5);
+  }
+  .glass-head {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .glass-title { font-size: 13px; font-weight: 700; color: var(--ink); display: flex; align-items: center; gap: 8px; }
+  body.light .glass-stage .glass-title { color: #1A1A1A; }
+  .glass-stage .glass-title { color: #FFFFFF; }
+  .glass-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 12px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 12px;
+    margin-bottom: 8px;
+  }
+  body.light .glass-stage .glass-row { background: rgba(255,255,255,0.35); }
+  .glass-stage .glass-row { background: rgba(255,255,255,0.10); }
+  .glass-avatar-row {
+    display: flex; gap: 8px; padding: 14px 4px;
+    overflow-x: auto;
+  }
+  .glass-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #3D9DFF, #001A66);
+    border: 2px solid rgba(255,255,255,0.20);
+  }
+  .glass-avatar:nth-child(2) { background: linear-gradient(135deg, #5BB5FF, #C8102E); }
+  .glass-avatar:nth-child(3) { background: linear-gradient(135deg, #3D9DFF, #6B0014); border-color: rgba(255,255,255,0.5); }
+  .glass-avatar:nth-child(4) { background: linear-gradient(135deg, #C7C2BB, #27262A); }
+  .glass-avatar:nth-child(5) { background: linear-gradient(135deg, #5BB5FF, #001A66); }
+  .glass-avatar:nth-child(6) { background: linear-gradient(135deg, #6B6863, #1A1A1A); }
+  .glass-amount {
+    text-align: center;
+    padding: 16px 0;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+    margin: 8px 0 14px;
+  }
+  body.light .glass-stage .glass-amount {
+    border-color: rgba(0,0,0,0.10);
+  }
+  .glass-amount-label {
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7); font-weight: 600; margin-bottom: 4px;
+  }
+  body.light .glass-stage .glass-amount-label { color: rgba(0,0,0,0.6); }
+  .glass-stage .glass-amount-label { color: rgba(255,255,255,0.85); }
+  .glass-amount-val {
+    font-size: 36px; font-weight: 800; letter-spacing: -0.03em;
+    color: #FFFFFF; line-height: 1;
+  }
+  body.light .glass-stage .glass-amount-val { color: #1A1A1A; }
+  .glass-stage .glass-amount-val { color: #FFFFFF; }
+  .glass-actions { display: flex; gap: 8px; margin-top: 14px; }
+  .glass-btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 12px; font-weight: 700;
+    cursor: pointer; border: none;
+  }
+  .glass-btn.primary {
+    background: var(--grad-sig);
+    color: #FFFFFF;
+    box-shadow: 0 0 16px -4px rgba(45,127,255,0.55);
+  }
+  .glass-btn.ghost {
+    background: rgba(255,255,255,0.10);
+    color: #FFFFFF;
+    border: 1px solid rgba(255,255,255,0.20);
+  }
+  body.light .glass-stage .glass-btn.ghost { background: rgba(0,0,0,0.06); color: #1A1A1A; border-color: rgba(0,0,0,0.10); }
+
+  /* Pattern reference cards — make dot/grid visibly demonstrable */
+  .pattern-ref {
+    aspect-ratio: 16/9;
+    border-radius: 16px;
+    background: var(--card-fill);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: flex-end;
+    padding: 18px;
+  }
+  .pattern-ref-label {
+    position: relative; z-index: 2;
+    font-size: 12px; font-weight: 700; color: var(--ink);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    padding: 5px 12px; border-radius: 100px;
+  }
+  .pattern-dot-bg, .pattern-grid-bg, .pattern-dot-tight, .pattern-grid-tight {
+    position: absolute; inset: 0;
+    color: var(--ink);
+    pointer-events: none;
+  }
+  .pattern-dot-bg {
+    background-image: radial-gradient(circle, currentColor 1px, transparent 1.2px);
+    background-size: 24px 24px;
+    opacity: 0.20;
+  }
+  .pattern-dot-tight {
+    background-image: radial-gradient(circle, currentColor 1px, transparent 1.2px);
+    background-size: 14px 14px;
+    opacity: 0.16;
+  }
+  .pattern-grid-bg {
+    background-image:
+      linear-gradient(currentColor 1px, transparent 1px),
+      linear-gradient(90deg, currentColor 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.14;
+  }
+  .pattern-grid-tight {
+    background-image:
+      linear-gradient(currentColor 1px, transparent 1px),
+      linear-gradient(90deg, currentColor 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.10;
+  }
+  body.light .pattern-dot-bg, body.light .pattern-dot-tight,
+  body.light .pattern-grid-bg, body.light .pattern-grid-tight {
+    opacity: 0.22;
+  }
+
+
+  /* ─── ACHROMATIC PATTERNS (no brand color — quiet register) ─── */
+
+  /* Nested depth card (card inside a card with subtle elevation) */
+  .nest-card {
+    background: var(--grad-depth-elevated);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 18px 48px -12px rgba(0,0,0,0.40);
+  }
+  body.light .nest-card { box-shadow: 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .nest-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--spotlight-corner);
+    pointer-events: none;
+  }
+  .nest-card-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px; align-items: stretch;
+    position: relative; z-index: 2;
+  }
+  .nest-text { font-size: 14px; color: var(--ink-body); line-height: 1.5; max-width: 220px; }
+  .nest-inner {
+    background: var(--grad-depth-inner);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    min-height: 200px;
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+    position: relative; overflow: hidden;
+  }
+  .nest-inner::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--spotlight);
+    pointer-events: none;
+  }
+  .nest-inner > * { position: relative; z-index: 2; }
+  .nest-inner-head {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 11px; color: var(--ink-muted); font-weight: 600;
+  }
+  .nest-inner-title { font-size: 20px; font-weight: 700; color: var(--ink); margin-top: 14px; }
+  .nest-inner-sub { font-size: 12px; color: var(--ink-muted); margin-top: 4px; }
+  .nest-inner-foot { font-size: 11px; color: var(--ink-muted); margin-top: 18px; }
+  .nest-stack {
+    display: flex; gap: 0; margin-top: 12px;
+  }
+  .nest-stack-avatar {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--grad-graphite);
+    border: 2px solid var(--surface-1);
+    margin-left: -10px;
+  }
+  .nest-stack-avatar:first-child { margin-left: 0; }
+  .nest-stack-arrow {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--ink);
+    color: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800;
+    margin-left: -8px;
+  }
+
+  /* Minimal notification card (lockscreen-style) */
+  .notif-stage {
+    background: var(--grad-depth-strong);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px 32px;
+    text-align: center;
+    position: relative; overflow: hidden;
+    box-shadow: 0 18px 48px -12px rgba(0,0,0,0.40);
+  }
+  body.light .notif-stage { box-shadow: 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .notif-stage::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--spotlight);
+    pointer-events: none;
+  }
+  .notif-time {
+    font-size: 56px; font-weight: 300; color: var(--ink);
+    letter-spacing: -0.04em; line-height: 1;
+    opacity: 0.55;
+    position: relative; z-index: 2;
+  }
+  .notif-date {
+    font-size: 12px; color: var(--ink-muted);
+    margin-top: 4px; opacity: 0.7;
+    position: relative; z-index: 2;
+    margin-bottom: 28px;
+  }
+  .notif-card {
+    background: var(--grad-depth-inner);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    text-align: left;
+    max-width: 360px; margin: 0 auto;
+    position: relative; z-index: 2;
+  }
+  .notif-card-head {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 8px;
+  }
+  .notif-icon {
+    width: 28px; height: 28px;
+    background: var(--grad-graphite);
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  .notif-name { font-size: 13px; font-weight: 700; color: var(--ink); flex: 1; }
+  .notif-time-small { font-size: 11px; color: var(--ink-muted); }
+  .notif-title { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .notif-body { font-size: 12px; color: var(--ink-muted); line-height: 1.5; }
+
+  /* Achromatic data viz (sankey-style flow with no color) */
+  .flow-card {
+    background: var(--grad-depth-elevated);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    position: relative; overflow: hidden;
+    box-shadow: 0 18px 48px -12px rgba(0,0,0,0.40);
+  }
+  body.light .flow-card { box-shadow: 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .flow-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--spotlight-corner);
+    pointer-events: none;
+  }
+  .flow-card > * { position: relative; z-index: 2; }
+  .flow-head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .flow-title { font-size: 22px; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; }
+  .flow-title em { font-weight: 400; color: var(--ink-body); font-style: normal; }
+  .flow-sub { font-size: 13px; color: var(--ink-muted); max-width: 320px; margin-top: 6px; }
+  .flow-stat {
+    text-align: right;
+    font-size: 11px; color: var(--ink-muted); font-weight: 600;
+  }
+  .flow-stat-num {
+    font-size: 18px; font-weight: 700; color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .flow-body {
+    display: grid; grid-template-columns: auto 1fr auto;
+    gap: 0; align-items: stretch;
+  }
+  .flow-left { display: flex; flex-direction: column; gap: 12px; padding-right: 4px; }
+  .flow-pct {
+    background: var(--grad-depth-inner);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px 18px;
+    min-width: 110px;
+    text-align: center;
+    flex: 1;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .flow-pct-num { font-size: 26px; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; line-height: 1; }
+  .flow-pct-label { font-size: 11px; color: var(--ink-muted); margin-top: 4px; }
+  .flow-svg { width: 100%; height: 220px; display: block; color: var(--ink); }
+  .flow-right { display: flex; flex-direction: column; gap: 12px; padding-left: 4px; }
+  .flow-amount {
+    background: var(--grad-depth-inner);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px 16px;
+    min-width: 130px;
+    flex: 1;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .flow-amount-icons {
+    display: flex; flex-direction: column; gap: 4px;
+    flex-shrink: 0;
+  }
+  .flow-amount-icon {
+    width: 24px; height: 24px; border-radius: 6px;
+    background: var(--ink);
+    color: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700;
+  }
+  .flow-amount-val { font-size: 16px; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; }
+  .flow-amount-label { font-size: 11px; color: var(--ink-muted); }
+
+
+  /* ─── RESTRAINT PATTERN — mostly achromatic, one pop ─── */
+  .step-card {
+    background: var(--grad-depth-elevated);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 32px 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 18px 48px -12px rgba(0,0,0,0.40);
+    display: flex; flex-direction: column;
+    min-height: 460px;
+  }
+  body.light .step-card { box-shadow: 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .step-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--spotlight);
+    pointer-events: none;
+  }
+  .step-card > * { position: relative; z-index: 2; }
+  .step-pill {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.08em;
+    background: var(--surface-3);
+    color: var(--ink-body);
+    width: fit-content;
+    border: 1px solid var(--border);
+    margin-bottom: 28px;
+  }
+  .step-card h3 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .step-card .step-body {
+    font-size: 14px; line-height: 1.55;
+    color: var(--ink-body);
+    margin-bottom: 28px;
+  }
+  .step-mock {
+    margin-top: auto;
+    margin-left: -32px; margin-right: -32px;
+    margin-bottom: -32px;
+    padding: 24px 32px 0;
+    border-top: 1px solid var(--border);
+    background: var(--grad-depth-inner);
+    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Mock 1: order confirmed phone */
+  .mock-phone {
+    background: var(--grad-depth-darker);
+    border: 1px solid var(--border);
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    padding: 14px 16px 0;
+    margin-top: 12px;
+    position: relative;
+  }
+  .mock-phone::before {
+    content: ''; position: absolute;
+    top: 6px; left: 50%; transform: translateX(-50%);
+    width: 60px; height: 14px;
+    background: #000;
+    border-radius: 12px;
+  }
+  .mock-phone-content {
+    margin-top: 22px;
+    padding-bottom: 14px;
+  }
+  .mock-phone-row {
+    font-size: 11px; color: var(--ink-body); font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .mock-phone-row.dim { color: var(--ink-muted); font-weight: 400; }
+  .mock-pop-check {
+    position: absolute;
+    top: 10px; right: -10px;
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: var(--grad-sig);
+    display: flex; align-items: center; justify-content: center;
+    color: #FFFFFF; font-size: 16px; font-weight: 800;
+    box-shadow: 0 0 20px -2px rgba(45,127,255,0.55);
+  }
+
+  /* Mock 2: laptop publish */
+  .mock-laptop {
+    background: var(--grad-depth-darker);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px;
+    margin-top: 12px;
+    position: relative;
+    transform: perspective(800px) rotateX(8deg);
+    transform-origin: center bottom;
+  }
+  .mock-laptop-screen {
+    background: var(--grad-depth-inner);
+    border-radius: 4px;
+    padding: 12px;
+    min-height: 120px;
+    position: relative;
+  }
+  .mock-laptop-line {
+    height: 6px; border-radius: 3px;
+    background: var(--surface-3);
+    margin-bottom: 8px;
+  }
+  .mock-laptop-line.short { width: 40%; }
+  .mock-laptop-line.med { width: 70%; }
+  .mock-laptop-line.long { width: 90%; }
+  .mock-pop-publish {
+    position: absolute;
+    top: -8px; right: 12px;
+    background: var(--grad-sig);
+    color: #FFFFFF;
+    font-size: 11px; font-weight: 700;
+    padding: 6px 14px 6px 10px;
+    border-radius: 100px;
+    display: flex; align-items: center; gap: 6px;
+    box-shadow: 0 0 18px -2px rgba(45,127,255,0.55);
+  }
+
+  /* Mock 3: payment notification rows */
+  .mock-stripe {
+    background: var(--grad-depth-darker);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    margin-top: 12px;
+  }
+  .mock-stripe-head {
+    display: flex; gap: 10px; align-items: center;
+    padding-bottom: 10px; margin-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .mock-stripe-icon {
+    width: 24px; height: 24px;
+    border-radius: 6px;
+    background: var(--grad-graphite);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink); font-size: 12px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .mock-stripe-title {
+    font-size: 12px; font-weight: 700; color: var(--ink);
+    flex: 1;
+  }
+  .mock-stripe-time {
+    font-size: 10px; color: var(--ink-muted);
+  }
+  .mock-stripe-row {
+    display: grid; grid-template-columns: 1fr auto auto;
+    gap: 8px; align-items: center;
+    padding: 6px 0;
+    font-size: 11px;
+    color: var(--ink-body);
+    border-bottom: 1px solid var(--border);
+  }
+  .mock-stripe-row:last-child { border-bottom: none; }
+  .mock-stripe-row .amt { font-weight: 700; color: var(--ink); }
+  .mock-pop-success {
+    background: var(--grad-sig);
+    color: #FFFFFF;
+    font-size: 9px; font-weight: 700;
+    padding: 2px 8px; border-radius: 100px;
+    box-shadow: 0 0 12px -2px rgba(45,127,255,0.45);
+  }
+
+
+  /* ─── SECTION STANDARD — repeatable rhythm across the page ─── */
+  .section-meta {
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 1180px; margin: 0 auto 36px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-meta-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 5px 14px 5px 6px;
+    border-radius: 100px;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    font-size: 11px; font-weight: 600;
+    color: var(--ink-body); letter-spacing: 0.04em;
+  }
+  .section-meta-pill::before {
+    content: ''; width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--ink-muted);
+  }
+  .section-meta-count {
+    font-size: 11px; font-weight: 700;
+    color: var(--ink-muted);
+    letter-spacing: 0.18em;
+  }
+
+  /* Standardized 'key takeaways' row — single source of truth for bottom-of-section context */
+  .takeaways {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .takeaway {
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .takeaway-icon {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; color: var(--ink);
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+  .takeaway-title {
+    font-size: 13px; font-weight: 700;
+    color: var(--ink); letter-spacing: -0.01em;
+    margin-top: 2px;
+  }
+  .takeaway-sub {
+    font-size: 12px; color: var(--ink-muted); line-height: 1.5;
+  }
+
+  /* Optional horizontal accent rule for major sections — graphite, very subtle */
+  .rule-thin {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-strong) 30%, var(--border-strong) 70%, transparent);
+    margin: 32px auto;
+    max-width: 720px;
+  }
+
+
+  /* ─── TREND — small consistent slot for 'this number is moving' indicators ─── */
+  .trend {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-size: 11px; font-weight: 700;
+    background: var(--surface-3);
+    color: var(--ink-body);
+    border: 1px solid var(--border);
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+  }
+  .trend.up {
+    background: var(--grad-sig);
+    color: #FFFFFF;
+    border-color: transparent;
+  }
+  .trend.flat {
+    background: var(--grad-graphite);
+    color: #F5F0E8;
+    border-color: transparent;
+  }
+  body.light .trend.flat { color: #FFFFFF; }
+  .trend-arrow { font-size: 10px; line-height: 1; }
+
+  @media (max-width: 880px) {
+    .grid-3, .grid-4, .support-grid, .stat-pair-grid, .sparkline-strip, .takeaways { grid-template-columns: repeat(2, 1fr); }
+    .steps-row { grid-template-columns: repeat(2, 1fr); gap: 16px 0; }
+    .step-item:nth-child(2)::after, .step-item::after { display: none; }
+    .grid-2, .compare, .tier-grid { grid-template-columns: 1fr; }
+    section { padding: 64px 20px; }
+    .hero { padding: 56px 20px 48px; }
+  }
+  @media (max-width: 580px) {
+    .support-grid, .stat-pair-grid, .sparkline-strip { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Abundance.AI</a>
+    <div class="nav-right">
+      <button class="mode-toggle" id="modeToggle" aria-label="Toggle dark/light mode">
+        <div class="mode-knob"></div>
+      </button>
+      <a href="#" class="nav-cta">Apply</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="halo"></div>
+  <div class="bg-dots"></div>
+  <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">Brand v4 &middot; Discipline</span><span class="section-meta-count">01 / 11</span></div>
+    <div class="eyebrow"><span class="eyebrow-dot"></span>Brand v6 · Electric Blue · Simplified · gradient in earned slots only · Test only · Not an override</div>
+    <h1>
+      <span class="line">A single signature</span>
+      <em>Electric Blue.</em>
+    </h1>
+    <p class="hero-sub">
+      One signature gradient. Two canvas modes. The hue travels: electric blue (warm origin) &rarr; electric blue (vivid red mid) &rarr; deep cherry anchor.
+      Toggle the moon/sun in the nav to see dark and light side-by-side.
+    </p>
+    <div class="hero-cta-row">
+      <a href="#palette" class="btn btn-primary">See the palette &rarr;</a>
+      <a href="#compare" class="btn btn-ghost">Compare modes</a>
+    </div>
+  </div>
+</section>
+
+<!-- PALETTE -->
+<section id="palette">
+  <div class="bg-grid"></div>
+  <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">Palette</span><span class="section-meta-count">02 / 11</span></div>
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-dot"></span>Palette</div>
+      <h2>Four stops. <span style="color:var(--ink-body);font-weight:600;">One signature.</span></h2>
+      <p>No cream — the gradient travels through the warm-to-vivid red range. Salmon-orange highlight, blood-orange mid, tiger's-blood vivid red, deep cherry anchor.</p>
+    </div>
+
+    <div class="grid-4">
+      <div class="swatch sw-1">Sky blue 0%<br><span class="swatch-hex">#3D9DFF</span></div>
+      <div class="swatch sw-2">Electric blue 28%<br><span class="swatch-hex">#2D7FFF</span></div>
+      <div class="swatch sw-3">Electric blue 60%<br><span class="swatch-hex">#0A4FE5</span></div>
+      <div class="swatch sw-4">Deep navy 100%<br><span class="swatch-hex">#001A66</span></div>
+    </div>
+
+    <div style="height: 24px;"></div>
+
+    <div class="grid-3">
+      <div class="swatch sw-grad" style="aspect-ratio: 5/2;">Full gradient · 4-stop</div>
+      <div class="swatch sw-grad-soft" style="aspect-ratio: 5/2;">Button fill · 2-stop soft</div>
+      <div class="swatch sw-grad-deep" style="aspect-ratio: 5/2;">Button hover · 2-stop deep</div>
+    </div>
+
+    <div style="height: 40px;"></div>
+
+    <div class="section-head" style="margin-bottom: 20px;">
+      <h3 style="font-size: clamp(20px, 2.4vw, 28px); letter-spacing:-0.02em; color:var(--ink); font-weight:700;">Deep tier &middot; <span style="color:var(--ink-body);font-weight:600;">the night end.</span></h3>
+      <p style="font-size: 14px;">Where the gradient lives after deep cherry: midnight, coal, near-black. For footers, deep-section anchors, video backgrounds, and dark UI surfaces.</p>
+    </div>
+
+    <div class="grid-4">
+      <div class="swatch sw-4">Deep navy<br><span class="swatch-hex">#001A66</span></div>
+      <div class="swatch sw-5">Midnight navy<br><span class="swatch-hex">#3D0010</span></div>
+      <div class="swatch sw-6">Coal navy<br><span class="swatch-hex">#2D0008</span></div>
+      <div class="swatch sw-7">Obsidian<br><span class="swatch-hex">#1A0004</span></div>
+    </div>
+
+    <div style="height: 24px;"></div>
+
+    <div class="grid-3">
+      <div class="swatch sw-grad-night" style="aspect-ratio: 5/2;">Night sweep &middot; vivid &rarr; black</div>
+      <div class="swatch sw-grad-ember" style="aspect-ratio: 5/2;">Ember &middot; cherry &rarr; coal</div>
+      <div class="swatch sw-grad-coal" style="aspect-ratio: 5/2;">Coal &middot; coal &rarr; matte black</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPONENTS -->
+<section>
+  <div class="halo"></div>
+  <div class="bg-dots"></div>
+  <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">Components</span><span class="section-meta-count">04 / 11</span></div>
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-dot"></span>Components</div>
+      <h2>The gradient <span style="color:var(--ink-body);font-weight:600;">in motion.</span></h2>
+      <p>Status pills, stat rings, data cards, and feeds — using the Dev.ai-style component patterns on the new signature.</p>
+    </div>
+
+    <!-- Pills row -->
+    <div class="card" style="margin-bottom: 24px;">
+      <div class="card-label">Status pills · Dev.ai pattern</div>
+      <div class="pills">
+        <span class="pill"><span class="pill-dot"></span>In progress</span>
+        <span class="pill"><span class="pill-dot"></span>Ready to design</span>
+        <span class="pill bright"><span class="pill-dot"></span>Final review</span>
+        <span class="pill deep"><span class="pill-dot"></span>Shipped</span>
+        <span class="pill"><span class="pill-dot"></span>Backlog</span>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <!-- Ring card -->
+      <div class="card ring-card">
+        <div class="card-label">Sprint velocity</div>
+        <div class="card-title">87.29</div>
+        <div class="card-body" style="font-size:11px;">Avg daily points</div>
+        <div class="ring-wrap">
+          <div class="ring"></div>
+          <div class="ring-val">62%</div>
+        </div>
+        <div class="ring-foot">
+          <span>· Jan</span><span>· Feb</span><span>· Mar</span><span>· Apr</span>
+        </div>
+      </div>
+
+      <!-- Activity feed -->
+      <div class="card activity-card">
+        <div class="card-label">Time sheet · this week</div>
+        <div class="activity-row winner">
+          <div class="activity-rank">1</div>
+          <div class="activity-avatar">RF</div>
+          <div class="activity-text"><strong>Ryan F.</strong> · 4h 32m 24s shipped. <span class="activity-time">Top contributor</span></div>
+        </div>
+        <div class="activity-row">
+          <div class="activity-avatar">SJ</div>
+          <div class="activity-text"><strong>Sarah J.</strong> · 2h 19m 19s shipped. <span class="activity-time">2h ago</span></div>
+        </div>
+        <div class="activity-row">
+          <div class="activity-avatar">AG</div>
+          <div class="activity-text"><strong>Aramin G.</strong> · 1h 45m 04s shipped. <span class="activity-time">3h ago</span></div>
+        </div>
+        <div class="activity-row">
+          <div class="activity-avatar">AF</div>
+          <div class="activity-text"><strong>Anna F.</strong> · 1h 02m 11s shipped. <span class="activity-time">4h ago</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 20px;"></div>
+
+    <!-- Stat row -->
+    <div class="grid-4">
+      <div class="stat">
+        <div class="stat-label">Calls booked</div>
+        <div class="stat-val">$142</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Show rate</div>
+        <div class="stat-val">78%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Close rate</div>
+        <div class="stat-val">38%</div>
+      </div>
+      <div class="stat bright">
+        <div class="stat-label">Revenue · 30d</div>
+        <div class="stat-val">$127K</div>
+      </div>
+    </div>
+
+    <div style="height: 28px;"></div>
+
+    <!-- Promo card with horizontal gradient strip -->
+    <div class="grid-2">
+      <div class="promo-card">
+        <div class="promo-pill">$97<span style="opacity:.6;">·mo</span></div>
+        <div class="promo-pill" style="background: var(--grad-sig-soft); color: #2A0A05; border: none;">Founding member</div>
+        <div class="promo-stripe-row">
+          <div class="promo-stripe-mini"></div>
+        </div>
+        <div class="promo-headline">The complete <em>Selling System</em><br>without the agency price tag.</div>
+        <div class="promo-foot">
+          <div class="promo-foot-num">100%</div>
+          <div class="promo-foot-lbl">90-day guarantee</div>
+        </div>
+      </div>
+
+      <div class="card" style="display:flex; flex-direction:column; justify-content:space-between;">
+        <div>
+          <div class="card-label">Active right now</div>
+          <div style="font-size: 36px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; margin: 8px 0 12px;">
+            <span class="grad-sig">42 founders</span>
+          </div>
+          <p style="font-size: 14px; color: var(--ink-body); line-height: 1.55;">Building Selling Systems inside the cohort this week. Avg session length 38 min. Ship rate 4.2 per founder.</p>
+        </div>
+        <div style="margin-top: 24px; display: flex; align-items: center; gap: -8px;">
+          <div class="activity-avatar" style="margin-right:-8px;">RF</div>
+          <div class="activity-avatar" style="margin-right:-8px;">SJ</div>
+          <div class="activity-avatar" style="margin-right:-8px;">MO</div>
+          <div class="activity-avatar" style="margin-right:-8px;">AG</div>
+          <div class="activity-avatar" style="margin-right:0;">+38</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORTING CAST -->
+<section>
+  <div class="halo"></div>
+  <div class="bg-dots"></div>
+  <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">Supporting cast</span><span class="section-meta-count">05 / 11</span></div>
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-dot"></span>Supporting cast</div>
+      <h2>One brand. <span style="color:var(--ink-body);font-weight:600;">Three gradients.</span></h2>
+      <p>Electric Blue is the only chromatic stop. Graphite and bone are achromatic — they support without ever competing for brand attention.</p>
+    </div>
+
+    <div class="support-grid">
+      <div class="support support-1">
+        <div>
+          <div class="support-name">Electric Blue</div>
+          <div class="support-role">Primary brand. Hero, CTAs, big numbers, em moments, primary chart series.</div>
+        </div>
+        <div class="support-stops">
+          <div class="support-stop" style="background:#3D9DFF"></div>
+          <div class="support-stop" style="background:#0A4FE5"></div>
+          <div class="support-stop" style="background:#0A4FE5"></div>
+          <div class="support-stop" style="background:#001A66"></div>
+        </div>
+      </div>
+      <div class="support support-2">
+        <div>
+          <div class="support-name">Graphite</div>
+          <div class="support-role">Secondary &amp; structural. Comparison data, baselines, code, table stripes.</div>
+        </div>
+        <div class="support-stops">
+          <div class="support-stop" style="background:#F5F0E8"></div>
+          <div class="support-stop" style="background:#C7C2BB"></div>
+          <div class="support-stop" style="background:#6B6863"></div>
+          <div class="support-stop" style="background:#27262A"></div>
+        </div>
+      </div>
+      <div class="support support-3">
+        <div>
+          <div class="support-name">Bone</div>
+          <div class="support-role">Soft &amp; ambient. Quote rails, body section halos, hover warmth.</div>
+        </div>
+        <div class="support-stops">
+          <div class="support-stop" style="background:#F5F0E8"></div>
+          <div class="support-stop" style="background:#E8E1D4"></div>
+          <div class="support-stop" style="background:#9C968C"></div>
+          <div class="support-stop" style="background:#4A453E"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <!-- Dual-line chart: electric blue (primary) + graphite (comparison) -->
+      <div class="card chart-card">
+        <div class="card-label">Performance &middot; last 30d</div>
+        <div class="chart-headline">
+          <div class="chart-big">$127K</div>
+          <div class="chart-prior">vs $94K prior</div>
+        </div>
+        <svg class="chart-svg" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="primaryFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2D7FFF" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#001A66" stop-opacity="0.04"/>
+            </linearGradient>
+            <linearGradient id="secondaryFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#C7C2BB" stop-opacity="0.32"/>
+              <stop offset="100%" stop-color="#27262A" stop-opacity="0.04"/>
+            </linearGradient>
+            <linearGradient id="primaryLine" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#5BB5FF"/>
+              <stop offset="100%" stop-color="#0A4FE5"/>
+            </linearGradient>
+            <linearGradient id="secondaryLine" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#C7C2BB"/>
+              <stop offset="100%" stop-color="#6B6863"/>
+            </linearGradient>
+          </defs>
+
+          <g stroke="currentColor" stroke-opacity="0.06" stroke-width="1">
+            <line x1="0" y1="60"  x2="600" y2="60"/>
+            <line x1="0" y1="120" x2="600" y2="120"/>
+            <line x1="0" y1="180" x2="600" y2="180"/>
+          </g>
+
+          <path d="M0,170 L60,150 L120,180 L180,140 L240,160 L300,150 L360,170 L420,150 L480,165 L540,145 L600,160 L600,240 L0,240 Z" fill="url(#secondaryFill)"/>
+          <path d="M0,170 L60,150 L120,180 L180,140 L240,160 L300,150 L360,170 L420,150 L480,165 L540,145 L600,160" fill="none" stroke="url(#secondaryLine)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <path d="M0,150 L60,110 L120,130 L180,80 L240,100 L300,55 L360,80 L420,50 L480,70 L540,30 L600,50 L600,240 L0,240 Z" fill="url(#primaryFill)"/>
+          <path d="M0,150 L60,110 L120,130 L180,80 L240,100 L300,55 L360,80 L420,50 L480,70 L540,30 L600,50" fill="none" stroke="url(#primaryLine)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <g fill="#0A4FE5">
+            <circle cx="60" cy="110" r="4"/>
+            <circle cx="180" cy="80" r="4"/>
+            <circle cx="300" cy="55" r="4"/>
+            <circle cx="420" cy="50" r="4"/>
+            <circle cx="540" cy="30" r="4"/>
+          </g>
+          <g fill="#9C968C">
+            <circle cx="60" cy="150" r="3.5"/>
+            <circle cx="180" cy="140" r="3.5"/>
+            <circle cx="300" cy="150" r="3.5"/>
+            <circle cx="420" cy="150" r="3.5"/>
+            <circle cx="540" cy="145" r="3.5"/>
+          </g>
+        </svg>
+        <div class="chart-legend">
+          <div class="chart-legend-item"><span class="chart-legend-dot primary"></span>This month</div>
+          <div class="chart-legend-item"><span class="chart-legend-dot secondary"></span>Last month</div>
+        </div>
+      </div>
+
+      <!-- Bone-rail quote card -->
+      <div class="quote-card">
+        <blockquote>The system itself is the asset. The ads, the funnel, the CRM &mdash; they're just where it expresses itself. Once it's running, the only real question left is how much volume you want to push through it.</blockquote>
+        <cite>&mdash; Founder, after 60 days inside the cohort</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IN THE WILD — use cases for each gradient -->
+<section>
+  <div class="halo"></div>
+  <div class="bg-grid"></div>
+  <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">In the wild</span><span class="section-meta-count">06 / 11</span></div>
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-dot"></span>In the wild</div>
+      <h2>Each gradient, <span style="color:var(--ink-body);font-weight:600;">in its lane.</span></h2>
+      <p>Real UI patterns showing how electric blue, graphite, and bone hold their roles when they share a page.</p>
+    </div>
+
+    <!-- Pricing tiers: featured (sig) + standard (graphite) -->
+    <div class="tier-grid" style="margin-bottom: 28px;">
+      <div class="tier tier-featured">
+        <div class="tier-tag">Most popular</div>
+        <div class="tier-name">Selling System Pro</div>
+        <div class="tier-price">$497</div>
+        <div class="tier-period">per month · billed annually</div>
+        <ul>
+          <li>Full DFY install &mdash; ads, funnel, CRM</li>
+          <li>Weekly strategy call with Frosty</li>
+          <li>Slack channel access &middot; 24h response</li>
+          <li>All templates, scripts, frameworks</li>
+          <li>90-day performance guarantee</li>
+        </ul>
+        <a href="#" class="btn btn-primary" style="width:100%; justify-content:center;">Apply now &rarr;</a>
+      </div>
+      <div class="tier tier-standard">
+        <div class="tier-tag">Tribe</div>
+        <div class="tier-name">Abundance Tribe</div>
+        <div class="tier-price">$97</div>
+        <div class="tier-period">per month · cancel anytime</div>
+        <ul>
+          <li>Full template + framework library</li>
+          <li>Weekly group coaching call</li>
+          <li>Private community access</li>
+          <li>All trainings, all replays</li>
+          <li>Cancel anytime, no contract</li>
+        </ul>
+        <a href="#" class="btn btn-ghost" style="width:100%; justify-content:center;">Join the Tribe</a>
+      </div>
+    </div>
+
+    <!-- Stat pair row + sparkline strip -->
+    <div class="grid-2" style="margin-bottom: 28px;">
+      <div class="card" style="padding: 28px;">
+        <div class="card-label" style="margin-bottom: 18px;">This week vs last week</div>
+        <div class="stat-pair-grid">
+          <div class="stat-pair">
+            <div class="stat-pair-label">Booked calls</div>
+            <div class="stat-pair-row">
+              <span class="stat-pair-now">42</span>
+              <span class="trend up"><span class="trend-arrow">▲</span> 35%</span>
+            </div>
+            <div class="stat-pair-was">was 31 last week</div>
+            <div class="stat-pair-bar"></div>
+          </div>
+          <div class="stat-pair">
+            <div class="stat-pair-label">Show rate</div>
+            <div class="stat-pair-row">
+              <span class="stat-pair-now">78%</span>
+              <span class="trend up"><span class="trend-arrow">▲</span> 22%</span>
+            </div>
+            <div class="stat-pair-was">was 64% last week</div>
+            <div class="stat-pair-bar"></div>
+          </div>
+          <div class="stat-pair">
+            <div class="stat-pair-label">Closed</div>
+            <div class="stat-pair-row">
+              <span class="stat-pair-now">$48K</span>
+              <span class="trend up"><span class="trend-arrow">▲</span> 41%</span>
+            </div>
+            <div class="stat-pair-was">was $34K last week</div>
+            <div class="stat-pair-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 28px;">
+        <div class="card-label" style="margin-bottom: 18px;">Live signal feed</div>
+        <div class="sparkline-strip">
+          <div class="sparkline-card">
+            <div class="sparkline-label">CPL</div>
+            <div class="sparkline-val">$18</div>
+            <svg class="sparkline-svg" viewBox="0 0 100 38" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="sp1" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#C7C2BB"/>
+                  <stop offset="100%" stop-color="#6B6863"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,28 L15,22 L30,25 L45,18 L60,20 L75,12 L90,8 L100,10" fill="none" stroke="url(#sp1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="sparkline-card">
+            <div class="sparkline-label">Show rate</div>
+            <div class="sparkline-val">78%</div>
+            <svg class="sparkline-svg" viewBox="0 0 100 38" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="sp2" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#C7C2BB"/>
+                  <stop offset="100%" stop-color="#6B6863"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,30 L15,28 L30,18 L45,20 L60,15 L75,10 L90,12 L100,8" fill="none" stroke="url(#sp2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="sparkline-card">
+            <div class="sparkline-label">Close</div>
+            <div class="sparkline-val">38%</div>
+            <svg class="sparkline-svg" viewBox="0 0 100 38" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="sp3" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#5BB5FF"/>
+                  <stop offset="100%" stop-color="#0A4FE5"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,32 L15,25 L30,28 L45,15 L60,18 L75,12 L90,15 L100,5" fill="none" stroke="url(#sp3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Code block (graphite) + checklist (sig + bone) -->
+    <div class="grid-2" style="margin-bottom: 28px;">
+      <div class="code-block">
+        <div class="code-head">
+          <span>config.js</span>
+          <div class="code-dots"><span></span><span></span><span></span></div>
+        </div>
+        <pre><span class="c">// Abundance Selling System config</span>
+<span class="k">const</span> <span class="v">offer</span> = {
+  name: <span class="s">'Selling System Pro'</span>,
+  price: <span class="s">'$497/mo'</span>,
+  guarantee: <span class="s">'90 days'</span>,
+  funnel: <span class="s">'/apply'</span>,
+};
+
+<span class="k">export default</span> <span class="v">offer</span>;</pre>
+      </div>
+
+      <div class="checklist">
+        <div class="card-label" style="margin-bottom: 14px;">Onboarding · day 1</div>
+        <div class="checklist-item">
+          <div class="check-icon done">✓</div>
+          <div class="check-text done">Connect Meta Ads account</div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon done">✓</div>
+          <div class="check-text done">Import existing offer assets</div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon done">✓</div>
+          <div class="check-text done">Set kickoff call with strategist</div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon todo"></div>
+          <div class="check-text">Record creative briefs (3 needed)</div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon todo"></div>
+          <div class="check-text">Approve initial funnel copy</div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon todo"></div>
+          <div class="check-text">Confirm tracking install</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ accordion (bone rail) -->
+    <div class="faq-bone">
+      <div class="faq-bone-item active">
+        <div class="faq-bone-q">How long until I see results? <span class="faq-bone-q-icon">−</span></div>
+        <div class="faq-bone-a">First booked appointments typically land in week two. Meaningful close-rate movement and CPL optimization is a 60–90 day curve as the system learns your buyer and tunes itself.</div>
+      </div>
+      <div class="faq-bone-item">
+        <div class="faq-bone-q">Is there a minimum contract? <span class="faq-bone-q-icon">+</span></div>
+      </div>
+      <div class="faq-bone-item">
+        <div class="faq-bone-q">What's actually done-for-you vs. done-with-you? <span class="faq-bone-q-icon">+</span></div>
+      </div>
+      <div class="faq-bone-item">
+        <div class="faq-bone-q">Can this work without paid ads? <span class="faq-bone-q-icon">+</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MORE PATTERNS — full system in motion -->
+<section>
+  <div class="halo"></div>
+  <div class="bg-dots"></div>
+  <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">More patterns</span><span class="section-meta-count">09 / 11</span></div>
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-dot"></span>More patterns</div>
+      <h2>The system, <span style="color:var(--ink-body);font-weight:600;">in motion.</span></h2>
+      <p>Forms, tags, progress, toasts, step flows, bar charts, testimonials, leaderboards — every common UI pattern wearing the brand correctly across both modes.</p>
+    </div>
+
+    <!-- FORM + TAGS -->
+    <div class="grid-2" style="margin-bottom: 28px;">
+      <div class="card form-card">
+        <div class="card-label">Application form &middot; Selling System Pro</div>
+        <div style="height: 18px;"></div>
+        <div class="form-row">
+          <label class="form-label">Email</label>
+          <input class="form-input" type="email" placeholder="you@yourbiz.com">
+        </div>
+        <div class="form-row">
+          <label class="form-label">Monthly revenue</label>
+          <input class="form-input" type="text" placeholder="$30K – $500K/mo">
+        </div>
+        <div class="form-row">
+          <label class="form-label">What's your offer?</label>
+          <input class="form-input" type="text" placeholder="One-line description">
+        </div>
+        <div class="form-actions">
+          <a href="#" class="btn btn-primary">Submit application <span class="btn-arrow">&rarr;</span></a>
+          <a href="#" class="btn btn-ghost">Save draft</a>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 32px;">
+        <div class="card-label">Tag system</div>
+        <div style="height: 18px;"></div>
+        <div class="tag-section-label">Default &middot; neutral metadata</div>
+        <div class="tag-row">
+          <span class="tag">B2B</span>
+          <span class="tag">Coaching</span>
+          <span class="tag">High-ticket</span>
+          <span class="tag">Done-for-you</span>
+        </div>
+        <div style="height: 18px;"></div>
+        <div class="tag-section-label">Sig &middot; brand emphasis</div>
+        <div class="tag-row">
+          <span class="tag sig">Live now</span>
+          <span class="tag sig">Most popular</span>
+          <span class="tag sig">Apply &rarr;</span>
+        </div>
+        <div style="height: 18px;"></div>
+        <div class="tag-section-label">Graphite + bone &middot; status, ambient</div>
+        <div class="tag-row">
+          <span class="tag graphite">Closed</span>
+          <span class="tag graphite">Archived</span>
+          <span class="tag bone">Coming soon</span>
+          <span class="tag outline">Beta</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROGRESS + TOASTS -->
+    <div class="grid-2" style="margin-bottom: 28px;">
+      <div class="card" style="padding: 32px;">
+        <div class="card-label">Progress &middot; onboarding</div>
+        <div style="height: 18px;"></div>
+        <div class="progress-row">
+          <div class="progress">
+            <div class="progress-head"><span>Setup complete</span><span>72%</span></div>
+            <div class="progress-bar"><div class="progress-fill sig" style="width: 72%;"></div></div>
+          </div>
+          <div class="progress">
+            <div class="progress-head"><span>Calls booked vs goal</span><span>42 / 60</span></div>
+            <div class="progress-bar"><div class="progress-fill sig" style="width: 70%;"></div></div>
+          </div>
+          <div class="progress">
+            <div class="progress-head"><span>Last week comparison</span><span>54%</span></div>
+            <div class="progress-bar"><div class="progress-fill graphite" style="width: 54%;"></div></div>
+          </div>
+          <div class="progress">
+            <div class="progress-head"><span>Optional steps</span><span>30%</span></div>
+            <div class="progress-bar"><div class="progress-fill bone" style="width: 30%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 32px; display: flex; flex-direction: column; gap: 14px;">
+        <div class="card-label">Toast notifications</div>
+        <div class="toast">
+          <div class="toast-icon">&check;</div>
+          <div class="toast-text">Application submitted<small>You'll hear back within 24 hours.</small></div>
+          <div class="toast-close">&times;</div>
+        </div>
+        <div class="toast">
+          <div class="toast-icon">&rarr;</div>
+          <div class="toast-text">New booked call<small>Sarah J. confirmed for Thursday 2pm.</small></div>
+          <div class="toast-close">&times;</div>
+        </div>
+        <div class="toast">
+          <div class="toast-icon">$</div>
+          <div class="toast-text">Payment received<small>$497 &middot; Selling System Pro renewal.</small></div>
+          <div class="toast-close">&times;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP FLOW -->
+    <div class="card" style="padding: 32px; margin-bottom: 28px;">
+      <div class="card-label">Onboarding flow &middot; 4 steps</div>
+      <div style="height: 28px;"></div>
+      <div class="steps-row">
+        <div class="step-item done">
+          <div class="step-num-circle">&check;</div>
+          <div class="step-name">Apply</div>
+          <div class="step-meta">Day 0</div>
+        </div>
+        <div class="step-item done">
+          <div class="step-num-circle">&check;</div>
+          <div class="step-name">Onboard</div>
+          <div class="step-meta">Day 1&ndash;3</div>
+        </div>
+        <div class="step-item active">
+          <div class="step-num-circle">3</div>
+          <div class="step-name">Build</div>
+          <div class="step-meta">Day 4&ndash;14</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num-circle">4</div>
+          <div class="step-name">Launch</div>
+          <div class="step-meta">Day 14+</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BAR CHART + TESTIMONIAL -->
+    <div class="grid-2" style="margin-bottom: 28px;">
+      <div class="card" style="padding: 32px;">
+        <div class="card-label">Quarterly &middot; 3 metrics</div>
+        <div class="chart-headline" style="margin-top: 8px;">
+          <div class="chart-big">$382K</div>
+          <div class="chart-prior">YTD revenue</div>
+        </div>
+        <div class="bar-chart" style="margin-top: 14px;">
+          <div class="bar-col">
+            <div class="bar-stack">
+              <div class="bar sig" style="height: 60%;"></div>
+              <div class="bar graphite" style="height: 45%;"></div>
+              <div class="bar bone" style="height: 30%;"></div>
+            </div>
+            <div class="bar-label">Q1</div>
+          </div>
+          <div class="bar-col">
+            <div class="bar-stack">
+              <div class="bar sig" style="height: 80%;"></div>
+              <div class="bar graphite" style="height: 60%;"></div>
+              <div class="bar bone" style="height: 35%;"></div>
+            </div>
+            <div class="bar-label">Q2</div>
+          </div>
+          <div class="bar-col">
+            <div class="bar-stack">
+              <div class="bar sig" style="height: 92%;"></div>
+              <div class="bar graphite" style="height: 70%;"></div>
+              <div class="bar bone" style="height: 45%;"></div>
+            </div>
+            <div class="bar-label">Q3</div>
+          </div>
+          <div class="bar-col">
+            <div class="bar-stack">
+              <div class="bar sig" style="height: 100%;"></div>
+              <div class="bar graphite" style="height: 78%;"></div>
+              <div class="bar bone" style="height: 50%;"></div>
+            </div>
+            <div class="bar-label">Q4</div>
+          </div>
+        </div>
+        <div class="bar-legend">
+          <div class="bar-legend-item"><span class="bar-legend-dot" style="background:var(--grad-sig);"></span>Revenue</div>
+          <div class="bar-legend-item"><span class="bar-legend-dot" style="background:var(--grad-graphite);"></span>Pipeline</div>
+          <div class="bar-legend-item"><span class="bar-legend-dot" style="background:var(--grad-bone);"></span>Forecast</div>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <div class="testimonial-mark">&ldquo;</div>
+        <blockquote>The Selling System replaced our entire marketing team in 14 days. The team that was doing $40K/mo on spreadsheets is now hitting $127K with a calendar I'm not even running.</blockquote>
+        <div class="testimonial-foot">
+          <div class="testimonial-photo"></div>
+          <div>
+            <div class="testimonial-name">Eric R.</div>
+            <div class="testimonial-role">Founder &middot; DentalOrigin.com</div>
+          </div>
+          <div class="testimonial-stat">
+            <div class="testimonial-stat-num">+218%</div>
+            <div class="testimonial-stat-label">Revenue &middot; 90d</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEADERBOARD -->
+    <div class="card" style="padding: 32px;">
+      <div class="card-label">Cohort leaderboard &middot; this month</div>
+      <div style="height: 16px;"></div>
+      <div class="leaderboard">
+        <div class="lb-row top1">
+          <div class="lb-rank">1</div>
+          <div class="lb-name"><div class="lb-avatar">RF</div>Ryan F. <span class="trend up" style="margin-left:8px;"><span class="trend-arrow">▲</span> 3</span></div>
+          <div class="lb-meta">14 calls booked</div>
+          <div class="lb-val">$48K</div>
+        </div>
+        <div class="lb-row top2">
+          <div class="lb-rank">2</div>
+          <div class="lb-name"><div class="lb-avatar">SJ</div>Sarah J.</div>
+          <div class="lb-meta">11 calls booked</div>
+          <div class="lb-val">$36K</div>
+        </div>
+        <div class="lb-row top3">
+          <div class="lb-rank">3</div>
+          <div class="lb-name"><div class="lb-avatar">MO</div>Mehmet O.</div>
+          <div class="lb-meta">9 calls booked</div>
+          <div class="lb-val">$28K</div>
+        </div>
+        <div class="lb-row">
+          <div class="lb-rank">4</div>
+          <div class="lb-name"><div class="lb-avatar">AG</div>Aramin G.</div>
+          <div class="lb-meta">7 calls booked</div>
+          <div class="lb-val">$21K</div>
+        </div>
+        <div class="lb-row">
+          <div class="lb-rank">5</div>
+          <div class="lb-name"><div class="lb-avatar">AF</div>Anna F.</div>
+          <div class="lb-meta">6 calls booked</div>
+          <div class="lb-val">$18K</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESTRAINT — 80/20 rule -->
+<section>
+  <div class="halo"></div>
+  <div class="bg-grid"></div>
+  <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">Restraint &middot; the 80/20 rule</span><span class="section-meta-count">07 / 11</span></div>
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-dot"></span>Restraint &middot; the 80/20 rule</div>
+      <h2>Mostly silence. <span class="grad-sig">One moment of color.</span></h2>
+      <p>The brand earns its impact by being scarce. Cards live in the achromatic register; electric blue appears once per surface, on the thing the user should actually do or notice. This is what production looks like.</p>
+    </div>
+
+    <div class="grid-3">
+      <!-- Step 1: order confirmed -->
+      <div class="step-card">
+        <span class="step-pill">Step 1</span>
+        <h3>Apply for the cohort</h3>
+        <p class="step-body">Three-question form. We review same day, send a calendar link if you're a fit, refund the application fee if you're not.</p>
+        <div class="step-mock">
+          <div class="mock-phone">
+            <div class="mock-phone-content">
+              <div class="mock-phone-row">Ryan, your application is confirmed.</div>
+              <div class="mock-phone-row">Let's get you onboarded.</div>
+              <div class="mock-phone-row dim">Calendar link in your inbox &middot; you'll find access instructions in each email.</div>
+            </div>
+            <div class="mock-pop-check">&check;</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: launch in minutes -->
+      <div class="step-card">
+        <span class="step-pill">Step 2</span>
+        <h3>Onboard in minutes</h3>
+        <p class="step-body">Connect Meta Ads, drop your offer assets, schedule the kickoff call. We do the rest &mdash; system goes live within 14 days.</p>
+        <div class="step-mock">
+          <div class="mock-laptop">
+            <div class="mock-laptop-screen">
+              <div class="mock-laptop-line long"></div>
+              <div class="mock-laptop-line med"></div>
+              <div class="mock-laptop-line short"></div>
+              <div class="mock-laptop-line long"></div>
+              <div class="mock-laptop-line med"></div>
+            </div>
+            <div class="mock-pop-publish">&#9658; Publish</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: more sales -->
+      <div class="step-card">
+        <span class="step-pill">Step 3</span>
+        <h3>Watch sales come in</h3>
+        <p class="step-body">Calendar fills with pre-sold appointments. Dashboard shows real numbers in real time. You stay focused on closing and delivery.</p>
+        <div class="step-mock">
+          <div class="mock-stripe">
+            <div class="mock-stripe-head">
+              <div class="mock-stripe-icon">$</div>
+              <div class="mock-stripe-title">Payment received</div>
+              <div class="mock-stripe-time">Sun 23:36</div>
+            </div>
+            <div class="mock-stripe-row">
+              <span>$5,000.00 USD</span>
+              <span class="mock-pop-success">Succeeded</span>
+              <span class="amt">6681</span>
+            </div>
+            <div class="mock-stripe-row">
+              <span>$5,000.00 USD</span>
+              <span class="mock-pop-success">Succeeded</span>
+              <span class="amt">9834</span>
+            </div>
+            <div class="mock-stripe-row">
+              <span>$5,500.00 USD</span>
+              <span class="mock-pop-success">Succeeded</span>
+              <span class="amt">6009</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 32px; text-align: center;">
+      <p style="font-size: 14px; color: var(--ink-muted); max-width: 540px; margin: 0 auto;">Each card is ~95% achromatic. Electric blue appears once &mdash; on the checkmark, the publish button, the success badge. That's the rule.</p>
+    </div>
+
+    <div class="takeaways">
+      <div class="takeaway">
+        <div class="takeaway-icon">①</div>
+        <div class="takeaway-title">One pop per surface.</div>
+        <div class="takeaway-sub">Card-level discipline. Never two competing brand moments on the same card.</div>
+      </div>
+      <div class="takeaway">
+        <div class="takeaway-icon">★</div>
+        <div class="takeaway-title">Earn the moment.</div>
+        <div class="takeaway-sub">Sig goes on the CTA, the result, the win. Not on labels, not on metadata.</div>
+      </div>
+      <div class="takeaway">
+        <div class="takeaway-icon">≡</div>
+        <div class="takeaway-title">Default to silence.</div>
+        <div class="takeaway-sub">If you can't justify the pop, the answer is graphite. Always default down.</div>
+      </div>
+      <div class="takeaway">
+        <div class="takeaway-icon">▶</div>
+        <div class="takeaway-title">Land on the thing.</div>
+        <div class="takeaway-sub">The eye should know where to go without thinking. That's where the color goes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPTH + GLASS + PATTERN REFERENCE -->
+<section>
+  <div class="halo"></div>
+  <div class="bg-grid"></div>
+  <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">Depth &amp; texture</span><span class="section-meta-count">08 / 11</span></div>
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-dot"></span>Depth &amp; texture</div>
+      <h2>Frosted glass, dark depth, <span style="color:var(--ink-body);font-weight:600;">visible patterns.</span></h2>
+      <p>The accent layer underneath the brand &mdash; subtle surface dimension, frosted overlays, and the dot/line grids that give every section quiet texture in both modes.</p>
+    </div>
+
+    <!-- Glass on vivid sig backdrop + glass on noir backdrop -->
+    <div class="grid-2" style="margin-bottom: 28px;">
+      <div class="glass-stage sig">
+        <div class="glass">
+          <div class="glass-head">
+            <div class="glass-title">⇄ Quick Transfer</div>
+          </div>
+          <div class="glass-row">
+            <div style="width:24px;height:24px;border-radius:50%;background:var(--grad-sig);"></div>
+            <div style="flex:1;font-size:12px;color:#FFFFFF;font-weight:600;">Pay &middot; instant settlement</div>
+            <div style="font-size:14px;color:#FFFFFF;">→</div>
+          </div>
+          <div class="glass-avatar-row">
+            <div class="glass-avatar"></div>
+            <div class="glass-avatar"></div>
+            <div class="glass-avatar"></div>
+            <div class="glass-avatar"></div>
+            <div class="glass-avatar"></div>
+            <div class="glass-avatar"></div>
+          </div>
+          <div class="glass-amount">
+            <div class="glass-amount-label">Enter amount</div>
+            <div class="glass-amount-val">$497.00</div>
+          </div>
+          <div style="text-align:center;font-size:11px;color:rgba(255,255,255,0.65);font-weight:600;">Available &middot; $24,196.92</div>
+          <div class="glass-actions">
+            <button class="glass-btn ghost">Cancel</button>
+            <button class="glass-btn primary">Send &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-stage noir">
+        <div class="glass">
+          <div class="glass-head">
+            <div class="glass-title">📊 Pipeline today</div>
+          </div>
+          <div class="glass-amount">
+            <div class="glass-amount-label">Booked &middot; in cycle</div>
+            <div class="glass-amount-val">$48,200</div>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:8px;">
+            <div style="flex:1;background:rgba(255,255,255,0.06);border-radius:10px;padding:10px;">
+              <div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;">Calls</div>
+              <div style="font-size:18px;font-weight:800;color:#FFF;">14</div>
+            </div>
+            <div style="flex:1;background:rgba(255,255,255,0.06);border-radius:10px;padding:10px;">
+              <div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;">Close</div>
+              <div style="font-size:18px;font-weight:800;color:#FFF;">38%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dark depth cards (achromatic noir gradient — Coinnect-style) -->
+    <div class="grid-2" style="margin-bottom: 28px;">
+      <div class="depth-card">
+        <div class="card-label">Depth &middot; soft</div>
+        <h3 style="font-size: 22px; font-weight: 700; margin: 14px 0 8px; letter-spacing:-0.02em;">Subtle surface dimension</h3>
+        <p style="font-size: 14px; line-height: 1.55; color: var(--ink-body);">Achromatic gradient (no color) for cards that need <em>quiet</em> depth instead of brand presence. Use for FAQ blocks, footers, secondary panels, anywhere you want lift without pulling attention.</p>
+        <div style="margin-top: 18px; display:flex; gap:8px;">
+          <span class="tag">Footer</span>
+          <span class="tag">FAQ</span>
+          <span class="tag">Quiet panel</span>
+        </div>
+      </div>
+
+      <div class="depth-card strong">
+        <div class="card-label">Depth &middot; strong</div>
+        <h3 style="font-size: 22px; font-weight: 700; margin: 14px 0 8px; letter-spacing:-0.02em;">Spotlight from the corner</h3>
+        <p style="font-size: 14px; line-height: 1.55; color: var(--ink-body);">Same achromatic palette but with stronger top-down dimension and a subtle radial highlight. For hero panels and dark sections that need to feel sculpted rather than flat.</p>
+        <div style="margin-top: 18px; display:flex; gap:8px;">
+          <span class="tag">Hero panel</span>
+          <span class="tag">Dark section</span>
+          <span class="tag">Anchor</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Achromatic patterns: nested depth + minimal notification + sankey flow -->
+    <div class="section-head" style="margin-bottom: 20px; margin-top: 24px;">
+      <h3 style="font-size: clamp(20px, 2.4vw, 28px); letter-spacing:-0.02em; color:var(--ink); font-weight:700;">Achromatic register &middot; <span style="color:var(--ink-body);font-weight:600;">no color, all texture.</span></h3>
+      <p style="font-size: 14px;">When the brand needs to <em>recede</em> &mdash; nested depth, minimal notifications, data flows in pure gray. Use when content needs to be present without competing with hero moments.</p>
+    </div>
+
+    <div class="grid-2" style="margin-bottom: 28px;">
+      <div class="nest-card">
+        <div class="nest-card-grid">
+          <div style="display:flex; flex-direction:column; justify-content:space-between;">
+            <p class="nest-text">The Selling System eliminates the need for multiple tools, streamlining your acquisition stack and so much more.</p>
+            <div class="nest-stack">
+              <div class="nest-stack-avatar"></div>
+              <div class="nest-stack-avatar"></div>
+              <div class="nest-stack-arrow">&rarr;</div>
+            </div>
+          </div>
+          <div class="nest-inner">
+            <div class="nest-inner-head"><span>※ ABUNDANCE</span><span>Ryan</span></div>
+            <div>
+              <div class="nest-inner-title">Pipeline</div>
+              <div class="nest-inner-sub">**** 2432</div>
+            </div>
+            <div>
+              <div class="nest-inner-foot">Balance</div>
+              <div class="nest-inner-title" style="font-size:18px;">$48,200</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="notif-stage">
+        <div class="notif-time">9:41</div>
+        <div class="notif-date">Monday, May 13</div>
+        <div class="notif-card">
+          <div class="notif-card-head">
+            <div class="notif-icon"></div>
+            <div class="notif-name">Abundance</div>
+            <div class="notif-time-small">9:41 AM</div>
+          </div>
+          <div class="notif-title">New booked call</div>
+          <div class="notif-body">Sarah J. confirmed a strategy call for Thursday 2pm. Pre-call brief auto-sent &mdash; no further action needed.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Achromatic flow viz (sankey-style with gray gradient strokes) -->
+    <div class="flow-card" style="margin-bottom: 28px;">
+      <div class="flow-head">
+        <div>
+          <div class="flow-title">Pipeline <em>Review</em></div>
+          <div class="flow-sub">Where the cohort revenue moved this month — by source &middot; destination.</div>
+        </div>
+        <div class="flow-stat">
+          <div>Total &middot; this month</div>
+          <div class="flow-stat-num">$382,400</div>
+        </div>
+      </div>
+      <div class="flow-body">
+        <div class="flow-left">
+          <div class="flow-pct">
+            <div class="flow-pct-num">27%</div>
+            <div class="flow-pct-label">Cold</div>
+          </div>
+          <div class="flow-pct">
+            <div class="flow-pct-num">73%</div>
+            <div class="flow-pct-label">Warm</div>
+          </div>
+        </div>
+
+        <svg class="flow-svg" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="achroFlow1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="currentColor" stop-opacity="0.06"/>
+              <stop offset="50%" stop-color="currentColor" stop-opacity="0.22"/>
+              <stop offset="100%" stop-color="currentColor" stop-opacity="0.06"/>
+            </linearGradient>
+            <linearGradient id="achroFlow2" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="currentColor" stop-opacity="0.04"/>
+              <stop offset="50%" stop-color="currentColor" stop-opacity="0.16"/>
+              <stop offset="100%" stop-color="currentColor" stop-opacity="0.04"/>
+            </linearGradient>
+            <linearGradient id="achroFlow3" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="currentColor" stop-opacity="0.05"/>
+              <stop offset="50%" stop-color="currentColor" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="currentColor" stop-opacity="0.05"/>
+            </linearGradient>
+          </defs>
+
+          <path d="M0,40 C200,40 400,30 600,30" fill="none" stroke="url(#achroFlow1)" stroke-width="14"/>
+          <path d="M0,80 C200,90 400,75 600,80" fill="none" stroke="url(#achroFlow2)" stroke-width="22"/>
+          <path d="M0,120 C200,110 400,140 600,130" fill="none" stroke="url(#achroFlow3)" stroke-width="18"/>
+          <path d="M0,160 C200,180 400,170 600,180" fill="none" stroke="url(#achroFlow1)" stroke-width="16"/>
+          <path d="M0,180 C200,160 400,200 600,200" fill="none" stroke="url(#achroFlow2)" stroke-width="10"/>
+        </svg>
+
+        <div class="flow-right">
+          <div class="flow-amount">
+            <div class="flow-amount-icons">
+              <div class="flow-amount-icon">P</div>
+            </div>
+            <div>
+              <div class="flow-amount-val">$108,420</div>
+              <div class="flow-amount-label">Pro tier</div>
+            </div>
+          </div>
+          <div class="flow-amount">
+            <div class="flow-amount-icons">
+              <div class="flow-amount-icon">T</div>
+            </div>
+            <div>
+              <div class="flow-amount-val">$181,250</div>
+              <div class="flow-amount-label">Tribe tier</div>
+            </div>
+          </div>
+          <div class="flow-amount">
+            <div class="flow-amount-icons">
+              <div class="flow-amount-icon">+</div>
+            </div>
+            <div>
+              <div class="flow-amount-val">$92,730</div>
+              <div class="flow-amount-label">Add-ons</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern reference grid -->
+    <div class="section-head" style="margin-bottom: 20px; margin-top: 24px;">
+      <h3 style="font-size: clamp(20px, 2.4vw, 28px); letter-spacing:-0.02em; color:var(--ink); font-weight:700;">Pattern reference &middot; <span style="color:var(--ink-body);font-weight:600;">dot &amp; line grids.</span></h3>
+      <p style="font-size: 14px;">Both modes. Two densities each. Use to add quiet texture to any section background without competing with content.</p>
+    </div>
+
+    <div class="grid-4">
+      <div class="pattern-ref">
+        <div class="pattern-dot-bg"></div>
+        <div class="pattern-ref-label">Dots &middot; 24px</div>
+      </div>
+      <div class="pattern-ref">
+        <div class="pattern-dot-tight"></div>
+        <div class="pattern-ref-label">Dots &middot; 14px</div>
+      </div>
+      <div class="pattern-ref">
+        <div class="pattern-grid-bg"></div>
+        <div class="pattern-ref-label">Grid &middot; 48px</div>
+      </div>
+      <div class="pattern-ref">
+        <div class="pattern-grid-tight"></div>
+        <div class="pattern-ref-label">Grid &middot; 24px</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE DARK/LIGHT -->
+<section id="compare">
+  <div class="bg-grid"></div>
+  <div class="container">
+    <div class="section-meta"><span class="section-meta-pill">Dual mode</span><span class="section-meta-count">10 / 11</span></div>
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-dot"></span>Dual mode</div>
+      <h2>One brand, <span style="color:var(--ink-body);font-weight:600;">two canvases.</span></h2>
+      <p>Side-by-side comparison. Top half uses the gradient as a luminous glow (dark mode), bottom half uses it as a solid saturated sweep (light mode).</p>
+    </div>
+
+    <div class="compare">
+      <div class="compare-half dk">
+        <div class="compare-label">Dark mode</div>
+        <h3 class="compare-h">Scale your business with a <em>Selling System</em></h3>
+        <p style="color: rgba(245,240,232,0.7); font-size: 14px; max-width: 360px;">Done-for-you ads, funnel, and CRM. We build the machine, you stay on closing and delivery.</p>
+        <a href="#" class="compare-cta">Apply now &rarr;</a>
+      </div>
+      <div class="compare-half lt">
+        <div class="compare-label">Light mode</div>
+        <h3 class="compare-h">Scale your business with a <em>Selling System</em></h3>
+        <p style="color: #525252; font-size: 14px; max-width: 360px;">Done-for-you ads, funnel, and CRM. We build the machine, you stay on closing and delivery.</p>
+        <a href="#" class="compare-cta">Apply now &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTE -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="card" style="padding: 32px; max-width: 820px; margin: 0 auto;">
+      <div class="card-label">Test page · what this is</div>
+      <p style="font-size: 14px; line-height: 1.7;">
+        This is a sandbox to react to a single-signature blood-orange direction <em>before</em> committing. The locked Final 6 system in <strong>BRAND.md</strong> is untouched. Nothing about this page overrides the existing tokens, the per-section glow rotation, or the dark-mode-only rule on the rest of the site.
+      </p>
+      <p style="font-size: 14px; line-height: 1.7; margin-top: 12px;">
+        Three open questions worth answering before any rollout: <strong>(1)</strong> Does electric blue feel premium or sales-bro at hero scale? <strong>(2)</strong> Does the cool data-viz blue accent feel necessary, or can the gradient carry everything? <strong>(3)</strong> Is light mode actually load-bearing for the business, or is it a nice-to-have we're chasing?
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Brand v6 · Electric Blue · Simplified · gradient in earned slots only · Sandbox · 2026 · Not an override
+</footer>
+
+<script>
+  const toggle = document.getElementById('modeToggle');
+  const root = document.body;
+  // Persist mode choice for this preview only
+  const saved = localStorage.getItem('brand-v6-mode');
+  if (saved === 'light') root.classList.add('light');
+  toggle.addEventListener('click', () => {
+    root.classList.toggle('light');
+    localStorage.setItem('brand-v6-mode', root.classList.contains('light') ? 'light' : 'dark');
+  });
+</script>
+
+</body>
+</html>
