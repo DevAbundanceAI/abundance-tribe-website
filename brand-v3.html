@@ -48,6 +48,11 @@
     --grad-graphite:  linear-gradient(135deg, #F5F0E8 0%, #C7C2BB 35%, #6B6863 70%, #27262A 100%);
     --grad-bone:      linear-gradient(135deg, #F5F0E8 0%, #E8E1D4 35%, #9C968C 70%, #4A453E 100%);
 
+    /* Deep variants — for footers, deep-section anchors, dark surfaces */
+    --grad-sig-night:  linear-gradient(135deg, #FF1744 0%, #5A0014 35%, #2D0008 70%, #0F0F0F 100%);
+    --grad-sig-ember:  linear-gradient(135deg, #5A0014 0%, #2D0008 100%);
+    --grad-sig-coal:   linear-gradient(135deg, #2D0008 0%, #0A0A0A 100%);
+
     /* Radial halo behind hero / cards */
     --halo: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(255,7,58,0.28) 0%, rgba(200,16,46,0.08) 35%, transparent 65%);
     --halo-card: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(255,7,58,0.12), transparent 60%);
@@ -83,6 +88,11 @@
     /* Achromatic supports — depth flipped for white canvas */
     --grad-graphite:  linear-gradient(135deg, #C7C2BB 0%, #6B6863 50%, #27262A 100%);
     --grad-bone:      linear-gradient(135deg, #E8E1D4 0%, #9C968C 50%, #4A453E 100%);
+
+    /* Deep variants stay punchy in light mode too */
+    --grad-sig-night:  linear-gradient(135deg, #FF1744 0%, #5A0014 35%, #2D0008 70%, #0F0F0F 100%);
+    --grad-sig-ember:  linear-gradient(135deg, #5A0014 0%, #2D0008 100%);
+    --grad-sig-coal:   linear-gradient(135deg, #2D0008 0%, #0A0A0A 100%);
 
     --halo: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(255,7,58,0.14) 0%, rgba(200,16,46,0.04) 35%, transparent 65%);
     --halo-card: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(255,7,58,0.07), transparent 60%);
@@ -358,9 +368,16 @@
   }
   .swatch-hex { font-size: 11px; opacity: 0.75; font-weight: 500; }
   .sw-1  { background: #FF7A4D; color: #2A0A05; }
-  .sw-2  { background: #FF1744; }
+  .sw-2  { background: #FF6B47; }
   .sw-3  { background: #FF1744; }
   .sw-4  { background: #5A0014; }
+  .sw-5  { background: #3D0010; }
+  .sw-6  { background: #2D0008; }
+  .sw-7  { background: #1A0004; }
+  .sw-8  { background: #0A0A0A; }
+  .sw-grad-night { background: var(--grad-sig-night); }
+  .sw-grad-ember { background: var(--grad-sig-ember); }
+  .sw-grad-coal  { background: var(--grad-sig-coal);  }
   .sw-grad   { background: var(--grad-sig); }
   .sw-grad-soft { background: var(--grad-sig-soft); color: #2A0A05; }
   .sw-grad-deep { background: var(--grad-sig-deep); }
@@ -1361,7 +1378,7 @@
 
     <div class="grid-4">
       <div class="swatch sw-1">Coral-orange 0%<br><span class="swatch-hex">#FF7A4D</span></div>
-      <div class="swatch sw-2">Tiger's Blood 28%<br><span class="swatch-hex">#FF1744</span></div>
+      <div class="swatch sw-2">Blood orange 28%<br><span class="swatch-hex">#FF6B47</span></div>
       <div class="swatch sw-3">Tiger's blood 60%<br><span class="swatch-hex">#FF1744</span></div>
       <div class="swatch sw-4">Deep cherry 100%<br><span class="swatch-hex">#5A0014</span></div>
     </div>
@@ -1372,6 +1389,28 @@
       <div class="swatch sw-grad" style="aspect-ratio: 5/2;">Full gradient · 4-stop</div>
       <div class="swatch sw-grad-soft" style="aspect-ratio: 5/2;">Button fill · 2-stop soft</div>
       <div class="swatch sw-grad-deep" style="aspect-ratio: 5/2;">Button hover · 2-stop deep</div>
+    </div>
+
+    <div style="height: 40px;"></div>
+
+    <div class="section-head" style="margin-bottom: 20px;">
+      <h3 style="font-size: clamp(20px, 2.4vw, 28px); letter-spacing:-0.02em; color:var(--ink); font-weight:700;">Deep tier &middot; <span class="grad-sig">the night end.</span></h3>
+      <p style="font-size: 14px;">Where the gradient lives after deep cherry: midnight, coal, near-black. For footers, deep-section anchors, video backgrounds, and dark UI surfaces.</p>
+    </div>
+
+    <div class="grid-4">
+      <div class="swatch sw-4">Deep cherry<br><span class="swatch-hex">#5A0014</span></div>
+      <div class="swatch sw-5">Midnight blood<br><span class="swatch-hex">#3D0010</span></div>
+      <div class="swatch sw-6">Coal cherry<br><span class="swatch-hex">#2D0008</span></div>
+      <div class="swatch sw-7">Obsidian<br><span class="swatch-hex">#1A0004</span></div>
+    </div>
+
+    <div style="height: 24px;"></div>
+
+    <div class="grid-3">
+      <div class="swatch sw-grad-night" style="aspect-ratio: 5/2;">Night sweep &middot; vivid &rarr; black</div>
+      <div class="swatch sw-grad-ember" style="aspect-ratio: 5/2;">Ember &middot; cherry &rarr; coal</div>
+      <div class="swatch sw-grad-coal" style="aspect-ratio: 5/2;">Coal &middot; coal &rarr; matte black</div>
     </div>
   </div>
 </section>
