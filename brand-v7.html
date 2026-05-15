@@ -141,7 +141,11 @@
     position: relative;
     overflow: hidden;
   }
-  section::before {
+  /* HALO RULE: section halos are reserved for the hero only.
+     Repeating glows across sections creates phantom dividers
+     ('gradient goes downward' feeling). One atmospheric moment per
+     page is enough; the rest of the page rests on content. */
+  .hero::before {
     content: ''; position: absolute; inset: 0;
     background: var(--halo-section);
     pointer-events: none;
@@ -705,7 +709,6 @@
      This kills the 'every-section-glows' monotony without ever
      resorting to literal divider lines.
      ──────────────────────────────────────────────────────────── */
-  section.contained::before { display: none; }
   section.contained > .container {
     background: var(--surface-1);
     border: 1px solid var(--border);
