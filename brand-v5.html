@@ -41,17 +41,21 @@
 
     /* Gradient primitives — no cream */
     /* GRADIENT RULES:
-       --grad-sig is 3-stop red (light → vivid → dark) with intentional VALUE travel.
-       All stops stay in the red hue — never orange, never pink. Visible at text scale.
+       PRINCIPLE: a gradient stays within ONE tight value or hue range.
+       Never traverse vivid color → its opposite extreme. Either red-on-red
+       OR dark-on-dark — never both in the same gradient.
+
+       --grad-sig: 3-stop red (light → vivid → dark), all stops red.
+       --grad-depth-*: achromatic dark-on-dark only (workhorse surfaces).
+       --grad-graphite: silver throughout, no near-black anchor.
+       --grad-bone: warm-cream throughout, no fade to brown.
+       --grad-sig-night / ember / coal: all stay in deep-red range, never black.
 
        TEXT CONTRAST on gradient surfaces (mode-agnostic):
-         • Sig gradient bg  → always #FFFFFF text (red gradient is dark enough at any stop)
-         • Graphite bg      → always #0A0A0A text (silver-throughout, cream text disappears)
-         • Bone bg          → always #0A0A0A text (warm-cream-throughout, white text disappears)
-         • Depth bg         → use var(--ink) — adapts with mode (dark surface in dark mode, light in light mode)
-
-       Never set text color via mode-flipping vars on graphite/bone bgs.
-       Those surfaces are inherently light and need fixed-dark text. */
+         • Sig bg       → always #FFFFFF text
+         • Graphite bg  → always #0A0A0A text
+         • Bone bg      → always #0A0A0A text
+         • Depth bg     → use var(--ink) — adapts with mode */
     --grad-sig:       linear-gradient(135deg, #FF5530 0%, #FF1744 50%, #8B0014 100%);
     --grad-sig-soft:  linear-gradient(135deg, #FF5530 0%, #FF1744 100%);
     --grad-sig-deep:  linear-gradient(135deg, #FF1744 0%, #8B0014 100%);
@@ -61,9 +65,9 @@
     --grad-bone:      linear-gradient(135deg, #F0EBE0 0%, #D8D0C0 35%, #B5AC9A 70%, #807870 100%);
 
     /* Deep variants — for footers, deep-section anchors, dark surfaces */
-    --grad-sig-night:  linear-gradient(135deg, #FF1744 0%, #8B0014 35%, #2D0008 70%, #0F0F0F 100%);
+    --grad-sig-night:  linear-gradient(135deg, #5A0014 0%, #3D0010 50%, #1A0004 100%);
     --grad-sig-ember:  linear-gradient(135deg, #8B0014 0%, #2D0008 100%);
-    --grad-sig-coal:   linear-gradient(135deg, #2D0008 0%, #0A0A0A 100%);
+    --grad-sig-coal:   linear-gradient(135deg, #2D0008 0%, #1A0004 100%);
 
     /* Achromatic depth — subtle surface dimension without color */
     --grad-depth:          linear-gradient(135deg, #1F1F1F 0%, #0A0A0A 100%);
@@ -117,9 +121,9 @@
     --grad-bone:      linear-gradient(135deg, #D8D0C0 0%, #B5AC9A 50%, #807870 100%);
 
     /* Deep variants stay punchy in light mode too */
-    --grad-sig-night:  linear-gradient(135deg, #FF1744 0%, #8B0014 35%, #2D0008 70%, #0F0F0F 100%);
+    --grad-sig-night:  linear-gradient(135deg, #5A0014 0%, #3D0010 50%, #1A0004 100%);
     --grad-sig-ember:  linear-gradient(135deg, #8B0014 0%, #2D0008 100%);
-    --grad-sig-coal:   linear-gradient(135deg, #2D0008 0%, #0A0A0A 100%);
+    --grad-sig-coal:   linear-gradient(135deg, #2D0008 0%, #1A0004 100%);
 
     /* Achromatic depth — flips for white canvas */
     --grad-depth:          linear-gradient(135deg, #FAFAFA 0%, #ECECEC 100%);
@@ -2088,9 +2092,9 @@
     <div style="height: 24px;"></div>
 
     <div class="grid-3">
-      <div class="swatch sw-grad-night" style="aspect-ratio: 5/2;">Night sweep &middot; vivid &rarr; black</div>
+      <div class="swatch sw-grad-night" style="aspect-ratio: 5/2;">Night &middot; deep cherry tier</div>
       <div class="swatch sw-grad-ember" style="aspect-ratio: 5/2;">Ember &middot; cherry &rarr; coal</div>
-      <div class="swatch sw-grad-coal" style="aspect-ratio: 5/2;">Coal &middot; coal &rarr; matte black</div>
+      <div class="swatch sw-grad-coal" style="aspect-ratio: 5/2;">Coal &middot; coal cherry tier</div>
     </div>
   </div>
 </section>
