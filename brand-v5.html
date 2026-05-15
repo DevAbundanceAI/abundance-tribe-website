@@ -43,8 +43,15 @@
     /* GRADIENT RULES:
        --grad-sig is 3-stop red (light → vivid → dark) with intentional VALUE travel.
        All stops stay in the red hue — never orange, never pink. Visible at text scale.
-       Never use --grad-sig as background under cream/white text on small surfaces
-       (avatars, tiny pills) — value contrast inverts. Use --surface-2 instead. */
+
+       TEXT CONTRAST on gradient surfaces (mode-agnostic):
+         • Sig gradient bg  → always #FFFFFF text (red gradient is dark enough at any stop)
+         • Graphite bg      → always #0A0A0A text (silver-throughout, cream text disappears)
+         • Bone bg          → always #0A0A0A text (warm-cream-throughout, white text disappears)
+         • Depth bg         → use var(--ink) — adapts with mode (dark surface in dark mode, light in light mode)
+
+       Never set text color via mode-flipping vars on graphite/bone bgs.
+       Those surfaces are inherently light and need fixed-dark text. */
     --grad-sig:       linear-gradient(135deg, #FF5A60 0%, #FF1744 50%, #8B0014 100%);
     --grad-sig-soft:  linear-gradient(135deg, #FF5A60 0%, #FF1744 100%);
     --grad-sig-deep:  linear-gradient(135deg, #FF1744 0%, #8B0014 100%);
@@ -435,9 +442,9 @@
   }
   .pill.bright {
     background: var(--grad-graphite);
-    color: #F5F0E8; border-color: transparent;
+    color: #0A0A0A; border-color: transparent;
   }
-  .pill.bright .pill-dot { background: #FFF; }
+  .pill.bright .pill-dot { background: #0A0A0A; }
   .pill.deep {
     background: var(--grad-depth-strong);
     color: var(--ink); border: 1px solid var(--border-strong);
@@ -714,10 +721,8 @@
   .support-stops { display: flex; gap: 4px; margin-top: 12px; }
   .support-stop { flex: 1; height: 6px; border-radius: 4px; }
   .support-1 { background: var(--grad-sig); color: #FFFFFF; }
-  .support-2 { background: var(--grad-graphite); color: #F5F0E8; }
-  body.light .support-2 { color: #FFFFFF; }
-  .support-3 { background: var(--grad-bone); color: #2A2520; }
-  body.light .support-3 { color: #FFFFFF; }
+  .support-2 { background: var(--grad-graphite); color: #0A0A0A; }
+  .support-3 { background: var(--grad-bone); color: #0A0A0A; }
 
   /* Dual-line chart */
   .chart-card { padding: 32px; }
@@ -808,9 +813,8 @@
   }
   .tier-standard .tier-tag {
     background: var(--grad-graphite);
-    color: #F5F0E8;
+    color: #0A0A0A;
   }
-  body.light .tier-standard .tier-tag { color: #FFFFFF; }
   .tier-name { font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.02em; }
   .tier-price {
     font-size: 44px; font-weight: 800; line-height: 1;
@@ -1073,10 +1077,8 @@
     border: 1px solid var(--border);
   }
   .tag.sig { background: var(--grad-sig-soft); color: #FFFFFF; border: none; }
-  .tag.graphite { background: var(--grad-graphite); color: #F5F0E8; border: none; }
-  body.light .tag.graphite { color: #FFFFFF; }
-  .tag.bone { background: var(--grad-bone); color: #2A2520; border: none; }
-  body.light .tag.bone { color: #FFFFFF; }
+  .tag.graphite { background: var(--grad-graphite); color: #0A0A0A; border: none; }
+  .tag.bone { background: var(--grad-bone); color: #0A0A0A; border: none; }
   .tag.outline {
     background: transparent;
     border: 1px solid;
@@ -1327,10 +1329,9 @@
     border-radius: 50%;
     background: var(--grad-graphite);
     display: flex; align-items: center; justify-content: center;
-    font-size: 10px; font-weight: 700; color: #F5F0E8;
+    font-size: 10px; font-weight: 700; color: #0A0A0A;
     flex-shrink: 0;
   }
-  body.light .lb-avatar { color: #FFFFFF; }
   .lb-row.top1 .lb-avatar { background: var(--grad-sig); color: #FFFFFF; }
   .lb-meta { font-size: 12px; color: var(--ink-muted); }
   .lb-val {
