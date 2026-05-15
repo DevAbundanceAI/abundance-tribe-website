@@ -1141,6 +1141,37 @@
   }
   body.light section.achromatic .faq-item[open] .faq-icon { color: #FFFFFF; }
 
+
+  /* ─── DASHED RED ANNOTATION BADGE ────────────────────
+     Creative use of sig — dashed red pill outline with a filled red
+     sub-badge inset on the right. The 'marked annotation' pattern.
+     Used on step-number badges. The ONLY place red appears as a
+     dashed border on the page. */
+  .step-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    border: 1.5px dashed #FF1744;
+    color: var(--ink);
+    border-radius: var(--r-pill);
+    padding: 3px 4px 3px 12px;
+    font-size: var(--t-micro);
+    font-weight: 800;
+    letter-spacing: 0.10em;
+    margin-bottom: var(--s-3);
+    text-transform: uppercase;
+    background: transparent;
+    width: fit-content;
+  }
+  .step-badge-num {
+    background: var(--grad-sig);
+    color: #FFFFFF;
+    padding: 2px 9px;
+    border-radius: var(--r-pill);
+    letter-spacing: 0.04em;
+    font-weight: 800;
+    font-size: var(--t-micro);
+    box-shadow: 0 0 8px -2px rgba(255,23,68,0.35);
+  }
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 880px) {
     :root { --s-8: 80px; --s-7: 64px; }
@@ -1211,7 +1242,7 @@
       <!-- Step 1: confirmation -->
       <div class="card step-card">
         <div class="step-card-body">
-          <span class="step-tag">Step 01</span>
+          <span class="step-badge">Step <span class="step-badge-num">01</span></span>
           <h3>Apply for the cohort</h3>
           <p>Three-question form. Same-day review. Calendar link in your inbox if you're a fit.</p>
         </div>
@@ -1228,7 +1259,7 @@
       <!-- Step 2: onboard -->
       <div class="card step-card">
         <div class="step-card-body">
-          <span class="step-tag">Step 02</span>
+          <span class="step-badge">Step <span class="step-badge-num">02</span></span>
           <h3>Onboard in minutes</h3>
           <p>Connect Meta Ads, drop your offer, schedule kickoff. System goes live within 14 days.</p>
         </div>
@@ -1249,7 +1280,7 @@
       <!-- Step 3: payments -->
       <div class="card step-card">
         <div class="step-card-body">
-          <span class="step-tag">Step 03</span>
+          <span class="step-badge">Step <span class="step-badge-num">03</span></span>
           <h3>Watch sales come in</h3>
           <p>Calendar fills with pre-sold appointments. Dashboard shows real numbers in real time.</p>
         </div>
