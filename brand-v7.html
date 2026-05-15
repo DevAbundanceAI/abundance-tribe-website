@@ -237,6 +237,19 @@
   }
   .trend-arrow { font-size: 9px; }
 
+  /* Headline highlight — discrete inline emphasis.
+     USE SPARINGLY: max 1-2 instances per page, for a category-defining word
+     or phrase inside a headline. Auto-flips with mode (cream pill in dark,
+     dark pill in light). Never combine with em on the same headline. */
+  .highlight {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--bg);
+    padding: 0 0.34em;
+    border-radius: 8px;
+    line-height: 1.05;
+  }
+
   /* ─── NAV ─── */
   nav {
     position: sticky; top: 0; z-index: 50;
@@ -724,7 +737,7 @@
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">How it works</span>
-      <h2>More sales in 3 simple steps.</h2>
+      <h2>More sales in <span class="highlight">3 simple</span> steps.</h2>
       <p>No building, no guessing, no wasted months. Plug in and go.</p>
     </div>
 
