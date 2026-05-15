@@ -53,6 +53,16 @@
     --grad-sig-ember:  linear-gradient(135deg, #5A0014 0%, #2D0008 100%);
     --grad-sig-coal:   linear-gradient(135deg, #2D0008 0%, #0A0A0A 100%);
 
+    /* Achromatic depth — subtle surface dimension without color */
+    --grad-depth:        linear-gradient(135deg, #1F1F1F 0%, #0A0A0A 100%);
+    --grad-depth-strong: linear-gradient(135deg, #2A2A2A 0%, #141414 55%, #000000 100%);
+    --spotlight:         radial-gradient(ellipse 60% 50% at 25% 18%, rgba(255,255,255,0.06), transparent 60%);
+
+    /* Glass — frosted card on backdrop */
+    --glass-bg:     rgba(20,20,20,0.55);
+    --glass-border: rgba(255,255,255,0.10);
+    --glass-blur:   blur(24px) saturate(180%);
+
     /* Radial halo behind hero / cards */
     --halo: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(255,7,58,0.28) 0%, rgba(200,16,46,0.08) 35%, transparent 65%);
     --halo-card: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(255,7,58,0.12), transparent 60%);
@@ -93,6 +103,16 @@
     --grad-sig-night:  linear-gradient(135deg, #FF1744 0%, #5A0014 35%, #2D0008 70%, #0F0F0F 100%);
     --grad-sig-ember:  linear-gradient(135deg, #5A0014 0%, #2D0008 100%);
     --grad-sig-coal:   linear-gradient(135deg, #2D0008 0%, #0A0A0A 100%);
+
+    /* Achromatic depth — flips for white canvas */
+    --grad-depth:        linear-gradient(135deg, #FAFAFA 0%, #ECECEC 100%);
+    --grad-depth-strong: linear-gradient(135deg, #FFFFFF 0%, #F0F0F0 55%, #DCDCDC 100%);
+    --spotlight:         radial-gradient(ellipse 60% 50% at 25% 18%, rgba(0,0,0,0.05), transparent 60%);
+
+    /* Glass — light-mode frost */
+    --glass-bg:     rgba(255,255,255,0.55);
+    --glass-border: rgba(10,10,10,0.08);
+    --glass-blur:   blur(24px) saturate(160%);
 
     --halo: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(255,7,58,0.14) 0%, rgba(200,16,46,0.04) 35%, transparent 65%);
     --halo-card: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(255,7,58,0.07), transparent 60%);
@@ -216,7 +236,7 @@
   .bg-dots {
     background-image: radial-gradient(circle, currentColor 1px, transparent 1.2px);
     background-size: 28px 28px;
-    opacity: 0.06;
+    opacity: 0.10;
     -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 80%);
             mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 80%);
   }
@@ -225,12 +245,12 @@
       linear-gradient(currentColor 1px, transparent 1px),
       linear-gradient(90deg, currentColor 1px, transparent 1px);
     background-size: 64px 64px;
-    opacity: 0.045;
+    opacity: 0.07;
     -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 0%, transparent 80%);
             mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 0%, transparent 80%);
   }
-  body.light .bg-dots { opacity: 0.08; }
-  body.light .bg-grid { opacity: 0.06; }
+  body.light .bg-dots { opacity: 0.14; }
+  body.light .bg-grid { opacity: 0.10; }
 
   /* Glow ring — pulsing aura around brand mark + key elements */
   .glow-ring {
@@ -1317,6 +1337,196 @@
     -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   }
 
+
+  /* ─── DEPTH (achromatic noir gradient cards) ─── */
+  .depth-card {
+    background: var(--grad-depth);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 18px 48px -12px rgba(0,0,0,0.40);
+  }
+  body.light .depth-card { box-shadow: 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .depth-card.strong { background: var(--grad-depth-strong); }
+  .depth-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--spotlight);
+    pointer-events: none;
+  }
+  .depth-card .card-label, .depth-card h3, .depth-card p { position: relative; z-index: 2; }
+
+  /* ─── GLASS (frosted card on vivid backdrop) ─── */
+  .glass-stage {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 56px 40px;
+    min-height: 360px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .glass-stage.sig {
+    background:
+      radial-gradient(ellipse at 25% 25%, rgba(255,160,122,0.6), transparent 55%),
+      radial-gradient(ellipse at 75% 75%, rgba(255,23,68,0.55), transparent 55%),
+      linear-gradient(135deg, #FF7A4D 0%, #FF6B47 25%, #FF1744 55%, #5A0014 100%);
+  }
+  .glass-stage.dusk {
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(255,200,150,0.45), transparent 55%),
+      radial-gradient(ellipse at 75% 80%, rgba(60,40,80,0.5), transparent 55%),
+      linear-gradient(180deg, #2A1A28 0%, #4A2820 45%, #6B3520 100%);
+  }
+  .glass-stage.noir {
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.06), transparent 55%),
+      var(--grad-depth-strong);
+  }
+  .glass {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: var(--glass-blur);
+            backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow:
+      0 30px 60px -20px rgba(0,0,0,0.55),
+      inset 0 1px 0 rgba(255,255,255,0.08);
+    width: 100%; max-width: 360px;
+  }
+  body.light .glass {
+    box-shadow:
+      0 30px 60px -20px rgba(0,0,0,0.20),
+      inset 0 1px 0 rgba(255,255,255,0.5);
+  }
+  .glass-head {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .glass-title { font-size: 13px; font-weight: 700; color: var(--ink); display: flex; align-items: center; gap: 8px; }
+  body.light .glass-stage .glass-title { color: #1A1A1A; }
+  .glass-stage .glass-title { color: #FFFFFF; }
+  .glass-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 12px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 12px;
+    margin-bottom: 8px;
+  }
+  body.light .glass-stage .glass-row { background: rgba(255,255,255,0.35); }
+  .glass-stage .glass-row { background: rgba(255,255,255,0.10); }
+  .glass-avatar-row {
+    display: flex; gap: 8px; padding: 14px 4px;
+    overflow-x: auto;
+  }
+  .glass-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #FFA07A, #5A0014);
+    border: 2px solid rgba(255,255,255,0.20);
+  }
+  .glass-avatar:nth-child(2) { background: linear-gradient(135deg, #FFD9C2, #C8102E); }
+  .glass-avatar:nth-child(3) { background: linear-gradient(135deg, #FFC1A8, #6B0014); border-color: rgba(255,255,255,0.5); }
+  .glass-avatar:nth-child(4) { background: linear-gradient(135deg, #C7C2BB, #27262A); }
+  .glass-avatar:nth-child(5) { background: linear-gradient(135deg, #FF8A5C, #8B0A1E); }
+  .glass-avatar:nth-child(6) { background: linear-gradient(135deg, #6B6863, #1A1A1A); }
+  .glass-amount {
+    text-align: center;
+    padding: 16px 0;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+    margin: 8px 0 14px;
+  }
+  body.light .glass-stage .glass-amount {
+    border-color: rgba(0,0,0,0.10);
+  }
+  .glass-amount-label {
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7); font-weight: 600; margin-bottom: 4px;
+  }
+  body.light .glass-stage .glass-amount-label { color: rgba(0,0,0,0.6); }
+  .glass-stage .glass-amount-label { color: rgba(255,255,255,0.85); }
+  .glass-amount-val {
+    font-size: 36px; font-weight: 800; letter-spacing: -0.03em;
+    color: #FFFFFF; line-height: 1;
+  }
+  body.light .glass-stage .glass-amount-val { color: #1A1A1A; }
+  .glass-stage .glass-amount-val { color: #FFFFFF; }
+  .glass-actions { display: flex; gap: 8px; margin-top: 14px; }
+  .glass-btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 12px; font-weight: 700;
+    cursor: pointer; border: none;
+  }
+  .glass-btn.primary {
+    background: var(--grad-sig);
+    color: #FFFFFF;
+    box-shadow: 0 0 16px -4px rgba(255,107,71,0.55);
+  }
+  .glass-btn.ghost {
+    background: rgba(255,255,255,0.10);
+    color: #FFFFFF;
+    border: 1px solid rgba(255,255,255,0.20);
+  }
+  body.light .glass-stage .glass-btn.ghost { background: rgba(0,0,0,0.06); color: #1A1A1A; border-color: rgba(0,0,0,0.10); }
+
+  /* Pattern reference cards — make dot/grid visibly demonstrable */
+  .pattern-ref {
+    aspect-ratio: 16/9;
+    border-radius: 16px;
+    background: var(--card-fill);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: flex-end;
+    padding: 18px;
+  }
+  .pattern-ref-label {
+    position: relative; z-index: 2;
+    font-size: 12px; font-weight: 700; color: var(--ink);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    padding: 5px 12px; border-radius: 100px;
+  }
+  .pattern-dot-bg, .pattern-grid-bg, .pattern-dot-tight, .pattern-grid-tight {
+    position: absolute; inset: 0;
+    color: var(--ink);
+    pointer-events: none;
+  }
+  .pattern-dot-bg {
+    background-image: radial-gradient(circle, currentColor 1px, transparent 1.2px);
+    background-size: 24px 24px;
+    opacity: 0.20;
+  }
+  .pattern-dot-tight {
+    background-image: radial-gradient(circle, currentColor 1px, transparent 1.2px);
+    background-size: 14px 14px;
+    opacity: 0.16;
+  }
+  .pattern-grid-bg {
+    background-image:
+      linear-gradient(currentColor 1px, transparent 1px),
+      linear-gradient(90deg, currentColor 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.14;
+  }
+  .pattern-grid-tight {
+    background-image:
+      linear-gradient(currentColor 1px, transparent 1px),
+      linear-gradient(90deg, currentColor 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.10;
+  }
+  body.light .pattern-dot-bg, body.light .pattern-dot-tight,
+  body.light .pattern-grid-bg, body.light .pattern-grid-tight {
+    opacity: 0.22;
+  }
+
   @media (max-width: 880px) {
     .grid-3, .grid-4, .support-grid, .stat-pair-grid, .sparkline-strip { grid-template-columns: repeat(2, 1fr); }
     .steps-row { grid-template-columns: repeat(2, 1fr); gap: 16px 0; }
@@ -2078,6 +2288,124 @@
           <div class="lb-meta">6 calls booked</div>
           <div class="lb-val">$18K</div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPTH + GLASS + PATTERN REFERENCE -->
+<section>
+  <div class="halo"></div>
+  <div class="bg-grid"></div>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-dot"></span>Depth &amp; texture</div>
+      <h2>Frosted glass, dark depth, <span class="grad-sig">visible patterns.</span></h2>
+      <p>The accent layer underneath the brand &mdash; subtle surface dimension, frosted overlays, and the dot/line grids that give every section quiet texture in both modes.</p>
+    </div>
+
+    <!-- Glass on vivid sig backdrop + glass on noir backdrop -->
+    <div class="grid-2" style="margin-bottom: 28px;">
+      <div class="glass-stage sig">
+        <div class="glass">
+          <div class="glass-head">
+            <div class="glass-title">⇄ Quick Transfer</div>
+          </div>
+          <div class="glass-row">
+            <div style="width:24px;height:24px;border-radius:50%;background:var(--grad-sig);"></div>
+            <div style="flex:1;font-size:12px;color:#FFFFFF;font-weight:600;">Pay &middot; instant settlement</div>
+            <div style="font-size:14px;color:#FFFFFF;">→</div>
+          </div>
+          <div class="glass-avatar-row">
+            <div class="glass-avatar"></div>
+            <div class="glass-avatar"></div>
+            <div class="glass-avatar"></div>
+            <div class="glass-avatar"></div>
+            <div class="glass-avatar"></div>
+            <div class="glass-avatar"></div>
+          </div>
+          <div class="glass-amount">
+            <div class="glass-amount-label">Enter amount</div>
+            <div class="glass-amount-val">$497.00</div>
+          </div>
+          <div style="text-align:center;font-size:11px;color:rgba(255,255,255,0.65);font-weight:600;">Available &middot; $24,196.92</div>
+          <div class="glass-actions">
+            <button class="glass-btn ghost">Cancel</button>
+            <button class="glass-btn primary">Send &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-stage noir">
+        <div class="glass">
+          <div class="glass-head">
+            <div class="glass-title">📊 Pipeline today</div>
+          </div>
+          <div class="glass-amount">
+            <div class="glass-amount-label">Booked &middot; in cycle</div>
+            <div class="glass-amount-val">$48,200</div>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:8px;">
+            <div style="flex:1;background:rgba(255,255,255,0.06);border-radius:10px;padding:10px;">
+              <div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;">Calls</div>
+              <div style="font-size:18px;font-weight:800;color:#FFF;">14</div>
+            </div>
+            <div style="flex:1;background:rgba(255,255,255,0.06);border-radius:10px;padding:10px;">
+              <div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;">Close</div>
+              <div style="font-size:18px;font-weight:800;color:#FFF;">38%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dark depth cards (achromatic noir gradient — Coinnect-style) -->
+    <div class="grid-2" style="margin-bottom: 28px;">
+      <div class="depth-card">
+        <div class="card-label">Depth &middot; soft</div>
+        <h3 style="font-size: 22px; font-weight: 700; margin: 14px 0 8px; letter-spacing:-0.02em;">Subtle surface dimension</h3>
+        <p style="font-size: 14px; line-height: 1.55; color: var(--ink-body);">Achromatic gradient (no color) for cards that need <em>quiet</em> depth instead of brand presence. Use for FAQ blocks, footers, secondary panels, anywhere you want lift without pulling attention.</p>
+        <div style="margin-top: 18px; display:flex; gap:8px;">
+          <span class="tag">Footer</span>
+          <span class="tag">FAQ</span>
+          <span class="tag">Quiet panel</span>
+        </div>
+      </div>
+
+      <div class="depth-card strong">
+        <div class="card-label">Depth &middot; strong</div>
+        <h3 style="font-size: 22px; font-weight: 700; margin: 14px 0 8px; letter-spacing:-0.02em;">Spotlight from the corner</h3>
+        <p style="font-size: 14px; line-height: 1.55; color: var(--ink-body);">Same achromatic palette but with stronger top-down dimension and a subtle radial highlight. For hero panels and dark sections that need to feel sculpted rather than flat.</p>
+        <div style="margin-top: 18px; display:flex; gap:8px;">
+          <span class="tag">Hero panel</span>
+          <span class="tag">Dark section</span>
+          <span class="tag">Anchor</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern reference grid -->
+    <div class="section-head" style="margin-bottom: 20px; margin-top: 24px;">
+      <h3 style="font-size: clamp(20px, 2.4vw, 28px); letter-spacing:-0.02em; color:var(--ink); font-weight:700;">Pattern reference &middot; <span class="grad-sig">dot &amp; line grids.</span></h3>
+      <p style="font-size: 14px;">Both modes. Two densities each. Use to add quiet texture to any section background without competing with content.</p>
+    </div>
+
+    <div class="grid-4">
+      <div class="pattern-ref">
+        <div class="pattern-dot-bg"></div>
+        <div class="pattern-ref-label">Dots &middot; 24px</div>
+      </div>
+      <div class="pattern-ref">
+        <div class="pattern-dot-tight"></div>
+        <div class="pattern-ref-label">Dots &middot; 14px</div>
+      </div>
+      <div class="pattern-ref">
+        <div class="pattern-grid-bg"></div>
+        <div class="pattern-ref-label">Grid &middot; 48px</div>
+      </div>
+      <div class="pattern-ref">
+        <div class="pattern-grid-tight"></div>
+        <div class="pattern-ref-label">Grid &middot; 24px</div>
       </div>
     </div>
   </div>
