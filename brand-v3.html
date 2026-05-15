@@ -1732,6 +1732,183 @@
   .flow-amount-val { font-size: 16px; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; }
   .flow-amount-label { font-size: 11px; color: var(--ink-muted); }
 
+
+  /* ─── RESTRAINT PATTERN — mostly achromatic, one pop ─── */
+  .step-card {
+    background: var(--grad-depth-elevated);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 32px 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 18px 48px -12px rgba(0,0,0,0.40);
+    display: flex; flex-direction: column;
+    min-height: 460px;
+  }
+  body.light .step-card { box-shadow: 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .step-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--spotlight);
+    pointer-events: none;
+  }
+  .step-card > * { position: relative; z-index: 2; }
+  .step-pill {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.08em;
+    background: var(--surface-3);
+    color: var(--ink-body);
+    width: fit-content;
+    border: 1px solid var(--border);
+    margin-bottom: 28px;
+  }
+  .step-card h3 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .step-card .step-body {
+    font-size: 14px; line-height: 1.55;
+    color: var(--ink-body);
+    margin-bottom: 28px;
+  }
+  .step-mock {
+    margin-top: auto;
+    margin-left: -32px; margin-right: -32px;
+    margin-bottom: -32px;
+    padding: 24px 32px 0;
+    border-top: 1px solid var(--border);
+    background: var(--grad-depth-inner);
+    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Mock 1: order confirmed phone */
+  .mock-phone {
+    background: var(--grad-depth-darker);
+    border: 1px solid var(--border);
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    padding: 14px 16px 0;
+    margin-top: 12px;
+    position: relative;
+  }
+  .mock-phone::before {
+    content: ''; position: absolute;
+    top: 6px; left: 50%; transform: translateX(-50%);
+    width: 60px; height: 14px;
+    background: #000;
+    border-radius: 12px;
+  }
+  .mock-phone-content {
+    margin-top: 22px;
+    padding-bottom: 14px;
+  }
+  .mock-phone-row {
+    font-size: 11px; color: var(--ink-body); font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .mock-phone-row.dim { color: var(--ink-muted); font-weight: 400; }
+  .mock-pop-check {
+    position: absolute;
+    top: 10px; right: -10px;
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: var(--grad-sig);
+    display: flex; align-items: center; justify-content: center;
+    color: #FFFFFF; font-size: 16px; font-weight: 800;
+    box-shadow: 0 0 20px -2px rgba(255,107,71,0.55);
+  }
+
+  /* Mock 2: laptop publish */
+  .mock-laptop {
+    background: var(--grad-depth-darker);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px;
+    margin-top: 12px;
+    position: relative;
+    transform: perspective(800px) rotateX(8deg);
+    transform-origin: center bottom;
+  }
+  .mock-laptop-screen {
+    background: var(--grad-depth-inner);
+    border-radius: 4px;
+    padding: 12px;
+    min-height: 120px;
+    position: relative;
+  }
+  .mock-laptop-line {
+    height: 6px; border-radius: 3px;
+    background: var(--surface-3);
+    margin-bottom: 8px;
+  }
+  .mock-laptop-line.short { width: 40%; }
+  .mock-laptop-line.med { width: 70%; }
+  .mock-laptop-line.long { width: 90%; }
+  .mock-pop-publish {
+    position: absolute;
+    top: -8px; right: 12px;
+    background: var(--grad-sig);
+    color: #FFFFFF;
+    font-size: 11px; font-weight: 700;
+    padding: 6px 14px 6px 10px;
+    border-radius: 100px;
+    display: flex; align-items: center; gap: 6px;
+    box-shadow: 0 0 18px -2px rgba(255,107,71,0.55);
+  }
+
+  /* Mock 3: payment notification rows */
+  .mock-stripe {
+    background: var(--grad-depth-darker);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    margin-top: 12px;
+  }
+  .mock-stripe-head {
+    display: flex; gap: 10px; align-items: center;
+    padding-bottom: 10px; margin-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .mock-stripe-icon {
+    width: 24px; height: 24px;
+    border-radius: 6px;
+    background: var(--grad-graphite);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink); font-size: 12px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .mock-stripe-title {
+    font-size: 12px; font-weight: 700; color: var(--ink);
+    flex: 1;
+  }
+  .mock-stripe-time {
+    font-size: 10px; color: var(--ink-muted);
+  }
+  .mock-stripe-row {
+    display: grid; grid-template-columns: 1fr auto auto;
+    gap: 8px; align-items: center;
+    padding: 6px 0;
+    font-size: 11px;
+    color: var(--ink-body);
+    border-bottom: 1px solid var(--border);
+  }
+  .mock-stripe-row:last-child { border-bottom: none; }
+  .mock-stripe-row .amt { font-weight: 700; color: var(--ink); }
+  .mock-pop-success {
+    background: var(--grad-sig);
+    color: #FFFFFF;
+    font-size: 9px; font-weight: 700;
+    padding: 2px 8px; border-radius: 100px;
+    box-shadow: 0 0 12px -2px rgba(255,107,71,0.45);
+  }
+
   @media (max-width: 880px) {
     .grid-3, .grid-4, .support-grid, .stat-pair-grid, .sparkline-strip { grid-template-columns: repeat(2, 1fr); }
     .steps-row { grid-template-columns: repeat(2, 1fr); gap: 16px 0; }
@@ -2494,6 +2671,92 @@
           <div class="lb-val">$18K</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESTRAINT — 80/20 rule -->
+<section>
+  <div class="halo"></div>
+  <div class="bg-grid"></div>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-dot"></span>Restraint &middot; the 80/20 rule</div>
+      <h2>Mostly silence. <span class="grad-sig">One moment of color.</span></h2>
+      <p>The brand earns its impact by being scarce. Cards live in the achromatic register; tiger's blood appears once per surface, on the thing the user should actually do or notice. This is what production looks like.</p>
+    </div>
+
+    <div class="grid-3">
+      <!-- Step 1: order confirmed -->
+      <div class="step-card">
+        <span class="step-pill">Step 1</span>
+        <h3>Apply for the cohort</h3>
+        <p class="step-body">Three-question form. We review same day, send a calendar link if you're a fit, refund the application fee if you're not.</p>
+        <div class="step-mock">
+          <div class="mock-phone">
+            <div class="mock-phone-content">
+              <div class="mock-phone-row">Ryan, your application is confirmed.</div>
+              <div class="mock-phone-row">Let's get you onboarded.</div>
+              <div class="mock-phone-row dim">Calendar link in your inbox &middot; you'll find access instructions in each email.</div>
+            </div>
+            <div class="mock-pop-check">&check;</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: launch in minutes -->
+      <div class="step-card">
+        <span class="step-pill">Step 2</span>
+        <h3>Onboard in minutes</h3>
+        <p class="step-body">Connect Meta Ads, drop your offer assets, schedule the kickoff call. We do the rest &mdash; system goes live within 14 days.</p>
+        <div class="step-mock">
+          <div class="mock-laptop">
+            <div class="mock-laptop-screen">
+              <div class="mock-laptop-line long"></div>
+              <div class="mock-laptop-line med"></div>
+              <div class="mock-laptop-line short"></div>
+              <div class="mock-laptop-line long"></div>
+              <div class="mock-laptop-line med"></div>
+            </div>
+            <div class="mock-pop-publish">&#9658; Publish</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: more sales -->
+      <div class="step-card">
+        <span class="step-pill">Step 3</span>
+        <h3>Watch sales come in</h3>
+        <p class="step-body">Calendar fills with pre-sold appointments. Dashboard shows real numbers in real time. You stay focused on closing and delivery.</p>
+        <div class="step-mock">
+          <div class="mock-stripe">
+            <div class="mock-stripe-head">
+              <div class="mock-stripe-icon">$</div>
+              <div class="mock-stripe-title">Payment received</div>
+              <div class="mock-stripe-time">Sun 23:36</div>
+            </div>
+            <div class="mock-stripe-row">
+              <span>$5,000.00 USD</span>
+              <span class="mock-pop-success">Succeeded</span>
+              <span class="amt">6681</span>
+            </div>
+            <div class="mock-stripe-row">
+              <span>$5,000.00 USD</span>
+              <span class="mock-pop-success">Succeeded</span>
+              <span class="amt">9834</span>
+            </div>
+            <div class="mock-stripe-row">
+              <span>$5,500.00 USD</span>
+              <span class="mock-pop-success">Succeeded</span>
+              <span class="amt">6009</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 32px; text-align: center;">
+      <p style="font-size: 14px; color: var(--ink-muted); max-width: 540px; margin: 0 auto;">Notice: each card is 95% achromatic. Tiger's blood appears once per card &mdash; on the checkmark, the publish button, the success badge. That's the rule. Brand color goes on the thing the eye should land on.</p>
     </div>
   </div>
 </section>
