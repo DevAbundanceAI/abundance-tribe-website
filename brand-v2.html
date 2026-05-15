@@ -185,6 +185,51 @@
     pointer-events: none; z-index: 1;
   }
 
+  /* ─── BG PATTERNS — dots & grid ─── */
+  .bg-dots, .bg-grid {
+    position: absolute; inset: 0;
+    pointer-events: none; z-index: 0;
+    color: var(--ink);
+  }
+  .bg-dots {
+    background-image: radial-gradient(circle, currentColor 1px, transparent 1.2px);
+    background-size: 28px 28px;
+    opacity: 0.06;
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 80%);
+            mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 80%);
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(currentColor 1px, transparent 1px),
+      linear-gradient(90deg, currentColor 1px, transparent 1px);
+    background-size: 64px 64px;
+    opacity: 0.045;
+    -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 0%, transparent 80%);
+            mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 0%, transparent 80%);
+  }
+  body.light .bg-dots { opacity: 0.08; }
+  body.light .bg-grid { opacity: 0.06; }
+
+  /* Glow ring — pulsing aura around brand mark + key elements */
+  .glow-ring {
+    position: relative;
+  }
+  .glow-ring::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: inherit;
+    background: var(--grad-sig);
+    opacity: 0.35;
+    filter: blur(14px);
+    z-index: -1;
+    animation: pulse 3.2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.28; transform: scale(1); }
+    50%      { opacity: 0.55; transform: scale(1.08); }
+  }
+
   /* Eyebrow / status pill */
   .eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
@@ -240,11 +285,45 @@
     padding: 24px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset, 0 18px 48px -12px rgba(0,0,0,0.35);
   }
+  body.light .card { box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 16px 40px -16px rgba(10,10,10,0.10); }
   .card::after {
     content: ''; position: absolute; inset: 0;
     background: var(--halo-card);
     pointer-events: none;
+  }
+  /* Always-on outer color glow */
+  .card.glow {
+    box-shadow:
+      0 0 0 1px rgba(255,107,71,0.18),
+      0 0 36px -6px rgba(255,107,71,0.22),
+      0 20px 60px -12px rgba(220,20,60,0.18),
+      0 1px 0 rgba(255,255,255,0.03) inset;
+  }
+  body.light .card.glow {
+    box-shadow:
+      0 0 0 1px rgba(220,20,60,0.18),
+      0 0 36px -6px rgba(255,107,71,0.18),
+      0 20px 50px -16px rgba(220,20,60,0.10);
+  }
+  /* Gradient border via background-clip trick */
+  .card.gradient-border {
+    border: 1px solid transparent;
+    background:
+      var(--card-fill) padding-box,
+      linear-gradient(135deg, rgba(255,160,122,0.55), rgba(220,20,60,0.55) 60%, rgba(139,10,30,0.55)) border-box;
+  }
+  /* Gradient-tinted card background */
+  .card.gradient-bg {
+    background:
+      linear-gradient(135deg, rgba(255,107,71,0.10) 0%, rgba(220,20,60,0.05) 60%, transparent 100%),
+      var(--card-fill);
+  }
+  body.light .card.gradient-bg {
+    background:
+      linear-gradient(135deg, rgba(255,107,71,0.10) 0%, rgba(220,20,60,0.04) 60%, transparent 100%),
+      var(--card-fill);
   }
   .card-label {
     font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
@@ -360,8 +439,125 @@
   .stat.bright .stat-label { color: rgba(255,255,255,0.85); }
   .stat.bright .stat-val { color: #FFFFFF; -webkit-text-fill-color: #FFFFFF; background-image: none; }
 
+  /* Promo card with horizontal gradient strip — Dev.ai "best WORK" pattern */
+  .promo-card {
+    position: relative;
+    overflow: hidden;
+    padding: 40px 32px;
+    border-radius: 20px;
+    background: var(--card-fill);
+    border: 1px solid var(--border);
+    text-align: center;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset, 0 18px 48px -12px rgba(0,0,0,0.35);
+  }
+  body.light .promo-card { box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 16px 40px -16px rgba(10,10,10,0.10); }
+  .promo-stripe {
+    position: absolute;
+    top: 24%; left: 0; right: 0;
+    height: 18px;
+    background: linear-gradient(90deg,
+      #FFA07A 0%,
+      #FF6B47 22%,
+      #FF4920 42%,
+      #DC143C 65%,
+      #8B0A1E 85%,
+      #4A90E2 100%);
+    filter: blur(0.5px);
+    box-shadow: 0 0 60px 4px rgba(255,107,71,0.45),
+                0 0 120px 12px rgba(220,20,60,0.25);
+    transform: skewY(-1.5deg);
+  }
+  .promo-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    font-size: 11px; font-weight: 700;
+    color: var(--ink-body);
+    margin-right: 6px;
+  }
+  .promo-stripe-row {
+    position: relative;
+    margin: 24px 0 32px;
+    display: flex; align-items: center; justify-content: center;
+    gap: 8px;
+  }
+  .promo-stripe-row .promo-stripe-mini {
+    height: 14px;
+    flex: 1; max-width: 220px;
+    border-radius: 100px;
+    background: linear-gradient(90deg, #FFA07A, #FF6B47, #DC143C, #8B0A1E, #4A90E2);
+    box-shadow: 0 0 32px -2px rgba(255,107,71,0.55), 0 0 80px 4px rgba(220,20,60,0.30);
+  }
+  .promo-headline {
+    font-size: clamp(22px, 2.8vw, 32px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 8px 0 8px;
+  }
+  .promo-headline em {
+    font-family: 'Neo Contact', serif;
+    font-style: italic;
+    font-weight: 700;
+    background-image: var(--grad-sig);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    font-size: 1em;
+  }
+  .promo-foot {
+    margin-top: 28px;
+    display: flex; align-items: center; gap: 12px;
+    background: linear-gradient(90deg,
+      rgba(255,107,71,0.12),
+      rgba(220,20,60,0.06),
+      transparent);
+    padding: 10px 14px;
+    border-radius: 12px;
+  }
+  .promo-foot-num {
+    font-size: 22px; font-weight: 800;
+    background-image: var(--grad-sig);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    line-height: 1;
+  }
+  .promo-foot-lbl { font-size: 11px; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+
   /* Activity feed */
   .activity-card { padding: 28px; }
+  .activity-row.winner {
+    background: linear-gradient(90deg,
+      rgba(255,107,71,0.18) 0%,
+      rgba(220,20,60,0.08) 60%,
+      transparent 100%);
+    border-radius: 12px;
+    padding: 12px;
+    margin: 4px -8px;
+    border-top: none !important;
+    position: relative;
+  }
+  .activity-row.winner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    pointer-events: none;
+    box-shadow: 0 0 24px -4px rgba(255,107,71,0.30);
+  }
+  .activity-row.winner .activity-avatar {
+    background: var(--grad-sig);
+    color: #FFFFFF;
+    box-shadow: 0 0 16px -2px rgba(255,107,71,0.55);
+  }
+  .activity-row.winner .activity-rank {
+    font-size: 11px; font-weight: 800;
+    color: #FFFFFF;
+    background: var(--grad-sig-deep);
+    width: 22px; height: 22px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
   .activity-row {
     display: flex; gap: 12px; align-items: flex-start;
     padding: 14px 0;
@@ -460,6 +656,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="halo"></div>
+  <div class="bg-dots"></div>
   <div class="container">
     <div class="eyebrow"><span class="eyebrow-dot"></span>Brand v2 · Test only · Not an override</div>
     <h1>
@@ -479,6 +676,7 @@
 
 <!-- PALETTE -->
 <section id="palette">
+  <div class="bg-grid"></div>
   <div class="container">
     <div class="section-head">
       <div class="eyebrow"><span class="eyebrow-dot"></span>Palette</div>
@@ -506,6 +704,7 @@
 <!-- COMPONENTS -->
 <section>
   <div class="halo"></div>
+  <div class="bg-dots"></div>
   <div class="container">
     <div class="section-head">
       <div class="eyebrow"><span class="eyebrow-dot"></span>Components</div>
@@ -527,7 +726,7 @@
 
     <div class="grid-2">
       <!-- Ring card -->
-      <div class="card ring-card">
+      <div class="card glow ring-card">
         <div class="card-label">Sprint velocity</div>
         <div class="card-title">87.29</div>
         <div class="card-body" style="font-size:11px;">Avg daily points</div>
@@ -541,23 +740,24 @@
       </div>
 
       <!-- Activity feed -->
-      <div class="card activity-card">
-        <div class="card-label">Activity · today</div>
-        <div class="activity-row">
-          <div class="activity-avatar">SK</div>
-          <div class="activity-text"><strong>Sarah</strong> uploaded a new file on <strong>Client Brief</strong>. <span class="activity-time">Now</span></div>
+      <div class="card gradient-border activity-card">
+        <div class="card-label">Time sheet · this week</div>
+        <div class="activity-row winner">
+          <div class="activity-rank">1</div>
+          <div class="activity-avatar">RF</div>
+          <div class="activity-text"><strong>Ryan F.</strong> · 4h 32m 24s shipped. <span class="activity-time">Top contributor</span></div>
         </div>
         <div class="activity-row">
-          <div class="activity-avatar">BN</div>
-          <div class="activity-text"><strong>Benjamin</strong> commented on <strong>Enhance Visual Feedback</strong>. <span class="activity-time">1h</span></div>
+          <div class="activity-avatar">SJ</div>
+          <div class="activity-text"><strong>Sarah J.</strong> · 2h 19m 19s shipped. <span class="activity-time">2h ago</span></div>
         </div>
         <div class="activity-row">
-          <div class="activity-avatar">GC</div>
-          <div class="activity-text"><strong>Grace</strong> reviewed <strong>Dev.ai UI Kit</strong>. <span class="activity-time">4h</span></div>
+          <div class="activity-avatar">AG</div>
+          <div class="activity-text"><strong>Aramin G.</strong> · 1h 45m 04s shipped. <span class="activity-time">3h ago</span></div>
         </div>
         <div class="activity-row">
-          <div class="activity-avatar">MO</div>
-          <div class="activity-text"><strong>Mehmet</strong> closed <strong>Sprint 02</strong>. <span class="activity-time">6h</span></div>
+          <div class="activity-avatar">AF</div>
+          <div class="activity-text"><strong>Anna F.</strong> · 1h 02m 11s shipped. <span class="activity-time">4h ago</span></div>
         </div>
       </div>
     </div>
@@ -583,11 +783,47 @@
         <div class="stat-val">$127K</div>
       </div>
     </div>
+
+    <div style="height: 28px;"></div>
+
+    <!-- Promo card with horizontal gradient strip -->
+    <div class="grid-2">
+      <div class="promo-card">
+        <div class="promo-pill">$97<span style="opacity:.6;">·mo</span></div>
+        <div class="promo-pill" style="background: var(--grad-sig-soft); color: #2A0A05; border: none;">Founding member</div>
+        <div class="promo-stripe-row">
+          <div class="promo-stripe-mini"></div>
+        </div>
+        <div class="promo-headline">The complete <em>Selling System</em><br>without the agency price tag.</div>
+        <div class="promo-foot">
+          <div class="promo-foot-num">100%</div>
+          <div class="promo-foot-lbl">90-day guarantee</div>
+        </div>
+      </div>
+
+      <div class="card gradient-bg" style="display:flex; flex-direction:column; justify-content:space-between;">
+        <div>
+          <div class="card-label">Active right now</div>
+          <div style="font-size: 36px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; margin: 8px 0 12px;">
+            <span class="grad-sig">42 founders</span>
+          </div>
+          <p style="font-size: 14px; color: var(--ink-body); line-height: 1.55;">Building Selling Systems inside the cohort this week. Avg session length 38 min. Ship rate 4.2 per founder.</p>
+        </div>
+        <div style="margin-top: 24px; display: flex; align-items: center; gap: -8px;">
+          <div class="activity-avatar" style="margin-right:-8px;">RF</div>
+          <div class="activity-avatar" style="margin-right:-8px;">SJ</div>
+          <div class="activity-avatar" style="margin-right:-8px;">MO</div>
+          <div class="activity-avatar" style="margin-right:-8px;">AG</div>
+          <div class="activity-avatar" style="margin-right:0;">+38</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- COMPARE DARK/LIGHT -->
 <section id="compare">
+  <div class="bg-grid"></div>
   <div class="container">
     <div class="section-head">
       <div class="eyebrow"><span class="eyebrow-dot"></span>Dual mode</div>
