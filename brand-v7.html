@@ -40,10 +40,13 @@
     --border:        rgba(245,240,232,0.08);
     --border-strong: rgba(245,240,232,0.18);
 
-    /* The three gradients — final */
+    /* The three brand gradients — locked */
     --grad-sig:      linear-gradient(135deg, #FF5530 0%, #FF1744 50%, #8B0014 100%);
     --grad-graphite: linear-gradient(135deg, #DCD8D2 0%, #B5B0A8 35%, #7A7670 70%, #4A4845 100%);
     --grad-depth:    linear-gradient(180deg, #1F1F1F 0%, #0F0F0F 100%);
+    /* Depth tier variants — for card variety. All achromatic, all dark-on-dark. */
+    --grad-depth-strong: linear-gradient(180deg, #161616 0%, #050505 100%);
+    --grad-depth-light:  linear-gradient(180deg, #2A2A2A 0%, #1A1A1A 100%);
 
     /* Shadows (tuned for dark surface) */
     --shadow-card:  0 18px 48px -12px rgba(0,0,0,0.40);
@@ -100,7 +103,9 @@
     --border-strong: rgba(10,10,10,0.14);
 
     /* Gradients identical — they're self-contained */
-    --grad-depth:    linear-gradient(180deg, #FAFAFA 0%, #F0F0F0 100%);
+    --grad-depth:        linear-gradient(180deg, #FAFAFA 0%, #F0F0F0 100%);
+    --grad-depth-strong: linear-gradient(180deg, #F2F2F2 0%, #E4E4E4 100%);
+    --grad-depth-light:  linear-gradient(180deg, #FFFFFF 0%, #F8F8F8 100%);
 
     /* Shadows — subtler in light mode, never harsh */
     --shadow-card:  0 16px 40px -16px rgba(10,10,10,0.10);
@@ -1069,6 +1074,73 @@
   }
   body.light .glass-stage .glass-foot { color: rgba(0,0,0,0.55); }
 
+
+  /* ─── CARD DEPTH VARIANTS — for visual variety ────────
+     Default .card uses --grad-depth (mid).
+     .card.depth-strong → darker (dark-on-dark, less prominent)
+     .card.depth-light  → lighter gray (more elevated feel)
+     Use sparingly to differentiate role: featured = default,
+     secondary = depth-strong, hero/featured-info = depth-light. */
+  .card.depth-strong {
+    background:
+      var(--grad-depth-strong) padding-box,
+      linear-gradient(135deg, rgba(245,240,232,0.08) 0%, rgba(245,240,232,0.02) 50%, rgba(245,240,232,0.06) 100%) border-box;
+  }
+  body.light .card.depth-strong {
+    background:
+      var(--grad-depth-strong) padding-box,
+      linear-gradient(135deg, rgba(10,10,10,0.10) 0%, rgba(10,10,10,0.03) 50%, rgba(10,10,10,0.08) 100%) border-box;
+  }
+  .card.depth-light {
+    background:
+      var(--grad-depth-light) padding-box,
+      linear-gradient(135deg, rgba(245,240,232,0.18) 0%, rgba(245,240,232,0.04) 50%, rgba(245,240,232,0.12) 100%) border-box;
+  }
+  body.light .card.depth-light {
+    background:
+      var(--grad-depth-light) padding-box,
+      linear-gradient(135deg, rgba(10,10,10,0.14) 0%, rgba(10,10,10,0.04) 50%, rgba(10,10,10,0.10) 100%) border-box;
+  }
+
+  /* ─── BG PATTERNS — texture utilities ────────────────
+     .bg-dots / .bg-grid as section overlays. Subtle, mode-aware.
+     Apply to <section> as a class to add quiet texture. */
+  .bg-dots, .bg-grid {
+    position: relative;
+  }
+  .bg-dots::after, .bg-grid::after {
+    content: ''; position: absolute; inset: 0;
+    pointer-events: none; z-index: 0;
+    color: var(--ink);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 80%);
+            mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 80%);
+  }
+  .bg-dots::after {
+    background-image: radial-gradient(circle, currentColor 1px, transparent 1.2px);
+    background-size: 28px 28px;
+    opacity: 0.10;
+  }
+  body.light .bg-dots::after { opacity: 0.14; }
+  .bg-grid::after {
+    background-image:
+      linear-gradient(currentColor 1px, transparent 1px),
+      linear-gradient(90deg, currentColor 1px, transparent 1px);
+    background-size: 64px 64px;
+    opacity: 0.06;
+  }
+  body.light .bg-grid::after { opacity: 0.10; }
+
+  /* ─── ACHROMATIC SECTION OVERRIDE ─────────────────────
+     Some sections should breathe with ZERO sig color — no red anywhere.
+     The 'no-red breath' that contrasts the sig-heavy sections.
+     Apply .achromatic to a section to neutralize all sig accents. */
+  section.achromatic .trend { background: var(--grad-graphite); color: #0A0A0A; }
+  section.achromatic .faq-item[open] .faq-icon {
+    background: var(--grad-graphite);
+    color: #0A0A0A;
+  }
+  body.light section.achromatic .faq-item[open] .faq-icon { color: #FFFFFF; }
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 880px) {
     :root { --s-8: 80px; --s-7: 64px; }
@@ -1260,7 +1332,7 @@
 </section>
 
 <!-- 3.5 SYSTEM IN MOTION (contained — multi-card module: ring + feed + stat pairs) -->
-<section class="contained">
+<section class="contained bg-dots">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">The system in motion</span>
@@ -1284,7 +1356,7 @@
       </div>
 
       <!-- Activity feed with winner row -->
-      <div class="card activity-card">
+      <div class="card depth-strong activity-card">
         <div class="card-label">Cohort activity · this week</div>
         <div style="height: var(--s-2);"></div>
         <div class="activity-row winner">
@@ -1456,7 +1528,7 @@
         <a href="#cta" class="btn btn-primary">Apply now →</a>
       </div>
 
-      <div class="card tier">
+      <div class="card depth-strong tier">
         <span class="tier-tag">Self-serve</span>
         <div class="tier-name">Abundance Tribe</div>
         <div class="tier-price">$97</div>
@@ -1474,8 +1546,8 @@
   </div>
 </section>
 
-<!-- 6. FAQ (contained — multi-element module of common questions) -->
-<section class="contained" id="faq">
+<!-- 6. FAQ (contained · achromatic · the no-red breath section) -->
+<section class="contained bg-grid achromatic" id="faq">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">FAQ</span>
