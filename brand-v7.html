@@ -917,10 +917,62 @@
     max-width: 620px;
   }
 
+
+  /* ─── SPARKLINE STRIP ─── */
+  .sparkline-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-2);
+    margin-top: var(--s-3);
+  }
+  .sparkline-card {
+    padding: var(--s-2);
+    background:
+      var(--grad-depth) padding-box,
+      linear-gradient(135deg, rgba(245,240,232,0.10) 0%, rgba(245,240,232,0.03) 50%, rgba(245,240,232,0.08) 100%) border-box;
+    border: 1px solid transparent;
+    border-radius: var(--r-inner);
+  }
+  body.light .sparkline-card {
+    background:
+      var(--grad-depth) padding-box,
+      linear-gradient(135deg, rgba(10,10,10,0.10) 0%, rgba(10,10,10,0.03) 50%, rgba(10,10,10,0.08) 100%) border-box;
+  }
+  .sparkline-label {
+    font-size: 10px; color: var(--ink-muted);
+    letter-spacing: 0.14em; text-transform: uppercase;
+    font-weight: 600; margin-bottom: 4px;
+  }
+  .sparkline-val {
+    font-size: 22px; font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--s-1);
+    line-height: 1;
+  }
+  .sparkline-svg {
+    width: 100%; height: 36px;
+    display: block; color: var(--ink);
+  }
+
+  /* Featured pricing tier — subtle sig glow ring */
+  .tier-featured {
+    box-shadow:
+      var(--shadow-card),
+      0 0 0 1px rgba(255,85,48,0.18),
+      0 24px 60px -16px rgba(255,23,68,0.18);
+  }
+  body.light .tier-featured {
+    box-shadow:
+      var(--shadow-card),
+      0 0 0 1px rgba(255,85,48,0.22),
+      0 24px 60px -20px rgba(255,23,68,0.12);
+  }
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 880px) {
     :root { --s-8: 80px; --s-7: 64px; }
-    .steps-grid, .tier-grid, .grid-2, .stat-pair-grid { grid-template-columns: 1fr; }
+    .steps-grid, .tier-grid, .grid-2, .stat-pair-grid, .sparkline-grid { grid-template-columns: 1fr; }
     .testimonial-foot { flex-wrap: wrap; }
     .testimonial-stat {
       border-left: none; margin-left: 0; padding-left: 0;
@@ -1187,6 +1239,49 @@
           <span class="trend"><span class="trend-arrow">▲</span> 41%</span>
         </div>
         <div class="stat-pair-was">was $34K last week</div>
+      </div>
+    </div>
+
+    <!-- Live signal feed — 3 sparklines -->
+    <div class="sparkline-grid">
+      <div class="sparkline-card">
+        <div class="sparkline-label">CPL · 7d</div>
+        <div class="sparkline-val">$18</div>
+        <svg class="sparkline-svg" viewBox="0 0 100 36" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="spA" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="currentColor" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="currentColor" stop-opacity="0.65"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,28 L15,22 L30,25 L45,18 L60,20 L75,12 L90,8 L100,10" fill="none" stroke="url(#spA)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="sparkline-card">
+        <div class="sparkline-label">Show rate · 7d</div>
+        <div class="sparkline-val">78%</div>
+        <svg class="sparkline-svg" viewBox="0 0 100 36" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="spB" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="currentColor" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="currentColor" stop-opacity="0.65"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,30 L15,28 L30,18 L45,20 L60,15 L75,10 L90,12 L100,8" fill="none" stroke="url(#spB)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="sparkline-card">
+        <div class="sparkline-label">Close rate · 7d</div>
+        <div class="sparkline-val">38%</div>
+        <svg class="sparkline-svg" viewBox="0 0 100 36" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="spC" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#FF5530"/>
+              <stop offset="100%" stop-color="#FF1744"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,30 L15,25 L30,28 L45,15 L60,18 L75,12 L90,15 L100,5" fill="none" stroke="url(#spC)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </div>
     </div>
   </div>
