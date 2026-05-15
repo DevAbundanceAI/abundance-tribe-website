@@ -1960,6 +1960,32 @@
     max-width: 720px;
   }
 
+
+  /* ─── TREND — small consistent slot for 'this number is moving' indicators ─── */
+  .trend {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-size: 11px; font-weight: 700;
+    background: var(--surface-3);
+    color: var(--ink-body);
+    border: 1px solid var(--border);
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+  }
+  .trend.up {
+    background: var(--grad-sig);
+    color: #FFFFFF;
+    border-color: transparent;
+  }
+  .trend.flat {
+    background: var(--grad-graphite);
+    color: #F5F0E8;
+    border-color: transparent;
+  }
+  body.light .trend.flat { color: #FFFFFF; }
+  .trend-arrow { font-size: 10px; line-height: 1; }
+
   @media (max-width: 880px) {
     .grid-3, .grid-4, .support-grid, .stat-pair-grid, .sparkline-strip, .takeaways { grid-template-columns: repeat(2, 1fr); }
     .steps-row { grid-template-columns: repeat(2, 1fr); gap: 16px 0; }
@@ -2355,24 +2381,27 @@
             <div class="stat-pair-label">Booked calls</div>
             <div class="stat-pair-row">
               <span class="stat-pair-now">42</span>
-              <span class="stat-pair-was">was 31</span>
+              <span class="trend up"><span class="trend-arrow">▲</span> 35%</span>
             </div>
+            <div class="stat-pair-was">was 31 last week</div>
             <div class="stat-pair-bar"></div>
           </div>
           <div class="stat-pair">
             <div class="stat-pair-label">Show rate</div>
             <div class="stat-pair-row">
               <span class="stat-pair-now">78%</span>
-              <span class="stat-pair-was">was 64%</span>
+              <span class="trend up"><span class="trend-arrow">▲</span> 22%</span>
             </div>
+            <div class="stat-pair-was">was 64% last week</div>
             <div class="stat-pair-bar"></div>
           </div>
           <div class="stat-pair">
             <div class="stat-pair-label">Closed</div>
             <div class="stat-pair-row">
               <span class="stat-pair-now">$48K</span>
-              <span class="stat-pair-was">was $34K</span>
+              <span class="trend up"><span class="trend-arrow">▲</span> 41%</span>
             </div>
+            <div class="stat-pair-was">was $34K last week</div>
             <div class="stat-pair-bar"></div>
           </div>
         </div>
@@ -2699,7 +2728,7 @@
       <div class="leaderboard">
         <div class="lb-row top1">
           <div class="lb-rank">1</div>
-          <div class="lb-name"><div class="lb-avatar">RF</div>Ryan F.</div>
+          <div class="lb-name"><div class="lb-avatar">RF</div>Ryan F. <span class="trend up" style="margin-left:8px;"><span class="trend-arrow">▲</span> 3</span></div>
           <div class="lb-meta">14 calls booked</div>
           <div class="lb-val">$48K</div>
         </div>
