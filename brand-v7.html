@@ -699,10 +699,151 @@
     padding-bottom: var(--s-6);
   }
 
+
+  /* ─── SPRINT VELOCITY RING ─── */
+  .ring-card {
+    display: flex; flex-direction: column;
+    min-height: 320px;
+  }
+  .ring-wrap {
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    margin-top: var(--s-2);
+  }
+  .ring {
+    width: 180px; height: 100px;
+    border-radius: 180px 180px 0 0;
+    background:
+      conic-gradient(from -90deg, #FF5530 0deg, #FF1744 90deg, #8B0014 135deg, var(--surface-3) 135deg, var(--surface-3) 360deg);
+    -webkit-mask: radial-gradient(circle at 50% 100%, transparent 64px, black 65px);
+            mask: radial-gradient(circle at 50% 100%, transparent 64px, black 65px);
+    position: relative;
+  }
+  .ring-val {
+    position: absolute; bottom: 14px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px; font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .ring-foot {
+    display: flex; justify-content: space-between;
+    margin-top: var(--s-1);
+    font-size: 10px;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+  }
+
+  /* ─── ACTIVITY / TIMESHEET FEED ─── */
+  .activity-card { min-height: 320px; }
+  .activity-row {
+    display: flex; gap: var(--s-1); align-items: center;
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+  }
+  .activity-row:first-of-type { border-top: none; padding-top: var(--s-1); }
+  .activity-avatar {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 11px;
+    color: var(--ink);
+    flex-shrink: 0;
+  }
+  .activity-row.winner .activity-avatar {
+    background: var(--grad-sig);
+    color: #FFFFFF;
+    border-color: transparent;
+  }
+  .activity-rank {
+    font-size: 11px; font-weight: 800;
+    color: var(--ink-muted);
+    width: 16px;
+    text-align: center;
+  }
+  .activity-row.winner .activity-rank {
+    background: var(--grad-sig);
+    color: #FFFFFF;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px;
+  }
+  .activity-text {
+    flex: 1;
+    font-size: var(--t-small);
+    color: var(--ink-body);
+  }
+  .activity-text strong { color: var(--ink); font-weight: 700; }
+  .activity-time {
+    font-size: 11px;
+    color: var(--ink-muted);
+  }
+
+  /* ─── STAT-PAIR ROW (this week vs last) ─── */
+  .stat-pair-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-2);
+    margin-top: var(--s-3);
+  }
+  .stat-pair {
+    padding: var(--s-2);
+    background: var(--grad-depth);
+    border: 1px solid var(--border);
+    border-radius: var(--r-inner);
+  }
+  .stat-pair-label {
+    font-size: 10px;
+    color: var(--ink-muted);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .stat-pair-row {
+    display: flex; align-items: baseline; gap: var(--s-1);
+  }
+  .stat-pair-now {
+    font-size: 24px; font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .stat-pair-was {
+    font-size: 11px;
+    color: var(--ink-muted);
+    font-weight: 600;
+    margin-top: var(--s-1);
+  }
+
+  /* grid-2 utility */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3); }
+  .card-label {
+    font-size: 10px;
+    color: var(--ink-muted);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: var(--s-1);
+  }
+  .card-title {
+    font-size: 36px; font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .card-body { font-size: var(--t-small); color: var(--ink-muted); margin-top: 4px; }
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 880px) {
     :root { --s-8: 80px; --s-7: 64px; }
-    .steps-grid, .tier-grid { grid-template-columns: 1fr; }
+    .steps-grid, .tier-grid, .grid-2, .stat-pair-grid { grid-template-columns: 1fr; }
     .testimonial-foot { flex-wrap: wrap; }
     .testimonial-stat {
       border-left: none; margin-left: 0; padding-left: 0;
@@ -884,6 +1025,91 @@
       <div class="chart-legend">
         <div class="legend-item"><span class="legend-dot primary"></span>This month</div>
         <div class="legend-item"><span class="legend-dot secondary"></span>Last month</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3.5 SYSTEM IN MOTION (contained — multi-card module: ring + feed + stat pairs) -->
+<section class="contained">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">The system in motion</span>
+      <h2>What you'll see inside.</h2>
+      <p>Live pipeline, real cohort activity, weekly delta — one dashboard.</p>
+    </div>
+
+    <div class="grid-2">
+      <!-- Sprint velocity ring -->
+      <div class="card ring-card">
+        <div class="card-label">Pipeline velocity</div>
+        <div class="card-title">87.29</div>
+        <div class="card-body">avg daily booked calls</div>
+        <div class="ring-wrap">
+          <div class="ring"></div>
+          <div class="ring-val">78%</div>
+        </div>
+        <div class="ring-foot">
+          <span>· Mon</span><span>· Tue</span><span>· Wed</span><span>· Thu</span><span>· Fri</span>
+        </div>
+      </div>
+
+      <!-- Activity feed with winner row -->
+      <div class="card activity-card">
+        <div class="card-label">Cohort activity · this week</div>
+        <div style="height: var(--s-2);"></div>
+        <div class="activity-row winner">
+          <div class="activity-rank">1</div>
+          <div class="activity-avatar">RF</div>
+          <div class="activity-text"><strong>Ryan F.</strong> · 14 calls booked, $48K closed</div>
+          <span class="trend"><span class="trend-arrow">▲</span> 3</span>
+        </div>
+        <div class="activity-row">
+          <div class="activity-rank">2</div>
+          <div class="activity-avatar">SJ</div>
+          <div class="activity-text"><strong>Sarah J.</strong> · 11 calls, $36K closed</div>
+          <span class="activity-time">2h ago</span>
+        </div>
+        <div class="activity-row">
+          <div class="activity-rank">3</div>
+          <div class="activity-avatar">MO</div>
+          <div class="activity-text"><strong>Mehmet O.</strong> · 9 calls, $28K closed</div>
+          <span class="activity-time">4h ago</span>
+        </div>
+        <div class="activity-row">
+          <div class="activity-rank">4</div>
+          <div class="activity-avatar">AG</div>
+          <div class="activity-text"><strong>Aramin G.</strong> · 7 calls, $21K closed</div>
+          <span class="activity-time">6h ago</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3-stat row: this week vs last -->
+    <div class="stat-pair-grid">
+      <div class="stat-pair">
+        <div class="stat-pair-label">Booked calls</div>
+        <div class="stat-pair-row">
+          <span class="stat-pair-now">42</span>
+          <span class="trend"><span class="trend-arrow">▲</span> 35%</span>
+        </div>
+        <div class="stat-pair-was">was 31 last week</div>
+      </div>
+      <div class="stat-pair">
+        <div class="stat-pair-label">Show rate</div>
+        <div class="stat-pair-row">
+          <span class="stat-pair-now">78%</span>
+          <span class="trend"><span class="trend-arrow">▲</span> 22%</span>
+        </div>
+        <div class="stat-pair-was">was 64% last week</div>
+      </div>
+      <div class="stat-pair">
+        <div class="stat-pair-label">Closed revenue</div>
+        <div class="stat-pair-row">
+          <span class="stat-pair-now">$48K</span>
+          <span class="trend"><span class="trend-arrow">▲</span> 41%</span>
+        </div>
+        <div class="stat-pair-was">was $34K last week</div>
       </div>
     </div>
   </div>
