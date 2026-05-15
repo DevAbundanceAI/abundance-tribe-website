@@ -31,26 +31,31 @@
     --border-strong: rgba(245,240,232,0.18);
 
     /* Blood-orange signature · pure orange → red (no cream stop) */
-    --sig-0: #FF4D3A;   /* light salmon-orange highlight */
+    --sig-0: #FF5A60;   /* light salmon-orange highlight */
     --sig-1: #FF1744;   /* tiger's blood (the hero hue) */
     --sig-2: #FF1744;   /* crimson */
-    --sig-3: #5A0014;   /* deep blood anchor */
+    --sig-3: #8B0014;   /* deep blood anchor */
 
     /* Cool contrast (for data viz only — keeps charts legible) */
-    --cool: #4A90E2;
+    --cool: var(--ink-muted);
 
     /* Gradient primitives — no cream */
-    --grad-sig:       linear-gradient(135deg, #FF4D3A 0%, #FF2D2D 28%, #FF1744 60%, #5A0014 100%);
-    --grad-sig-soft:  linear-gradient(135deg, #FF2D2D 0%, #FF1744 100%);
-    --grad-sig-deep:  linear-gradient(135deg, #FF1744 0%, #5A0014 100%);
+    /* GRADIENT RULES:
+       --grad-sig is 3-stop red (light → vivid → dark) with intentional VALUE travel.
+       All stops stay in the red hue — never orange, never pink. Visible at text scale.
+       Never use --grad-sig as background under cream/white text on small surfaces
+       (avatars, tiny pills) — value contrast inverts. Use --surface-2 instead. */
+    --grad-sig:       linear-gradient(135deg, #FF5A60 0%, #FF1744 50%, #8B0014 100%);
+    --grad-sig-soft:  linear-gradient(135deg, #FF5A60 0%, #FF1744 100%);
+    --grad-sig-deep:  linear-gradient(135deg, #FF1744 0%, #8B0014 100%);
 
     /* Supporting cast — achromatic gradients that pair with the primary */
-    --grad-graphite:  linear-gradient(135deg, #F5F0E8 0%, #C7C2BB 35%, #6B6863 70%, #27262A 100%);
-    --grad-bone:      linear-gradient(135deg, #F5F0E8 0%, #E8E1D4 35%, #9C968C 70%, #4A453E 100%);
+    --grad-graphite:  linear-gradient(135deg, #DCD8D2 0%, #B5B0A8 35%, #7A7670 70%, #4A4845 100%);
+    --grad-bone:      linear-gradient(135deg, #F0EBE0 0%, #D8D0C0 35%, #B5AC9A 70%, #807870 100%);
 
     /* Deep variants — for footers, deep-section anchors, dark surfaces */
-    --grad-sig-night:  linear-gradient(135deg, #FF1744 0%, #5A0014 35%, #2D0008 70%, #0F0F0F 100%);
-    --grad-sig-ember:  linear-gradient(135deg, #5A0014 0%, #2D0008 100%);
+    --grad-sig-night:  linear-gradient(135deg, #FF1744 0%, #8B0014 35%, #2D0008 70%, #0F0F0F 100%);
+    --grad-sig-ember:  linear-gradient(135deg, #8B0014 0%, #2D0008 100%);
     --grad-sig-coal:   linear-gradient(135deg, #2D0008 0%, #0A0A0A 100%);
 
     /* Achromatic depth — subtle surface dimension without color */
@@ -78,7 +83,7 @@
     --card-fill-hover: linear-gradient(135deg, #1B1B1B, #242424);
 
     /* CTA */
-    --btn-fill: linear-gradient(135deg, #FF2D2D 0%, #FF1744 100%);
+    --btn-fill: linear-gradient(135deg, #FF1744 0%, #FF1744 100%);
     --btn-ink: #FFFFFF;
   }
 
@@ -95,17 +100,17 @@
     --border-strong: rgba(10,10,10,0.16);
 
     /* Same gradient in both modes — the hue is the brand, not the canvas */
-    --grad-sig:       linear-gradient(135deg, #FF4D3A 0%, #FF2D2D 28%, #FF1744 60%, #5A0014 100%);
-    --grad-sig-soft:  linear-gradient(135deg, #FF2D2D 0%, #FF1744 100%);
-    --grad-sig-deep:  linear-gradient(135deg, #FF1744 0%, #5A0014 100%);
+    --grad-sig:       linear-gradient(135deg, #FF5A60 0%, #FF1744 50%, #8B0014 100%);
+    --grad-sig-soft:  linear-gradient(135deg, #FF5A60 0%, #FF1744 100%);
+    --grad-sig-deep:  linear-gradient(135deg, #FF1744 0%, #8B0014 100%);
 
     /* Achromatic supports — depth flipped for white canvas */
-    --grad-graphite:  linear-gradient(135deg, #C7C2BB 0%, #6B6863 50%, #27262A 100%);
-    --grad-bone:      linear-gradient(135deg, #E8E1D4 0%, #9C968C 50%, #4A453E 100%);
+    --grad-graphite:  linear-gradient(135deg, #B5B0A8 0%, #7A7670 50%, #4A4845 100%);
+    --grad-bone:      linear-gradient(135deg, #D8D0C0 0%, #B5AC9A 50%, #807870 100%);
 
     /* Deep variants stay punchy in light mode too */
-    --grad-sig-night:  linear-gradient(135deg, #FF1744 0%, #5A0014 35%, #2D0008 70%, #0F0F0F 100%);
-    --grad-sig-ember:  linear-gradient(135deg, #5A0014 0%, #2D0008 100%);
+    --grad-sig-night:  linear-gradient(135deg, #FF1744 0%, #8B0014 35%, #2D0008 70%, #0F0F0F 100%);
+    --grad-sig-ember:  linear-gradient(135deg, #8B0014 0%, #2D0008 100%);
     --grad-sig-coal:   linear-gradient(135deg, #2D0008 0%, #0A0A0A 100%);
 
     /* Achromatic depth — flips for white canvas */
@@ -130,7 +135,7 @@
     --card-fill: linear-gradient(135deg, #F8F8F8, #F1F1F1);
     --card-fill-hover: linear-gradient(135deg, #F1F1F1, #E8E8E8);
 
-    --btn-fill: linear-gradient(135deg, #FF2D2D 0%, #FF1744 100%);
+    --btn-fill: linear-gradient(135deg, #FF1744 0%, #FF1744 100%);
     --btn-ink: #FFFFFF;
   }
 
@@ -395,10 +400,10 @@
     position: relative; overflow: hidden;
   }
   .swatch-hex { font-size: 11px; opacity: 0.75; font-weight: 500; }
-  .sw-1  { background: #FF4D3A; color: #2A0A05; }
-  .sw-2  { background: #FF2D2D; }
+  .sw-1  { background: #FF5A60; color: #2A0A05; }
+  .sw-2  { background: #FF1744; }
   .sw-3  { background: #FF1744; }
-  .sw-4  { background: #5A0014; }
+  .sw-4  { background: #8B0014; }
   .sw-5  { background: #3D0010; }
   .sw-6  { background: #2D0008; }
   .sw-7  { background: #1A0004; }
@@ -409,7 +414,7 @@
   .sw-grad   { background: var(--grad-sig); }
   .sw-grad-soft { background: var(--grad-sig-soft); color: #2A0A05; }
   .sw-grad-deep { background: var(--grad-sig-deep); }
-  .sw-cool   { background: #4A90E2; }
+  .sw-cool   { background: var(--ink-muted); }
 
   /* Status pills (Dev.ai style — mini gradient pills) */
   .pills { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -454,7 +459,7 @@
     background:
       conic-gradient(
         from -90deg,
-        #FF5A3A 0deg,
+        #FF6580 0deg,
         #FF1744 80deg,
         #FF1744 130deg,
         transparent 130deg
@@ -513,12 +518,12 @@
     top: 24%; left: 0; right: 0;
     height: 18px;
     background: linear-gradient(90deg,
-      #FF4D3A 0%,
-      #FF2D2D 22%,
+      #FF5A60 0%,
+      #FF1744 22%,
       #FF1744 42%,
       #FF1744 65%,
-      #5A0014 85%,
-      #4A90E2 100%);
+      #8B0014 85%,
+      var(--ink-muted) 100%);
     filter: blur(0.5px);
     box-shadow: 0 0 60px 4px rgba(255,7,58,0.45),
                 0 0 120px 12px rgba(200,16,46,0.25);
@@ -544,7 +549,7 @@
     height: 14px;
     flex: 1; max-width: 220px;
     border-radius: 100px;
-    background: linear-gradient(90deg, #FF4D3A, #FF2D2D, #FF1744, #5A0014, #4A90E2);
+    background: linear-gradient(90deg, #FF5A60, #FF1744, #FF1744, #8B0014, var(--ink-muted));
     box-shadow: 0 0 32px -2px rgba(255,7,58,0.55), 0 0 80px 4px rgba(200,16,46,0.30);
   }
   .promo-headline {
@@ -622,7 +627,8 @@
   .activity-row:first-of-type { border-top: none; padding-top: 0; }
   .activity-avatar {
     width: 32px; height: 32px; border-radius: 50%;
-    background: var(--grad-graphite);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
     flex-shrink: 0;
     display: flex; align-items: center; justify-content: center;
     color: #2A0A05; font-weight: 700; font-size: 11px;
@@ -672,14 +678,14 @@
     font-family: 'Neo Contact', serif;
     font-style: italic; font-weight: 700;
     display: block; font-size: 1.2em; line-height: 1;
-    background-image: linear-gradient(135deg, #FF4D3A 0%, #FF2D2D 28%, #FF1744 60%, #5A0014 100%);
+    background-image: linear-gradient(135deg, #FF5A60 0%, #FF1744 28%, #FF1744 60%, #8B0014 100%);
     -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   }
   .compare-cta {
     display: inline-block; margin-top: 20px;
     padding: 10px 20px; border-radius: 10px;
     font-weight: 700; font-size: 13px;
-    background: linear-gradient(135deg, #FF2D2D, #FF1744);
+    background: linear-gradient(135deg, #FF1744, #FF1744);
     color: #FFFFFF;
   }
 
@@ -864,7 +870,7 @@
     width: 8px; height: 8px; border-radius: 50%;
     background: var(--surface-3);
   }
-  .code-dots span:first-child { background: linear-gradient(135deg, #FF4D3A, #FF1744); }
+  .code-dots span:first-child { background: linear-gradient(135deg, #FF5A60, #FF1744); }
   .code-block pre {
     padding: 18px;
     margin: 0;
@@ -1367,7 +1373,7 @@
     background:
       radial-gradient(ellipse at 25% 25%, rgba(255,77,58,0.6), transparent 55%),
       radial-gradient(ellipse at 75% 75%, rgba(255,23,68,0.55), transparent 55%),
-      linear-gradient(135deg, #FF4D3A 0%, #FF2D2D 25%, #FF1744 55%, #5A0014 100%);
+      linear-gradient(135deg, #FF5A60 0%, #FF1744 25%, #FF1744 55%, #8B0014 100%);
   }
   .glass-stage.dusk {
     background:
@@ -1421,13 +1427,13 @@
     width: 44px; height: 44px;
     border-radius: 50%;
     flex-shrink: 0;
-    background: linear-gradient(135deg, #FF4D3A, #5A0014);
+    background: linear-gradient(135deg, #FF5A60, #8B0014);
     border: 2px solid rgba(255,255,255,0.20);
   }
-  .glass-avatar:nth-child(2) { background: linear-gradient(135deg, #FF5A3A, #C8102E); }
-  .glass-avatar:nth-child(3) { background: linear-gradient(135deg, #FF4D3A, #6B0014); border-color: rgba(255,255,255,0.5); }
+  .glass-avatar:nth-child(2) { background: linear-gradient(135deg, #FF6580, #C8102E); }
+  .glass-avatar:nth-child(3) { background: linear-gradient(135deg, #FF5A60, #6B0014); border-color: rgba(255,255,255,0.5); }
   .glass-avatar:nth-child(4) { background: linear-gradient(135deg, #C7C2BB, #27262A); }
-  .glass-avatar:nth-child(5) { background: linear-gradient(135deg, #FF5A3A, #8B0A1E); }
+  .glass-avatar:nth-child(5) { background: linear-gradient(135deg, #FF6580, #8B0A1E); }
   .glass-avatar:nth-child(6) { background: linear-gradient(135deg, #6B6863, #1A1A1A); }
   .glass-amount {
     text-align: center;
@@ -2048,10 +2054,10 @@
     </div>
 
     <div class="grid-4">
-      <div class="swatch sw-1">Red-coral 0%<br><span class="swatch-hex">#FF4D3A</span></div>
-      <div class="swatch sw-2">Blood orange 28%<br><span class="swatch-hex">#FF2D2D</span></div>
+      <div class="swatch sw-1">Red-coral 0%<br><span class="swatch-hex">#FF5A60</span></div>
+      <div class="swatch sw-2">Blood orange 28%<br><span class="swatch-hex">#FF1744</span></div>
       <div class="swatch sw-3">Tiger's blood 60%<br><span class="swatch-hex">#FF1744</span></div>
-      <div class="swatch sw-4">Deep cherry 100%<br><span class="swatch-hex">#5A0014</span></div>
+      <div class="swatch sw-4">Deep cherry 100%<br><span class="swatch-hex">#8B0014</span></div>
     </div>
 
     <div style="height: 24px;"></div>
@@ -2070,7 +2076,7 @@
     </div>
 
     <div class="grid-4">
-      <div class="swatch sw-4">Deep cherry<br><span class="swatch-hex">#5A0014</span></div>
+      <div class="swatch sw-4">Deep cherry<br><span class="swatch-hex">#8B0014</span></div>
       <div class="swatch sw-5">Midnight blood<br><span class="swatch-hex">#3D0010</span></div>
       <div class="swatch sw-6">Coal cherry<br><span class="swatch-hex">#2D0008</span></div>
       <div class="swatch sw-7">Obsidian<br><span class="swatch-hex">#1A0004</span></div>
@@ -2226,10 +2232,10 @@
           <div class="support-role">Primary brand. Hero, CTAs, big numbers, em moments, primary chart series.</div>
         </div>
         <div class="support-stops">
-          <div class="support-stop" style="background:#FF4D3A"></div>
+          <div class="support-stop" style="background:#FF5A60"></div>
           <div class="support-stop" style="background:#FF1744"></div>
           <div class="support-stop" style="background:#FF1744"></div>
-          <div class="support-stop" style="background:#5A0014"></div>
+          <div class="support-stop" style="background:#8B0014"></div>
         </div>
       </div>
       <div class="support support-2">
@@ -2238,10 +2244,10 @@
           <div class="support-role">Secondary &amp; structural. Comparison data, baselines, code, table stripes.</div>
         </div>
         <div class="support-stops">
-          <div class="support-stop" style="background:#F5F0E8"></div>
-          <div class="support-stop" style="background:#C7C2BB"></div>
-          <div class="support-stop" style="background:#6B6863"></div>
-          <div class="support-stop" style="background:#27262A"></div>
+          <div class="support-stop" style="background:#DCD8D2"></div>
+          <div class="support-stop" style="background:#B5B0A8"></div>
+          <div class="support-stop" style="background:#7A7670"></div>
+          <div class="support-stop" style="background:#4A4845"></div>
         </div>
       </div>
       <div class="support support-3">
@@ -2250,10 +2256,10 @@
           <div class="support-role">Soft &amp; ambient. Quote rails, body section halos, hover warmth.</div>
         </div>
         <div class="support-stops">
-          <div class="support-stop" style="background:#F5F0E8"></div>
-          <div class="support-stop" style="background:#E8E1D4"></div>
-          <div class="support-stop" style="background:#9C968C"></div>
-          <div class="support-stop" style="background:#4A453E"></div>
+          <div class="support-stop" style="background:#F0EBE0"></div>
+          <div class="support-stop" style="background:#D8D0C0"></div>
+          <div class="support-stop" style="background:#B5AC9A"></div>
+          <div class="support-stop" style="background:#807870"></div>
         </div>
       </div>
     </div>
@@ -2269,15 +2275,15 @@
         <svg class="chart-svg" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
           <defs>
             <linearGradient id="primaryFill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#FF2D2D" stop-opacity="0.55"/>
-              <stop offset="100%" stop-color="#5A0014" stop-opacity="0.04"/>
+              <stop offset="0%" stop-color="#FF1744" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#8B0014" stop-opacity="0.04"/>
             </linearGradient>
             <linearGradient id="secondaryFill" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stop-color="#C7C2BB" stop-opacity="0.32"/>
               <stop offset="100%" stop-color="#27262A" stop-opacity="0.04"/>
             </linearGradient>
             <linearGradient id="primaryLine" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#FF5A3A"/>
+              <stop offset="0%" stop-color="#FF6580"/>
               <stop offset="100%" stop-color="#FF1744"/>
             </linearGradient>
             <linearGradient id="secondaryLine" x1="0" y1="0" x2="1" y2="0">
@@ -2442,7 +2448,7 @@
             <svg class="sparkline-svg" viewBox="0 0 100 38" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="sp3" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#FF5A3A"/>
+                  <stop offset="0%" stop-color="#FF6580"/>
                   <stop offset="100%" stop-color="#FF1744"/>
                 </linearGradient>
               </defs>
