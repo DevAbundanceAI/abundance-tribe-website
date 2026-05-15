@@ -31,7 +31,7 @@
     --border-strong: rgba(245,240,232,0.18);
 
     /* Blood-orange signature · pure orange → red (no cream stop) */
-    --sig-0: #FF5A60;   /* light salmon-orange highlight */
+    --sig-0: #FF5530;   /* light salmon-orange highlight */
     --sig-1: #FF1744;   /* tiger's blood (the hero hue) */
     --sig-2: #FF1744;   /* crimson */
     --sig-3: #8B0014;   /* deep blood anchor */
@@ -52,8 +52,8 @@
 
        Never set text color via mode-flipping vars on graphite/bone bgs.
        Those surfaces are inherently light and need fixed-dark text. */
-    --grad-sig:       linear-gradient(135deg, #FF5A60 0%, #FF1744 50%, #8B0014 100%);
-    --grad-sig-soft:  linear-gradient(135deg, #FF5A60 0%, #FF1744 100%);
+    --grad-sig:       linear-gradient(135deg, #FF5530 0%, #FF1744 50%, #8B0014 100%);
+    --grad-sig-soft:  linear-gradient(135deg, #FF5530 0%, #FF1744 100%);
     --grad-sig-deep:  linear-gradient(135deg, #FF1744 0%, #8B0014 100%);
 
     /* Supporting cast — achromatic gradients that pair with the primary */
@@ -107,8 +107,8 @@
     --border-strong: rgba(10,10,10,0.16);
 
     /* Same gradient in both modes — the hue is the brand, not the canvas */
-    --grad-sig:       linear-gradient(135deg, #FF5A60 0%, #FF1744 50%, #8B0014 100%);
-    --grad-sig-soft:  linear-gradient(135deg, #FF5A60 0%, #FF1744 100%);
+    --grad-sig:       linear-gradient(135deg, #FF5530 0%, #FF1744 50%, #8B0014 100%);
+    --grad-sig-soft:  linear-gradient(135deg, #FF5530 0%, #FF1744 100%);
     --grad-sig-deep:  linear-gradient(135deg, #FF1744 0%, #8B0014 100%);
 
     /* Achromatic supports — depth flipped for white canvas */
@@ -407,7 +407,7 @@
     position: relative; overflow: hidden;
   }
   .swatch-hex { font-size: 11px; opacity: 0.75; font-weight: 500; }
-  .sw-1  { background: #FF5A60; color: #2A0A05; }
+  .sw-1  { background: #FF5530; color: #2A0A05; }
   .sw-2  { background: #FF1744; }
   .sw-3  { background: #FF1744; }
   .sw-4  { background: #8B0014; }
@@ -525,7 +525,7 @@
     top: 24%; left: 0; right: 0;
     height: 18px;
     background: linear-gradient(90deg,
-      #FF5A60 0%,
+      #FF5530 0%,
       #FF1744 22%,
       #FF1744 42%,
       #FF1744 65%,
@@ -556,7 +556,7 @@
     height: 14px;
     flex: 1; max-width: 220px;
     border-radius: 100px;
-    background: linear-gradient(90deg, #FF5A60, #FF1744, #FF1744, #8B0014, var(--ink-muted));
+    background: linear-gradient(90deg, #FF5530, #FF1744, #FF1744, #8B0014, var(--ink-muted));
     box-shadow: 0 0 32px -2px rgba(255,7,58,0.55), 0 0 80px 4px rgba(200,16,46,0.30);
   }
   .promo-headline {
@@ -685,7 +685,7 @@
     font-family: 'Neo Contact', serif;
     font-style: italic; font-weight: 700;
     display: block; font-size: 1.2em; line-height: 1;
-    background-image: linear-gradient(135deg, #FF5A60 0%, #FF1744 28%, #FF1744 60%, #8B0014 100%);
+    background-image: linear-gradient(135deg, #FF5530 0%, #FF1744 28%, #FF1744 60%, #8B0014 100%);
     -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   }
   .compare-cta {
@@ -874,7 +874,7 @@
     width: 8px; height: 8px; border-radius: 50%;
     background: var(--surface-3);
   }
-  .code-dots span:first-child { background: linear-gradient(135deg, #FF5A60, #FF1744); }
+  .code-dots span:first-child { background: linear-gradient(135deg, #FF5530, #FF1744); }
   .code-block pre {
     padding: 18px;
     margin: 0;
@@ -1374,7 +1374,7 @@
     background:
       radial-gradient(ellipse at 25% 25%, rgba(255,77,58,0.6), transparent 55%),
       radial-gradient(ellipse at 75% 75%, rgba(255,23,68,0.55), transparent 55%),
-      linear-gradient(135deg, #FF5A60 0%, #FF1744 25%, #FF1744 55%, #8B0014 100%);
+      linear-gradient(135deg, #FF5530 0%, #FF1744 25%, #FF1744 55%, #8B0014 100%);
   }
   .glass-stage.dusk {
     background:
@@ -1428,11 +1428,11 @@
     width: 44px; height: 44px;
     border-radius: 50%;
     flex-shrink: 0;
-    background: linear-gradient(135deg, #FF5A60, #8B0014);
+    background: linear-gradient(135deg, #FF5530, #8B0014);
     border: 2px solid rgba(255,255,255,0.20);
   }
   .glass-avatar:nth-child(2) { background: linear-gradient(135deg, #FF6580, #C8102E); }
-  .glass-avatar:nth-child(3) { background: linear-gradient(135deg, #FF5A60, #6B0014); border-color: rgba(255,255,255,0.5); }
+  .glass-avatar:nth-child(3) { background: linear-gradient(135deg, #FF5530, #6B0014); border-color: rgba(255,255,255,0.5); }
   .glass-avatar:nth-child(4) { background: linear-gradient(135deg, #C7C2BB, #27262A); }
   .glass-avatar:nth-child(5) { background: linear-gradient(135deg, #FF6580, #8B0A1E); }
   .glass-avatar:nth-child(6) { background: linear-gradient(135deg, #6B6863, #1A1A1A); }
@@ -2055,7 +2055,7 @@
     </div>
 
     <div class="grid-4">
-      <div class="swatch sw-1">Red-coral 0%<br><span class="swatch-hex">#FF5A60</span></div>
+      <div class="swatch sw-1">Red-coral 0%<br><span class="swatch-hex">#FF5530</span></div>
       <div class="swatch sw-2">Blood orange 28%<br><span class="swatch-hex">#FF1744</span></div>
       <div class="swatch sw-3">Tiger's blood 60%<br><span class="swatch-hex">#FF1744</span></div>
       <div class="swatch sw-4">Deep cherry 100%<br><span class="swatch-hex">#8B0014</span></div>
@@ -2233,7 +2233,7 @@
           <div class="support-role">Primary brand. Hero, CTAs, big numbers, em moments, primary chart series.</div>
         </div>
         <div class="support-stops">
-          <div class="support-stop" style="background:#FF5A60"></div>
+          <div class="support-stop" style="background:#FF5530"></div>
           <div class="support-stop" style="background:#FF1744"></div>
           <div class="support-stop" style="background:#FF1744"></div>
           <div class="support-stop" style="background:#8B0014"></div>
