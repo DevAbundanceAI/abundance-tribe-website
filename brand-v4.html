@@ -429,13 +429,13 @@
     background: var(--ink-muted);
   }
   .pill.bright {
-    background: var(--grad-sig-soft);
-    color: #2A0A05; border-color: transparent;
+    background: var(--grad-graphite);
+    color: #F5F0E8; border-color: transparent;
   }
   .pill.bright .pill-dot { background: #FFF; }
   .pill.deep {
-    background: var(--grad-sig-deep);
-    color: #FFF; border-color: transparent;
+    background: var(--grad-depth-strong);
+    color: var(--ink); border: 1px solid var(--border-strong);
   }
 
   /* Stat ring (Dev.ai sprint velocity style) */
@@ -490,12 +490,11 @@
   .stat-val {
     font-size: 32px; font-weight: 800; line-height: 1;
     letter-spacing: -0.03em;
-    background-image: var(--grad-sig);
-    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    color: var(--ink);
   }
-  .stat.bright { background: var(--grad-sig); border: none; }
-  .stat.bright .stat-label { color: rgba(255,255,255,0.85); }
-  .stat.bright .stat-val { color: #FFFFFF; -webkit-text-fill-color: #FFFFFF; background-image: none; }
+  .stat.bright { background: var(--grad-depth-strong); border: 1px solid var(--border-strong); }
+  .stat.bright .stat-label { color: var(--ink-muted); }
+  .stat.bright .stat-val { color: var(--ink); -webkit-text-fill-color: var(--ink); background-image: none; }
 
   /* Promo card with horizontal gradient strip — Dev.ai "best WORK" pattern */
   .promo-card {
@@ -576,8 +575,7 @@
   }
   .promo-foot-num {
     font-size: 22px; font-weight: 800;
-    background-image: var(--grad-sig);
-    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    color: var(--ink);
     line-height: 1;
   }
   .promo-foot-lbl { font-size: 11px; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
@@ -624,7 +622,7 @@
   .activity-row:first-of-type { border-top: none; padding-top: 0; }
   .activity-avatar {
     width: 32px; height: 32px; border-radius: 50%;
-    background: var(--grad-sig-soft);
+    background: var(--grad-graphite);
     flex-shrink: 0;
     display: flex; align-items: center; justify-content: center;
     color: #2A0A05; font-weight: 700; font-size: 11px;
@@ -883,7 +881,7 @@
     color: var(--ink-body);
     overflow-x: auto;
   }
-  .code-block .k { color: #FF4D5E; font-weight: 700; }
+  .code-block .k { color: #B86070; font-weight: 700; }
   .code-block .s { color: #C7C2BB; }
   .code-block .c { color: var(--ink-muted); font-style: italic; }
   .code-block .v { color: var(--ink); font-weight: 600; }
@@ -907,8 +905,7 @@
   .stat-pair-now {
     font-size: 24px; font-weight: 800; line-height: 1;
     letter-spacing: -0.02em;
-    background-image: var(--grad-sig);
-    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    color: var(--ink);
   }
   .stat-pair-was {
     font-size: 12px; font-weight: 600; line-height: 1;
@@ -929,7 +926,8 @@
   }
   .stat-pair-bar::after {
     content: ''; position: absolute; inset: 0;
-    background: var(--grad-sig);
+    background: var(--ink);
+    opacity: 0.55;
     width: 88%;
     border-radius: 4px;
   }
@@ -1112,7 +1110,8 @@
     border-radius: 100px;
     transition: width 0.4s ease;
   }
-  .progress-fill.sig { background: var(--grad-sig); box-shadow: 0 0 12px -2px rgba(255,107,71,0.40); }
+  .progress-fill.sig { background: var(--grad-graphite); }
+  .progress-fill.pop { background: var(--grad-sig); box-shadow: 0 0 12px -2px rgba(255,107,71,0.40); }
   .progress-fill.graphite { background: var(--grad-graphite); }
   .progress-fill.bone { background: var(--grad-bone); }
 
@@ -1122,21 +1121,19 @@
     padding: 14px 16px 14px 14px;
     border-radius: 14px;
     background: var(--card-fill);
-    border: 1px solid;
-    border-image: var(--grad-sig-soft) 1;
-    box-shadow: 0 12px 32px -8px rgba(255,23,68,0.22);
+    border: 1px solid var(--border-strong);
+    box-shadow: 0 12px 32px -10px rgba(0,0,0,0.30);
     position: relative;
   }
-  body.light .toast { box-shadow: 0 12px 32px -10px rgba(255,107,71,0.18); }
+  body.light .toast { box-shadow: 0 12px 32px -14px rgba(10,10,10,0.15); }
   .toast-icon {
     width: 32px; height: 32px;
     border-radius: 50%;
-    background: var(--grad-sig);
+    background: var(--grad-graphite);
     color: #FFFFFF;
     display: flex; align-items: center; justify-content: center;
     font-size: 14px; font-weight: 800;
     flex-shrink: 0;
-    box-shadow: 0 0 16px -2px rgba(255,107,71,0.55);
   }
   .toast-text { flex: 1; font-size: 13px; color: var(--ink); font-weight: 600; line-height: 1.3; }
   .toast-text small { display: block; font-weight: 500; color: var(--ink-muted); margin-top: 3px; font-size: 11px; }
@@ -1186,10 +1183,9 @@
     position: relative; z-index: 2;
   }
   .step-item.done .step-num-circle {
-    background: var(--grad-sig);
+    background: var(--grad-graphite);
     color: #FFFFFF;
     border: none;
-    box-shadow: 0 0 16px -2px rgba(255,107,71,0.50);
   }
   .step-item.active .step-num-circle {
     background: var(--surface-1);
@@ -1214,7 +1210,8 @@
     height: 100%; width: 100%; max-width: 80px;
   }
   .bar { flex: 1; border-radius: 6px 6px 0 0; min-height: 6px; }
-  .bar.sig { background: var(--grad-sig); box-shadow: 0 0 12px -2px rgba(255,107,71,0.30); }
+  .bar.sig { background: var(--grad-graphite); }
+  .bar.pop { background: var(--grad-sig); box-shadow: 0 0 12px -2px rgba(255,107,71,0.30); }
   .bar.graphite { background: var(--grad-graphite); }
   .bar.bone { background: var(--grad-bone); }
   .bar-label {
@@ -1245,7 +1242,7 @@
   .testimonial-mark {
     font-family: 'Neo Contact', serif;
     font-size: 80px; line-height: 0.6;
-    background-image: var(--grad-sig);
+    background-image: var(--grad-graphite);
     -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     margin-bottom: -10px;
   }
@@ -1266,9 +1263,8 @@
   .testimonial-photo {
     width: 56px; height: 56px;
     border-radius: 50%;
-    background: var(--grad-sig-soft);
+    background: var(--grad-graphite);
     flex-shrink: 0;
-    box-shadow: 0 0 16px -2px rgba(255,107,71,0.30);
   }
   .testimonial-name { font-size: 15px; font-weight: 700; color: var(--ink); line-height: 1.2; }
   .testimonial-role { font-size: 12px; color: var(--ink-muted); margin-top: 2px; }
@@ -1305,8 +1301,8 @@
     text-align: center;
   }
   .lb-row.top1 {
-    background: linear-gradient(90deg, rgba(255,107,71,0.18), rgba(255,23,68,0.05) 70%, transparent);
-    box-shadow: 0 0 24px -8px rgba(255,107,71,0.25);
+    background: linear-gradient(90deg, rgba(255,107,71,0.10), transparent 70%);
+    box-shadow: 0 0 18px -10px rgba(255,107,71,0.18);
   }
   body.light .lb-row.top1 {
     background: linear-gradient(90deg, rgba(255,107,71,0.12), rgba(255,23,68,0.03) 70%, transparent);
@@ -2331,8 +2327,8 @@
             <svg class="sparkline-svg" viewBox="0 0 100 38" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="sp1" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#FF8A5C"/>
-                  <stop offset="100%" stop-color="#FF1744"/>
+                  <stop offset="0%" stop-color="#C7C2BB"/>
+                  <stop offset="100%" stop-color="#6B6863"/>
                 </linearGradient>
               </defs>
               <path d="M0,28 L15,22 L30,25 L45,18 L60,20 L75,12 L90,8 L100,10" fill="none" stroke="url(#sp1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
