@@ -675,6 +675,30 @@
     background: var(--grad-sig);
   }
 
+
+  /* ─── SECTION RHYTHM RULE ──────────────────────────────────────
+     Not every section gets the halo glow. Alternate between:
+     • FLAT (default, open canvas + section halo) — hero moments,
+       testimonial, final CTA. The focal element IS the section.
+     • CONTAINED (rounded giant panel, no halo) — multi-element
+       systems like step grids, pricing tiers, FAQ blocks. The
+       panel chunks the system into one visual module.
+     This kills the 'every-section-glows' monotony without ever
+     resorting to literal divider lines.
+     ──────────────────────────────────────────────────────────── */
+  section.contained::before { display: none; }
+  section.contained > .container {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: clamp(20px, 3vw, 40px);
+    padding: var(--s-7) var(--s-4);
+    box-shadow: var(--shadow-card);
+  }
+  section.contained {
+    padding-top: var(--s-6);
+    padding-bottom: var(--s-6);
+  }
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 880px) {
     :root { --s-8: 80px; --s-7: 64px; }
@@ -732,8 +756,8 @@
   </div>
 </section>
 
-<!-- 2. HOW IT WORKS -->
-<section id="how">
+<!-- 2. HOW IT WORKS (contained — visual module for the 3-step system) -->
+<section id="how" class="contained">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">How it works</span>
@@ -888,8 +912,8 @@
   </div>
 </section>
 
-<!-- 5. PRICING -->
-<section>
+<!-- 5. PRICING (contained — visual module for the offer tiers) -->
+<section class="contained">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Pricing</span>
