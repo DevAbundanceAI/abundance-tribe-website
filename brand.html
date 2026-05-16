@@ -1927,11 +1927,28 @@ body.light-mode .hp .inline-kw.glow {
   border: 1px solid rgba(255,255,255,0.10);
 }
 .btn.ghost:hover { background: rgba(255,255,255,0.10); }
+/* Dark pill — needs definition against dark stages. Hairline border,
+   silver inset shine on the top edge, and a soft red undercast so it
+   reads as a "lit, branded" button instead of an invisible blob. */
 .btn.dark {
   background: var(--ink-dark);
   color: var(--cream);
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    inset 0 -1px 0 rgba(0,0,0,0.4),
+    0 6px 18px -6px rgba(237,28,36,0.35),
+    0 0 0 1px rgba(255,255,255,0.04);
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
 }
-.btn.dark:hover { transform: translateY(-1px); }
+.btn.dark:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.16),
+    inset 0 -1px 0 rgba(0,0,0,0.4),
+    0 10px 26px -8px rgba(237,28,36,0.55),
+    0 0 0 1px rgba(255,255,255,0.06);
+}
 .btn.gradient {
   background: var(--grad-sig);
   background-size: 200% 100%;
