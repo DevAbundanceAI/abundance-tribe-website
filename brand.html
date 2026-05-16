@@ -1726,9 +1726,11 @@ body.light-mode .hp .inline-kw.glow {
   position: relative;
   overflow: hidden;
 }
-.demo-signals svg { width: 100%; height: 30px; }
-.demo-signals svg path { fill: none; stroke: rgba(255,255,255,0.4); stroke-width: 1.5; }
-.demo-signals svg.hot path { stroke: var(--sig); }
+.demo-signals svg { width: 100%; height: 30px; overflow: visible; }
+.demo-signals svg path.line { fill: none; stroke: rgba(255,255,255,0.4); stroke-width: 1.5; }
+.demo-signals svg path.area { stroke: none; fill: url(#spark-fill-default); }
+.demo-signals svg.hot path.line { stroke: var(--sig); }
+.demo-signals svg.hot path.area { fill: url(#spark-fill-hot); }
 .demo-compare {
   background: var(--cream-soft);
   padding: 14px;
@@ -2041,9 +2043,11 @@ body.light-mode .hp .inline-kw.glow {
   letter-spacing: -0.03em;
   margin-bottom: 6px;
 }
-.spark-card svg { width: 100%; height: 30px; }
-.spark-card svg path { fill: none; stroke: rgba(255,255,255,0.4); stroke-width: 1.6; }
-.spark-card.hot svg path { stroke: var(--sig); stroke-width: 2; }
+.spark-card svg { width: 100%; height: 30px; overflow: visible; }
+.spark-card svg path.line { fill: none; stroke: rgba(255,255,255,0.4); stroke-width: 1.6; }
+.spark-card svg path.area { stroke: none; fill: url(#spark-fill-default); }
+.spark-card.hot svg path.line { stroke: var(--sig); stroke-width: 2; }
+.spark-card.hot svg path.area { fill: url(#spark-fill-hot); }
 
 /* Delta badge */
 .delta-badge {
@@ -2812,6 +2816,23 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
 </head>
 <body>
 
+<!-- Hidden SVG defs — gradient fills for sparklines under-curve glow.
+     Referenced by url(#spark-fill-hot) / url(#spark-fill-default). -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="spark-fill-hot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#ED1C24" stop-opacity="0.45"/>
+      <stop offset="60%"  stop-color="#ED1C24" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ED1C24" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="spark-fill-default" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="60%"  stop-color="#FFFFFF" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>
+
 <div class="page">
 
   <!-- ═══════════════════════════════════════════════════════════════
@@ -3274,7 +3295,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
 
           <div class="sg-card"><div class="demo demo-stats"><div>14<em>d</em></div><div>5<em>x</em></div><div>$200<em>M</em></div><div>1<em>·</em>6</div></div><div class="text"><div class="nm">Stats Moment</div><div class="cls">.stats-wrap</div><div class="usage">Big hero-scale numbers, gradient-italic em on the unit. Dark stage with horizon glow.</div></div></div>
 
-          <div class="sg-card"><div class="demo light demo-signals"><div><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 20 L20 18 L40 22 L60 12 L80 14 L100 8"/></svg></div><div><svg class="hot" viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 22 L20 18 L40 20 L60 12 L80 8 L100 4"/></svg></div></div><div class="text"><div class="nm">Signals (Live Feed)</div><div class="cls">.signals-grid</div><div class="usage">Metric tiles with delta-pill badges + sparklines. Only the most important sparkline is colored.</div></div></div>
+          <div class="sg-card"><div class="demo light demo-signals"><div><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path class="area" d="M0 20 L20 18 L40 22 L60 12 L80 14 L100 8 L100 30 L0 30 Z"/><path class="line" d="M0 20 L20 18 L40 22 L60 12 L80 14 L100 8"/></svg></div><div><svg class="hot" viewBox="0 0 100 30" preserveAspectRatio="none"><path class="area" d="M0 22 L20 18 L40 20 L60 12 L80 8 L100 4 L100 30 L0 30 Z"/><path class="line" d="M0 22 L20 18 L40 20 L60 12 L80 8 L100 4"/></svg></div></div><div class="text"><div class="nm">Signals (Live Feed)</div><div class="cls">.signals-grid</div><div class="usage">Metric tiles with delta-pill badges + sparklines. Only the most important sparkline is colored.</div></div></div>
 
           <div class="sg-card"><div class="demo light demo-compare"><div></div><div></div><div></div><div class="us"></div><div></div><div></div><div></div><div class="us"></div></div><div class="text"><div class="nm">Compare Table</div><div class="cls">.compare-table</div><div class="usage">DIY vs Other Agency vs Abundance side-by-side. The "us" column has a "BEST" gradient pill.</div></div></div>
 
@@ -3490,9 +3511,9 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
         <div class="block-meta">Class: <code>.spark-card</code> · only the most important sparkline gets <code>.hot</code> (tiger's blood) — the rest stay achromatic.</div>
         <div class="comp-block" style="background: var(--bg); border-color: var(--hairline);">
           <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-            <div class="spark-card"><div class="l">CPL</div><div class="n">$18</div><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 22 L20 20 L40 24 L60 18 L80 16 L100 14"/></svg></div>
-            <div class="spark-card"><div class="l">SHOW RATE</div><div class="n">78%</div><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 24 L20 22 L40 20 L60 16 L80 14 L100 10"/></svg></div>
-            <div class="spark-card hot"><div class="l">CLOSE</div><div class="n">38%</div><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 26 L15 22 L30 24 L50 18 L70 14 L85 10 L100 6"/></svg></div>
+            <div class="spark-card"><div class="l">CPL</div><div class="n">$18</div><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path class="area" d="M0 22 L20 20 L40 24 L60 18 L80 16 L100 14 L100 30 L0 30 Z"/><path class="line" d="M0 22 L20 20 L40 24 L60 18 L80 16 L100 14"/></svg></div>
+            <div class="spark-card"><div class="l">SHOW RATE</div><div class="n">78%</div><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path class="area" d="M0 24 L20 22 L40 20 L60 16 L80 14 L100 10 L100 30 L0 30 Z"/><path class="line" d="M0 24 L20 22 L40 20 L60 16 L80 14 L100 10"/></svg></div>
+            <div class="spark-card hot"><div class="l">CLOSE</div><div class="n">38%</div><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path class="area" d="M0 26 L15 22 L30 24 L50 18 L70 14 L85 10 L100 6 L100 30 L0 30 Z"/><path class="line" d="M0 26 L15 22 L30 24 L50 18 L70 14 L85 10 L100 6"/></svg></div>
           </div>
         </div>
       </div>
