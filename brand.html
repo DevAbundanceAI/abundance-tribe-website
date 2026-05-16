@@ -1566,6 +1566,28 @@ body.light-mode .uline.white {
 .uline.grad   { background-image: var(--grad-sig); }
 .uline.silver { background-image: var(--grad-graphite-shine); }
 
+/* .uline.marker — hand-drawn marker stroke. SVG data URL paints a
+   wobbly path under the text with rounded line-caps so it reads as
+   "drawn with a felt-tip pen, not stamped." Variants swap the SVG's
+   stroke color via separate URLs. */
+.uline.marker {
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-position: 0 calc(100% + 0.05em);
+  background-size: 100% 0.42em;
+  padding-bottom: 0.18em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M4 9 C 30 5 60 11 95 7 S 150 4 196 8' stroke='%23ED1C24' stroke-width='6.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.uline.marker.silver {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M4 9 C 30 5 60 11 95 7 S 150 4 196 8' stroke='%23B5B0A8' stroke-width='6.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.uline.marker.white {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M4 9 C 30 5 60 11 95 7 S 150 4 196 8' stroke='%23F5F0E8' stroke-width='6.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+body.light-mode .uline.marker.white {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M4 9 C 30 5 60 11 95 7 S 150 4 196 8' stroke='%230A0A0A' stroke-width='6.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
 /* Modifier · .silver — swap the red gradient border (or surface) for
    the achromatic graphite-shine. Combine with .filled or default for
    a prestige variant. */
@@ -3495,15 +3517,17 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
 
       <!-- UNDERLINE CALLOUTS (softer than pills) -->
       <div class="doc-block">
-        <h3>Underline callouts · 4 variants</h3>
-        <div class="block-meta">Class: <code>.uline</code> · variants: <code>.uline.white</code>, <code>.uline.grad</code>, <code>.uline.silver</code>. A softer emphasis than a pill — just a line beneath the keyword. Use sparingly in body copy, or in headlines when a pill would be too loud.</div>
+        <h3>Underline callouts · 5 variants + marker</h3>
+        <div class="block-meta">Class: <code>.uline</code> · variants: <code>.uline.white</code>, <code>.uline.grad</code>, <code>.uline.silver</code>, <code>.uline.marker</code> (+ <code>.marker.silver</code> / <code>.marker.white</code>). A softer emphasis than a pill — just a line beneath the keyword. Use sparingly in body copy, or in headlines when a pill would be too loud.</div>
         <div class="comp-block">
           <div class="comp-row"><span class="lbl">Flat red</span><span style="font-family:var(--font-sans);font-size:24px;font-weight:800;letter-spacing:-0.02em;">We build your <span class="uline">funnel</span>.</span></div>
           <div class="comp-row"><span class="lbl">Flat white</span><span style="font-family:var(--font-sans);font-size:24px;font-weight:800;letter-spacing:-0.02em;">Built for <span class="uline white">founders</span>.</span></div>
           <div class="comp-row"><span class="lbl">Red gradient</span><span style="font-family:var(--font-sans);font-size:24px;font-weight:800;letter-spacing:-0.02em;">From <span class="uline grad">zero</span> to scale.</span></div>
           <div class="comp-row"><span class="lbl">Silver gradient</span><span style="font-family:var(--font-sans);font-size:24px;font-weight:800;letter-spacing:-0.02em;">The <span class="uline silver">prestige</span> tier.</span></div>
-          <div class="comp-row"><span class="lbl">In body</span><span style="font-family:var(--font-sans);font-size:17px;max-width:60ch;line-height:1.55;">A softer emphasis when the page already has a pill nearby — we install <span class="uline">copy</span>, <span class="uline grad">funnels</span>, and <span class="uline silver">systems</span> that compound over time.</span></div>
-          <div class="comp-row"><span class="lbl">When to use</span><span style="font-family:var(--font-sans);font-size:14px;max-width:60ch;line-height:1.5;opacity:0.75;">When a pill would steal too much attention. Underlines read as the brand whispering rather than shouting. Rotate variants for rhythm across a page — flat red is the workhorse, gradient variants are reserved for the "this is the thing" moments.</span></div>
+          <div class="comp-row"><span class="lbl">Marker (red)</span><span style="font-family:var(--font-sans);font-size:24px;font-weight:800;letter-spacing:-0.02em;">Hand-drawn <span class="uline marker">emphasis</span>.</span></div>
+          <div class="comp-row"><span class="lbl">Marker (silver)</span><span style="font-family:var(--font-sans);font-size:24px;font-weight:800;letter-spacing:-0.02em;">Quietly <span class="uline marker silver">underlined</span>.</span></div>
+          <div class="comp-row"><span class="lbl">In body</span><span style="font-family:var(--font-sans);font-size:17px;max-width:60ch;line-height:1.55;">Mix-and-match — we install <span class="uline">copy</span>, <span class="uline grad">funnels</span>, <span class="uline marker">systems</span>, and <span class="uline silver">scale</span> that compound over time.</span></div>
+          <div class="comp-row"><span class="lbl">When to use</span><span style="font-family:var(--font-sans);font-size:14px;max-width:60ch;line-height:1.5;opacity:0.75;">When a pill would steal too much attention. Underlines whisper instead of shout. Flat red is the workhorse · gradient variants are "this is the thing" moments · marker reads as personal/hand-made and is perfect for one keyword per page (use it the way you'd use the dot-period — once).</span></div>
         </div>
       </div>
 
