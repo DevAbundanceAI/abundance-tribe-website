@@ -89,8 +89,8 @@
   --t-h2:      clamp(36px, 4.5vw, 56px);
   --t-h3:      clamp(20px, 2vw, 26px);
   --t-body:    17px;
-  --t-small:   14px;
-  --t-micro:   12px;
+  --t-small:   15px;
+  --t-micro:   13px;   /* FLOOR — never go below 13px, even on labels and badges */
 
   /* ─── RADII ─── */
   --r-page:    28px;
@@ -229,7 +229,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 }
 .side .brand-mark em { font-style: italic; background: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .side .brand-sub {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--ink-muted);
   margin-bottom: 32px;
 }
@@ -249,7 +249,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 }
 .side nav a .num {
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 13px;
   color: var(--ink-muted);
   font-weight: 600;
   width: 16px;
@@ -265,7 +265,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
   margin-top: 40px;
   padding-top: 24px;
   border-top: 1px solid var(--hairline);
-  font-size: 11px;
+  font-size: 13px;
   color: var(--ink-muted);
   line-height: 1.5;
 }
@@ -331,7 +331,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 .doc-section.light .doc-block .block-meta { color: var(--ink-dark-muted); }
 .doc-block .block-meta code {
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 12px;
+  font-size: 13px;
   background: rgba(255,255,255,0.06);
   padding: 2px 7px;
   border-radius: 5px;
@@ -369,7 +369,12 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
   color: var(--ink-dark);
 }
 .logo-card.dark .word { color: var(--ink); }
-.logo-card .word em { font-style: italic; color: var(--sig); }
+.logo-card .word em {
+  font-style: italic;
+  background: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
 
 /* Color swatches grid */
 .swatch-grid {
@@ -401,14 +406,14 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 .doc-section .sw .meta .nm { color: var(--ink); }
 .sw .meta .hex {
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--ink-dark-muted);
   margin-top: 1px;
 }
 .doc-section .sw .meta .hex { color: var(--ink-muted); }
 .sw .meta .tok {
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--sig);
   margin-top: 2px;
 }
@@ -427,7 +432,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
   bottom: 8px; left: 0; right: 0;
   display: flex; justify-content: space-around;
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 10px;
+  font-size: 13px;
   color: rgba(255,255,255,0.85);
   text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
@@ -445,7 +450,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 .doc-section .grad-row .grad-label .gn { color: var(--ink); }
 .grad-row .grad-label .gd {
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--ink-dark-muted);
 }
 
@@ -493,7 +498,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 }
 .doc-section .font-card .info { color: var(--ink-body); }
 .font-card .info .k {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -521,12 +526,12 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 .ramp .row:last-child { border-bottom: none; }
 .ramp .row .tok {
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--sig);
 }
 .ramp .row .size {
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--ink-dark-muted);
 }
 .doc-section .ramp .row .size { color: var(--ink-muted); }
@@ -544,7 +549,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 .ramp .row.h3 .demo { font-size: var(--t-h3); font-weight: 800; }
 .ramp .row.body .demo { font-size: 17px; font-weight: 400; }
 .ramp .row.small .demo { font-size: 14px; font-weight: 500; }
-.ramp .row.micro .demo { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.ramp .row.micro .demo { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
 
 /* Headline patterns */
 .headline-patterns {
@@ -562,7 +567,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
   position: absolute;
   top: 14px; right: 14px;
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 10px;
+  font-size: 13px;
   background: rgba(10,10,10,0.06);
   padding: 4px 8px;
   border-radius: 6px;
@@ -583,7 +588,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 .hp .hp-h em { /* inherits gradient */ }
 .hp .hp-eb {
   font-family: var(--font-sans);
-  font-size: 11px; font-weight: 700;
+  font-size: 13px; font-weight: 700;
   letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--ink-dark-muted);
   margin-bottom: 10px;
@@ -601,16 +606,33 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
   display: inline-flex; align-items: center;
   gap: 6px;
   padding: 2px 12px;
-  border: 2px solid var(--sig);
+  border: 2px solid transparent;
   border-radius: 14px;
   font-family: var(--font-sans);
   font-weight: 700;
-  color: var(--sig);
-  background: var(--cream-soft);
   font-size: 0.74em;
   vertical-align: 8%;
+  color: var(--sig);
+  background:
+    linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
+    var(--grad-sig) border-box;
 }
-.hp .inline-kw.filled { background: rgba(220,38,38,0.10); }
+.hp .inline-kw.filled {
+  background: var(--grad-sig); color: var(--cream); border-color: transparent;
+}
+.hp .fill-block {
+  display: inline-block;
+  background: var(--grad-sig);
+  color: var(--cream);
+  padding: 2px 18px;
+  border-radius: 20px;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: 0.92em;
+  vertical-align: 4%;
+  box-shadow: 0 10px 30px -10px rgba(220,38,38,0.55);
+}
 
 /* ═══════════════════════════════════════════════════════════════════
    3. SECTIONS — archetype gallery
@@ -652,13 +674,13 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 }
 .sg-card .text .cls {
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--sig-highlight);
   margin-bottom: 8px;
 }
 .sg-card .text .usage {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 13px;
   color: var(--ink-body);
   line-height: 1.45;
 }
@@ -717,7 +739,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 }
 .demo-thesis .l { background: var(--cream-soft); border-right: 1px solid var(--hairline-cream); }
 .demo-thesis .r { background: var(--bg); }
-.demo-thesis .l, .demo-thesis .r { display: grid; place-items: center; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--ink-dark-muted); }
+.demo-thesis .l, .demo-thesis .r { display: grid; place-items: center; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: var(--ink-dark-muted); }
 .demo-thesis .r { color: var(--ink-muted); }
 .demo-beliefs {
   display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
@@ -726,7 +748,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 .demo-beliefs > div {
   border: 1px solid var(--hairline-cream);
   display: grid; place-items: center;
-  font-size: 11px; color: var(--ink-dark-muted);
+  font-size: 13px; color: var(--ink-dark-muted);
 }
 .demo-beliefs > div.break {
   background: var(--bg);
@@ -744,7 +766,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 .demo-ladder .l, .demo-ladder .r {
   background: rgba(10,10,10,0.04);
   border-radius: 8px;
-  font-size: 10px;
+  font-size: 13px;
   padding: 6px;
   color: var(--ink-dark-muted);
 }
@@ -872,7 +894,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
   border-top: 1px solid var(--hairline);
   padding: 10px 0;
   display: flex; justify-content: space-between; align-items: center;
-  font-size: 11px; font-weight: 600; color: var(--ink);
+  font-size: 13px; font-weight: 600; color: var(--ink);
 }
 .demo-faq > div::after {
   content: '+';
@@ -968,7 +990,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 .comp-row:last-child { margin-bottom: 0; }
 .comp-row .lbl {
   font-family: var(--font-sans);
-  font-size: 11px; font-weight: 700;
+  font-size: 13px; font-weight: 700;
   letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--ink-dark-muted);
   min-width: 120px;
@@ -1088,7 +1110,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
   max-width: 360px;
   border: 1px solid var(--hairline);
 }
-.toast .av { width: 32px; height: 32px; font-size: 11px; flex-shrink: 0; }
+.toast .av { width: 32px; height: 32px; font-size: 13px; flex-shrink: 0; }
 .toast .body {
   font-family: var(--font-sans);
   flex: 1;
@@ -1098,12 +1120,12 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
   display: flex; justify-content: space-between;
 }
 .toast .body .who .t {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--ink-muted);
   font-weight: 500;
 }
 .toast .body .msg {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--ink-body);
   line-height: 1.4;
   margin-top: 2px;
@@ -1119,7 +1141,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
   border: 1px solid var(--hairline);
 }
 .spark-card .l {
-  font-size: 10px; font-weight: 700;
+  font-size: 13px; font-weight: 700;
   letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--ink-muted);
   margin-bottom: 8px;
@@ -1138,7 +1160,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 /* Delta badge */
 .delta-badge {
   display: inline-flex; align-items: center; gap: 3px;
-  font-size: 11px; font-weight: 700;
+  font-size: 13px; font-weight: 700;
   padding: 3px 8px;
   border-radius: var(--r-pill);
   background: var(--grad-sig);
@@ -1165,6 +1187,97 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
   background: var(--grad-sig);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
+
+/* ─── CONTAINERS · the 8 container styles ─── */
+.cont-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+.cont {
+  position: relative;
+  border-radius: 20px;
+  padding: 28px 22px;
+  min-height: 180px;
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+}
+.cont .cnm {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+  margin-bottom: 4px;
+}
+.cont .cdesc {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--ink-body);
+  line-height: 1.4;
+}
+.cont .cuse {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 13px;
+  color: var(--sig-highlight);
+}
+
+/* C1 — hairline border, matched bg */
+.cont.c1 { background: var(--surface-1); border: 1px solid var(--hairline); }
+
+/* C2 — borderless, slight surface */
+.cont.c2 { background: var(--surface-1); border: 1px solid transparent; }
+
+/* C3 — gradient border (signature) */
+.cont.c3 {
+  background: var(--surface-1);
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
+    var(--grad-sig) border-box;
+}
+
+/* C4 — dark-on-dark depth gradient */
+.cont.c4 {
+  background: var(--grad-depth-strong);
+  border: 1px solid var(--hairline);
+}
+
+/* C5 — fade-to-nothing top-down */
+.cont.c5 {
+  background: linear-gradient(180deg, var(--surface-1) 0%, transparent 100%);
+  border: 1px solid var(--hairline);
+  border-bottom: none;
+}
+
+/* C6 — featured: gradient halo + tinted bg */
+.cont.c6 {
+  background: linear-gradient(180deg, rgba(220,38,38,0.14), rgba(220,38,38,0.02));
+  border: 1px solid rgba(220,38,38,0.32);
+  box-shadow:
+    0 0 0 1px rgba(220,38,38,0.18),
+    0 30px 80px -20px rgba(220,38,38,0.30);
+}
+
+/* C7 — frosted glass */
+.cont.c7 {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
+}
+
+/* C8 — gradient fill (the loud one) */
+.cont.c8 {
+  background: var(--grad-sig);
+  border: 1px solid transparent;
+}
+.cont.c8 .cnm, .cont.c8 .cdesc { color: var(--cream); }
+.cont.c8 .cuse { color: var(--cream); border-top-color: rgba(255,255,255,0.25); }
 
 /* Pattern fills (mini) */
 .pf {
@@ -1223,7 +1336,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
   padding: 16px 20px;
 }
 .mo-card .text .nm { font-family: var(--font-sans); font-weight: 800; font-size: 15px; color: var(--ink); letter-spacing: -0.015em; }
-.mo-card .text .usage { font-family: var(--font-sans); font-size: 12px; color: var(--ink-body); line-height: 1.4; margin-top: 4px; }
+.mo-card .text .usage { font-family: var(--font-sans); font-size: 13px; color: var(--ink-body); line-height: 1.4; margin-top: 4px; }
 
 .mo-pulse {
   display: grid; place-items: center;
@@ -1294,7 +1407,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
   border: 1px solid var(--hairline);
   border-radius: 100px;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--ink);
   white-space: nowrap;
@@ -1374,7 +1487,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
   border-top: 1px solid var(--hairline);
 }
 .cn-card .text .nm { font-family: var(--font-sans); font-weight: 800; font-size: 14px; color: var(--ink); }
-.cn-card .text .meta { font-family: var(--font-sans); font-size: 11px; color: var(--ink-muted); }
+.cn-card .text .meta { font-family: var(--font-sans); font-size: 13px; color: var(--ink-muted); }
 
 /* Carousel slides */
 .car-1 { background: var(--bg); color: var(--ink); display: flex; flex-direction: column; justify-content: space-between; }
@@ -1413,7 +1526,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
   font-family: var(--font-display); font-style: italic;
   background: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent;
 }
-.car-2 .sub { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; color: var(--ink-muted); margin-top: 14px; text-align: center; text-transform: uppercase; }
+.car-2 .sub { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; color: var(--ink-muted); margin-top: 14px; text-align: center; text-transform: uppercase; }
 
 .car-3 {
   background: var(--bg);
@@ -1426,7 +1539,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
   border-left: 2px solid var(--sig);
   padding: 6px 0 6px 12px;
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 13px;
   color: var(--ink-body);
   line-height: 1.4;
 }
@@ -1474,7 +1587,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
   background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);
   padding: 4px 8px; border-radius: 4px;
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 10px; color: var(--ink); font-weight: 600;
+  font-size: 13px; color: var(--ink); font-weight: 600;
   z-index: 2;
 }
 
@@ -1498,9 +1611,12 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 .rule .num {
   font-family: var(--font-sans);
   font-size: 13px; font-weight: 800;
-  color: var(--sig);
+  background: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
   letter-spacing: 0.04em;
   margin-bottom: 8px;
+  display: inline-block;
 }
 .rule h3 {
   font-family: var(--font-sans);
@@ -1524,7 +1640,12 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 .doc-section .rule .do { color: var(--ink); }
 .rule .dont { color: var(--ink-dark-muted); text-decoration: line-through; text-decoration-color: rgba(10,10,10,0.2); }
 .doc-section .rule .dont { color: var(--ink-muted); }
-.rule .do::before { content: '✓'; position: absolute; left: 0; color: var(--sig); font-weight: 800; }
+.rule .do::before {
+  content: '✓'; position: absolute; left: 0; font-weight: 800;
+  background: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
 .rule .dont::before { content: '✕'; position: absolute; left: 0; color: var(--ink-dark-muted); font-weight: 800; }
 
 /* Hero of the brand page */
@@ -1575,7 +1696,7 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
        ═══════════════════════════════════════════════════════════════ -->
   <aside class="side">
     <a class="brand-mark" href="#top">Abundance<em>.</em></a>
-    <div class="brand-sub">Brand System · v1.0 · May 2026</div>
+    <div class="brand-sub">Brand System · v1.1 · May 2026</div>
     <nav>
       <a href="#identity" class="active"><span class="num">01</span> Identity</a>
       <a href="#typography"><span class="num">02</span> Typography</a>
@@ -1829,8 +1950,8 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
           <div class="row h2"><span class="tok">--t-h2</span><span class="size">36–56px</span><span class="demo">Section h2</span></div>
           <div class="row h3"><span class="tok">--t-h3</span><span class="size">20–26px</span><span class="demo">Card title</span></div>
           <div class="row body"><span class="tok">--t-body</span><span class="size">17px</span><span class="demo">Body paragraph copy with comfortable reading rhythm.</span></div>
-          <div class="row small"><span class="tok">--t-small</span><span class="size">14px</span><span class="demo">Secondary body, meta text, captions.</span></div>
-          <div class="row micro"><span class="tok">--t-micro</span><span class="size">12px</span><span class="demo">EYEBROW &amp; TAGS</span></div>
+          <div class="row small"><span class="tok">--t-small</span><span class="size">15px</span><span class="demo">Secondary body, meta text, captions.</span></div>
+          <div class="row micro"><span class="tok">--t-micro</span><span class="size">13px · FLOOR</span><span class="demo">EYEBROW &amp; TAGS</span></div>
         </div>
       </div>
 
@@ -1899,6 +2020,13 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
             <div class="hp-eb">CENTERED ANNOUNCEMENT</div>
             <div class="hp-h" style="text-align:center;">Receipts, not <em>promises.</em></div>
             <div class="hp-note">Centered, single line, no body. Use for stats moments, declarations, and bookend sections.</div>
+          </div>
+
+          <div class="hp">
+            <span class="hp-tag">PATTERN F</span>
+            <div class="hp-eb">GRADIENT BLOCK EMPHASIS</div>
+            <div class="hp-h">Stop adding tactics. Install <span class="fill-block">the system</span>.</div>
+            <div class="hp-note"><strong>Use when:</strong> the emphasis needs to feel like a STAMP or BADGE — louder than serif italic, more rectangular than a pill. 20px radius matches --r-card. Reserve for power phrases that should physically stop the eye.</div>
           </div>
 
         </div>
@@ -1973,6 +2101,79 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
           <div class="comp-row"><span class="lbl">Filled (gradient)</span><span class="pill filled">MOST POPULAR</span></div>
           <div class="comp-row"><span class="lbl">Filled soft</span><span class="pill filled-soft">THE SELLING SYSTEM</span></div>
           <div class="comp-row"><span class="lbl">On dark</span><span style="background:var(--bg);padding:10px;border-radius:10px;"><span class="pill on-dark">FOUR PRINCIPLES</span></span></div>
+        </div>
+      </div>
+
+      <!-- CONTAINERS -->
+      <div class="doc-block">
+        <h3>Containers · 8 styles</h3>
+        <div class="block-meta">Every card, panel, or boxed element uses one of these. <strong>C1</strong> is the workhorse (90% of cards). Featured tiers get <strong>C6</strong>. The loud gradient fill <strong>C8</strong> is rare — final-CTA territory only.</div>
+        <div class="cont-grid">
+
+          <div class="cont c1">
+            <div>
+              <div class="cnm">C1 · Hairline</div>
+              <div class="cdesc">Subtle bordered surface. The default workhorse — 90% of cards on a page.</div>
+            </div>
+            <div class="cuse">.cont.c1</div>
+          </div>
+
+          <div class="cont c2">
+            <div>
+              <div class="cnm">C2 · Borderless</div>
+              <div class="cdesc">Slight surface lift, no visible border. For cards that sit on a contrasting surface already.</div>
+            </div>
+            <div class="cuse">.cont.c2</div>
+          </div>
+
+          <div class="cont c3">
+            <div>
+              <div class="cnm">C3 · Gradient border</div>
+              <div class="cdesc">Signature gradient stroke around a dark surface. Use sparingly — for "this is the one."</div>
+            </div>
+            <div class="cuse">.cont.c3</div>
+          </div>
+
+          <div class="cont c4">
+            <div>
+              <div class="cnm">C4 · Depth gradient</div>
+              <div class="cdesc">Dark-on-dark gradient bg. Adds elevation without color. Use for cards inside dark stages that need depth.</div>
+            </div>
+            <div class="cuse">.cont.c4</div>
+          </div>
+
+          <div class="cont c5">
+            <div>
+              <div class="cnm">C5 · Fade-to-nothing</div>
+              <div class="cdesc">Surface fades into the stage at the bottom. Implies "this continues." Good for stat tiles, signal cards.</div>
+            </div>
+            <div class="cuse">.cont.c5</div>
+          </div>
+
+          <div class="cont c6">
+            <div>
+              <div class="cnm">C6 · Featured halo</div>
+              <div class="cdesc">Tinted red bg + gradient-stroke border + red box-shadow halo. The MOST POPULAR pricing tier treatment.</div>
+            </div>
+            <div class="cuse">.cont.c6</div>
+          </div>
+
+          <div class="cont c7">
+            <div>
+              <div class="cnm">C7 · Frosted glass</div>
+              <div class="cdesc">Semi-transparent surface with backdrop blur + top inset highlight. Use for floating nav, modal overlays.</div>
+            </div>
+            <div class="cuse">.cont.c7</div>
+          </div>
+
+          <div class="cont c8">
+            <div>
+              <div class="cnm">C8 · Gradient fill</div>
+              <div class="cdesc">The full signature gradient as the surface. Loudest container — reserve for final CTAs and brand mark moments.</div>
+            </div>
+            <div class="cuse">.cont.c8</div>
+          </div>
+
         </div>
       </div>
 
@@ -2166,8 +2367,8 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
                 <div class="h" style="font-size: 24px;">From $30k/mo to <em>$140k/mo</em><br>in 90 days.</div>
               </div>
               <div style="display: flex; align-items: center; gap: 10px;">
-                <div class="av" style="width: 32px; height: 32px; font-size: 11px;">SH</div>
-                <div style="font-family: var(--font-sans); color: var(--ink); font-size: 12px;"><strong>Sarah Hendrickson</strong><br><span style="opacity: 0.6;">Coaching Collective</span></div>
+                <div class="av" style="width: 32px; height: 32px; font-size: 13px;">SH</div>
+                <div style="font-family: var(--font-sans); color: var(--ink); font-size: 13px;"><strong>Sarah Hendrickson</strong><br><span style="opacity: 0.6;">Coaching Collective</span></div>
               </div>
             </div>
             <div class="text"><div class="nm">Case study card</div><div class="meta">Before → After numbers, founder attribution. Drop in feed or email.</div></div>
@@ -2256,6 +2457,20 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
             <h3>If it's not on this <em>page</em>, it doesn't belong on a page.</h3>
             <p class="do">When tempted to invent a new section, component, or color — first check this brand library. Reuse beats invent.</p>
             <p class="dont">Bespoke one-offs that fragment the system across funnels.</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">RULE 11</div>
+            <h3>Font-size floor is <em>13px.</em></h3>
+            <p class="do">Smallest type on any surface is 13px (--t-micro). Labels, tags, deltas, captions — all 13px or above.</p>
+            <p class="dont">11px and 12px text "to fit more in." If it doesn't fit at 13px, the content is too dense — cut it.</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">RULE 12</div>
+            <h3>Gradient before <em>flat color.</em></h3>
+            <p class="do">For any accent surface (badge, button, checkmark, brand mark) — reach for --grad-sig first. Flat --sig is only for small text labels and SVG strokes.</p>
+            <p class="dont">Solid red blocks everywhere. The gradient is what makes the brand feel premium; flat fill makes it feel cheap.</p>
           </div>
 
         </div>
