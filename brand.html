@@ -356,7 +356,9 @@ body.light-mode .label { color: var(--ink-dark-muted); }
   white-space: nowrap;
 }
 .float-nav .fn-mark em {
-  font-style: italic;
+  /* Upright — the wordmark period stays the brand's Neo Contact shape,
+     just tinted with the gradient. Italic warps the dot. */
+  font-style: normal;
   background-image: var(--grad-sig);
   -webkit-background-clip: text; background-clip: text;
   color: transparent;
@@ -1164,7 +1166,8 @@ body.light-mode .doc-section::after {
 }
 .logo-card.dark .word { color: var(--ink); }
 .logo-card .word em {
-  font-style: italic;
+  /* Upright — wordmark period stays Neo Contact shape, gradient tint only */
+  font-style: normal;
   background-image: var(--grad-sig);
   -webkit-background-clip: text; background-clip: text;
   color: transparent;
