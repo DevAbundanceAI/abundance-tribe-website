@@ -75,17 +75,44 @@
          featured-tier accents, premium moments.
      ───────────────────────────────────────────────────────────────── */
 
-  /* Tiger's blood */
+  /* Tiger's blood — THREE TIERS mapped to typographic hierarchy.
+     Type role determines which gradient flavor to reach for.
+
+     TIER A · HERO  (specular peak @ 67%)
+       For h1, hero headlines, final-CTA h2, animated borders (C10).
+       Brightness peaks off-center for that "metallic shimmer" feel.
+
+     TIER B · DEFAULT  (full sweep, salmon → deep red)
+       For decorative surfaces — primary CTAs, pills, badges,
+       checkmarks, MOST POPULAR labels, BEST badges, hover halos.
+       The widest range — works as a SURFACE gradient.
+
+     TIER C · TIGHT  (compressed red, readable)
+       For h2/h3 ems and any sub-headline emphasis. A tight band
+       from bright red to slightly deeper red — no salmon highlight,
+       no deep blood tail. Stays in the readable middle. */
+
+  --grad-sig-hero: linear-gradient(135deg,
+    #DC2626 0%, #DC2626 7%,
+    #EF4444 28%,
+    #FF7A55 67%,
+    #DC2626 88%,
+    #C92A2A 93%, #C92A2A 100%);
   --grad-sig: linear-gradient(135deg,
     #FF7A55 0%, #FF7A55 7%,
     #EF4444 40%,
     #DC2626 72%,
     #C92A2A 93%, #C92A2A 100%);
+  --grad-sig-tight: linear-gradient(135deg,
+    #EF4444 0%, #EF4444 12%,
+    #DC2626 60%,
+    #C92A2A 88%, #C92A2A 100%);
+  /* Legacy alias — --grad-sig-shine maps to the hero peak */
   --grad-sig-shine: linear-gradient(135deg,
     #DC2626 0%, #DC2626 7%,
-    #EF4444 30%,
-    #FF7A55 60%,
-    #DC2626 85%,
+    #EF4444 28%,
+    #FF7A55 67%,
+    #DC2626 88%,
     #C92A2A 93%, #C92A2A 100%);
 
   /* Achromatic graphite */
@@ -171,20 +198,25 @@ h1, h2, h3, .display {
   line-height: 1.04;
   color: var(--ink-dark);
 }
+/* Universal em typography (no background — set per hierarchy below) */
 h1 em, h2 em, h3 em, .display em, .gradient-text {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 400;
   letter-spacing: -0.005em;
-  background: var(--grad-sig) !important;
   -webkit-background-clip: text !important;
           background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
           color: transparent !important;
-  /* Red bloom around letterforms so tail letters in long em phrases
-     stay legible against #0A0A0A even where the gradient is deepest.
-     Disabled in light mode (cream backdrop doesn't need the lift). */
   filter: drop-shadow(0 0 14px rgba(239,68,68,0.32));
+}
+/* TIER A · HERO — h1 + display moments → specular peak */
+h1 em, .display em, .gradient-text {
+  background: var(--grad-sig-hero) !important;
+}
+/* TIER C · TIGHT — h2 + h3 → compressed readable red */
+h2 em, h3 em {
+  background: var(--grad-sig-tight) !important;
 }
 body.light-mode h1 em,
 body.light-mode h2 em,
@@ -2540,7 +2572,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
        ═══════════════════════════════════════════════════════════════ -->
   <aside class="side">
     <a class="brand-mark" href="#top">Abundance<em>.</em></a>
-    <div class="brand-sub">Brand System · v1.6 · May 2026</div>
+    <div class="brand-sub">Brand System · v1.7 · May 2026</div>
 
     <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
       <span class="t-dark">
@@ -2685,17 +2717,22 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
 
       <!-- GRADIENTS -->
       <div class="doc-block">
-        <h3>Gradients — the brand's central mechanic</h3>
-        <div class="block-meta">Every color gradient comes in <strong>two flavors</strong>: <strong>STANDARD</strong> (light → dark, 135°, held stops at 0–7% and 93–100%) for text fills and editorial surfaces; <strong>SHINE</strong> (specular peak at ~60%, ends slightly darker than start) for hero objects and brand-mark moments. Same hues, different distribution.</div>
+        <h3>Gradients — three tiers mapped to typographic hierarchy</h3>
+        <div class="block-meta">The signature gradient comes in <strong>three flavors</strong>, each tied to a specific role. The right gradient depends on what's wearing it. Same hues, different stop distributions.</div>
 
         <div class="grad-row">
-          <div class="grad-label"><span class="gn">Signature · STANDARD</span><span class="gd">--grad-sig · 135deg · light → dark</span></div>
+          <div class="grad-label"><span class="gn">A · HERO · specular peak</span><span class="gd">--grad-sig-hero · h1, .display em, animated borders</span></div>
+          <div class="grad-strip" style="background: var(--grad-sig-hero);"><div class="stops"><span>#DC2626 · 0–7%</span><span>#EF4444 · 28%</span><span>#FF7A55 · 67%</span><span>#DC2626 · 88%</span><span>#C92A2A · 93–100%</span></div></div>
+        </div>
+
+        <div class="grad-row">
+          <div class="grad-label"><span class="gn">B · DEFAULT · full sweep</span><span class="gd">--grad-sig · CTAs, pills, badges, decorative surfaces</span></div>
           <div class="grad-strip" style="background: var(--grad-sig);"><div class="stops"><span>#FF7A55 · 0–7%</span><span>#EF4444 · 40%</span><span>#DC2626 · 72%</span><span>#C92A2A · 93–100%</span></div></div>
         </div>
 
         <div class="grad-row">
-          <div class="grad-label"><span class="gn">Signature · SHINE</span><span class="gd">--grad-sig-shine · 135deg · specular peak @ 60%</span></div>
-          <div class="grad-strip" style="background: var(--grad-sig-shine);"><div class="stops"><span>#DC2626 · 0–7%</span><span>#EF4444 · 30%</span><span>#FF7A55 · 60%</span><span>#DC2626 · 85%</span><span>#C92A2A · 93–100%</span></div></div>
+          <div class="grad-label"><span class="gn">C · TIGHT · compressed red</span><span class="gd">--grad-sig-tight · h2 em, h3 em, sub-headline emphasis</span></div>
+          <div class="grad-strip" style="background: var(--grad-sig-tight);"><div class="stops"><span>#EF4444 · 0–12%</span><span>#DC2626 · 60%</span><span>#C92A2A · 88–100%</span></div></div>
         </div>
 
         <div class="grad-row">
@@ -2727,21 +2764,30 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
 
           <div class="rule">
-            <div class="num">SIGNATURE · STANDARD</div>
-            <h3>--grad-sig · light → dark</h3>
-            <p class="do">Every &lt;em&gt; emphasis word (background-clip: text).</p>
-            <p class="do">Primary CTA backgrounds (with hover-position-slide).</p>
-            <p class="do">Editorial pills, badges, checkmarks, dot-period.</p>
-            <p class="dont">Section backgrounds. Too loud at full bleed.</p>
+            <div class="num">SIGNATURE · TIER A (HERO)</div>
+            <h3>--grad-sig-hero · specular peak @ <em>67%</em></h3>
+            <p class="do">Every h1 em + .display em (auto-applied by the global rule).</p>
+            <p class="do">Animated border shine (C10 container).</p>
+            <p class="do">Brand-mark glyphs: hub-core, orbital core, glass cube.</p>
+            <p class="dont">On h2 / h3 emphasis — the mid-word peak disrupts reading at smaller sizes.</p>
           </div>
 
           <div class="rule">
-            <div class="num">SIGNATURE · SHINE</div>
-            <h3>--grad-sig-shine · specular peak</h3>
-            <p class="do">Hero objects: glass cube, hub-core glyph, orbital core.</p>
-            <p class="do">Featured pricing tier accent borders, MOST POPULAR pill.</p>
-            <p class="do">Brand-mark moments where the surface should feel metallic.</p>
-            <p class="dont">On text emphasis. Specular peak disrupts reading rhythm.</p>
+            <div class="num">SIGNATURE · TIER B (DEFAULT)</div>
+            <h3>--grad-sig · full <em>sweep</em></h3>
+            <p class="do">Decorative surfaces — primary CTAs, pills, badges, checkmarks.</p>
+            <p class="do">MOST POPULAR labels, BEST badges, hover halos.</p>
+            <p class="do">Anywhere the gradient IS the surface, not the text fill.</p>
+            <p class="dont">Section backgrounds at full bleed. Too loud.</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">SIGNATURE · TIER C (TIGHT)</div>
+            <h3>--grad-sig-tight · readable <em>compressed</em></h3>
+            <p class="do">Every h2 em + h3 em (auto-applied by the global rule).</p>
+            <p class="do">Sub-headline emphasis, card titles, mid-page beats.</p>
+            <p class="dont">On h1 — too quiet for the dramatic hero moment.</p>
+            <p class="dont">On CTAs — too narrow a range to read as a surface accent.</p>
           </div>
 
           <div class="rule">
@@ -2905,33 +2951,40 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
         </div>
       </div>
 
-      <!-- STANDARD vs SHINE on em -->
+      <!-- THREE-TIER COMPARISON -->
       <div class="doc-block">
-        <h3>STANDARD vs SHINE on em emphasis</h3>
-        <div class="block-meta">Same headline, same words, same gradient family — different stop distribution. Pick a side based on the role the headline is playing.</div>
+        <h3>Three gradient tiers on the same headline</h3>
+        <div class="block-meta">Same words, three different gradient distributions — each tied to a different typographic role. The em rule below is now <strong>automatic</strong>: h1 gets HERO, h2/h3 get TIGHT, and the DEFAULT sweep is reserved for decorative surfaces (CTAs, pills, badges).</div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
 
           <div class="hp">
-            <span class="hp-tag">STANDARD</span>
-            <div class="hp-eb">--grad-sig · light → dark</div>
-            <div class="hp-h">We don't do weight loss, we do <em>transformation.</em></div>
-            <div class="hp-note"><strong>What you see:</strong> "t" of "transformation" is brightest (top-left); the word fades toward deep red at the tail. The eye lands at the START of the em phrase. Reading flow is natural.</div>
-            <div class="hp-note"><strong>Use for:</strong> 90% of headlines. Editorial register, body-paired headers, anything that should feel like book-cover typography.</div>
+            <span class="hp-tag">TIER A · HERO</span>
+            <div class="hp-eb">h1 · auto · --grad-sig-hero</div>
+            <h1 style="font-size:32px;font-weight:800;letter-spacing:-0.028em;line-height:1.05;color:var(--ink-dark);">We do <em>transformation.</em></h1>
+            <div class="hp-note"><strong>Specular peak @ 67%.</strong> The em shimmers mid-word like polished metal. Reserved for h1 + .display.</div>
           </div>
 
           <div class="hp">
-            <span class="hp-tag">SHINE</span>
-            <div class="hp-eb">--grad-sig-shine · specular peak @ 60%</div>
-            <div class="hp-h">We don't do weight loss, we do <em style="background: var(--grad-sig-shine) !important;">transformation.</em></div>
-            <div class="hp-note"><strong>What you see:</strong> brightness peaks MID-word — the "form" syllable shimmers. Start and end are deeper red. The em "catches the light" like metal.</div>
-            <div class="hp-note"><strong>Use for:</strong> rare hero / declarative moments where the emphasis IS the brand mark. Final-CTA headline, hero h1, premium tier section. Not for body-paired feature headers — the shimmer disrupts reading.</div>
+            <span class="hp-tag">TIER C · TIGHT</span>
+            <div class="hp-eb">h2 / h3 · auto · --grad-sig-tight</div>
+            <h2 style="font-size:32px;font-weight:800;letter-spacing:-0.025em;line-height:1.05;color:var(--ink-dark);">We do <em>transformation.</em></h2>
+            <div class="hp-note"><strong>Compressed red range.</strong> No salmon highlight, no deep blood tail. Stays in the readable middle. For h2/h3 ems.</div>
+          </div>
+
+          <div class="hp">
+            <span class="hp-tag">TIER B · DEFAULT</span>
+            <div class="hp-eb">surfaces · --grad-sig</div>
+            <div style="display:flex;align-items:center;justify-content:center;height:78px;">
+              <button class="btn gradient" style="font-size:14px;">Apply now →</button>
+            </div>
+            <div class="hp-note"><strong>Full sweep, salmon → deep red.</strong> For SURFACES, not text: CTAs, pills, badges, checkmarks, BEST/POPULAR labels.</div>
           </div>
 
         </div>
 
         <div class="block-meta" style="margin-top: 28px;">
-          <strong>Verdict for Abundance:</strong> keep STANDARD as the default rule. Reach for SHINE on the hero h1, the final-CTA h2, and the guarantee-section headline. Three SHINE moments per page max — anything more and the metallic peak becomes the brand's voice instead of its accent.
+          <strong>Why three tiers:</strong> the eye reads h1 once, big and slow — it can handle a dramatic specular shimmer. Sub-headers (h2/h3) get read in flow with body — they need a tighter, more uniform gradient so the eye doesn't stutter on each em. CTAs aren't text-fill at all — they're surfaces, so they get the widest decorative sweep.
         </div>
       </div>
     </section>
