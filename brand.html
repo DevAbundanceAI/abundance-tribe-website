@@ -1181,6 +1181,26 @@ body.light-mode .brand-hero .glow.bottom { background: radial-gradient(circle, r
 .hp .inline-kw.filled {
   background: var(--grad-sig); color: var(--cream); border-color: transparent;
 }
+.hp .inline-kw.glow {
+  background:
+    radial-gradient(ellipse 120% 100% at 50% 20%,
+      rgba(255,85,48,0.35) 0%,
+      rgba(220,38,38,0.18) 60%,
+      rgba(127,29,29,0.10) 100%) padding-box,
+    var(--grad-sig) border-box;
+  color: var(--sig-highlight);
+  text-shadow: 0 0 14px rgba(255,85,48,0.4);
+}
+body.light-mode .hp .inline-kw.glow {
+  background:
+    radial-gradient(ellipse 120% 100% at 50% 20%,
+      rgba(255,85,48,0.22) 0%,
+      rgba(220,38,38,0.10) 60%,
+      transparent 100%) padding-box,
+    var(--grad-sig) border-box;
+  color: var(--sig);
+  text-shadow: none;
+}
 .hp .fill-block {
   display: inline-block;
   background: var(--grad-sig);
@@ -2789,9 +2809,9 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
 
           <div class="hp">
             <span class="hp-tag">PATTERN C</span>
-            <div class="hp-eb">INLINE KEYWORD PILLS</div>
-            <div class="hp-h">We build your <span class="inline-kw filled">Ads</span> <span class="inline-kw">Funnels</span> &amp; <span class="inline-kw filled">CRM</span></div>
-            <div class="hp-note">Operative nouns become inline pills. Mix outlined and filled for rhythm.</div>
+            <div class="hp-eb">INLINE KEYWORD PILLS · 3 STATES</div>
+            <div class="hp-h">We build your <span class="inline-kw filled">Ads</span> <span class="inline-kw glow">Funnels</span> &amp; <span class="inline-kw">CRM</span></div>
+            <div class="hp-note">Operative nouns become inline pills. <strong>.filled</strong> = full gradient bg (loudest). <strong>.glow</strong> = gradient border + soft inner red glow (mid weight). <strong>(no class)</strong> = gradient border only (quietest). Mix all three across a headline for rhythm.</div>
           </div>
 
           <div class="hp">
