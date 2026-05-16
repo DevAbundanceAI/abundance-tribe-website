@@ -250,6 +250,16 @@ body.light-mode .display em,
 body.light-mode .gradient-text { filter: none; }
 h3 { font-size: var(--t-h3); line-height: 1.2; }
 
+/* Flat tiger's-blood emphasis for BODY-TEXT inline accents (not <em>).
+   Use when a word in a paragraph needs to pop without becoming a full
+   gradient-italic moment. Pairs with body weight 600/700. */
+.flat-accent {
+  color: var(--sig);
+  font-weight: 700;
+}
+.flat-accent.deep { color: var(--sig-deep); }
+.flat-accent.anchor { color: var(--sig-anchor); }
+
 p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 .on-dark p strong, .on-dark .lead strong { color: var(--ink); }
 
@@ -3262,6 +3272,17 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
           <div class="comp-row"><span class="lbl">Filled (gradient)</span><span class="pill filled">MOST POPULAR</span></div>
           <div class="comp-row"><span class="lbl">Filled soft</span><span class="pill filled-soft">THE SELLING SYSTEM</span></div>
           <div class="comp-row"><span class="lbl">On dark</span><span style="background:var(--bg);padding:10px;border-radius:10px;"><span class="pill on-dark">FOUR PRINCIPLES</span></span></div>
+        </div>
+      </div>
+
+      <!-- FLAT ACCENT (solid sig for body emphasis) -->
+      <div class="doc-block">
+        <h3>Flat accent · solid tiger's blood for body emphasis</h3>
+        <div class="block-meta">Class: <code>.flat-accent</code> · variants: <code>.flat-accent.deep</code>, <code>.flat-accent.anchor</code>. Use inside paragraphs when a word should pop in tiger's blood without becoming a full gradient-italic <code>&lt;em&gt;</code> moment. Keeps the brand color present without painting another gradient on the page.</div>
+        <div class="comp-block">
+          <div class="comp-row"><span class="lbl">In paragraph</span><span style="font-family:var(--font-sans);font-size:17px;color:var(--ink);max-width:54ch;">We replace your <span class="flat-accent">copywriter</span>, your <span class="flat-accent">media buyer</span>, and your <span class="flat-accent">CRM admin</span> with one team.</span></div>
+          <div class="comp-row"><span class="lbl">Deep variant</span><span class="flat-accent deep" style="font-size:18px;">Anchor moment</span></div>
+          <div class="comp-row"><span class="lbl">When to use</span><span style="font-family:var(--font-sans);font-size:14px;color:var(--ink-body);max-width:54ch;line-height:1.5;">Body copy with three or more inline emphases (a gradient em on each would compete). Stat callouts inside paragraphs. Inline keyword highlights that aren't a full headline moment.</span></div>
         </div>
       </div>
 
