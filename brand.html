@@ -1975,6 +1975,10 @@ body.light-mode .hp .inline-kw.glow {
 }
 .av-cluster {
   display: inline-flex;
+  /* Center-align vertically so the larger .av.large doesn't hang
+     below the smaller ones — every circle's center sits on the
+     same horizontal axis. */
+  align-items: center;
 }
 .av-cluster .av {
   margin-left: -10px;
@@ -1982,13 +1986,6 @@ body.light-mode .hp .inline-kw.glow {
 }
 .av-cluster .av:first-child { margin-left: 0; }
 .doc-section .av-cluster .av { border-color: var(--surface-1); }
-/* Inside a comp-row, the cluster should occupy the remaining space
-   after the .lbl and center itself horizontally — not hug the label. */
-.comp-row .av-cluster {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
 
 /* Toasts */
 .toast {
