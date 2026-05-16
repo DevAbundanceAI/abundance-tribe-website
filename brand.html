@@ -563,6 +563,7 @@ body.light-mode .brand-hero .glow { background: radial-gradient(circle, rgba(220
 body.light-mode .brand-hero .glow.bottom { background: radial-gradient(circle, rgba(255,85,48,0.18), transparent 70%); }
 
 body.light-mode .doc-section { background: var(--cream); color: var(--ink-dark); border-bottom-color: var(--hairline-cream); }
+body.light-mode .doc-section h1,
 body.light-mode .doc-section h2,
 body.light-mode .doc-section h3,
 body.light-mode .doc-section h4 { color: var(--ink-dark); }
@@ -1104,8 +1105,12 @@ body.light-mode .doc-section::after {
   color: var(--ink-dark);
   border-bottom-color: var(--hairline-cream);
 }
-.doc-section h2, .doc-section h3, .doc-section h4 { color: var(--ink); }
-.doc-section.light h2, .doc-section.light h3, .doc-section.light h4 { color: var(--ink-dark); }
+.doc-section h1, .doc-section h2, .doc-section h3, .doc-section h4 { color: var(--ink); }
+.doc-section.light h1, .doc-section.light h2, .doc-section.light h3, .doc-section.light h4 { color: var(--ink-dark); }
+/* comp-block + hp inherit color from their doc-section context so
+   body-text spans inside them switch with mode without inline overrides */
+.doc-section .comp-block { color: var(--ink); }
+body.light-mode .doc-section .comp-block { color: var(--ink-dark); }
 .doc-section .doc-head { margin-bottom: 40px; }
 .doc-section .doc-head .label { margin-bottom: 12px; display: inline-block; color: var(--ink-body); }
 .doc-section.light .doc-head .label { color: var(--ink-dark-muted); }
@@ -3181,14 +3186,14 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
           <div class="hp">
             <span class="hp-tag">TIER A · HERO</span>
             <div class="hp-eb">h1 · auto · --grad-sig-hero</div>
-            <h1 style="font-size:32px;font-weight:800;letter-spacing:-0.028em;line-height:1.05;color:var(--ink-dark);">We do <em>transformation.</em></h1>
+            <h1 style="font-size:32px;font-weight:800;letter-spacing:-0.028em;line-height:1.05;">We do <em>transformation.</em></h1>
             <div class="hp-note"><strong>Specular peak @ 67%.</strong> The em shimmers mid-word like polished metal. Reserved for h1 + .display.</div>
           </div>
 
           <div class="hp">
             <span class="hp-tag">TIER C · TIGHT</span>
             <div class="hp-eb">h2 / h3 · auto · --grad-sig-tight</div>
-            <h2 style="font-size:32px;font-weight:800;letter-spacing:-0.025em;line-height:1.05;color:var(--ink-dark);">We do <em>transformation.</em></h2>
+            <h2 style="font-size:32px;font-weight:800;letter-spacing:-0.025em;line-height:1.05;">We do <em>transformation.</em></h2>
             <div class="hp-note"><strong>Compressed red range.</strong> No salmon highlight, no deep blood tail. Stays in the readable middle. For h2/h3 ems.</div>
           </div>
 
@@ -3301,9 +3306,9 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
         <h3>Flat accent · solid tiger's blood for body emphasis</h3>
         <div class="block-meta">Class: <code>.flat-accent</code> · variants: <code>.flat-accent.deep</code>, <code>.flat-accent.anchor</code>. Use inside paragraphs when a word should pop in tiger's blood without becoming a full gradient-italic <code>&lt;em&gt;</code> moment. Keeps the brand color present without painting another gradient on the page.</div>
         <div class="comp-block">
-          <div class="comp-row"><span class="lbl">In paragraph</span><span style="font-family:var(--font-sans);font-size:17px;color:var(--ink);max-width:54ch;">We replace your <span class="flat-accent">copywriter</span>, your <span class="flat-accent">media buyer</span>, and your <span class="flat-accent">CRM admin</span> with one team.</span></div>
+          <div class="comp-row"><span class="lbl">In paragraph</span><span style="font-family:var(--font-sans);font-size:17px;max-width:54ch;">We replace your <span class="flat-accent">copywriter</span>, your <span class="flat-accent">media buyer</span>, and your <span class="flat-accent">CRM admin</span> with one team.</span></div>
           <div class="comp-row"><span class="lbl">Deep variant</span><span class="flat-accent deep" style="font-size:18px;">Anchor moment</span></div>
-          <div class="comp-row"><span class="lbl">When to use</span><span style="font-family:var(--font-sans);font-size:14px;color:var(--ink-body);max-width:54ch;line-height:1.5;">Body copy with three or more inline emphases (a gradient em on each would compete). Stat callouts inside paragraphs. Inline keyword highlights that aren't a full headline moment.</span></div>
+          <div class="comp-row"><span class="lbl">When to use</span><span style="font-family:var(--font-sans);font-size:14px;max-width:54ch;line-height:1.5;opacity:0.75;">Body copy with three or more inline emphases (a gradient em on each would compete). Stat callouts inside paragraphs. Inline keyword highlights that aren't a full headline moment.</span></div>
         </div>
       </div>
 
@@ -3466,7 +3471,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
         <h3>Delta badges</h3>
         <div class="block-meta">Class: <code>.delta-badge</code> · inline next to a big number for week-over-week change</div>
         <div class="comp-block">
-          <div class="comp-row"><span class="lbl">Inline</span><span style="font-family:var(--font-sans);font-weight:800;font-size:38px;letter-spacing:-0.03em;color:var(--ink-dark);">42 <span class="delta-badge">▲ 35%</span></span></div>
+          <div class="comp-row"><span class="lbl">Inline</span><span style="font-family:var(--font-sans);font-weight:800;font-size:38px;letter-spacing:-0.03em;">42 <span class="delta-badge">▲ 35%</span></span></div>
         </div>
       </div>
 
@@ -3763,7 +3768,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
       </div>
 
       <div class="doc-block">
-        <p style="font-family: var(--font-sans); font-size: 14px; color: var(--ink-body); line-height: 1.6; max-width: 60ch;">
+        <p style="font-family: var(--font-sans); font-size: 14px; line-height: 1.6; max-width: 60ch; opacity: 0.78;">
           <strong>Brand System · v1.8 · May 16, 2026.</strong> Locked after the v5/v7/v8/v9 exploration cycle and the v1.8 nav + glass pass. Maintained at <code class="code-chip">/brand</code> as the single source of truth.
         </p>
       </div>
