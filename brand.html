@@ -61,20 +61,54 @@
   --sig-deep:      #DC2626;   /* deepening red */
   --sig-anchor:    #C92A2A;   /* anchor — bright enough that em-tails stay legible on black */
 
-  /* ─── GRADIENTS — held stops at the ends give the lightest and
-         darkest hues more presence; middle reds compressed into the
-         ~80% middle band so the four-stop character stays visible. ── */
+  /* ─── GRADIENTS ──────────────────────────────────────────────────
+     Two flavors of each color gradient:
+
+     (a) STANDARD — light at start, dark at end (135deg).
+         Held stops at 0-7% and 93-100% so the extremes have presence
+         regardless of element size. Use for text fills, em emphasis,
+         editorial pills, default CTA surfaces.
+
+     (b) SHINE — specular peak at ~60%. Starts medium, peaks brightest
+         off-center, ends slightly darker than start. Reads as
+         polished/metallic. Use for hero objects, brand mark glyphs,
+         featured-tier accents, premium moments.
+     ───────────────────────────────────────────────────────────────── */
+
+  /* Tiger's blood */
   --grad-sig: linear-gradient(135deg,
     #FF7A55 0%, #FF7A55 7%,
     #EF4444 40%,
     #DC2626 72%,
     #C92A2A 93%, #C92A2A 100%);
+  --grad-sig-shine: linear-gradient(135deg,
+    #DC2626 0%, #DC2626 7%,
+    #EF4444 30%,
+    #FF7A55 60%,
+    #DC2626 85%,
+    #C92A2A 93%, #C92A2A 100%);
+
+  /* Achromatic graphite */
+  --grad-graphite: linear-gradient(135deg,
+    #DCD8D2 0%, #DCD8D2 7%,
+    #B5B0A8 35%,
+    #7A7670 70%,
+    #4A4845 93%, #4A4845 100%);
+  --grad-graphite-shine: linear-gradient(135deg,
+    #7A7670 0%, #7A7670 7%,
+    #B5B0A8 30%,
+    #DCD8D2 60%,
+    #7A7670 85%,
+    #4A4845 93%, #4A4845 100%);
+
+  /* Atmospheric horizon glow (radial, no held-stop logic) */
   --grad-horizon: radial-gradient(ellipse 70% 60% at 50% 110%,
                                    rgba(255,85,48,0.32) 0%,
                                    rgba(220,38,38,0.42) 25%,
                                    rgba(153,27,27,0.22) 50%,
                                    transparent 75%);
-  --grad-graphite: linear-gradient(135deg, #DCD8D2 0%, #B5B0A8 35%, #7A7670 70%, #4A4845 100%);
+
+  /* Dark-on-dark depth (nested surfaces inside dark stages) */
   --grad-depth-soft: linear-gradient(180deg, #1F1F1F 0%, #0F0F0F 100%);
   --grad-depth-strong: linear-gradient(180deg, #161616 0%, #050505 100%);
 
@@ -1780,7 +1814,8 @@ body.light-mode .hp .inline-kw.glow {
   font-family: var(--font-display);
   font-size: 50px; line-height: 1;
   font-style: italic;
-  background: var(--grad-sig);
+  /* hero-object glyph uses the SHINE variant for the specular metallic feel */
+  background: var(--grad-sig-shine);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 
@@ -2505,7 +2540,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
        ═══════════════════════════════════════════════════════════════ -->
   <aside class="side">
     <a class="brand-mark" href="#top">Abundance<em>.</em></a>
-    <div class="brand-sub">Brand System · v1.5 · May 2026</div>
+    <div class="brand-sub">Brand System · v1.6 · May 2026</div>
 
     <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
       <span class="t-dark">
@@ -2651,21 +2686,31 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
       <!-- GRADIENTS -->
       <div class="doc-block">
         <h3>Gradients — the brand's central mechanic</h3>
-        <div class="block-meta">Every em emphasis word, every primary CTA, every key glow uses the signature gradient. Achromatic gradients are for "the brand recedes" moments.</div>
+        <div class="block-meta">Every color gradient comes in <strong>two flavors</strong>: <strong>STANDARD</strong> (light → dark, 135°, held stops at 0–7% and 93–100%) for text fills and editorial surfaces; <strong>SHINE</strong> (specular peak at ~60%, ends slightly darker than start) for hero objects and brand-mark moments. Same hues, different distribution.</div>
 
         <div class="grad-row">
-          <div class="grad-label"><span class="gn">Signature · tiger's blood</span><span class="gd">--grad-sig · 135deg, 4 stops</span></div>
-          <div class="grad-strip" style="background: var(--grad-sig);"><div class="stops"><span>#FF7A55</span><span>#EF4444</span><span>#DC2626</span><span>#C92A2A</span></div></div>
+          <div class="grad-label"><span class="gn">Signature · STANDARD</span><span class="gd">--grad-sig · 135deg · light → dark</span></div>
+          <div class="grad-strip" style="background: var(--grad-sig);"><div class="stops"><span>#FF7A55 · 0–7%</span><span>#EF4444 · 40%</span><span>#DC2626 · 72%</span><span>#C92A2A · 93–100%</span></div></div>
+        </div>
+
+        <div class="grad-row">
+          <div class="grad-label"><span class="gn">Signature · SHINE</span><span class="gd">--grad-sig-shine · 135deg · specular peak @ 60%</span></div>
+          <div class="grad-strip" style="background: var(--grad-sig-shine);"><div class="stops"><span>#DC2626 · 0–7%</span><span>#EF4444 · 30%</span><span>#FF7A55 · 60%</span><span>#DC2626 · 85%</span><span>#C92A2A · 93–100%</span></div></div>
+        </div>
+
+        <div class="grad-row">
+          <div class="grad-label"><span class="gn">Graphite · STANDARD</span><span class="gd">--grad-graphite · achromatic, light → dark</span></div>
+          <div class="grad-strip" style="background: var(--grad-graphite);"><div class="stops"><span style="color:rgba(10,10,10,0.85);text-shadow:none;">#DCD8D2 · 0–7%</span><span style="color:rgba(10,10,10,0.85);text-shadow:none;">#B5B0A8 · 35%</span><span>#7A7670 · 70%</span><span>#4A4845 · 93–100%</span></div></div>
+        </div>
+
+        <div class="grad-row">
+          <div class="grad-label"><span class="gn">Graphite · SHINE</span><span class="gd">--grad-graphite-shine · brushed metal specular</span></div>
+          <div class="grad-strip" style="background: var(--grad-graphite-shine);"><div class="stops"><span>#7A7670 · 0–7%</span><span style="color:rgba(10,10,10,0.85);text-shadow:none;">#B5B0A8 · 30%</span><span style="color:rgba(10,10,10,0.85);text-shadow:none;">#DCD8D2 · 60%</span><span>#7A7670 · 85%</span><span>#4A4845 · 93–100%</span></div></div>
         </div>
 
         <div class="grad-row">
           <div class="grad-label"><span class="gn">Horizon glow</span><span class="gd">--grad-horizon · radial, bottom-center</span></div>
           <div class="grad-strip" style="background: var(--bg); position: relative;"><div style="position:absolute;inset:0;background: var(--grad-horizon);"></div></div>
-        </div>
-
-        <div class="grad-row">
-          <div class="grad-label"><span class="gn">Graphite (achromatic)</span><span class="gd">--grad-graphite · for when the brand "recedes"</span></div>
-          <div class="grad-strip" style="background: var(--grad-graphite);"><div class="stops"><span>#DCD8D2</span><span>#B5B0A8</span><span>#7A7670</span><span>#4A4845</span></div></div>
         </div>
 
         <div class="grad-row">
@@ -2682,14 +2727,21 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
 
           <div class="rule">
-            <div class="num">SIGNATURE GRADIENT</div>
-            <h3>The brand's <em>heart</em></h3>
+            <div class="num">SIGNATURE · STANDARD</div>
+            <h3>--grad-sig · light → dark</h3>
             <p class="do">Every &lt;em&gt; emphasis word (background-clip: text).</p>
             <p class="do">Primary CTA backgrounds (with hover-position-slide).</p>
-            <p class="do">Brand mark glows: hub-core, orbital core, dot-period.</p>
-            <p class="do">Featured pricing tier accents, MOST POPULAR pill, checkmarks.</p>
-            <p class="dont">As a section background. Too loud at full bleed.</p>
-            <p class="dont">On every element of a card — that's the achromatic rule's job.</p>
+            <p class="do">Editorial pills, badges, checkmarks, dot-period.</p>
+            <p class="dont">Section backgrounds. Too loud at full bleed.</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">SIGNATURE · SHINE</div>
+            <h3>--grad-sig-shine · specular peak</h3>
+            <p class="do">Hero objects: glass cube, hub-core glyph, orbital core.</p>
+            <p class="do">Featured pricing tier accent borders, MOST POPULAR pill.</p>
+            <p class="do">Brand-mark moments where the surface should feel metallic.</p>
+            <p class="dont">On text emphasis. Specular peak disrupts reading rhythm.</p>
           </div>
 
           <div class="rule">
