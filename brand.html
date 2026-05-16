@@ -61,8 +61,14 @@
   --sig-deep:      #DC2626;   /* deepening red */
   --sig-anchor:    #C92A2A;   /* anchor — bright enough that em-tails stay legible on black */
 
-  /* ─── GRADIENTS — floor lifted so em tails don't dissolve on dark ─── */
-  --grad-sig: linear-gradient(135deg, #FF7A55 0%, #EF4444 40%, #DC2626 75%, #C92A2A 100%);
+  /* ─── GRADIENTS — held stops at the ends give the lightest and
+         darkest hues more presence; middle reds compressed into the
+         ~80% middle band so the four-stop character stays visible. ── */
+  --grad-sig: linear-gradient(135deg,
+    #FF7A55 0%, #FF7A55 7%,
+    #EF4444 40%,
+    #DC2626 72%,
+    #C92A2A 93%, #C92A2A 100%);
   --grad-horizon: radial-gradient(ellipse 70% 60% at 50% 110%,
                                    rgba(255,85,48,0.32) 0%,
                                    rgba(220,38,38,0.42) 25%,
