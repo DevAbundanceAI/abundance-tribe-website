@@ -232,13 +232,16 @@ h1 em, h2 em, h3 em, .display em, .gradient-text {
           color: transparent !important;
   filter: drop-shadow(0 0 14px rgba(239,68,68,0.32));
 }
-/* TIER A · HERO — h1 + display moments → specular peak */
+/* TIER A · HERO — h1 + display moments → specular peak
+   Use background-image (NOT shorthand) — the `background:` shorthand
+   resets background-clip to border-box, which would paint the gradient
+   as a solid block over the transparent text. */
 h1 em, .display em, .gradient-text {
-  background: var(--grad-sig-hero) !important;
+  background-image: var(--grad-sig-hero) !important;
 }
 /* TIER C · TIGHT — h2 + h3 → compressed readable red */
 h2 em, h3 em {
-  background: var(--grad-sig-tight) !important;
+  background-image: var(--grad-sig-tight) !important;
 }
 body.light-mode h1 em,
 body.light-mode h2 em,
