@@ -599,6 +599,29 @@ body.light-mode .brand-hero .glow.bottom { background: radial-gradient(circle, r
   position: absolute;
   bottom: 30px; left: 50%; transform: translateX(-50%);
 }
+.demo-guarantee {
+  background: var(--bg);
+  display: grid; place-items: center;
+  position: relative;
+}
+.demo-guarantee::before {
+  content: '';
+  position: absolute; inset: 18px;
+  border-radius: 14px;
+  background: var(--surface-1);
+  box-shadow: 0 0 60px -4px rgba(220,38,38,0.5), 0 0 0 1px rgba(220,38,38,0.22);
+}
+.demo-guarantee::after {
+  content: '✓';
+  position: relative; z-index: 1;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--grad-sig);
+  color: var(--cream);
+  display: grid; place-items: center;
+  font-size: 18px; font-weight: 800;
+  box-shadow: 0 0 30px rgba(220,38,38,0.7);
+}
 .demo-feature {
   background: var(--bg);
   display: grid; grid-template-rows: 1fr 30px;
@@ -1817,6 +1840,219 @@ body.light-mode .brand-hero .glow.bottom { background: radial-gradient(circle, r
 .cont.c8 .cnm, .cont.c8 .cdesc { color: var(--cream); }
 .cont.c8 .cuse { color: var(--cream); border-top-color: rgba(255,255,255,0.25); }
 
+/* C9 — dot-vignette: dots at the edges, fading into a clean center */
+.cont.c9 {
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  position: relative;
+  overflow: hidden;
+}
+.cont.c9::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.22) 1px, transparent 1.6px);
+  background-size: 14px 14px;
+  -webkit-mask-image: radial-gradient(ellipse 55% 65% at 50% 50%, transparent 22%, black 78%);
+          mask-image: radial-gradient(ellipse 55% 65% at 50% 50%, transparent 22%, black 78%);
+  pointer-events: none;
+}
+.cont.c9 > * { position: relative; z-index: 1; }
+body.light-mode .cont.c9 {
+  background: var(--cream-soft);
+  border-color: var(--hairline-cream);
+}
+body.light-mode .cont.c9::before {
+  background-image: radial-gradient(circle, rgba(10,10,10,0.20) 1px, transparent 1.6px);
+}
+
+/* @property registration — allows animating the conic angle */
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes border-spin { to { --angle: 360deg; } }
+
+/* C10 — animated red glow circling the border perimeter */
+.cont.c10 {
+  position: relative;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
+    conic-gradient(from var(--angle),
+      transparent 0deg,
+      transparent 220deg,
+      #FF9B7A 280deg,
+      #FF5530 310deg,
+      #DC2626 340deg,
+      transparent 360deg) border-box;
+  animation: border-spin 4s linear infinite;
+  box-shadow: 0 0 28px -4px rgba(220,38,38,0.35);
+}
+.cont.c10::after {
+  content: '';
+  position: absolute; inset: -2px;
+  border-radius: 22px;
+  background:
+    conic-gradient(from var(--angle),
+      transparent 0deg,
+      transparent 240deg,
+      rgba(255,85,48,0.5) 300deg,
+      rgba(220,38,38,0.5) 340deg,
+      transparent 360deg);
+  filter: blur(10px);
+  z-index: -1;
+  pointer-events: none;
+  animation: border-spin 4s linear infinite;
+}
+body.light-mode .cont.c10 {
+  background:
+    linear-gradient(var(--cream-soft), var(--cream-soft)) padding-box,
+    conic-gradient(from var(--angle),
+      transparent 0deg,
+      transparent 220deg,
+      #FF9B7A 280deg,
+      #FF5530 310deg,
+      #DC2626 340deg,
+      transparent 360deg) border-box;
+}
+
+/* C11 — animated silver shine border (prestige variant) */
+.cont.c11 {
+  position: relative;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
+    conic-gradient(from var(--angle),
+      transparent 0deg,
+      transparent 240deg,
+      rgba(255,255,255,0.5) 290deg,
+      rgba(255,255,255,1) 320deg,
+      rgba(255,255,255,0.5) 350deg,
+      transparent 360deg) border-box;
+  animation: border-spin 6s linear infinite;
+  box-shadow: 0 0 22px -6px rgba(255,255,255,0.18);
+}
+body.light-mode .cont.c11 {
+  background:
+    linear-gradient(var(--cream-soft), var(--cream-soft)) padding-box,
+    conic-gradient(from var(--angle),
+      transparent 0deg,
+      transparent 240deg,
+      rgba(10,10,10,0.35) 290deg,
+      rgba(10,10,10,0.85) 320deg,
+      rgba(10,10,10,0.35) 350deg,
+      transparent 360deg) border-box;
+}
+
+/* C12 — outer glow halo (red glow emanates AROUND the card onto the stage) */
+.cont.c12 {
+  background: var(--surface-1);
+  border: 1px solid var(--hairline);
+  position: relative;
+  box-shadow:
+    0 0 80px -4px rgba(220,38,38,0.45),
+    0 0 0 1px rgba(220,38,38,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.cont.c12::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.10) 1px, transparent 1.4px);
+  background-size: 16px 16px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 80% at 50% 50%, transparent 35%, black 95%);
+          mask-image: radial-gradient(ellipse 70% 80% at 50% 50%, transparent 35%, black 95%);
+  pointer-events: none;
+}
+.cont.c12 > * { position: relative; z-index: 1; }
+body.light-mode .cont.c12 {
+  background: var(--cream-soft);
+  border-color: rgba(220,38,38,0.22);
+  box-shadow:
+    0 0 80px -4px rgba(220,38,38,0.30),
+    0 0 0 1px rgba(220,38,38,0.18);
+}
+body.light-mode .cont.c12::before {
+  background-image: radial-gradient(circle, rgba(10,10,10,0.10) 1px, transparent 1.4px);
+}
+
+/* ─── GUARANTEE SECTION — shield + headline + body inside C12 ─── */
+.guarantee {
+  background: var(--bg);
+  padding: 70px 30px;
+  border-radius: var(--r-stage);
+  margin: 16px;
+  position: relative;
+  display: grid; place-items: center;
+}
+.guarantee-card {
+  max-width: 720px;
+  padding: clamp(40px, 5vw, 64px) clamp(30px, 4vw, 56px);
+  text-align: center;
+  border-radius: 28px;
+  background: var(--surface-1);
+  border: 1px solid var(--hairline);
+  position: relative;
+  box-shadow:
+    0 0 120px -10px rgba(220,38,38,0.50),
+    0 0 0 1px rgba(220,38,38,0.20),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.guarantee-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1.4px);
+  background-size: 18px 18px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, transparent 30%, black 95%);
+          mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, transparent 30%, black 95%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+.guarantee-card > * { position: relative; z-index: 1; }
+
+.shield-badge {
+  width: 110px; height: 130px;
+  margin: 0 auto 32px;
+  position: relative;
+  filter: drop-shadow(0 12px 30px rgba(220,38,38,0.5));
+}
+.shield-badge svg { width: 100%; height: 100%; }
+
+.guarantee-h {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(32px, 4vw, 48px);
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.guarantee-h em {
+  font-family: var(--font-display);
+  font-style: italic;
+  background: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.guarantee-body {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--ink-body);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto;
+}
+.guarantee-body p + p { margin-top: 18px; }
+body.light-mode .guarantee { background: var(--cream); }
+body.light-mode .guarantee-card {
+  background: var(--cream-soft);
+  border-color: rgba(220,38,38,0.22);
+}
+body.light-mode .guarantee-card::before {
+  background-image: radial-gradient(circle, rgba(10,10,10,0.10) 1px, transparent 1.4px);
+}
+body.light-mode .guarantee-h { color: var(--ink-dark); }
+body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
+
 /* Pattern fills (mini) */
 .pf {
   width: 130px; height: 90px;
@@ -2234,7 +2470,7 @@ body.light-mode .brand-hero .glow.bottom { background: radial-gradient(circle, r
        ═══════════════════════════════════════════════════════════════ -->
   <aside class="side">
     <a class="brand-mark" href="#top">Abundance<em>.</em></a>
-    <div class="brand-sub">Brand System · v1.3 · May 2026</div>
+    <div class="brand-sub">Brand System · v1.4 · May 2026</div>
 
     <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
       <span class="t-dark">
@@ -2644,6 +2880,8 @@ body.light-mode .brand-hero .glow.bottom { background: radial-gradient(circle, r
 
           <div class="sg-card"><div class="demo demo-feature"><div class="ic"></div><div class="lbl">Real-time tracking</div></div><div class="text"><div class="nm">Feature Tile</div><div class="cls">.feat-tile</div><div class="usage">Icon-chip + label in a square card. Use in 3- or 4-column grids when each feature gets the same compact treatment.</div></div></div>
 
+          <div class="sg-card"><div class="demo demo-guarantee"></div><div class="text"><div class="nm">Guarantee · Risk Reversal</div><div class="cls">.guarantee-card</div><div class="usage">Shield badge + bold headline + multi-paragraph body inside a C12 outer-glow halo card. The "try-it-with-zero-risk" beat, late on the page near pricing.</div></div></div>
+
         </div>
       </div>
     </section>
@@ -2736,6 +2974,38 @@ body.light-mode .brand-hero .glow.bottom { background: radial-gradient(circle, r
               <div class="cdesc">The full signature gradient as the surface. Loudest container — reserve for final CTAs and brand mark moments.</div>
             </div>
             <div class="cuse">.cont.c8</div>
+          </div>
+
+          <div class="cont c9">
+            <div>
+              <div class="cnm">C9 · Dot vignette</div>
+              <div class="cdesc">Dot pattern at the edges fading into a clean center. Reads as "depth + texture" without competing with the headline that sits in the middle.</div>
+            </div>
+            <div class="cuse">.cont.c9</div>
+          </div>
+
+          <div class="cont c10">
+            <div>
+              <div class="cnm">C10 · Animated red glow border</div>
+              <div class="cdesc">Tiger's-blood arc circles the perimeter, animated via @property + conic-gradient. Use for "ALIVE" moments — featured tiers, primary offer cards.</div>
+            </div>
+            <div class="cuse">.cont.c10</div>
+          </div>
+
+          <div class="cont c11">
+            <div>
+              <div class="cnm">C11 · Animated silver shine</div>
+              <div class="cdesc">Same rotating-arc mechanic with a silver shine. Prestige variant — premium tier, anniversary moments, awards.</div>
+            </div>
+            <div class="cuse">.cont.c11</div>
+          </div>
+
+          <div class="cont c12">
+            <div>
+              <div class="cnm">C12 · Outer glow halo</div>
+              <div class="cdesc">Soft red halo emanating AROUND the card onto the surrounding stage. Use for guarantee badges, hero objects, "this card is the thing."</div>
+            </div>
+            <div class="cuse">.cont.c12</div>
           </div>
 
         </div>
