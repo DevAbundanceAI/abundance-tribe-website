@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand v8 · Modern AI vibe · Abundance.AI</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   BRAND v8 — modern AI vibe
+   ───────────────────────────────────────────────────────────────────
+   Typography spine (LOCKED):
+     • LOGO ONLY: Neo Contact LT Pro → the "Abundance." wordmark
+     • CORE: Greycliff CF (sans)   → every h1/h2/h3 body, body copy, UI
+     • ACCENT EM: DM Serif Display italic → emphasis <em> word(s)
+       within headings, in tiger's-blood
+
+   Design system:
+     • Page IS the rounded stage (Supra Human move)
+     • One accent only: tiger's blood
+     • Pill primitive at 3 scales: eyebrow / inline-keyword / micro-tag
+     • Cursor-tied light field — the page acknowledges you
+     • Ambient motion: drift, pulse, orbit — page is alive
+     • Per-section visual medium variety (no card-pattern repeat)
+   ═══════════════════════════════════════════════════════════════════ */
+
+@font-face {
+  font-family: 'Neo Contact';
+  src: url('/assets/fonts/neo-contact/neo-contact-lt-pro.woff2') format('woff2');
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Canvas */
+  --cream:       #F5F0E8;
+  --cream-soft:  #FAF6EF;
+  --cream-deep:  #ECE5D8;
+  --bg:          #0A0A0A;
+  --surface-1:   #141414;
+  --surface-2:   #1B1B1B;
+  --surface-3:   #242424;
+
+  /* Ink */
+  --ink:         #F5F0E8;
+  --ink-body:    #C9C2B5;
+  --ink-muted:   #807A70;
+  --ink-dark:    #0A0A0A;
+  --ink-dark-soft: #3A3530;
+  --ink-dark-muted: #6A645B;
+
+  /* THE ONE ACCENT — tiger's blood */
+  --sig-light:   #FF9B7A;
+  --sig:         #FF5530;
+  --sig-deep:    #FF1744;
+  --sig-anchor:  #8B0014;
+
+  /* Gradients */
+  --grad-sig: linear-gradient(135deg, #FF9B7A 0%, #FF5530 35%, #FF1744 70%, #8B0014 100%);
+  --grad-horizon: radial-gradient(ellipse 70% 60% at 50% 110%,
+                                   rgba(255,155,122,0.55) 0%,
+                                   rgba(255,85,48,0.30) 25%,
+                                   rgba(255,23,68,0.12) 45%,
+                                   transparent 70%);
+
+  /* Borders */
+  --hairline:        rgba(255,255,255,0.08);
+  --hairline-strong: rgba(255,255,255,0.18);
+  --hairline-cream:  rgba(10,10,10,0.10);
+  --hairline-cream-strong: rgba(10,10,10,0.18);
+
+  /* Type */
+  --font-logo:    "Neo Contact", "DM Serif Display", Georgia, serif;
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-sans:    "greycliff-cf", system-ui, -apple-system, sans-serif;
+
+  --t-display: clamp(80px, 11vw, 168px);
+  --t-hero:    clamp(56px, 8vw, 112px);
+  --t-h1:      clamp(44px, 6vw, 80px);
+  --t-h2:      clamp(36px, 4.5vw, 64px);
+  --t-h3:      clamp(22px, 2vw, 28px);
+  --t-body:    17px;
+  --t-small:   14px;
+  --t-micro:   12px;
+
+  /* Radius */
+  --r-page:    28px;
+  --r-stage:   40px;
+  --r-card:    24px;
+  --r-inner:   16px;
+  --r-pill:    100px;
+  --r-button:  10px;
+
+  /* Shadow */
+  --shadow-card: 0 24px 60px -20px rgba(0,0,0,0.18);
+  --shadow-glow: 0 10px 40px -10px rgba(255,85,48,0.45);
+
+  /* Spacing rhythm */
+  --gutter: clamp(20px, 4vw, 56px);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  background: var(--bg);
+  color: var(--ink-dark);
+  font-family: var(--font-sans);
+  font-size: var(--t-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+button { font: inherit; cursor: pointer; border: none; background: none; }
+a { color: inherit; text-decoration: none; }
+
+/* ─── TYPOGRAPHY SPINE ─────────────────────────────────────────────
+   Main headline body = SANS-SERIF heavy (Greycliff 800)
+   Emphasis word(s) = SERIF ITALIC in tiger's blood (DM Serif Display)
+   Body strong = inline bold for keyword emphasis
+   Reserved for glyphs only: serif on .brand / .hub-core / .orbit-core
+   ─────────────────────────────────────────────────────────────────── */
+h1, h2, h3, .display {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.028em;
+  line-height: 1.04;
+  color: var(--ink-dark);
+}
+h1 em, h2 em, h3 em, .display em {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--sig);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+}
+h3 { font-size: var(--t-h3); line-height: 1.2; }
+
+/* Inline bold emphasis inside body copy */
+p strong, .lead strong, .body-lg strong { color: var(--ink-dark); font-weight: 700; }
+.on-dark p strong, .lead.on-dark strong, .body-lg.on-dark strong { color: var(--ink); }
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--t-micro);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-dark-muted);
+}
+.eyebrow.on-dark { color: var(--ink-body); }
+.eyebrow .arrow { color: var(--sig); margin: 0 6px; }
+
+.body-lg {
+  font-family: var(--font-sans);
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.55;
+  color: var(--ink-dark-soft);
+}
+.body-lg.on-dark { color: var(--ink-body); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   PAGE STAGE — the entire viewport is a rounded container
+   ═══════════════════════════════════════════════════════════════════ */
+.page {
+  background: var(--cream);
+  margin: 14px;
+  border-radius: var(--r-page);
+  overflow: hidden;
+  position: relative;
+  min-height: calc(100vh - 28px);
+}
+
+/* The metal bevel rim at the very top of the page stage */
+.page::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,0.6) 20%,
+    rgba(255,255,255,0.9) 50%,
+    rgba(255,255,255,0.6) 80%,
+    transparent 100%);
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CALLOUT BAR — sitewide announcement at top
+   ═══════════════════════════════════════════════════════════════════ */
+.callout-bar {
+  background: linear-gradient(180deg, var(--cream-soft), var(--cream));
+  border-bottom: 1px solid var(--hairline-cream);
+  padding: 11px 24px;
+  text-align: center;
+  font-size: var(--t-small);
+  color: var(--ink-dark-soft);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.callout-bar .pulse {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--sig); position: relative;
+  display: inline-block;
+}
+.callout-bar .pulse::after {
+  content: '';
+  position: absolute; inset: -4px;
+  border-radius: 50%; background: var(--sig);
+  opacity: 0.3;
+  animation: pulse-ring 2.2s ease-out infinite;
+}
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.5; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+.callout-bar a {
+  color: var(--sig);
+  font-weight: 600;
+  padding: 4px 12px;
+  border: 1px solid rgba(255,85,48,0.3);
+  border-radius: var(--r-pill);
+  transition: all 0.2s ease;
+}
+.callout-bar a:hover {
+  background: var(--sig);
+  color: var(--cream);
+  border-color: var(--sig);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   NAV — frosted glass floating pill, sticky to top of page stage
+   ═══════════════════════════════════════════════════════════════════ */
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 9px 9px 9px 28px;
+  margin: 18px;
+  background: rgba(245, 240, 232, 0.55);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: var(--r-pill);
+  box-shadow:
+    0 18px 44px -18px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  position: sticky;
+  top: 18px;
+  z-index: 100;
+}
+.brand {
+  font-family: var(--font-logo);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink-dark);
+}
+.brand em { color: var(--sig); font-style: italic; }
+.nav-links {
+  display: flex; gap: 4px;
+  background: rgba(10,10,10,0.04);
+  border: 1px solid var(--hairline-cream);
+  padding: 5px;
+  border-radius: var(--r-pill);
+}
+.nav-links a {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-dark-soft);
+  border-radius: var(--r-pill);
+  transition: all 0.2s ease;
+}
+.nav-links a:hover { color: var(--ink-dark); background: var(--cream-soft); }
+.nav-links a.active { background: var(--ink-dark); color: var(--cream); }
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 20px;
+  background: var(--ink-dark);
+  color: var(--cream);
+  border-radius: var(--r-pill);
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+.nav-cta:hover { transform: translateY(-1px); }
+.nav-cta .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--sig);
+  box-shadow: 0 0 12px var(--sig);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PILL PRIMITIVE — used at 3 scales
+   ═══════════════════════════════════════════════════════════════════ */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--hairline-cream);
+  background: var(--cream-soft);
+  font-family: var(--font-sans);
+  font-size: var(--t-micro);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-dark-soft);
+  white-space: nowrap;
+}
+.pill.on-dark {
+  background: rgba(255,255,255,0.05);
+  border-color: var(--hairline-strong);
+  color: var(--ink-body);
+}
+.pill.filled {
+  background: var(--sig);
+  color: var(--cream);
+  border-color: var(--sig);
+}
+.pill.filled-soft {
+  background: rgba(255,85,48,0.12);
+  border-color: rgba(255,85,48,0.25);
+  color: var(--sig);
+}
+
+/* HEADLINE INLINE PILL — much bigger, sits inline with serif type */
+.kw-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 18px;
+  border-radius: 18px;
+  border: 2px solid var(--sig);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--sig);
+  background: var(--cream-soft);
+  font-size: 0.78em;
+  vertical-align: 8%;
+  letter-spacing: -0.01em;
+}
+.kw-pill.filled {
+  background: rgba(255,85,48,0.10);
+}
+.kw-pill svg { width: 0.85em; height: 0.85em; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   HERO — the alive page
+   ═══════════════════════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  padding: clamp(60px, 8vw, 110px) var(--gutter) clamp(80px, 8vw, 120px);
+  overflow: hidden;
+}
+
+/* Cursor-tied light field — tiger blood follows your mouse */
+.hero .light-field {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 600px at var(--mx, 50%) var(--my, 50%),
+      rgba(255,155,122,0.18) 0%,
+      rgba(255,85,48,0.08) 30%,
+      transparent 60%);
+  transition: background 0.15s ease-out;
+}
+
+/* Ambient atmospheric blob behind hero */
+.hero .ambient-1 {
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 480px; height: 480px;
+  background: radial-gradient(circle, rgba(255,155,122,0.16), transparent 70%);
+  filter: blur(40px);
+  animation: drift 24s ease-in-out infinite;
+  pointer-events: none;
+}
+.hero .ambient-2 {
+  position: absolute;
+  bottom: -120px; left: -100px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(255,23,68,0.10), transparent 70%);
+  filter: blur(40px);
+  animation: drift 32s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(60px, -40px) scale(1.1); }
+  66% { transform: translate(-40px, 30px) scale(0.95); }
+}
+
+.hero-inner {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.hero .eyebrow-row {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 36px;
+}
+.hero h1 {
+  font-size: var(--t-hero);
+  letter-spacing: -0.025em;
+  max-width: 16ch;
+}
+.hero .hero-h1-wrap {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 18px 16px;
+  margin-bottom: 24px;
+}
+.hero .lead {
+  font-family: var(--font-sans);
+  font-size: clamp(17px, 1.5vw, 21px);
+  max-width: 56ch;
+  color: var(--ink-dark-soft);
+  margin-bottom: 44px;
+  line-height: 1.5;
+}
+.hero .lead strong { color: var(--ink-dark); font-weight: 700; }
+
+/* Hero-as-interaction: the chat input IS the primary affordance */
+.hero-input-shell {
+  position: relative;
+  max-width: 720px;
+  background: var(--cream-soft);
+  border: 1px solid var(--hairline-cream-strong);
+  border-radius: 24px;
+  padding: 6px 6px 6px 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 24px 60px -28px rgba(0,0,0,0.15);
+  transition: all 0.2s ease;
+}
+.hero-input-shell:focus-within {
+  border-color: var(--sig);
+  box-shadow: 0 24px 60px -20px rgba(255,85,48,0.25), 0 0 0 4px rgba(255,85,48,0.08);
+}
+.hero-input-shell input {
+  flex: 1;
+  border: none; background: none; outline: none;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  color: var(--ink-dark);
+  padding: 18px 0;
+}
+.hero-input-shell input::placeholder { color: var(--ink-dark-muted); }
+.hero-input-shell .send {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--ink-dark);
+  color: var(--cream);
+  display: grid; place-items: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+.hero-input-shell .send:hover {
+  background: var(--sig);
+  transform: rotate(-45deg);
+}
+
+.hero-chips {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 18px;
+}
+.hero-chips .chip {
+  padding: 9px 16px;
+  background: rgba(10,10,10,0.04);
+  border: 1px solid var(--hairline-cream);
+  border-radius: var(--r-pill);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-dark-soft);
+  transition: all 0.18s ease;
+  cursor: pointer;
+}
+.hero-chips .chip:hover {
+  background: var(--ink-dark);
+  color: var(--cream);
+  border-color: var(--ink-dark);
+}
+
+/* Floating corner price+CTA pill */
+.hero-price-pill {
+  position: absolute;
+  bottom: clamp(30px, 4vw, 60px);
+  right: clamp(20px, 4vw, 56px);
+  display: inline-flex; align-items: center;
+  gap: 18px;
+  background: var(--ink-dark);
+  color: var(--cream);
+  border-radius: var(--r-pill);
+  padding: 8px 8px 8px 22px;
+  box-shadow: 0 30px 60px -30px rgba(0,0,0,0.4);
+  z-index: 10;
+}
+.hero-price-pill .meta { display: flex; flex-direction: column; line-height: 1.1; }
+.hero-price-pill .meta small {
+  font-size: 11px; opacity: 0.6; text-transform: uppercase;
+  letter-spacing: 0.1em; font-weight: 500;
+}
+.hero-price-pill .meta strong { font-size: 16px; font-weight: 700; }
+.hero-price-pill .cta {
+  background: var(--sig);
+  color: var(--cream);
+  padding: 12px 22px;
+  border-radius: var(--r-pill);
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex; align-items: center; gap: 8px;
+  box-shadow: 0 0 24px rgba(255,85,48,0.5);
+  transition: all 0.2s ease;
+}
+.hero-price-pill .cta:hover { background: var(--sig-deep); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   STAGE — full-bleed rounded dark section (the "scene")
+   ═══════════════════════════════════════════════════════════════════ */
+.stage {
+  background: var(--bg);
+  color: var(--ink);
+  border-radius: var(--r-stage);
+  margin: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.stage-inner {
+  padding: clamp(60px, 7vw, 110px) var(--gutter);
+  position: relative;
+  z-index: 2;
+}
+
+/* Starfield — subtle particles inside dark stages */
+.starfield {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 30% 70%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 50% 30%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(2px 2px at 70% 50%, rgba(255,255,255,0.35), transparent),
+    radial-gradient(1px 1px at 85% 80%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 15% 90%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 65% 15%, rgba(255,255,255,0.45), transparent),
+    radial-gradient(1px 1px at 95% 35%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 25% 50%, rgba(255,255,255,0.25), transparent),
+    radial-gradient(1.5px 1.5px at 80% 10%, rgba(255,255,255,0.4), transparent);
+  opacity: 0.6;
+  animation: stars-drift 60s linear infinite;
+}
+@keyframes stars-drift {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(40px, -30px); }
+}
+
+/* Horizon glow for the dark stage */
+.horizon-glow {
+  position: absolute;
+  bottom: -10%; left: 0; right: 0;
+  height: 70%;
+  background: var(--grad-horizon);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION HEADER — asymmetric pair (huge H left, body right)
+   ═══════════════════════════════════════════════════════════════════ */
+.sec-header {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: clamp(40px, 6vw, 100px);
+  align-items: end;
+  margin-bottom: clamp(50px, 5vw, 80px);
+  max-width: 1240px; margin-left: auto; margin-right: auto;
+}
+.sec-header h2 {
+  font-size: var(--t-h1);
+}
+.sec-header .lead {
+  font-family: var(--font-sans);
+  font-size: var(--t-body);
+  color: var(--ink-dark-soft);
+  max-width: 44ch;
+}
+.sec-header.on-dark h2 { color: var(--ink); }
+.sec-header.on-dark .lead { color: var(--ink-body); }
+.sec-header.centered { text-align: center; grid-template-columns: 1fr; }
+.sec-header.centered .lead { margin: 14px auto 0; max-width: 56ch; }
+.sec-header .eyebrow-row {
+  grid-column: 1; display: flex; align-items: center; gap: 8px; margin-bottom: 20px;
+}
+
+@media (max-width: 880px) {
+  .sec-header { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION 1: HUB & SPOKE — "Six hires worth of work."
+   ═══════════════════════════════════════════════════════════════════ */
+.hub-stage { padding-top: 0; }
+.hub-wrap {
+  position: relative;
+  max-width: 1240px; margin: 0 auto;
+  height: 620px;
+  display: flex; align-items: center; justify-content: center;
+}
+.hub-svg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none;
+}
+.hub-svg path {
+  stroke: rgba(255,255,255,0.22);
+  stroke-width: 1;
+  fill: none;
+  stroke-dasharray: 4 6;
+  animation: dash 30s linear infinite;
+}
+@keyframes dash { to { stroke-dashoffset: -200; } }
+
+.hub-core {
+  position: relative;
+  width: 220px; height: 220px;
+  border-radius: 44px;
+  background: linear-gradient(160deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02));
+  border: 1.5px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(20px);
+  display: grid; place-items: center;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    0 30px 90px -20px rgba(0,0,0,0.5),
+    0 0 80px rgba(255,85,48,0.3);
+  z-index: 3;
+  animation: hub-pulse 4s ease-in-out infinite;
+}
+@keyframes hub-pulse {
+  0%, 100% { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 30px 90px -20px rgba(0,0,0,0.5), 0 0 60px rgba(255,85,48,0.3); }
+  50% { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 30px 90px -20px rgba(0,0,0,0.5), 0 0 100px rgba(255,85,48,0.5); }
+}
+.hub-core .glyph {
+  font-family: var(--font-display);
+  font-size: 60px; line-height: 1;
+  background: var(--grad-sig);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hub-core .wm {
+  position: absolute; bottom: 22px;
+  font-family: var(--font-sans);
+  font-size: 14px; font-weight: 700;
+  color: var(--sig);
+  letter-spacing: 0.04em;
+}
+
+/* Spoke pills */
+.spoke {
+  position: absolute;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 22px;
+  background: linear-gradient(160deg, #1A1A1A, #0E0E0E);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px; font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 16px 40px -12px rgba(0,0,0,0.6);
+  z-index: 4;
+}
+.spoke .ic {
+  width: 28px; height: 28px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  display: grid; place-items: center;
+  color: var(--sig);
+}
+.spoke .ic svg { width: 14px; height: 14px; }
+
+.spoke.s-1 { top: 6%;  left: 8%; animation: float-a 6s ease-in-out infinite; }
+.spoke.s-2 { top: 44%; left: 0%; animation: float-b 7s ease-in-out infinite; }
+.spoke.s-3 { bottom: 6%; left: 10%; animation: float-c 8s ease-in-out infinite; }
+.spoke.s-4 { top: 6%;  right: 8%; animation: float-b 6.5s ease-in-out infinite; }
+.spoke.s-5 { top: 44%; right: 0%; animation: float-a 7.5s ease-in-out infinite; }
+.spoke.s-6 { bottom: 6%; right: 10%; animation: float-c 6.8s ease-in-out infinite; }
+
+@keyframes float-a { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+@keyframes float-b { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+@keyframes float-c { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION 2: BEFORE / AFTER — the thesis statement
+   ═══════════════════════════════════════════════════════════════════ */
+.thesis-wrap {
+  padding: clamp(60px, 7vw, 110px) var(--gutter);
+  background: var(--cream);
+  border-radius: var(--r-stage);
+  margin: 16px;
+  position: relative;
+}
+.thesis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  max-width: 1200px; margin: 0 auto;
+}
+@media (max-width: 880px) { .thesis-grid { grid-template-columns: 1fr; } }
+
+.thesis-card {
+  position: relative;
+  border-radius: 32px;
+  padding: 36px;
+  min-height: 540px;
+  overflow: hidden;
+  border: 1px solid var(--hairline-cream);
+}
+.thesis-card.before {
+  background: var(--cream-soft);
+}
+.thesis-card.after {
+  background: linear-gradient(180deg, #0A0A0A, #1A1010);
+  color: var(--ink);
+}
+.thesis-card .label {
+  display: flex; flex-direction: column; gap: 8px;
+  z-index: 5; position: relative;
+}
+.thesis-card .label .tag {
+  font-family: var(--font-sans);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-dark-muted);
+}
+.thesis-card.after .label .tag { color: var(--sig-light); }
+.thesis-card .label h3 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  font-size: 32px; line-height: 1.05;
+  color: var(--ink-dark);
+}
+.thesis-card.after .label h3 { color: var(--ink); }
+.thesis-card.after .label h3 em {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--sig);
+  font-weight: 400;
+}
+
+/* — Before: tumbling chaos */
+.chaos {
+  position: absolute;
+  inset: 80px 0 0 0;
+  pointer-events: none;
+}
+.chaos-pill {
+  position: absolute;
+  padding: 9px 16px;
+  background: #fff;
+  border: 1px solid var(--hairline-cream-strong);
+  border-radius: var(--r-pill);
+  font-family: var(--font-sans);
+  font-size: 13px; font-weight: 600;
+  color: var(--ink-dark);
+  box-shadow: 0 10px 28px -8px rgba(0,0,0,0.15);
+  display: inline-flex; align-items: center; gap: 8px;
+  white-space: nowrap;
+}
+.chaos-pill .dot { width: 6px; height: 6px; background: var(--ink-dark-muted); border-radius: 50%; }
+.chaos-pill.bad { color: #C13030; }
+.chaos-pill.bad .dot { background: #C13030; }
+
+.chaos-pill.c1 { top: 30px;  left: 8%;  transform: rotate(-8deg);  animation: tumble-a 7s ease-in-out infinite; }
+.chaos-pill.c2 { top: 80px;  left: 52%; transform: rotate(6deg);   animation: tumble-b 8s ease-in-out infinite; }
+.chaos-pill.c3 { top: 140px; left: 18%; transform: rotate(-4deg);  animation: tumble-c 9s ease-in-out infinite; }
+.chaos-pill.c4 { top: 180px; left: 62%; transform: rotate(10deg);  animation: tumble-a 6.5s ease-in-out infinite; }
+.chaos-pill.c5 { top: 240px; left: 4%;  transform: rotate(-12deg); animation: tumble-b 7.5s ease-in-out infinite; }
+.chaos-pill.c6 { top: 290px; left: 42%; transform: rotate(3deg);   animation: tumble-c 8.2s ease-in-out infinite; }
+.chaos-pill.c7 { top: 350px; left: 22%; transform: rotate(-7deg);  animation: tumble-a 7.8s ease-in-out infinite; }
+.chaos-pill.c8 { top: 400px; left: 60%; transform: rotate(8deg);   animation: tumble-b 6.8s ease-in-out infinite; }
+
+@keyframes tumble-a {
+  0%, 100% { transform: translateY(0) rotate(-8deg); }
+  50% { transform: translateY(12px) rotate(-12deg); }
+}
+@keyframes tumble-b {
+  0%, 100% { transform: translateY(0) rotate(6deg); }
+  50% { transform: translateY(-10px) rotate(10deg); }
+}
+@keyframes tumble-c {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(14px) rotate(-9deg); }
+}
+
+/* — After: orbital harmony */
+.orbit-wrap {
+  position: absolute;
+  inset: 100px 0 0 0;
+  display: grid; place-items: center;
+}
+.orbit-stage {
+  position: relative;
+  width: 380px; height: 380px;
+}
+.orbit-ring {
+  position: absolute; inset: 0;
+  border: 1px dashed rgba(255,255,255,0.16);
+  border-radius: 50%;
+  animation: orbit-rotate 26s linear infinite;
+}
+.orbit-ring.inner { inset: 60px; animation-duration: 18s; animation-direction: reverse; }
+
+@keyframes orbit-rotate { to { transform: rotate(360deg); } }
+
+.orbit-label {
+  position: absolute;
+  top: -16px; left: 50%;
+  transform-origin: 50% calc(50% + 190px);
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(8px);
+  border-radius: var(--r-pill);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.orbit-label .counter {
+  display: inline-block;
+  animation: counter-rotate 26s linear infinite;
+}
+.orbit-ring.inner .orbit-label .counter {
+  animation-duration: 18s;
+  animation-direction: normal;
+}
+
+@keyframes counter-rotate { to { transform: rotate(-360deg); } }
+
+/* Position 6 labels around the outer ring */
+.orbit-ring:not(.inner) .l-1 { transform: translateX(-50%) rotate(0deg); }
+.orbit-ring:not(.inner) .l-2 { transform: translateX(-50%) rotate(60deg); }
+.orbit-ring:not(.inner) .l-3 { transform: translateX(-50%) rotate(120deg); }
+.orbit-ring:not(.inner) .l-4 { transform: translateX(-50%) rotate(180deg); }
+.orbit-ring:not(.inner) .l-5 { transform: translateX(-50%) rotate(240deg); }
+.orbit-ring:not(.inner) .l-6 { transform: translateX(-50%) rotate(300deg); }
+
+.orbit-core {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 130px; height: 130px;
+  border-radius: 50%;
+  background: var(--grad-sig);
+  display: grid; place-items: center;
+  font-family: var(--font-display);
+  color: var(--cream);
+  font-size: 28px;
+  font-style: italic;
+  box-shadow: 0 0 80px rgba(255,85,48,0.6);
+  animation: core-pulse 3s ease-in-out infinite;
+}
+@keyframes core-pulse {
+  0%, 100% { box-shadow: 0 0 60px rgba(255,85,48,0.5); }
+  50% { box-shadow: 0 0 110px rgba(255,85,48,0.85); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION 3: PROCESS — Launch → Install → Shift → Scale
+   ═══════════════════════════════════════════════════════════════════ */
+.process-wrap {
+  padding: clamp(60px, 7vw, 110px) var(--gutter);
+  background: var(--cream);
+  position: relative;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1340px; margin: 0 auto;
+}
+@media (max-width: 1100px) { .process-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px)  { .process-grid { grid-template-columns: 1fr; } }
+
+.step-card {
+  position: relative;
+  background: var(--cream-soft);
+  border: 1px solid var(--hairline-cream);
+  border-radius: 28px;
+  overflow: hidden;
+  min-height: 480px;
+  display: flex; flex-direction: column;
+}
+.step-vignette {
+  position: relative;
+  flex: 1;
+  background: linear-gradient(180deg, rgba(255,155,122,0.15), rgba(255,255,255,0) 80%);
+  overflow: hidden;
+}
+.step-text {
+  padding: 26px 26px 30px;
+  border-top: 1px solid var(--hairline-cream);
+  background: #fff;
+}
+.step-text .step-num {
+  font-family: var(--font-sans);
+  font-size: 13px; color: var(--ink-dark-muted);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.step-text h3 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  font-size: 26px; line-height: 1.1;
+  color: var(--ink-dark);
+  margin-bottom: 8px;
+}
+.step-text h3 em {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--sig);
+  font-weight: 400;
+}
+.step-text p {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--ink-dark-soft);
+  line-height: 1.45;
+}
+
+/* — Step 1: Launch — ad creative pill grid */
+.vignette-1 {
+  padding: 32px 0 0 32px;
+}
+.vig-pill-grid {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  max-width: 130%;
+}
+.vig-pill {
+  padding: 7px 13px;
+  background: #fff;
+  border: 1px solid var(--hairline-cream-strong);
+  border-radius: var(--r-pill);
+  font-family: var(--font-sans);
+  font-size: 12px; font-weight: 600;
+  color: var(--ink-dark);
+  display: inline-flex; align-items: center; gap: 5px;
+  white-space: nowrap;
+}
+.vig-pill::before { content: '+'; color: var(--ink-dark-muted); font-weight: 700; }
+.vig-pill.on { background: var(--sig); color: var(--cream); border-color: var(--sig); }
+.vig-pill.on::before { content: '✓'; }
+
+/* — Step 2: Install — tilted CRM pipeline cards */
+.vignette-2 {
+  position: relative;
+  padding: 30px;
+  transform: rotate(-3deg);
+  transform-origin: center top;
+}
+.crm-card {
+  background: #fff;
+  border: 1px solid var(--hairline-cream-strong);
+  border-radius: 14px;
+  padding: 14px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 8px 20px -8px rgba(0,0,0,0.12);
+}
+.crm-card .row {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 6px;
+}
+.crm-card .av { width: 22px; height: 22px; border-radius: 50%; background: var(--grad-sig); }
+.crm-card .name { font-weight: 700; color: var(--ink-dark); }
+.crm-card .meta { color: var(--ink-dark-muted); font-size: 11px; }
+.crm-card .stage {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 9px;
+  background: rgba(255,85,48,0.10);
+  color: var(--sig);
+  border-radius: var(--r-pill);
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+
+/* — Step 3: Shift — coaching call transcript */
+.vignette-3 {
+  padding: 26px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.msg {
+  display: flex; gap: 10px; align-items: flex-start;
+  font-family: var(--font-sans); font-size: 12px;
+  line-height: 1.4;
+}
+.msg .av {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--ink-dark);
+  color: var(--cream);
+  display: grid; place-items: center;
+  font-size: 10px; font-weight: 700;
+  flex-shrink: 0;
+}
+.msg .av.coach { background: var(--sig); }
+.msg .bubble {
+  background: #fff;
+  border: 1px solid var(--hairline-cream);
+  border-radius: 12px;
+  padding: 9px 12px;
+  color: var(--ink-dark-soft);
+}
+.msg.coach .bubble { background: var(--ink-dark); color: var(--cream); border-color: var(--ink-dark); }
+.msg .who { font-weight: 700; color: var(--ink-dark); font-size: 11px; }
+
+/* — Step 4: Scale — revenue chart with annotation */
+.vignette-4 {
+  position: relative;
+  padding: 30px 20px 0;
+  height: 100%;
+}
+.chart-bg { position: absolute; inset: 0; padding: 0; }
+.chart-bg svg { width: 100%; height: 100%; }
+.fig-annotation {
+  position: absolute;
+  top: 24px; right: 16px;
+  border: 1.5px dashed var(--sig);
+  border-radius: 6px;
+  padding: 4px 8px;
+  background: rgba(255,85,48,0.08);
+  font-family: var(--font-sans);
+  font-size: 11px; font-weight: 700;
+  color: var(--sig);
+  letter-spacing: 0.04em;
+}
+.fig-cursor {
+  position: absolute;
+  top: 56px; right: -2px;
+  width: 16px; height: 18px;
+  color: var(--sig);
+  transform: rotate(-25deg);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION 4: SOCIAL PROOF — testimonial + logo bar combined
+   ═══════════════════════════════════════════════════════════════════ */
+.proof-wrap {
+  padding: 30px var(--gutter) clamp(40px, 5vw, 80px);
+}
+.proof-card {
+  max-width: 1240px; margin: 0 auto;
+  background: var(--cream-soft);
+  border: 1px solid var(--hairline-cream);
+  border-radius: 36px;
+  padding: clamp(50px, 6vw, 90px) clamp(30px, 5vw, 70px);
+  position: relative;
+}
+.proof-card .quote {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.022em;
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.15;
+  text-align: center;
+  color: var(--ink-dark);
+  max-width: 26ch; margin: 0 auto 36px;
+}
+.proof-card .quote em {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--sig);
+  font-weight: 400;
+}
+
+.headshots {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0;
+  margin-bottom: 16px;
+}
+.headshots .hs {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: var(--grad-sig);
+  border: 3px solid var(--cream-soft);
+  margin-left: -12px;
+  display: grid; place-items: center;
+  color: var(--cream); font-weight: 700;
+  font-family: var(--font-sans);
+  font-size: 16px;
+}
+.headshots .hs:first-child { margin-left: 0; }
+.headshots .hs.big { width: 80px; height: 80px; font-size: 22px; z-index: 2; }
+.headshots .hs.alt-1 { background: linear-gradient(135deg, #8B5A3C, #40220F); }
+.headshots .hs.alt-2 { background: linear-gradient(135deg, #2A7FB8, #1A4A6B); }
+.headshots .hs.alt-3 { background: linear-gradient(135deg, #B87333, #6B4120); }
+
+.proof-attribution {
+  text-align: center;
+  font-family: var(--font-sans);
+  margin-bottom: 50px;
+}
+.proof-attribution .name { font-weight: 700; color: var(--ink-dark); font-size: 14px; }
+.proof-attribution .role { font-size: 13px; color: var(--ink-dark-muted); }
+
+.proof-logos {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: clamp(20px, 4vw, 56px);
+  padding-top: 36px;
+  border-top: 1px solid var(--hairline-cream);
+}
+.proof-logos .logo {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--ink-dark-muted);
+  letter-spacing: -0.02em;
+  opacity: 0.65;
+  transition: opacity 0.2s ease;
+}
+.proof-logos .logo:hover { opacity: 1; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION 5: PRICING — hover shifts the stage temperature
+   ═══════════════════════════════════════════════════════════════════ */
+.pricing-wrap {
+  margin: 16px;
+  border-radius: var(--r-stage);
+  background: var(--bg);
+  color: var(--ink);
+  padding: clamp(60px, 7vw, 110px) var(--gutter);
+  position: relative;
+  overflow: hidden;
+}
+.pricing-glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 50% 60% at var(--px, 50%) 100%,
+    rgba(255,85,48,0.35), transparent 70%);
+  transition: background 0.6s ease;
+  pointer-events: none;
+}
+.pricing-grid {
+  position: relative; z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  max-width: 1240px; margin: 0 auto;
+}
+@media (max-width: 980px) { .pricing-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 580px) { .pricing-grid { grid-template-columns: 1fr; } }
+
+.tier {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  border: 1px solid var(--hairline);
+  border-radius: 22px;
+  padding: 32px 26px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+.tier:hover {
+  border-color: rgba(255,85,48,0.4);
+  background: linear-gradient(180deg, rgba(255,85,48,0.08), rgba(255,85,48,0.02));
+  transform: translateY(-4px);
+}
+.tier .tier-tag {
+  font-family: var(--font-sans);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 6px;
+}
+.tier h3 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  font-size: 38px; color: var(--ink);
+  margin-bottom: 6px;
+}
+.tier .price {
+  font-family: var(--font-sans);
+  font-size: 28px; font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.tier .price small {
+  font-size: 13px; font-weight: 500;
+  color: var(--ink-muted);
+}
+.tier .price .em-em { color: var(--sig); font-family: var(--font-display); font-style: italic; }
+.tier .copy {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--ink-body);
+  line-height: 1.5;
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--hairline);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION 6: FINAL CTA — outline pill with embedded circle
+   ═══════════════════════════════════════════════════════════════════ */
+.final-wrap {
+  background: var(--cream);
+  padding: clamp(80px, 9vw, 140px) var(--gutter);
+  text-align: center;
+  position: relative;
+}
+.final-wrap h2 {
+  font-size: var(--t-display);
+  letter-spacing: -0.035em;
+  max-width: 14ch;
+  margin: 0 auto 30px;
+}
+.final-wrap .lead {
+  max-width: 56ch;
+  margin: 0 auto 56px;
+  font-family: var(--font-sans);
+  color: var(--ink-dark-soft);
+  font-size: clamp(17px, 1.5vw, 19px);
+}
+.cta-mega {
+  display: inline-flex; align-items: center;
+  gap: 18px;
+  padding: 10px 10px 10px 36px;
+  border: 1.5px solid var(--ink-dark);
+  border-radius: var(--r-pill);
+  font-family: var(--font-sans);
+  font-size: 17px; font-weight: 600;
+  color: var(--ink-dark);
+  background: var(--cream);
+  box-shadow: 0 0 0 0 rgba(255,85,48,0);
+  transition: all 0.3s ease;
+}
+.cta-mega:hover {
+  background: var(--ink-dark);
+  color: var(--cream);
+  box-shadow: 0 0 48px 0 rgba(255,85,48,0.5);
+}
+.cta-mega .arrow {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--sig);
+  color: var(--cream);
+  display: grid; place-items: center;
+  box-shadow: 0 0 30px rgba(255,85,48,0.5);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   FOOTER — top-rounded full-bleed; contact info as hero type
+   ═══════════════════════════════════════════════════════════════════ */
+.foot {
+  background: var(--ink-dark);
+  color: var(--ink);
+  border-radius: var(--r-stage) var(--r-stage) 0 0;
+  padding: clamp(60px, 7vw, 100px) var(--gutter) 40px;
+  margin-top: 16px;
+}
+.foot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: clamp(40px, 6vw, 100px);
+  max-width: 1240px; margin: 0 auto 60px;
+}
+@media (max-width: 880px) { .foot-grid { grid-template-columns: 1fr; } }
+.foot .contact-hero {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  font-size: clamp(36px, 4vw, 58px);
+  line-height: 1.05;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.foot .contact-hero em {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--sig);
+  font-weight: 400;
+}
+.foot .contact-sub {
+  color: var(--ink-body);
+  font-size: 15px;
+  max-width: 36ch;
+}
+.foot-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+.foot-links .col h4 {
+  font-family: var(--font-sans);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 14px;
+}
+.foot-links .col a {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--ink-body);
+  padding: 4px 0;
+  transition: color 0.15s;
+}
+.foot-links .col a:hover { color: var(--sig); }
+.foot-bottom {
+  max-width: 1240px; margin: 0 auto;
+  display: flex; justify-content: space-between;
+  padding-top: 26px;
+  border-top: 1px solid var(--hairline);
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SCROLL REVEAL — small ambient class
+   ═══════════════════════════════════════════════════════════════════ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+[data-reveal].in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── small responsive trims ─── */
+@media (max-width: 760px) {
+  .nav-links { display: none; }
+  .hero-price-pill { position: static; margin-top: 30px; }
+  .hub-wrap { height: 540px; }
+  .spoke { font-size: 13px; padding: 10px 14px; }
+  .orbit-stage { width: 280px; height: 280px; }
+  .orbit-label { transform-origin: 50% calc(50% + 140px) !important; font-size: 11px; padding: 6px 10px; }
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ═══ CALLOUT BAR ═══ -->
+  <div class="callout-bar">
+    <span class="pulse"></span>
+    <span>Founding pricing locks May 22 · Apply this week to lock the $9k Launch tier</span>
+    <a href="#apply">Apply →</a>
+  </div>
+
+  <!-- ═══ NAV ═══ -->
+  <nav class="nav">
+    <div class="brand">Abundance<em>.</em></div>
+    <div class="nav-links">
+      <a href="#" class="active">Selling System</a>
+      <a href="#">Process</a>
+      <a href="#">Pricing</a>
+      <a href="#">Stories</a>
+    </div>
+    <a href="#" class="nav-cta">
+      <span class="dot"></span>
+      Apply now
+    </a>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="hero">
+    <div class="light-field" id="light-field"></div>
+    <div class="ambient-1"></div>
+    <div class="ambient-2"></div>
+
+    <div class="hero-inner">
+
+      <div class="eyebrow-row">
+        <span class="pill filled-soft">THE SELLING SYSTEM</span>
+        <span class="eyebrow"><span class="arrow">→</span> Installed in 14 days</span>
+      </div>
+
+      <div class="hero-h1-wrap">
+        <h1>We build your
+          <span class="kw-pill filled">Ads
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+          </span>
+          <span class="kw-pill">Funnels
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>
+          </span>
+          <span class="kw-pill filled">CRM
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg>
+          </span>
+          <span class="kw-pill">Copy
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 4h14v16H5z"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+          </span>
+          &amp;
+          <span class="kw-pill filled">Coaching
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+          </span>
+          so you can <em>just sell.</em>
+        </h1>
+      </div>
+
+      <p class="lead">
+        <strong>Six hires worth of work. One team.</strong>
+        Stop stitching together a copywriter, media buyer, funnel designer,
+        video editor, CRM consultant and sales coach. Abundance installs
+        the whole stack — and runs it.
+      </p>
+
+      <form class="hero-input-shell" onsubmit="event.preventDefault(); document.getElementById('hi-out').textContent='✓ Got it — we&apos;ll be in touch within an hour.';">
+        <input type="text" id="hi" placeholder="Tell us about your offer in one sentence…">
+        <button type="submit" class="send" aria-label="Send">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+      <div id="hi-out" style="margin-top:14px;color:var(--sig);font-size:14px;font-weight:600;"></div>
+
+      <div class="hero-chips">
+        <button class="chip" data-fill="Help me build my ads">Build my ads</button>
+        <button class="chip" data-fill="Set up my CRM and funnels">Set up my funnels</button>
+        <button class="chip" data-fill="Audit my current sales process">Audit my sales process</button>
+        <button class="chip" data-fill="Show me pricing">See pricing</button>
+      </div>
+
+    </div>
+
+    <div class="hero-price-pill">
+      <div class="meta">
+        <small>Starting at</small>
+        <strong>$9,000 · Launch tier</strong>
+      </div>
+      <a href="#" class="cta">
+        Apply now
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ STAGE 1: HUB & SPOKE ═══ -->
+  <section class="stage" id="hub">
+    <div class="starfield"></div>
+    <div class="horizon-glow"></div>
+    <div class="stage-inner">
+
+      <div class="sec-header on-dark">
+        <div>
+          <div class="eyebrow-row">
+            <span class="pill on-dark">STACK <span style="color:var(--sig);margin:0 4px;">→</span> SYSTEM</span>
+          </div>
+          <h2>One <em>team</em> in the middle.<br>Six hires you don't have to make.</h2>
+        </div>
+        <p class="lead body-lg on-dark" data-reveal>
+          Your team shouldn't be six freelancers in a Slack channel. Abundance is
+          the single operating system that replaces the stack you'd otherwise
+          stitch together — and keeps it running.
+        </p>
+      </div>
+
+      <div class="hub-wrap" data-reveal>
+
+        <svg class="hub-svg" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid meet">
+          <!-- left spokes -->
+          <path d="M180 80 Q 420 80 580 290" />
+          <path d="M120 310 Q 380 310 560 310" />
+          <path d="M200 540 Q 420 540 580 330" />
+          <!-- right spokes -->
+          <path d="M1020 80 Q 780 80 620 290" />
+          <path d="M1080 310 Q 820 310 640 310" />
+          <path d="M1000 540 Q 780 540 620 330" />
+        </svg>
+
+        <div class="spoke s-1">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 4h14v16H5z"/><path d="M9 9h6M9 13h6M9 17h4"/></svg></span>
+          Copywriter
+        </div>
+        <div class="spoke s-2">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg></span>
+          Funnel Builder
+        </div>
+        <div class="spoke s-3">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></span>
+          Media Buyer
+        </div>
+        <div class="spoke s-4">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 4 19 12 5 20"/></svg></span>
+          Video Editor
+        </div>
+        <div class="spoke s-5">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg></span>
+          CRM Setup
+        </div>
+        <div class="spoke s-6">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></span>
+          Sales Coach
+        </div>
+
+        <div class="hub-core">
+          <span class="glyph"><em>A</em></span>
+          <span class="wm">ABUNDANCE</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ THESIS: BEFORE / AFTER ═══ -->
+  <section class="thesis-wrap" id="thesis">
+    <div class="sec-header centered" data-reveal>
+      <div class="eyebrow-row" style="justify-content:center;">
+        <span class="pill">THE THESIS</span>
+      </div>
+      <h2>Most founders are running a <em>junk drawer.</em><br>We put it in orbit.</h2>
+    </div>
+
+    <div class="thesis-grid">
+
+      <!-- BEFORE -->
+      <div class="thesis-card before">
+        <div class="label">
+          <span class="tag">BEFORE</span>
+          <h3>Stitching together six vendors and praying.</h3>
+        </div>
+        <div class="chaos">
+          <span class="chaos-pill c1">Copywriter — $5k/mo</span>
+          <span class="chaos-pill c2 bad"><span class="dot"></span>Ad creative late</span>
+          <span class="chaos-pill c3">Funnel designer — $4k/mo</span>
+          <span class="chaos-pill c4 bad"><span class="dot"></span>CRM sync broken</span>
+          <span class="chaos-pill c5">Media buyer — $8k/mo</span>
+          <span class="chaos-pill c6 bad"><span class="dot"></span>Where's the report?</span>
+          <span class="chaos-pill c7">Video editor — $3k/mo</span>
+          <span class="chaos-pill c8 bad"><span class="dot"></span>Lead pixel missing</span>
+        </div>
+      </div>
+
+      <!-- AFTER -->
+      <div class="thesis-card after">
+        <div class="label">
+          <span class="tag">AFTER ABUNDANCE</span>
+          <h3>One system. In stable <em>orbit.</em></h3>
+        </div>
+        <div class="orbit-wrap">
+          <div class="orbit-stage">
+
+            <div class="orbit-ring">
+              <span class="orbit-label l-1"><span class="counter">Copy</span></span>
+              <span class="orbit-label l-2"><span class="counter">Funnels</span></span>
+              <span class="orbit-label l-3"><span class="counter">Ads</span></span>
+              <span class="orbit-label l-4"><span class="counter">Video</span></span>
+              <span class="orbit-label l-5"><span class="counter">CRM</span></span>
+              <span class="orbit-label l-6"><span class="counter">Coaching</span></span>
+            </div>
+
+            <div class="orbit-core">A</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ PROCESS: 4 STEPS ═══ -->
+  <section class="process-wrap" id="process">
+    <div class="sec-header" data-reveal>
+      <div>
+        <div class="eyebrow-row">
+          <span class="pill">FOUR VERBS</span>
+        </div>
+        <h2>Launch. Install.<br>Shift. <em>Scale.</em></h2>
+      </div>
+      <p class="lead body-lg">
+        Every Abundance client moves through the same four verbs — the
+        on-ramp into a system that compounds. Each phase has its own deliverable,
+        its own dashboard, its own promise.
+      </p>
+    </div>
+
+    <div class="process-grid">
+
+      <!-- Step 1: Launch -->
+      <div class="step-card" data-reveal>
+        <div class="step-vignette vignette-1">
+          <div class="vig-pill-grid">
+            <span class="vig-pill on">Hook A</span>
+            <span class="vig-pill">Hook B</span>
+            <span class="vig-pill on">Founder POV</span>
+            <span class="vig-pill">Skit format</span>
+            <span class="vig-pill">UGC angle</span>
+            <span class="vig-pill on">Talking head</span>
+            <span class="vig-pill">Big claim open</span>
+            <span class="vig-pill">Pain-first</span>
+            <span class="vig-pill on">Proof-first</span>
+            <span class="vig-pill">Story open</span>
+            <span class="vig-pill">Founders in suits</span>
+            <span class="vig-pill on">Casual b-roll</span>
+            <span class="vig-pill">$3k/mo budget</span>
+            <span class="vig-pill">14-day cycle</span>
+          </div>
+        </div>
+        <div class="step-text">
+          <div class="step-num">Step 1:</div>
+          <h3>Launch in <em>14 days.</em></h3>
+          <p>Ad creative, hooks, copy, pixels. Live on Meta and TikTok within two weeks of kickoff. No exceptions.</p>
+        </div>
+      </div>
+
+      <!-- Step 2: Install -->
+      <div class="step-card" data-reveal>
+        <div class="step-vignette vignette-2">
+          <div class="crm-card">
+            <div class="row"><div class="av"></div><span class="name">Sarah K.</span></div>
+            <div class="meta">Booked · 30-min call</div>
+            <span class="stage">QUALIFIED</span>
+          </div>
+          <div class="crm-card">
+            <div class="row"><div class="av"></div><span class="name">Marcus T.</span></div>
+            <div class="meta">No-show · re-engagement</div>
+            <span class="stage">FOLLOW-UP</span>
+          </div>
+          <div class="crm-card">
+            <div class="row"><div class="av"></div><span class="name">Priya R.</span></div>
+            <div class="meta">Held · proposal sent</div>
+            <span class="stage">PROPOSAL</span>
+          </div>
+          <div class="crm-card">
+            <div class="row"><div class="av"></div><span class="name">Dev O.</span></div>
+            <div class="meta">Closed · $18k contract</div>
+            <span class="stage">WON</span>
+          </div>
+        </div>
+        <div class="step-text">
+          <div class="step-num">Step 2:</div>
+          <h3>Install the <em>whole stack.</em></h3>
+          <p>Full GoHighLevel CRM, pipeline, tracking, automations. Every lead, every call, every dollar — accounted for.</p>
+        </div>
+      </div>
+
+      <!-- Step 3: Shift -->
+      <div class="step-card" data-reveal>
+        <div class="step-vignette vignette-3">
+          <div class="msg">
+            <div class="av">F</div>
+            <div class="bubble">
+              <div class="who">You</div>
+              How do I handle the "I need to think about it" objection?
+            </div>
+          </div>
+          <div class="msg coach">
+            <div class="av coach">FB</div>
+            <div class="bubble">
+              <div class="who" style="color:var(--cream);">Frosty</div>
+              You don't. You assume they've already thought about it — and ask what's still unclear. Watch this:
+            </div>
+          </div>
+          <div class="msg">
+            <div class="av">F</div>
+            <div class="bubble">
+              <div class="who">You</div>
+              Holy shit. That re-framed everything.
+            </div>
+          </div>
+        </div>
+        <div class="step-text">
+          <div class="step-num">Step 3:</div>
+          <h3>Shift into <em>repetition.</em></h3>
+          <p>Coaching, templates, community. From month 4: $1,500/mo. Sharpen the saw while the system runs.</p>
+        </div>
+      </div>
+
+      <!-- Step 4: Scale -->
+      <div class="step-card" data-reveal>
+        <div class="step-vignette vignette-4">
+          <div class="chart-bg">
+            <svg viewBox="0 0 320 360" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FF5530" stop-opacity="0.18"/>
+                  <stop offset="100%" stop-color="#FF5530" stop-opacity="0"/>
+                </linearGradient>
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M40 0H0V40" fill="none" stroke="#0A0A0A" stroke-opacity="0.06" stroke-dasharray="2 4"/>
+                </pattern>
+              </defs>
+              <rect width="320" height="360" fill="url(#grid)"/>
+              <path d="M0 280 L40 250 L80 260 L120 200 L160 220 L200 150 L240 130 L280 80 L320 60 L320 360 L0 360 Z" fill="url(#chart-fill)"/>
+              <path d="M0 280 L40 250 L80 260 L120 200 L160 220 L200 150 L240 130 L280 80 L320 60" fill="none" stroke="#FF5530" stroke-width="2.5"/>
+              <circle cx="120" cy="200" r="4" fill="#FF5530"/>
+              <circle cx="200" cy="150" r="4" fill="#FF5530"/>
+              <circle cx="280" cy="80" r="5" fill="#FF5530"/>
+            </svg>
+          </div>
+          <div class="fig-annotation">↗ compounding</div>
+          <svg class="fig-cursor" viewBox="0 0 18 20" fill="currentColor"><path d="M0 0l18 7-7 3-3 10z"/></svg>
+        </div>
+        <div class="step-text">
+          <div class="step-num">Step 4:</div>
+          <h3>Scale with <em>cadence.</em></h3>
+          <p>Ongoing agency: scripts, copy, media buying, optimization. From month 4: $3,000/mo. Compound the system.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ SOCIAL PROOF ═══ -->
+  <section class="proof-wrap" id="proof">
+    <div class="proof-card" data-reveal>
+      <p class="quote">"In 90 days Abundance replaced an entire team I was about to hire — and we closed <em>three times</em> the deals we did the year before."</p>
+
+      <div class="headshots">
+        <div class="hs alt-1">JT</div>
+        <div class="hs alt-2">MR</div>
+        <div class="hs big">SH</div>
+        <div class="hs alt-3">PR</div>
+        <div class="hs">DV</div>
+      </div>
+
+      <div class="proof-attribution">
+        <div class="name">Sarah Hendrickson</div>
+        <div class="role">Founder · The Coaching Collective</div>
+      </div>
+
+      <div class="proof-logos">
+        <span class="logo">Pellow &amp; Co</span>
+        <span class="logo">Brightline</span>
+        <span class="logo">Northwind</span>
+        <span class="logo">Halcyon</span>
+        <span class="logo">Inkwell</span>
+        <span class="logo">Verdant</span>
+        <span class="logo">Sable</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRICING ═══ -->
+  <section class="pricing-wrap" id="pricing">
+    <div class="pricing-glow" id="pricingGlow"></div>
+    <div class="starfield"></div>
+
+    <div class="sec-header on-dark centered" data-reveal style="position:relative;z-index:3;">
+      <div class="eyebrow-row" style="justify-content:center;">
+        <span class="pill on-dark">FOUR TIERS · TWO PATHS</span>
+      </div>
+      <h2 style="color:var(--ink);">Buy the <em>install.</em><br>Pick the continuity.</h2>
+      <p class="lead body-lg on-dark">
+        Two upfront tiers get the Selling System live. Two continuity tiers
+        keep it sharpening once you're 90 days in.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <div class="tier" data-tier="launch">
+        <div class="tier-tag">UPFRONT · ONE-TIME</div>
+        <h3>Launch</h3>
+        <div class="price">$9,000 <small>once</small></div>
+        <p class="copy">DFY Meta ads + funnel. Consult on sales process, CRM, ops. Live in 14 days.</p>
+      </div>
+
+      <div class="tier" data-tier="install">
+        <div class="tier-tag">UPFRONT · ONE-TIME</div>
+        <h3>Install</h3>
+        <div class="price">$12,000 <small>once</small></div>
+        <p class="copy">Everything in Launch + full GoHighLevel CRM build + sales infrastructure.</p>
+      </div>
+
+      <div class="tier" data-tier="shift">
+        <div class="tier-tag">CONTINUITY · MONTHLY</div>
+        <h3>Shift</h3>
+        <div class="price">$1,500<small>/mo</small></div>
+        <p class="copy">Group coaching, templates, community. Sharpen the saw while the system runs.</p>
+      </div>
+
+      <div class="tier" data-tier="scale">
+        <div class="tier-tag">CONTINUITY · MONTHLY</div>
+        <h3>Scale</h3>
+        <div class="price">$3,000<small>/mo</small></div>
+        <p class="copy">Ongoing agency: scripts, copy, consulting, media buying. Compound the system.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ FINAL CTA ═══ -->
+  <section class="final-wrap" id="apply">
+    <h2>You don't need <em>more tools.</em><br>You need a system.</h2>
+    <p class="lead">Apply for the next Launch cohort. We'll respond inside the hour with whether your offer is ready, or what to fix first.</p>
+    <a href="#" class="cta-mega">
+      Apply now
+      <span class="arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </a>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="foot">
+    <div class="foot-grid">
+      <div>
+        <a href="mailto:hello@findabundance.ai" class="contact-hero">hello@<em>findabundance</em>.ai</a>
+        <p class="contact-sub">For founders ready to install a Selling System — not buy more software.</p>
+      </div>
+      <div class="foot-links">
+        <div class="col">
+          <h4>System</h4>
+          <a href="#">Selling System</a>
+          <a href="#">Process</a>
+          <a href="#">Pricing</a>
+          <a href="#">Apply</a>
+        </div>
+        <div class="col">
+          <h4>Proof</h4>
+          <a href="#">Case studies</a>
+          <a href="#">Testimonials</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Partner</a>
+          <a href="#">Brand</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Abundance.AI · All rights reserved</span>
+      <span>findabundance.ai</span>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  /* ─── Cursor-tied light field in the hero ─── */
+  const hero = document.querySelector('.hero');
+  const lf = document.getElementById('light-field');
+  if (hero && lf) {
+    hero.addEventListener('mousemove', e => {
+      const r = hero.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width) * 100;
+      const y = ((e.clientY - r.top) / r.height) * 100;
+      lf.style.setProperty('--mx', x + '%');
+      lf.style.setProperty('--my', y + '%');
+    });
+  }
+
+  /* ─── Pricing glow follows hovered tier ─── */
+  const pricingGlow = document.getElementById('pricingGlow');
+  document.querySelectorAll('.tier').forEach((tier, i, all) => {
+    tier.addEventListener('mouseenter', () => {
+      const pct = ((i + 0.5) / all.length) * 100;
+      if (pricingGlow) pricingGlow.style.setProperty('--px', pct + '%');
+    });
+  });
+
+  /* ─── Quick-action chips fill the input ─── */
+  document.querySelectorAll('.hero-chips .chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const inp = document.getElementById('hi');
+      if (inp) {
+        inp.value = chip.dataset.fill;
+        inp.focus();
+      }
+    });
+  });
+
+  /* ─── Scroll reveal (Intersection Observer) ─── */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
