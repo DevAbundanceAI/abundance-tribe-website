@@ -2904,6 +2904,36 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
 
         </div>
       </div>
+
+      <!-- STANDARD vs SHINE on em -->
+      <div class="doc-block">
+        <h3>STANDARD vs SHINE on em emphasis</h3>
+        <div class="block-meta">Same headline, same words, same gradient family — different stop distribution. Pick a side based on the role the headline is playing.</div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+
+          <div class="hp">
+            <span class="hp-tag">STANDARD</span>
+            <div class="hp-eb">--grad-sig · light → dark</div>
+            <div class="hp-h">We don't do weight loss, we do <em>transformation.</em></div>
+            <div class="hp-note"><strong>What you see:</strong> "t" of "transformation" is brightest (top-left); the word fades toward deep red at the tail. The eye lands at the START of the em phrase. Reading flow is natural.</div>
+            <div class="hp-note"><strong>Use for:</strong> 90% of headlines. Editorial register, body-paired headers, anything that should feel like book-cover typography.</div>
+          </div>
+
+          <div class="hp">
+            <span class="hp-tag">SHINE</span>
+            <div class="hp-eb">--grad-sig-shine · specular peak @ 60%</div>
+            <div class="hp-h">We don't do weight loss, we do <em style="background: var(--grad-sig-shine) !important;">transformation.</em></div>
+            <div class="hp-note"><strong>What you see:</strong> brightness peaks MID-word — the "form" syllable shimmers. Start and end are deeper red. The em "catches the light" like metal.</div>
+            <div class="hp-note"><strong>Use for:</strong> rare hero / declarative moments where the emphasis IS the brand mark. Final-CTA headline, hero h1, premium tier section. Not for body-paired feature headers — the shimmer disrupts reading.</div>
+          </div>
+
+        </div>
+
+        <div class="block-meta" style="margin-top: 28px;">
+          <strong>Verdict for Abundance:</strong> keep STANDARD as the default rule. Reach for SHINE on the hero h1, the final-CTA h2, and the guarantee-section headline. Three SHINE moments per page max — anything more and the metallic peak becomes the brand's voice instead of its accent.
+        </div>
+      </div>
     </section>
 
     <!-- ═══ 3. SECTIONS ═══ -->
