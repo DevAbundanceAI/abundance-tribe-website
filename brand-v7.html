@@ -734,14 +734,17 @@
 
 
   /* ─── SECTION RHYTHM RULE ──────────────────────────────────────
-     Not every section gets the halo glow. Alternate between:
-     • FLAT (default, open canvas + section halo) — hero moments,
-       testimonial, final CTA. The focal element IS the section.
-     • CONTAINED (rounded giant panel, no halo) — multi-element
-       systems like step grids, pricing tiers, FAQ blocks. The
-       panel chunks the system into one visual module.
-     This kills the 'every-section-glows' monotony without ever
-     resorting to literal divider lines.
+     FOUR section treatments to alternate for rhythm:
+     • FLAT (default) — open canvas, focal element IS the section.
+       Hero, chart, testimonial when not transitioning, final CTA.
+     • CONTAINED — elevated rounded panel (surface-1 bg, shadow,
+       border). Multi-element systems like step grids, dashboards,
+       pricing tiers.
+     • CONTAINED.GHOST — same-as-canvas bg, border-only outline,
+       no shadow. Quieter modules where wrapper just groups.
+     • FULLBLEED — full-width section bg differs from canvas (uses
+       surface-1). Edge-to-edge transition moment that visually
+       chunks the page into 'before' and 'after' regions. Use ONCE.
      ──────────────────────────────────────────────────────────── */
   section.contained > .container {
     background: var(--surface-1);
@@ -750,9 +753,19 @@
     padding: var(--s-7) var(--s-4);
     box-shadow: var(--shadow-card);
   }
+  section.contained.ghost > .container {
+    background: var(--bg);
+    box-shadow: none;
+  }
   section.contained {
     padding-top: var(--s-6);
     padding-bottom: var(--s-6);
+  }
+  /* Fullbleed — section bg fills viewport (edge to edge), container
+     inside stays max-width. Use to transition between regions of the
+     page. Max ONCE per page. */
+  section.fullbleed {
+    background: var(--surface-1);
   }
 
 
@@ -1532,8 +1545,8 @@
   </div>
 </section>
 
-<!-- 4. TESTIMONIAL -->
-<section>
+<!-- 4. TESTIMONIAL (fullbleed — visual transition moment, surface-1 edge-to-edge) -->
+<section class="fullbleed">
   <div class="container tight">
     <div class="testimonial">
       <blockquote>The Selling System replaced our entire marketing team in 14 days. We went from doing $40K/mo on spreadsheets to $127K with a calendar I'm not even running anymore.</blockquote>
@@ -1598,8 +1611,8 @@
   </div>
 </section>
 
-<!-- 6. FAQ (contained · achromatic · the no-red breath section) -->
-<section class="contained bg-grid achromatic" id="faq">
+<!-- 6. FAQ (contained.ghost · achromatic · bg-grid · the no-red breath) -->
+<section class="contained ghost bg-grid achromatic" id="faq">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">FAQ</span>
