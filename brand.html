@@ -260,7 +260,25 @@ h3 { font-size: var(--t-h3); line-height: 1.2; }
 .flat-accent.deep { color: var(--sig-deep); }
 .flat-accent.anchor { color: var(--sig-anchor); }
 
-p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
+/* Inline code chip — works in both modes. Use anywhere body text has
+   a token name (--font-logo, .pill, etc.) that needs a subtle pill. */
+.code-chip {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 13px;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: rgba(255,255,255,0.06);
+  color: var(--sig-highlight);
+}
+body.light-mode .code-chip {
+  background: rgba(10,10,10,0.06);
+  color: var(--sig);
+}
+
+/* The page is dark by default — bright cream strong on dark stages.
+   In light mode, flip to ink-dark for proper cream-bg contrast. */
+p strong, .lead strong { color: var(--ink); font-weight: 700; }
+body.light-mode p strong, body.light-mode .lead strong { color: var(--ink-dark); }
 .on-dark p strong, .on-dark .lead strong { color: var(--ink); }
 
 .eyebrow, .label {
@@ -3037,7 +3055,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
           <div class="sample logo">Abundance</div>
           <div class="info-row">
             <div class="info"><span class="k">FAMILY</span>Neo Contact LT Pro</div>
-            <div class="info"><span class="k">TOKEN</span><code style="background:rgba(10,10,10,0.06);padding:1px 6px;border-radius:4px;font-family:ui-monospace;">--font-logo</code></div>
+            <div class="info"><span class="k">TOKEN</span><code class="code-chip">--font-logo</code></div>
             <div class="info"><span class="k">USE FOR</span><strong>Logo wordmark only.</strong> Never headings, body, or UI.</div>
           </div>
         </div>
@@ -3046,7 +3064,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
           <div class="sample sans-heavy">Most founders are running a junk drawer.</div>
           <div class="info-row">
             <div class="info"><span class="k">FAMILY</span>Greycliff CF (Typekit · bxi7koh)</div>
-            <div class="info"><span class="k">TOKEN</span><code style="background:rgba(10,10,10,0.06);padding:1px 6px;border-radius:4px;font-family:ui-monospace;">--font-sans</code></div>
+            <div class="info"><span class="k">TOKEN</span><code class="code-chip">--font-sans</code></div>
             <div class="info"><span class="k">USE FOR</span><strong>Every h1/h2/h3, body copy, pills, buttons, UI labels.</strong> The brand's main voice. Headlines use weight 800.</div>
           </div>
         </div>
@@ -3055,7 +3073,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
           <div class="sample serif-italic">in stable orbit.</div>
           <div class="info-row">
             <div class="info"><span class="k">FAMILY</span>DM Serif Display Italic</div>
-            <div class="info"><span class="k">TOKEN</span><code style="background:rgba(10,10,10,0.06);padding:1px 6px;border-radius:4px;font-family:ui-monospace;">--font-display</code></div>
+            <div class="info"><span class="k">TOKEN</span><code class="code-chip">--font-display</code></div>
             <div class="info"><span class="k">USE FOR</span><strong>&lt;em&gt; emphasis inside headings only.</strong> Always with the gradient text fill. Never as a standalone block of copy.</div>
           </div>
         </div>
@@ -3195,7 +3213,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
     <section class="doc-section" id="sections">
       <div class="doc-head">
         <span class="label on-dark">03 · SECTIONS</span>
-        <h2 style="color: var(--ink);">Twenty-six archetypes<span class="dot-period"></span></h2>
+        <h2>Twenty-six archetypes<span class="dot-period"></span></h2>
         <p class="lead">When building a new page, pick from these. Each has a defined role in the narrative arc. Don't invent a twenty-seventh.</p>
       </div>
 
@@ -3220,9 +3238,9 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
 
           <div class="sg-card"><div class="demo demo-stats"><div>14<em>d</em></div><div>5<em>x</em></div><div>$200<em>M</em></div><div>1<em>·</em>6</div></div><div class="text"><div class="nm">Stats Moment</div><div class="cls">.stats-wrap</div><div class="usage">Big hero-scale numbers, gradient-italic em on the unit. Dark stage with horizon glow.</div></div></div>
 
-          <div class="sg-card"><div class="demo demo-signals"><div><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 20 L20 18 L40 22 L60 12 L80 14 L100 8"/></svg></div><div><svg class="hot" viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 22 L20 18 L40 20 L60 12 L80 8 L100 4"/></svg></div></div><div class="text"><div class="nm">Signals (Live Feed)</div><div class="cls">.signals-grid</div><div class="usage">Metric tiles with delta-pill badges + sparklines. Only the most important sparkline is colored.</div></div></div>
+          <div class="sg-card"><div class="demo light demo-signals"><div><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 20 L20 18 L40 22 L60 12 L80 14 L100 8"/></svg></div><div><svg class="hot" viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 22 L20 18 L40 20 L60 12 L80 8 L100 4"/></svg></div></div><div class="text"><div class="nm">Signals (Live Feed)</div><div class="cls">.signals-grid</div><div class="usage">Metric tiles with delta-pill badges + sparklines. Only the most important sparkline is colored.</div></div></div>
 
-          <div class="sg-card"><div class="demo demo-compare"><div></div><div></div><div></div><div class="us"></div><div></div><div></div><div></div><div class="us"></div></div><div class="text"><div class="nm">Compare Table</div><div class="cls">.compare-table</div><div class="usage">DIY vs Other Agency vs Abundance side-by-side. The "us" column has a "BEST" gradient pill.</div></div></div>
+          <div class="sg-card"><div class="demo light demo-compare"><div></div><div></div><div></div><div class="us"></div><div></div><div></div><div></div><div class="us"></div></div><div class="text"><div class="nm">Compare Table</div><div class="cls">.compare-table</div><div class="usage">DIY vs Other Agency vs Abundance side-by-side. The "us" column has a "BEST" gradient pill.</div></div></div>
 
           <div class="sg-card"><div class="demo demo-proof light"></div><div class="text"><div class="nm">Social Proof</div><div class="cls">.proof-card</div><div class="usage">Big sans-bold quote with gradient-italic em, headshot cluster underneath, logo strip at the bottom — all in one rounded cream stage.</div></div></div>
 
@@ -3480,7 +3498,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
     <section class="doc-section" id="motion">
       <div class="doc-head">
         <span class="label on-dark">05 · MOTION</span>
-        <h2 style="color: var(--ink);">Page acknowledges <em>you</em><span class="dot-period"></span></h2>
+        <h2>Page acknowledges <em>you</em><span class="dot-period"></span></h2>
         <p class="lead">Modern landing pages aren't posters — they're environments. Every Abundance page is alive in at least three ways: cursor light, ambient drift, and at least one scroll-tied transformation.</p>
       </div>
 
@@ -3650,7 +3668,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
     <section class="doc-section" id="rules">
       <div class="doc-head">
         <span class="label on-dark">07 · RULES</span>
-        <h2 style="color: var(--ink);">The discipline<span class="dot-period"></span></h2>
+        <h2>The discipline<span class="dot-period"></span></h2>
         <p class="lead">Every brand fails the same way — by exception. These rules don't bend. If a rule is bending, it's not an exception — it's a redesign.</p>
       </div>
 
@@ -3746,7 +3764,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
 
       <div class="doc-block">
         <p style="font-family: var(--font-sans); font-size: 14px; color: var(--ink-body); line-height: 1.6; max-width: 60ch;">
-          <strong style="color: var(--ink);">Brand System · v1.8 · May 16, 2026.</strong> Locked after the v5/v7/v8/v9 exploration cycle and the v1.8 nav + glass pass. Maintained at <code style="font-family: ui-monospace, monospace; color: var(--sig); background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">/brand</code> as the single source of truth.
+          <strong>Brand System · v1.8 · May 16, 2026.</strong> Locked after the v5/v7/v8/v9 exploration cycle and the v1.8 nav + glass pass. Maintained at <code class="code-chip">/brand</code> as the single source of truth.
         </p>
       </div>
     </section>
