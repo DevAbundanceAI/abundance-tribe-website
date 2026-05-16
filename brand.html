@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════════════════════════
-   ABUNDANCE BRAND SYSTEM — the source of truth
+   ABUNDANCE BRAND SYSTEM — the source of truth · v1.8
    ───────────────────────────────────────────────────────────────────
    This page documents every design primitive. When building a new
    funnel, landing page, ad creative, carousel, or content piece, the
@@ -27,6 +27,18 @@
      5. MOTION       — cursor light, drift, orbit, tumble, pulse
      6. CONTENT      — example carousels, posts, video frames
      7. RULES        — the brand's discipline (one accent, gradient on em)
+
+   v1.8 (2026-05-16):
+     - Replaced sidebar with a floating top nav (frosted glass,
+       auto-hides on scroll down, slides back in on scroll up)
+     - System-wide backdrop-blur on cards (sg-card, mo-card, cn-card,
+       font-card, hp, comp-block, .cont.c1)
+     - Ambient red glow blobs behind every doc-section so blur has
+       something to read
+     - Mobile-responsive helpers (.two-col, .three-col) replace
+       inline 1fr 1fr grids without breakpoints
+     - Content corrections: 13px floor (was 12), six patterns (was 5),
+       twelve containers (was 8), twenty-six archetypes (was 18)
    ═══════════════════════════════════════════════════════════════════ */
 
 @font-face {
@@ -171,6 +183,16 @@
   --shadow-card: 0 24px 60px -20px rgba(0,0,0,0.18);
   --shadow-glow: 0 10px 40px -10px rgba(220,38,38,0.45);
 
+  /* ─── GLASS — frosted-card tokens used by sidebar, float-nav, and cards ─── */
+  --glass-bg-dark:     rgba(20,20,20,0.55);
+  --glass-bg-dark-2:   rgba(28,28,28,0.62);
+  --glass-bg-cream:    rgba(245,240,232,0.62);
+  --glass-bg-cream-2:  rgba(250,246,239,0.72);
+  --glass-blur:        blur(22px) saturate(140%);
+  --glass-blur-heavy:  blur(30px) saturate(150%);
+  --glass-edge-dark:   rgba(255,255,255,0.10);
+  --glass-edge-cream:  rgba(10,10,10,0.08);
+
   --gutter: clamp(20px, 4vw, 56px);
 }
 
@@ -279,120 +301,210 @@ body.light-mode .label { color: var(--ink-dark-muted); }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
-   LAYOUT — sidebar nav + main content
+   LAYOUT — single column, floating nav floats above main
    ═══════════════════════════════════════════════════════════════════ */
-.shell {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  min-height: 100vh;
-}
-@media (max-width: 980px) { .shell { grid-template-columns: 1fr; } }
+.shell { display: block; min-height: 100vh; }
 
-.side {
-  background: rgba(255,255,255,0.02);
-  border-right: 1px solid var(--hairline);
-  padding: 36px 22px;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow-y: auto;
+/* ═══════════════════════════════════════════════════════════════════
+   FLOATING TOP NAV — frosted pill, auto-hide on scroll down
+   ═══════════════════════════════════════════════════════════════════ */
+.float-nav {
+  position: fixed;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  z-index: 200;
+  display: flex; align-items: center;
+  gap: 14px;
+  padding: 8px 8px 8px 22px;
+  border-radius: var(--r-pill);
+  background: var(--glass-bg-dark);
+  -webkit-backdrop-filter: var(--glass-blur-heavy);
+          backdrop-filter: var(--glass-blur-heavy);
+  border: 1px solid var(--glass-edge-dark);
+  box-shadow:
+    0 18px 50px -12px rgba(0,0,0,0.55),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease;
+  font-family: var(--font-sans);
+  max-width: calc(100% - 32px);
 }
-@media (max-width: 980px) {
-  .side { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--hairline); }
+.float-nav.hidden {
+  transform: translateX(-50%) translateY(calc(-100% - 30px));
+  opacity: 0;
 }
-
-.side .brand-mark {
+.float-nav .fn-mark {
   font-family: var(--font-logo);
-  font-size: 26px;
+  font-size: 19px;
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--ink);
-  margin-bottom: 4px;
-  display: block;
+  white-space: nowrap;
 }
-.side .brand-mark em { font-style: italic; background: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.side .brand-sub {
+.float-nav .fn-mark em {
+  font-style: italic;
+  background: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+.float-nav .fn-sep {
+  width: 1px; height: 22px;
+  background: rgba(255,255,255,0.10);
+}
+.float-nav .fn-links {
+  display: flex; gap: 2px;
+}
+.float-nav .fn-links a {
+  display: inline-flex; align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  border-radius: var(--r-pill);
   font-size: 13px;
-  color: var(--ink-muted);
-  margin-bottom: 32px;
-}
-.side nav {
-  display: flex; flex-direction: column;
-  gap: 2px;
-}
-.side nav a {
-  display: flex; align-items: center;
-  gap: 10px;
-  padding: 9px 14px;
-  border-radius: 10px;
+  font-weight: 600;
   color: var(--ink-body);
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
 }
-.side nav a .num {
-  font-family: var(--font-sans);
+.float-nav .fn-links a .num {
   font-size: 13px;
   color: var(--ink-muted);
   font-weight: 600;
-  width: 16px;
 }
-.side nav a:hover { background: rgba(255,255,255,0.04); color: var(--ink); }
-.side nav a.active {
+.float-nav .fn-links a:hover { background: rgba(255,255,255,0.06); color: var(--ink); }
+.float-nav .fn-links a.active {
   background: var(--grad-sig);
   color: var(--cream);
+  box-shadow: 0 4px 14px -2px rgba(220,38,38,0.35);
 }
-.side nav a.active .num { color: rgba(245,240,232,0.7); }
+.float-nav .fn-links a.active .num { color: rgba(245,240,232,0.75); }
 
-.side .side-foot {
-  margin-top: 40px;
-  padding-top: 24px;
-  border-top: 1px solid var(--hairline);
-  font-size: 13px;
-  color: var(--ink-muted);
-  line-height: 1.5;
-}
-.side .side-foot strong { color: var(--ink); font-weight: 600; }
-
-/* ═══════════════════════════════════════════════════════════════════
-   THEME TOGGLE — sticky in sidebar
-   ═══════════════════════════════════════════════════════════════════ */
-.theme-toggle {
+/* Theme toggle inside float-nav — compact pill */
+.fn-toggle {
   display: flex;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--hairline);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--r-pill);
-  padding: 4px;
-  margin-bottom: 28px;
+  padding: 3px;
   cursor: pointer;
-  width: 100%;
 }
-.theme-toggle span {
-  flex: 1;
-  padding: 7px 14px;
+.fn-toggle span {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 30px;
   border-radius: var(--r-pill);
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
   color: var(--ink-muted);
-  text-align: center;
   transition: all 0.25s ease;
-  display: flex; align-items: center; justify-content: center; gap: 6px;
 }
-.theme-toggle span svg { width: 13px; height: 13px; }
-.theme-toggle .t-dark {
+.fn-toggle span svg { width: 14px; height: 14px; }
+.fn-toggle .t-dark {
   background: var(--grad-sig);
   color: var(--cream);
-  box-shadow: 0 4px 14px -2px rgba(220,38,38,0.4);
+  box-shadow: 0 3px 10px -2px rgba(220,38,38,0.45);
 }
-body.light-mode .theme-toggle .t-dark { background: transparent; box-shadow: none; color: var(--ink-dark-muted); }
-body.light-mode .theme-toggle .t-light {
+body.light-mode .fn-toggle { background: rgba(10,10,10,0.05); border-color: rgba(10,10,10,0.06); }
+body.light-mode .fn-toggle .t-dark { background: transparent; box-shadow: none; color: var(--ink-dark-muted); }
+body.light-mode .fn-toggle .t-light {
   background: var(--grad-sig);
   color: var(--cream);
-  box-shadow: 0 4px 14px -2px rgba(220,38,38,0.4);
+  box-shadow: 0 3px 10px -2px rgba(220,38,38,0.45);
 }
-body.light-mode .theme-toggle { background: rgba(10,10,10,0.04); border-color: var(--hairline-cream); }
+
+/* Mobile hamburger toggle — hidden on desktop */
+.fn-burger {
+  display: none;
+  width: 38px; height: 38px;
+  align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--ink);
+}
+.fn-burger svg { width: 18px; height: 18px; }
+
+/* Mobile dropdown panel */
+.fn-mobile {
+  display: none;
+  position: fixed;
+  top: 78px;
+  left: 14px; right: 14px;
+  z-index: 199;
+  background: var(--glass-bg-dark-2);
+  -webkit-backdrop-filter: var(--glass-blur-heavy);
+          backdrop-filter: var(--glass-blur-heavy);
+  border: 1px solid var(--glass-edge-dark);
+  border-radius: var(--r-card);
+  padding: 16px;
+  box-shadow: 0 24px 60px -16px rgba(0,0,0,0.6);
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.fn-mobile.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.fn-mobile a {
+  display: flex; align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  color: var(--ink-body);
+  font-size: 15px;
+  font-weight: 500;
+}
+.fn-mobile a .num {
+  font-size: 13px;
+  color: var(--ink-muted);
+  font-weight: 600;
+  width: 18px;
+}
+.fn-mobile a.active {
+  background: var(--grad-sig);
+  color: var(--cream);
+}
+.fn-mobile a.active .num { color: rgba(245,240,232,0.75); }
+
+/* Light-mode float-nav */
+body.light-mode .float-nav {
+  background: var(--glass-bg-cream-2);
+  border-color: var(--glass-edge-cream);
+  box-shadow:
+    0 18px 50px -12px rgba(10,10,10,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.5);
+}
+body.light-mode .float-nav .fn-mark { color: var(--ink-dark); }
+body.light-mode .float-nav .fn-sep { background: rgba(10,10,10,0.10); }
+body.light-mode .float-nav .fn-links a { color: var(--ink-dark-soft); }
+body.light-mode .float-nav .fn-links a .num { color: var(--ink-dark-muted); }
+body.light-mode .float-nav .fn-links a:hover { background: rgba(10,10,10,0.05); color: var(--ink-dark); }
+body.light-mode .fn-burger {
+  background: rgba(10,10,10,0.05);
+  border-color: rgba(10,10,10,0.06);
+  color: var(--ink-dark);
+}
+body.light-mode .fn-mobile {
+  background: var(--glass-bg-cream-2);
+  border-color: var(--glass-edge-cream);
+  box-shadow: 0 24px 60px -16px rgba(10,10,10,0.18);
+}
+body.light-mode .fn-mobile a { color: var(--ink-dark-soft); }
+body.light-mode .fn-mobile a .num { color: var(--ink-dark-muted); }
+
+/* Float-nav responsive: collapse middle links into burger menu */
+@media (max-width: 980px) {
+  .float-nav .fn-links,
+  .float-nav .fn-sep { display: none; }
+  .fn-burger { display: inline-flex; }
+  .fn-mobile { display: block; }
+  .float-nav { gap: 10px; padding: 8px 8px 8px 18px; }
+}
+@media (max-width: 480px) {
+  .float-nav .fn-mark { font-size: 17px; }
+  .float-nav { top: 14px; padding: 6px 6px 6px 14px; }
+  .fn-mobile { top: 68px; }
+}
 
 /* ═══════════════════════════════════════════════════════════════════
    LIGHT MODE — class-based overrides on body.light-mode
@@ -400,15 +512,15 @@ body.light-mode .theme-toggle { background: rgba(10,10,10,0.04); border-color: v
 body.light-mode .page { background: var(--cream); color: var(--ink-dark); }
 body.light-mode .page::before { background: linear-gradient(90deg, transparent, rgba(10,10,10,0.4) 50%, transparent); }
 
-body.light-mode .side { background: rgba(10,10,10,0.02); border-right-color: var(--hairline-cream); }
-@media (max-width: 980px) { body.light-mode .side { border-right: none; border-bottom-color: var(--hairline-cream); } }
-body.light-mode .side .brand-mark { color: var(--ink-dark); }
-body.light-mode .side .brand-sub { color: var(--ink-dark-muted); }
-body.light-mode .side nav a { color: var(--ink-dark-soft); }
-body.light-mode .side nav a:hover { background: rgba(10,10,10,0.04); color: var(--ink-dark); }
-body.light-mode .side nav a .num { color: var(--ink-dark-muted); }
-body.light-mode .side .side-foot { border-top-color: var(--hairline-cream); color: var(--ink-dark-muted); }
-body.light-mode .side .side-foot strong { color: var(--ink-dark); }
+/* Responsive grid helpers — replace inline 1fr 1fr blocks that had no mobile fallback */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+@media (max-width: 820px) {
+  .two-col, .three-col { grid-template-columns: 1fr; }
+}
+@media (min-width: 821px) and (max-width: 1100px) {
+  .three-col { grid-template-columns: 1fr 1fr; }
+}
 
 body.light-mode .brand-hero { border-bottom-color: var(--hairline-cream); }
 body.light-mode .brand-hero h1 { color: var(--ink-dark); }
@@ -922,10 +1034,37 @@ body.light-mode .brand-hero .glow.bottom { background: radial-gradient(circle, r
    SECTION TEMPLATE — every doc section uses this scaffold
    ═══════════════════════════════════════════════════════════════════ */
 .doc-section {
-  padding: clamp(50px, 6vw, 90px) clamp(28px, 5vw, 80px);
+  padding: clamp(50px, 6vw, 90px) clamp(22px, 5vw, 80px);
   background: var(--bg);
   color: var(--ink);
   border-bottom: 1px solid var(--hairline);
+  position: relative;
+  overflow: hidden;
+}
+/* Ambient glow blobs behind every doc-section — gives backdrop-blur something to read */
+.doc-section::before, .doc-section::after {
+  content: '';
+  position: absolute;
+  width: 520px; height: 520px;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+.doc-section::before {
+  top: 8%; right: -120px;
+  background: radial-gradient(circle, rgba(220,38,38,0.18), transparent 65%);
+}
+.doc-section::after {
+  bottom: 12%; left: -160px;
+  background: radial-gradient(circle, rgba(255,122,85,0.10), transparent 65%);
+}
+.doc-section > * { position: relative; z-index: 1; }
+body.light-mode .doc-section::before {
+  background: radial-gradient(circle, rgba(220,38,38,0.14), transparent 65%);
+}
+body.light-mode .doc-section::after {
+  background: radial-gradient(circle, rgba(255,122,85,0.10), transparent 65%);
 }
 .doc-section.light {
   background: var(--cream);
@@ -1107,7 +1246,12 @@ body.light-mode .brand-hero .glow.bottom { background: radial-gradient(circle, r
   margin-bottom: 14px;
   background: var(--cream-soft);
 }
-.doc-section .font-card { background: var(--surface-1); border-color: var(--hairline); }
+.doc-section .font-card {
+  background: var(--glass-bg-dark);
+  border-color: var(--hairline);
+  -webkit-backdrop-filter: var(--glass-blur);
+          backdrop-filter: var(--glass-blur);
+}
 .font-card .sample {
   font-size: 72px;
   line-height: 1;
@@ -1204,7 +1348,12 @@ body.light-mode .brand-hero .glow.bottom { background: radial-gradient(circle, r
   background: var(--cream-soft);
   position: relative;
 }
-.doc-section .hp { background: var(--surface-1); border-color: var(--hairline); }
+.doc-section .hp {
+  background: var(--glass-bg-dark);
+  border-color: var(--hairline);
+  -webkit-backdrop-filter: var(--glass-blur);
+          backdrop-filter: var(--glass-blur);
+}
 .hp .hp-tag {
   position: absolute;
   top: 14px; right: 14px;
@@ -1309,7 +1458,9 @@ body.light-mode .hp .inline-kw.glow {
   border: 1px solid var(--hairline);
   border-radius: 18px;
   overflow: hidden;
-  background: var(--surface-1);
+  background: var(--glass-bg-dark);
+  -webkit-backdrop-filter: var(--glass-blur);
+          backdrop-filter: var(--glass-blur);
   display: flex; flex-direction: column;
 }
 .sg-card .demo {
@@ -1643,7 +1794,12 @@ body.light-mode .hp .inline-kw.glow {
   padding: 30px;
   margin-bottom: 14px;
 }
-.doc-section .comp-block { background: var(--surface-1); border-color: var(--hairline); }
+.doc-section .comp-block {
+  background: var(--glass-bg-dark);
+  border-color: var(--hairline);
+  -webkit-backdrop-filter: var(--glass-blur);
+          backdrop-filter: var(--glass-blur);
+}
 .comp-row {
   display: flex; flex-wrap: wrap; gap: 12px;
   align-items: center;
@@ -1888,11 +2044,21 @@ body.light-mode .hp .inline-kw.glow {
   color: var(--sig-highlight);
 }
 
-/* C1 — hairline border, matched bg */
-.cont.c1 { background: var(--surface-1); border: 1px solid var(--hairline); }
+/* C1 — hairline border, matched bg (glass on dark stages) */
+.cont.c1 {
+  background: var(--glass-bg-dark);
+  border: 1px solid var(--hairline);
+  -webkit-backdrop-filter: var(--glass-blur);
+          backdrop-filter: var(--glass-blur);
+}
 
 /* C2 — borderless, slight surface */
-.cont.c2 { background: var(--surface-1); border: 1px solid transparent; }
+.cont.c2 {
+  background: var(--glass-bg-dark);
+  border: 1px solid transparent;
+  -webkit-backdrop-filter: var(--glass-blur);
+          backdrop-filter: var(--glass-blur);
+}
 
 /* C3 — gradient border (signature) */
 .cont.c3 {
@@ -2200,7 +2366,9 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
   border: 1px solid var(--hairline);
   border-radius: 18px;
   overflow: hidden;
-  background: var(--surface-1);
+  background: var(--glass-bg-dark);
+  -webkit-backdrop-filter: var(--glass-blur);
+          backdrop-filter: var(--glass-blur);
 }
 .mo-card .play {
   height: 180px;
@@ -2355,7 +2523,9 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
   border: 1px solid var(--hairline);
   border-radius: 20px;
   overflow: hidden;
-  background: var(--surface-1);
+  background: var(--glass-bg-dark);
+  -webkit-backdrop-filter: var(--glass-blur);
+          backdrop-filter: var(--glass-blur);
 }
 .cn-card .canvas { aspect-ratio: 4 / 5; padding: 24px; position: relative; overflow: hidden; }
 .cn-card .text {
@@ -2483,7 +2653,12 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
   background: var(--cream-soft);
   position: relative;
 }
-.doc-section .rule { background: var(--surface-1); border-color: var(--hairline); }
+.doc-section .rule {
+  background: var(--glass-bg-dark);
+  border-color: var(--hairline);
+  -webkit-backdrop-filter: var(--glass-blur);
+          backdrop-filter: var(--glass-blur);
+}
 .rule .num {
   font-family: var(--font-sans);
   font-size: 13px; font-weight: 800;
@@ -2524,12 +2699,15 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
 }
 .rule .dont::before { content: '✕'; position: absolute; left: 0; color: var(--ink-dark-muted); font-weight: 800; }
 
-/* Hero of the brand page */
+/* Hero of the brand page — extra top padding to clear the floating nav */
 .brand-hero {
-  padding: clamp(70px, 8vw, 130px) clamp(28px, 5vw, 80px) clamp(50px, 6vw, 90px);
+  padding: clamp(140px, 14vw, 200px) clamp(22px, 5vw, 80px) clamp(50px, 6vw, 90px);
   border-bottom: 1px solid var(--hairline);
   position: relative;
   overflow: hidden;
+}
+@media (max-width: 720px) {
+  .brand-hero { padding-top: 120px; }
 }
 .brand-hero h1 {
   font-size: clamp(48px, 7vw, 96px);
@@ -2565,27 +2743,15 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
 <body>
 
 <div class="page">
-<div class="shell">
 
   <!-- ═══════════════════════════════════════════════════════════════
-       SIDEBAR NAV
+       FLOATING TOP NAV — frosted glass, auto-hides on scroll down,
+       slides back in on scroll up. The "menu system" for the page.
        ═══════════════════════════════════════════════════════════════ -->
-  <aside class="side">
-    <a class="brand-mark" href="#top">Abundance<em>.</em></a>
-    <div class="brand-sub">Brand System · v1.7 · May 2026</div>
-
-    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
-      <span class="t-dark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        DARK
-      </span>
-      <span class="t-light">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-        LIGHT
-      </span>
-    </button>
-
-    <nav>
+  <header class="float-nav" id="float-nav">
+    <a class="fn-mark" href="#top">Abundance<em>.</em></a>
+    <span class="fn-sep"></span>
+    <nav class="fn-links">
       <a href="#identity" class="active"><span class="num">01</span> Identity</a>
       <a href="#typography"><span class="num">02</span> Typography</a>
       <a href="#sections"><span class="num">03</span> Sections</a>
@@ -2594,11 +2760,31 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
       <a href="#content"><span class="num">06</span> Content</a>
       <a href="#rules"><span class="num">07</span> Rules</a>
     </nav>
-    <div class="side-foot">
-      <strong>How to use this page:</strong><br>
-      When designing a new funnel, ad creative, carousel, or landing page, start here. Pull the closest existing section, component, or pattern instead of inventing one. The brand discipline is reuse.
-    </div>
-  </aside>
+    <button class="fn-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
+      <span class="t-dark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </span>
+      <span class="t-light" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </span>
+    </button>
+    <button class="fn-burger" id="fn-burger" type="button" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </header>
+
+  <!-- Mobile dropdown (collapsed nav links shown when burger is tapped) -->
+  <div class="fn-mobile" id="fn-mobile" role="menu">
+    <a href="#identity" class="active"><span class="num">01</span> Identity</a>
+    <a href="#typography"><span class="num">02</span> Typography</a>
+    <a href="#sections"><span class="num">03</span> Sections</a>
+    <a href="#components"><span class="num">04</span> Components</a>
+    <a href="#motion"><span class="num">05</span> Motion</a>
+    <a href="#content"><span class="num">06</span> Content</a>
+    <a href="#rules"><span class="num">07</span> Rules</a>
+  </div>
+
+<div class="shell">
 
   <!-- ═══════════════════════════════════════════════════════════════
        MAIN CONTENT
@@ -2639,7 +2825,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
       <div class="doc-block">
         <h3>When to use what · backgrounds</h3>
         <div class="block-meta">Background choice signals what the section is doing. Get this wrong and the whole page reads off.</div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div class="two-col">
 
           <div class="rule">
             <div class="num">CREAM (#F5F0E8)</div>
@@ -2761,7 +2947,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
       <div class="doc-block">
         <h3>When to use which gradient</h3>
         <div class="block-meta">The signature gradient is the brand's heart. The other three are for restraint — when the brand should fade out so content can lead.</div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div class="two-col">
 
           <div class="rule">
             <div class="num">SIGNATURE · TIER A (HERO)</div>
@@ -2862,7 +3048,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
       <!-- Type ramp -->
       <div class="doc-block">
         <h3>Type ramp</h3>
-        <div class="block-meta">Six sizes, no exceptions. Floor is <code>--t-micro</code> at 12px — never go smaller.</div>
+        <div class="block-meta">Seven sizes, no exceptions. Floor is <code>--t-micro</code> at 13px — never go smaller.</div>
         <div class="ramp">
           <div class="row hero"><span class="tok">--t-hero</span><span class="size">56–112px</span><span class="demo">Hero</span></div>
           <div class="row h1"><span class="tok">--t-h1</span><span class="size">44–80px</span><span class="demo">Section h1</span></div>
@@ -2879,7 +3065,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
         <h3>Headline alignment · left vs centered</h3>
         <div class="block-meta">Alignment is a content classifier, not a preference. <strong>Left-aligned</strong> = feature/teaching mode (paired with paragraph). <strong>Centered</strong> = announcement/bookend mode (single statement).</div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div class="two-col">
 
           <div class="hp" style="position: relative;">
             <span class="hp-tag">LEFT</span>
@@ -2903,7 +3089,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
       <!-- Headline patterns -->
       <div class="doc-block">
         <h3>Headline patterns</h3>
-        <div class="block-meta">Five repeatable patterns. Don't invent a sixth — pick the one that fits.</div>
+        <div class="block-meta">Six repeatable patterns. Don't invent a seventh — pick the one that fits.</div>
         <div class="headline-patterns">
 
           <div class="hp">
@@ -2956,7 +3142,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
         <h3>Three gradient tiers on the same headline</h3>
         <div class="block-meta">Same words, three different gradient distributions — each tied to a different typographic role. The em rule below is now <strong>automatic</strong>: h1 gets HERO, h2/h3 get TIGHT, and the DEFAULT sweep is reserved for decorative surfaces (CTAs, pills, badges).</div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+        <div class="three-col">
 
           <div class="hp">
             <span class="hp-tag">TIER A · HERO</span>
@@ -2993,8 +3179,8 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
     <section class="doc-section" id="sections">
       <div class="doc-head">
         <span class="label on-dark">03 · SECTIONS</span>
-        <h2 style="color: var(--ink);">Eighteen archetypes<span class="dot-period"></span></h2>
-        <p class="lead">When building a new page, pick from these. Each has a defined role in the narrative arc. Don't invent a nineteenth.</p>
+        <h2 style="color: var(--ink);">Twenty-six archetypes<span class="dot-period"></span></h2>
+        <p class="lead">When building a new page, pick from these. Each has a defined role in the narrative arc. Don't invent a twenty-seventh.</p>
       </div>
 
       <div class="doc-block">
@@ -3078,8 +3264,8 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
 
       <!-- CONTAINERS -->
       <div class="doc-block">
-        <h3>Containers · 8 styles</h3>
-        <div class="block-meta">Every card, panel, or boxed element uses one of these. <strong>C1</strong> is the workhorse (90% of cards). Featured tiers get <strong>C6</strong>. The loud gradient fill <strong>C8</strong> is rare — final-CTA territory only.</div>
+        <h3>Containers · 12 styles</h3>
+        <div class="block-meta">Every card, panel, or boxed element uses one of these. <strong>C1</strong> is the workhorse (90% of cards). Featured tiers get <strong>C6</strong>. The loud gradient fill <strong>C8</strong> is rare — final-CTA territory only. The animated borders (<strong>C10/C11</strong>) and outer-halo (<strong>C12</strong>) are the "this is the thing" moments.</div>
         <div class="cont-grid">
 
           <div class="cont c1">
@@ -3533,7 +3719,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
 
       <div class="doc-block">
         <p style="font-family: var(--font-sans); font-size: 14px; color: var(--ink-body); line-height: 1.6; max-width: 60ch;">
-          <strong style="color: var(--ink);">Last updated:</strong> May 16, 2026. Locked after the v5/v7/v8/v9 exploration cycle. Maintained at <code style="font-family: ui-monospace, monospace; color: var(--sig); background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">/brand</code> as the single source of truth.
+          <strong style="color: var(--ink);">Brand System · v1.8 · May 16, 2026.</strong> Locked after the v5/v7/v8/v9 exploration cycle and the v1.8 nav + glass pass. Maintained at <code style="font-family: ui-monospace, monospace; color: var(--sig); background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">/brand</code> as the single source of truth.
         </p>
       </div>
     </section>
@@ -3558,19 +3744,64 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
     }
   })();
 
-  /* Sidebar nav active state */
-  const navLinks = document.querySelectorAll('.side nav a');
-  const sections = ['identity','typography','sections','components','motion','content','rules'];
-  function setActive() {
-    let active = sections[0];
-    for (const id of sections) {
-      const el = document.getElementById(id);
-      if (el && el.getBoundingClientRect().top < 200) active = id;
+  /* Float-nav: scroll-tied show/hide + section-spy active state */
+  (function() {
+    const nav = document.getElementById('float-nav');
+    const mobile = document.getElementById('fn-mobile');
+    const burger = document.getElementById('fn-burger');
+    const links = document.querySelectorAll('.fn-links a, .fn-mobile a');
+    const sectionIds = ['identity','typography','sections','components','motion','content','rules'];
+
+    /* Active-state spy */
+    function setActive() {
+      let active = sectionIds[0];
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top < 200) active = id;
+      }
+      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + active));
     }
-    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + active));
-  }
-  document.addEventListener('scroll', setActive, { passive: true });
-  setActive();
+
+    /* Show on scroll up, hide on scroll down (after 120px scrolled) */
+    let lastY = window.scrollY;
+    let ticking = false;
+    function onScroll() {
+      const y = window.scrollY;
+      if (y < 120) {
+        nav.classList.remove('hidden');
+      } else if (y > lastY + 4) {
+        nav.classList.add('hidden');
+        if (mobile) mobile.classList.remove('open');
+        if (burger) burger.setAttribute('aria-expanded', 'false');
+      } else if (y < lastY - 4) {
+        nav.classList.remove('hidden');
+      }
+      lastY = y;
+      setActive();
+      ticking = false;
+    }
+    document.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+    setActive();
+
+    /* Mobile burger toggle */
+    if (burger && mobile) {
+      burger.addEventListener('click', () => {
+        const open = mobile.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      mobile.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          mobile.classList.remove('open');
+          burger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  })();
 </script>
 
 </body>
