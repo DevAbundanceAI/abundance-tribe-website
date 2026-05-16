@@ -1434,6 +1434,11 @@ body.light-mode .doc-section .comp-block { color: var(--ink-dark); }
   line-height: 1.5;
 }
 .doc-section .hp .hp-note { color: var(--ink-body); }
+/* ─── INLINE KEYWORD PILLS · 6 STATES + silver modifier ───────────────
+   Default (no class) — red gradient OUTLINE, dark fill, red text. The
+   quietest variant. Use for the third or fourth keyword in a row when
+   the others are louder.
+   ──────────────────────────────────────────────────────────────────── */
 .hp .inline-kw {
   display: inline-flex; align-items: center;
   gap: 6px;
@@ -1449,12 +1454,63 @@ body.light-mode .doc-section .comp-block { color: var(--ink-dark); }
     linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
     var(--grad-sig) border-box;
 }
+
+/* 1 · .filled — red gradient SURFACE + cream text. Loudest. */
 .hp .inline-kw.filled {
   background: var(--grad-sig); color: var(--cream); border-color: transparent;
 }
-/* .label = 4th state — wider rounded-rectangle (20px radius). Gradient
-   border + dark interior + vivid red uppercase text. CTA-tag feel for
-   when an inline keyword should read as a STAMP, not a single word. */
+
+/* 2 · .glow — gradient border + faded transparent red INNER GLOW + red
+   text. Mid-weight. Reads as "softly lit from within." */
+.hp .inline-kw.glow {
+  background:
+    radial-gradient(ellipse 140% 150% at 50% 50%,
+      rgba(237,28,36,0.30) 0%,
+      rgba(237,28,36,0.14) 55%,
+      rgba(237,28,36,0.04) 100%) padding-box,
+    var(--grad-sig) border-box;
+  color: var(--sig);
+  box-shadow: inset 0 0 14px rgba(237,28,36,0.15);
+}
+body.light-mode .hp .inline-kw.glow {
+  background:
+    radial-gradient(ellipse 140% 150% at 50% 50%,
+      rgba(237,28,36,0.18) 0%,
+      rgba(237,28,36,0.08) 55%,
+      transparent 100%) padding-box,
+    var(--grad-sig) border-box;
+  color: var(--sig-deep);
+  box-shadow: inset 0 0 12px rgba(237,28,36,0.10);
+}
+
+/* 3 · .solid — cream FILL + red gradient border + red text. The
+   "tag-on-cream" treatment from the references. Pops on dark stages. */
+.hp .inline-kw.solid {
+  background:
+    linear-gradient(var(--cream), var(--cream)) padding-box,
+    var(--grad-sig) border-box;
+  color: var(--sig);
+}
+
+/* 4 · .cream — clean cream pill, hairline cream-strong border,
+   red text. No tiger's-blood border ring. Restraint variant. */
+.hp .inline-kw.cream {
+  background: var(--cream);
+  border-color: rgba(10,10,10,0.10);
+  color: var(--sig);
+}
+
+/* 5 · .ink — clean cream pill + hairline cream border + BLACK text.
+   The "name plate" variant when red would compete with surrounding
+   accents. */
+.hp .inline-kw.ink {
+  background: var(--cream);
+  border-color: rgba(10,10,10,0.10);
+  color: var(--ink-dark);
+}
+
+/* 6 · .label — wide 20px-radius tag (uppercase + letter-spaced). A
+   stamp/badge shape. Pairs with any of the other states. */
 .hp .inline-kw.label {
   border-radius: 20px;
   padding: 4px 18px;
@@ -1463,31 +1519,30 @@ body.light-mode .doc-section .comp-block { color: var(--ink-dark); }
   text-transform: uppercase;
   font-weight: 800;
 }
-/* .glow = the mid-weight inline pill. Tiger's-blood interior glow,
-   gradient border, warm-cream text. The interior actually GLOWS — a
-   strong radial of sig red bleeding outward, with inset shadow to
-   complete the "lit from within" feel. */
-.hp .inline-kw.glow {
+
+/* Modifier · .silver — swap the red gradient border (or surface) for
+   the achromatic graphite-shine. Combine with .filled or default for
+   a prestige variant. */
+.hp .inline-kw.silver {
   background:
-    radial-gradient(ellipse 130% 140% at 50% 50%,
-      rgba(237,28,36,0.55) 0%,
-      rgba(179,14,20,0.30) 55%,
-      rgba(74,4,11,0.10) 100%) padding-box,
-    var(--grad-sig) border-box;
-  color: #FFE2D2;
-  text-shadow: 0 0 14px rgba(255,87,51,0.6);
-  box-shadow: inset 0 0 18px rgba(237,28,36,0.25);
+    linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
+    var(--grad-graphite-shine) border-box;
+  color: #DCD8D2;
 }
-body.light-mode .hp .inline-kw.glow {
+.hp .inline-kw.silver.filled {
+  background: var(--grad-graphite-shine);
+  color: var(--ink-dark);
+  border-color: transparent;
+}
+body.light-mode .hp .inline-kw.silver {
   background:
-    radial-gradient(ellipse 130% 140% at 50% 50%,
-      rgba(237,28,36,0.30) 0%,
-      rgba(179,14,20,0.15) 55%,
-      transparent 100%) padding-box,
-    var(--grad-sig) border-box;
-  color: var(--sig-deep);
-  text-shadow: none;
-  box-shadow: inset 0 0 16px rgba(237,28,36,0.18);
+    linear-gradient(var(--cream-soft), var(--cream-soft)) padding-box,
+    var(--grad-graphite) border-box;
+  color: var(--ink-dark-soft);
+}
+body.light-mode .hp .inline-kw.silver.filled {
+  background: var(--grad-graphite-shine);
+  color: var(--ink-dark);
 }
 .hp .fill-block {
   display: inline-block;
@@ -3226,9 +3281,10 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
 
           <div class="hp">
             <span class="hp-tag">PATTERN C</span>
-            <div class="hp-eb">INLINE KEYWORD PILLS · 4 STATES</div>
-            <div class="hp-h">We build your <span class="inline-kw filled">Ads</span> <span class="inline-kw glow">Funnels</span> <span class="inline-kw">CRM</span> &amp; <span class="inline-kw label">The System</span></div>
-            <div class="hp-note">Operative nouns become inline pills. <strong>.filled</strong> = full gradient bg (loudest). <strong>.glow</strong> = gradient border + soft inner red glow (mid weight). <strong>(no class)</strong> = gradient border only (quietest). <strong>.label</strong> = wider 20px-radius rounded-rectangle with gradient border + uppercase — the "CTA-tag" stamp. Mix across a headline for rhythm.</div>
+            <div class="hp-eb">INLINE KEYWORD PILLS · 6 STATES + SILVER MODIFIER</div>
+            <div class="hp-h">We build your <span class="inline-kw filled">Ads</span> <span class="inline-kw glow">Funnels</span> <span class="inline-kw">CRM</span> &amp; <span class="inline-kw solid">Copy</span></div>
+            <div class="hp-h" style="margin-top: 14px;">Like an <span class="inline-kw cream">Engine</span> <span class="inline-kw ink">System</span> for <span class="inline-kw silver">Founders</span> <span class="inline-kw silver filled">at Scale</span></div>
+            <div class="hp-note"><strong>.filled</strong> = red gradient surface, cream text (loudest). <strong>.glow</strong> = gradient border + faded transparent red interior glow + red text (mid). <strong>(no class)</strong> = red gradient border, dark interior, red text (quietest). <strong>.solid</strong> = cream fill, red gradient border, red text — pops on dark stages. <strong>.cream</strong> = cream fill, hairline border, red text (restraint). <strong>.ink</strong> = cream fill, hairline border, BLACK text — when red would compete. <strong>.silver</strong> modifier = swap red for graphite-shine (prestige). Pair with <strong>.label</strong> for a 20px-radius uppercase stamp.</div>
           </div>
 
           <div class="hp">
