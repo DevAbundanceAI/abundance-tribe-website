@@ -3,1125 +3,2279 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brand Guidelines — Abundance.AI</title>
+<title>Abundance · Brand System</title>
+<meta name="description" content="The Abundance brand library — colors, gradients, typography, sections, components, motion, content, and rules. Single source of truth for every Abundance funnel, landing page, or content piece.">
 <meta name="robots" content="noindex">
-<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
-  @font-face {
-    font-family: 'Neo Contact';
-    src: url('/assets/fonts/neo-contact/neo-contact-lt-pro.woff2') format('woff2');
-    font-weight: 400 900;
-    font-style: normal;
-    font-display: swap;
-  }
+/* ═══════════════════════════════════════════════════════════════════
+   ABUNDANCE BRAND SYSTEM — the source of truth
+   ───────────────────────────────────────────────────────────────────
+   This page documents every design primitive. When building a new
+   funnel, landing page, ad creative, carousel, or content piece, the
+   designer (or AI) should read THIS file first.
 
-  :root {
-    /* FOUNDATION — matte black + cream (the unbreakable spine) */
-    --bg: #0F0F0F;
-    --surface-1: #161616;
-    --surface-2: #1D1D1D;
-    --surface-3: #242424;
-    --cream: #F5F0E8;
-    --cream-warm: #F8F6EC;
-    --cream-body: #D5CFC4;
-    --cream-muted: #9C968C;
-    --border: rgba(245,240,232,0.08);
-    --border-strong: rgba(245,240,232,0.18);
+   Sections:
+     1. IDENTITY     — logo, color palette, gradients
+     2. TYPOGRAPHY   — fonts, type ramp, headline patterns
+     3. SECTIONS     — every section archetype
+     4. COMPONENTS   — pills, CTAs, cards, avatars, toasts, etc.
+     5. MOTION       — cursor light, drift, orbit, tumble, pulse
+     6. CONTENT      — example carousels, posts, video frames
+     7. RULES        — the brand's discipline (one accent, gradient on em)
+   ═══════════════════════════════════════════════════════════════════ */
 
-    /* FINAL 6 GLOW GRADIENTS · 4-stop, 135° angle */
-    --glow-peach:    linear-gradient(135deg, #F5F0E8 0%, #F8C5A8 40%, #E8967E 75%, #C4715E 100%);
-    --glow-coral:    linear-gradient(135deg, #F5F0E8 0%, #FECACA 40%, #FB7185 75%, #BE123C 100%);
-    --glow-copper:   linear-gradient(135deg, #F5F0E8 0%, #F2D4B8 40%, #B87333 75%, #6B4120 100%);
-    --glow-mocha:    linear-gradient(135deg, #F5F0E8 0%, #DDC5B3 40%, #8B5A3C 75%, #40220F 100%);
-    --glow-cerulean: linear-gradient(135deg, #F5F0E8 0%, #B8DDEC 40%, #2A7FB8 75%, #1A4A6B 100%);
-    --glow-slate:    linear-gradient(135deg, #F5F0E8 0%, #C7D0D9 40%, #475569 75%, #1E293B 100%);
+@font-face {
+  font-family: 'Neo Contact';
+  src: url('/assets/fonts/neo-contact/neo-contact-lt-pro.woff2') format('woff2');
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
 
-    /* PRIMARY signature shortcuts — Peach IS the brand */
-    --gradient-text: var(--glow-peach);
-    --gradient-btn:  linear-gradient(135deg, #E8967E 0%, #F8C5A8 100%);
-    --gradient-btn-hover: linear-gradient(135deg, #C4715E 0%, #E8967E 100%);
+:root {
+  /* ─── CANVAS ─── */
+  --cream:       #F5F0E8;
+  --cream-soft:  #FAF6EF;
+  --cream-deep:  #ECE5D8;
+  --bg:          #0A0A0A;
+  --surface-1:   #141414;
+  --surface-2:   #1B1B1B;
+  --surface-3:   #242424;
 
-    /* RADII */
-    --radius-brand: 20px;
-    --radius-btn: 10px;
-    --radius-pill: 100px;
+  /* ─── INK ─── */
+  --ink:         #F5F0E8;
+  --ink-body:    #C9C2B5;
+  --ink-muted:   #807A70;
+  --ink-dark:    #0A0A0A;
+  --ink-dark-soft:  #3A3530;
+  --ink-dark-muted: #6A645B;
 
-    /* SHADOWS */
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
-    --shadow:    0 1px 3px rgba(0,0,0,0.3), 0 4px 20px rgba(0,0,0,0.25);
-    --shadow-lg: 0 8px 32px rgba(0,0,0,0.35), 0 20px 60px rgba(0,0,0,0.3);
-    --shadow-peach: 0 4px 20px rgba(232,150,126,0.28);
-  }
+  /* ─── THE ONE ACCENT — tiger's blood ─── */
+  --sig-highlight: #FF5530;
+  --sig:           #FF1744;
+  --sig-deep:      #C8002E;
+  --sig-anchor:    #8B0014;
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--cream);
-    font-family: "greycliff-cf", -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 400;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
+  /* ─── GRADIENTS ─── */
+  --grad-sig: linear-gradient(135deg, #FF5530 0%, #FF1744 45%, #C8002E 75%, #8B0014 100%);
+  --grad-horizon: radial-gradient(ellipse 70% 60% at 50% 110%,
+                                   rgba(255,85,48,0.32) 0%,
+                                   rgba(255,23,68,0.42) 25%,
+                                   rgba(200,0,46,0.22) 50%,
+                                   transparent 75%);
+  --grad-graphite: linear-gradient(135deg, #DCD8D2 0%, #B5B0A8 35%, #7A7670 70%, #4A4845 100%);
+  --grad-depth-soft: linear-gradient(180deg, #1F1F1F 0%, #0F0F0F 100%);
+  --grad-depth-strong: linear-gradient(180deg, #161616 0%, #050505 100%);
 
-  /* TYPOGRAPHY DEFAULTS */
-  h1, h2, h3 {
-    color: var(--cream);
-    font-weight: 700;
-    letter-spacing: -0.015em;
-    font-family: "greycliff-cf", sans-serif;
-  }
-  h1 { font-size: clamp(44px, 6vw, 84px); line-height: 1.02; margin-bottom: 24px; }
-  h2 { font-size: clamp(32px, 4vw, 52px); line-height: 1.05; margin-bottom: 16px; }
-  h3 { font-size: 20px; margin-bottom: 8px; }
-  p  { color: var(--cream-body); max-width: 720px; }
-  p + p { margin-top: 12px; }
+  /* ─── BORDERS ─── */
+  --hairline:        rgba(255,255,255,0.08);
+  --hairline-strong: rgba(255,255,255,0.18);
+  --hairline-cream:  rgba(10,10,10,0.10);
+  --hairline-cream-strong: rgba(10,10,10,0.18);
 
-  /* INLINE GRADIENT SPAN — for accent words inside any heading */
-  .gradient {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-  }
+  /* ─── FONTS ─── */
+  --font-logo:    "Neo Contact", "DM Serif Display", Georgia, serif;
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-sans:    "greycliff-cf", system-ui, -apple-system, sans-serif;
 
-  /* THE EM RULE — Neo Contact, on its own line, peach gradient, 1.2× size, once per page */
-  em {
-    font-family: 'Neo Contact', 'Impact', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    letter-spacing: -0.005em;
-    background-image: var(--gradient-text);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-  }
-  h1 em, h2 em, h3 em {
-    display: block;
-    font-size: 1.2em;
-    line-height: 1;
-    margin-top: 0.12em;
-  }
+  /* ─── TYPE RAMP ─── */
+  --t-hero:    clamp(56px, 8vw, 112px);
+  --t-h1:      clamp(44px, 6vw, 80px);
+  --t-h2:      clamp(36px, 4.5vw, 56px);
+  --t-h3:      clamp(20px, 2vw, 26px);
+  --t-body:    17px;
+  --t-small:   14px;
+  --t-micro:   12px;
 
-  /* NAV */
-  nav {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(15,15,15,0.78);
-    backdrop-filter: blur(18px);
-    border-bottom: 1px solid var(--border);
-    padding: 16px 40px;
-  }
-  .nav-inner {
-    max-width: 1200px; margin: 0 auto;
-    display: flex; justify-content: space-between; align-items: center;
-    gap: 24px;
-  }
-  .nav-brand {
-    display: flex; align-items: center; gap: 10px;
-    font-family: "greycliff-cf", sans-serif;
-    font-weight: 800; font-size: 15px;
-    color: var(--cream); text-decoration: none;
-    letter-spacing: -0.01em;
-  }
-  .nav-brand::before {
-    content: '';
-    width: 24px; height: 24px;
-    border-radius: 7px;
-    background: var(--glow-peach);
-  }
-  .nav-links { display: flex; gap: 22px; flex-wrap: wrap; font-size: 13px; }
-  .nav-links a { color: var(--cream-body); text-decoration: none; transition: color 0.15s; }
-  .nav-links a:hover { color: var(--cream); }
+  /* ─── RADII ─── */
+  --r-page:    28px;
+  --r-stage:   40px;
+  --r-card:    24px;
+  --r-inner:   16px;
+  --r-pill:    100px;
+  --r-button:  10px;
 
-  /* SECTION FRAMES */
-  section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
-  section.full-width { max-width: none; padding-left: 40px; padding-right: 40px; }
-  section + section { border-top: 1px solid var(--border); }
+  /* ─── SHADOWS ─── */
+  --shadow-card: 0 24px 60px -20px rgba(0,0,0,0.18);
+  --shadow-glow: 0 10px 40px -10px rgba(255,23,68,0.45);
 
-  .section-label {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--cream-muted);
-    margin-bottom: 24px;
-  }
-  .section-label::before {
-    content: ''; width: 6px; height: 6px;
-    border-radius: 50%; background: var(--cream-muted);
-  }
+  --gutter: clamp(20px, 4vw, 56px);
+}
 
-  /* HERO */
-  .hero {
-    position: relative;
-    padding: 120px 40px 100px;
-    text-align: center;
-    max-width: none;
-    overflow: hidden;
-    border-bottom: 1px solid var(--border);
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -120px; left: 50%;
-    transform: translateX(-50%);
-    width: 1200px; height: 700px;
-    background: radial-gradient(ellipse, rgba(232,150,126,0.18) 0%, rgba(248,197,168,0.06) 35%, transparent 65%);
-    pointer-events: none;
-  }
-  .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
-  .hero p { margin: 0 auto; max-width: 640px; font-size: 17px; }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: var(--surface-1);
-    border: 1px solid var(--border-strong);
-    border-radius: var(--radius-pill);
-    padding: 6px 16px 6px 8px;
-    font-size: 12px; font-weight: 600; color: var(--cream-body);
-    margin-bottom: 32px;
-  }
-  .hero-badge-dot {
-    width: 18px; height: 18px; border-radius: 50%;
-    background: var(--glow-peach);
-  }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-  /* SWATCH GRID */
-  .swatch-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 16px;
-    margin-top: 32px;
-  }
-  .swatch {
-    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-brand);
-    overflow: hidden;
-    transition: transform 0.15s, box-shadow 0.15s;
-    cursor: pointer;
-  }
-  .swatch:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-  .swatch-color {
-    height: 120px;
-    display: flex; align-items: flex-end;
-    padding: 12px 14px;
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.08em; text-transform: uppercase;
-  }
-  .swatch-info { padding: 14px 18px; }
-  .swatch-name { font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 2px; }
-  .swatch-hex {
-    font-family: "greycliff-cf", monospace;
-    font-size: 12px; color: var(--cream-body);
-    letter-spacing: 0.02em;
-  }
-  .swatch-role { font-size: 11px; color: var(--cream-muted); margin-top: 4px; line-height: 1.4; }
+html, body {
+  background: var(--bg);
+  color: var(--ink-dark);
+  font-family: var(--font-sans);
+  font-size: var(--t-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+button { font: inherit; cursor: pointer; border: none; background: none; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
 
-  /* FINAL 6 PALETTE GRID */
-  .palette-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 16px;
-    margin-top: 32px;
-  }
-  .palette-card {
-    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-brand);
-    overflow: hidden;
-    position: relative;
-  }
-  .palette-strip { height: 120px; }
-  .palette-body { padding: 24px 24px 28px; }
-  .palette-head {
-    display: flex; align-items: center; gap: 12px;
-    margin-bottom: 8px;
-  }
-  .palette-num {
-    font-family: "greycliff-cf", sans-serif;
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    color: var(--cream-muted);
-  }
-  .palette-name {
-    font-family: "greycliff-cf", sans-serif;
-    font-weight: 800;
-    font-size: 22px;
-    color: var(--cream);
-    letter-spacing: -0.01em;
-  }
-  .palette-role {
-    font-family: "greycliff-cf", sans-serif;
-    font-weight: 700; font-size: 10px;
-    letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--cream);
-    background: rgba(245,240,232,0.08);
-    border: 1px solid var(--border-strong);
-    padding: 4px 10px;
-    border-radius: var(--radius-pill);
-    margin-left: auto;
-  }
-  .palette-when {
-    color: var(--cream-body);
-    font-size: 13px;
-    line-height: 1.55;
-    margin-bottom: 18px;
-  }
-  .palette-chips {
-    display: flex; gap: 6px; flex-wrap: wrap;
-  }
-  .chip {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 4px 10px;
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-pill);
-    font-family: 'SF Mono', monospace;
-    font-size: 10px; color: var(--cream-body);
-  }
-  .chip-dot { width: 10px; height: 10px; border-radius: 50%; }
+/* ─── TYPOGRAPHY SPINE (locked) ─── */
+h1, h2, h3, .display {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.028em;
+  line-height: 1.04;
+  color: var(--ink-dark);
+}
+h1 em, h2 em, h3 em, .display em, .gradient-text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  background: var(--grad-sig) !important;
+  -webkit-background-clip: text !important;
+          background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+          color: transparent !important;
+}
+h3 { font-size: var(--t-h3); line-height: 1.2; }
 
-  /* TYPOGRAPHY SECTION */
-  .type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
-  .type-card {
-    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-brand);
-    padding: 36px;
-  }
-  .type-specimen { font-size: 88px; line-height: 1; margin-bottom: 24px; letter-spacing: -0.02em; }
-  .type-spec-greycliff { font-family: "greycliff-cf"; font-weight: 700; color: var(--cream); }
-  .type-spec-neo {
-    font-family: 'Neo Contact', sans-serif; font-weight: 700;
-    background: var(--glow-peach);
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .type-name { font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
-  .type-role { font-size: 13px; color: var(--cream-muted); margin-bottom: 20px; }
-  .type-weights { display: flex; flex-direction: column; gap: 8px; padding-top: 20px; border-top: 1px solid var(--border); }
-  .type-row { display: grid; grid-template-columns: 110px 1fr; gap: 16px; align-items: baseline; }
-  .type-label { font-size: 11px; color: var(--cream-muted); font-weight: 600; }
-  .type-sample { font-size: 17px; color: var(--cream); }
+p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
+.on-dark p strong, .on-dark .lead strong { color: var(--ink); }
 
-  /* GLOW THEORY — show the 4-stop pattern */
-  .theory-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 32px;
-  }
-  .theory-card {
-    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-brand);
-    overflow: hidden;
-  }
-  .theory-strip {
-    height: 140px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .theory-strip-text {
-    font-size: 56px; font-weight: 700;
-    font-family: 'Neo Contact', sans-serif;
-    letter-spacing: -0.01em;
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .theory-info { padding: 18px 22px; border-top: 1px solid var(--border); }
-  .theory-info-name { font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
-  .theory-info code {
-    display: block;
-    font-size: 11px; font-family: 'SF Mono', monospace;
-    color: var(--cream-body);
-    background: var(--surface-2);
-    padding: 8px 10px;
-    border-radius: 8px;
-    margin-top: 10px;
-    border: 1px solid var(--border);
-    line-height: 1.6;
-  }
-  .theory-info p { font-size: 13px; margin: 6px 0 0; color: var(--cream-body); }
+.eyebrow, .label {
+  font-family: var(--font-sans);
+  font-size: var(--t-micro);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-dark-muted);
+}
+.eyebrow.on-dark, .label.on-dark { color: var(--ink-body); }
 
-  /* HEADLINE USAGE */
-  .usage-grid { display: grid; gap: 16px; margin-top: 32px; }
-  .usage-card {
-    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-brand);
-    padding: 36px 40px;
-  }
-  .usage-label {
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--cream-muted);
-    margin-bottom: 16px;
-    display: block;
-  }
-  .usage-demo h2 { margin-bottom: 8px; }
-  .usage-desc { font-size: 13px; color: var(--cream-muted); }
-  .usage-desc code {
-    background: var(--surface-2);
-    padding: 2px 8px;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    font-size: 12px;
-    color: var(--cream-body);
-  }
+.dot-period {
+  display: inline-block;
+  width: 0.38em; height: 0.38em;
+  background: var(--grad-sig);
+  border-radius: 50%;
+  vertical-align: 0.05em;
+  margin-left: 0.06em;
+  box-shadow: 0 0 18px rgba(255,23,68,0.55);
+}
 
-  /* COMPONENTS */
-  .components-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
-  .component-card {
-    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-brand);
-    padding: 36px 32px;
-  }
-  .component-label {
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--cream-muted);
-    margin-bottom: 20px;
-    display: block;
-  }
-  .component-demo {
-    padding: 16px 0 24px;
-    display: flex; flex-direction: column;
-    align-items: flex-start; gap: 14px;
-  }
-  .component-code {
-    font-family: 'SF Mono', monospace;
-    font-size: 11px;
-    background: var(--surface-2);
-    padding: 10px 12px;
-    border-radius: 8px;
-    color: var(--cream-body);
-    border: 1px solid var(--border);
-    line-height: 1.6;
-  }
+.brand-stripe {
+  height: 3px;
+  width: clamp(80px, 12vw, 180px);
+  background: var(--grad-sig);
+  border-radius: 999px;
+}
 
-  /* BUTTONS */
-  .btn {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 12px 24px;
-    border-radius: var(--radius-btn);
-    font-family: "greycliff-cf", sans-serif;
-    font-size: 14px; font-weight: 600;
-    letter-spacing: -0.005em;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    cursor: pointer; white-space: nowrap;
-    border: none;
-  }
-  .btn-primary {
-    background: var(--gradient-btn);
-    color: #3A1810;
-    box-shadow: var(--shadow-peach);
-  }
-  .btn-primary:hover {
-    background: var(--gradient-btn-hover);
-    color: var(--cream);
-    box-shadow: 0 8px 28px rgba(196,113,94,0.35);
-    transform: translateY(-1px);
-  }
-  .btn-ghost {
-    background:
-      linear-gradient(var(--bg), var(--bg)) padding-box,
-      var(--gradient-btn) border-box;
-    border: 1.5px solid transparent;
-    padding: 10.5px 22.5px;
-    color: var(--cream);
-  }
-  .btn-ghost:hover {
-    background:
-      linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
-      var(--gradient-btn-hover) border-box;
-  }
-  .btn-cream {
-    background: var(--cream);
-    color: var(--bg);
-  }
-  .btn-cream:hover { background: var(--cream-warm); }
+/* ═══════════════════════════════════════════════════════════════════
+   PAGE STAGE
+   ═══════════════════════════════════════════════════════════════════ */
+.page {
+  background: var(--cream);
+  margin: 14px;
+  border-radius: var(--r-page);
+  overflow: hidden;
+  position: relative;
+  min-height: calc(100vh - 28px);
+}
+.page::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7) 50%, transparent);
+  z-index: 100;
+  pointer-events: none;
+}
 
-  /* HIGHLIGHT PILLS */
-  .highlight, .highlight-peach, .highlight-cream {
-    display: inline-block;
-    padding: 0.12em 0.5em;
-    border-radius: var(--radius-brand);
-    font-style: normal;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-  .highlight {
-    background: var(--cream);
-    color: var(--bg);
-    box-shadow: 0 4px 14px rgba(245,240,232,0.18);
-  }
-  .highlight-peach {
-    background: var(--gradient-btn);
-    color: #3A1810;
-    box-shadow: var(--shadow-peach);
-  }
-  .highlight-cream {
-    background: rgba(245,240,232,0.08);
-    color: var(--cream);
-    border: 1px solid var(--border-strong);
-  }
+/* ═══════════════════════════════════════════════════════════════════
+   LAYOUT — sidebar nav + main content
+   ═══════════════════════════════════════════════════════════════════ */
+.shell {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+}
+@media (max-width: 980px) { .shell { grid-template-columns: 1fr; } }
 
-  /* RADIUS DEMO */
-  .radius-demo { display: flex; gap: 20px; margin-top: 24px; flex-wrap: wrap; }
-  .radius-box {
-    width: 120px; height: 120px;
-    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
-    border: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 13px; font-weight: 700;
-    color: var(--cream-muted);
-  }
+.side {
+  background: rgba(10,10,10,0.02);
+  border-right: 1px solid var(--hairline-cream);
+  padding: 36px 22px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+@media (max-width: 980px) {
+  .side { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--hairline-cream); }
+}
 
-  /* EXAMPLE — full design system in one view */
-  .example {
-    padding: 120px 40px;
-    max-width: none;
-    position: relative;
-    overflow: hidden;
-  }
-  .example::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 50%;
-    transform: translateX(-50%);
-    width: 1100px; height: 600px;
-    pointer-events: none;
-  }
-  .example.glow-peach::before    { background: radial-gradient(ellipse, rgba(232,150,126,0.15) 0%, transparent 60%); }
-  .example.glow-coral::before    { background: radial-gradient(ellipse, rgba(251,113,133,0.13) 0%, transparent 60%); }
-  .example.glow-copper::before   { background: radial-gradient(ellipse, rgba(184,115,51,0.13) 0%, transparent 60%); }
-  .example.glow-mocha::before    { background: radial-gradient(ellipse, rgba(139,90,60,0.13) 0%, transparent 60%); }
-  .example.glow-cerulean::before { background: radial-gradient(ellipse, rgba(42,127,184,0.13) 0%, transparent 60%); }
-  .example.glow-slate::before    { background: radial-gradient(ellipse, rgba(71,85,105,0.13) 0%, transparent 60%); }
+.side .brand-mark {
+  font-family: var(--font-logo);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink-dark);
+  margin-bottom: 4px;
+  display: block;
+}
+.side .brand-mark em { font-style: italic; color: var(--sig); }
+.side .brand-sub {
+  font-size: 12px;
+  color: var(--ink-dark-muted);
+  margin-bottom: 32px;
+}
+.side nav {
+  display: flex; flex-direction: column;
+  gap: 2px;
+}
+.side nav a {
+  display: flex; align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  border-radius: 10px;
+  color: var(--ink-dark-soft);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+.side nav a .num {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--ink-dark-muted);
+  font-weight: 600;
+  width: 16px;
+}
+.side nav a:hover { background: rgba(10,10,10,0.04); color: var(--ink-dark); }
+.side nav a.active {
+  background: var(--ink-dark);
+  color: var(--cream);
+}
+.side nav a.active .num { color: rgba(245,240,232,0.5); }
 
-  .example-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
-  .example-hero { max-width: 900px; margin: 0 auto 64px; text-align: center; }
-  .example-hero p { font-size: 18px; max-width: 640px; margin: 0 auto 36px; }
-  .example-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.side .side-foot {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--hairline-cream);
+  font-size: 11px;
+  color: var(--ink-dark-muted);
+  line-height: 1.5;
+}
+.side .side-foot strong { color: var(--ink-dark); font-weight: 600; }
 
-  /* per-section em color override (each example section uses its own glow on em) */
-  .example.glow-coral em    { background-image: var(--glow-coral); }
-  .example.glow-copper em   { background-image: var(--glow-copper); }
-  .example.glow-mocha em    { background-image: var(--glow-mocha); }
-  .example.glow-cerulean em { background-image: var(--glow-cerulean); }
-  .example.glow-slate em    { background-image: var(--glow-slate); }
+.main {
+  padding: 0;
+  overflow-x: hidden;
+}
 
-  /* example stats row */
-  .example-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin: 64px auto;
-    max-width: 900px;
-  }
-  .stat-card {
-    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-brand);
-    padding: 32px 28px;
-    text-align: center;
-  }
-  .stat-num {
-    font-family: "greycliff-cf", sans-serif;
-    font-weight: 800;
-    font-size: 56px;
-    line-height: 1;
-    margin-bottom: 8px;
-    letter-spacing: -0.03em;
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .glow-peach    .stat-num { background-image: var(--glow-peach); }
-  .glow-coral    .stat-num { background-image: var(--glow-coral); }
-  .glow-copper   .stat-num { background-image: var(--glow-copper); }
-  .glow-mocha    .stat-num { background-image: var(--glow-mocha); }
-  .glow-cerulean .stat-num { background-image: var(--glow-cerulean); }
-  .glow-slate    .stat-num { background-image: var(--glow-slate); }
-  .stat-label {
-    font-size: 11px; font-weight: 700;
-    color: var(--cream-muted);
-    letter-spacing: 0.18em; text-transform: uppercase;
-  }
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION TEMPLATE — every doc section uses this scaffold
+   ═══════════════════════════════════════════════════════════════════ */
+.doc-section {
+  padding: clamp(50px, 6vw, 90px) clamp(28px, 5vw, 80px);
+  border-bottom: 1px solid var(--hairline-cream);
+}
+.doc-section.dark {
+  background: var(--bg);
+  color: var(--ink);
+  border-bottom-color: var(--hairline);
+}
+.doc-section.dark h2, .doc-section.dark h3, .doc-section.dark h4 { color: var(--ink); }
+.doc-section .doc-head { margin-bottom: 40px; }
+.doc-section .doc-head .label { margin-bottom: 12px; display: inline-block; }
+.doc-section .doc-head h2 {
+  font-size: clamp(40px, 5vw, 64px);
+  letter-spacing: -0.028em;
+  line-height: 1.04;
+  max-width: 24ch;
+  margin-bottom: 14px;
+}
+.doc-section .doc-head .lead {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: var(--ink-dark-soft);
+  max-width: 60ch;
+  line-height: 1.55;
+}
+.doc-section.dark .doc-head .lead { color: var(--ink-body); }
 
-  /* example feature cards */
-  .example-features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .feature-card {
-    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-brand);
-    padding: 32px 28px;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .feature-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-  .feature-num {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 44px; height: 44px;
-    border-radius: var(--radius-brand);
-    background: rgba(245,240,232,0.06);
-    color: var(--cream);
-    font-weight: 700; font-size: 15px;
-    margin-bottom: 18px;
-    border: 1px solid var(--border-strong);
-  }
-  .feature-card h3 { color: var(--cream); margin-bottom: 12px; }
-  .feature-card p  { color: var(--cream-body); font-size: 14px; line-height: 1.6; }
+.doc-block {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--hairline-cream);
+}
+.doc-section.dark .doc-block { border-top-color: var(--hairline); }
+.doc-block:first-of-type { border-top: none; padding-top: 0; }
+.doc-block h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+.doc-block h3 em { /* gradient inherits */ }
+.doc-block .block-meta {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--ink-dark-muted);
+  margin-bottom: 18px;
+}
+.doc-section.dark .doc-block .block-meta { color: var(--ink-muted); }
+.doc-block .block-meta code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 12px;
+  background: rgba(10,10,10,0.06);
+  padding: 2px 7px;
+  border-radius: 5px;
+  color: var(--sig);
+}
+.doc-section.dark .doc-block .block-meta code {
+  background: rgba(255,255,255,0.06);
+  color: var(--sig-highlight);
+}
 
-  /* RULES OF ENGAGEMENT */
-  .rules {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 32px;
-  }
-  .rule {
-    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-brand);
-    padding: 24px 28px;
-    display: flex;
-    gap: 18px;
-  }
-  .rule-num {
-    flex-shrink: 0;
-    font-family: "greycliff-cf", sans-serif;
-    font-weight: 800;
-    font-size: 32px;
-    line-height: 1;
-    background: var(--gradient-text);
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .rule-body h3 { font-size: 16px; margin-bottom: 6px; color: var(--cream); }
-  .rule-body p  { font-size: 13px; color: var(--cream-body); line-height: 1.5; }
+/* ═══════════════════════════════════════════════════════════════════
+   1. IDENTITY — color, gradient, logo
+   ═══════════════════════════════════════════════════════════════════ */
 
-  /* LOGOS */
-  .logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
-  .logo-card {
-    border: 1px solid var(--border);
-    border-radius: var(--radius-brand);
-    padding: 80px 40px;
-    display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden;
-  }
-  .logo-card-label {
-    position: absolute; top: 16px; left: 20px;
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--cream-muted);
-  }
-  .logo-card-dark { background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%); }
-  .logo-card-cream { background: var(--cream); }
-  .logo-card-cream .logo-card-label { color: #4A4A4A; }
-  .logo-card img { max-width: 280px; height: auto; }
+/* Logo block */
+.logo-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 720px) { .logo-row { grid-template-columns: 1fr; } }
+.logo-card {
+  border: 1px solid var(--hairline-cream);
+  border-radius: 18px;
+  padding: 50px 30px;
+  display: grid; place-items: center;
+  background: var(--cream-soft);
+}
+.logo-card.dark { background: var(--bg); border-color: var(--hairline); }
+.logo-card .word {
+  font-family: var(--font-logo);
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--ink-dark);
+}
+.logo-card.dark .word { color: var(--ink); }
+.logo-card .word em { font-style: italic; color: var(--sig); }
 
-  /* FOOTER */
-  footer {
-    text-align: center;
-    padding: 40px;
-    color: var(--cream-muted);
-    font-size: 13px;
-    border-top: 1px solid var(--border);
-  }
-  footer a { color: var(--cream); text-decoration: none; }
+/* Color swatches grid */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+.sw {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--hairline-cream);
+}
+.doc-section.dark .sw { border-color: var(--hairline); }
+.sw .chip {
+  height: 100px;
+  position: relative;
+}
+.sw .meta {
+  padding: 12px 14px;
+  background: var(--cream-soft);
+  font-family: var(--font-sans);
+}
+.doc-section.dark .sw .meta { background: var(--surface-1); }
+.sw .meta .nm {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-dark);
+}
+.doc-section.dark .sw .meta .nm { color: var(--ink); }
+.sw .meta .hex {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 11px;
+  color: var(--ink-dark-muted);
+  margin-top: 1px;
+}
+.doc-section.dark .sw .meta .hex { color: var(--ink-muted); }
+.sw .meta .tok {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 11px;
+  color: var(--sig);
+  margin-top: 2px;
+}
 
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    section { padding: 64px 20px; }
-    .example { padding: 80px 20px; }
-    .hero { padding: 80px 20px 64px; }
-    .type-grid, .logo-grid, .components-grid, .rules { grid-template-columns: 1fr; }
-    .example-stats, .example-features { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
-  }
+/* Gradient strips */
+.grad-strip {
+  height: 88px;
+  border-radius: 14px;
+  border: 1px solid var(--hairline-cream);
+  margin-bottom: 8px;
+  position: relative;
+}
+.doc-section.dark .grad-strip { border-color: var(--hairline); }
+.grad-strip .stops {
+  position: absolute;
+  bottom: 8px; left: 0; right: 0;
+  display: flex; justify-content: space-around;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 10px;
+  color: rgba(255,255,255,0.85);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+.grad-row { margin-bottom: 20px; }
+.grad-row .grad-label {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 8px;
+}
+.grad-row .grad-label .gn {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-dark);
+}
+.doc-section.dark .grad-row .grad-label .gn { color: var(--ink); }
+.grad-row .grad-label .gd {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 11px;
+  color: var(--ink-dark-muted);
+}
 
-  /* COPY-TOAST */
-  .toast {
-    position: fixed;
-    bottom: 32px; left: 50%;
-    transform: translateX(-50%);
-    background: var(--cream);
-    color: var(--bg);
-    padding: 10px 18px;
-    border-radius: var(--radius-pill);
-    font-size: 13px; font-weight: 600;
-    box-shadow: var(--shadow-lg);
-    z-index: 1000;
-  }
+/* ═══════════════════════════════════════════════════════════════════
+   2. TYPOGRAPHY
+   ═══════════════════════════════════════════════════════════════════ */
+
+.font-card {
+  border: 1px solid var(--hairline-cream);
+  border-radius: 18px;
+  padding: 30px;
+  margin-bottom: 14px;
+  background: var(--cream-soft);
+}
+.doc-section.dark .font-card { background: var(--surface-1); border-color: var(--hairline); }
+.font-card .sample {
+  font-size: 72px;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-bottom: 22px;
+  color: var(--ink-dark);
+}
+.doc-section.dark .font-card .sample { color: var(--ink); }
+.font-card .sample.logo { font-family: var(--font-logo); font-weight: 500; }
+.font-card .sample.sans-heavy { font-family: var(--font-sans); font-weight: 800; }
+.font-card .sample.serif-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  background: var(--grad-sig);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.font-card .info-row {
+  display: flex; flex-wrap: wrap; gap: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--hairline-cream);
+}
+.doc-section.dark .font-card .info-row { border-top-color: var(--hairline); }
+.font-card .info {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--ink-dark-soft);
+}
+.doc-section.dark .font-card .info { color: var(--ink-body); }
+.font-card .info .k {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-dark-muted);
+  display: block; margin-bottom: 3px;
+}
+.doc-section.dark .font-card .info .k { color: var(--ink-muted); }
+
+/* Type ramp */
+.ramp {
+  border: 1px solid var(--hairline-cream);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.doc-section.dark .ramp { border-color: var(--hairline); }
+.ramp .row {
+  display: grid;
+  grid-template-columns: 140px 100px 1fr;
+  gap: 20px;
+  padding: 18px 22px;
+  align-items: baseline;
+  border-bottom: 1px solid var(--hairline-cream);
+}
+.doc-section.dark .ramp .row { border-bottom-color: var(--hairline); }
+.ramp .row:last-child { border-bottom: none; }
+.ramp .row .tok {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 12px;
+  color: var(--sig);
+}
+.ramp .row .size {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 12px;
+  color: var(--ink-dark-muted);
+}
+.doc-section.dark .ramp .row .size { color: var(--ink-muted); }
+.ramp .row .demo {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--ink-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.doc-section.dark .ramp .row .demo { color: var(--ink); }
+.ramp .row.hero .demo { font-size: var(--t-hero); font-weight: 800; }
+.ramp .row.h1 .demo { font-size: var(--t-h1); font-weight: 800; }
+.ramp .row.h2 .demo { font-size: var(--t-h2); font-weight: 800; }
+.ramp .row.h3 .demo { font-size: var(--t-h3); font-weight: 800; }
+.ramp .row.body .demo { font-size: 17px; font-weight: 400; }
+.ramp .row.small .demo { font-size: 14px; font-weight: 500; }
+.ramp .row.micro .demo { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+
+/* Headline patterns */
+.headline-patterns {
+  display: grid; gap: 14px;
+}
+.hp {
+  padding: 36px 30px;
+  border: 1px solid var(--hairline-cream);
+  border-radius: 18px;
+  background: var(--cream-soft);
+  position: relative;
+}
+.doc-section.dark .hp { background: var(--surface-1); border-color: var(--hairline); }
+.hp .hp-tag {
+  position: absolute;
+  top: 14px; right: 14px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 10px;
+  background: rgba(10,10,10,0.06);
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: var(--ink-dark-muted);
+}
+.doc-section.dark .hp .hp-tag {
+  background: rgba(255,255,255,0.06); color: var(--ink-muted);
+}
+.hp .hp-h {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.08;
+  color: var(--ink-dark);
+}
+.doc-section.dark .hp .hp-h { color: var(--ink); }
+.hp .hp-h em { /* inherits gradient */ }
+.hp .hp-eb {
+  font-family: var(--font-sans);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-dark-muted);
+  margin-bottom: 10px;
+}
+.doc-section.dark .hp .hp-eb { color: var(--ink-muted); }
+.hp .hp-note {
+  margin-top: 14px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--ink-dark-soft);
+  line-height: 1.5;
+}
+.doc-section.dark .hp .hp-note { color: var(--ink-body); }
+.hp .inline-kw {
+  display: inline-flex; align-items: center;
+  gap: 6px;
+  padding: 2px 12px;
+  border: 2px solid var(--sig);
+  border-radius: 14px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--sig);
+  background: var(--cream-soft);
+  font-size: 0.74em;
+  vertical-align: 8%;
+}
+.hp .inline-kw.filled { background: rgba(255,23,68,0.10); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   3. SECTIONS — archetype gallery
+   ═══════════════════════════════════════════════════════════════════ */
+
+.section-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+.sg-card {
+  border: 1px solid var(--hairline-cream);
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--cream-soft);
+  display: flex; flex-direction: column;
+}
+.sg-card .demo {
+  height: 200px;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--hairline);
+}
+.sg-card .demo.light {
+  background: var(--cream);
+  border-bottom-color: var(--hairline-cream);
+}
+.sg-card .text {
+  padding: 18px 20px;
+}
+.sg-card .text .nm {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: -0.015em;
+  color: var(--ink-dark);
+  margin-bottom: 4px;
+}
+.sg-card .text .cls {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 11px;
+  color: var(--sig);
+  margin-bottom: 8px;
+}
+.sg-card .text .usage {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--ink-dark-soft);
+  line-height: 1.45;
+}
+
+/* Tiny demos inside section gallery cards */
+.demo-hero {
+  background: var(--bg);
+  position: relative;
+}
+.demo-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle 200px at 30% 60%, rgba(255,23,68,0.25), transparent 60%);
+}
+.demo-hero::after {
+  content: 'Headline';
+  position: absolute;
+  top: 30px; left: 20px;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--ink);
+}
+.demo-empathy {
+  background: var(--bg);
+  display: grid; place-items: center;
+  text-align: center;
+}
+.demo-empathy::before {
+  content: '"What if I\'m stuck?"';
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--ink);
+  padding: 0 30px;
+}
+.demo-hub {
+  background: var(--bg);
+  position: relative;
+  display: grid; place-items: center;
+}
+.demo-hub::before, .demo-hub::after {
+  content: '';
+  position: absolute;
+  width: 60px; height: 60px;
+  border-radius: 14px;
+  background: var(--grad-sig);
+  box-shadow: 0 0 30px rgba(255,23,68,0.5);
+}
+.demo-hub::before { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.demo-hub::after { display: none; }
+.demo-thesis {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.demo-thesis .l { background: var(--cream-soft); border-right: 1px solid var(--hairline-cream); }
+.demo-thesis .r { background: var(--bg); }
+.demo-thesis .l, .demo-thesis .r { display: grid; place-items: center; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--ink-dark-muted); }
+.demo-thesis .r { color: var(--ink-muted); }
+.demo-beliefs {
+  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+  background: var(--cream);
+}
+.demo-beliefs > div {
+  border: 1px solid var(--hairline-cream);
+  display: grid; place-items: center;
+  font-size: 11px; color: var(--ink-dark-muted);
+}
+.demo-beliefs > div.break {
+  background: var(--bg);
+  color: var(--ink);
+  background-image: radial-gradient(circle, rgba(255,23,68,0.25) 1px, transparent 1.6px);
+  background-size: 10px 10px;
+}
+.demo-ladder {
+  display: grid;
+  grid-template-columns: 1fr 30px 1fr;
+  padding: 14px;
+  background: var(--cream);
+  gap: 0;
+}
+.demo-ladder .l, .demo-ladder .r {
+  background: rgba(10,10,10,0.04);
+  border-radius: 8px;
+  font-size: 10px;
+  padding: 6px;
+  color: var(--ink-dark-muted);
+}
+.demo-ladder .r { background: rgba(255,23,68,0.10); color: var(--sig); }
+.demo-ladder .spine {
+  position: relative;
+  display: grid; place-items: center;
+}
+.demo-ladder .spine::before {
+  content: '';
+  position: absolute;
+  width: 1px; top: 0; bottom: 0; left: 50%;
+  background: rgba(10,10,10,0.2);
+  background-image: linear-gradient(to bottom, rgba(10,10,10,0.3) 50%, transparent 0);
+  background-size: 1px 6px;
+}
+.demo-ladder .spine .nd {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--grad-sig);
+  position: relative; z-index: 2;
+}
+.demo-editorial {
+  background: var(--bg);
+  position: relative;
+  display: flex; align-items: center;
+  padding-left: 30px;
+}
+.demo-editorial::before {
+  content: 'Revenue ceiling';
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.demo-editorial::after {
+  content: '';
+  width: 10px; height: 10px;
+  background: var(--grad-sig);
+  border-radius: 50%;
+  margin-left: 4px;
+  margin-top: 16px;
+  box-shadow: 0 0 14px rgba(255,23,68,0.5);
+}
+.demo-process {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  background: var(--cream);
+}
+.demo-process > div {
+  border: 1px solid var(--hairline-cream);
+  display: grid; place-items: end;
+  padding: 12px 8px;
+  font-size: 9px; font-weight: 700; color: var(--ink-dark);
+}
+.demo-stats {
+  background: var(--bg);
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  padding: 0 16px;
+}
+.demo-stats > div {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  text-align: center;
+}
+.demo-stats > div em {
+  /* gradient */
+  font-family: var(--font-display);
+  font-style: italic;
+  background: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.demo-signals {
+  background: var(--cream-soft);
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6px; padding: 14px;
+}
+.demo-signals > div {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.demo-signals svg { width: 100%; height: 30px; }
+.demo-signals svg path { fill: none; stroke: rgba(255,255,255,0.4); stroke-width: 1.5; }
+.demo-signals svg.hot path { stroke: var(--sig); }
+.demo-compare {
+  background: var(--cream-soft);
+  padding: 14px;
+  display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2px;
+}
+.demo-compare > div {
+  background: #fff;
+  border-radius: 4px;
+  display: grid; place-items: center;
+  font-size: 9px; color: var(--ink-dark-muted); font-weight: 600;
+  padding: 6px 0;
+}
+.demo-compare > div.us { background: var(--bg); color: var(--cream); }
+.demo-proof {
+  background: var(--cream-soft);
+  display: grid; place-items: center;
+  padding: 0 30px;
+  text-align: center;
+}
+.demo-proof::before {
+  content: '"Tripled close rate"';
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 17px;
+  color: var(--ink-dark);
+  letter-spacing: -0.02em;
+}
+.demo-faq {
+  background: var(--bg);
+  padding: 16px 20px;
+}
+.demo-faq > div {
+  border-top: 1px solid var(--hairline);
+  padding: 10px 0;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 11px; font-weight: 600; color: var(--ink);
+}
+.demo-faq > div::after {
+  content: '+';
+  color: var(--sig);
+  font-weight: 700;
+}
+.demo-achro {
+  background: var(--bg);
+  background-image: radial-gradient(circle, rgba(255,255,255,0.18) 0.8px, transparent 1.3px);
+  background-size: 14px 14px;
+}
+.demo-pricing {
+  background: var(--bg);
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 4px; padding: 14px;
+}
+.demo-pricing > div {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  display: grid; place-items: center;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 13px; color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.demo-pricing > div.featured {
+  background: linear-gradient(180deg, rgba(255,23,68,0.20), rgba(255,23,68,0.02));
+  border-color: rgba(255,23,68,0.4);
+}
+.demo-finalcta {
+  background: var(--cream);
+  display: grid; place-items: center;
+  position: relative;
+}
+.demo-finalcta::before {
+  content: 'Apply now';
+  padding: 10px 14px 10px 20px;
+  border: 1.5px solid var(--ink-dark);
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--ink-dark);
+  display: inline-flex; align-items: center;
+}
+.demo-finalcta::after {
+  content: '→';
+  margin-left: 8px;
+  background: var(--grad-sig);
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  color: var(--cream);
+  display: grid; place-items: center;
+  font-size: 14px;
+  position: absolute;
+  right: calc(50% - 56px);
+  font-weight: 700;
+  box-shadow: 0 0 16px rgba(255,23,68,0.5);
+}
+.demo-footer {
+  background: var(--bg);
+  border-radius: 16px 16px 0 0;
+  padding: 16px 20px;
+  display: flex; align-items: center;
+}
+.demo-footer::before {
+  content: 'hello@findabundance.ai';
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   4. COMPONENTS
+   ═══════════════════════════════════════════════════════════════════ */
+
+.comp-block {
+  background: var(--cream-soft);
+  border: 1px solid var(--hairline-cream);
+  border-radius: 18px;
+  padding: 30px;
+  margin-bottom: 14px;
+}
+.doc-section.dark .comp-block { background: var(--surface-1); border-color: var(--hairline); }
+.comp-row {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.comp-row:last-child { margin-bottom: 0; }
+.comp-row .lbl {
+  font-family: var(--font-sans);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-dark-muted);
+  min-width: 120px;
+}
+.doc-section.dark .comp-row .lbl { color: var(--ink-muted); }
+
+/* Pills (recreated locally) */
+.pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--hairline-cream);
+  background: var(--cream-soft);
+  font-size: var(--t-micro);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-dark-soft);
+  font-family: var(--font-sans);
+}
+.pill.filled {
+  background: var(--grad-sig);
+  color: var(--cream);
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(255,23,68,0.35);
+}
+.pill.filled-soft {
+  background: rgba(255,23,68,0.12);
+  border-color: rgba(255,23,68,0.25);
+  color: var(--sig);
+}
+.pill.on-dark {
+  background: rgba(255,255,255,0.05);
+  border-color: var(--hairline-strong);
+  color: var(--ink-body);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 22px;
+  border-radius: var(--r-pill);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.btn.ghost {
+  background: rgba(10,10,10,0.04);
+  color: var(--ink-dark);
+}
+.btn.ghost:hover { background: rgba(10,10,10,0.08); }
+.btn.dark {
+  background: var(--ink-dark);
+  color: var(--cream);
+}
+.btn.dark:hover { transform: translateY(-1px); }
+.btn.gradient {
+  background: var(--grad-sig);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  color: var(--cream);
+  box-shadow: 0 0 24px rgba(255,23,68,0.4);
+  transition: background-position 0.5s ease;
+}
+.btn.gradient:hover { background-position: 100% 50%; }
+.btn.outline-pill {
+  padding: 10px 10px 10px 26px;
+  border: 1.5px solid var(--ink-dark);
+  background: var(--cream-soft);
+  color: var(--ink-dark);
+}
+.btn.outline-pill .arrow {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--grad-sig);
+  color: var(--cream);
+  display: grid; place-items: center;
+  box-shadow: 0 0 18px rgba(255,23,68,0.4);
+}
+
+/* Avatars */
+.av {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--grad-sig);
+  display: grid; place-items: center;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--cream);
+}
+.av.large { width: 64px; height: 64px; font-size: 22px; }
+.av.achro { background: linear-gradient(135deg, #555, #222); }
+.av.cluster {
+  display: inline-flex;
+  margin: 0;
+}
+.av-cluster {
+  display: inline-flex;
+}
+.av-cluster .av {
+  margin-left: -10px;
+  border: 2px solid var(--cream-soft);
+}
+.av-cluster .av:first-child { margin-left: 0; }
+.doc-section.dark .av-cluster .av { border-color: var(--surface-1); }
+
+/* Toasts */
+.toast {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: var(--bg);
+  color: var(--ink);
+  border-radius: 14px;
+  padding: 12px 16px;
+  max-width: 360px;
+  border: 1px solid var(--hairline);
+}
+.toast .av { width: 32px; height: 32px; font-size: 11px; flex-shrink: 0; }
+.toast .body {
+  font-family: var(--font-sans);
+  flex: 1;
+}
+.toast .body .who {
+  font-size: 13px; font-weight: 700; color: var(--ink);
+  display: flex; justify-content: space-between;
+}
+.toast .body .who .t {
+  font-size: 11px;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.toast .body .msg {
+  font-size: 12px;
+  color: var(--ink-body);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+/* Sparkline */
+.spark-card {
+  background: var(--bg);
+  border-radius: 14px;
+  padding: 16px;
+  width: 180px;
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+}
+.spark-card .l {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 8px;
+}
+.spark-card .n {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
+}
+.spark-card svg { width: 100%; height: 30px; }
+.spark-card svg path { fill: none; stroke: rgba(255,255,255,0.4); stroke-width: 1.6; }
+.spark-card.hot svg path { stroke: var(--sig); stroke-width: 2; }
+
+/* Delta badge */
+.delta-badge {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 11px; font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--r-pill);
+  background: var(--grad-sig);
+  color: var(--cream);
+}
+
+/* Glass cube */
+.glass-cube {
+  width: 140px; height: 140px;
+  border-radius: 32px;
+  background: linear-gradient(160deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02));
+  border: 1.5px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(20px);
+  display: grid; place-items: center;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    0 30px 90px -20px rgba(0,0,0,0.5),
+    0 0 80px rgba(255,23,68,0.3);
+}
+.glass-cube .gl {
+  font-family: var(--font-display);
+  font-size: 50px; line-height: 1;
+  font-style: italic;
+  background: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* Pattern fills (mini) */
+.pf {
+  width: 130px; height: 90px;
+  border-radius: 12px;
+  border: 1px solid var(--hairline);
+  position: relative;
+}
+.pf.dot-24 {
+  background-color: var(--bg);
+  background-image: radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+.pf.dot-14 {
+  background-color: var(--bg);
+  background-image: radial-gradient(circle, rgba(255,255,255,0.25) 0.8px, transparent 1.3px);
+  background-size: 14px 14px;
+}
+.pf.grid-48 {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.pf.grid-24 {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   5. MOTION — demo cards
+   ═══════════════════════════════════════════════════════════════════ */
+
+.motion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+.mo-card {
+  border: 1px solid var(--hairline-cream);
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--cream-soft);
+}
+.mo-card .play {
+  height: 180px;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+.mo-card .text {
+  padding: 16px 20px;
+}
+.mo-card .text .nm { font-family: var(--font-sans); font-weight: 800; font-size: 15px; color: var(--ink-dark); letter-spacing: -0.015em; }
+.mo-card .text .usage { font-family: var(--font-sans); font-size: 12px; color: var(--ink-dark-soft); line-height: 1.4; margin-top: 4px; }
+
+.mo-pulse {
+  display: grid; place-items: center;
+}
+.mo-pulse::before {
+  content: '';
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background: var(--grad-sig);
+  box-shadow: 0 0 40px rgba(255,23,68,0.6);
+  animation: motion-pulse 2.4s ease-in-out infinite;
+}
+@keyframes motion-pulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(255,23,68,0.4); transform: scale(1); }
+  50% { box-shadow: 0 0 60px rgba(255,23,68,0.8); transform: scale(1.05); }
+}
+
+.mo-drift::before, .mo-drift::after {
+  content: '';
+  position: absolute;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  filter: blur(30px);
+  animation: motion-drift 14s ease-in-out infinite;
+}
+.mo-drift::before {
+  top: 20%; left: 10%;
+  background: rgba(255,155,122,0.3);
+}
+.mo-drift::after {
+  bottom: 10%; right: 15%;
+  background: rgba(255,23,68,0.25);
+  animation-delay: -7s;
+}
+@keyframes motion-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -20px); }
+}
+
+.mo-orbit {
+  display: grid; place-items: center;
+}
+.mo-orbit .ring {
+  width: 130px; height: 130px;
+  border: 1px dashed rgba(255,255,255,0.18);
+  border-radius: 50%;
+  position: relative;
+  animation: motion-orbit 12s linear infinite;
+}
+.mo-orbit .ring .dot {
+  position: absolute;
+  top: -7px; left: 50%;
+  transform: translateX(-50%);
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--grad-sig);
+  box-shadow: 0 0 16px rgba(255,23,68,0.6);
+}
+@keyframes motion-orbit { to { transform: rotate(360deg); } }
+
+.mo-tumble {
+  position: relative;
+}
+.mo-tumble .p {
+  position: absolute;
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--hairline);
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  animation: motion-tumble 5s ease-in-out infinite;
+}
+.mo-tumble .p1 { top: 20%; left: 10%; animation-delay: 0s; }
+.mo-tumble .p2 { top: 50%; left: 40%; animation-delay: -1.5s; }
+.mo-tumble .p3 { bottom: 15%; left: 20%; animation-delay: -3s; }
+@keyframes motion-tumble {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(10px) rotate(8deg); }
+}
+
+.mo-cursor::before {
+  content: '';
+  position: absolute;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,23,68,0.4), transparent 60%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: motion-cursor 6s ease-in-out infinite;
+}
+@keyframes motion-cursor {
+  0% { transform: translate(-80%, -50%); }
+  50% { transform: translate(-20%, -50%); }
+  100% { transform: translate(-80%, -50%); }
+}
+
+.mo-slide {
+  display: grid; place-items: center;
+}
+.mo-slide .b {
+  padding: 12px 26px;
+  background: var(--grad-sig);
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+  color: var(--cream);
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  animation: motion-slide 4s ease-in-out infinite;
+}
+@keyframes motion-slide {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.mo-stars {
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 50% 60%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 80% 20%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1.5px 1.5px at 30% 80%, rgba(255,255,255,0.45), transparent);
+  animation: motion-stars 30s linear infinite;
+}
+@keyframes motion-stars { from { background-position: 0 0; } to { background-position: 50px -30px; } }
+
+/* ═══════════════════════════════════════════════════════════════════
+   6. CONTENT examples
+   ═══════════════════════════════════════════════════════════════════ */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+.cn-card {
+  border: 1px solid var(--hairline-cream);
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--cream-soft);
+}
+.cn-card .canvas { aspect-ratio: 4 / 5; padding: 24px; position: relative; overflow: hidden; }
+.cn-card .text {
+  padding: 14px 18px;
+  border-top: 1px solid var(--hairline-cream);
+}
+.cn-card .text .nm { font-family: var(--font-sans); font-weight: 800; font-size: 14px; color: var(--ink-dark); }
+.cn-card .text .meta { font-family: var(--font-sans); font-size: 11px; color: var(--ink-dark-muted); }
+
+/* Carousel slides */
+.car-1 { background: var(--bg); color: var(--ink); display: flex; flex-direction: column; justify-content: space-between; }
+.car-1 .eb { font-size: 9px; font-weight: 700; letter-spacing: 0.16em; color: var(--ink-muted); }
+.car-1 .h {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.car-1 .h em {
+  font-family: var(--font-display);
+  font-style: italic;
+  background: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.car-1 .ft { font-size: 9px; font-weight: 600; color: var(--ink-muted); }
+
+.car-2 {
+  background: var(--bg);
+  background-image: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(255,23,68,0.4), transparent 60%);
+  display: grid; place-items: center;
+}
+.car-2 .big {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 56px;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  text-align: center;
+  line-height: 0.95;
+}
+.car-2 .big em {
+  font-family: var(--font-display); font-style: italic;
+  background: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.car-2 .sub { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; color: var(--ink-muted); margin-top: 14px; text-align: center; text-transform: uppercase; }
+
+.car-3 {
+  background: var(--bg);
+  color: var(--ink);
+  display: flex; flex-direction: column;
+  gap: 10px;
+}
+.car-3 .label { font-size: 9px; font-weight: 700; letter-spacing: 0.16em; color: var(--ink-muted); }
+.car-3 .pt {
+  border-left: 2px solid var(--sig);
+  padding: 6px 0 6px 12px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--ink-body);
+  line-height: 1.4;
+}
+.car-3 .pt strong { color: var(--ink); font-weight: 700; }
+
+/* Video poster */
+.vid {
+  background: var(--bg);
+  position: relative;
+}
+.vid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(ellipse 80% 50% at 50% 110%, rgba(255,23,68,0.3), transparent 70%);
+}
+.vid .play-icon {
+  position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 70px; height: 70px;
+  border-radius: 50%;
+  background: var(--grad-sig);
+  display: grid; place-items: center;
+  color: var(--cream);
+  box-shadow: 0 0 40px rgba(255,23,68,0.5);
+  z-index: 2;
+}
+.vid .caption {
+  position: absolute;
+  bottom: 20px; left: 20px; right: 20px;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  z-index: 2;
+}
+.vid .caption em {
+  font-family: var(--font-display); font-style: italic;
+  background: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.vid .time-tag {
+  position: absolute;
+  top: 16px; right: 16px;
+  background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);
+  padding: 4px 8px; border-radius: 4px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 10px; color: var(--ink); font-weight: 600;
+  z-index: 2;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   7. RULES
+   ═══════════════════════════════════════════════════════════════════ */
+.rules-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 800px) { .rules-list { grid-template-columns: 1fr; } }
+.rule {
+  padding: 26px 28px;
+  border: 1px solid var(--hairline-cream);
+  border-radius: 18px;
+  background: var(--cream-soft);
+  position: relative;
+}
+.doc-section.dark .rule { background: var(--surface-1); border-color: var(--hairline); }
+.rule .num {
+  font-family: var(--font-sans);
+  font-size: 13px; font-weight: 800;
+  color: var(--sig);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+.rule h3 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.018em;
+  color: var(--ink-dark);
+  margin-bottom: 8px;
+}
+.doc-section.dark .rule h3 { color: var(--ink); }
+.rule h3 em { /* inherit gradient */ }
+.rule .do, .rule .dont {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+.rule .do { color: var(--ink-dark); }
+.doc-section.dark .rule .do { color: var(--ink); }
+.rule .dont { color: var(--ink-dark-muted); text-decoration: line-through; text-decoration-color: rgba(10,10,10,0.2); }
+.doc-section.dark .rule .dont { color: var(--ink-muted); }
+.rule .do::before { content: '✓'; position: absolute; left: 0; color: var(--sig); font-weight: 800; }
+.rule .dont::before { content: '✕'; position: absolute; left: 0; color: var(--ink-dark-muted); font-weight: 800; }
+
+/* Hero of the brand page */
+.brand-hero {
+  padding: clamp(70px, 8vw, 130px) clamp(28px, 5vw, 80px) clamp(50px, 6vw, 90px);
+  border-bottom: 1px solid var(--hairline-cream);
+  position: relative;
+  overflow: hidden;
+}
+.brand-hero h1 {
+  font-size: clamp(48px, 7vw, 96px);
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  max-width: 18ch;
+  margin: 30px 0 30px;
+}
+.brand-hero .lead {
+  font-family: var(--font-sans);
+  font-size: clamp(17px, 1.5vw, 21px);
+  max-width: 64ch;
+  color: var(--ink-dark-soft);
+}
+.brand-hero .lead strong { color: var(--ink-dark); }
+.brand-hero .glow {
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, rgba(255,23,68,0.18), transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="nav-brand">Abundance.AI</a>
-    <div class="nav-links">
-      <a href="#foundation">Foundation</a>
-      <a href="#palette">Palette</a>
-      <a href="#typography">Typography</a>
-      <a href="#theory">Glow Theory</a>
-      <a href="#headlines">Headlines</a>
-      <a href="#components">Components</a>
-      <a href="#example">Example</a>
-      <a href="#rules">Rules</a>
+<div class="page">
+<div class="shell">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SIDEBAR NAV
+       ═══════════════════════════════════════════════════════════════ -->
+  <aside class="side">
+    <a class="brand-mark" href="#top">Abundance<em>.</em></a>
+    <div class="brand-sub">Brand System · v1.0 · May 2026</div>
+    <nav>
+      <a href="#identity" class="active"><span class="num">01</span> Identity</a>
+      <a href="#typography"><span class="num">02</span> Typography</a>
+      <a href="#sections"><span class="num">03</span> Sections</a>
+      <a href="#components"><span class="num">04</span> Components</a>
+      <a href="#motion"><span class="num">05</span> Motion</a>
+      <a href="#content"><span class="num">06</span> Content</a>
+      <a href="#rules"><span class="num">07</span> Rules</a>
+    </nav>
+    <div class="side-foot">
+      <strong>How to use this page:</strong><br>
+      When designing a new funnel, ad creative, carousel, or landing page, start here. Pull the closest existing section, component, or pattern instead of inventing one. The brand discipline is reuse.
     </div>
-  </div>
-</nav>
+  </aside>
 
-<!-- HERO -->
-<section class="hero full-width">
-  <div class="hero-inner">
-    <div class="hero-badge"><span class="hero-badge-dot"></span>Brand Guidelines · Locked April 2026</div>
-    <h1>The Abundance.AI <em>Design System</em></h1>
-    <p>Living reference for the matte-black foundation, Final 6 glow palette, typography, components, and rules used across every Abundance.AI property. Click any swatch to copy its hex value.</p>
-  </div>
-</section>
+  <!-- ═══════════════════════════════════════════════════════════════
+       MAIN CONTENT
+       ═══════════════════════════════════════════════════════════════ -->
+  <main class="main">
 
-<!-- FOUNDATION -->
-<section id="foundation">
-  <span class="section-label">Foundation · The unbreakable spine</span>
-  <h2>Matte black + cream</h2>
-  <p>The brand never leaves matte black. Cream handles all primary text. These eight tokens carry every page; nothing else is allowed at the foundation level.</p>
+    <!-- BRAND HERO -->
+    <section class="brand-hero" id="top">
+      <div class="glow"></div>
+      <span class="label">THE ABUNDANCE BRAND SYSTEM</span>
+      <h1>One source of <em>truth</em><span class="dot-period"></span></h1>
+      <p class="lead">
+        Every color, gradient, font, section archetype, component, motion behavior, content format, and rule that makes something feel like <strong>Abundance</strong>. If it's not on this page, it doesn't belong on a page.
+      </p>
+      <div class="brand-stripe" style="margin-top: 36px;"></div>
+    </section>
 
-  <div class="swatch-grid">
-    <div class="swatch" data-copy="#0F0F0F"><div class="swatch-color" style="background:#0F0F0F;color:#9C968C;border-bottom:1px solid var(--border);">Page BG</div><div class="swatch-info"><div class="swatch-name">Background</div><div class="swatch-hex">#0F0F0F</div><div class="swatch-role">Primary page color</div></div></div>
-    <div class="swatch" data-copy="#161616"><div class="swatch-color" style="background:#161616;color:#9C968C;border-bottom:1px solid var(--border);">Surface 1</div><div class="swatch-info"><div class="swatch-name">Surface 1 · Cards</div><div class="swatch-hex">#161616</div><div class="swatch-role">Card top of gradient</div></div></div>
-    <div class="swatch" data-copy="#1D1D1D"><div class="swatch-color" style="background:#1D1D1D;color:#9C968C;border-bottom:1px solid var(--border);">Surface 2</div><div class="swatch-info"><div class="swatch-name">Surface 2 · Cards</div><div class="swatch-hex">#1D1D1D</div><div class="swatch-role">Card bottom of gradient</div></div></div>
-    <div class="swatch" data-copy="#242424"><div class="swatch-color" style="background:#242424;color:#9C968C;border-bottom:1px solid var(--border);">Surface 3</div><div class="swatch-info"><div class="swatch-name">Surface 3 · Raised</div><div class="swatch-hex">#242424</div><div class="swatch-role">Hover, raised, chip bg</div></div></div>
-    <div class="swatch" data-copy="#F5F0E8"><div class="swatch-color" style="background:#F5F0E8;color:#1A1210;">Cream</div><div class="swatch-info"><div class="swatch-name">Cream · Headlines</div><div class="swatch-hex">#F5F0E8</div><div class="swatch-role">Primary text + cream-on-dark</div></div></div>
-    <div class="swatch" data-copy="#D5CFC4"><div class="swatch-color" style="background:#D5CFC4;color:#1A1210;">Cream Body</div><div class="swatch-info"><div class="swatch-name">Cream Body</div><div class="swatch-hex">#D5CFC4</div><div class="swatch-role">Paragraph copy</div></div></div>
-    <div class="swatch" data-copy="#9C968C"><div class="swatch-color" style="background:#9C968C;color:#1A1210;">Cream Muted</div><div class="swatch-info"><div class="swatch-name">Cream Muted</div><div class="swatch-hex">#9C968C</div><div class="swatch-role">Labels, captions, eyebrows</div></div></div>
-    <div class="swatch" data-copy="rgba(245,240,232,0.08)"><div class="swatch-color" style="background:rgba(245,240,232,0.08);color:#9C968C;">Border</div><div class="swatch-info"><div class="swatch-name">Border</div><div class="swatch-hex">rgba(245,240,232,0.08)</div><div class="swatch-role">8% cream — card edges</div></div></div>
-  </div>
-</section>
+    <!-- ═══ 1. IDENTITY ═══ -->
+    <section class="doc-section" id="identity">
+      <div class="doc-head">
+        <span class="label">01 · IDENTITY</span>
+        <h2>Logo, palette, gradients<span class="dot-period"></span></h2>
+        <p class="lead">The foundation. Tiger's-blood crimson on cream, one accent only, never combined with a second color family.</p>
+      </div>
 
-<!-- PALETTE -->
-<section id="palette">
-  <span class="section-label">The Final 6 · Locked palette</span>
-  <h2>Six colors. <em>Six roles.</em></h2>
-  <p>Every page picks colors from this six. Each has a single role — pages rotate which colors appear in which sections, but no new colors get introduced. All six are 4-stop gradients on a 135° angle, cream → deep.</p>
-
-  <div class="palette-grid">
-
-    <!-- 01 PEACH -->
-    <div class="palette-card">
-      <div class="palette-strip" style="background:var(--glow-peach);"></div>
-      <div class="palette-body">
-        <div class="palette-head">
-          <span class="palette-num">01</span>
-          <span class="palette-name">Peach</span>
-          <span class="palette-role">Primary</span>
-        </div>
-        <p class="palette-when">The signature. Logo mark, hero gradient titles, primary CTAs, footer mark, page bookends. Use on every page.</p>
-        <div class="palette-chips">
-          <span class="chip"><span class="chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
-          <span class="chip"><span class="chip-dot" style="background:#F8C5A8;"></span>#F8C5A8</span>
-          <span class="chip"><span class="chip-dot" style="background:#E8967E;"></span>#E8967E</span>
-          <span class="chip"><span class="chip-dot" style="background:#C4715E;"></span>#C4715E</span>
+      <!-- LOGO -->
+      <div class="doc-block">
+        <h3>Logo wordmark</h3>
+        <div class="block-meta">Font: <code>--font-logo</code> (Neo Contact LT Pro) · used <strong>only</strong> for the wordmark, nowhere else.</div>
+        <div class="logo-row">
+          <div class="logo-card"><span class="word">Abundance<em>.</em></span></div>
+          <div class="logo-card dark"><span class="word">Abundance<em>.</em></span></div>
         </div>
       </div>
-    </div>
 
-    <!-- 02 CORAL -->
-    <div class="palette-card">
-      <div class="palette-strip" style="background:var(--glow-coral);"></div>
-      <div class="palette-body">
-        <div class="palette-head">
-          <span class="palette-num">02</span>
-          <span class="palette-name">Coral</span>
-          <span class="palette-role">Warm Sibling</span>
-        </div>
-        <p class="palette-when">Community, urgency, energy moments. Tribe sections, secondary CTAs, callouts that need more punch than peach.</p>
-        <div class="palette-chips">
-          <span class="chip"><span class="chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
-          <span class="chip"><span class="chip-dot" style="background:#FECACA;"></span>#FECACA</span>
-          <span class="chip"><span class="chip-dot" style="background:#FB7185;"></span>#FB7185</span>
-          <span class="chip"><span class="chip-dot" style="background:#BE123C;"></span>#BE123C</span>
-        </div>
-      </div>
-    </div>
+      <!-- WHEN TO USE WHAT -->
+      <div class="doc-block">
+        <h3>When to use what · backgrounds</h3>
+        <div class="block-meta">Background choice signals what the section is doing. Get this wrong and the whole page reads off.</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
 
-    <!-- 03 COPPER -->
-    <div class="palette-card">
-      <div class="palette-strip" style="background:var(--glow-copper);"></div>
-      <div class="palette-body">
-        <div class="palette-head">
-          <span class="palette-num">03</span>
-          <span class="palette-name">Copper</span>
-          <span class="palette-role">Bronze Depth</span>
-        </div>
-        <p class="palette-when">Heritage moments, case studies, long-form essays, Partner tier, Freedom offer. The "earned" warm.</p>
-        <div class="palette-chips">
-          <span class="chip"><span class="chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
-          <span class="chip"><span class="chip-dot" style="background:#F2D4B8;"></span>#F2D4B8</span>
-          <span class="chip"><span class="chip-dot" style="background:#B87333;"></span>#B87333</span>
-          <span class="chip"><span class="chip-dot" style="background:#6B4120;"></span>#6B4120</span>
-        </div>
-      </div>
-    </div>
+          <div class="rule">
+            <div class="num">CREAM (#F5F0E8)</div>
+            <h3>The editorial default<span class="dot-period"></span></h3>
+            <p class="do">Page background. Light sections: declaration, process, ladder, beliefs, social proof, achromatic patterns, final CTA.</p>
+            <p class="do">When the section is teaching, comparing, or reading.</p>
+            <p class="dont">As a card background INSIDE a cream section — use --cream-soft instead.</p>
+          </div>
 
-    <!-- 04 MOCHA -->
-    <div class="palette-card">
-      <div class="palette-strip" style="background:var(--glow-mocha);"></div>
-      <div class="palette-body">
-        <div class="palette-head">
-          <span class="palette-num">04</span>
-          <span class="palette-name">Mocha</span>
-          <span class="palette-role">Warm Grounder</span>
-        </div>
-        <p class="palette-when">Testimonials, founder stories, serious-warm sections. Where Slate is too cool, Mocha gives a grounded warm anchor.</p>
-        <div class="palette-chips">
-          <span class="chip"><span class="chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
-          <span class="chip"><span class="chip-dot" style="background:#DDC5B3;"></span>#DDC5B3</span>
-          <span class="chip"><span class="chip-dot" style="background:#8B5A3C;"></span>#8B5A3C</span>
-          <span class="chip"><span class="chip-dot" style="background:#40220F;"></span>#40220F</span>
+          <div class="rule">
+            <div class="num">MATTE BLACK (#0A0A0A)</div>
+            <h3>The dramatic <em>stage</em></h3>
+            <p class="do">Dark rounded stages for: hero, empathy, hub-and-spoke, thesis-after card, editorial dot-period, stats moment, pricing, FAQ, footer.</p>
+            <p class="do">When the section is declaring, showcasing, or pricing.</p>
+            <p class="dont">As the whole page background. The page is cream; sections are stages.</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">CREAM SOFT (#FAF6EF)</div>
+            <h3>Subtle card lift</h3>
+            <p class="do">Cards / containers sitting inside cream sections — gives subtle separation without a hard border.</p>
+            <p class="dont">As page background. Too close to white to hold the brand warmth.</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">SURFACE 1/2/3</div>
+            <h3>Nested dark layers</h3>
+            <p class="do">Cards inside dark stages step up through --surface-1, --surface-2, --surface-3 for depth.</p>
+            <p class="dont">As a section background — always use --bg for stages.</p>
+          </div>
+
         </div>
       </div>
-    </div>
 
-    <!-- 05 CERULEAN -->
-    <div class="palette-card">
-      <div class="palette-strip" style="background:var(--glow-cerulean);"></div>
-      <div class="palette-body">
-        <div class="palette-head">
-          <span class="palette-num">05</span>
-          <span class="palette-name">Cerulean</span>
-          <span class="palette-role">Cool Accent</span>
-        </div>
-        <p class="palette-when">Features, product UI, data visualization, integrations, technical sections. The single cool hue per page — use sparingly.</p>
-        <div class="palette-chips">
-          <span class="chip"><span class="chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
-          <span class="chip"><span class="chip-dot" style="background:#B8DDEC;"></span>#B8DDEC</span>
-          <span class="chip"><span class="chip-dot" style="background:#2A7FB8;"></span>#2A7FB8</span>
-          <span class="chip"><span class="chip-dot" style="background:#1A4A6B;"></span>#1A4A6B</span>
+      <!-- FOUNDATION COLORS -->
+      <div class="doc-block">
+        <h3>Foundation · cream &amp; matte black</h3>
+        <div class="block-meta">Use as page background and stage background. Cream is the editorial default; matte black is the dramatic stage.</div>
+        <div class="swatch-grid">
+          <div class="sw"><div class="chip" style="background:#F5F0E8;"></div><div class="meta"><div class="nm">Cream</div><div class="hex">#F5F0E8</div><div class="tok">--cream</div></div></div>
+          <div class="sw"><div class="chip" style="background:#FAF6EF;"></div><div class="meta"><div class="nm">Cream soft</div><div class="hex">#FAF6EF</div><div class="tok">--cream-soft</div></div></div>
+          <div class="sw"><div class="chip" style="background:#ECE5D8;"></div><div class="meta"><div class="nm">Cream deep</div><div class="hex">#ECE5D8</div><div class="tok">--cream-deep</div></div></div>
+          <div class="sw"><div class="chip" style="background:#0A0A0A;"></div><div class="meta"><div class="nm">Matte black</div><div class="hex">#0A0A0A</div><div class="tok">--bg</div></div></div>
+          <div class="sw"><div class="chip" style="background:#141414;"></div><div class="meta"><div class="nm">Surface 1</div><div class="hex">#141414</div><div class="tok">--surface-1</div></div></div>
+          <div class="sw"><div class="chip" style="background:#1B1B1B;"></div><div class="meta"><div class="nm">Surface 2</div><div class="hex">#1B1B1B</div><div class="tok">--surface-2</div></div></div>
+          <div class="sw"><div class="chip" style="background:#242424;"></div><div class="meta"><div class="nm">Surface 3</div><div class="hex">#242424</div><div class="tok">--surface-3</div></div></div>
         </div>
       </div>
-    </div>
 
-    <!-- 06 SLATE -->
-    <div class="palette-card">
-      <div class="palette-strip" style="background:var(--glow-slate);"></div>
-      <div class="palette-body">
-        <div class="palette-head">
-          <span class="palette-num">06</span>
-          <span class="palette-name">Slate</span>
-          <span class="palette-role">Neutral Ground</span>
-        </div>
-        <p class="palette-when">Pricing, FAQ, legal, comparison tables, dense data. Where the page needs to feel quiet and serious.</p>
-        <div class="palette-chips">
-          <span class="chip"><span class="chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
-          <span class="chip"><span class="chip-dot" style="background:#C7D0D9;"></span>#C7D0D9</span>
-          <span class="chip"><span class="chip-dot" style="background:#475569;"></span>#475569</span>
-          <span class="chip"><span class="chip-dot" style="background:#1E293B;"></span>#1E293B</span>
+      <!-- INK -->
+      <div class="doc-block">
+        <h3>Ink — text colors</h3>
+        <div class="block-meta">Four ink levels for hierarchy. Body copy is always one tier softer than its container.</div>
+        <div class="swatch-grid">
+          <div class="sw"><div class="chip" style="background:#F5F0E8;"></div><div class="meta"><div class="nm">Cream ink (on dark)</div><div class="hex">#F5F0E8</div><div class="tok">--ink</div></div></div>
+          <div class="sw"><div class="chip" style="background:#C9C2B5;"></div><div class="meta"><div class="nm">Body ink (on dark)</div><div class="hex">#C9C2B5</div><div class="tok">--ink-body</div></div></div>
+          <div class="sw"><div class="chip" style="background:#807A70;"></div><div class="meta"><div class="nm">Muted ink (on dark)</div><div class="hex">#807A70</div><div class="tok">--ink-muted</div></div></div>
+          <div class="sw"><div class="chip" style="background:#0A0A0A;"></div><div class="meta"><div class="nm">Dark ink (on cream)</div><div class="hex">#0A0A0A</div><div class="tok">--ink-dark</div></div></div>
+          <div class="sw"><div class="chip" style="background:#3A3530;"></div><div class="meta"><div class="nm">Dark soft (on cream)</div><div class="hex">#3A3530</div><div class="tok">--ink-dark-soft</div></div></div>
+          <div class="sw"><div class="chip" style="background:#6A645B;"></div><div class="meta"><div class="nm">Dark muted (on cream)</div><div class="hex">#6A645B</div><div class="tok">--ink-dark-muted</div></div></div>
         </div>
       </div>
-    </div>
 
-  </div>
-</section>
-
-<!-- TYPOGRAPHY -->
-<section id="typography">
-  <span class="section-label">Typography</span>
-  <h2>Two fonts. <em>One system.</em></h2>
-  <p>Greycliff CF handles everything — body, headlines, labels, stats, UI. Neo Contact LT Pro is reserved for the single &lt;em&gt; emphasis word per page. That's the only place Neo Contact appears.</p>
-
-  <div class="type-grid">
-    <div class="type-card">
-      <div class="type-specimen type-spec-greycliff">Aa</div>
-      <div class="type-name">Greycliff CF</div>
-      <div class="type-role">Primary typeface · Adobe Fonts · body, headlines, labels, UI, stats</div>
-      <div class="type-weights">
-        <div class="type-row"><span class="type-label">400 · Regular</span><span class="type-sample" style="font-weight:400;">Body copy default weight</span></div>
-        <div class="type-row"><span class="type-label">500 · Medium</span><span class="type-sample" style="font-weight:500;">Labels, subtle emphasis</span></div>
-        <div class="type-row"><span class="type-label">600 · SemiBold</span><span class="type-sample" style="font-weight:600;">Secondary headlines</span></div>
-        <div class="type-row"><span class="type-label">700 · Bold</span><span class="type-sample" style="font-weight:700;">Primary headlines</span></div>
-        <div class="type-row"><span class="type-label">800 · ExtraBold</span><span class="type-sample" style="font-weight:800;">Display, stats numbers</span></div>
+      <!-- TIGER'S BLOOD -->
+      <div class="doc-block">
+        <h3>Tiger's blood — the <em>only</em> accent</h3>
+        <div class="block-meta">Four stops, used as a system. Never paired with a second hue family. Primary <code>--sig</code> is the crimson, not the orange.</div>
+        <div class="swatch-grid">
+          <div class="sw"><div class="chip" style="background:#FF5530;"></div><div class="meta"><div class="nm">Highlight</div><div class="hex">#FF5530</div><div class="tok">--sig-highlight</div></div></div>
+          <div class="sw"><div class="chip" style="background:#FF1744;"></div><div class="meta"><div class="nm">Primary</div><div class="hex">#FF1744</div><div class="tok">--sig</div></div></div>
+          <div class="sw"><div class="chip" style="background:#C8002E;"></div><div class="meta"><div class="nm">Deep</div><div class="hex">#C8002E</div><div class="tok">--sig-deep</div></div></div>
+          <div class="sw"><div class="chip" style="background:#8B0014;"></div><div class="meta"><div class="nm">Anchor</div><div class="hex">#8B0014</div><div class="tok">--sig-anchor</div></div></div>
+        </div>
       </div>
-    </div>
-    <div class="type-card">
-      <div class="type-specimen type-spec-neo">Aa</div>
-      <div class="type-name">Neo Contact LT Pro</div>
-      <div class="type-role">Accent · self-hosted · the single em moment per page</div>
-      <div class="type-weights">
-        <div class="type-row"><span class="type-label">Single weight</span><span class="type-sample" style="font-family:'Neo Contact',sans-serif;font-weight:700;">AI-Powered Selling System</span></div>
-        <div class="type-row"><span class="type-label">Rule</span><span class="type-sample" style="font-size:13px;color:var(--cream-body);line-height:1.55;">Only inside &lt;em&gt; within h1/h2/h3. Always on its own line. 1.2× parent size. Peach gradient fill. <strong style="color:var(--cream);">Once per page max.</strong></span></div>
+
+      <!-- GRADIENTS -->
+      <div class="doc-block">
+        <h3>Gradients — the brand's central mechanic</h3>
+        <div class="block-meta">Every em emphasis word, every primary CTA, every key glow uses the signature gradient. Achromatic gradients are for "the brand recedes" moments.</div>
+
+        <div class="grad-row">
+          <div class="grad-label"><span class="gn">Signature · tiger's blood</span><span class="gd">--grad-sig · 135deg, 4 stops</span></div>
+          <div class="grad-strip" style="background: var(--grad-sig);"><div class="stops"><span>#FF5530</span><span>#FF1744</span><span>#C8002E</span><span>#8B0014</span></div></div>
+        </div>
+
+        <div class="grad-row">
+          <div class="grad-label"><span class="gn">Horizon glow</span><span class="gd">--grad-horizon · radial, bottom-center</span></div>
+          <div class="grad-strip" style="background: var(--bg); position: relative;"><div style="position:absolute;inset:0;background: var(--grad-horizon);"></div></div>
+        </div>
+
+        <div class="grad-row">
+          <div class="grad-label"><span class="gn">Graphite (achromatic)</span><span class="gd">--grad-graphite · for when the brand "recedes"</span></div>
+          <div class="grad-strip" style="background: var(--grad-graphite);"><div class="stops"><span>#DCD8D2</span><span>#B5B0A8</span><span>#7A7670</span><span>#4A4845</span></div></div>
+        </div>
+
+        <div class="grad-row">
+          <div class="grad-label"><span class="gn">Depth (dark-on-dark)</span><span class="gd">--grad-depth-strong · for nested cards inside dark stages</span></div>
+          <div class="grad-strip" style="background: var(--grad-depth-strong); border-color: var(--hairline);"></div>
+        </div>
+
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- GLOW THEORY -->
-<section id="theory">
-  <span class="section-label">The Glow Theory</span>
-  <h2>4-stop cream → deep. <em>Always 135°.</em></h2>
-  <p>Every glow gradient follows the same template: cream at 0%, a pale tint at 40%, the saturated mid at 75%, the deep anchor at 100%. The angle is always 135° (top-left to bottom-right). That consistency across all six colors is what makes the system feel like one system.</p>
+      <!-- WHEN TO USE GRADIENTS -->
+      <div class="doc-block">
+        <h3>When to use which gradient</h3>
+        <div class="block-meta">The signature gradient is the brand's heart. The other three are for restraint — when the brand should fade out so content can lead.</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
 
-  <div class="theory-grid">
-    <div class="theory-card">
-      <div class="theory-strip"><div class="theory-strip-text" style="background-image:var(--glow-peach);">Abundance</div></div>
-      <div class="theory-info">
-        <div class="theory-info-name">Text gradient · 4-stop · 135°</div>
-        <p>For ems, hero titles, stat numbers, any accent moment.</p>
-        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#F5F0E8 0%,<br>&nbsp;&nbsp;#F8C5A8 40%,<br>&nbsp;&nbsp;#E8967E 75%,<br>&nbsp;&nbsp;#C4715E 100%)</code>
+          <div class="rule">
+            <div class="num">SIGNATURE GRADIENT</div>
+            <h3>The brand's <em>heart</em></h3>
+            <p class="do">Every &lt;em&gt; emphasis word (background-clip: text).</p>
+            <p class="do">Primary CTA backgrounds (with hover-position-slide).</p>
+            <p class="do">Brand mark glows: hub-core, orbital core, dot-period.</p>
+            <p class="do">Featured pricing tier accents, MOST POPULAR pill, checkmarks.</p>
+            <p class="dont">As a section background. Too loud at full bleed.</p>
+            <p class="dont">On every element of a card — that's the achromatic rule's job.</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">HORIZON GLOW</div>
+            <h3>Atmospheric lighting</h3>
+            <p class="do">Bottom-up radial glow inside dark stages — feels like a sunrise.</p>
+            <p class="do">Hero, hub-and-spoke, stats moment, empathy section.</p>
+            <p class="dont">Top-center halos — that's a 2018 pattern. We light from below.</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">GRAPHITE (achromatic)</div>
+            <h3>When the <em>brand recedes</em></h3>
+            <p class="do">Sections that need to be present but quiet — pricing fine print, FAQ overflow, footer body, secondary cards.</p>
+            <p class="do">Achromatic register sections that want texture but no color.</p>
+            <p class="dont">As a primary CTA or brand mark — gray-on-gray reads as "draft."</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">DEPTH (dark-on-dark)</div>
+            <h3>Nested surfaces</h3>
+            <p class="do">Cards sitting inside a dark stage that need subtle elevation without color.</p>
+            <p class="do">Sankey-style flow charts, glass panels, depth cards.</p>
+            <p class="dont">On a cream background — the depth disappears entirely.</p>
+          </div>
+
+        </div>
       </div>
-    </div>
-    <div class="theory-card">
-      <div class="theory-strip" style="background:var(--gradient-btn);color:#3A1810;font-weight:700;font-size:20px;">Apply Now →</div>
-      <div class="theory-info">
-        <div class="theory-info-name">Button fill · 2-stop · 135°</div>
-        <p>Mid + light stops only. Dark text on warm gradient.</p>
-        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#E8967E 0%,<br>&nbsp;&nbsp;#F8C5A8 100%)</code>
+
+    </section>
+
+    <!-- ═══ 2. TYPOGRAPHY ═══ -->
+    <section class="doc-section" id="typography">
+      <div class="doc-head">
+        <span class="label">02 · TYPOGRAPHY</span>
+        <h2>Three fonts, three <em>roles</em><span class="dot-period"></span></h2>
+        <p class="lead">Greycliff CF is the core voice. Neo Contact is reserved for the logo wordmark. DM Serif Display italic exists only as the gradient-filled emphasis accent inside headings.</p>
       </div>
-    </div>
-    <div class="theory-card">
-      <div class="theory-strip" style="background:var(--gradient-btn-hover);color:#FFF;font-weight:700;font-size:20px;">On Hover</div>
-      <div class="theory-info">
-        <div class="theory-info-name">Button hover · darkens 1 step</div>
-        <p>Deep + mid stops. Cream text takes over.</p>
-        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#C4715E 0%,<br>&nbsp;&nbsp;#E8967E 100%)</code>
+
+      <!-- Fonts -->
+      <div class="doc-block">
+        <h3>The three fonts</h3>
+
+        <div class="font-card">
+          <div class="sample logo">Abundance</div>
+          <div class="info-row">
+            <div class="info"><span class="k">FAMILY</span>Neo Contact LT Pro</div>
+            <div class="info"><span class="k">TOKEN</span><code style="background:rgba(10,10,10,0.06);padding:1px 6px;border-radius:4px;font-family:ui-monospace;">--font-logo</code></div>
+            <div class="info"><span class="k">USE FOR</span><strong>Logo wordmark only.</strong> Never headings, body, or UI.</div>
+          </div>
+        </div>
+
+        <div class="font-card">
+          <div class="sample sans-heavy">Most founders are running a junk drawer.</div>
+          <div class="info-row">
+            <div class="info"><span class="k">FAMILY</span>Greycliff CF (Typekit · bxi7koh)</div>
+            <div class="info"><span class="k">TOKEN</span><code style="background:rgba(10,10,10,0.06);padding:1px 6px;border-radius:4px;font-family:ui-monospace;">--font-sans</code></div>
+            <div class="info"><span class="k">USE FOR</span><strong>Every h1/h2/h3, body copy, pills, buttons, UI labels.</strong> The brand's main voice. Headlines use weight 800.</div>
+          </div>
+        </div>
+
+        <div class="font-card">
+          <div class="sample serif-italic">in stable orbit.</div>
+          <div class="info-row">
+            <div class="info"><span class="k">FAMILY</span>DM Serif Display Italic</div>
+            <div class="info"><span class="k">TOKEN</span><code style="background:rgba(10,10,10,0.06);padding:1px 6px;border-radius:4px;font-family:ui-monospace;">--font-display</code></div>
+            <div class="info"><span class="k">USE FOR</span><strong>&lt;em&gt; emphasis inside headings only.</strong> Always with the gradient text fill. Never as a standalone block of copy.</div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="theory-card">
-      <div class="theory-strip" style="background:radial-gradient(ellipse 100% 55% at 50% 0%, rgba(232,150,126,0.18) 0%, rgba(248,197,168,0.06) 35%, transparent 65%), var(--bg);"></div>
-      <div class="theory-info">
-        <div class="theory-info-name">Hero glow · radial · top-center</div>
-        <p>Soft ambient halo at the top of every section.</p>
-        <code>radial-gradient(ellipse 100% 55% at 50% 0%,<br>&nbsp;&nbsp;rgba(232,150,126,0.18) 0%,<br>&nbsp;&nbsp;transparent 65%)</code>
+
+      <!-- Type ramp -->
+      <div class="doc-block">
+        <h3>Type ramp</h3>
+        <div class="block-meta">Six sizes, no exceptions. Floor is <code>--t-micro</code> at 12px — never go smaller.</div>
+        <div class="ramp">
+          <div class="row hero"><span class="tok">--t-hero</span><span class="size">56–112px</span><span class="demo">Hero</span></div>
+          <div class="row h1"><span class="tok">--t-h1</span><span class="size">44–80px</span><span class="demo">Section h1</span></div>
+          <div class="row h2"><span class="tok">--t-h2</span><span class="size">36–56px</span><span class="demo">Section h2</span></div>
+          <div class="row h3"><span class="tok">--t-h3</span><span class="size">20–26px</span><span class="demo">Card title</span></div>
+          <div class="row body"><span class="tok">--t-body</span><span class="size">17px</span><span class="demo">Body paragraph copy with comfortable reading rhythm.</span></div>
+          <div class="row small"><span class="tok">--t-small</span><span class="size">14px</span><span class="demo">Secondary body, meta text, captions.</span></div>
+          <div class="row micro"><span class="tok">--t-micro</span><span class="size">12px</span><span class="demo">EYEBROW &amp; TAGS</span></div>
+        </div>
       </div>
-    </div>
-    <div class="theory-card">
-      <div class="theory-strip" style="background:linear-gradient(135deg, #161616 0%, #1D1D1D 100%);border-bottom:1px solid var(--border);"></div>
-      <div class="theory-info">
-        <div class="theory-info-name">Card background · 135° matte</div>
-        <p>Subtle 2-stop on every card. Surface 1 → Surface 2.</p>
-        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#161616 0%,<br>&nbsp;&nbsp;#1D1D1D 100%)</code>
+
+      <!-- Headline ALIGNMENT -->
+      <div class="doc-block">
+        <h3>Headline alignment · left vs centered</h3>
+        <div class="block-meta">Alignment is a content classifier, not a preference. <strong>Left-aligned</strong> = feature/teaching mode (paired with paragraph). <strong>Centered</strong> = announcement/bookend mode (single statement).</div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+
+          <div class="hp" style="position: relative;">
+            <span class="hp-tag">LEFT</span>
+            <div class="hp-eb">THE SELLING SYSTEM</div>
+            <div class="hp-h" style="text-align: left;">We build your funnels so you can <em>just sell.</em></div>
+            <div class="hp-note" style="margin-top: 18px;"><strong>Use when:</strong> the headline is paired with a paragraph or body block (asymmetric header pair). Most explanatory and feature sections.</div>
+            <div class="hp-note"><strong>Don't:</strong> use for stats moments or single-statement bookends.</div>
+          </div>
+
+          <div class="hp" style="position: relative;">
+            <span class="hp-tag">CENTERED</span>
+            <div class="hp-eb" style="text-align: center;">THE NUMBERS</div>
+            <div class="hp-h" style="text-align: center;">Receipts, not <em>promises.</em></div>
+            <div class="hp-note" style="margin-top: 18px;"><strong>Use when:</strong> announcement moments — stats, declarations, final CTA, breath sections (FAQ, achromatic, beliefs). Singular statement, no paired body.</div>
+            <div class="hp-note"><strong>Don't:</strong> center a headline that has a long supporting paragraph next to it.</div>
+          </div>
+
+        </div>
       </div>
-    </div>
-    <div class="theory-card">
-      <div class="theory-strip" style="display:grid;grid-template-columns:repeat(6,1fr);height:140px;">
-        <div style="background:var(--glow-peach);"></div>
-        <div style="background:var(--glow-coral);"></div>
-        <div style="background:var(--glow-copper);"></div>
-        <div style="background:var(--glow-mocha);"></div>
-        <div style="background:var(--glow-cerulean);"></div>
-        <div style="background:var(--glow-slate);"></div>
+
+      <!-- Headline patterns -->
+      <div class="doc-block">
+        <h3>Headline patterns</h3>
+        <div class="block-meta">Five repeatable patterns. Don't invent a sixth — pick the one that fits.</div>
+        <div class="headline-patterns">
+
+          <div class="hp">
+            <span class="hp-tag">PATTERN A</span>
+            <div class="hp-eb">ASYMMETRIC PAIR</div>
+            <div class="hp-h">Stop adding tactics. Install <em>the system.</em></div>
+            <div class="hp-note">Sans-bold black, with a serif-italic gradient phrase as punctuation. The most common pattern.</div>
+          </div>
+
+          <div class="hp">
+            <span class="hp-tag">PATTERN B</span>
+            <div class="hp-eb">DOT PERIOD</div>
+            <div class="hp-h">Why most founders never escape the revenue ceiling<span class="dot-period"></span></div>
+            <div class="hp-note">Headline ending in a glowing tiger's-blood dot. Use once per page as a signature brand mark.</div>
+          </div>
+
+          <div class="hp">
+            <span class="hp-tag">PATTERN C</span>
+            <div class="hp-eb">INLINE KEYWORD PILLS</div>
+            <div class="hp-h">We build your <span class="inline-kw filled">Ads</span> <span class="inline-kw">Funnels</span> &amp; <span class="inline-kw filled">CRM</span></div>
+            <div class="hp-note">Operative nouns become inline pills. Mix outlined and filled for rhythm.</div>
+          </div>
+
+          <div class="hp">
+            <span class="hp-tag">PATTERN D</span>
+            <div class="hp-eb">STEP 3 OF 6 ·</div>
+            <div class="hp-h">Measure your <em>impact.</em></div>
+            <div class="hp-note">Numbered step label above headline (different weight, same family). Use for sequenced sections.</div>
+          </div>
+
+          <div class="hp">
+            <span class="hp-tag">PATTERN E</span>
+            <div class="hp-eb">CENTERED ANNOUNCEMENT</div>
+            <div class="hp-h" style="text-align:center;">Receipts, not <em>promises.</em></div>
+            <div class="hp-note">Centered, single line, no body. Use for stats moments, declarations, and bookend sections.</div>
+          </div>
+
+        </div>
       </div>
-      <div class="theory-info">
-        <div class="theory-info-name">Per-section glow rotation</div>
-        <p>Each section picks one of the six. No section uses two glows. Hero is always Peach.</p>
-        <code>--glow-peach · --glow-coral<br>--glow-copper · --glow-mocha<br>--glow-cerulean · --glow-slate</code>
+    </section>
+
+    <!-- ═══ 3. SECTIONS ═══ -->
+    <section class="doc-section dark" id="sections">
+      <div class="doc-head">
+        <span class="label on-dark">03 · SECTIONS</span>
+        <h2 style="color: var(--ink);">Eighteen archetypes<span class="dot-period"></span></h2>
+        <p class="lead">When building a new page, pick from these. Each has a defined role in the narrative arc. Don't invent a nineteenth.</p>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- HEADLINE USAGE -->
-<section id="headlines">
-  <span class="section-label">Headlines · Usage rules</span>
-  <h2>How headlines are structured</h2>
-  <p>Default headline is solid cream Greycliff Bold. Gradient appears only on specific elements: an inline accent via <code>.gradient</code>, or the BIG &lt;em&gt; emphasis on its own line.</p>
+      <div class="doc-block">
+        <div class="section-gallery">
 
-  <div class="usage-grid">
-    <div class="usage-card">
-      <span class="usage-label">Default · Solid cream</span>
-      <div class="usage-demo"><h2>Scale your business with consistent new clients every month.</h2></div>
-      <p class="usage-desc">Standard h1/h2/h3. Greycliff Bold 700, solid cream (#F5F0E8). No gradient.</p>
-    </div>
-    <div class="usage-card">
-      <span class="usage-label">With inline gradient accent</span>
-      <div class="usage-demo"><h2>Scale your business with <span class="gradient">Meta Ads</span> — done for you.</h2></div>
-      <p class="usage-desc">Use <code>&lt;span class="gradient"&gt;</code> to color specific words inline. Same size as parent, peach gradient fill.</p>
-    </div>
-    <div class="usage-card">
-      <span class="usage-label">With Neo Contact em · on its own line</span>
-      <div class="usage-demo"><h2>Install an <em>AI-Powered Selling System</em> that fills your calendar.</h2></div>
-      <p class="usage-desc">Use <code>&lt;em&gt;</code> for the BIG accent moment. Always on its own line, 1.2× parent size, peach gradient. <strong style="color:var(--cream);">Once per page max.</strong></p>
-    </div>
-  </div>
-</section>
+          <div class="sg-card"><div class="demo demo-hero"></div><div class="text"><div class="nm">Hero</div><div class="cls">.hero</div><div class="usage">Cursor-tied light field, chat input as primary affordance, inline keyword headline, corner price pill. Page-opener.</div></div></div>
 
-<!-- COMPONENTS -->
-<section id="components">
-  <span class="section-label">Components</span>
-  <h2>Buttons &amp; highlight pills</h2>
-  <p>Three button variants, three pill variants. All carry peach (the brand). Cards, pills, and highlights use 20px radius. Buttons use 10px. Pill labels use 100px.</p>
+          <div class="sg-card"><div class="demo demo-empathy"></div><div class="text"><div class="nm">Empathy</div><div class="cls">.empathy</div><div class="usage">3 stacked "What if…" pain questions on a dark stage. Sets the problem before showing the solution.</div></div></div>
 
-  <div class="components-grid">
-    <div class="component-card">
-      <span class="component-label">Buttons</span>
-      <div class="component-demo">
-        <a href="#" class="btn btn-primary">Primary · Apply Now →</a>
-        <a href="#" class="btn btn-ghost">Ghost · See how it works</a>
-        <a href="#" class="btn btn-cream">Cream · Secondary action</a>
+          <div class="sg-card"><div class="demo demo-hub"></div><div class="text"><div class="nm">Hub &amp; Spoke</div><div class="cls">.hub-wrap</div><div class="usage">Central glass cube with 6 orbital pills, curved dashed connection lines. "We replace these 6 hires."</div></div></div>
+
+          <div class="sg-card"><div class="demo"><div class="demo-thesis"><div class="l">BEFORE</div><div class="r">AFTER</div></div></div><div class="text"><div class="nm">Thesis (Before/After)</div><div class="cls">.thesis-grid</div><div class="usage">Tumbling chaos pills vs. counter-rotating orbital diagram. The argument expressed as motion.</div></div></div>
+
+          <div class="sg-card"><div class="demo light"><div class="demo-beliefs"><div>•</div><div>•</div><div>•</div><div class="break">•</div></div></div><div class="text"><div class="nm">Beliefs 2x2</div><div class="cls">.beliefs-grid</div><div class="usage">4-cell quadrant of principles. One cell uses the pattern-break (dot-matrix sphere) for variety.</div></div></div>
+
+          <div class="sg-card"><div class="demo light"><div class="demo-ladder"><div class="l">Wrong</div><div class="spine"><div class="nd"></div></div><div class="r">Right</div></div></div><div class="text"><div class="nm">Ladder (Wrong/Right)</div><div class="cls">.ladder-grid</div><div class="usage">Paired cards with a dashed central spine + glowing node. Maps problems to corrections.</div></div></div>
+
+          <div class="sg-card"><div class="demo demo-editorial"></div><div class="text"><div class="nm">Editorial (Dot Period)</div><div class="cls">.editorial</div><div class="usage">Big sans-bold headline ending in a tiger's-blood dot. The brand's editorial breath moment.</div></div></div>
+
+          <div class="sg-card"><div class="demo demo-process light"><div>1</div><div>2</div><div>3</div><div>4</div></div><div class="text"><div class="nm">Process (4-step)</div><div class="cls">.process-grid</div><div class="usage">Each step uses a DIFFERENT visual medium (table / toast / video / chart). No card-pattern repetition.</div></div></div>
+
+          <div class="sg-card"><div class="demo demo-stats"><div>14<em>d</em></div><div>5<em>x</em></div><div>$200<em>M</em></div><div>1<em>·</em>6</div></div><div class="text"><div class="nm">Stats Moment</div><div class="cls">.stats-wrap</div><div class="usage">Big hero-scale numbers, gradient-italic em on the unit. Dark stage with horizon glow.</div></div></div>
+
+          <div class="sg-card"><div class="demo demo-signals"><div><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 20 L20 18 L40 22 L60 12 L80 14 L100 8"/></svg></div><div><svg class="hot" viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 22 L20 18 L40 20 L60 12 L80 8 L100 4"/></svg></div></div><div class="text"><div class="nm">Signals (Live Feed)</div><div class="cls">.signals-grid</div><div class="usage">Metric tiles with delta-pill badges + sparklines. Only the most important sparkline is colored.</div></div></div>
+
+          <div class="sg-card"><div class="demo demo-compare"><div></div><div></div><div></div><div class="us"></div><div></div><div></div><div></div><div class="us"></div></div><div class="text"><div class="nm">Compare Table</div><div class="cls">.compare-table</div><div class="usage">DIY vs Other Agency vs Abundance side-by-side. The "us" column has a "BEST" gradient pill.</div></div></div>
+
+          <div class="sg-card"><div class="demo demo-proof light"></div><div class="text"><div class="nm">Social Proof</div><div class="cls">.proof-card</div><div class="usage">Big sans-bold quote with gradient-italic em, headshot cluster underneath, logo strip at the bottom — all in one rounded cream stage.</div></div></div>
+
+          <div class="sg-card"><div class="demo demo-faq"><div>How is this different from an agency?</div><div>What do you need from me?</div><div>What if my offer isn't ready?</div></div><div class="text"><div class="nm">FAQ Accordion</div><div class="cls">.faq</div><div class="usage">Achromatic dark "breath" stage. Plus/cross expander animates to gradient on open.</div></div></div>
+
+          <div class="sg-card"><div class="demo demo-achro"></div><div class="text"><div class="nm">Achromatic Patterns</div><div class="cls">.achro-grid</div><div class="usage">No color, all texture. The "brand recedes" moment using dot &amp; line grids.</div></div></div>
+
+          <div class="sg-card"><div class="demo demo-pricing"><div>Launch</div><div class="featured">Install</div><div>Shift</div><div>Scale</div></div><div class="text"><div class="nm">Pricing (4 tiers)</div><div class="cls">.pricing-grid</div><div class="usage">4 tiers, one marked .featured with MOST POPULAR pill. Cursor-tracking glow at the bottom.</div></div></div>
+
+          <div class="sg-card"><div class="demo demo-finalcta light"></div><div class="text"><div class="nm">Final CTA</div><div class="cls">.cta-mega</div><div class="usage">Outline pill with embedded gradient circle-arrow. Use once per page, at the close.</div></div></div>
+
+          <div class="sg-card"><div class="demo demo-footer"></div><div class="text"><div class="nm">Footer</div><div class="cls">.foot</div><div class="usage">Top-rounded full-bleed dark stage. Email address rendered at h2 scale with gradient italic em on "findabundance."</div></div></div>
+
+          <div class="sg-card"><div class="demo light" style="background: var(--cream-soft); display:grid;place-items:center;"><span style="font-family:var(--font-sans);font-size:13px;font-weight:800;color:var(--ink-dark);letter-spacing:-0.02em;">We build your <span style="border:2px solid var(--sig); padding:1px 7px; border-radius:8px; color:var(--sig); font-size:10px;">Ads</span> <span style="border:2px solid var(--sig); padding:1px 7px; border-radius:8px; color:var(--sig); font-size:10px;">CRM</span> &amp; <span style="border:2px solid var(--sig); padding:1px 7px; border-radius:8px; color:var(--sig); font-size:10px;">Copy</span></span></div><div class="text"><div class="nm">Declaration</div><div class="cls">.declaration</div><div class="usage">Inline keyword pills inside the headline. "We build your X, Y &amp; Z." A bold statement-of-capability moment.</div></div></div>
+
+        </div>
       </div>
-      <div class="component-code">.btn-primary · peach gradient fill, dark text<br>.btn-ghost · matte fill, peach gradient border<br>.btn-cream · solid cream fill, dark text</div>
-    </div>
-    <div class="component-card">
-      <span class="component-label">Highlight pills · 20px radius</span>
-      <div class="component-demo">
-        <span style="font-size:18px;color:var(--cream-body);">Pre-sold <span class="highlight">sales calls</span></span>
-        <span style="font-size:18px;color:var(--cream-body);">Under <span class="highlight-peach">$150 per booking</span></span>
-        <span style="font-size:18px;color:var(--cream-body);">Ads live in <span class="highlight-cream">7 days</span></span>
+    </section>
+
+    <!-- ═══ 4. COMPONENTS ═══ -->
+    <section class="doc-section" id="components">
+      <div class="doc-head">
+        <span class="label">04 · COMPONENTS</span>
+        <h2>The primitives<span class="dot-period"></span></h2>
+        <p class="lead">Reusable atoms. Compose sections from these. Never style a button or pill from scratch — extend or copy from here.</p>
       </div>
-      <div class="component-code">.highlight · cream · dark text<br>.highlight-peach · peach gradient · dark text<br>.highlight-cream · subtle cream tint · cream text</div>
-    </div>
-  </div>
 
-  <h3 style="margin-top:56px; margin-bottom:8px;">Corner radius standards</h3>
-  <p style="margin-bottom:16px;">All cards, containers, and highlight pills use 20px. Buttons use 10px. Pill labels use 100px. No other radii allowed.</p>
-  <div class="radius-demo">
-    <div class="radius-box" style="border-radius:20px;">20px · default</div>
-    <div class="radius-box" style="border-radius:10px;">10px · buttons</div>
-    <div class="radius-box" style="border-radius:100px;">100px · pill labels</div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     EXAMPLE — full design system in one view, peach hero
-     ═══════════════════════════════════════════════════════════ -->
-<section id="example" class="example glow-peach full-width">
-  <div class="example-inner">
-    <div class="example-hero">
-      <span class="section-label">Example · Hero (Peach glow)</span>
-      <h2>Install an <em>AI-Powered Selling System</em> that fills your calendar with <span class="highlight">pre-sold sales calls</span>.</h2>
-      <p>Every design token in one view — solid cream headline, <span class="gradient">inline gradient accent</span>, Neo Contact em on its own line, cream highlight pill, body paragraph, and the full button set.</p>
-      <div class="example-actions">
-        <a href="#" class="btn btn-primary">Apply Now →</a>
-        <a href="#" class="btn btn-ghost">See how it works</a>
-        <a href="#" class="btn btn-cream">Book a call</a>
+      <!-- PILLS -->
+      <div class="doc-block">
+        <h3>Pills · 3 scales</h3>
+        <div class="block-meta">Class: <code>.pill</code> · fill variants: <code>.filled</code>, <code>.filled-soft</code>, <code>.on-dark</code></div>
+        <div class="comp-block">
+          <div class="comp-row"><span class="lbl">Default</span><span class="pill">EYEBROW LABEL</span></div>
+          <div class="comp-row"><span class="lbl">Filled (gradient)</span><span class="pill filled">MOST POPULAR</span></div>
+          <div class="comp-row"><span class="lbl">Filled soft</span><span class="pill filled-soft">THE SELLING SYSTEM</span></div>
+          <div class="comp-row"><span class="lbl">On dark</span><span style="background:var(--bg);padding:10px;border-radius:10px;"><span class="pill on-dark">FOUR PRINCIPLES</span></span></div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- EXAMPLE — Cerulean section (cool contrast) -->
-<section class="example glow-cerulean full-width">
-  <div class="example-inner">
-    <div class="example-hero">
-      <span class="section-label">Example · Features section (Cerulean glow)</span>
-      <h2>Three frameworks. <em>One system.</em></h2>
-      <p>The same design tokens with a Cerulean glow rotated in. The em swaps to Cerulean for this section only — peach reserved for hero/CTA bookends.</p>
-    </div>
-    <div class="example-stats">
-      <div class="stat-card"><div class="stat-num">$12M+</div><div class="stat-label">Revenue tracked</div></div>
-      <div class="stat-card"><div class="stat-num">90</div><div class="stat-label">Days to launch</div></div>
-      <div class="stat-card"><div class="stat-num">40–50%</div><div class="stat-label">Close rate</div></div>
-    </div>
-    <div class="example-features">
-      <div class="feature-card">
-        <div class="feature-num">01</div>
-        <h3>Inevitable Offer System</h3>
-        <p>An offer so precisely matched to your dream client's desire that saying yes feels like the only logical choice.</p>
+      <!-- BUTTONS -->
+      <div class="doc-block">
+        <h3>Buttons / CTAs</h3>
+        <div class="block-meta">Classes: <code>.btn</code> + <code>.ghost</code> / <code>.dark</code> / <code>.gradient</code> / <code>.outline-pill</code></div>
+        <div class="comp-block">
+          <div class="comp-row"><span class="lbl">Ghost</span><button class="btn ghost">See pricing</button></div>
+          <div class="comp-row"><span class="lbl">Dark</span><button class="btn dark"><span style="width:6px;height:6px;border-radius:50%;background:var(--sig);box-shadow:0 0 10px var(--sig);display:inline-block;"></span> Apply now</button></div>
+          <div class="comp-row"><span class="lbl">Gradient</span><button class="btn gradient">Apply now →</button></div>
+          <div class="comp-row"><span class="lbl">Outline pill (mega)</span><button class="btn outline-pill">Apply for the next cohort <span class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></div>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-num">02</div>
-        <h3>AI-Powered Meta Ads</h3>
-        <p>Cold traffic pre-sold before they ever hit your calendar. Under <span class="highlight-peach">$150 per booking</span> across every business.</p>
+
+      <!-- AVATARS -->
+      <div class="doc-block">
+        <h3>Avatars &amp; headshot cluster</h3>
+        <div class="block-meta">Class: <code>.av</code> · cluster: <code>.av-cluster</code> · variants: <code>.large</code>, <code>.achro</code></div>
+        <div class="comp-block">
+          <div class="comp-row"><span class="lbl">Single (gradient)</span><div class="av">SH</div></div>
+          <div class="comp-row"><span class="lbl">Large</span><div class="av large">SH</div></div>
+          <div class="comp-row"><span class="lbl">Achromatic</span><div class="av achro">JT</div></div>
+          <div class="comp-row"><span class="lbl">Cluster</span><div class="av-cluster"><div class="av achro">JT</div><div class="av" style="background: linear-gradient(135deg,#8B5A3C,#40220F);">MR</div><div class="av large">SH</div><div class="av" style="background: linear-gradient(135deg,#2A7FB8,#1A4A6B);">PR</div><div class="av achro">DV</div></div></div>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-num">03</div>
-        <h3>Leadership Conversion</h3>
-        <p>A reverse sales process that closes <span class="highlight-peach">40–50%</span> of qualified calls — without pressure or hard selling.</p>
+
+      <!-- TOASTS -->
+      <div class="doc-block">
+        <h3>Toast notifications</h3>
+        <div class="block-meta">Class: <code>.toast</code> · use for activity feeds, demo overlays on lifestyle photos</div>
+        <div class="comp-block" style="background: var(--bg); border-color: var(--hairline);">
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div class="toast"><div class="av">A</div><div class="body"><div class="who">Abundance <span class="t">9:41 AM</span></div><div class="msg">New booked call · Sarah J. confirmed Thursday 2pm.</div></div></div>
+            <div class="toast"><div class="av achro">S</div><div class="body"><div class="who">Stripe <span class="t">now</span></div><div class="msg">Payment received · $5,000.00 USD from Dev O.</div></div></div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- EXAMPLE — Coral section (community / energy) -->
-<section class="example glow-coral full-width">
-  <div class="example-inner">
-    <div class="example-hero">
-      <span class="section-label">Example · Tribe section (Coral glow)</span>
-      <h2>The community side. <em>Coral takes over.</em></h2>
-      <p>Coral handles community/urgency moments — Tribe pages, founding-member pricing, "limited spots" callouts. Same template, different glow.</p>
-    </div>
-  </div>
-</section>
+      <!-- SPARKLINES -->
+      <div class="doc-block">
+        <h3>Sparklines &amp; metric tiles</h3>
+        <div class="block-meta">Class: <code>.spark-card</code> · only the most important sparkline gets <code>.hot</code> (tiger's blood) — the rest stay achromatic.</div>
+        <div class="comp-block" style="background: var(--bg); border-color: var(--hairline);">
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <div class="spark-card"><div class="l">CPL</div><div class="n">$18</div><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 22 L20 20 L40 24 L60 18 L80 16 L100 14"/></svg></div>
+            <div class="spark-card"><div class="l">SHOW RATE</div><div class="n">78%</div><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 24 L20 22 L40 20 L60 16 L80 14 L100 10"/></svg></div>
+            <div class="spark-card hot"><div class="l">CLOSE</div><div class="n">38%</div><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 26 L15 22 L30 24 L50 18 L70 14 L85 10 L100 6"/></svg></div>
+          </div>
+        </div>
+      </div>
 
-<!-- EXAMPLE — Slate section (pricing/serious) -->
-<section class="example glow-slate full-width">
-  <div class="example-inner">
-    <div class="example-hero">
-      <span class="section-label">Example · Pricing section (Slate glow)</span>
-      <h2>Serious sections live here. <em>Slate stays quiet.</em></h2>
-      <p>Pricing, FAQ, legal, dense data — Slate gives the page somewhere to breathe. The em adopts Slate's gradient for this section only.</p>
-    </div>
-  </div>
-</section>
+      <!-- DELTA BADGES -->
+      <div class="doc-block">
+        <h3>Delta badges</h3>
+        <div class="block-meta">Class: <code>.delta-badge</code> · inline next to a big number for week-over-week change</div>
+        <div class="comp-block">
+          <div class="comp-row"><span class="lbl">Inline</span><span style="font-family:var(--font-sans);font-weight:800;font-size:38px;letter-spacing:-0.03em;color:var(--ink-dark);">42 <span class="delta-badge">▲ 35%</span></span></div>
+        </div>
+      </div>
 
-<!-- RULES OF ENGAGEMENT -->
-<section id="rules">
-  <span class="section-label">Rules of Engagement</span>
-  <h2>Don't break these.</h2>
-  <p>The system holds together because every page follows the same rules. Each one prevents a specific failure mode we've seen.</p>
+      <!-- GLASS CUBE -->
+      <div class="doc-block">
+        <h3>Glass cube · hero object</h3>
+        <div class="block-meta">Class: <code>.glass-cube</code> · the brand's "physical object" — used as the hub-and-spoke center</div>
+        <div class="comp-block" style="background: var(--bg); border-color: var(--hairline); display:grid; place-items: center; padding: 60px;">
+          <div class="glass-cube"><span class="gl">A</span></div>
+        </div>
+      </div>
 
-  <div class="rules">
-    <div class="rule"><div class="rule-num">01</div><div class="rule-body"><h3>Six colors only</h3><p>Peach, Coral, Copper, Mocha, Cerulean, Slate. No new colors get introduced. No exceptions.</p></div></div>
-    <div class="rule"><div class="rule-num">02</div><div class="rule-body"><h3>Dark mode only</h3><p>Every brand surface is matte black. The luminous-glow mechanic doesn't translate to light bg. Light interfaces are a separate system.</p></div></div>
-    <div class="rule"><div class="rule-num">03</div><div class="rule-body"><h3>One em per page</h3><p>Neo Contact + peach gradient + own line + 1.2× parent size. Once per page max. Use it for the moment that matters most.</p></div></div>
-    <div class="rule"><div class="rule-num">04</div><div class="rule-body"><h3>One glow per section</h3><p>Each section picks one of the six glows for its radial bg + em color. No section mixes two glows. Hero is always Peach.</p></div></div>
-    <div class="rule"><div class="rule-num">05</div><div class="rule-body"><h3>135° gradients, always</h3><p>All glow gradients use a 135° angle, top-left to bottom-right. Don't rotate. Don't go radial except for ambient hero halos.</p></div></div>
-    <div class="rule"><div class="rule-num">06</div><div class="rule-body"><h3>4-stop pattern</h3><p>Cream 0% → pale tint 40% → saturated mid 75% → deep anchor 100%. Don't add stops. Don't drop the cream start.</p></div></div>
-    <div class="rule"><div class="rule-num">07</div><div class="rule-body"><h3>20 / 10 / 100 radii</h3><p>20px for cards/pills/highlights. 10px for buttons. 100px for pill labels (badges, urgency bars). No other radii.</p></div></div>
-    <div class="rule"><div class="rule-num">08</div><div class="rule-body"><h3>Greycliff is the default</h3><p>All UI, body, and headlines use Greycliff CF. Neo Contact only inside &lt;em&gt; within h1/h2/h3. Never elsewhere.</p></div></div>
-    <div class="rule"><div class="rule-num">09</div><div class="rule-body"><h3>Color from content</h3><p>The brand carries the gradient. Color variety comes from imagery — headshots, product screenshots, abstract art — not from adding more brand colors.</p></div></div>
-    <div class="rule"><div class="rule-num">10</div><div class="rule-body"><h3>Buttons always carry peach</h3><p>Primary fills the gradient. Ghost borders it. Cream replaces it on Coral/Cerulean sections only. No button without a gradient relationship.</p></div></div>
-  </div>
-</section>
+      <!-- PATTERNS -->
+      <div class="doc-block">
+        <h3>Pattern fills · the "brand recedes" texture</h3>
+        <div class="block-meta">Classes: <code>.pf.dot-24</code>, <code>.pf.dot-14</code>, <code>.pf.grid-48</code>, <code>.pf.grid-24</code></div>
+        <div class="comp-block" style="background: var(--bg); border-color: var(--hairline);">
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <div class="pf dot-24"></div>
+            <div class="pf dot-14"></div>
+            <div class="pf grid-48"></div>
+            <div class="pf grid-24"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- LOGOS -->
-<section id="logos">
-  <span class="section-label">Logos</span>
-  <h2>Wordmark lockups</h2>
-  <p>Light wordmark on matte black is the default — that's the only mode. If a light surface is ever needed (email signature, print), use the dark wordmark on cream.</p>
+    <!-- ═══ 5. MOTION ═══ -->
+    <section class="doc-section dark" id="motion">
+      <div class="doc-head">
+        <span class="label on-dark">05 · MOTION</span>
+        <h2 style="color: var(--ink);">Page acknowledges <em>you</em><span class="dot-period"></span></h2>
+        <p class="lead">Modern landing pages aren't posters — they're environments. Every Abundance page is alive in at least three ways: cursor light, ambient drift, and at least one scroll-tied transformation.</p>
+      </div>
 
-  <div class="logo-grid">
-    <div class="logo-card logo-card-dark">
-      <span class="logo-card-label">Light wordmark · on matte black · DEFAULT</span>
-      <img src="/assets/images/logo-light-wordmark.svg" alt="Abundance.AI light wordmark">
-    </div>
-    <div class="logo-card logo-card-cream">
-      <span class="logo-card-label">Dark wordmark · on cream · email/print only</span>
-      <img src="/assets/images/logo-dark-wordmark.svg" alt="Abundance.AI dark wordmark">
-    </div>
-  </div>
-</section>
+      <div class="doc-block">
+        <div class="motion-grid">
+          <div class="mo-card"><div class="play mo-cursor"></div><div class="text"><div class="nm">Cursor-tied light field</div><div class="usage">A tiger's-blood radial glow that follows the visitor's cursor. Use on hero only.</div></div></div>
+          <div class="mo-card"><div class="play mo-drift"></div><div class="text"><div class="nm">Ambient blob drift</div><div class="usage">Slow-drifting blurred color blobs in the background. Adds atmosphere without distraction.</div></div></div>
+          <div class="mo-card"><div class="play mo-orbit"><div class="ring"><div class="dot"></div></div></div><div class="text"><div class="nm">Counter-rotating orbit</div><div class="usage">Ring rotates; labels counter-rotate to stay upright. Used in the orbital After card.</div></div></div>
+          <div class="mo-card"><div class="play mo-tumble"><div class="p p1">Copywriter</div><div class="p p2">CRM broken</div><div class="p p3">Ad late</div></div><div class="text"><div class="nm">Tumbling chaos</div><div class="usage">Tilted pills with gentle drift + rotation. The "Before" thesis card. Always continuous, never one-shot.</div></div></div>
+          <div class="mo-card"><div class="play mo-pulse"></div><div class="text"><div class="nm">Pulse glow</div><div class="usage">Brand mark (orbital core, hub-core, status dot) pulses softly. Implies "alive / running."</div></div></div>
+          <div class="mo-card"><div class="play mo-slide"><div class="b">Apply now</div></div><div class="text"><div class="nm">Gradient slide on hover</div><div class="usage">CTA backgrounds are 200% wide and slide their gradient position 0%→100% on hover.</div></div></div>
+          <div class="mo-card"><div class="play mo-stars"></div><div class="text"><div class="nm">Starfield drift</div><div class="usage">Sparse white particles slowly translating diagonally. Used inside dark stages for atmospheric depth.</div></div></div>
+        </div>
+      </div>
+    </section>
 
-<!-- FOOTER -->
-<footer>
-  <p>Abundance.AI · Brand Guidelines · Locked April 2026 · Reference for <a href="/selling-system">/selling-system</a>, <a href="/tribe">/tribe</a>, <a href="/shift">/shift</a>, and all properties.</p>
-</footer>
+    <!-- ═══ 6. CONTENT ═══ -->
+    <section class="doc-section" id="content">
+      <div class="doc-head">
+        <span class="label">06 · CONTENT</span>
+        <h2>Carousels, video, posts<span class="dot-period"></span></h2>
+        <p class="lead">The brand extends beyond the website. Every Instagram carousel slide, every YouTube thumbnail, every LinkedIn post should look like it came off this page.</p>
+      </div>
+
+      <div class="doc-block">
+        <h3>Instagram &amp; LinkedIn carousels</h3>
+        <div class="block-meta">4:5 portrait, on matte black. First slide hooks. Middle slides deliver. Last slide CTAs.</div>
+        <div class="content-grid">
+
+          <div class="cn-card">
+            <div class="canvas car-1">
+              <div class="eb">SLIDE 1 · HOOK</div>
+              <div class="h">Most founders are running a <em>junk drawer</em></div>
+              <div class="ft">@findabundance · swipe →</div>
+            </div>
+            <div class="text"><div class="nm">Hook slide</div><div class="meta">Sans-bold + serif italic + gradient · drop the eyebrow, drop the hook.</div></div>
+          </div>
+
+          <div class="cn-card">
+            <div class="canvas car-2">
+              <div>
+                <div class="big">5–11<em>x</em></div>
+                <div class="sub">REVENUE LIFT IN 12 WEEKS</div>
+              </div>
+            </div>
+            <div class="text"><div class="nm">Stat slide</div><div class="meta">Hero-scale number, em on the unit, label underneath. The "money slide."</div></div>
+          </div>
+
+          <div class="cn-card">
+            <div class="canvas car-3">
+              <div class="label">SLIDE 3 · FRAMEWORK</div>
+              <div class="pt"><strong>Launch.</strong> Ads live in 14 days.</div>
+              <div class="pt"><strong>Install.</strong> Full CRM + tracking.</div>
+              <div class="pt"><strong>Shift.</strong> Coaching kicks in.</div>
+              <div class="pt"><strong>Scale.</strong> Compound the system.</div>
+            </div>
+            <div class="text"><div class="nm">Framework slide</div><div class="meta">Vertical list with tiger's-blood left rule. Bold lead, body explanation.</div></div>
+          </div>
+
+          <div class="cn-card">
+            <div class="canvas car-1" style="justify-content: center; align-items: center; text-align: center;">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:16px;">
+                <span class="pill on-dark">READY TO APPLY?</span>
+                <div class="h" style="font-size:30px;">Six hires worth of work. <em>One team.</em></div>
+                <button class="btn gradient" style="font-size: 13px; padding: 10px 20px;">Apply now →</button>
+              </div>
+            </div>
+            <div class="text"><div class="nm">CTA slide</div><div class="meta">Final slide of every carousel. Pill, headline, gradient button.</div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="doc-block">
+        <h3>Video poster frames</h3>
+        <div class="block-meta">9:16 vertical (Reels/TikTok) or 16:9 (YouTube). Big caption, time-tag, gradient play button.</div>
+        <div class="content-grid">
+
+          <div class="cn-card">
+            <div class="canvas vid" style="aspect-ratio: 9 / 16;">
+              <div class="time-tag">2:47</div>
+              <div class="play-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div>
+              <div class="caption">How we replaced <em>six hires</em></div>
+            </div>
+            <div class="text"><div class="nm">Reel · 9:16</div><div class="meta">Caption + play button + time tag. Caption follows the same gradient em pattern.</div></div>
+          </div>
+
+          <div class="cn-card">
+            <div class="canvas vid" style="aspect-ratio: 16 / 9;">
+              <div class="time-tag">12:04</div>
+              <div class="play-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div>
+              <div class="caption">The Selling System, <em>installed</em></div>
+            </div>
+            <div class="text"><div class="nm">YouTube · 16:9</div><div class="meta">Same vocabulary, wider canvas. Caption shifts to bottom-left.</div></div>
+          </div>
+
+          <div class="cn-card">
+            <div class="canvas car-1" style="justify-content: space-between;">
+              <div>
+                <div class="eb">CASE STUDY</div>
+                <div class="h" style="font-size: 24px;">From $30k/mo to <em>$140k/mo</em><br>in 90 days.</div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <div class="av" style="width: 32px; height: 32px; font-size: 11px;">SH</div>
+                <div style="font-family: var(--font-sans); color: var(--ink); font-size: 12px;"><strong>Sarah Hendrickson</strong><br><span style="opacity: 0.6;">Coaching Collective</span></div>
+              </div>
+            </div>
+            <div class="text"><div class="nm">Case study card</div><div class="meta">Before → After numbers, founder attribution. Drop in feed or email.</div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 7. RULES ═══ -->
+    <section class="doc-section dark" id="rules">
+      <div class="doc-head">
+        <span class="label on-dark">07 · RULES</span>
+        <h2 style="color: var(--ink);">The discipline<span class="dot-period"></span></h2>
+        <p class="lead">Every brand fails the same way — by exception. These rules don't bend. If a rule is bending, it's not an exception — it's a redesign.</p>
+      </div>
+
+      <div class="doc-block">
+        <div class="rules-list">
+
+          <div class="rule">
+            <div class="num">RULE 01</div>
+            <h3>One accent <em>only.</em></h3>
+            <p class="do">Tiger's blood (and its gradient family) — used everywhere an accent is needed.</p>
+            <p class="dont">Adding a second hue family (blue, green, purple) for "variety."</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">RULE 02</div>
+            <h3>Gradient on every <em>em.</em></h3>
+            <p class="do">Every &lt;em&gt; inside a heading uses the 4-stop tiger's-blood gradient text fill.</p>
+            <p class="dont">Flat tiger's-blood color on em. Italic without color.</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">RULE 03</div>
+            <h3>Neo Contact = <em>logo only.</em></h3>
+            <p class="do">Reserve --font-logo for the "Abundance" wordmark. Nothing else.</p>
+            <p class="dont">Neo Contact in headings, body, captions, anywhere but the wordmark.</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">RULE 04</div>
+            <h3>95% achromatic, 5% <em>splash.</em></h3>
+            <p class="do">Every card is mostly gray-on-dark. Tiger's blood appears once per card — on the check, the badge, the publish button.</p>
+            <p class="dont">Tiger's blood on every element. Color noise drowns the brand.</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">RULE 05</div>
+            <h3>Per-column visual <em>media variety.</em></h3>
+            <p class="do">In a multi-column section, each column gets a DIFFERENT visual medium (table / toast feed / video / chart).</p>
+            <p class="dont">Same card pattern × 3 — even with different content, it reads as repetition.</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">RULE 06</div>
+            <h3>Sans-bold + serif-italic = <em>only emphasis pattern.</em></h3>
+            <p class="do">Headlines are Greycliff CF 800. The emphasis phrase inside is DM Serif Display italic with gradient text fill.</p>
+            <p class="dont">All-italic headlines. All-serif headlines. Underlines or color-only emphasis.</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">RULE 07</div>
+            <h3>One dot-period <em>per page.</em></h3>
+            <p class="do">The tiger's-blood dot replacing a final period is a signature mark — use it ONCE on a landing page.</p>
+            <p class="dont">Dot-period on every headline. Loses its weight when overused.</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">RULE 08</div>
+            <h3>Sections are <em>rounded stages.</em></h3>
+            <p class="do">Every section has border-radius. Light cream page hosts dark rounded stages; dark page hosts light rounded stages. Section transitions are scoops, not slabs.</p>
+            <p class="dont">Hard-edge full-bleed sections sitting on hard-edge full-bleed sections.</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">RULE 09</div>
+            <h3>The page is <em>alive.</em></h3>
+            <p class="do">Cursor-tied light on hero, ambient drift in atmospheres, pulse on brand marks, gradient slide on CTA hover. Always at least three motion behaviors.</p>
+            <p class="dont">Static pages. Reveal-on-scroll as the only motion.</p>
+          </div>
+
+          <div class="rule">
+            <div class="num">RULE 10</div>
+            <h3>If it's not on this <em>page</em>, it doesn't belong on a page.</h3>
+            <p class="do">When tempted to invent a new section, component, or color — first check this brand library. Reuse beats invent.</p>
+            <p class="dont">Bespoke one-offs that fragment the system across funnels.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="doc-block">
+        <p style="font-family: var(--font-sans); font-size: 14px; color: var(--ink-body); line-height: 1.6; max-width: 60ch;">
+          <strong style="color: var(--ink);">Last updated:</strong> May 16, 2026. Locked after the v5/v7/v8/v9 exploration cycle. Maintained at <code style="font-family: ui-monospace, monospace; color: var(--sig); background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">/brand</code> as the single source of truth.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+</div>
 
 <script>
-  document.querySelectorAll('.swatch[data-copy]').forEach(el => {
-    el.addEventListener('click', () => {
-      const val = el.getAttribute('data-copy');
-      navigator.clipboard.writeText(val);
-      const toast = document.createElement('div');
-      toast.className = 'toast';
-      toast.textContent = 'Copied ' + val;
-      document.body.appendChild(toast);
-      setTimeout(() => toast.remove(), 1600);
-    });
-  });
+  /* Sidebar nav active state */
+  const navLinks = document.querySelectorAll('.side nav a');
+  const sections = ['identity','typography','sections','components','motion','content','rules'];
+  function setActive() {
+    let active = sections[0];
+    for (const id of sections) {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top < 200) active = id;
+    }
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + active));
+  }
+  document.addEventListener('scroll', setActive, { passive: true });
+  setActive();
 </script>
 
 </body>

@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Guidelines — Abundance.AI</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
+<style>
+  @font-face {
+    font-family: 'Neo Contact';
+    src: url('/assets/fonts/neo-contact/neo-contact-lt-pro.woff2') format('woff2');
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    /* FOUNDATION — matte black + cream (the unbreakable spine) */
+    --bg: #0F0F0F;
+    --surface-1: #161616;
+    --surface-2: #1D1D1D;
+    --surface-3: #242424;
+    --cream: #F5F0E8;
+    --cream-warm: #F8F6EC;
+    --cream-body: #D5CFC4;
+    --cream-muted: #9C968C;
+    --border: rgba(245,240,232,0.08);
+    --border-strong: rgba(245,240,232,0.18);
+
+    /* FINAL 6 GLOW GRADIENTS · 4-stop, 135° angle */
+    --glow-peach:    linear-gradient(135deg, #F5F0E8 0%, #F8C5A8 40%, #E8967E 75%, #C4715E 100%);
+    --glow-coral:    linear-gradient(135deg, #F5F0E8 0%, #FECACA 40%, #FB7185 75%, #BE123C 100%);
+    --glow-copper:   linear-gradient(135deg, #F5F0E8 0%, #F2D4B8 40%, #B87333 75%, #6B4120 100%);
+    --glow-mocha:    linear-gradient(135deg, #F5F0E8 0%, #DDC5B3 40%, #8B5A3C 75%, #40220F 100%);
+    --glow-cerulean: linear-gradient(135deg, #F5F0E8 0%, #B8DDEC 40%, #2A7FB8 75%, #1A4A6B 100%);
+    --glow-slate:    linear-gradient(135deg, #F5F0E8 0%, #C7D0D9 40%, #475569 75%, #1E293B 100%);
+
+    /* PRIMARY signature shortcuts — Peach IS the brand */
+    --gradient-text: var(--glow-peach);
+    --gradient-btn:  linear-gradient(135deg, #E8967E 0%, #F8C5A8 100%);
+    --gradient-btn-hover: linear-gradient(135deg, #C4715E 0%, #E8967E 100%);
+
+    /* RADII */
+    --radius-brand: 20px;
+    --radius-btn: 10px;
+    --radius-pill: 100px;
+
+    /* SHADOWS */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+    --shadow:    0 1px 3px rgba(0,0,0,0.3), 0 4px 20px rgba(0,0,0,0.25);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.35), 0 20px 60px rgba(0,0,0,0.3);
+    --shadow-peach: 0 4px 20px rgba(232,150,126,0.28);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: "greycliff-cf", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* TYPOGRAPHY DEFAULTS */
+  h1, h2, h3 {
+    color: var(--cream);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    font-family: "greycliff-cf", sans-serif;
+  }
+  h1 { font-size: clamp(44px, 6vw, 84px); line-height: 1.02; margin-bottom: 24px; }
+  h2 { font-size: clamp(32px, 4vw, 52px); line-height: 1.05; margin-bottom: 16px; }
+  h3 { font-size: 20px; margin-bottom: 8px; }
+  p  { color: var(--cream-body); max-width: 720px; }
+  p + p { margin-top: 12px; }
+
+  /* INLINE GRADIENT SPAN — for accent words inside any heading */
+  .gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* THE EM RULE — Neo Contact, on its own line, peach gradient, 1.2× size, once per page */
+  em {
+    font-family: 'Neo Contact', 'Impact', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    background-image: var(--gradient-text);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  h1 em, h2 em, h3 em {
+    display: block;
+    font-size: 1.2em;
+    line-height: 1;
+    margin-top: 0.12em;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(15,15,15,0.78);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 40px;
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 24px;
+  }
+  .nav-brand {
+    display: flex; align-items: center; gap: 10px;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800; font-size: 15px;
+    color: var(--cream); text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .nav-brand::before {
+    content: '';
+    width: 24px; height: 24px;
+    border-radius: 7px;
+    background: var(--glow-peach);
+  }
+  .nav-links { display: flex; gap: 22px; flex-wrap: wrap; font-size: 13px; }
+  .nav-links a { color: var(--cream-body); text-decoration: none; transition: color 0.15s; }
+  .nav-links a:hover { color: var(--cream); }
+
+  /* SECTION FRAMES */
+  section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
+  section.full-width { max-width: none; padding-left: 40px; padding-right: 40px; }
+  section + section { border-top: 1px solid var(--border); }
+
+  .section-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 24px;
+  }
+  .section-label::before {
+    content: ''; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--cream-muted);
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    padding: 120px 40px 100px;
+    text-align: center;
+    max-width: none;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; left: 50%;
+    transform: translateX(-50%);
+    width: 1200px; height: 700px;
+    background: radial-gradient(ellipse, rgba(232,150,126,0.18) 0%, rgba(248,197,168,0.06) 35%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+  .hero p { margin: 0 auto; max-width: 640px; font-size: 17px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--surface-1);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-pill);
+    padding: 6px 16px 6px 8px;
+    font-size: 12px; font-weight: 600; color: var(--cream-body);
+    margin-bottom: 32px;
+  }
+  .hero-badge-dot {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--glow-peach);
+  }
+
+  /* SWATCH GRID */
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .swatch {
+    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-brand);
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: pointer;
+  }
+  .swatch:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .swatch-color {
+    height: 120px;
+    display: flex; align-items: flex-end;
+    padding: 12px 14px;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .swatch-info { padding: 14px 18px; }
+  .swatch-name { font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 2px; }
+  .swatch-hex {
+    font-family: "greycliff-cf", monospace;
+    font-size: 12px; color: var(--cream-body);
+    letter-spacing: 0.02em;
+  }
+  .swatch-role { font-size: 11px; color: var(--cream-muted); margin-top: 4px; line-height: 1.4; }
+
+  /* FINAL 6 PALETTE GRID */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .palette-card {
+    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-brand);
+    overflow: hidden;
+    position: relative;
+  }
+  .palette-strip { height: 120px; }
+  .palette-body { padding: 24px 24px 28px; }
+  .palette-head {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 8px;
+  }
+  .palette-num {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--cream-muted);
+  }
+  .palette-name {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+  }
+  .palette-role {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 700; font-size: 10px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--cream);
+    background: rgba(245,240,232,0.08);
+    border: 1px solid var(--border-strong);
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-left: auto;
+  }
+  .palette-when {
+    color: var(--cream-body);
+    font-size: 13px;
+    line-height: 1.55;
+    margin-bottom: 18px;
+  }
+  .palette-chips {
+    display: flex; gap: 6px; flex-wrap: wrap;
+  }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    font-family: 'SF Mono', monospace;
+    font-size: 10px; color: var(--cream-body);
+  }
+  .chip-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  /* TYPOGRAPHY SECTION */
+  .type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+  .type-card {
+    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-brand);
+    padding: 36px;
+  }
+  .type-specimen { font-size: 88px; line-height: 1; margin-bottom: 24px; letter-spacing: -0.02em; }
+  .type-spec-greycliff { font-family: "greycliff-cf"; font-weight: 700; color: var(--cream); }
+  .type-spec-neo {
+    font-family: 'Neo Contact', sans-serif; font-weight: 700;
+    background: var(--glow-peach);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .type-name { font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
+  .type-role { font-size: 13px; color: var(--cream-muted); margin-bottom: 20px; }
+  .type-weights { display: flex; flex-direction: column; gap: 8px; padding-top: 20px; border-top: 1px solid var(--border); }
+  .type-row { display: grid; grid-template-columns: 110px 1fr; gap: 16px; align-items: baseline; }
+  .type-label { font-size: 11px; color: var(--cream-muted); font-weight: 600; }
+  .type-sample { font-size: 17px; color: var(--cream); }
+
+  /* GLOW THEORY — show the 4-stop pattern */
+  .theory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .theory-card {
+    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-brand);
+    overflow: hidden;
+  }
+  .theory-strip {
+    height: 140px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .theory-strip-text {
+    font-size: 56px; font-weight: 700;
+    font-family: 'Neo Contact', sans-serif;
+    letter-spacing: -0.01em;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .theory-info { padding: 18px 22px; border-top: 1px solid var(--border); }
+  .theory-info-name { font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
+  .theory-info code {
+    display: block;
+    font-size: 11px; font-family: 'SF Mono', monospace;
+    color: var(--cream-body);
+    background: var(--surface-2);
+    padding: 8px 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 1px solid var(--border);
+    line-height: 1.6;
+  }
+  .theory-info p { font-size: 13px; margin: 6px 0 0; color: var(--cream-body); }
+
+  /* HEADLINE USAGE */
+  .usage-grid { display: grid; gap: 16px; margin-top: 32px; }
+  .usage-card {
+    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-brand);
+    padding: 36px 40px;
+  }
+  .usage-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 16px;
+    display: block;
+  }
+  .usage-demo h2 { margin-bottom: 8px; }
+  .usage-desc { font-size: 13px; color: var(--cream-muted); }
+  .usage-desc code {
+    background: var(--surface-2);
+    padding: 2px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--cream-body);
+  }
+
+  /* COMPONENTS */
+  .components-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+  .component-card {
+    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-brand);
+    padding: 36px 32px;
+  }
+  .component-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .component-demo {
+    padding: 16px 0 24px;
+    display: flex; flex-direction: column;
+    align-items: flex-start; gap: 14px;
+  }
+  .component-code {
+    font-family: 'SF Mono', monospace;
+    font-size: 11px;
+    background: var(--surface-2);
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: var(--cream-body);
+    border: 1px solid var(--border);
+    line-height: 1.6;
+  }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 12px 24px;
+    border-radius: var(--radius-btn);
+    font-family: "greycliff-cf", sans-serif;
+    font-size: 14px; font-weight: 600;
+    letter-spacing: -0.005em;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer; white-space: nowrap;
+    border: none;
+  }
+  .btn-primary {
+    background: var(--gradient-btn);
+    color: #3A1810;
+    box-shadow: var(--shadow-peach);
+  }
+  .btn-primary:hover {
+    background: var(--gradient-btn-hover);
+    color: var(--cream);
+    box-shadow: 0 8px 28px rgba(196,113,94,0.35);
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    background:
+      linear-gradient(var(--bg), var(--bg)) padding-box,
+      var(--gradient-btn) border-box;
+    border: 1.5px solid transparent;
+    padding: 10.5px 22.5px;
+    color: var(--cream);
+  }
+  .btn-ghost:hover {
+    background:
+      linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
+      var(--gradient-btn-hover) border-box;
+  }
+  .btn-cream {
+    background: var(--cream);
+    color: var(--bg);
+  }
+  .btn-cream:hover { background: var(--cream-warm); }
+
+  /* HIGHLIGHT PILLS */
+  .highlight, .highlight-peach, .highlight-cream {
+    display: inline-block;
+    padding: 0.12em 0.5em;
+    border-radius: var(--radius-brand);
+    font-style: normal;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .highlight {
+    background: var(--cream);
+    color: var(--bg);
+    box-shadow: 0 4px 14px rgba(245,240,232,0.18);
+  }
+  .highlight-peach {
+    background: var(--gradient-btn);
+    color: #3A1810;
+    box-shadow: var(--shadow-peach);
+  }
+  .highlight-cream {
+    background: rgba(245,240,232,0.08);
+    color: var(--cream);
+    border: 1px solid var(--border-strong);
+  }
+
+  /* RADIUS DEMO */
+  .radius-demo { display: flex; gap: 20px; margin-top: 24px; flex-wrap: wrap; }
+  .radius-box {
+    width: 120px; height: 120px;
+    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700;
+    color: var(--cream-muted);
+  }
+
+  /* EXAMPLE — full design system in one view */
+  .example {
+    padding: 120px 40px;
+    max-width: none;
+    position: relative;
+    overflow: hidden;
+  }
+  .example::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 1100px; height: 600px;
+    pointer-events: none;
+  }
+  .example.glow-peach::before    { background: radial-gradient(ellipse, rgba(232,150,126,0.15) 0%, transparent 60%); }
+  .example.glow-coral::before    { background: radial-gradient(ellipse, rgba(251,113,133,0.13) 0%, transparent 60%); }
+  .example.glow-copper::before   { background: radial-gradient(ellipse, rgba(184,115,51,0.13) 0%, transparent 60%); }
+  .example.glow-mocha::before    { background: radial-gradient(ellipse, rgba(139,90,60,0.13) 0%, transparent 60%); }
+  .example.glow-cerulean::before { background: radial-gradient(ellipse, rgba(42,127,184,0.13) 0%, transparent 60%); }
+  .example.glow-slate::before    { background: radial-gradient(ellipse, rgba(71,85,105,0.13) 0%, transparent 60%); }
+
+  .example-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+  .example-hero { max-width: 900px; margin: 0 auto 64px; text-align: center; }
+  .example-hero p { font-size: 18px; max-width: 640px; margin: 0 auto 36px; }
+  .example-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  /* per-section em color override (each example section uses its own glow on em) */
+  .example.glow-coral em    { background-image: var(--glow-coral); }
+  .example.glow-copper em   { background-image: var(--glow-copper); }
+  .example.glow-mocha em    { background-image: var(--glow-mocha); }
+  .example.glow-cerulean em { background-image: var(--glow-cerulean); }
+  .example.glow-slate em    { background-image: var(--glow-slate); }
+
+  /* example stats row */
+  .example-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 64px auto;
+    max-width: 900px;
+  }
+  .stat-card {
+    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-brand);
+    padding: 32px 28px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.03em;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .glow-peach    .stat-num { background-image: var(--glow-peach); }
+  .glow-coral    .stat-num { background-image: var(--glow-coral); }
+  .glow-copper   .stat-num { background-image: var(--glow-copper); }
+  .glow-mocha    .stat-num { background-image: var(--glow-mocha); }
+  .glow-cerulean .stat-num { background-image: var(--glow-cerulean); }
+  .glow-slate    .stat-num { background-image: var(--glow-slate); }
+  .stat-label {
+    font-size: 11px; font-weight: 700;
+    color: var(--cream-muted);
+    letter-spacing: 0.18em; text-transform: uppercase;
+  }
+
+  /* example feature cards */
+  .example-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .feature-card {
+    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-brand);
+    padding: 32px 28px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .feature-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .feature-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px;
+    border-radius: var(--radius-brand);
+    background: rgba(245,240,232,0.06);
+    color: var(--cream);
+    font-weight: 700; font-size: 15px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border-strong);
+  }
+  .feature-card h3 { color: var(--cream); margin-bottom: 12px; }
+  .feature-card p  { color: var(--cream-body); font-size: 14px; line-height: 1.6; }
+
+  /* RULES OF ENGAGEMENT */
+  .rules {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 32px;
+  }
+  .rule {
+    background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-brand);
+    padding: 24px 28px;
+    display: flex;
+    gap: 18px;
+  }
+  .rule-num {
+    flex-shrink: 0;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 1;
+    background: var(--gradient-text);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .rule-body h3 { font-size: 16px; margin-bottom: 6px; color: var(--cream); }
+  .rule-body p  { font-size: 13px; color: var(--cream-body); line-height: 1.5; }
+
+  /* LOGOS */
+  .logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+  .logo-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-brand);
+    padding: 80px 40px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .logo-card-label {
+    position: absolute; top: 16px; left: 20px;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--cream-muted);
+  }
+  .logo-card-dark { background: linear-gradient(135deg, #161616 0%, #1D1D1D 100%); }
+  .logo-card-cream { background: var(--cream); }
+  .logo-card-cream .logo-card-label { color: #4A4A4A; }
+  .logo-card img { max-width: 280px; height: auto; }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--cream-muted);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+  }
+  footer a { color: var(--cream); text-decoration: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    section { padding: 64px 20px; }
+    .example { padding: 80px 20px; }
+    .hero { padding: 80px 20px 64px; }
+    .type-grid, .logo-grid, .components-grid, .rules { grid-template-columns: 1fr; }
+    .example-stats, .example-features { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+
+  /* COPY-TOAST */
+  .toast {
+    position: fixed;
+    bottom: 32px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--cream);
+    color: var(--bg);
+    padding: 10px 18px;
+    border-radius: var(--radius-pill);
+    font-size: 13px; font-weight: 600;
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">Abundance.AI</a>
+    <div class="nav-links">
+      <a href="#foundation">Foundation</a>
+      <a href="#palette">Palette</a>
+      <a href="#typography">Typography</a>
+      <a href="#theory">Glow Theory</a>
+      <a href="#headlines">Headlines</a>
+      <a href="#components">Components</a>
+      <a href="#example">Example</a>
+      <a href="#rules">Rules</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero full-width">
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="hero-badge-dot"></span>Brand Guidelines · Locked April 2026</div>
+    <h1>The Abundance.AI <em>Design System</em></h1>
+    <p>Living reference for the matte-black foundation, Final 6 glow palette, typography, components, and rules used across every Abundance.AI property. Click any swatch to copy its hex value.</p>
+  </div>
+</section>
+
+<!-- FOUNDATION -->
+<section id="foundation">
+  <span class="section-label">Foundation · The unbreakable spine</span>
+  <h2>Matte black + cream</h2>
+  <p>The brand never leaves matte black. Cream handles all primary text. These eight tokens carry every page; nothing else is allowed at the foundation level.</p>
+
+  <div class="swatch-grid">
+    <div class="swatch" data-copy="#0F0F0F"><div class="swatch-color" style="background:#0F0F0F;color:#9C968C;border-bottom:1px solid var(--border);">Page BG</div><div class="swatch-info"><div class="swatch-name">Background</div><div class="swatch-hex">#0F0F0F</div><div class="swatch-role">Primary page color</div></div></div>
+    <div class="swatch" data-copy="#161616"><div class="swatch-color" style="background:#161616;color:#9C968C;border-bottom:1px solid var(--border);">Surface 1</div><div class="swatch-info"><div class="swatch-name">Surface 1 · Cards</div><div class="swatch-hex">#161616</div><div class="swatch-role">Card top of gradient</div></div></div>
+    <div class="swatch" data-copy="#1D1D1D"><div class="swatch-color" style="background:#1D1D1D;color:#9C968C;border-bottom:1px solid var(--border);">Surface 2</div><div class="swatch-info"><div class="swatch-name">Surface 2 · Cards</div><div class="swatch-hex">#1D1D1D</div><div class="swatch-role">Card bottom of gradient</div></div></div>
+    <div class="swatch" data-copy="#242424"><div class="swatch-color" style="background:#242424;color:#9C968C;border-bottom:1px solid var(--border);">Surface 3</div><div class="swatch-info"><div class="swatch-name">Surface 3 · Raised</div><div class="swatch-hex">#242424</div><div class="swatch-role">Hover, raised, chip bg</div></div></div>
+    <div class="swatch" data-copy="#F5F0E8"><div class="swatch-color" style="background:#F5F0E8;color:#1A1210;">Cream</div><div class="swatch-info"><div class="swatch-name">Cream · Headlines</div><div class="swatch-hex">#F5F0E8</div><div class="swatch-role">Primary text + cream-on-dark</div></div></div>
+    <div class="swatch" data-copy="#D5CFC4"><div class="swatch-color" style="background:#D5CFC4;color:#1A1210;">Cream Body</div><div class="swatch-info"><div class="swatch-name">Cream Body</div><div class="swatch-hex">#D5CFC4</div><div class="swatch-role">Paragraph copy</div></div></div>
+    <div class="swatch" data-copy="#9C968C"><div class="swatch-color" style="background:#9C968C;color:#1A1210;">Cream Muted</div><div class="swatch-info"><div class="swatch-name">Cream Muted</div><div class="swatch-hex">#9C968C</div><div class="swatch-role">Labels, captions, eyebrows</div></div></div>
+    <div class="swatch" data-copy="rgba(245,240,232,0.08)"><div class="swatch-color" style="background:rgba(245,240,232,0.08);color:#9C968C;">Border</div><div class="swatch-info"><div class="swatch-name">Border</div><div class="swatch-hex">rgba(245,240,232,0.08)</div><div class="swatch-role">8% cream — card edges</div></div></div>
+  </div>
+</section>
+
+<!-- PALETTE -->
+<section id="palette">
+  <span class="section-label">The Final 6 · Locked palette</span>
+  <h2>Six colors. <em>Six roles.</em></h2>
+  <p>Every page picks colors from this six. Each has a single role — pages rotate which colors appear in which sections, but no new colors get introduced. All six are 4-stop gradients on a 135° angle, cream → deep.</p>
+
+  <div class="palette-grid">
+
+    <!-- 01 PEACH -->
+    <div class="palette-card">
+      <div class="palette-strip" style="background:var(--glow-peach);"></div>
+      <div class="palette-body">
+        <div class="palette-head">
+          <span class="palette-num">01</span>
+          <span class="palette-name">Peach</span>
+          <span class="palette-role">Primary</span>
+        </div>
+        <p class="palette-when">The signature. Logo mark, hero gradient titles, primary CTAs, footer mark, page bookends. Use on every page.</p>
+        <div class="palette-chips">
+          <span class="chip"><span class="chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
+          <span class="chip"><span class="chip-dot" style="background:#F8C5A8;"></span>#F8C5A8</span>
+          <span class="chip"><span class="chip-dot" style="background:#E8967E;"></span>#E8967E</span>
+          <span class="chip"><span class="chip-dot" style="background:#C4715E;"></span>#C4715E</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 CORAL -->
+    <div class="palette-card">
+      <div class="palette-strip" style="background:var(--glow-coral);"></div>
+      <div class="palette-body">
+        <div class="palette-head">
+          <span class="palette-num">02</span>
+          <span class="palette-name">Coral</span>
+          <span class="palette-role">Warm Sibling</span>
+        </div>
+        <p class="palette-when">Community, urgency, energy moments. Tribe sections, secondary CTAs, callouts that need more punch than peach.</p>
+        <div class="palette-chips">
+          <span class="chip"><span class="chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
+          <span class="chip"><span class="chip-dot" style="background:#FECACA;"></span>#FECACA</span>
+          <span class="chip"><span class="chip-dot" style="background:#FB7185;"></span>#FB7185</span>
+          <span class="chip"><span class="chip-dot" style="background:#BE123C;"></span>#BE123C</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 COPPER -->
+    <div class="palette-card">
+      <div class="palette-strip" style="background:var(--glow-copper);"></div>
+      <div class="palette-body">
+        <div class="palette-head">
+          <span class="palette-num">03</span>
+          <span class="palette-name">Copper</span>
+          <span class="palette-role">Bronze Depth</span>
+        </div>
+        <p class="palette-when">Heritage moments, case studies, long-form essays, Partner tier, Freedom offer. The "earned" warm.</p>
+        <div class="palette-chips">
+          <span class="chip"><span class="chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
+          <span class="chip"><span class="chip-dot" style="background:#F2D4B8;"></span>#F2D4B8</span>
+          <span class="chip"><span class="chip-dot" style="background:#B87333;"></span>#B87333</span>
+          <span class="chip"><span class="chip-dot" style="background:#6B4120;"></span>#6B4120</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 MOCHA -->
+    <div class="palette-card">
+      <div class="palette-strip" style="background:var(--glow-mocha);"></div>
+      <div class="palette-body">
+        <div class="palette-head">
+          <span class="palette-num">04</span>
+          <span class="palette-name">Mocha</span>
+          <span class="palette-role">Warm Grounder</span>
+        </div>
+        <p class="palette-when">Testimonials, founder stories, serious-warm sections. Where Slate is too cool, Mocha gives a grounded warm anchor.</p>
+        <div class="palette-chips">
+          <span class="chip"><span class="chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
+          <span class="chip"><span class="chip-dot" style="background:#DDC5B3;"></span>#DDC5B3</span>
+          <span class="chip"><span class="chip-dot" style="background:#8B5A3C;"></span>#8B5A3C</span>
+          <span class="chip"><span class="chip-dot" style="background:#40220F;"></span>#40220F</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 CERULEAN -->
+    <div class="palette-card">
+      <div class="palette-strip" style="background:var(--glow-cerulean);"></div>
+      <div class="palette-body">
+        <div class="palette-head">
+          <span class="palette-num">05</span>
+          <span class="palette-name">Cerulean</span>
+          <span class="palette-role">Cool Accent</span>
+        </div>
+        <p class="palette-when">Features, product UI, data visualization, integrations, technical sections. The single cool hue per page — use sparingly.</p>
+        <div class="palette-chips">
+          <span class="chip"><span class="chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
+          <span class="chip"><span class="chip-dot" style="background:#B8DDEC;"></span>#B8DDEC</span>
+          <span class="chip"><span class="chip-dot" style="background:#2A7FB8;"></span>#2A7FB8</span>
+          <span class="chip"><span class="chip-dot" style="background:#1A4A6B;"></span>#1A4A6B</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 SLATE -->
+    <div class="palette-card">
+      <div class="palette-strip" style="background:var(--glow-slate);"></div>
+      <div class="palette-body">
+        <div class="palette-head">
+          <span class="palette-num">06</span>
+          <span class="palette-name">Slate</span>
+          <span class="palette-role">Neutral Ground</span>
+        </div>
+        <p class="palette-when">Pricing, FAQ, legal, comparison tables, dense data. Where the page needs to feel quiet and serious.</p>
+        <div class="palette-chips">
+          <span class="chip"><span class="chip-dot" style="background:#F5F0E8;"></span>#F5F0E8</span>
+          <span class="chip"><span class="chip-dot" style="background:#C7D0D9;"></span>#C7D0D9</span>
+          <span class="chip"><span class="chip-dot" style="background:#475569;"></span>#475569</span>
+          <span class="chip"><span class="chip-dot" style="background:#1E293B;"></span>#1E293B</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section id="typography">
+  <span class="section-label">Typography</span>
+  <h2>Two fonts. <em>One system.</em></h2>
+  <p>Greycliff CF handles everything — body, headlines, labels, stats, UI. Neo Contact LT Pro is reserved for the single &lt;em&gt; emphasis word per page. That's the only place Neo Contact appears.</p>
+
+  <div class="type-grid">
+    <div class="type-card">
+      <div class="type-specimen type-spec-greycliff">Aa</div>
+      <div class="type-name">Greycliff CF</div>
+      <div class="type-role">Primary typeface · Adobe Fonts · body, headlines, labels, UI, stats</div>
+      <div class="type-weights">
+        <div class="type-row"><span class="type-label">400 · Regular</span><span class="type-sample" style="font-weight:400;">Body copy default weight</span></div>
+        <div class="type-row"><span class="type-label">500 · Medium</span><span class="type-sample" style="font-weight:500;">Labels, subtle emphasis</span></div>
+        <div class="type-row"><span class="type-label">600 · SemiBold</span><span class="type-sample" style="font-weight:600;">Secondary headlines</span></div>
+        <div class="type-row"><span class="type-label">700 · Bold</span><span class="type-sample" style="font-weight:700;">Primary headlines</span></div>
+        <div class="type-row"><span class="type-label">800 · ExtraBold</span><span class="type-sample" style="font-weight:800;">Display, stats numbers</span></div>
+      </div>
+    </div>
+    <div class="type-card">
+      <div class="type-specimen type-spec-neo">Aa</div>
+      <div class="type-name">Neo Contact LT Pro</div>
+      <div class="type-role">Accent · self-hosted · the single em moment per page</div>
+      <div class="type-weights">
+        <div class="type-row"><span class="type-label">Single weight</span><span class="type-sample" style="font-family:'Neo Contact',sans-serif;font-weight:700;">AI-Powered Selling System</span></div>
+        <div class="type-row"><span class="type-label">Rule</span><span class="type-sample" style="font-size:13px;color:var(--cream-body);line-height:1.55;">Only inside &lt;em&gt; within h1/h2/h3. Always on its own line. 1.2× parent size. Peach gradient fill. <strong style="color:var(--cream);">Once per page max.</strong></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOW THEORY -->
+<section id="theory">
+  <span class="section-label">The Glow Theory</span>
+  <h2>4-stop cream → deep. <em>Always 135°.</em></h2>
+  <p>Every glow gradient follows the same template: cream at 0%, a pale tint at 40%, the saturated mid at 75%, the deep anchor at 100%. The angle is always 135° (top-left to bottom-right). That consistency across all six colors is what makes the system feel like one system.</p>
+
+  <div class="theory-grid">
+    <div class="theory-card">
+      <div class="theory-strip"><div class="theory-strip-text" style="background-image:var(--glow-peach);">Abundance</div></div>
+      <div class="theory-info">
+        <div class="theory-info-name">Text gradient · 4-stop · 135°</div>
+        <p>For ems, hero titles, stat numbers, any accent moment.</p>
+        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#F5F0E8 0%,<br>&nbsp;&nbsp;#F8C5A8 40%,<br>&nbsp;&nbsp;#E8967E 75%,<br>&nbsp;&nbsp;#C4715E 100%)</code>
+      </div>
+    </div>
+    <div class="theory-card">
+      <div class="theory-strip" style="background:var(--gradient-btn);color:#3A1810;font-weight:700;font-size:20px;">Apply Now →</div>
+      <div class="theory-info">
+        <div class="theory-info-name">Button fill · 2-stop · 135°</div>
+        <p>Mid + light stops only. Dark text on warm gradient.</p>
+        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#E8967E 0%,<br>&nbsp;&nbsp;#F8C5A8 100%)</code>
+      </div>
+    </div>
+    <div class="theory-card">
+      <div class="theory-strip" style="background:var(--gradient-btn-hover);color:#FFF;font-weight:700;font-size:20px;">On Hover</div>
+      <div class="theory-info">
+        <div class="theory-info-name">Button hover · darkens 1 step</div>
+        <p>Deep + mid stops. Cream text takes over.</p>
+        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#C4715E 0%,<br>&nbsp;&nbsp;#E8967E 100%)</code>
+      </div>
+    </div>
+    <div class="theory-card">
+      <div class="theory-strip" style="background:radial-gradient(ellipse 100% 55% at 50% 0%, rgba(232,150,126,0.18) 0%, rgba(248,197,168,0.06) 35%, transparent 65%), var(--bg);"></div>
+      <div class="theory-info">
+        <div class="theory-info-name">Hero glow · radial · top-center</div>
+        <p>Soft ambient halo at the top of every section.</p>
+        <code>radial-gradient(ellipse 100% 55% at 50% 0%,<br>&nbsp;&nbsp;rgba(232,150,126,0.18) 0%,<br>&nbsp;&nbsp;transparent 65%)</code>
+      </div>
+    </div>
+    <div class="theory-card">
+      <div class="theory-strip" style="background:linear-gradient(135deg, #161616 0%, #1D1D1D 100%);border-bottom:1px solid var(--border);"></div>
+      <div class="theory-info">
+        <div class="theory-info-name">Card background · 135° matte</div>
+        <p>Subtle 2-stop on every card. Surface 1 → Surface 2.</p>
+        <code>linear-gradient(135deg,<br>&nbsp;&nbsp;#161616 0%,<br>&nbsp;&nbsp;#1D1D1D 100%)</code>
+      </div>
+    </div>
+    <div class="theory-card">
+      <div class="theory-strip" style="display:grid;grid-template-columns:repeat(6,1fr);height:140px;">
+        <div style="background:var(--glow-peach);"></div>
+        <div style="background:var(--glow-coral);"></div>
+        <div style="background:var(--glow-copper);"></div>
+        <div style="background:var(--glow-mocha);"></div>
+        <div style="background:var(--glow-cerulean);"></div>
+        <div style="background:var(--glow-slate);"></div>
+      </div>
+      <div class="theory-info">
+        <div class="theory-info-name">Per-section glow rotation</div>
+        <p>Each section picks one of the six. No section uses two glows. Hero is always Peach.</p>
+        <code>--glow-peach · --glow-coral<br>--glow-copper · --glow-mocha<br>--glow-cerulean · --glow-slate</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HEADLINE USAGE -->
+<section id="headlines">
+  <span class="section-label">Headlines · Usage rules</span>
+  <h2>How headlines are structured</h2>
+  <p>Default headline is solid cream Greycliff Bold. Gradient appears only on specific elements: an inline accent via <code>.gradient</code>, or the BIG &lt;em&gt; emphasis on its own line.</p>
+
+  <div class="usage-grid">
+    <div class="usage-card">
+      <span class="usage-label">Default · Solid cream</span>
+      <div class="usage-demo"><h2>Scale your business with consistent new clients every month.</h2></div>
+      <p class="usage-desc">Standard h1/h2/h3. Greycliff Bold 700, solid cream (#F5F0E8). No gradient.</p>
+    </div>
+    <div class="usage-card">
+      <span class="usage-label">With inline gradient accent</span>
+      <div class="usage-demo"><h2>Scale your business with <span class="gradient">Meta Ads</span> — done for you.</h2></div>
+      <p class="usage-desc">Use <code>&lt;span class="gradient"&gt;</code> to color specific words inline. Same size as parent, peach gradient fill.</p>
+    </div>
+    <div class="usage-card">
+      <span class="usage-label">With Neo Contact em · on its own line</span>
+      <div class="usage-demo"><h2>Install an <em>AI-Powered Selling System</em> that fills your calendar.</h2></div>
+      <p class="usage-desc">Use <code>&lt;em&gt;</code> for the BIG accent moment. Always on its own line, 1.2× parent size, peach gradient. <strong style="color:var(--cream);">Once per page max.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPONENTS -->
+<section id="components">
+  <span class="section-label">Components</span>
+  <h2>Buttons &amp; highlight pills</h2>
+  <p>Three button variants, three pill variants. All carry peach (the brand). Cards, pills, and highlights use 20px radius. Buttons use 10px. Pill labels use 100px.</p>
+
+  <div class="components-grid">
+    <div class="component-card">
+      <span class="component-label">Buttons</span>
+      <div class="component-demo">
+        <a href="#" class="btn btn-primary">Primary · Apply Now →</a>
+        <a href="#" class="btn btn-ghost">Ghost · See how it works</a>
+        <a href="#" class="btn btn-cream">Cream · Secondary action</a>
+      </div>
+      <div class="component-code">.btn-primary · peach gradient fill, dark text<br>.btn-ghost · matte fill, peach gradient border<br>.btn-cream · solid cream fill, dark text</div>
+    </div>
+    <div class="component-card">
+      <span class="component-label">Highlight pills · 20px radius</span>
+      <div class="component-demo">
+        <span style="font-size:18px;color:var(--cream-body);">Pre-sold <span class="highlight">sales calls</span></span>
+        <span style="font-size:18px;color:var(--cream-body);">Under <span class="highlight-peach">$150 per booking</span></span>
+        <span style="font-size:18px;color:var(--cream-body);">Ads live in <span class="highlight-cream">7 days</span></span>
+      </div>
+      <div class="component-code">.highlight · cream · dark text<br>.highlight-peach · peach gradient · dark text<br>.highlight-cream · subtle cream tint · cream text</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:56px; margin-bottom:8px;">Corner radius standards</h3>
+  <p style="margin-bottom:16px;">All cards, containers, and highlight pills use 20px. Buttons use 10px. Pill labels use 100px. No other radii allowed.</p>
+  <div class="radius-demo">
+    <div class="radius-box" style="border-radius:20px;">20px · default</div>
+    <div class="radius-box" style="border-radius:10px;">10px · buttons</div>
+    <div class="radius-box" style="border-radius:100px;">100px · pill labels</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXAMPLE — full design system in one view, peach hero
+     ═══════════════════════════════════════════════════════════ -->
+<section id="example" class="example glow-peach full-width">
+  <div class="example-inner">
+    <div class="example-hero">
+      <span class="section-label">Example · Hero (Peach glow)</span>
+      <h2>Install an <em>AI-Powered Selling System</em> that fills your calendar with <span class="highlight">pre-sold sales calls</span>.</h2>
+      <p>Every design token in one view — solid cream headline, <span class="gradient">inline gradient accent</span>, Neo Contact em on its own line, cream highlight pill, body paragraph, and the full button set.</p>
+      <div class="example-actions">
+        <a href="#" class="btn btn-primary">Apply Now →</a>
+        <a href="#" class="btn btn-ghost">See how it works</a>
+        <a href="#" class="btn btn-cream">Book a call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLE — Cerulean section (cool contrast) -->
+<section class="example glow-cerulean full-width">
+  <div class="example-inner">
+    <div class="example-hero">
+      <span class="section-label">Example · Features section (Cerulean glow)</span>
+      <h2>Three frameworks. <em>One system.</em></h2>
+      <p>The same design tokens with a Cerulean glow rotated in. The em swaps to Cerulean for this section only — peach reserved for hero/CTA bookends.</p>
+    </div>
+    <div class="example-stats">
+      <div class="stat-card"><div class="stat-num">$12M+</div><div class="stat-label">Revenue tracked</div></div>
+      <div class="stat-card"><div class="stat-num">90</div><div class="stat-label">Days to launch</div></div>
+      <div class="stat-card"><div class="stat-num">40–50%</div><div class="stat-label">Close rate</div></div>
+    </div>
+    <div class="example-features">
+      <div class="feature-card">
+        <div class="feature-num">01</div>
+        <h3>Inevitable Offer System</h3>
+        <p>An offer so precisely matched to your dream client's desire that saying yes feels like the only logical choice.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">02</div>
+        <h3>AI-Powered Meta Ads</h3>
+        <p>Cold traffic pre-sold before they ever hit your calendar. Under <span class="highlight-peach">$150 per booking</span> across every business.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">03</div>
+        <h3>Leadership Conversion</h3>
+        <p>A reverse sales process that closes <span class="highlight-peach">40–50%</span> of qualified calls — without pressure or hard selling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLE — Coral section (community / energy) -->
+<section class="example glow-coral full-width">
+  <div class="example-inner">
+    <div class="example-hero">
+      <span class="section-label">Example · Tribe section (Coral glow)</span>
+      <h2>The community side. <em>Coral takes over.</em></h2>
+      <p>Coral handles community/urgency moments — Tribe pages, founding-member pricing, "limited spots" callouts. Same template, different glow.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLE — Slate section (pricing/serious) -->
+<section class="example glow-slate full-width">
+  <div class="example-inner">
+    <div class="example-hero">
+      <span class="section-label">Example · Pricing section (Slate glow)</span>
+      <h2>Serious sections live here. <em>Slate stays quiet.</em></h2>
+      <p>Pricing, FAQ, legal, dense data — Slate gives the page somewhere to breathe. The em adopts Slate's gradient for this section only.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RULES OF ENGAGEMENT -->
+<section id="rules">
+  <span class="section-label">Rules of Engagement</span>
+  <h2>Don't break these.</h2>
+  <p>The system holds together because every page follows the same rules. Each one prevents a specific failure mode we've seen.</p>
+
+  <div class="rules">
+    <div class="rule"><div class="rule-num">01</div><div class="rule-body"><h3>Six colors only</h3><p>Peach, Coral, Copper, Mocha, Cerulean, Slate. No new colors get introduced. No exceptions.</p></div></div>
+    <div class="rule"><div class="rule-num">02</div><div class="rule-body"><h3>Dark mode only</h3><p>Every brand surface is matte black. The luminous-glow mechanic doesn't translate to light bg. Light interfaces are a separate system.</p></div></div>
+    <div class="rule"><div class="rule-num">03</div><div class="rule-body"><h3>One em per page</h3><p>Neo Contact + peach gradient + own line + 1.2× parent size. Once per page max. Use it for the moment that matters most.</p></div></div>
+    <div class="rule"><div class="rule-num">04</div><div class="rule-body"><h3>One glow per section</h3><p>Each section picks one of the six glows for its radial bg + em color. No section mixes two glows. Hero is always Peach.</p></div></div>
+    <div class="rule"><div class="rule-num">05</div><div class="rule-body"><h3>135° gradients, always</h3><p>All glow gradients use a 135° angle, top-left to bottom-right. Don't rotate. Don't go radial except for ambient hero halos.</p></div></div>
+    <div class="rule"><div class="rule-num">06</div><div class="rule-body"><h3>4-stop pattern</h3><p>Cream 0% → pale tint 40% → saturated mid 75% → deep anchor 100%. Don't add stops. Don't drop the cream start.</p></div></div>
+    <div class="rule"><div class="rule-num">07</div><div class="rule-body"><h3>20 / 10 / 100 radii</h3><p>20px for cards/pills/highlights. 10px for buttons. 100px for pill labels (badges, urgency bars). No other radii.</p></div></div>
+    <div class="rule"><div class="rule-num">08</div><div class="rule-body"><h3>Greycliff is the default</h3><p>All UI, body, and headlines use Greycliff CF. Neo Contact only inside &lt;em&gt; within h1/h2/h3. Never elsewhere.</p></div></div>
+    <div class="rule"><div class="rule-num">09</div><div class="rule-body"><h3>Color from content</h3><p>The brand carries the gradient. Color variety comes from imagery — headshots, product screenshots, abstract art — not from adding more brand colors.</p></div></div>
+    <div class="rule"><div class="rule-num">10</div><div class="rule-body"><h3>Buttons always carry peach</h3><p>Primary fills the gradient. Ghost borders it. Cream replaces it on Coral/Cerulean sections only. No button without a gradient relationship.</p></div></div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<section id="logos">
+  <span class="section-label">Logos</span>
+  <h2>Wordmark lockups</h2>
+  <p>Light wordmark on matte black is the default — that's the only mode. If a light surface is ever needed (email signature, print), use the dark wordmark on cream.</p>
+
+  <div class="logo-grid">
+    <div class="logo-card logo-card-dark">
+      <span class="logo-card-label">Light wordmark · on matte black · DEFAULT</span>
+      <img src="/assets/images/logo-light-wordmark.svg" alt="Abundance.AI light wordmark">
+    </div>
+    <div class="logo-card logo-card-cream">
+      <span class="logo-card-label">Dark wordmark · on cream · email/print only</span>
+      <img src="/assets/images/logo-dark-wordmark.svg" alt="Abundance.AI dark wordmark">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Abundance.AI · Brand Guidelines · Locked April 2026 · Reference for <a href="/selling-system">/selling-system</a>, <a href="/tribe">/tribe</a>, <a href="/shift">/shift</a>, and all properties.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.swatch[data-copy]').forEach(el => {
+    el.addEventListener('click', () => {
+      const val = el.getAttribute('data-copy');
+      navigator.clipboard.writeText(val);
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.textContent = 'Copied ' + val;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 1600);
+    });
+  });
+</script>
+
+</body>
+</html>
