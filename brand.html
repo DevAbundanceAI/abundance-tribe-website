@@ -678,7 +678,9 @@ body.light-mode .pill.on-dark { background: rgba(255,255,255,0.05); border-color
 /* Buttons in light */
 body.light-mode .btn.ghost { background: rgba(10,10,10,0.04); color: var(--ink-dark); }
 body.light-mode .btn.ghost:hover { background: rgba(10,10,10,0.08); }
-body.light-mode .btn.outline-pill { background: var(--cream-soft); color: var(--ink-dark); }
+/* In light mode the comp-block is cream-soft — give the pill a darker
+   shade of cream so the outline-pill pops off the card surface. */
+body.light-mode .btn.outline-pill { background: var(--cream); color: var(--ink-dark); }
 
 /* Light-mode subtle elevation on cards */
 body.light-mode .sg-card,
