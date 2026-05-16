@@ -3853,16 +3853,39 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
     const burger = document.getElementById('fn-burger');
     const links = document.querySelectorAll('.fn-links a, .fn-mobile a');
     const sectionIds = ['identity','typography','sections','components','motion','content','rules'];
+    const sections = sectionIds
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
 
-    /* Active-state spy */
-    function setActive() {
-      let active = sectionIds[0];
-      for (const id of sectionIds) {
-        const el = document.getElementById(id);
-        if (el && el.getBoundingClientRect().top < 200) active = id;
-      }
-      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + active));
+    /* Active-state spy — IntersectionObserver picks the section whose
+       top edge has crossed the upper third of the viewport. More
+       reliable than rect polling, fires the moment a section enters
+       the active band. */
+    function setActive(id) {
+      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
     }
+    const visible = new Set();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) visible.add(e.target.id);
+        else visible.delete(e.target.id);
+      });
+      /* Walk the section list in order; pick the LAST one that's in
+         the active band. That's the section currently being read. */
+      let current = sectionIds[0];
+      for (const id of sectionIds) {
+        if (visible.has(id)) current = id;
+      }
+      setActive(current);
+    }, {
+      /* Active band: from 20% down from the top to 70% down — the
+         middle of the screen counts as "you're reading this one." */
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: 0,
+    });
+    sections.forEach(s => io.observe(s));
+    /* Fallback for the very top of the page (no section in the band yet) */
+    setActive(sectionIds[0]);
 
     /* Show on scroll up, hide on scroll down (after 120px scrolled) */
     let lastY = window.scrollY;
@@ -3879,7 +3902,6 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
         nav.classList.remove('hidden');
       }
       lastY = y;
-      setActive();
       ticking = false;
     }
     document.addEventListener('scroll', () => {
@@ -3888,7 +3910,6 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
         ticking = true;
       }
     }, { passive: true });
-    setActive();
 
     /* Mobile burger toggle */
     if (burger && mobile) {
