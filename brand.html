@@ -1460,19 +1460,23 @@ body.light-mode .doc-section .comp-block { color: var(--ink-dark); }
   background: var(--grad-sig); color: var(--cream); border-color: transparent;
 }
 
-/* 2 · .glow — gradient border + faded transparent red INNER GLOW + red
-   text. Mid-weight. Reads as "softly lit from within." */
+/* 2 · .glow — gradient border + faded transparent red INNER GLOW +
+   warm-cream text. Mid-weight. Reads as "softly lit from within."
+   Cream text (not red) so it contrasts against the red glow. */
 .hp .inline-kw.glow {
   background:
     radial-gradient(ellipse 140% 150% at 50% 50%,
-      rgba(237,28,36,0.30) 0%,
-      rgba(237,28,36,0.14) 55%,
-      rgba(237,28,36,0.04) 100%) padding-box,
+      rgba(237,28,36,0.42) 0%,
+      rgba(237,28,36,0.18) 55%,
+      rgba(237,28,36,0.05) 100%) padding-box,
     var(--grad-sig) border-box;
-  color: var(--sig);
-  box-shadow: inset 0 0 14px rgba(237,28,36,0.15);
+  color: #FFE5D8;
+  text-shadow: 0 0 12px rgba(237,28,36,0.55);
+  box-shadow: inset 0 0 16px rgba(237,28,36,0.20);
 }
 body.light-mode .hp .inline-kw.glow {
+  /* Light mode: light pink wash + deep red text (high contrast on
+     the lighter interior). */
   background:
     radial-gradient(ellipse 140% 150% at 50% 50%,
       rgba(237,28,36,0.18) 0%,
@@ -1480,6 +1484,7 @@ body.light-mode .hp .inline-kw.glow {
       transparent 100%) padding-box,
     var(--grad-sig) border-box;
   color: var(--sig-deep);
+  text-shadow: none;
   box-shadow: inset 0 0 12px rgba(237,28,36,0.10);
 }
 
@@ -1519,6 +1524,47 @@ body.light-mode .hp .inline-kw.glow {
   text-transform: uppercase;
   font-weight: 800;
 }
+
+/* Modifier · .text-grad — wrap pill text in <span class="text-grad">
+   to fill it with the red gradient. Pairs with .cream / .ink / .solid
+   when you want the pill to feel branded without a full red bg. */
+.text-grad {
+  background-image: var(--grad-sig);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+          color: transparent;
+}
+
+/* ─── UNDERLINE CALLOUTS · alternative to pills ────────────────────
+   When a pill is too loud, use an underline. Four variants:
+     .uline             → flat tiger's-blood (sig red)
+     .uline.white       → flat cream/ink (mode-aware)
+     .uline.grad        → red gradient bar (FF5733 → 7A0712)
+     .uline.silver      → graphite-shine gradient bar
+   Used inline in headlines or body copy. */
+.uline {
+  text-decoration: underline;
+  text-decoration-color: var(--sig);
+  text-decoration-thickness: 0.14em;
+  text-underline-offset: 0.16em;
+  text-decoration-skip-ink: auto;
+}
+.uline.white {
+  text-decoration-color: var(--ink);
+}
+body.light-mode .uline.white {
+  text-decoration-color: var(--ink-dark);
+}
+.uline.grad, .uline.silver {
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-position: 0 calc(100% + 0.04em);
+  background-size: 100% 0.16em;
+  padding-bottom: 0.08em;
+}
+.uline.grad   { background-image: var(--grad-sig); }
+.uline.silver { background-image: var(--grad-graphite-shine); }
 
 /* Modifier · .silver — swap the red gradient border (or surface) for
    the achromatic graphite-shine. Combine with .filled or default for
@@ -3281,10 +3327,10 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
 
           <div class="hp">
             <span class="hp-tag">PATTERN C</span>
-            <div class="hp-eb">INLINE KEYWORD PILLS · 6 STATES + SILVER MODIFIER</div>
+            <div class="hp-eb">INLINE KEYWORD PILLS · 6 STATES + MODIFIERS</div>
             <div class="hp-h">We build your <span class="inline-kw filled">Ads</span> <span class="inline-kw glow">Funnels</span> <span class="inline-kw">CRM</span> &amp; <span class="inline-kw solid">Copy</span></div>
-            <div class="hp-h" style="margin-top: 14px;">Like an <span class="inline-kw cream">Engine</span> <span class="inline-kw ink">System</span> for <span class="inline-kw silver">Founders</span> <span class="inline-kw silver filled">at Scale</span></div>
-            <div class="hp-note"><strong>.filled</strong> = red gradient surface, cream text (loudest). <strong>.glow</strong> = gradient border + faded transparent red interior glow + red text (mid). <strong>(no class)</strong> = red gradient border, dark interior, red text (quietest). <strong>.solid</strong> = cream fill, red gradient border, red text — pops on dark stages. <strong>.cream</strong> = cream fill, hairline border, red text (restraint). <strong>.ink</strong> = cream fill, hairline border, BLACK text — when red would compete. <strong>.silver</strong> modifier = swap red for graphite-shine (prestige). Pair with <strong>.label</strong> for a 20px-radius uppercase stamp.</div>
+            <div class="hp-h" style="margin-top: 14px;">Like an <span class="inline-kw cream"><span class="text-grad">Engine</span></span> <span class="inline-kw ink">System</span> for <span class="inline-kw silver">Founders</span> <span class="inline-kw silver filled">at Scale</span></div>
+            <div class="hp-note"><strong>.filled</strong> = red gradient surface, cream text (loudest). <strong>.glow</strong> = gradient border + faded red interior glow + warm-cream text (mid). <strong>(no class)</strong> = red gradient border, dark interior, red text (quietest). <strong>.solid</strong> = cream fill, red gradient border, red text. <strong>.cream</strong> = cream fill, hairline, red text. <strong>.ink</strong> = cream fill, hairline, BLACK text. Modifiers: <strong>.silver</strong> swaps red for graphite-shine (prestige), <strong>.label</strong> = 20px-radius uppercase stamp, wrap text in <strong>&lt;span class="text-grad"&gt;</strong> for red gradient text fill on any cream variant (Engine, above).</div>
           </div>
 
           <div class="hp">
@@ -3444,6 +3490,20 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
           <div class="comp-row"><span class="lbl">In paragraph</span><span style="font-family:var(--font-sans);font-size:17px;max-width:54ch;">We replace your <span class="flat-accent">copywriter</span>, your <span class="flat-accent">media buyer</span>, and your <span class="flat-accent">CRM admin</span> with one team.</span></div>
           <div class="comp-row"><span class="lbl">Deep variant</span><span class="flat-accent deep" style="font-size:18px;">Anchor moment</span></div>
           <div class="comp-row"><span class="lbl">When to use</span><span style="font-family:var(--font-sans);font-size:14px;max-width:54ch;line-height:1.5;opacity:0.75;">Body copy with three or more inline emphases (a gradient em on each would compete). Stat callouts inside paragraphs. Inline keyword highlights that aren't a full headline moment.</span></div>
+        </div>
+      </div>
+
+      <!-- UNDERLINE CALLOUTS (softer than pills) -->
+      <div class="doc-block">
+        <h3>Underline callouts · 4 variants</h3>
+        <div class="block-meta">Class: <code>.uline</code> · variants: <code>.uline.white</code>, <code>.uline.grad</code>, <code>.uline.silver</code>. A softer emphasis than a pill — just a line beneath the keyword. Use sparingly in body copy, or in headlines when a pill would be too loud.</div>
+        <div class="comp-block">
+          <div class="comp-row"><span class="lbl">Flat red</span><span style="font-family:var(--font-sans);font-size:24px;font-weight:800;letter-spacing:-0.02em;">We build your <span class="uline">funnel</span>.</span></div>
+          <div class="comp-row"><span class="lbl">Flat white</span><span style="font-family:var(--font-sans);font-size:24px;font-weight:800;letter-spacing:-0.02em;">Built for <span class="uline white">founders</span>.</span></div>
+          <div class="comp-row"><span class="lbl">Red gradient</span><span style="font-family:var(--font-sans);font-size:24px;font-weight:800;letter-spacing:-0.02em;">From <span class="uline grad">zero</span> to scale.</span></div>
+          <div class="comp-row"><span class="lbl">Silver gradient</span><span style="font-family:var(--font-sans);font-size:24px;font-weight:800;letter-spacing:-0.02em;">The <span class="uline silver">prestige</span> tier.</span></div>
+          <div class="comp-row"><span class="lbl">In body</span><span style="font-family:var(--font-sans);font-size:17px;max-width:60ch;line-height:1.55;">A softer emphasis when the page already has a pill nearby — we install <span class="uline">copy</span>, <span class="uline grad">funnels</span>, and <span class="uline silver">systems</span> that compound over time.</span></div>
+          <div class="comp-row"><span class="lbl">When to use</span><span style="font-family:var(--font-sans);font-size:14px;max-width:60ch;line-height:1.5;opacity:0.75;">When a pill would steal too much attention. Underlines read as the brand whispering rather than shouting. Rotate variants for rhythm across a page — flat red is the workhorse, gradient variants are reserved for the "this is the thing" moments.</span></div>
         </div>
       </div>
 
