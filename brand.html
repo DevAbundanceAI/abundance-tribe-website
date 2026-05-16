@@ -1452,6 +1452,17 @@ body.light-mode .doc-section .comp-block { color: var(--ink-dark); }
 .hp .inline-kw.filled {
   background: var(--grad-sig); color: var(--cream); border-color: transparent;
 }
+/* .label = 4th state — wider rounded-rectangle (20px radius). Gradient
+   border + dark interior + vivid red uppercase text. CTA-tag feel for
+   when an inline keyword should read as a STAMP, not a single word. */
+.hp .inline-kw.label {
+  border-radius: 20px;
+  padding: 4px 18px;
+  font-size: 0.7em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
 /* .glow = the mid-weight inline pill. Tiger's-blood interior glow,
    gradient border, warm-cream text. The interior actually GLOWS — a
    strong radial of sig red bleeding outward, with inset shadow to
@@ -1904,11 +1915,16 @@ body.light-mode .hp .inline-kw.glow {
   transition: all 0.2s ease;
   cursor: pointer;
 }
+/* Ghost = quietest button. Dark-mode default is a faint cream-tinted
+   panel on the dark stage; light-mode flips to a faint dark-tinted
+   panel on cream. (The previous rule used dark-on-dark and rendered
+   invisible on the dark stage.) */
 .btn.ghost {
-  background: rgba(10,10,10,0.04);
-  color: var(--ink-dark);
+  background: rgba(255,255,255,0.06);
+  color: var(--ink);
+  border: 1px solid rgba(255,255,255,0.10);
 }
-.btn.ghost:hover { background: rgba(10,10,10,0.08); }
+.btn.ghost:hover { background: rgba(255,255,255,0.10); }
 .btn.dark {
   background: var(--ink-dark);
   color: var(--cream);
@@ -1964,6 +1980,13 @@ body.light-mode .hp .inline-kw.glow {
 }
 .av-cluster .av:first-child { margin-left: 0; }
 .doc-section .av-cluster .av { border-color: var(--surface-1); }
+/* Inside a comp-row, the cluster should occupy the remaining space
+   after the .lbl and center itself horizontally — not hug the label. */
+.comp-row .av-cluster {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
 
 /* Toasts */
 .toast {
@@ -3155,9 +3178,9 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
 
           <div class="hp">
             <span class="hp-tag">PATTERN C</span>
-            <div class="hp-eb">INLINE KEYWORD PILLS · 3 STATES</div>
-            <div class="hp-h">We build your <span class="inline-kw filled">Ads</span> <span class="inline-kw glow">Funnels</span> &amp; <span class="inline-kw">CRM</span></div>
-            <div class="hp-note">Operative nouns become inline pills. <strong>.filled</strong> = full gradient bg (loudest). <strong>.glow</strong> = gradient border + soft inner red glow (mid weight). <strong>(no class)</strong> = gradient border only (quietest). Mix all three across a headline for rhythm.</div>
+            <div class="hp-eb">INLINE KEYWORD PILLS · 4 STATES</div>
+            <div class="hp-h">We build your <span class="inline-kw filled">Ads</span> <span class="inline-kw glow">Funnels</span> <span class="inline-kw">CRM</span> &amp; <span class="inline-kw label">The System</span></div>
+            <div class="hp-note">Operative nouns become inline pills. <strong>.filled</strong> = full gradient bg (loudest). <strong>.glow</strong> = gradient border + soft inner red glow (mid weight). <strong>(no class)</strong> = gradient border only (quietest). <strong>.label</strong> = wider 20px-radius rounded-rectangle with gradient border + uppercase — the "CTA-tag" stamp. Mix across a headline for rhythm.</div>
           </div>
 
           <div class="hp">
