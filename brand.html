@@ -271,6 +271,186 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 }
 .side .side-foot strong { color: var(--ink); font-weight: 600; }
 
+/* ═══════════════════════════════════════════════════════════════════
+   THEME TOGGLE — sticky in sidebar
+   ═══════════════════════════════════════════════════════════════════ */
+.theme-toggle {
+  display: flex;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-pill);
+  padding: 4px;
+  margin-bottom: 28px;
+  cursor: pointer;
+  width: 100%;
+}
+.theme-toggle span {
+  flex: 1;
+  padding: 7px 14px;
+  border-radius: var(--r-pill);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  text-align: center;
+  transition: all 0.25s ease;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+.theme-toggle span svg { width: 13px; height: 13px; }
+.theme-toggle .t-dark {
+  background: var(--grad-sig);
+  color: var(--cream);
+  box-shadow: 0 4px 14px -2px rgba(220,38,38,0.4);
+}
+body.light-mode .theme-toggle .t-dark { background: transparent; box-shadow: none; color: var(--ink-dark-muted); }
+body.light-mode .theme-toggle .t-light {
+  background: var(--grad-sig);
+  color: var(--cream);
+  box-shadow: 0 4px 14px -2px rgba(220,38,38,0.4);
+}
+body.light-mode .theme-toggle { background: rgba(10,10,10,0.04); border-color: var(--hairline-cream); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   LIGHT MODE — class-based overrides on body.light-mode
+   ═══════════════════════════════════════════════════════════════════ */
+body.light-mode .page { background: var(--cream); color: var(--ink-dark); }
+body.light-mode .page::before { background: linear-gradient(90deg, transparent, rgba(10,10,10,0.4) 50%, transparent); }
+
+body.light-mode .side { background: rgba(10,10,10,0.02); border-right-color: var(--hairline-cream); }
+@media (max-width: 980px) { body.light-mode .side { border-right: none; border-bottom-color: var(--hairline-cream); } }
+body.light-mode .side .brand-mark { color: var(--ink-dark); }
+body.light-mode .side .brand-sub { color: var(--ink-dark-muted); }
+body.light-mode .side nav a { color: var(--ink-dark-soft); }
+body.light-mode .side nav a:hover { background: rgba(10,10,10,0.04); color: var(--ink-dark); }
+body.light-mode .side nav a .num { color: var(--ink-dark-muted); }
+body.light-mode .side .side-foot { border-top-color: var(--hairline-cream); color: var(--ink-dark-muted); }
+body.light-mode .side .side-foot strong { color: var(--ink-dark); }
+
+body.light-mode .brand-hero { border-bottom-color: var(--hairline-cream); }
+body.light-mode .brand-hero h1 { color: var(--ink-dark); }
+body.light-mode .brand-hero .lead { color: var(--ink-dark-soft); }
+body.light-mode .brand-hero .lead strong { color: var(--ink-dark); }
+body.light-mode .brand-hero .glow { background: radial-gradient(circle, rgba(220,38,38,0.20), transparent 70%); }
+body.light-mode .brand-hero .glow.bottom { background: radial-gradient(circle, rgba(255,85,48,0.18), transparent 70%); }
+
+body.light-mode .doc-section { background: var(--cream); color: var(--ink-dark); border-bottom-color: var(--hairline-cream); }
+body.light-mode .doc-section h2,
+body.light-mode .doc-section h3,
+body.light-mode .doc-section h4 { color: var(--ink-dark); }
+body.light-mode .doc-section .doc-head .label { color: var(--ink-dark-muted); }
+body.light-mode .doc-section .doc-head .lead { color: var(--ink-dark-soft); }
+body.light-mode .doc-block { border-top-color: var(--hairline-cream); }
+body.light-mode .doc-block .block-meta { color: var(--ink-dark-muted); }
+body.light-mode .doc-block .block-meta code { background: rgba(10,10,10,0.06); color: var(--sig); }
+
+/* Swatch grid in light */
+body.light-mode .doc-section .sw { border-color: var(--hairline-cream); }
+body.light-mode .doc-section .sw .meta { background: var(--cream-soft); }
+body.light-mode .doc-section .sw .meta .nm { color: var(--ink-dark); }
+body.light-mode .doc-section .sw .meta .hex { color: var(--ink-dark-muted); }
+
+body.light-mode .doc-section .grad-strip { border-color: var(--hairline-cream); }
+body.light-mode .doc-section .grad-row .grad-label .gn { color: var(--ink-dark); }
+body.light-mode .doc-section .grad-row .grad-label .gd { color: var(--ink-dark-muted); }
+
+/* Logo cards in light */
+body.light-mode .logo-card { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .logo-card.dark { background: var(--bg); border-color: var(--hairline); }
+body.light-mode .logo-card .word { color: var(--ink-dark); }
+body.light-mode .logo-card.dark .word { color: var(--ink); }
+
+/* Font cards in light */
+body.light-mode .doc-section .font-card { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .doc-section .font-card .sample { color: var(--ink-dark); }
+body.light-mode .doc-section .font-card .info-row { border-top-color: var(--hairline-cream); }
+body.light-mode .doc-section .font-card .info { color: var(--ink-dark-soft); }
+body.light-mode .doc-section .font-card .info .k { color: var(--ink-dark-muted); }
+
+/* Type ramp in light */
+body.light-mode .doc-section .ramp { border-color: var(--hairline-cream); }
+body.light-mode .doc-section .ramp .row { border-bottom-color: var(--hairline-cream); }
+body.light-mode .doc-section .ramp .row .size { color: var(--ink-dark-muted); }
+body.light-mode .doc-section .ramp .row .demo { color: var(--ink-dark); }
+
+/* Headline pattern cards in light */
+body.light-mode .doc-section .hp { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .doc-section .hp .hp-tag { background: rgba(10,10,10,0.06); color: var(--ink-dark-muted); }
+body.light-mode .doc-section .hp .hp-h { color: var(--ink-dark); }
+body.light-mode .doc-section .hp .hp-eb { color: var(--ink-dark-muted); }
+body.light-mode .doc-section .hp .hp-note { color: var(--ink-dark-soft); }
+body.light-mode .doc-section .hp .inline-kw {
+  background:
+    linear-gradient(var(--cream-soft), var(--cream-soft)) padding-box,
+    var(--grad-sig) border-box;
+}
+
+/* Section gallery in light */
+body.light-mode .sg-card { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .sg-card .text .nm { color: var(--ink-dark); }
+body.light-mode .sg-card .text .cls { color: var(--sig); }
+body.light-mode .sg-card .text .usage { color: var(--ink-dark-soft); }
+
+/* Component blocks in light */
+body.light-mode .doc-section .comp-block { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .doc-section .comp-row .lbl { color: var(--ink-dark-muted); }
+body.light-mode .doc-section .av-cluster .av { border-color: var(--cream-soft); }
+
+/* Containers in light (C1-C8) */
+body.light-mode .cont.c1 { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .cont.c2 { background: var(--cream-soft); }
+body.light-mode .cont.c3 {
+  background:
+    linear-gradient(var(--cream-soft), var(--cream-soft)) padding-box,
+    var(--grad-sig) border-box;
+}
+body.light-mode .cont.c4 {
+  background: linear-gradient(180deg, var(--cream-soft) 0%, var(--cream-deep) 100%);
+  border-color: var(--hairline-cream);
+}
+body.light-mode .cont.c5 {
+  background: linear-gradient(180deg, var(--cream-soft) 0%, transparent 100%);
+  border-color: var(--hairline-cream);
+}
+body.light-mode .cont.c6 {
+  background: linear-gradient(180deg, rgba(220,38,38,0.08), rgba(220,38,38,0.01));
+  border-color: rgba(220,38,38,0.32);
+}
+body.light-mode .cont.c7 {
+  background: rgba(255,255,255,0.4);
+  border-color: rgba(10,10,10,0.08);
+}
+body.light-mode .cont .cnm { color: var(--ink-dark); }
+body.light-mode .cont .cdesc { color: var(--ink-dark-soft); }
+body.light-mode .cont .cuse { border-top-color: rgba(10,10,10,0.08); color: var(--sig); }
+body.light-mode .cont.c8 .cnm,
+body.light-mode .cont.c8 .cdesc,
+body.light-mode .cont.c8 .cuse { color: var(--cream); }
+
+/* Motion + content cards in light */
+body.light-mode .mo-card { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .mo-card .text .nm { color: var(--ink-dark); }
+body.light-mode .mo-card .text .usage { color: var(--ink-dark-soft); }
+body.light-mode .cn-card { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .cn-card .text { border-top-color: var(--hairline-cream); }
+body.light-mode .cn-card .text .nm { color: var(--ink-dark); }
+body.light-mode .cn-card .text .meta { color: var(--ink-dark-muted); }
+
+/* Rules in light */
+body.light-mode .doc-section .rule { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .doc-section .rule h3 { color: var(--ink-dark); }
+body.light-mode .doc-section .rule .do { color: var(--ink-dark); }
+body.light-mode .doc-section .rule .dont { color: var(--ink-dark-muted); }
+
+/* Pills in light */
+body.light-mode .pill { background: var(--cream-soft); border-color: var(--hairline-cream); color: var(--ink-dark-soft); }
+body.light-mode .pill.on-dark { background: rgba(255,255,255,0.05); border-color: var(--hairline-strong); color: var(--ink-body); }
+
+/* Buttons in light */
+body.light-mode .btn.ghost { background: rgba(10,10,10,0.04); color: var(--ink-dark); }
+body.light-mode .btn.ghost:hover { background: rgba(10,10,10,0.08); }
+body.light-mode .btn.outline-pill { background: var(--cream-soft); color: var(--ink-dark); }
+
 .main {
   padding: 0;
   overflow-x: hidden;
@@ -1696,7 +1876,19 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
        ═══════════════════════════════════════════════════════════════ -->
   <aside class="side">
     <a class="brand-mark" href="#top">Abundance<em>.</em></a>
-    <div class="brand-sub">Brand System · v1.1 · May 2026</div>
+    <div class="brand-sub">Brand System · v1.2 · May 2026</div>
+
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
+      <span class="t-dark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        DARK
+      </span>
+      <span class="t-light">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        LIGHT
+      </span>
+    </button>
+
     <nav>
       <a href="#identity" class="active"><span class="num">01</span> Identity</a>
       <a href="#typography"><span class="num">02</span> Typography</a>
@@ -2489,6 +2681,20 @@ p strong, .lead strong { color: var(--ink-dark); font-weight: 700; }
 </div>
 
 <script>
+  /* Theme toggle — dark default, persists via localStorage */
+  (function() {
+    const body = document.body;
+    const stored = localStorage.getItem('abundance-brand-theme');
+    if (stored === 'light') body.classList.add('light-mode');
+    const toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const isLight = body.classList.toggle('light-mode');
+        localStorage.setItem('abundance-brand-theme', isLight ? 'light' : 'dark');
+      });
+    }
+  })();
+
   /* Sidebar nav active state */
   const navLinks = document.querySelectorAll('.side nav a');
   const sections = ['identity','typography','sections','components','motion','content','rules'];
