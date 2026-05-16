@@ -8,6 +8,9 @@
 <link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
   @font-face {
     font-family: 'Neo Contact';
@@ -132,6 +135,17 @@
   }
 
   h1, h2, h3 { color: var(--ink); font-weight: 700; letter-spacing: -0.02em; }
+  /* TYPE HIERARCHY:
+       h1 + h3 → Greycliff CF (sans, body family) — confident bold
+       h2      → DM Serif Display (editorial serif) — section authority
+       em      → Neo Contact LT Pro (italic display) — rare hero moments
+     Three voices, weight-matched (DM Serif Display 400 reads as
+     display-heavy due to high contrast, matches Greycliff 700–800). */
+  h2 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
   p { color: var(--ink-body); }
   a { color: inherit; }
 
@@ -284,6 +298,13 @@
     padding: 0.04em 0.4em;
     border-radius: 10px;
     line-height: 1.1;
+  }
+  /* Sig variant — for the highest-emphasis moment.
+     Even louder than the default highlight pill. Use max ONCE per page,
+     and never alongside another .highlight in the same headline. */
+  .highlight.sig {
+    background: var(--grad-sig);
+    color: #FFFFFF;
   }
 
   /* ─── NAV ─── */
