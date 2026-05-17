@@ -1524,6 +1524,166 @@ body.light-mode .hero-04 .left .lead { color: var(--ink-dark-soft); }
 .hero-05 .lead { color: var(--ink-body); max-width: 50ch; font-size: 19px; margin-bottom: 32px; }
 .hero-05 .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
 
+/* HE-07 · centered VSL 16:9 hero */
+.hero-07 { text-align: center; padding-top: clamp(30px, 4vw, 60px); }
+.hero-07::before {
+  content: ''; position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 600px;
+  background: radial-gradient(circle, rgba(179,14,20,0.28), transparent 60%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+.hero-07 > * { position: relative; z-index: 1; }
+.hero-07 .eb { display: block; margin-bottom: 16px; }
+.hero-07 h1 { font-size: clamp(38px, 5vw, 64px); max-width: 22ch; margin: 0 auto 18px; line-height: 1.05; }
+.hero-07 .lead { color: var(--ink-body); max-width: 56ch; margin: 0 auto 36px; font-size: 18px; }
+body.light-mode .hero-07 .lead { color: var(--ink-dark-soft); }
+.hero-07 .vsl-frame {
+  max-width: 920px; margin: 0 auto;
+  aspect-ratio: 16/9;
+  border-radius: var(--r-card);
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 60%, rgba(80,40,30,0.5), transparent 70%),
+    radial-gradient(ellipse 70% 40% at 50% 100%, rgba(179,14,20,0.4), transparent 70%),
+    linear-gradient(160deg, #1a1410, #050505);
+  border: 1px solid var(--hairline-strong);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 50px 120px -20px rgba(0,0,0,0.6), 0 0 60px -10px rgba(179,14,20,0.30);
+  margin-bottom: 32px;
+}
+.hero-07 .vsl-frame::before {
+  content: ''; position: absolute;
+  bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 45%; height: 65%;
+  background: radial-gradient(ellipse 50% 60% at 50% 100%, rgba(0,0,0,0.55), transparent 80%);
+  filter: blur(12px);
+}
+.hero-07 .vsl-frame .play {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 92px; height: 92px; border-radius: 50%;
+  background: var(--grad-sig); color: var(--cream);
+  display: grid; place-items: center;
+  box-shadow: 0 0 60px rgba(179,14,20,0.6);
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
+.hero-07 .vsl-frame .play:hover { transform: translate(-50%, -50%) scale(1.05); }
+.hero-07 .vsl-frame .time-tag { position: absolute; top: 18px; right: 18px; padding: 5px 12px; border-radius: 4px; background: rgba(0,0,0,0.65); font-family: ui-monospace, monospace; font-size: 13px; color: var(--ink); z-index: 2; }
+.hero-07 .vsl-frame .progress { position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: rgba(255,255,255,0.1); z-index: 2; }
+.hero-07 .vsl-frame .progress::after { content: ''; position: absolute; top: 0; left: 0; height: 100%; width: 32%; background: var(--grad-sig); }
+.hero-07 .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* HE-08 · centered 9:16 reel-style VSL */
+.hero-08 { text-align: center; padding-top: clamp(30px, 4vw, 60px); }
+.hero-08::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(179,14,20,0.22), transparent 70%);
+  pointer-events: none;
+}
+.hero-08 > * { position: relative; z-index: 1; }
+.hero-08 h1 { font-size: clamp(36px, 5vw, 60px); max-width: 22ch; margin: 0 auto 14px; }
+.hero-08 .lead { color: var(--ink-body); max-width: 50ch; margin: 0 auto 32px; }
+body.light-mode .hero-08 .lead { color: var(--ink-dark-soft); }
+.hero-08 .grid { display: grid; grid-template-columns: 1fr 280px 1fr; gap: 32px; align-items: center; max-width: 1080px; margin: 0 auto; }
+.hero-08 .reel {
+  aspect-ratio: 9/16;
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(255,140,100,0.20), transparent 65%),
+    linear-gradient(160deg, #1a1410, #0a0808);
+  border: 1px solid var(--hairline-strong);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.5), 0 0 40px rgba(179,14,20,0.30);
+}
+.hero-08 .reel::before {
+  content: ''; position: absolute;
+  bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 60%; height: 70%;
+  background: radial-gradient(ellipse 50% 70% at 50% 100%, rgba(0,0,0,0.5), transparent 80%);
+  filter: blur(10px);
+}
+.hero-08 .reel .play {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--grad-sig); color: var(--cream);
+  display: grid; place-items: center;
+  z-index: 2;
+}
+.hero-08 .reel .duration { position: absolute; top: 14px; right: 14px; padding: 3px 8px; border-radius: 4px; background: rgba(0,0,0,0.6); font-family: ui-monospace, monospace; font-size: 11px; color: var(--ink); z-index: 2; }
+.hero-08 .reel .cap { position: absolute; bottom: 18px; left: 16px; right: 16px; font-weight: 800; font-size: 15px; color: var(--ink); z-index: 2; text-align: left; }
+.hero-08 .reel .cap em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-08 .side { text-align: left; }
+.hero-08 .side .stat-l { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; margin-bottom: 6px; }
+.hero-08 .side .stat-n { font-family: var(--font-sans); font-weight: 800; font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.03em; line-height: 1; }
+.hero-08 .side .stat-n em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-08 .side .stat-row { padding: 14px 0; border-bottom: 1px solid var(--hairline); }
+.hero-08 .side .stat-row:last-child { border-bottom: none; }
+.hero-08 .side .stat-row.right { text-align: right; }
+body.light-mode .hero-08 .side .stat-row { border-bottom-color: var(--hairline-cream); }
+body.light-mode .hero-08 .side .stat-l { color: var(--ink-dark-muted); }
+.hero-08 .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+@media (max-width: 820px) { .hero-08 .grid { grid-template-columns: 1fr; } .hero-08 .reel { max-width: 320px; margin: 0 auto; } .hero-08 .side { text-align: center; } .hero-08 .side .stat-row.right { text-align: center; } }
+
+/* HE-09 · centered VSL with stat strip below */
+.hero-09 { text-align: center; }
+.hero-09::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 50% 30%, rgba(179,14,20,0.22), transparent 70%);
+  pointer-events: none;
+}
+.hero-09 > * { position: relative; z-index: 1; }
+.hero-09 .eb { display: block; margin-bottom: 14px; }
+.hero-09 h1 { font-size: clamp(36px, 4.5vw, 56px); max-width: 22ch; margin: 0 auto 28px; }
+.hero-09 .vsl-frame {
+  max-width: 800px; margin: 0 auto 32px;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 60%, rgba(80,40,30,0.55), transparent 70%),
+    radial-gradient(ellipse 70% 40% at 50% 100%, rgba(179,14,20,0.45), transparent 70%),
+    linear-gradient(160deg, #1a1410, #050505);
+  border: 1px solid var(--hairline-strong);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.55);
+}
+.hero-09 .vsl-frame::before {
+  content: ''; position: absolute;
+  bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 50%; height: 65%;
+  background: radial-gradient(ellipse 50% 60% at 50% 100%, rgba(0,0,0,0.5), transparent 80%);
+  filter: blur(10px);
+}
+.hero-09 .vsl-frame .play {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 76px; height: 76px; border-radius: 50%;
+  background: var(--grad-sig); color: var(--cream);
+  display: grid; place-items: center;
+  box-shadow: 0 0 40px rgba(179,14,20,0.55);
+  z-index: 2;
+}
+.hero-09 .vsl-frame .badge { position: absolute; top: 16px; left: 16px; padding: 5px 12px; border-radius: var(--r-pill); background: rgba(179,14,20,0.85); color: var(--cream); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; z-index: 2; }
+.hero-09 .vsl-frame .duration { position: absolute; top: 16px; right: 16px; padding: 4px 10px; border-radius: 4px; background: rgba(0,0,0,0.6); font-family: ui-monospace, monospace; font-size: 12px; color: var(--ink); z-index: 2; }
+.hero-09 .strip {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  padding: 22px 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  max-width: 800px; margin: 0 auto 28px;
+}
+.hero-09 .strip > div { padding: 0 14px; border-right: 1px solid var(--hairline); }
+.hero-09 .strip > div:last-child { border-right: none; }
+.hero-09 .strip .n { font-family: var(--font-sans); font-weight: 800; font-size: clamp(20px, 2.4vw, 28px); letter-spacing: -0.02em; }
+.hero-09 .strip .n em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-09 .strip .l { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); margin-top: 4px; font-weight: 700; }
+body.light-mode .hero-09 .strip { border-color: var(--hairline-cream); }
+body.light-mode .hero-09 .strip > div { border-color: var(--hairline-cream); }
+body.light-mode .hero-09 .strip .l { color: var(--ink-dark-muted); }
+.hero-09 .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+@media (max-width: 820px) { .hero-09 .strip { grid-template-columns: 1fr 1fr; } .hero-09 .strip > div { border-right: none; padding: 12px; } }
+
 /* HE-06 · hero with inline application form */
 .hero-06 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; min-height: 540px; }
 .hero-06 .left h1 { font-size: clamp(38px, 5vw, 64px); margin: 18px 0; }
@@ -2265,6 +2425,912 @@ body.light-mode .faq-05 .tile p { color: var(--ink-dark-soft); }
 body.light-mode .faq-06 .qa { background: var(--cream-soft); border-color: var(--hairline-cream); }
 body.light-mode .faq-06 .qa p { color: var(--ink-dark-soft); }
 
+/* ═══════════════════════════════════════════════════════════════════
+   v1.3 — DR ESSENTIALS + PAGE FURNITURE
+   Stats Banner, Value Stack, Bonus Stack, Guarantee Full, Urgency,
+   Founder Story, Transformation Promise, Methodology, Case Study,
+   Application Form, Announcement Bar, Header, Footer, Sticky CTA
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── 11 · STATS BANNER STRIP ─────────────────────────────────────── */
+.stats-01 { padding: 40px clamp(20px, 4vw, 64px); }
+.stats-01 .strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 32px 0; }
+.stats-01 .strip > div { padding: 0 16px; border-right: 1px solid var(--hairline); text-align: center; }
+.stats-01 .strip > div:last-child { border-right: none; }
+.stats-01 .strip .n { font-family: var(--font-sans); font-weight: 800; font-size: clamp(32px, 4vw, 52px); letter-spacing: -0.03em; line-height: 1; }
+.stats-01 .strip .n em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.stats-01 .strip .l { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); margin-top: 8px; font-weight: 700; }
+body.light-mode .stats-01 .strip, body.light-mode .stats-01 .strip > div { border-color: var(--hairline-cream); }
+body.light-mode .stats-01 .strip .l { color: var(--ink-dark-muted); }
+@media (max-width: 720px) { .stats-01 .strip { grid-template-columns: 1fr 1fr; } .stats-01 .strip > div { border-right: none; padding: 14px; } }
+
+.stats-02 {
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 50%, rgba(179,14,20,0.30), transparent 70%),
+    var(--bg);
+  text-align: center;
+}
+body.light-mode .stats-02 { background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(179,14,20,0.20), transparent 70%), var(--cream); }
+.stats-02 .eb { display: block; margin-bottom: 30px; }
+.stats-02 .strip { display: flex; align-items: baseline; justify-content: center; gap: clamp(30px, 5vw, 80px); flex-wrap: wrap; }
+.stats-02 .strip > div { text-align: center; }
+.stats-02 .strip .n { font-family: var(--font-sans); font-weight: 800; font-size: clamp(48px, 7vw, 92px); letter-spacing: -0.04em; line-height: 1; }
+.stats-02 .strip .n em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig-hero); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.stats-02 .strip .l { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); margin-top: 10px; font-weight: 700; }
+body.light-mode .stats-02 .strip .l { color: var(--ink-dark-muted); }
+
+.stats-03 .strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.stats-03 .tile {
+  padding: 24px 22px;
+  border-radius: var(--r-card);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+  text-align: center;
+}
+.stats-03 .tile .ic { width: 36px; height: 36px; margin: 0 auto 12px; border-radius: 10px; background: rgba(179,14,20,0.14); border: 1px solid rgba(179,14,20,0.30); display: grid; place-items: center; color: var(--sig); font-weight: 800; }
+.stats-03 .tile .n { font-family: var(--font-sans); font-weight: 800; font-size: 28px; letter-spacing: -0.03em; }
+.stats-03 .tile .n em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.stats-03 .tile .l { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); margin-top: 6px; font-weight: 700; }
+body.light-mode .stats-03 .tile { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .stats-03 .tile .l { color: var(--ink-dark-muted); }
+@media (max-width: 1100px) { .stats-03 .strip { grid-template-columns: 1fr 1fr 1fr; } }
+@media (max-width: 480px) { .stats-03 .strip { grid-template-columns: 1fr 1fr; } }
+
+/* ── 12 · VALUE STACK ────────────────────────────────────────────── */
+.value-01 { text-align: center; }
+.value-01 .eb { display: block; margin-bottom: 14px; }
+.value-01 h2 { font-size: clamp(34px, 4vw, 52px); margin: 0 auto 40px; max-width: 24ch; }
+.value-01 .stack { max-width: 720px; margin: 0 auto; }
+.value-01 .item {
+  display: grid; grid-template-columns: 1fr auto; gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--hairline);
+  text-align: left; align-items: center;
+}
+.value-01 .item .what strong { display: block; font-size: 17px; margin-bottom: 4px; }
+.value-01 .item .what span { font-size: 14px; color: var(--ink-body); }
+.value-01 .item .val { font-family: var(--font-sans); font-weight: 800; font-size: 22px; letter-spacing: -0.02em; }
+.value-01 .total {
+  margin-top: 28px;
+  padding: 28px;
+  border-radius: var(--r-card);
+  background: linear-gradient(180deg, rgba(179,14,20,0.16), rgba(179,14,20,0.02));
+  border: 1px solid rgba(179,14,20,0.30);
+  display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; text-align: left;
+}
+.value-01 .total .lbl { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; margin-bottom: 4px; }
+.value-01 .total strong { font-size: 22px; }
+.value-01 .total .crossed { text-decoration: line-through; color: var(--ink-muted); font-size: 22px; margin-right: 10px; }
+.value-01 .total .your {
+  font-family: var(--font-sans); font-weight: 800;
+  font-size: clamp(36px, 4vw, 52px); letter-spacing: -0.03em;
+  background-image: var(--grad-sig-hero);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.value-01 .pitch { font-size: 14px; color: var(--ink-body); margin-top: 6px; }
+body.light-mode .value-01 .item { border-bottom-color: var(--hairline-cream); }
+body.light-mode .value-01 .item .what span, body.light-mode .value-01 .pitch { color: var(--ink-dark-soft); }
+body.light-mode .value-01 .total .lbl, body.light-mode .value-01 .total .crossed { color: var(--ink-dark-muted); }
+
+.value-02 .eb { display: block; margin-bottom: 14px; }
+.value-02 h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 40px; max-width: 24ch; }
+.value-02 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.value-02 .card {
+  padding: 26px;
+  border-radius: var(--r-card);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.value-02 .card .ic {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: rgba(179,14,20,0.14);
+  border: 1px solid rgba(179,14,20,0.30);
+  display: grid; place-items: center;
+  color: var(--sig); font-weight: 800;
+}
+.value-02 .card h3 { font-size: 18px; }
+.value-02 .card p { font-size: 14px; color: var(--ink-body); }
+.value-02 .card .row { display: flex; justify-content: space-between; align-items: baseline; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--hairline); }
+.value-02 .card .row .lbl { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; }
+.value-02 .card .row .val { font-family: var(--font-sans); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.value-02 .summary {
+  margin-top: 22px;
+  padding: 32px;
+  border-radius: var(--r-stage);
+  background: linear-gradient(180deg, rgba(179,14,20,0.16), rgba(179,14,20,0.02));
+  border: 1px solid rgba(179,14,20,0.30);
+  text-align: center;
+  box-shadow: 0 30px 80px -20px rgba(179,14,20,0.35);
+}
+.value-02 .summary .crossed { font-size: 18px; color: var(--ink-muted); text-decoration: line-through; }
+.value-02 .summary .your { font-family: var(--font-sans); font-weight: 800; font-size: clamp(48px, 6vw, 84px); letter-spacing: -0.04em; line-height: 1; }
+.value-02 .summary .your em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig-hero); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.value-02 .summary .desc { color: var(--ink-body); margin-top: 14px; }
+body.light-mode .value-02 .card { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .value-02 .card p { color: var(--ink-dark-soft); }
+body.light-mode .value-02 .card .row { border-top-color: var(--hairline-cream); }
+body.light-mode .value-02 .card .row .lbl, body.light-mode .value-02 .summary .crossed { color: var(--ink-dark-muted); }
+body.light-mode .value-02 .summary .desc { color: var(--ink-dark-soft); }
+@media (max-width: 720px) { .value-02 .grid { grid-template-columns: 1fr; } }
+
+.value-03 { text-align: center; }
+.value-03 .eb { display: block; margin-bottom: 14px; }
+.value-03 h2 { font-size: clamp(34px, 4vw, 52px); margin: 0 auto 40px; max-width: 22ch; }
+.value-03 .ladder { max-width: 640px; margin: 0 auto 32px; display: flex; flex-direction: column; gap: 8px; }
+.value-03 .ladder .lvl { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; padding: 14px 22px; background: rgba(255,255,255,0.04); border: 1px solid var(--hairline); border-radius: var(--r-card); text-align: left; }
+.value-03 .ladder .lvl .what { display: flex; gap: 12px; align-items: center; }
+.value-03 .ladder .lvl .ck { width: 24px; height: 24px; border-radius: 50%; background: var(--grad-sig); color: var(--cream); display: grid; place-items: center; font-weight: 800; font-size: 13px; flex-shrink: 0; }
+.value-03 .ladder .lvl strong { font-size: 15px; }
+.value-03 .ladder .lvl .arr { color: var(--ink-muted); }
+.value-03 .ladder .lvl .val { font-family: var(--font-sans); font-weight: 800; font-size: 17px; letter-spacing: -0.02em; text-align: right; }
+.value-03 .total-bar {
+  padding: 24px 28px;
+  border-radius: var(--r-card);
+  background: var(--grad-sig);
+  color: var(--cream);
+  display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; text-align: left;
+  box-shadow: 0 20px 60px -16px rgba(179,14,20,0.45);
+}
+.value-03 .total-bar .lbl { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; opacity: 0.85; }
+.value-03 .total-bar strong { font-size: 20px; }
+.value-03 .total-bar .val { font-family: var(--font-sans); font-weight: 800; font-size: clamp(28px, 3.5vw, 44px); letter-spacing: -0.03em; }
+body.light-mode .value-03 .ladder .lvl { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .value-03 .ladder .lvl .arr { color: var(--ink-dark-muted); }
+
+/* ── 13 · BONUS STACK ────────────────────────────────────────────── */
+.bonus-01 .eb { display: block; margin-bottom: 14px; }
+.bonus-01 h2 { font-size: clamp(34px, 4vw, 52px); margin-bottom: 12px; max-width: 22ch; }
+.bonus-01 .lead { color: var(--ink-body); margin-bottom: 40px; max-width: 56ch; }
+body.light-mode .bonus-01 .lead { color: var(--ink-dark-soft); }
+.bonus-01 .stack { display: flex; flex-direction: column; gap: 16px; max-width: 800px; }
+.bonus-01 .bonus {
+  display: grid; grid-template-columns: 80px 1fr auto; gap: 22px;
+  padding: 22px 26px;
+  border-radius: var(--r-card);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+  align-items: center;
+}
+.bonus-01 .bonus .tag {
+  width: 60px; height: 60px;
+  border-radius: 14px;
+  background: linear-gradient(160deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02));
+  border: 1.5px solid rgba(255,255,255,0.25);
+  display: grid; place-items: center;
+  font-family: var(--font-display); font-style: italic;
+  font-size: 28px;
+  background-image: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 14px rgba(179,14,20,0.4));
+}
+.bonus-01 .bonus .what strong { display: block; font-size: 17px; margin-bottom: 2px; }
+.bonus-01 .bonus .what .ws { font-size: 13px; color: var(--ink-muted); letter-spacing: 0.06em; }
+.bonus-01 .bonus .what p { font-size: 14px; color: var(--ink-body); margin-top: 6px; }
+.bonus-01 .bonus .price { text-align: right; }
+.bonus-01 .bonus .price .crossed { text-decoration: line-through; color: var(--ink-muted); font-size: 14px; display: block; }
+.bonus-01 .bonus .price .val { font-family: var(--font-sans); font-weight: 800; font-size: 20px; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+body.light-mode .bonus-01 .bonus { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .bonus-01 .bonus .what .ws, body.light-mode .bonus-01 .bonus .price .crossed { color: var(--ink-dark-muted); }
+body.light-mode .bonus-01 .bonus .what p { color: var(--ink-dark-soft); }
+@media (max-width: 640px) { .bonus-01 .bonus { grid-template-columns: 56px 1fr; } .bonus-01 .bonus .price { grid-column: 1 / -1; text-align: left; padding-top: 8px; border-top: 1px solid var(--hairline); } }
+
+.bonus-02 { text-align: center; }
+.bonus-02 .eb { display: block; margin-bottom: 14px; }
+.bonus-02 h2 { font-size: clamp(32px, 4vw, 48px); margin: 0 auto 40px; max-width: 22ch; }
+.bonus-02 .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; text-align: left; }
+.bonus-02 .b {
+  position: relative;
+  padding: 30px 26px;
+  border-radius: var(--r-card);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.bonus-02 .b .badge {
+  position: absolute; top: -10px; left: 22px;
+  padding: 4px 12px; border-radius: var(--r-pill);
+  background: var(--grad-sig); color: var(--cream);
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.16em; text-transform: uppercase;
+}
+.bonus-02 .b h3 { font-size: 18px; margin-top: 8px; }
+.bonus-02 .b p { font-size: 14px; color: var(--ink-body); }
+.bonus-02 .b .val { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--hairline); display: flex; justify-content: space-between; align-items: baseline; }
+.bonus-02 .b .val .crossed { font-size: 13px; color: var(--ink-muted); text-decoration: line-through; }
+.bonus-02 .b .val .free { font-family: var(--font-sans); font-weight: 800; font-size: 17px; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+body.light-mode .bonus-02 .b { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .bonus-02 .b p { color: var(--ink-dark-soft); }
+body.light-mode .bonus-02 .b .val { border-top-color: var(--hairline-cream); }
+body.light-mode .bonus-02 .b .val .crossed { color: var(--ink-dark-muted); }
+@media (max-width: 820px) { .bonus-02 .grid { grid-template-columns: 1fr; } }
+
+.bonus-03 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.bonus-03 .left .eb { display: block; margin-bottom: 14px; }
+.bonus-03 .left h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 18px; }
+.bonus-03 .left p { color: var(--ink-body); }
+.bonus-03 .left .total-pill { display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px; border-radius: var(--r-pill); background: var(--grad-sig); color: var(--cream); font-weight: 700; margin-top: 22px; }
+body.light-mode .bonus-03 .left p { color: var(--ink-dark-soft); }
+.bonus-03 .right { display: flex; flex-direction: column; gap: 10px; }
+.bonus-03 .bonus-line {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center;
+  padding: 16px 20px;
+  border-radius: var(--r-card);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+}
+.bonus-03 .bonus-line .check { width: 28px; height: 28px; border-radius: 50%; background: var(--grad-sig); color: var(--cream); display: grid; place-items: center; font-weight: 800; flex-shrink: 0; }
+.bonus-03 .bonus-line strong { font-size: 14px; }
+.bonus-03 .bonus-line span { display: block; font-size: 12px; color: var(--ink-muted); }
+.bonus-03 .bonus-line .val { font-family: var(--font-sans); font-weight: 800; font-size: 16px; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+body.light-mode .bonus-03 .bonus-line { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .bonus-03 .bonus-line span { color: var(--ink-dark-muted); }
+@media (max-width: 820px) { .bonus-03 { grid-template-columns: 1fr; } }
+
+/* ── 14 · GUARANTEE FULL ─────────────────────────────────────────── */
+.guarantee-01 { text-align: center; padding-top: clamp(80px, 8vw, 130px); padding-bottom: clamp(80px, 8vw, 130px); }
+.guarantee-01::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(179,14,20,0.25), transparent 70%);
+  pointer-events: none;
+}
+.guarantee-01 > * { position: relative; z-index: 1; }
+.guarantee-01 .shield {
+  width: 110px; height: 130px;
+  margin: 0 auto 28px;
+  display: grid; place-items: center;
+  background: linear-gradient(160deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 2px solid rgba(255,255,255,0.20);
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  filter: drop-shadow(0 16px 40px rgba(179,14,20,0.5));
+  position: relative;
+}
+.guarantee-01 .shield::before {
+  content: '✓';
+  font-family: var(--font-sans); font-weight: 800;
+  font-size: 48px;
+  background-image: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.guarantee-01 .eb { display: block; margin-bottom: 16px; }
+.guarantee-01 h2 { font-size: clamp(36px, 5vw, 64px); margin: 0 auto 28px; max-width: 20ch; }
+.guarantee-01 .body { max-width: 60ch; margin: 0 auto; font-size: 17px; color: var(--ink-body); line-height: 1.65; }
+.guarantee-01 .body p + p { margin-top: 18px; }
+.guarantee-01 .sig { margin-top: 32px; font-family: var(--font-display); font-style: italic; font-size: 22px; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.guarantee-01 .name { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; margin-top: 6px; }
+body.light-mode .guarantee-01 .body { color: var(--ink-dark-soft); }
+body.light-mode .guarantee-01 .name { color: var(--ink-dark-muted); }
+
+.guarantee-02 { display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: start; }
+.guarantee-02 .stamp {
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: linear-gradient(160deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02));
+  border: 3px solid var(--sig);
+  display: grid; place-items: center;
+  text-align: center;
+  font-family: var(--font-display); font-style: italic;
+  background-image: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  font-size: 38px;
+  filter: drop-shadow(0 16px 40px rgba(179,14,20,0.4));
+  flex-shrink: 0;
+  position: relative;
+}
+.guarantee-02 .stamp::after { content: ''; position: absolute; inset: 8px; border: 1px dashed rgba(179,14,20,0.4); border-radius: 50%; }
+.guarantee-02 .right .eb { display: block; margin-bottom: 12px; }
+.guarantee-02 .right h2 { font-size: clamp(28px, 3.5vw, 40px); margin-bottom: 16px; }
+.guarantee-02 .right p { color: var(--ink-body); font-size: 16px; margin-bottom: 14px; line-height: 1.6; }
+.guarantee-02 .right .pts { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+.guarantee-02 .right .pts li { position: relative; padding-left: 26px; font-size: 15px; color: var(--ink-body); }
+.guarantee-02 .right .pts li::before { content: '✓'; position: absolute; left: 0; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800; }
+body.light-mode .guarantee-02 .right p, body.light-mode .guarantee-02 .right .pts li { color: var(--ink-dark-soft); }
+@media (max-width: 720px) { .guarantee-02 { grid-template-columns: 1fr; text-align: center; } .guarantee-02 .stamp { margin: 0 auto; } .guarantee-02 .right .pts { text-align: left; } }
+
+.guarantee-03 .card {
+  max-width: 820px; margin: 0 auto;
+  padding: 56px 48px;
+  border-radius: var(--r-stage);
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(179,14,20,0.20), transparent 70%),
+    rgba(255,255,255,0.03);
+  border: 1px solid rgba(179,14,20,0.30);
+  box-shadow: 0 40px 120px -20px rgba(179,14,20,0.45);
+  position: relative;
+}
+body.light-mode .guarantee-03 .card { background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(179,14,20,0.12), transparent 70%), var(--cream-soft); }
+.guarantee-03 .badge-row { display: flex; gap: 18px; margin-bottom: 28px; flex-wrap: wrap; }
+.guarantee-03 .b-tag { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: var(--r-pill); background: rgba(179,14,20,0.16); border: 1px solid rgba(179,14,20,0.30); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sig); }
+.guarantee-03 h2 { font-size: clamp(28px, 3.5vw, 44px); margin-bottom: 18px; }
+.guarantee-03 .body { color: var(--ink-body); font-size: 16px; line-height: 1.6; }
+.guarantee-03 .body p + p { margin-top: 14px; }
+.guarantee-03 .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--hairline); }
+.guarantee-03 .three .pt strong { display: block; font-size: 14px; margin-bottom: 4px; }
+.guarantee-03 .three .pt span { font-size: 13px; color: var(--ink-muted); }
+body.light-mode .guarantee-03 .body { color: var(--ink-dark-soft); }
+body.light-mode .guarantee-03 .three { border-top-color: var(--hairline-cream); }
+body.light-mode .guarantee-03 .three .pt span { color: var(--ink-dark-muted); }
+@media (max-width: 720px) { .guarantee-03 .three { grid-template-columns: 1fr; } }
+
+/* ── 15 · URGENCY / SCARCITY ─────────────────────────────────────── */
+.urgent-01 { text-align: center; }
+.urgent-01 .eb { display: block; margin-bottom: 14px; }
+.urgent-01 h2 { font-size: clamp(34px, 4vw, 52px); margin: 0 auto 32px; max-width: 22ch; }
+.urgent-01 .countdown { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+.urgent-01 .seg {
+  min-width: 100px;
+  padding: 22px 18px;
+  border-radius: var(--r-card);
+  background: linear-gradient(180deg, rgba(179,14,20,0.14), rgba(179,14,20,0.02));
+  border: 1px solid rgba(179,14,20,0.30);
+}
+.urgent-01 .seg .n { font-family: var(--font-sans); font-weight: 800; font-size: 44px; letter-spacing: -0.04em; line-height: 1; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.urgent-01 .seg .l { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-muted); margin-top: 8px; font-weight: 700; }
+.urgent-01 .meta { color: var(--ink-body); margin-bottom: 24px; }
+body.light-mode .urgent-01 .meta { color: var(--ink-dark-soft); }
+body.light-mode .urgent-01 .seg .l { color: var(--ink-dark-muted); }
+
+.urgent-02 .card {
+  max-width: 720px; margin: 0 auto;
+  padding: 40px;
+  border-radius: var(--r-card);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+  text-align: center;
+}
+body.light-mode .urgent-02 .card { background: var(--cream-soft); border-color: var(--hairline-cream); }
+.urgent-02 .eb { display: block; margin-bottom: 14px; }
+.urgent-02 h2 { font-size: clamp(28px, 3.5vw, 40px); margin-bottom: 20px; }
+.urgent-02 .seats {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  margin-bottom: 24px;
+}
+.urgent-02 .seat {
+  width: 30px; height: 40px;
+  border-radius: 6px 6px 12px 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--hairline);
+}
+.urgent-02 .seat.taken {
+  background: var(--grad-sig);
+  border-color: transparent;
+  box-shadow: 0 4px 12px -2px rgba(179,14,20,0.4);
+}
+.urgent-02 .meta { color: var(--ink-body); font-size: 15px; max-width: 48ch; margin: 0 auto 22px; }
+body.light-mode .urgent-02 .meta { color: var(--ink-dark-soft); }
+
+.urgent-03 { text-align: center; }
+.urgent-03 .pulse {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 22px;
+  border-radius: var(--r-pill);
+  background: rgba(179,14,20,0.16);
+  border: 1px solid rgba(179,14,20,0.30);
+  color: var(--sig-highlight);
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.urgent-03 .pulse .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--sig);
+  box-shadow: 0 0 12px var(--sig);
+  animation: urg-pulse 1.4s ease-in-out infinite;
+}
+@keyframes urg-pulse {
+  0%, 100% { box-shadow: 0 0 8px var(--sig); transform: scale(1); }
+  50% { box-shadow: 0 0 20px var(--sig); transform: scale(1.15); }
+}
+.urgent-03 h2 { font-size: clamp(34px, 4vw, 52px); margin: 0 auto 18px; max-width: 22ch; }
+.urgent-03 .meta { color: var(--ink-body); margin-bottom: 24px; }
+body.light-mode .urgent-03 .meta { color: var(--ink-dark-soft); }
+.urgent-03 .progress-bar {
+  max-width: 480px; height: 12px;
+  margin: 0 auto 14px;
+  border-radius: var(--r-pill);
+  background: rgba(255,255,255,0.06);
+  overflow: hidden;
+  position: relative;
+}
+.urgent-03 .progress-bar::after {
+  content: ''; position: absolute; left: 0; top: 0; height: 100%;
+  width: 78%;
+  background: var(--grad-sig);
+  border-radius: var(--r-pill);
+  box-shadow: 0 0 12px rgba(179,14,20,0.55);
+}
+body.light-mode .urgent-03 .progress-bar { background: rgba(10,10,10,0.08); }
+.urgent-03 .progress-meta { font-size: 13px; color: var(--ink-muted); }
+body.light-mode .urgent-03 .progress-meta { color: var(--ink-dark-muted); }
+
+/* ── 16 · FOUNDER STORY ──────────────────────────────────────────── */
+.founder-01 { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: center; }
+.founder-01 .portrait-big {
+  aspect-ratio: 4/5;
+  border-radius: var(--r-card);
+  background:
+    radial-gradient(ellipse 40% 30% at 35% 25%, rgba(255,200,180,0.85), transparent 65%),
+    radial-gradient(ellipse 60% 50% at 50% 85%, rgba(80,30,20,0.7), transparent 70%),
+    linear-gradient(160deg, #FF7A55, #B30E14);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.5);
+  position: relative;
+}
+.founder-01 .portrait-big .name-tag {
+  position: absolute; bottom: 18px; left: 18px;
+  padding: 8px 14px; border-radius: var(--r-pill);
+  background: rgba(0,0,0,0.45);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  font-size: 13px; font-weight: 600; color: var(--cream);
+}
+.founder-01 .right .eb { display: block; margin-bottom: 14px; }
+.founder-01 .right h2 { font-size: clamp(34px, 4vw, 52px); margin-bottom: 22px; max-width: 22ch; }
+.founder-01 .right p { color: var(--ink-body); font-size: 17px; line-height: 1.65; margin-bottom: 14px; }
+.founder-01 .right .sig { margin-top: 24px; font-family: var(--font-display); font-style: italic; font-size: 26px; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.founder-01 .right .title { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; margin-top: 4px; }
+body.light-mode .founder-01 .right p { color: var(--ink-dark-soft); }
+body.light-mode .founder-01 .right .title { color: var(--ink-dark-muted); }
+@media (max-width: 820px) { .founder-01 { grid-template-columns: 1fr; } .founder-01 .portrait-big { max-width: 320px; } }
+
+.founder-02 { text-align: center; }
+.founder-02 .portrait-round {
+  width: 140px; height: 140px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse 40% 30% at 35% 25%, rgba(255,200,180,0.8), transparent 65%),
+    radial-gradient(ellipse 60% 50% at 50% 85%, rgba(80,30,20,0.65), transparent 70%),
+    linear-gradient(160deg, #FF7A55, #B30E14);
+  border: 4px solid rgba(255,255,255,0.10);
+  box-shadow: 0 16px 48px -10px rgba(0,0,0,0.5);
+}
+.founder-02 .eb { display: block; margin-bottom: 14px; }
+.founder-02 h2 { font-size: clamp(28px, 3.5vw, 40px); margin: 0 auto 14px; max-width: 24ch; }
+.founder-02 .quote { font-family: var(--font-sans); font-weight: 800; font-size: clamp(22px, 2.6vw, 30px); letter-spacing: -0.02em; line-height: 1.25; max-width: 30ch; margin: 0 auto 24px; }
+.founder-02 .quote em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.founder-02 .sig-row { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; font-size: 14px; color: var(--ink-body); }
+.founder-02 .sig-row strong { color: inherit; }
+body.light-mode .founder-02 .sig-row { color: var(--ink-dark-soft); }
+
+.founder-03 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: stretch; }
+.founder-03 .gallery {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+}
+.founder-03 .gallery .photo {
+  aspect-ratio: 1/1;
+  border-radius: var(--r-card);
+  background: linear-gradient(160deg, #FF7A55, #B30E14);
+}
+.founder-03 .gallery .photo:nth-child(1) { background: radial-gradient(ellipse 40% 30% at 35% 25%, rgba(255,200,180,0.7), transparent 65%), linear-gradient(160deg, #FF7A55, #B30E14); }
+.founder-03 .gallery .photo:nth-child(2) { background: radial-gradient(ellipse 40% 30% at 65% 30%, rgba(180,200,220,0.65), transparent 65%), linear-gradient(160deg, #5D7A95, #1F2A38); }
+.founder-03 .gallery .photo:nth-child(3) { background: radial-gradient(ellipse 40% 30% at 40% 40%, rgba(255,230,200,0.6), transparent 65%), linear-gradient(160deg, #C49A6B, #5A3A1E); }
+.founder-03 .gallery .photo:nth-child(4) {
+  background: linear-gradient(160deg, var(--surface-2), var(--surface-1));
+  display: grid; place-items: center;
+  font-family: var(--font-display); font-style: italic; font-size: 40px;
+  background-image: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  border: 1px solid var(--hairline);
+}
+.founder-03 .right { display: flex; flex-direction: column; justify-content: center; }
+.founder-03 .right .eb { display: block; margin-bottom: 14px; }
+.founder-03 .right h2 { font-size: clamp(30px, 4vw, 44px); margin-bottom: 18px; }
+.founder-03 .right p { color: var(--ink-body); font-size: 16px; line-height: 1.6; margin-bottom: 12px; }
+body.light-mode .founder-03 .right p { color: var(--ink-dark-soft); }
+@media (max-width: 820px) { .founder-03 { grid-template-columns: 1fr; } }
+
+/* ── 17 · TRANSFORMATION PROMISE ─────────────────────────────────── */
+.trans-01 { text-align: center; }
+.trans-01::before { content: ''; position: absolute; inset: 0; background: var(--grad-horizon); pointer-events: none; }
+.trans-01 > * { position: relative; z-index: 1; }
+.trans-01 .eb { display: block; margin-bottom: 14px; }
+.trans-01 h2 { font-size: clamp(34px, 4.5vw, 56px); margin: 0 auto 40px; max-width: 22ch; }
+.trans-01 .row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 28px; align-items: stretch; max-width: 900px; margin: 0 auto; }
+.trans-01 .panel { padding: 36px 30px; border-radius: var(--r-card); border: 1px solid var(--hairline); background: rgba(255,255,255,0.04); text-align: left; }
+.trans-01 .panel.after { background: linear-gradient(180deg, rgba(179,14,20,0.16), rgba(179,14,20,0.02)); border-color: rgba(179,14,20,0.30); box-shadow: 0 20px 60px -16px rgba(179,14,20,0.35); }
+.trans-01 .panel .lbl { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--ink-muted); margin-bottom: 14px; }
+.trans-01 .panel.after .lbl { background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.trans-01 .panel h3 { font-size: 22px; margin-bottom: 16px; }
+.trans-01 .panel ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.trans-01 .panel li { font-size: 15px; color: var(--ink-body); padding-left: 22px; position: relative; }
+.trans-01 .panel.before li::before { content: '✕'; position: absolute; left: 0; color: var(--ink-muted); font-weight: 800; }
+.trans-01 .panel.after li::before { content: '✓'; position: absolute; left: 0; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800; }
+.trans-01 .arr {
+  display: grid; place-items: center;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--grad-sig); color: var(--cream);
+  align-self: center;
+  box-shadow: 0 0 30px rgba(179,14,20,0.5);
+}
+body.light-mode .trans-01 .panel { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .trans-01 .panel li { color: var(--ink-dark-soft); }
+body.light-mode .trans-01 .panel .lbl { color: var(--ink-dark-muted); }
+@media (max-width: 820px) { .trans-01 .row { grid-template-columns: 1fr; } .trans-01 .arr { margin: 0 auto; transform: rotate(90deg); } }
+
+.trans-02 { text-align: center; }
+.trans-02 .eb { display: block; margin-bottom: 14px; }
+.trans-02 .promise {
+  font-family: var(--font-sans); font-weight: 800;
+  font-size: clamp(34px, 5vw, 64px);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  max-width: 22ch;
+  margin: 0 auto;
+}
+.trans-02 .promise em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig-hero); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.trans-02 .detail { color: var(--ink-body); font-size: 17px; max-width: 56ch; margin: 28px auto 0; }
+body.light-mode .trans-02 .detail { color: var(--ink-dark-soft); }
+.trans-02 .meta-row { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+.trans-02 .meta-row .m { display: flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; }
+.trans-02 .meta-row .m .ck { width: 22px; height: 22px; border-radius: 50%; background: var(--grad-sig); color: var(--cream); display: grid; place-items: center; font-weight: 800; font-size: 11px; }
+body.light-mode .trans-02 .meta-row .m { color: var(--ink-dark-muted); }
+
+.trans-03 { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: center; }
+.trans-03 .left .eb { display: block; margin-bottom: 14px; }
+.trans-03 .left h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 18px; }
+.trans-03 .left p { color: var(--ink-body); }
+body.light-mode .trans-03 .left p { color: var(--ink-dark-soft); }
+.trans-03 .arc { display: flex; flex-direction: column; gap: 14px; }
+.trans-03 .step { display: grid; grid-template-columns: 48px 1fr; gap: 18px; align-items: center; padding: 18px 22px; border-radius: var(--r-card); background: rgba(255,255,255,0.04); border: 1px solid var(--hairline); }
+.trans-03 .step .num { font-family: var(--font-display); font-style: italic; font-size: 28px; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; line-height: 1; }
+.trans-03 .step strong { display: block; font-size: 15px; margin-bottom: 2px; }
+.trans-03 .step span { font-size: 13px; color: var(--ink-body); }
+body.light-mode .trans-03 .step { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .trans-03 .step span { color: var(--ink-dark-soft); }
+@media (max-width: 820px) { .trans-03 { grid-template-columns: 1fr; } }
+
+/* ── 18 · METHODOLOGY / FRAMEWORK ────────────────────────────────── */
+.method-01 { text-align: center; }
+.method-01 .eb { display: block; margin-bottom: 14px; }
+.method-01 h2 { font-size: clamp(34px, 4vw, 52px); margin: 0 auto 14px; max-width: 22ch; }
+.method-01 .sub { color: var(--ink-body); font-size: 17px; max-width: 56ch; margin: 0 auto 48px; }
+body.light-mode .method-01 .sub { color: var(--ink-dark-soft); }
+.method-01 .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.method-01 .p {
+  padding: 32px 26px;
+  border-radius: var(--r-card);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+  text-align: left;
+}
+.method-01 .p .letter {
+  font-family: var(--font-display); font-style: italic;
+  font-size: 64px; line-height: 1;
+  background-image: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  margin-bottom: 14px;
+}
+.method-01 .p h3 { font-size: 18px; margin-bottom: 8px; }
+.method-01 .p p { font-size: 13px; color: var(--ink-body); line-height: 1.5; }
+body.light-mode .method-01 .p { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .method-01 .p p { color: var(--ink-dark-soft); }
+@media (max-width: 820px) { .method-01 .pillars { grid-template-columns: 1fr 1fr; } }
+
+.method-02 .eb { display: block; margin-bottom: 14px; text-align: center; }
+.method-02 h2 { text-align: center; font-size: clamp(32px, 4vw, 48px); margin-bottom: 48px; max-width: 22ch; margin-left: auto; margin-right: auto; }
+.method-02 .frame { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 0; align-items: stretch; position: relative; }
+.method-02 .node {
+  padding: 28px 18px;
+  border: 1px solid var(--hairline);
+  background: rgba(255,255,255,0.04);
+  text-align: center;
+  border-right: none;
+}
+.method-02 .node:first-child { border-radius: var(--r-card) 0 0 var(--r-card); }
+.method-02 .node:last-child { border-radius: 0 var(--r-card) var(--r-card) 0; border-right: 1px solid var(--hairline); }
+.method-02 .node .step { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; margin-bottom: 10px; }
+.method-02 .node h3 { font-size: 17px; margin-bottom: 6px; }
+.method-02 .node p { font-size: 12px; color: var(--ink-body); line-height: 1.45; }
+.method-02 .node .num {
+  display: grid; place-items: center;
+  width: 36px; height: 36px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: var(--grad-sig); color: var(--cream);
+  font-family: var(--font-sans); font-weight: 800; font-size: 14px;
+}
+body.light-mode .method-02 .node { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .method-02 .node .step { color: var(--ink-dark-muted); }
+body.light-mode .method-02 .node p { color: var(--ink-dark-soft); }
+@media (max-width: 820px) { .method-02 .frame { grid-template-columns: 1fr; } .method-02 .node, .method-02 .node:first-child, .method-02 .node:last-child { border-radius: 0; border-right: 1px solid var(--hairline); border-bottom: none; } .method-02 .node:first-child { border-radius: var(--r-card) var(--r-card) 0 0; } .method-02 .node:last-child { border-radius: 0 0 var(--r-card) var(--r-card); border-bottom: 1px solid var(--hairline); } }
+
+.method-03 { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: center; }
+.method-03 .left .eb { display: block; margin-bottom: 14px; }
+.method-03 .left h2 { font-size: clamp(32px, 4vw, 44px); margin-bottom: 18px; }
+.method-03 .left p { color: var(--ink-body); }
+body.light-mode .method-03 .left p { color: var(--ink-dark-soft); }
+.method-03 .diagram { position: relative; min-height: 420px; }
+.method-03 .diagram .core {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: var(--grad-sig);
+  display: grid; place-items: center;
+  font-family: var(--font-display); font-style: italic; font-size: 42px;
+  color: var(--cream);
+  box-shadow: 0 0 60px rgba(179,14,20,0.55);
+}
+.method-03 .diagram .pillar {
+  position: absolute;
+  padding: 12px 20px;
+  border-radius: var(--r-pill);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--hairline);
+  font-size: 14px; font-weight: 600;
+  white-space: nowrap;
+}
+.method-03 .diagram .pillar:nth-child(2) { top: 6%; left: 50%; transform: translateX(-50%); }
+.method-03 .diagram .pillar:nth-child(3) { top: 50%; right: 4%; transform: translateY(-50%); }
+.method-03 .diagram .pillar:nth-child(4) { bottom: 6%; left: 50%; transform: translateX(-50%); }
+.method-03 .diagram .pillar:nth-child(5) { top: 50%; left: 4%; transform: translateY(-50%); }
+body.light-mode .method-03 .diagram .pillar { background: var(--cream-soft); border-color: var(--hairline-cream); }
+@media (max-width: 820px) { .method-03 { grid-template-columns: 1fr; } }
+
+/* ── 19 · CASE STUDY DEEP-DIVE ───────────────────────────────────── */
+.case-01 .head { display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center; padding-bottom: 36px; border-bottom: 1px solid var(--hairline); margin-bottom: 36px; }
+body.light-mode .case-01 .head { border-bottom-color: var(--hairline-cream); }
+.case-01 .head .who { display: flex; gap: 16px; align-items: center; }
+.case-01 .head .who strong { display: block; font-size: 22px; }
+.case-01 .head .who span { font-size: 14px; color: var(--ink-muted); }
+.case-01 .head .meta { display: flex; gap: 32px; }
+.case-01 .head .meta .m .lbl { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; }
+.case-01 .head .meta .m strong { font-size: 17px; }
+.case-01 .head .cta { display: flex; gap: 10px; }
+.case-01 .body { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; }
+.case-01 .body .stat { padding: 24px 20px; border-radius: var(--r-card); background: rgba(255,255,255,0.04); border: 1px solid var(--hairline); }
+.case-01 .body .stat .l { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; margin-bottom: 10px; }
+.case-01 .body .stat .n { font-family: var(--font-sans); font-weight: 800; font-size: 30px; letter-spacing: -0.03em; }
+.case-01 .body .stat .n em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.case-01 .body .stat .delta { display: inline-block; margin-top: 8px; padding: 3px 9px; border-radius: var(--r-pill); background: var(--grad-sig); color: var(--cream); font-size: 11px; font-weight: 700; }
+body.light-mode .case-01 .body .stat { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .case-01 .head .who span, body.light-mode .case-01 .body .stat .l, body.light-mode .case-01 .head .meta .m .lbl { color: var(--ink-dark-muted); }
+@media (max-width: 1100px) { .case-01 .body { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 720px) { .case-01 .head { grid-template-columns: 1fr; } }
+
+.case-02 { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: stretch; }
+.case-02 .left h2 { font-size: clamp(30px, 4vw, 44px); margin-bottom: 18px; }
+.case-02 .left .quote { font-family: var(--font-display); font-style: italic; font-size: 22px; background-image: var(--grad-sig-tight); -webkit-background-clip: text; background-clip: text; color: transparent; line-height: 1.3; margin-bottom: 22px; }
+.case-02 .left p { color: var(--ink-body); margin-bottom: 14px; }
+.case-02 .left .by { margin-top: 28px; display: flex; align-items: center; gap: 12px; padding-top: 22px; border-top: 1px solid var(--hairline); }
+.case-02 .left .by strong { display: block; font-size: 15px; }
+.case-02 .left .by span { font-size: 13px; color: var(--ink-muted); }
+body.light-mode .case-02 .left p { color: var(--ink-dark-soft); }
+body.light-mode .case-02 .left .by { border-top-color: var(--hairline-cream); }
+body.light-mode .case-02 .left .by span { color: var(--ink-dark-muted); }
+.case-02 .right { display: flex; flex-direction: column; gap: 14px; }
+.case-02 .right .dash {
+  padding: 22px;
+  border-radius: var(--r-card);
+  background: linear-gradient(160deg, #1a1a1a, #0a0a0a);
+  border: 1px solid var(--hairline-strong);
+}
+.case-02 .right .dash .l { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; margin-bottom: 8px; }
+.case-02 .right .dash .n { font-family: var(--font-sans); font-weight: 800; font-size: 32px; letter-spacing: -0.03em; color: var(--ink); }
+.case-02 .right .dash .n em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.case-02 .right .dash svg { width: 100%; height: 60px; margin-top: 10px; }
+@media (max-width: 820px) { .case-02 { grid-template-columns: 1fr; } }
+
+.case-03 .timeline { max-width: 760px; margin: 0 auto; position: relative; padding-left: 60px; }
+.case-03 .timeline::before { content: ''; position: absolute; left: 23px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--sig), var(--sig-deep), transparent); }
+.case-03 .item { position: relative; padding-bottom: 36px; }
+.case-03 .item:last-child { padding-bottom: 0; }
+.case-03 .item .dot { position: absolute; left: -48px; top: 6px; width: 48px; height: 48px; border-radius: 50%; background: var(--grad-sig); display: grid; place-items: center; color: var(--cream); font-weight: 800; border: 3px solid var(--bg); box-shadow: 0 0 20px rgba(179,14,20,0.4); }
+body.light-mode .case-03 .item .dot { border-color: var(--cream); }
+.case-03 .item .day { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; margin-bottom: 4px; }
+.case-03 .item h3 { font-size: 20px; margin-bottom: 8px; }
+.case-03 .item p { color: var(--ink-body); max-width: 60ch; }
+.case-03 .item .stat { display: inline-block; margin-top: 10px; padding: 5px 12px; border-radius: var(--r-pill); background: var(--grad-sig); color: var(--cream); font-size: 12px; font-weight: 700; }
+.case-03 .head { text-align: center; margin-bottom: 48px; }
+.case-03 .head .eb { display: block; margin-bottom: 14px; }
+.case-03 .head h2 { font-size: clamp(32px, 4vw, 48px); margin: 0 auto; max-width: 22ch; }
+body.light-mode .case-03 .item p { color: var(--ink-dark-soft); }
+body.light-mode .case-03 .item .day { color: var(--ink-dark-muted); }
+
+/* ── 20 · APPLICATION FORM ───────────────────────────────────────── */
+.app-01 { text-align: center; }
+.app-01 .eb { display: block; margin-bottom: 14px; }
+.app-01 h2 { font-size: clamp(32px, 4vw, 48px); margin: 0 auto 14px; max-width: 22ch; }
+.app-01 .sub { color: var(--ink-body); font-size: 17px; max-width: 50ch; margin: 0 auto 40px; }
+body.light-mode .app-01 .sub { color: var(--ink-dark-soft); }
+.app-01 .form { max-width: 540px; margin: 0 auto; padding: 36px; border-radius: var(--r-card); background: rgba(255,255,255,0.04); border: 1px solid var(--hairline); display: flex; flex-direction: column; gap: 16px; text-align: left; box-shadow: 0 30px 80px -20px rgba(0,0,0,0.4); }
+body.light-mode .app-01 .form { background: var(--cream-soft); border-color: var(--hairline-cream); }
+.app-01 .form label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; margin-bottom: -8px; }
+body.light-mode .app-01 .form label { color: var(--ink-dark-muted); }
+.app-01 .form .field { padding: 14px 18px; border-radius: var(--r-button); background: rgba(0,0,0,0.3); border: 1px solid var(--hairline-strong); font-size: 15px; color: var(--ink-body); }
+body.light-mode .app-01 .form .field { background: var(--cream); border-color: var(--hairline-cream-strong); color: var(--ink-dark-soft); }
+.app-01 .form .submit { padding: 14px 20px; border-radius: var(--r-button); background: var(--grad-sig); color: var(--cream); font-weight: 700; text-align: center; box-shadow: 0 0 24px rgba(179,14,20,0.4); margin-top: 6px; }
+.app-01 .form .legal { font-size: 12px; color: var(--ink-muted); text-align: center; }
+body.light-mode .app-01 .form .legal { color: var(--ink-dark-muted); }
+
+.app-02 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+.app-02 .left h2 { font-size: clamp(30px, 4vw, 44px); margin-bottom: 18px; }
+.app-02 .left p { color: var(--ink-body); margin-bottom: 28px; }
+body.light-mode .app-02 .left p { color: var(--ink-dark-soft); }
+.app-02 .left .why { display: flex; flex-direction: column; gap: 14px; }
+.app-02 .left .why .pt { display: flex; gap: 14px; align-items: flex-start; }
+.app-02 .left .why .ck { width: 28px; height: 28px; border-radius: 50%; background: var(--grad-sig); color: var(--cream); display: grid; place-items: center; flex-shrink: 0; font-weight: 800; }
+.app-02 .left .why .pt strong { display: block; font-size: 15px; margin-bottom: 2px; }
+.app-02 .left .why .pt span { font-size: 13px; color: var(--ink-body); }
+body.light-mode .app-02 .left .why .pt span { color: var(--ink-dark-soft); }
+.app-02 .form { padding: 36px; border-radius: var(--r-card); background: rgba(255,255,255,0.04); border: 1px solid var(--hairline); display: flex; flex-direction: column; gap: 16px; box-shadow: 0 30px 80px -20px rgba(0,0,0,0.4); }
+body.light-mode .app-02 .form { background: var(--cream-soft); border-color: var(--hairline-cream); }
+.app-02 .form .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.app-02 .form .field { padding: 14px 18px; border-radius: var(--r-button); background: rgba(0,0,0,0.3); border: 1px solid var(--hairline-strong); font-size: 14px; color: var(--ink-body); }
+body.light-mode .app-02 .form .field { background: var(--cream); border-color: var(--hairline-cream-strong); color: var(--ink-dark-soft); }
+.app-02 .form .submit { padding: 14px 20px; border-radius: var(--r-button); background: var(--grad-sig); color: var(--cream); font-weight: 700; text-align: center; box-shadow: 0 0 24px rgba(179,14,20,0.4); margin-top: 6px; }
+@media (max-width: 820px) { .app-02 { grid-template-columns: 1fr; } }
+
+.app-03 .step-bar { display: flex; gap: 0; max-width: 540px; margin: 0 auto 28px; padding: 0; border-radius: var(--r-pill); overflow: hidden; border: 1px solid var(--hairline); }
+.app-03 .step-bar .step { flex: 1; text-align: center; padding: 12px; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; border-right: 1px solid var(--hairline); }
+.app-03 .step-bar .step:last-child { border-right: none; }
+.app-03 .step-bar .step.active { background: var(--grad-sig); color: var(--cream); }
+body.light-mode .app-03 .step-bar, body.light-mode .app-03 .step-bar .step { border-color: var(--hairline-cream); }
+body.light-mode .app-03 .step-bar .step { color: var(--ink-dark-muted); }
+.app-03 .card { max-width: 560px; margin: 0 auto; padding: 40px; border-radius: var(--r-card); background: rgba(255,255,255,0.04); border: 1px solid var(--hairline); }
+body.light-mode .app-03 .card { background: var(--cream-soft); border-color: var(--hairline-cream); }
+.app-03 .card h3 { font-size: 22px; margin-bottom: 18px; text-align: center; }
+.app-03 .card .opts { display: flex; flex-direction: column; gap: 10px; }
+.app-03 .card .opt { padding: 18px 20px; border-radius: var(--r-card); border: 1px solid var(--hairline-strong); background: rgba(255,255,255,0.03); font-size: 15px; cursor: pointer; }
+.app-03 .card .opt.selected { background: linear-gradient(180deg, rgba(179,14,20,0.14), rgba(179,14,20,0.02)); border-color: rgba(179,14,20,0.40); color: var(--sig-highlight); }
+body.light-mode .app-03 .card .opt { background: var(--cream); border-color: var(--hairline-cream-strong); }
+.app-03 .card .cta-row { display: flex; gap: 10px; margin-top: 22px; justify-content: space-between; }
+
+/* ── 21 · ANNOUNCEMENT BAR ───────────────────────────────────────── */
+.announce-01 {
+  background: var(--grad-sig);
+  color: var(--cream);
+  padding: 12px clamp(20px, 4vw, 64px);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  display: flex; align-items: center; justify-content: center; gap: 18px;
+  flex-wrap: wrap;
+}
+.announce-01 .pill { padding: 3px 10px; background: rgba(0,0,0,0.18); border-radius: var(--r-pill); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 800; border: none; color: var(--cream); }
+.announce-01 a { text-decoration: underline; color: inherit; }
+
+.announce-02 {
+  background: linear-gradient(160deg, #1a1a1a, #0a0a0a);
+  color: var(--ink);
+  padding: 14px clamp(20px, 4vw, 64px);
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--hairline);
+}
+.announce-02 .left { display: flex; align-items: center; gap: 12px; font-size: 14px; }
+.announce-02 .left .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sig); box-shadow: 0 0 12px var(--sig); animation: urg-pulse 1.4s ease-in-out infinite; }
+.announce-02 .left strong { color: var(--sig-highlight); }
+.announce-02 .right { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--ink-muted); }
+.announce-02 .right a { color: var(--sig-highlight); font-weight: 700; }
+body.light-mode .announce-02 { background: linear-gradient(160deg, var(--cream-soft), var(--cream)); color: var(--ink-dark); border-bottom-color: var(--hairline-cream); }
+body.light-mode .announce-02 .right { color: var(--ink-dark-muted); }
+body.light-mode .announce-02 .right a, body.light-mode .announce-02 .left strong { color: var(--sig); }
+
+.announce-03 {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 18px;
+  padding: 16px clamp(20px, 4vw, 64px);
+  background: rgba(179,14,20,0.10);
+  border-bottom: 1px solid rgba(179,14,20,0.30);
+  align-items: center;
+}
+.announce-03 .ic { width: 32px; height: 32px; border-radius: 50%; background: var(--grad-sig); color: var(--cream); display: grid; place-items: center; flex-shrink: 0; }
+.announce-03 .msg { font-size: 14px; }
+.announce-03 .msg strong { color: var(--sig-highlight); }
+.announce-03 .x { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.06); display: grid; place-items: center; cursor: pointer; }
+body.light-mode .announce-03 .msg strong { color: var(--sig); }
+body.light-mode .announce-03 .x { background: rgba(10,10,10,0.06); }
+
+/* ── 22 · HEADER / NAV ───────────────────────────────────────────── */
+.header-01 {
+  display: flex; align-items: center; justify-content: space-between; gap: 28px;
+  padding: 18px clamp(20px, 4vw, 64px);
+  border-bottom: 1px solid var(--hairline);
+}
+body.light-mode .header-01 { border-bottom-color: var(--hairline-cream); }
+.header-01 .logo { font-family: var(--font-logo); font-size: 22px; font-weight: 500; }
+.header-01 .logo em { background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; font-style: normal; }
+.header-01 .nav { display: flex; gap: 6px; }
+.header-01 .nav a { padding: 8px 14px; border-radius: var(--r-pill); font-size: 14px; font-weight: 500; color: var(--ink-body); }
+.header-01 .nav a:hover { background: rgba(255,255,255,0.06); color: var(--ink); }
+body.light-mode .header-01 .nav a { color: var(--ink-dark-soft); }
+body.light-mode .header-01 .nav a:hover { background: rgba(10,10,10,0.06); color: var(--ink-dark); }
+.header-01 .actions { display: flex; gap: 10px; align-items: center; }
+@media (max-width: 720px) { .header-01 .nav { display: none; } }
+
+.header-02 {
+  display: flex; align-items: center; justify-content: space-between; gap: 22px;
+  padding: 12px 16px;
+  border-radius: var(--r-pill);
+  background: var(--glass-bg-dark);
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255,255,255,0.10);
+  margin: 18px clamp(20px, 4vw, 64px);
+}
+.header-02 .logo { font-family: var(--font-logo); font-size: 20px; font-weight: 500; padding-left: 8px; }
+.header-02 .logo em { background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; font-style: normal; }
+.header-02 .nav { display: flex; gap: 4px; }
+.header-02 .nav a { padding: 7px 12px; border-radius: var(--r-pill); font-size: 13px; font-weight: 600; color: var(--ink-body); }
+.header-02 .nav a.active { background: var(--grad-sig); color: var(--cream); }
+body.light-mode .header-02 { background: var(--glass-bg-cream); border-color: rgba(10,10,10,0.08); }
+body.light-mode .header-02 .nav a { color: var(--ink-dark-soft); }
+@media (max-width: 820px) { .header-02 .nav { display: none; } }
+
+.header-03 {
+  display: flex; align-items: center; justify-content: space-between; gap: 28px;
+  padding: 16px clamp(20px, 4vw, 64px);
+}
+.header-03 .logo { font-family: var(--font-logo); font-size: 22px; }
+.header-03 .logo em { background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; font-style: normal; }
+.header-03 .right-cta { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--ink-muted); }
+.header-03 .right-cta a { color: var(--ink); font-weight: 600; }
+body.light-mode .header-03 .right-cta a { color: var(--ink-dark); }
+
+/* ── 23 · FOOTER ─────────────────────────────────────────────────── */
+.foot-01 { padding: clamp(60px, 6vw, 100px) clamp(22px, 5vw, 80px) 48px; border-top: 1px solid var(--hairline); }
+body.light-mode .foot-01 { border-top-color: var(--hairline-cream); }
+.foot-01 .top { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--hairline); }
+body.light-mode .foot-01 .top { border-bottom-color: var(--hairline-cream); }
+.foot-01 .brand-col .logo { font-family: var(--font-logo); font-size: 32px; font-weight: 500; margin-bottom: 14px; display: block; }
+.foot-01 .brand-col .logo em { background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; font-style: normal; }
+.foot-01 .brand-col p { color: var(--ink-body); font-size: 14px; max-width: 36ch; }
+body.light-mode .foot-01 .brand-col p { color: var(--ink-dark-soft); }
+.foot-01 .col h4 { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; margin-bottom: 18px; }
+body.light-mode .foot-01 .col h4 { color: var(--ink-dark-muted); }
+.foot-01 .col a { display: block; padding: 5px 0; font-size: 14px; color: var(--ink-body); }
+.foot-01 .col a:hover { color: var(--sig); }
+body.light-mode .foot-01 .col a { color: var(--ink-dark-soft); }
+.foot-01 .bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--ink-muted); }
+body.light-mode .foot-01 .bottom { color: var(--ink-dark-muted); }
+@media (max-width: 1100px) { .foot-01 .top { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .foot-01 .top { grid-template-columns: 1fr; } }
+
+.foot-02 { padding: clamp(80px, 8vw, 120px) clamp(22px, 5vw, 80px); border-top: 1px solid var(--hairline); position: relative; overflow: hidden; }
+body.light-mode .foot-02 { border-top-color: var(--hairline-cream); }
+.foot-02::before { content: ''; position: absolute; bottom: -40%; left: 50%; transform: translateX(-50%); width: 1000px; height: 600px; background: radial-gradient(circle, rgba(179,14,20,0.30), transparent 60%); filter: blur(60px); pointer-events: none; }
+.foot-02 > * { position: relative; z-index: 1; }
+.foot-02 .email {
+  font-family: var(--font-sans); font-weight: 800;
+  font-size: clamp(40px, 7vw, 96px); letter-spacing: -0.04em;
+  line-height: 1; text-align: center;
+}
+.foot-02 .email em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig-hero); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.foot-02 .meta { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--hairline); flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--ink-muted); }
+body.light-mode .foot-02 .meta { border-top-color: var(--hairline-cream); color: var(--ink-dark-muted); }
+.foot-02 .meta .links { display: flex; gap: 18px; }
+.foot-02 .meta .links a:hover { color: var(--sig); }
+
+.foot-03 { padding: 32px clamp(22px, 5vw, 80px); border-top: 1px solid var(--hairline); display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+body.light-mode .foot-03 { border-top-color: var(--hairline-cream); }
+.foot-03 .left { display: flex; align-items: center; gap: 18px; }
+.foot-03 .left .logo { font-family: var(--font-logo); font-size: 18px; }
+.foot-03 .left .logo em { background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; font-style: normal; }
+.foot-03 .left .copy { font-size: 12px; color: var(--ink-muted); }
+body.light-mode .foot-03 .left .copy { color: var(--ink-dark-muted); }
+.foot-03 .right { display: flex; gap: 16px; font-size: 13px; }
+.foot-03 .right a:hover { color: var(--sig); }
+
+/* ── 24 · STICKY APPLY BAR ───────────────────────────────────────── */
+.sticky-cta {
+  position: relative;
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  padding: 14px 22px;
+  background: var(--glass-bg-dark);
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-pill);
+  box-shadow: 0 20px 60px -16px rgba(0,0,0,0.55);
+  max-width: 720px; margin: 0 auto;
+}
+body.light-mode .sticky-cta { background: var(--glass-bg-cream); border-color: rgba(10,10,10,0.08); box-shadow: 0 20px 60px -16px rgba(10,10,10,0.18); }
+.sticky-cta .what { display: flex; align-items: center; gap: 12px; }
+.sticky-cta .pulse { width: 10px; height: 10px; border-radius: 50%; background: var(--sig); box-shadow: 0 0 12px var(--sig); animation: urg-pulse 1.4s ease-in-out infinite; flex-shrink: 0; }
+.sticky-cta strong { font-size: 14px; }
+.sticky-cta span { font-size: 13px; color: var(--ink-muted); display: block; }
+body.light-mode .sticky-cta span { color: var(--ink-dark-muted); }
+
 </style>
 </head>
 <body>
@@ -2275,16 +3341,16 @@ body.light-mode .faq-06 .qa p { color: var(--ink-dark-soft); }
     <a class="fn-mark" href="#top">Templates<em>.</em></a>
     <span class="fn-sep"></span>
     <nav class="fn-links">
-      <a href="#hero" class="active">Heroes</a>
-      <a href="#logos">Logos</a>
-      <a href="#pain">Pain</a>
-      <a href="#benefits">Benefits</a>
+      <a href="#hero" class="active">Hero</a>
       <a href="#proof">Proof</a>
+      <a href="#benefits">Benefits</a>
       <a href="#how">How</a>
-      <a href="#lists">Lists</a>
-      <a href="#ctas">CTAs</a>
+      <a href="#value">Value</a>
+      <a href="#bonus">Bonus</a>
       <a href="#pricing">Pricing</a>
+      <a href="#guarantee">Promise</a>
       <a href="#faq">FAQ</a>
+      <a href="#footer">Footer</a>
     </nav>
     <button class="fn-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
       <span class="t-dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
@@ -2301,11 +3367,25 @@ body.light-mode .faq-06 .qa p { color: var(--ink-dark-soft); }
     <a href="#pain">03 · Pain</a>
     <a href="#benefits">04 · Benefits</a>
     <a href="#proof">05 · Proof</a>
-    <a href="#how">06 · How</a>
-    <a href="#lists">07 · Lists</a>
+    <a href="#how">06 · How it works</a>
+    <a href="#lists">07 · Bullet lists</a>
     <a href="#ctas">08 · CTAs</a>
     <a href="#pricing">09 · Pricing</a>
     <a href="#faq">10 · FAQ</a>
+    <a href="#stats">11 · Stats banner</a>
+    <a href="#value">12 · Value stack</a>
+    <a href="#bonus">13 · Bonus stack</a>
+    <a href="#guarantee">14 · Guarantee</a>
+    <a href="#urgency">15 · Urgency</a>
+    <a href="#founder">16 · Founder story</a>
+    <a href="#transformation">17 · Transformation</a>
+    <a href="#methodology">18 · Methodology</a>
+    <a href="#casestudy">19 · Case study</a>
+    <a href="#application">20 · Application</a>
+    <a href="#announce">21 · Announcement</a>
+    <a href="#header">22 · Header</a>
+    <a href="#footer">23 · Footer</a>
+    <a href="#sticky">24 · Sticky CTA</a>
   </div>
 
   <main>
@@ -2427,6 +3507,76 @@ body.light-mode .faq-06 .qa p { color: var(--ink-dark-soft); }
             <div class="field">What's your current monthly revenue?</div>
             <div class="submit">Apply for the Selling System →</div>
             <span class="legal">We respond within 24 hours · No spam · No "discovery call" pitch</span>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>HE-07</strong> · Centered VSL · 16:9 · headline above, CTA below <span class="tpl-classes">.hero-07</span></div>
+        <section class="hero-07 t-section dark">
+          <span class="label on-dark eb">12-MIN WALKTHROUGH · SARAH'S INSTALL</span>
+          <h1>Watch how we install <em>$200M in revenue</em> in 14 days flat.</h1>
+          <p class="lead">Sarah's real account, day 1 to day 14. Every ad, every funnel page, every CRM stage. No edits. No fluff.</p>
+          <div class="vsl-frame">
+            <div class="time-tag">12:04</div>
+            <div class="play"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div>
+            <div class="progress"></div>
+          </div>
+          <div class="cta-row">
+            <button class="btn gradient">Apply for the next cohort →</button>
+            <button class="btn ghost">Skip the video · read the case study</button>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>HE-08</strong> · Centered reel · 9:16 · stats flanking left/right <span class="tpl-classes">.hero-08</span></div>
+        <section class="hero-08 t-section dark">
+          <h1>One reel. <em>One install.</em> One quarter to $140K/mo.</h1>
+          <p class="lead">Sarah recorded this on day 90. Watch the founder explain — in her own words — what changed.</p>
+          <div class="grid">
+            <div class="side">
+              <div class="stat-row"><div class="stat-l">REVENUE</div><div class="stat-n">$30K → $140<em>K</em></div></div>
+              <div class="stat-row"><div class="stat-l">TIME TO LIVE</div><div class="stat-n">14 <em>days</em></div></div>
+              <div class="stat-row"><div class="stat-l">COPYWRITERS HIRED</div><div class="stat-n"><em>0</em></div></div>
+            </div>
+            <div class="reel">
+              <div class="duration">2:14</div>
+              <div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div>
+              <div class="cap">"3× the deals I closed <em>all of last year.</em>"</div>
+            </div>
+            <div class="side">
+              <div class="stat-row right"><div class="stat-l">CPL DROP</div><div class="stat-n"><em>42</em>%</div></div>
+              <div class="stat-row right"><div class="stat-l">SHOW RATE</div><div class="stat-n"><em>78</em>%</div></div>
+              <div class="stat-row right"><div class="stat-l">CLOSE RATE</div><div class="stat-n"><em>38</em>%</div></div>
+            </div>
+          </div>
+          <div class="cta-row">
+            <button class="btn gradient">Apply now →</button>
+            <button class="btn ghost">Watch the full 12-min version</button>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>HE-09</strong> · Centered VSL + stats strip below <span class="tpl-classes">.hero-09</span></div>
+        <section class="hero-09 t-section dark">
+          <span class="label on-dark eb">COHORT 04 · 6 SEATS LEFT</span>
+          <h1>Press play. See exactly what <em>installs in 14 days.</em></h1>
+          <div class="vsl-frame">
+            <div class="badge">▶ WATCH</div>
+            <div class="duration">12:04</div>
+            <div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div>
+          </div>
+          <div class="strip">
+            <div><div class="n">$200<em>M</em></div><div class="l">Revenue lifted</div></div>
+            <div><div class="n">100<em>+</em></div><div class="l">Founders</div></div>
+            <div><div class="n">14<em>d</em></div><div class="l">Install</div></div>
+            <div><div class="n">5–11<em>x</em></div><div class="l">Q1 lift</div></div>
+          </div>
+          <div class="cta-row">
+            <button class="btn gradient">Apply for Cohort 04 →</button>
+            <button class="btn ghost">Book a strategy call</button>
           </div>
         </section>
       </div>
@@ -3697,8 +4847,745 @@ body.light-mode .faq-06 .qa p { color: var(--ink-dark-soft); }
       </div>
     </section>
 
+    <!-- 11 · STATS BANNER STRIP -->
+    <section class="cat" id="stats">
+      <header class="cat-head">
+        <div class="cat-num">11</div>
+        <div class="cat-text"><h2>Stats banner strip<span class="dot-period"></span></h2><p>Compressed numbers band. Sit it between hero and pain, or between proof and CTA. The page-wide stat moment.</p></div>
+      </header>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>ST-01</strong> · 4-stat horizontal strip · hairline borders <span class="tpl-classes">.stats-01</span></div>
+        <section class="stats-01 t-section dark">
+          <div class="strip">
+            <div><div class="n">$200<em>M</em></div><div class="l">Revenue lifted</div></div>
+            <div><div class="n">100<em>+</em></div><div class="l">Founders</div></div>
+            <div><div class="n">14<em>d</em></div><div class="l">Avg install</div></div>
+            <div><div class="n">5–11<em>x</em></div><div class="l">Q1 lift</div></div>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>ST-02</strong> · Glowing centered stats · large scale <span class="tpl-classes">.stats-02</span></div>
+        <section class="stats-02 t-section">
+          <span class="label on-dark eb">RECEIPTS · LAST 24 MONTHS</span>
+          <div class="strip">
+            <div><div class="n">$200<em>M</em></div><div class="l">Lifted</div></div>
+            <div><div class="n">100<em>+</em></div><div class="l">Founders</div></div>
+            <div><div class="n">14<em>d</em></div><div class="l">Install</div></div>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>ST-03</strong> · 5 stat tiles with icons <span class="tpl-classes">.stats-03</span></div>
+        <section class="stats-03 t-section dark">
+          <div class="strip">
+            <div class="tile"><div class="ic">$</div><div class="n">$200<em>M</em></div><div class="l">Lifted</div></div>
+            <div class="tile"><div class="ic">▲</div><div class="n">100<em>+</em></div><div class="l">Founders</div></div>
+            <div class="tile"><div class="ic">⚡</div><div class="n">14<em>d</em></div><div class="l">Install</div></div>
+            <div class="tile"><div class="ic">x</div><div class="n">5–11<em>x</em></div><div class="l">Q1 lift</div></div>
+            <div class="tile"><div class="ic">★</div><div class="n">78<em>%</em></div><div class="l">Show rate</div></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 12 · VALUE STACK -->
+    <section class="cat" id="value">
+      <header class="cat-head">
+        <div class="cat-num">12</div>
+        <div class="cat-text"><h2>Value stack<span class="dot-period"></span></h2><p>The DR conversion device. Itemize every deliverable with a dollar value, sum the total, contrast against price. Used right before pricing.</p></div>
+      </header>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>VS-01</strong> · Itemized list + total card · crossed-out anchor <span class="tpl-classes">.value-01</span></div>
+        <section class="value-01 t-section dark">
+          <span class="label on-dark eb">EVERYTHING YOU GET</span>
+          <h2>Eight deliverables. <em>One install fee.</em></h2>
+          <div class="stack">
+            <div class="item"><div class="what"><strong>9-creative ad pack</strong><span>3 hooks × 3 angles · ready to launch</span></div><div class="val">$3,000</div></div>
+            <div class="item"><div class="what"><strong>Long-form funnel build</strong><span>Page + VSL + application + email/SMS sequences</span></div><div class="val">$5,500</div></div>
+            <div class="item"><div class="what"><strong>Full GHL CRM build-out</strong><span>Pipelines, automations, calendars, payment links</span></div><div class="val">$4,500</div></div>
+            <div class="item"><div class="what"><strong>Sales training + playbook</strong><span>2-hour walkthrough + recorded role-play</span></div><div class="val">$2,000</div></div>
+            <div class="item"><div class="what"><strong>12-min VSL production</strong><span>Script, edit, captions, b-roll</span></div><div class="val">$3,500</div></div>
+            <div class="item"><div class="what"><strong>Tracking + analytics</strong><span>Meta Pixel + CAPI + GHL conversion events</span></div><div class="val">$1,500</div></div>
+            <div class="item"><div class="what"><strong>90 days of optimization</strong><span>Weekly Tuesday call · creative refresh every 14d</span></div><div class="val">$8,000</div></div>
+            <div class="item"><div class="what"><strong>Founder Slack access</strong><span>Direct line to the strategist · 4hr response</span></div><div class="val">$1,000</div></div>
+          </div>
+          <div class="total">
+            <div>
+              <div class="lbl">TOTAL A LA CARTE VALUE</div>
+              <strong><span class="crossed">$29,000</span></strong>
+              <div class="pitch">What this would cost if you hired six contractors and bought each piece separately.</div>
+            </div>
+            <div>
+              <div class="lbl">YOUR INSTALL FEE</div>
+              <div class="your">$12<em>K</em></div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>VS-02</strong> · Card grid + featured total card below <span class="tpl-classes">.value-02</span></div>
+        <section class="value-02 t-section dark">
+          <span class="label on-dark eb">WHAT'S IN THE INSTALL</span>
+          <h2>Six pieces. <em>One contract.</em></h2>
+          <div class="grid">
+            <div class="card"><div class="ic">A</div><h3>Ads creative pack</h3><p>3 hooks × 3 angles. Image + video. Cleared by Meta before launch.</p><div class="row"><span class="lbl">Value</span><span class="val">$3,000</span></div></div>
+            <div class="card"><div class="ic">F</div><h3>Funnel + VSL</h3><p>Landing page, VSL script, application, follow-up sequences.</p><div class="row"><span class="lbl">Value</span><span class="val">$5,500</span></div></div>
+            <div class="card"><div class="ic">C</div><h3>CRM build</h3><p>Full GHL setup. Pipelines, automations, calendar, payment links.</p><div class="row"><span class="lbl">Value</span><span class="val">$4,500</span></div></div>
+            <div class="card"><div class="ic">S</div><h3>Sales playbook</h3><p>2-hour training. Recorded role-play with your closers.</p><div class="row"><span class="lbl">Value</span><span class="val">$2,000</span></div></div>
+            <div class="card"><div class="ic">T</div><h3>Tracking setup</h3><p>Pixel, CAPI, conversion events, revenue attribution.</p><div class="row"><span class="lbl">Value</span><span class="val">$1,500</span></div></div>
+            <div class="card"><div class="ic">90</div><h3>90-day optimization</h3><p>Tuesday call. Creative refresh every 14 days.</p><div class="row"><span class="lbl">Value</span><span class="val">$8,000</span></div></div>
+          </div>
+          <div class="summary">
+            <div class="crossed">Total value · $24,500</div>
+            <div class="your">$12<em>K</em></div>
+            <div class="desc">Yours for one payment. Klarna and Affirm both available.</div>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>VS-03</strong> · Compact ladder + horizontal total bar <span class="tpl-classes">.value-03</span></div>
+        <section class="value-03 t-section dark">
+          <span class="label on-dark eb">VALUE STACK · COMPACT</span>
+          <h2>One bar, one total. <em>Done.</em></h2>
+          <div class="ladder">
+            <div class="lvl"><div class="what"><div class="ck">✓</div><strong>9-creative ad pack</strong></div><div class="arr">·</div><div class="val">$3,000</div></div>
+            <div class="lvl"><div class="what"><div class="ck">✓</div><strong>Funnel + VSL build</strong></div><div class="arr">·</div><div class="val">$5,500</div></div>
+            <div class="lvl"><div class="what"><div class="ck">✓</div><strong>GHL CRM build-out</strong></div><div class="arr">·</div><div class="val">$4,500</div></div>
+            <div class="lvl"><div class="what"><div class="ck">✓</div><strong>Sales training</strong></div><div class="arr">·</div><div class="val">$2,000</div></div>
+            <div class="lvl"><div class="what"><div class="ck">✓</div><strong>90-day optimization</strong></div><div class="arr">·</div><div class="val">$8,000</div></div>
+          </div>
+          <div class="total-bar">
+            <div><div class="lbl">$23,000 IN A LA CARTE VALUE · YOURS FOR</div><strong>One install fee, paid once</strong></div>
+            <div class="val">$12,000</div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 13 · BONUS STACK -->
+    <section class="cat" id="bonus">
+      <header class="cat-head">
+        <div class="cat-num">13</div>
+        <div class="cat-text"><h2>Bonus stack<span class="dot-period"></span></h2><p>"Plus these five bonuses…" Each bonus gets its own row with assigned dollar value and crossed-out "yours free" marker. Pairs with the value stack.</p></div>
+      </header>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>BS-01</strong> · 5 bonus rows · stacked w/ "FREE" tag <span class="tpl-classes">.bonus-01</span></div>
+        <section class="bonus-01 t-section dark">
+          <span class="label on-dark eb">PLUS · FIVE INSTALL BONUSES</span>
+          <h2>Bonuses you don't pay for. <em>Worth $4,800.</em></h2>
+          <p class="lead">Apply during Cohort 04 and these five drop in for free. They alone usually justify the install fee.</p>
+          <div class="stack">
+            <div class="bonus"><div class="tag">1</div><div class="what"><strong>Brand DNA audit</strong><span class="ws">Bonus 01 · added at install</span><p>Two-hour offer + positioning audit. We lock your hook before the first ad spends a dollar.</p></div><div class="price"><span class="crossed">$1,500</span><span class="val">FREE</span></div></div>
+            <div class="bonus"><div class="tag">2</div><div class="what"><strong>9-template swipe file</strong><span class="ws">Bonus 02 · delivered day 1</span><p>Headlines, hooks, email scripts, SMS copy — every template our top clients use.</p></div><div class="price"><span class="crossed">$800</span><span class="val">FREE</span></div></div>
+            <div class="bonus"><div class="tag">3</div><div class="what"><strong>Conversion-rate teardown</strong><span class="ws">Bonus 03 · day 30</span><p>30-min Loom from the strategist analyzing your first month's data. Concrete fixes only.</p></div><div class="price"><span class="crossed">$600</span><span class="val">FREE</span></div></div>
+            <div class="bonus"><div class="tag">4</div><div class="what"><strong>Closer scorecard</strong><span class="ws">Bonus 04 · day 45</span><p>We review 5 of your sales-call recordings and score them against our framework.</p></div><div class="price"><span class="crossed">$1,200</span><span class="val">FREE</span></div></div>
+            <div class="bonus"><div class="tag">5</div><div class="what"><strong>Quarterly Q&amp;A retreat (virtual)</strong><span class="ws">Bonus 05 · ongoing</span><p>Live 2-hour Q&amp;A with the Abundance team and your fellow cohort founders.</p></div><div class="price"><span class="crossed">$700</span><span class="val">FREE</span></div></div>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>BS-02</strong> · 3-column bonus cards with corner badges <span class="tpl-classes">.bonus-02</span></div>
+        <section class="bonus-02 t-section dark">
+          <span class="label on-dark eb">THREE BONUSES · COHORT 04 ONLY</span>
+          <h2>The bonuses we <em>only ship</em> with this cohort.</h2>
+          <div class="grid">
+            <div class="b"><div class="badge">Bonus 01</div><h3>Brand DNA audit</h3><p>Two-hour offer + positioning audit. We lock your hook before the first ad spends a dollar.</p><div class="val"><span class="crossed">Was $1,500</span><span class="free">FREE</span></div></div>
+            <div class="b"><div class="badge">Bonus 02</div><h3>9-template swipe file</h3><p>Every headline, hook, email script, and SMS template our top-converting clients use.</p><div class="val"><span class="crossed">Was $800</span><span class="free">FREE</span></div></div>
+            <div class="b"><div class="badge">Bonus 03</div><h3>Closer scorecard</h3><p>We review 5 of your real sales calls and score against our 12-point framework.</p><div class="val"><span class="crossed">Was $1,200</span><span class="free">FREE</span></div></div>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>BS-03</strong> · Split · pitch left · 5 bonus lines right <span class="tpl-classes">.bonus-03</span></div>
+        <section class="bonus-03 t-section dark">
+          <div class="left">
+            <span class="label on-dark eb">UNFAIR BONUSES</span>
+            <h2>The fastest way to <em>break even</em> on this install.</h2>
+            <p>The bonuses below alone are worth $4,800 in agency time. They drop in automatically when you apply during Cohort 04. Most clients say these are what tipped them.</p>
+            <div class="total-pill">$4,800 in bonuses · yours free</div>
+          </div>
+          <div class="right">
+            <div class="bonus-line"><div class="check">1</div><div><strong>Brand DNA audit</strong><span>2-hour offer + positioning lock</span></div><div class="val">$1,500</div></div>
+            <div class="bonus-line"><div class="check">2</div><div><strong>9-template swipe file</strong><span>Headlines + hooks + scripts</span></div><div class="val">$800</div></div>
+            <div class="bonus-line"><div class="check">3</div><div><strong>Conversion teardown</strong><span>30-min Loom · day 30</span></div><div class="val">$600</div></div>
+            <div class="bonus-line"><div class="check">4</div><div><strong>Closer scorecard</strong><span>5 calls scored · day 45</span></div><div class="val">$1,200</div></div>
+            <div class="bonus-line"><div class="check">5</div><div><strong>Quarterly retreat</strong><span>Virtual · 2-hour live Q&amp;A</span></div><div class="val">$700</div></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 14 · GUARANTEE FULL -->
+    <section class="cat" id="guarantee">
+      <header class="cat-head">
+        <div class="cat-num">14</div>
+        <div class="cat-text"><h2>Guarantee<span class="dot-period"></span></h2><p>The risk-reversal section. Shield/stamp + multi-paragraph copy + signature. Place right before pricing or right after.</p></div>
+      </header>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>GR-01</strong> · Centered shield · multi-paragraph body · founder signature <span class="tpl-classes">.guarantee-01</span></div>
+        <section class="guarantee-01 t-section dark">
+          <div class="shield"></div>
+          <span class="label on-dark eb">RISK REVERSAL · OUR PROMISE</span>
+          <h2>If we don't ship in 14 days, <em>we refund the install.</em></h2>
+          <div class="body">
+            <p>The Selling System is built around a 14-day install. That's not a marketing phrase — it's a contract.</p>
+            <p>If we miss the deadline for any reason on our side, your install fee comes back to you. No "fine print." No "well technically." A simple Stripe refund inside 48 hours, and you keep every asset we shipped along the way.</p>
+            <p>The reason we can promise this: we've now installed 100+ of these, and the average is 11 days. Two weeks is genuinely the worst-case for us. If it isn't, that's our problem to solve, not yours.</p>
+          </div>
+          <div class="sig">— Ryan Frost</div>
+          <div class="name">FOUNDER · ABUNDANCE</div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>GR-02</strong> · Stamp-style circle · split copy on right <span class="tpl-classes">.guarantee-02</span></div>
+        <section class="guarantee-02 t-section dark">
+          <div class="stamp">14<br>days<br>or free</div>
+          <div class="right">
+            <span class="label on-dark eb">THE 14-DAY INSTALL GUARANTEE</span>
+            <h2>Live in two weeks, <em>or you don't pay.</em></h2>
+            <p>The install fee covers a 14-day delivery. If we miss it on our side, we refund the install in full and you keep every asset.</p>
+            <ul class="pts">
+              <li>Full refund inside 48 hours of missed deadline</li>
+              <li>You keep the funnel, the ads, the CRM build, all of it</li>
+              <li>No "well technically" clauses · simple and binary</li>
+              <li>Applies to both Launch ($9K) and Install ($12K) tiers</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>GR-03</strong> · Halo card · 3 guarantee pillars <span class="tpl-classes">.guarantee-03</span></div>
+        <section class="guarantee-03 t-section dark">
+          <div class="card">
+            <div class="badge-row">
+              <span class="b-tag">▶ 14-DAY INSTALL</span>
+              <span class="b-tag">▶ KEEP THE WORK</span>
+              <span class="b-tag">▶ NO HIDDEN FEES</span>
+            </div>
+            <h2>Three guarantees. <em>Zero "fine print."</em></h2>
+            <div class="body">
+              <p>Every Abundance client gets three guarantees in writing — included in the install agreement, not pitched and forgotten.</p>
+              <p>If we miss the 14-day delivery, we refund. If you cancel mid-build, you keep every asset we shipped. And the install fee is the install fee — no add-ons, surcharges, or "you'll need to upgrade to..." midway through.</p>
+            </div>
+            <div class="three">
+              <div class="pt"><strong>Install guarantee</strong><span>Live by day 14 or your install fee is refunded.</span></div>
+              <div class="pt"><strong>Asset guarantee</strong><span>Cancel mid-build, keep every asset we delivered.</span></div>
+              <div class="pt"><strong>Price guarantee</strong><span>One install fee. No add-ons. No surcharges.</span></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 15 · URGENCY / SCARCITY -->
+    <section class="cat" id="urgency">
+      <header class="cat-head">
+        <div class="cat-num">15</div>
+        <div class="cat-text"><h2>Urgency / scarcity<span class="dot-period"></span></h2><p>Cohort closing, seats remaining, countdown. Place near each CTA. Use sparingly — once per page, max twice.</p></div>
+      </header>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>UR-01</strong> · Countdown clock · 4-segment timer <span class="tpl-classes">.urgent-01</span></div>
+        <section class="urgent-01 t-section dark">
+          <span class="label on-dark eb">COHORT 04 CLOSES</span>
+          <h2>Applications close <em>Friday at midnight.</em></h2>
+          <div class="countdown">
+            <div class="seg"><div class="n">02</div><div class="l">Days</div></div>
+            <div class="seg"><div class="n">14</div><div class="l">Hours</div></div>
+            <div class="seg"><div class="n">38</div><div class="l">Minutes</div></div>
+            <div class="seg"><div class="n">52</div><div class="l">Seconds</div></div>
+          </div>
+          <p class="meta">After Friday, applications reopen in 10 weeks for Cohort 05. If you're ready, we move now.</p>
+          <button class="btn gradient">Apply for Cohort 04 →</button>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>UR-02</strong> · Seat-row visualization · 8 chairs · 6 taken <span class="tpl-classes">.urgent-02</span></div>
+        <section class="urgent-02 t-section dark">
+          <div class="card">
+            <span class="label on-dark eb">8 SEATS · COHORT 04</span>
+            <h2>Only <em>2 install slots</em> left this quarter.</h2>
+            <div class="seats">
+              <div class="seat taken"></div>
+              <div class="seat taken"></div>
+              <div class="seat taken"></div>
+              <div class="seat taken"></div>
+              <div class="seat taken"></div>
+              <div class="seat taken"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+            </div>
+            <p class="meta">We cap each cohort at 8 founders so our delivery team can hit the 14-day install timeline. Once the seats fill, we close.</p>
+            <button class="btn gradient">Reserve a seat →</button>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>UR-03</strong> · Live progress bar · 78% filled pulse <span class="tpl-classes">.urgent-03</span></div>
+        <section class="urgent-03 t-section dark">
+          <div class="pulse"><div class="dot"></div>LIVE · COHORT 04 FILLING</div>
+          <h2>Cohort 04 is <em>78% full</em> with 3 days left.</h2>
+          <p class="meta">We open enrollment for 10 days each quarter. Once seats fill, we close until next quarter.</p>
+          <div class="progress-bar"></div>
+          <div class="progress-meta">6 of 8 install slots taken · 2 remaining</div>
+          <div style="margin-top: 24px;"><button class="btn gradient">Apply now →</button></div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 16 · FOUNDER STORY -->
+    <section class="cat" id="founder">
+      <header class="cat-head">
+        <div class="cat-num">16</div>
+        <div class="cat-text"><h2>Founder story<span class="dot-period"></span></h2><p>Personal narrative arc with portrait. Origin → struggle → method → outcome. Place mid-page after pain, before pricing.</p></div>
+      </header>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>FN-01</strong> · Portrait left · multi-paragraph story right · signature <span class="tpl-classes">.founder-01</span></div>
+        <section class="founder-01 t-section dark">
+          <div class="portrait-big"><div class="name-tag">Ryan Frost · Founder</div></div>
+          <div class="right">
+            <span class="label on-dark eb">WHO BUILT THIS</span>
+            <h2>I built the system <em>I needed in 2022.</em></h2>
+            <p>In 2022 I was the founder of a coaching business doing $30K/mo and grinding 70 hours a week to keep it there. Three different agencies. Four freelancers. A Slack channel that pinged every nine minutes.</p>
+            <p>Every month I had to be the funnel, the copywriter, AND the closer. Every month I wondered if next month would be the one where it finally compounded. It never did.</p>
+            <p>So I built the Selling System — first for me, then for a handful of founders who watched what I did. Today we've installed it for 100+ businesses. Every one of them stopped being the funnel.</p>
+            <div class="sig">Ryan Frost</div>
+            <div class="title">FOUNDER · ABUNDANCE</div>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>FN-02</strong> · Centered portrait · big quote · signature row <span class="tpl-classes">.founder-02</span></div>
+        <section class="founder-02 t-section dark">
+          <div class="portrait-round"></div>
+          <span class="label on-dark eb">FROM THE FOUNDER</span>
+          <h2>Why I built this in the first place</h2>
+          <p class="quote">"I needed a system that didn't need <em>me</em>. The Selling System is what I built. Now we install it for you."</p>
+          <div class="sig-row">
+            <strong>Ryan Frost</strong><span>· Founder, Abundance · @findabundance</span>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>FN-03</strong> · Photo-collage left · 4-paragraph bio right <span class="tpl-classes">.founder-03</span></div>
+        <section class="founder-03 t-section dark">
+          <div class="gallery">
+            <div class="photo"></div>
+            <div class="photo"></div>
+            <div class="photo"></div>
+            <div class="photo">A</div>
+          </div>
+          <div class="right">
+            <span class="label on-dark eb">MEET RYAN</span>
+            <h2>Built it. <em>Tested it.</em> Now we install it for you.</h2>
+            <p>Ryan founded Abundance in 2023 after spending 18 months running the system inside his own coaching business — replacing a $15K/mo stack of agencies and contractors with one integrated build.</p>
+            <p>Today the Selling System runs in 100+ founder-led businesses, from coaching collectives to mid-market agencies. The team that ships your install: copywriters, media buyers, GHL engineers, and a strategist who's seen this pattern 100+ times.</p>
+            <p>Ryan lives in Austin, runs a 2-hour Friday Q&amp;A inside the founder community, and personally reviews the first month of every install.</p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 17 · TRANSFORMATION PROMISE -->
+    <section class="cat" id="transformation">
+      <header class="cat-head">
+        <div class="cat-num">17</div>
+        <div class="cat-text"><h2>Transformation promise<span class="dot-period"></span></h2><p>"Where you are now → where you'll be." Concrete future-state vision. Place after pain, before how-it-works.</p></div>
+      </header>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>TR-01</strong> · Two-panel before/after with gradient arrow <span class="tpl-classes">.trans-01</span></div>
+        <section class="trans-01 t-section dark">
+          <span class="label on-dark eb">90 DAYS FROM NOW</span>
+          <h2>Where you are. <em>Where you'll be.</em></h2>
+          <div class="row">
+            <div class="panel before">
+              <div class="lbl">TODAY</div>
+              <h3>Founder-as-funnel</h3>
+              <ul>
+                <li>You write every ad</li>
+                <li>You run every sales call</li>
+                <li>You patch the CRM at midnight</li>
+                <li>Revenue stalls when you stall</li>
+                <li>70-hour weeks are normal</li>
+              </ul>
+            </div>
+            <div class="arr"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="panel after">
+              <div class="lbl">90 DAYS FROM TODAY</div>
+              <h3>System-as-funnel</h3>
+              <ul>
+                <li>Ads run themselves (with our team)</li>
+                <li>Calendar fills from the funnel</li>
+                <li>CRM hums without you touching it</li>
+                <li>Revenue compounds while you sleep</li>
+                <li>25 focused hours · same output</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>TR-02</strong> · Single big promise statement · 3 supporting markers <span class="tpl-classes">.trans-02</span></div>
+        <section class="trans-02 t-section dark">
+          <span class="label on-dark eb">THE PROMISE · IN ONE SENTENCE</span>
+          <p class="promise">In <em>90 days</em>, your business runs <em>without you in the middle of it.</em></p>
+          <p class="detail">Same offer. Same audience. But the funnel runs on autopilot, the ads compound, and your only job is closing the calls that land on your calendar.</p>
+          <div class="meta-row">
+            <div class="m"><div class="ck">✓</div>5–11× revenue lift</div>
+            <div class="m"><div class="ck">✓</div>14-day install timeline</div>
+            <div class="m"><div class="ck">✓</div>Founder Slack access</div>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>TR-03</strong> · Split · pitch left · 4-step arc right <span class="tpl-classes">.trans-03</span></div>
+        <section class="trans-03 t-section dark">
+          <div class="left">
+            <span class="label on-dark eb">THE ARC · 4 PHASES</span>
+            <h2>The shape of <em>your next quarter.</em></h2>
+            <p>Most founders move through these four phases in roughly the same time. Some faster. None slower, in our experience.</p>
+          </div>
+          <div class="arc">
+            <div class="step"><div class="num">1</div><div><strong>Week 1 · Install</strong><span>Ads, funnel, CRM live. First leads arriving.</span></div></div>
+            <div class="step"><div class="num">2</div><div><strong>Week 4 · Optimization</strong><span>CPL drops 30–50%. Show rate above 70%.</span></div></div>
+            <div class="step"><div class="num">3</div><div><strong>Week 8 · Compounding</strong><span>Repeat clients, referrals, predictable pipeline.</span></div></div>
+            <div class="step"><div class="num">4</div><div><strong>Week 12 · Scale</strong><span>3–11× revenue lift. You stop being the funnel.</span></div></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 18 · METHODOLOGY / FRAMEWORK -->
+    <section class="cat" id="methodology">
+      <header class="cat-head">
+        <div class="cat-num">18</div>
+        <div class="cat-text"><h2>Methodology / framework<span class="dot-period"></span></h2><p>Your proprietary system, named and diagrammed. Pillars + acronym + diagram. The "this is how we think" moment.</p></div>
+      </header>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>MT-01</strong> · 4-pillar acronym grid · big letters <span class="tpl-classes">.method-01</span></div>
+        <section class="method-01 t-section dark">
+          <span class="label on-dark eb">THE FRAMEWORK</span>
+          <h2>The 4-pillar <em>Selling System.</em></h2>
+          <p class="sub">Every install is built around four pillars. Pull one and the whole system tilts. Keep them in balance and the revenue compounds.</p>
+          <div class="pillars">
+            <div class="p"><div class="letter">S</div><h3>Source</h3><p>Where leads come from. Ads, content, partnerships, referrals — the inputs.</p></div>
+            <div class="p"><div class="letter">E</div><h3>Engage</h3><p>How a stranger becomes a known lead. Funnel, VSL, application.</p></div>
+            <div class="p"><div class="letter">C</div><h3>Close</h3><p>How a lead becomes a customer. Sales call, playbook, scripts.</p></div>
+            <div class="p"><div class="letter">R</div><h3>Retain</h3><p>How a customer becomes a repeat customer. Continuity, community, results.</p></div>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>MT-02</strong> · 5-step horizontal flow · numbered nodes <span class="tpl-classes">.method-02</span></div>
+        <section class="method-02 t-section dark">
+          <span class="label on-dark eb">THE INSTALL FLOW</span>
+          <h2>Five nodes. <em>One install.</em></h2>
+          <div class="frame">
+            <div class="node"><div class="num">1</div><div class="step">SOURCE</div><h3>Acquire</h3><p>Multi-platform paid acquisition. Daily optimization.</p></div>
+            <div class="node"><div class="num">2</div><div class="step">ENGAGE</div><h3>Nurture</h3><p>Funnel + VSL + application. Lead becomes warm.</p></div>
+            <div class="node"><div class="num">3</div><div class="step">QUALIFY</div><h3>Filter</h3><p>Pre-call surveys. Only ready buyers reach you.</p></div>
+            <div class="node"><div class="num">4</div><div class="step">CLOSE</div><h3>Convert</h3><p>Playbook + role-play. 38%+ close rate.</p></div>
+            <div class="node"><div class="num">5</div><div class="step">SCALE</div><h3>Compound</h3><p>Retention, referrals, repeat clients.</p></div>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>MT-03</strong> · Split · narrative left · circular diagram right <span class="tpl-classes">.method-03</span></div>
+        <section class="method-03 t-section dark">
+          <div class="left">
+            <span class="label on-dark eb">THE A.B.C.D. METHOD</span>
+            <h2>Four steps. <em>One revenue engine.</em></h2>
+            <p>The A.B.C.D. method is our 4-quadrant framework for installing a Selling System. Each quadrant is a deliverable. Together they form one cohesive revenue engine.</p>
+          </div>
+          <div class="diagram">
+            <div class="core">A</div>
+            <div class="pillar">Acquisition</div>
+            <div class="pillar">Booking</div>
+            <div class="pillar">Closing</div>
+            <div class="pillar">Delivery</div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 19 · CASE STUDY DEEP-DIVE -->
+    <section class="cat" id="casestudy">
+      <header class="cat-head">
+        <div class="cat-num">19</div>
+        <div class="cat-text"><h2>Case study deep-dive<span class="dot-period"></span></h2><p>Single hero customer. Identity → numbers → narrative. More detail than the 3-card testimonial grid. One per page.</p></div>
+      </header>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>CS-01</strong> · Hero strip · 4 big stats below <span class="tpl-classes">.case-01</span></div>
+        <section class="case-01 t-section dark">
+          <div class="head">
+            <div class="who"><div class="portrait lg">SH</div><div><strong>Sarah Hendrickson</strong><span>Founder · Coaching Collective</span></div></div>
+            <div class="meta">
+              <div class="m"><div class="lbl">INDUSTRY</div><strong>Group Coaching</strong></div>
+              <div class="m"><div class="lbl">TIER</div><strong>Install ($12K)</strong></div>
+              <div class="m"><div class="lbl">TIMELINE</div><strong>90 days</strong></div>
+            </div>
+            <div class="cta"><button class="btn ghost">Read full</button></div>
+          </div>
+          <div class="body">
+            <div class="stat"><div class="l">REVENUE</div><div class="n">$30K → $140<em>K</em></div><span class="delta">▲ 4.6×</span></div>
+            <div class="stat"><div class="l">CPL</div><div class="n">$<em>18</em></div><span class="delta">▼ 42%</span></div>
+            <div class="stat"><div class="l">CLOSE RATE</div><div class="n">38<em>%</em></div><span class="delta">▲ 35%</span></div>
+            <div class="stat"><div class="l">HOURS / WK</div><div class="n">25<em>h</em></div><span class="delta">▼ 64%</span></div>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>CS-02</strong> · Quote left · live revenue chart cards right <span class="tpl-classes">.case-02</span></div>
+        <section class="case-02 t-section dark">
+          <div class="left">
+            <span class="label on-dark eb">CASE STUDY · Q3 2026</span>
+            <h2>Sarah's 90 days, <em>in her words.</em></h2>
+            <p class="quote">"On day 14 the ads went live. By day 30 I'd stopped writing copy entirely. By day 90 I'd 4× my revenue with the same fulfillment team."</p>
+            <p>The install replaced a $9K/mo stack of contractors and let her focus on the part of the business she actually wanted to do: deliver coaching.</p>
+            <div class="by"><div class="portrait sm">SH</div><div><strong>Sarah Hendrickson</strong><span>Founder · Coaching Collective</span></div></div>
+          </div>
+          <div class="right">
+            <div class="dash"><div class="l">MONTHLY REVENUE</div><div class="n">$140<em>K</em></div><svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0 50 L40 44 L80 30 L120 24 L160 12 L200 8" fill="none" stroke="#ED1C24" stroke-width="2.5"/></svg></div>
+            <div class="dash"><div class="l">CLOSE RATE · LAST 30D</div><div class="n">38<em>%</em></div><svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0 45 L40 40 L80 35 L120 28 L160 22 L200 18" fill="none" stroke="#ED1C24" stroke-width="2.5"/></svg></div>
+            <div class="dash"><div class="l">COST PER LEAD</div><div class="n">$<em>18</em></div><svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0 14 L40 18 L80 28 L120 32 L160 42 L200 48" fill="none" stroke="#ED1C24" stroke-width="2.5"/></svg></div>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>CS-03</strong> · Day-by-day timeline · 5 milestones <span class="tpl-classes">.case-03</span></div>
+        <section class="case-03 t-section dark">
+          <div class="head"><span class="label on-dark eb">SARAH'S 90 DAYS</span><h2>Day-by-day, <em>the install's first quarter.</em></h2></div>
+          <div class="timeline">
+            <div class="item"><div class="dot">1</div><div class="day">DAY 1 · KICKOFF</div><h3>Discovery + audit</h3><p>90-minute strategy call. We mapped Sarah's offer, audience, current funnel, current CRM. End of call: a one-page revenue plan.</p></div>
+            <div class="item"><div class="dot">2</div><div class="day">DAY 14 · LAUNCH</div><h3>Ads live · first leads</h3><p>Funnel live, 9 ads running, GHL pipeline populated. Sarah's sales team trained on the playbook.</p><span class="stat">First leads · $14 CPL</span></div>
+            <div class="item"><div class="dot">3</div><div class="day">DAY 30 · OPTIMIZE</div><h3>CPL down 42%</h3><p>First creative refresh. Top hook scaled to 70% of spend. Show rate above 72%.</p><span class="stat">CPL · $18 · 42% reduction</span></div>
+            <div class="item"><div class="dot">4</div><div class="day">DAY 60 · COMPOUND</div><h3>$94K month closed</h3><p>Three referrals from recent buyers. Repeat clients re-enrolled at $5K tier. Close rate hit 38%.</p><span class="stat">MRR · $94K · 3.1× baseline</span></div>
+            <div class="item"><div class="dot">5</div><div class="day">DAY 90 · SCALE</div><h3>$140K month</h3><p>Sarah moved to Scale tier. Stopped writing copy entirely. Hired a fulfillment coach with the new margin.</p><span class="stat">MRR · $140K · 4.6× baseline</span></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 20 · APPLICATION FORM -->
+    <section class="cat" id="application">
+      <header class="cat-head">
+        <div class="cat-num">20</div>
+        <div class="cat-text"><h2>Application form<span class="dot-period"></span></h2><p>Multi-field qualifying form. Place mid-funnel after pricing, or as the primary conversion mechanic instead of a hero CTA.</p></div>
+      </header>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>AP-01</strong> · Centered single-column form · 4 fields <span class="tpl-classes">.app-01</span></div>
+        <section class="app-01 t-section dark">
+          <span class="label on-dark eb">SHORT APPLICATION · 60 SECONDS</span>
+          <h2>Tell us where you are. <em>We'll tell you the fit.</em></h2>
+          <p class="sub">No long form. No "schedule a discovery call" pitch. Submit, and if you're a fit we land on your calendar within 24 hours.</p>
+          <div class="form">
+            <label>YOUR NAME</label>
+            <div class="field">Sarah Hendrickson</div>
+            <label>BEST EMAIL</label>
+            <div class="field">sarah@coachingcollective.com</div>
+            <label>CURRENT MONTHLY REVENUE</label>
+            <div class="field">$30K – $50K</div>
+            <label>WHAT'S YOUR OFFER (1 SENTENCE)</label>
+            <div class="field">Group coaching for executive coaches scaling past $100K/mo.</div>
+            <div class="submit">Submit application →</div>
+            <span class="legal">We respond inside 24 hours · No spam · No fake discovery-call pitch</span>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>AP-02</strong> · Split · pitch + 3-step "why apply" left · form right <span class="tpl-classes">.app-02</span></div>
+        <section class="app-02 t-section dark">
+          <div class="left">
+            <span class="label on-dark">APPLY FOR COHORT 04</span>
+            <h2>Three reasons to <em>apply now.</em></h2>
+            <p>The application takes 60 seconds. The decision takes 24 hours. The install takes 14 days. That's the entire timeline.</p>
+            <div class="why">
+              <div class="pt"><div class="ck">1</div><div><strong>We respond fast.</strong><span>Inside 24 hours, every application. Yes-or-no within 48.</span></div></div>
+              <div class="pt"><div class="ck">2</div><div><strong>No discovery-call trick.</strong><span>If we say yes, you book the install call. If no, we tell you why.</span></div></div>
+              <div class="pt"><div class="ck">3</div><div><strong>You're not on a list.</strong><span>We close enrollment every quarter. Apply only when you're ready to move.</span></div></div>
+            </div>
+          </div>
+          <div class="form">
+            <div class="row2"><div class="field">First name</div><div class="field">Last name</div></div>
+            <div class="field">Best email</div>
+            <div class="field">Phone (for SMS confirmation)</div>
+            <div class="field">Business name + website</div>
+            <div class="field">Current monthly revenue</div>
+            <div class="field">What's your offer? (1 sentence)</div>
+            <div class="submit">Apply for Cohort 04 →</div>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>AP-03</strong> · Multi-step wizard · step indicator + radio choices <span class="tpl-classes">.app-03</span></div>
+        <section class="app-03 t-section dark">
+          <div class="step-bar">
+            <div class="step active">STEP 1</div>
+            <div class="step">STEP 2</div>
+            <div class="step">STEP 3</div>
+            <div class="step">DONE</div>
+          </div>
+          <div class="card">
+            <h3>Where are you in revenue today?</h3>
+            <div class="opts">
+              <div class="opt">Under $10K / month</div>
+              <div class="opt selected">$10K – $50K / month</div>
+              <div class="opt">$50K – $200K / month</div>
+              <div class="opt">$200K+ / month</div>
+            </div>
+            <div class="cta-row">
+              <button class="btn ghost">Back</button>
+              <button class="btn gradient">Next step →</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 21 · ANNOUNCEMENT BAR -->
+    <section class="cat" id="announce">
+      <header class="cat-head">
+        <div class="cat-num">21</div>
+        <div class="cat-text"><h2>Announcement bar<span class="dot-period"></span></h2><p>Top-of-page strip. Cohort closing, new launch, limited offer. Sticky variant for global awareness.</p></div>
+      </header>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>AN-01</strong> · Full-bleed gradient bar with CTA link <span class="tpl-classes">.announce-01</span></div>
+        <section class="announce-01">
+          <span class="pill">▶ NEW</span>
+          <span>Cohort 04 enrollment closes Friday at midnight ET.</span>
+          <a href="#">Apply now →</a>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>AN-02</strong> · Dark bar · pulsing live dot · right-aligned CTA <span class="tpl-classes">.announce-02</span></div>
+        <section class="announce-02">
+          <div class="left"><div class="dot"></div><span><strong>LIVE</strong> · Cohort 04 · 2 install slots remaining</span></div>
+          <div class="right"><span>Closes Friday</span><a href="#">Reserve a seat →</a></div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>AN-03</strong> · Tinted alert · icon + message + dismiss <span class="tpl-classes">.announce-03</span></div>
+        <section class="announce-03">
+          <div class="ic">!</div>
+          <div class="msg"><strong>Cohort 04 closing soon.</strong> Apply by Friday for the lock-in install price. After, it goes up 25% for Cohort 05.</div>
+          <div class="x">✕</div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 22 · HEADER / NAV -->
+    <section class="cat" id="header">
+      <header class="cat-head">
+        <div class="cat-num">22</div>
+        <div class="cat-text"><h2>Header / nav<span class="dot-period"></span></h2><p>Top-of-page navigation. Full nav, floating pill, or minimal logo + CTA. Pair with the announcement bar above.</p></div>
+      </header>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>HD-01</strong> · Full-width nav · logo + links + 2 CTAs <span class="tpl-classes">.header-01</span></div>
+        <section class="header-01 t-section dark" style="padding: 0;">
+          <div class="logo">Abundance<em>.</em></div>
+          <nav class="nav">
+            <a>The System</a><a>Case Studies</a><a>Pricing</a><a>FAQ</a><a>About</a>
+          </nav>
+          <div class="actions">
+            <button class="btn ghost">Book a call</button>
+            <button class="btn gradient">Apply now →</button>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>HD-02</strong> · Floating frosted pill · centered links · CTA right <span class="tpl-classes">.header-02</span></div>
+        <section class="header-02 t-section dark" style="padding: 0; background: rgba(255,255,255,0.02);">
+          <div class="logo">Abundance<em>.</em></div>
+          <nav class="nav">
+            <a class="active">System</a><a>Cases</a><a>Pricing</a><a>FAQ</a>
+          </nav>
+          <button class="btn gradient" style="padding: 8px 18px; font-size: 13px;">Apply →</button>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>HD-03</strong> · Minimal · logo left · text-link CTA right <span class="tpl-classes">.header-03</span></div>
+        <section class="header-03 t-section dark" style="padding: 0;">
+          <div class="logo">Abundance<em>.</em></div>
+          <div class="right-cta">
+            <span>Cohort 04 closes Friday</span>
+            <a>Apply now →</a>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 23 · FOOTER -->
+    <section class="cat" id="footer">
+      <header class="cat-head">
+        <div class="cat-num">23</div>
+        <div class="cat-text"><h2>Footer<span class="dot-period"></span></h2><p>Bottom-of-page furniture. Mega footer with link columns, big-email footer with brand mark, or slim copyright row.</p></div>
+      </header>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>FT-01</strong> · Mega footer · 5-column link grid + bottom row <span class="tpl-classes">.foot-01</span></div>
+        <section class="foot-01 t-section dark" style="padding: clamp(60px, 6vw, 100px) clamp(22px, 5vw, 80px) 48px;">
+          <div class="top">
+            <div class="brand-col">
+              <span class="logo">Abundance<em>.</em></span>
+              <p>We install Selling Systems for coaches, consultants, and agencies — 14-day delivery, then we tune.</p>
+            </div>
+            <div class="col"><h4>Product</h4><a>The Selling System</a><a>Launch ($9K)</a><a>Install ($12K)</a><a>Shift ($1.5K/mo)</a><a>Scale ($3K/mo)</a></div>
+            <div class="col"><h4>Proof</h4><a>Case Studies</a><a>Founder Stories</a><a>The Numbers</a><a>Press</a></div>
+            <div class="col"><h4>Company</h4><a>About</a><a>Founder</a><a>Hiring</a><a>Press kit</a></div>
+            <div class="col"><h4>Legal</h4><a>Privacy</a><a>Terms</a><a>Earnings disclaimer</a></div>
+          </div>
+          <div class="bottom"><div>© 2026 Abundance, Inc · All rights reserved</div><div>hello@findabundance.ai</div></div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>FT-02</strong> · Big email · h1-scale gradient · minimal meta row <span class="tpl-classes">.foot-02</span></div>
+        <section class="foot-02 t-section dark" style="padding: clamp(80px, 8vw, 120px) clamp(22px, 5vw, 80px);">
+          <div class="email">hello@<em>findabundance</em>.ai</div>
+          <div class="meta">
+            <div>© 2026 Abundance, Inc</div>
+            <div class="links"><a>Privacy</a><a>Terms</a><a>Press</a><a>Careers</a></div>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>FT-03</strong> · Slim footer · single row · copyright + links <span class="tpl-classes">.foot-03</span></div>
+        <section class="foot-03 t-section dark" style="padding: 0;">
+          <div class="left">
+            <span class="logo">Abundance<em>.</em></span>
+            <span class="copy">© 2026 · All rights reserved</span>
+          </div>
+          <div class="right"><a>Privacy</a><a>Terms</a><a>Contact</a></div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 24 · STICKY APPLY BAR -->
+    <section class="cat" id="sticky">
+      <header class="cat-head">
+        <div class="cat-num">24</div>
+        <div class="cat-text"><h2>Sticky apply bar<span class="dot-period"></span></h2><p>Fixed bottom or floating-pill CTA that appears as the visitor scrolls. Always-visible apply nudge. Pair with announcement bar at top.</p></div>
+      </header>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>SK-01</strong> · Frosted pill · pulse + apply button <span class="tpl-classes">.sticky-cta</span></div>
+        <section class="t-section dark" style="padding: 60px clamp(22px, 5vw, 80px); display: grid; place-items: center;">
+          <div class="sticky-cta">
+            <div class="what"><div class="pulse"></div><div><strong>Cohort 04 · 2 seats left</strong><span>Applications close Friday at midnight</span></div></div>
+            <button class="btn gradient">Apply now →</button>
+          </div>
+        </section>
+      </div>
+      <div class="tpl">
+        <div class="tpl-strip"><strong>SK-02</strong> · Full-width band · message + 2 CTAs <span class="tpl-classes">.sticky-cta</span></div>
+        <section class="t-section dark" style="padding: 60px clamp(22px, 5vw, 80px); display: grid; place-items: center;">
+          <div class="sticky-cta" style="max-width: 100%; border-radius: var(--r-card);">
+            <div class="what"><div class="pulse"></div><div><strong>Save your install slot for Cohort 04</strong><span>$12K install · 14-day guarantee · 6 of 8 seats filled</span></div></div>
+            <div style="display: flex; gap: 10px;"><button class="btn ghost">Book a call</button><button class="btn gradient">Apply now →</button></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
     <footer class="page-foot">
-      <div>Abundance · Section template library · v1.2 · May 17, 2026 · 60 templates</div>
+      <div>Abundance · Section template library · v1.3 · May 17, 2026 · 100+ templates · 24 categories</div>
       <div>Pulled from <a href="/brand">/brand</a> · maintained as the single source of section truth</div>
     </footer>
 
@@ -3727,7 +5614,7 @@ body.light-mode .faq-06 .qa p { color: var(--ink-dark-soft); }
     const mobile = document.getElementById('fn-mobile');
     const burger = document.getElementById('fn-burger');
     const links = document.querySelectorAll('.fn-links a, .fn-mobile a');
-    const sectionIds = ['hero','logos','pain','benefits','proof','how','lists','ctas','pricing','faq'];
+    const sectionIds = ['hero','logos','pain','benefits','proof','how','lists','ctas','pricing','faq','stats','value','bonus','guarantee','urgency','founder','transformation','methodology','casestudy','application','announce','header','footer','sticky'];
     const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
     function setActive(id) {
