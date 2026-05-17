@@ -1815,7 +1815,7 @@ body.light-mode .hp .inline-kw.silver.filled {
   border: 1px solid var(--hairline-cream);
   display: grid; place-items: end;
   padding: 12px 8px;
-  font-size: 9px; font-weight: 700; color: var(--ink-dark);
+  font-size: 11px; font-weight: 700; color: var(--ink-dark);
 }
 .demo-stats {
   background: var(--bg);
@@ -1862,10 +1862,10 @@ body.light-mode .hp .inline-kw.silver.filled {
   gap: 2px;
 }
 .demo-compare > div {
-  background: #fff;
+  background: var(--cream);
   border-radius: 4px;
   display: grid; place-items: center;
-  font-size: 9px; color: var(--ink-dark-muted); font-weight: 600;
+  font-size: 11px; color: var(--ink-dark-muted); font-weight: 600;
   padding: 6px 0;
 }
 .demo-compare > div.us { background: var(--bg); color: var(--cream); }
@@ -2210,11 +2210,13 @@ body.light-mode .hp .inline-kw.silver.filled {
     0 30px 90px -20px rgba(0,0,0,0.5),
     0 0 80px rgba(179,14,20,0.3);
 }
+/* Brand-mark "A" glyph — Neo Contact, UPRIGHT (not italic). The
+   monogram is part of the wordmark family; italic warps the shape. */
 .glass-cube .gl {
-  font-family: var(--font-display);
-  font-size: 50px; line-height: 1;
-  font-style: italic;
-  /* hero-object glyph uses the SHINE variant for the specular metallic feel */
+  font-family: var(--font-logo);
+  font-weight: 500;
+  font-size: 56px; line-height: 1;
+  font-style: normal;
   background-image: var(--grad-sig-shine);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
@@ -2762,7 +2764,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
 
 /* Carousel slides */
 .car-1 { background: var(--bg); color: var(--ink); display: flex; flex-direction: column; justify-content: space-between; }
-.car-1 .eb { font-size: 9px; font-weight: 700; letter-spacing: 0.16em; color: var(--ink-muted); }
+.car-1 .eb { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: var(--ink-muted); }
 .car-1 .h {
   font-family: var(--font-sans);
   font-weight: 800;
@@ -2777,7 +2779,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
   background-image: var(--grad-sig);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
-.car-1 .ft { font-size: 9px; font-weight: 600; color: var(--ink-muted); }
+.car-1 .ft { font-size: 11px; font-weight: 600; color: var(--ink-muted); }
 
 .car-2 {
   background: var(--bg);
@@ -2805,7 +2807,7 @@ body.light-mode .guarantee-body { color: var(--ink-dark-soft); }
   display: flex; flex-direction: column;
   gap: 10px;
 }
-.car-3 .label { font-size: 9px; font-weight: 700; letter-spacing: 0.16em; color: var(--ink-muted); }
+.car-3 .label { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: var(--ink-muted); }
 .car-3 .pt {
   border-left: 2px solid var(--sig);
   padding: 6px 0 6px 12px;
