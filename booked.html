@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>You're Booked · Abundance</title>
+
+<!-- Adobe Fonts -->
+<link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
+
+<style>
+  :root {
+    --bg: #0A0A0A;
+    --surface-1: #141414;
+    --surface-2: #1B1B1B;
+    --surface-3: #242424;
+    --border: rgba(245,240,232,0.08);
+    --border-strong: rgba(245,240,232,0.14);
+    --cream: #F5F0E8;
+    --cream-body: #C9C2B5;
+    --cream-muted: #807A70;
+    --sig: #ED1C24;
+    --grad-sig: linear-gradient(135deg, #FF5733 0%, #FF5733 7%, #ED1C24 40%, #B30E14 72%, #7A0712 93%, #7A0712 100%);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'greycliff-cf', sans-serif;
+    background: var(--bg);
+    color: var(--cream);
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  .nav {
+    padding: 24px 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+  .logo {
+    font-family: 'greycliff-cf', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+    text-decoration: none;
+    background-image: var(--grad-sig);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero {
+    position: relative;
+    padding: 120px 40px 80px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: 50%;
+    transform: translateX(-50%);
+    width: 1100px; height: 600px;
+    background: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(232,150,126,0.22) 0%, rgba(248,197,168,0.10) 30%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    background: rgba(245,240,232,0.06);
+    border: 1px solid var(--border-strong);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream-body);
+    margin-bottom: 24px;
+  }
+  .hero-badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #4ADE80;
+    box-shadow: 0 0 8px rgba(74,222,128,0.6);
+  }
+  h1 {
+    font-family: 'greycliff-cf', sans-serif;
+    font-weight: 700;
+    font-size: clamp(48px, 8vw, 96px);
+    line-height: 1.02;
+    margin-bottom: 24px;
+    color: var(--cream);
+  }
+  h1 em {
+    font-family: 'Neo Contact', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    display: block;
+    font-size: 1.15em;
+    line-height: 1;
+    margin-top: 0.1em;
+    background-image: var(--grad-sig);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: var(--cream-body);
+    max-width: 560px;
+    margin: 0 auto 40px;
+  }
+
+  .booking-card {
+    max-width: 560px;
+    margin: 0 auto;
+    background: var(--surface-1);
+    border: 1px solid var(--border-strong);
+    border-radius: 20px;
+    padding: 28px;
+    text-align: left;
+  }
+  .booking-card-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 12px;
+  }
+  .booking-card-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+  }
+  .booking-card-detail:last-child { border-bottom: none; }
+  .booking-card-detail span:first-child {
+    color: var(--cream-muted);
+  }
+  .booking-card-detail span:last-child {
+    color: var(--cream);
+    font-weight: 600;
+  }
+
+  .next-steps {
+    padding: 80px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .next-steps-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .next-steps-sub {
+    text-align: center;
+    color: var(--cream-body);
+    margin-bottom: 56px;
+    font-size: 16px;
+  }
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .step-card {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+  }
+  .step-num {
+    font-family: 'Neo Contact', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    background-image: var(--grad-sig);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+  .step-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--cream);
+  }
+  .step-card p {
+    color: var(--cream-body);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .footer {
+    padding: 60px 40px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .footer a {
+    color: var(--cream-muted);
+    text-decoration: none;
+    font-size: 13px;
+  }
+  .footer a:hover { color: var(--cream); }
+
+  @media (max-width: 700px) {
+    .hero { padding: 60px 20px 40px; }
+    .next-steps { padding: 60px 20px; }
+    .steps-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">Abundance</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Confirmed
+    </div>
+    <h1>You're <em>booked.</em></h1>
+    <p class="hero-sub">Your Strategy Call is locked in. Confirmation details below — we'll see you on the call.</p>
+
+    <div class="booking-card">
+      <div class="booking-card-label">Booking Details</div>
+      <div class="booking-card-detail">
+        <span>What</span><span>Strategy Call · 30 min</span>
+      </div>
+      <div class="booking-card-detail">
+        <span>With</span><span>Ryan Frost</span>
+      </div>
+      <div class="booking-card-detail">
+        <span>When</span><span id="booking-time">Check your email</span>
+      </div>
+      <div class="booking-card-detail">
+        <span>Where</span><span>Google Meet link sent to your inbox</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="next-steps">
+  <h2 class="next-steps-title">What happens next.</h2>
+  <p class="next-steps-sub">Three things to do before we talk — so we can use the 30 minutes well.</p>
+
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <h3>Check your inbox</h3>
+      <p>You'll get a confirmation email within 5 minutes with the calendar invite and Google Meet link. Add it to your calendar so you don't miss it.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <h3>Watch the 8-min overview</h3>
+      <p>Quick context-setter on what the Selling System actually is. Watching it before the call means we skip the basics and dig into your business.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <h3>Bring your numbers</h3>
+      <p>Have your current monthly revenue, ad spend (if any), and rough offer pricing ready. We'll use them to map your fastest path to compounding revenue.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <a href="/">← Back to Abundance.AI</a>
+</footer>
+
+</body>
+</html>

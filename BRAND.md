@@ -1,268 +1,254 @@
 # Abundance.AI — Brand Guidelines
 
-> **Status:** Locked April 2026. Design system is dark-mode only.
-> **Live reference:** [/brand](https://findabundance.ai/brand) — all tokens rendered in context.
+> **Status:** Locked v1.9 · May 2026 · *Living document — paired with [/brand](https://findabundance.ai/brand) as the rendered source of truth.*
+>
+> **Rule of thumb:** If you have to ask "is this on-brand?", check `/brand` first. If `/brand` doesn't show it, it isn't on-brand yet.
 
 ---
 
 ## Brand Foundation
 
-**The Brand:** Abundance.AI is an AI-powered growth systems company for founders. We help coaches, consultants, course creators, and agencies build real Selling Systems so their businesses scale without depending on them to run everything.
+**The Brand:** Abundance.AI builds Selling Systems for founder-led businesses. We install the entire revenue engine — ads, funnel, CRM, sales infrastructure — in 14 days flat, then we tune.
 
-**The Mission:** To unlock abundance for every founder who works with us — not just more revenue, but more time, more clarity, and more freedom to build something worth having.
+**The Mission:** Unlock real abundance for every founder — not just more revenue, but more time, more clarity, more leverage. Stop being the funnel.
 
-**The Mechanism:** The Selling System — our proprietary integrated framework that connects offer, lead generation, sales, funnels, and automation into one cohesive growth engine. Eliminate first. Automate second. Delegate last.
+**The Mechanism:** The Selling System — our 4-pillar integrated framework (Source · Engage · Close · Retain) that compounds when every pillar is active and tilts when any one is missing.
 
-**The Positioning:** We are not a course. Not an agency. Not a mastermind. We are the operating system behind how serious founders scale — built on real systems, powered by AI, and grounded in actual results.
+**The Positioning:** Not a course. Not an agency. Not a mastermind. We **install** a working system you own, then optimize it for you.
 
-**Brand Hierarchy:**
-Abundance.AI → The Selling System → Abundance Tribe → Selling System Pro
-- The brand sells the dream. The Selling System is the vehicle. Tribe is where you learn it. Pro is where you build it.
+**Audience:** Coaches, consultants, course creators, agencies doing $30K–$300K/mo who are tired of being the funnel.
 
 ---
 
-## Taglines & Positioning
+## Brand Stack
 
-| Context | Tagline |
-|---|---|
-| Abundance.AI brand | AI-Powered Growth Systems For Founders |
-| Abundance Tribe community | The Community Where Clarity Happens. |
-| The Selling System | The Complete Blueprint Every Founder Needs to Scale. |
-| Tribe hero headline | Scaling Your Business Is Harder Than It Should Be. |
-
----
-
-## Product Stack
-
-| Product | Price | Promise | Who It's For |
-|---|---|---|---|
-| Abundance Tribe | $97/mo | Clarity on what your business needs and what to build first | Founders already generating revenue, feeling stuck or scattered |
-| Selling System Pro | TBD | Actually build the Selling System with templates, frameworks, and DWY support | Tribe members ready to implement |
-
-**Important distinction:** Abundance Tribe teaches how the systems work and how to think about them. Selling System Pro is where founders actually build. Never use "build" or "install" language for Tribe. Use "understand," "learn," "clarity," and "direction."
-
----
-
-## Design Mode
-
-**Dark mode only.** Every brand surface (marketing pages, landing pages, blog posts, ads) is matte black. The luminous-glow mechanic doesn't translate to light bg, and the strongest editorial brands commit to one mode.
-
-If a future dashboard, transactional email, or print piece needs light mode, build it as a separate "interface" mode using the same color tokens — flat solids, dark ink, no glow. That's an interface system, not the brand.
-
----
-
-## Foundation — matte black + cream
-
-The brand never leaves matte black. Cream handles all primary text. These eight tokens carry every page; nothing else is allowed at the foundation level.
-
-| Role | Hex | Usage |
+| Layer | What | Where |
 |---|---|---|
-| Background | `#0F0F0F` | Primary page color |
-| Surface 1 | `#161616` | Top of card gradient |
-| Surface 2 | `#1D1D1D` | Bottom of card gradient |
-| Surface 3 | `#242424` | Hover, raised, chip backgrounds |
-| Cream | `#F5F0E8` | Primary text, headlines |
-| Cream Body | `#D5CFC4` | Paragraph copy |
-| Cream Muted | `#9C968C` | Labels, captions, eyebrows |
-| Border | `rgba(245,240,232,0.08)` | 8% cream — card edges, dividers |
-| Border Strong | `rgba(245,240,232,0.18)` | Emphasized dividers |
+| **Abundance.AI** | The parent brand · the dream | Marketing surfaces · all public pages |
+| **The Selling System** | The proprietary mechanism · the install | The flagship offer · `/selling-system` |
+| **Cohort 04 (etc.)** | The recurring delivery window | Active sales periods |
+| **Launch · Install · Shift · Scale** | The 4 product tiers (verbs) | Pricing page |
+
+See `OFFERS.md` for full product/offer stack with prices.
 
 ---
 
-## The Final 6 Glow Palette
+## Visual System · v1.9
 
-Every page picks colors from these six. Each has a single role. Pages rotate which colors appear in which sections, but **no new colors get introduced**. All six are 4-stop gradients on a 135° angle, cream → deep.
+The brand is **dark-mode default**. Tiger's-blood crimson on matte black with selective cream stages for visual breath. The design system was built for dark and translates to cream only as **intentional stage rhythm**, never as a user preference.
 
-| # | Color | Role | Hex stops (cream → deep) |
-|---|---|---|---|
-| 01 | **Peach** | Primary Signature | `#F5F0E8` → `#F8C5A8` → `#E8967E` → `#C4715E` |
-| 02 | **Coral** | Warm Sibling | `#F5F0E8` → `#FECACA` → `#FB7185` → `#BE123C` |
-| 03 | **Copper** | Bronze Depth | `#F5F0E8` → `#F2D4B8` → `#B87333` → `#6B4120` |
-| 04 | **Mocha** | Warm Grounder | `#F5F0E8` → `#DDC5B3` → `#8B5A3C` → `#40220F` |
-| 05 | **Cerulean** | Cool Accent | `#F5F0E8` → `#B8DDEC` → `#2A7FB8` → `#1A4A6B` |
-| 06 | **Slate** | Neutral Ground | `#F5F0E8` → `#C7D0D9` → `#475569` → `#1E293B` |
+### Palette
 
-**Pairs by family:**
-- Pinks/oranges → Peach (soft) + Coral (punchy)
-- Browns/metallics → Copper (bronze) + Mocha (chocolate)
-- Cools → Cerulean (hue) + Slate (neutral)
+**Foundation (matte black + cream):**
 
-### When to use each
-
-| Color | Section types |
-|---|---|
-| **Peach** | Hero, primary CTAs, page bookends, footer mark, logo, every page identity moment |
-| **Coral** | Community/Tribe sections, urgency, energy, secondary CTAs, callouts that need more punch than peach |
-| **Copper** | Heritage moments, case studies, long-form essays, Partner tier, Freedom offer — the "earned" warm |
-| **Mocha** | Testimonials, founder stories, serious-warm sections — where Slate would feel too cool |
-| **Cerulean** | Features, product UI, data visualization, integrations, technical sections — single cool hue per page |
-| **Slate** | Pricing, FAQ, legal, comparison tables, dense data — the quiet/serious anchor |
-
-### Per-section glow rotation
-
-- **Hero is always Peach.** Always. Non-negotiable.
-- **Each section picks ONE color** for its radial bg + em color.
-- **No section uses two glows.** No "transitional" gradients between glows.
-- **Final CTA bookends back to Peach** — closing the page on the brand color.
-
----
-
-## The Glow Gradient Theory
-
-Every glow gradient follows the same 4-stop template on a 135° angle:
-
-```
-0%   → Cream (#F5F0E8)         · luminous origin point
-40%  → Pale tint of color       · transition
-75%  → Saturated mid (the hue)  · the color moment
-100% → Deep anchor              · still saturated, never near-black
-```
-
-**Why each stop matters:**
-- **Cream at 0%:** Creates the "glow-from-within" effect on matte black. This is what makes the system feel luminous.
-- **Pale tint at 40%:** Smooths the cream → mid transition. Without it, the gradient bands.
-- **Saturated mid at 75%:** This is the color moment people read.
-- **Deep anchor at 100%:** Anchors the gradient in the hue. Must stay saturated — if it goes near-black it dissolves into the matte canvas.
-
-**Other gradient roles** (smaller variants of the main pattern):
-
-| Use | Pattern | Example (peach) |
+| Token | Hex | Use |
 |---|---|---|
-| Button fill (2-stop) | mid → light | `#E8967E → #F8C5A8` |
-| Button hover (2-stop) | deep → mid | `#C4715E → #E8967E` |
-| Hero radial halo | cream/mid blend at top-center | `radial-gradient(ellipse 100% 55% at 50% 0%, rgba(232,150,126,0.18), transparent 65%)` |
-| Card surface | matte 2-stop | `linear-gradient(135deg, #161616, #1D1D1D)` |
+| `--bg` | `#0A0A0A` | Page background · dark stages |
+| `--surface-1` | `#141414` | Nested dark cards |
+| `--surface-2` | `#1B1B1B` | Step-up depth |
+| `--surface-3` | `#242424` | Deepest nested surface |
+| `--cream` | `#F5F0E8` | Cream stage background |
+| `--cream-soft` | `#FAF6EF` | Cards inside cream stages |
+| `--cream-deep` | `#ECE5D8` | Subtle cream depth variant |
+
+**Ink (text):**
+
+| Token | Hex | Use |
+|---|---|---|
+| `--ink` | `#F5F0E8` | Primary text on dark |
+| `--ink-body` | `#C9C2B5` | Body text on dark |
+| `--ink-muted` | `#807A70` | Labels/eyebrows on dark |
+| `--ink-dark` | `#0A0A0A` | Primary text on cream |
+| `--ink-dark-soft` | `#3A3530` | Body text on cream |
+| `--ink-dark-muted` | `#6A645B` | Labels/eyebrows on cream |
+
+**Tiger's blood — the only accent (v1.9 fire-red, locked):**
+
+| Token | Hex | Role |
+|---|---|---|
+| `--sig-highlight` | `#FF5733` | Highlight stop · gradient peak |
+| `--sig` | `#ED1C24` | **PRIMARY tiger's blood · text & solid accent** |
+| `--sig-deep` | `#B30E14` | Deepening red · borders, deep gradient stop |
+| `--sig-anchor` | `#7A0712` | Anchor blood · dark gradient tail |
+
+### Gradients
+
+Three flavors of the tiger's-blood gradient, mapped to typographic role:
+
+| Token | Stops | Use |
+|---|---|---|
+| `--grad-sig-hero` | Specular peak @ 67% | h1 `<em>` only, animated borders |
+| `--grad-sig` | Full sweep (highlight→anchor) | Buttons, pills, badges, surfaces |
+| `--grad-sig-tight` | Compressed red range | h2/h3 `<em>`, sub-headline emphasis, cream-stage gradient text |
+
+**Achromatic backup:**
+- `--grad-graphite` — light → dark gray, for "brand recedes" moments
+- `--grad-graphite-shine` — silver shine, prestige variant
 
 ---
 
-## Typography
+## Typography Spine
 
-**Greycliff CF** — handles everything (body, headlines, labels, stats, UI). Adobe Fonts via Typekit project `bxi7koh`.
+Three fonts. Three roles. No fourth.
 
-**Neo Contact LT Pro** — reserved exclusively for `<em>` inside `<h1>/<h2>/<h3>`. Self-hosted at `/assets/fonts/neo-contact/neo-contact-lt-pro.woff2`. Single weight (700).
+| Font | Token | Role |
+|---|---|---|
+| **Greycliff CF** (Typekit `bxi7koh`) | `--font-sans` | Every h1/h2/h3, body, pills, buttons, UI. Headlines at weight 800. |
+| **DM Serif Display Italic** (Google Fonts) | `--font-display` | `<em>` inside headings only. Always with gradient text fill. Never standalone body. |
+| **Neo Contact LT Pro** (local @font-face) | `--font-logo` | The "Abundance" wordmark · and the brand-mark "A" glyph (see Rule 13). Nothing else. |
 
-### Greycliff weights & roles
+**Type ramp:**
 
-| Weight | Use |
+| Token | Size | Use |
+|---|---|---|
+| `--t-hero` | clamp(56px, 8vw, 112px) | Final-CTA hero, mega banners |
+| `--t-h1` | clamp(44px, 6vw, 80px) | Section h1 |
+| `--t-h2` | clamp(36px, 4.5vw, 56px) | Section h2 |
+| `--t-h3` | 20–26px | Card titles |
+| `--t-body` | 17px | Body copy |
+| `--t-micro` | 13px | **FLOOR — never go below.** |
+
+---
+
+## The 13 Rules
+
+1. **One accent only.** Tiger's blood and its gradient family. Never pair with a second hue family.
+2. **Gradient on every `<em>`.** Every `<em>` inside a heading uses the appropriate gradient text fill (hero on h1, tight on h2/h3).
+3. **Neo Contact = logo only.** `--font-logo` is reserved for the Abundance wordmark + the brand-mark "A" glyph.
+4. **95% achromatic, 5% splash.** Tiger's blood appears once per card. Never on every element.
+5. **Per-column visual media variety.** In multi-column layouts, each column gets a different visual medium.
+6. **Sans-bold + serif-italic = only emphasis pattern.** Greycliff 800 with DM Serif italic gradient `<em>`. No underlines or color-only emphasis.
+7. **One dot-period per page.** The tiger's-blood dot replacing a period is a signature mark — use once.
+8. **Sections are rounded stages.** Every section has border-radius. Cream page hosts dark stages; dark page hosts cream stages.
+9. **The page is alive.** Cursor light, ambient drift, pulse on brand marks, gradient slide on CTA hover. Always at least three motion behaviors.
+10. **If it's not on /brand, it isn't on-brand yet.** Reuse beats invent. Add to `/brand` before using elsewhere.
+11. **Font-size floor is 13px.** Smallest text on any surface is `--t-micro`.
+12. **Gradient before flat color.** For any accent surface, reach for `--grad-sig` first. Flat `--sig` is only for small text labels and SVG strokes.
+13. **The brand-mark "A" is Neo Contact, upright.** Wherever the Abundance monogram "A" appears as a graphic (glass cube, hub-and-spoke center, methodology core, brand tile), render it in `--font-logo` with `font-style: normal`. DM Serif italic warps the letterform. A/B/C/F step-labels in headlines and content stay italic — the rule applies only to the brand monogram.
+
+---
+
+## Stage Rhythm
+
+The brand is dark-mode primary. To prevent visual monotony on long pages, sprinkle in **cream stages** as breath moments — sections that intentionally invert to a cream background with native cream design (cast shadows instead of glows, hairline-cream borders, `--grad-sig-tight` gradient text instead of HERO, drop-caps and editorial typography where appropriate).
+
+**Target rhythm:** ~70% dark stages, ~30% cream stages, spaced roughly every 5–6 sections apart.
+
+**Best candidates for cream stages:**
+- Methodology / framework reveal (the "stop and think" moment)
+- Founder story / personal narrative (magazine-profile feel)
+- Final CTA (the "decision moment")
+- Quote spotlight (single big testimonial)
+- Pricing (intentional gravity)
+- Manifesto / beliefs section
+- Cream-bg Process / How variant
+
+**Cream stages are not user preference — they are design decisions.** The visual mode of each section is locked by its CSS, not by a toggle.
+
+---
+
+## Dark Mode Is the Brand · No Auto-Adapt
+
+Marketing pages (`/`, `/selling-system`, `/free`, `/case-studies`, future landing pages) are **dark-mode locked**. There is no user-facing light/dark toggle on these pages. The brand surface is dark because:
+
+1. Every ad, VSL, and content piece is filmed/designed dark — the funnel is dark end-to-end
+2. The design system (glows, gradients, glass) was built for dark · light translations are weaker
+3. Premium brands force their visual intent (Linear, Vercel, Anthropic, Apple product pages)
+4. Auto-adapting to OS preference splits the audience and weakens brand consistency
+
+**Exception:** `/brand` and `/templates` keep a manual light/dark toggle as a **documentation feature** — used to demo "here's what stage-rhythm cream sections look like" to prospects and clients. Visitors landing on the actual marketing pages never see this toggle.
+
+---
+
+## Container Palette (`/brand` C1–C12)
+
+Every card, panel, or boxed element on a dark stage uses one of twelve documented container styles. **C1 (hairline) is the workhorse — 90% of cards.** See `/brand` for the live gallery.
+
+| Container | Use |
 |---|---|
-| 400 · Regular | Body copy default |
-| 500 · Medium | Labels, subtle emphasis |
-| 600 · SemiBold | Secondary headlines |
-| 700 · Bold | Primary headlines |
-| 800 · ExtraBold | Display sizes, stat numbers |
-
-### The em rule
-
-`<em>` inside `<h1>`, `<h2>`, or `<h3>` is the brand's biggest typographic moment. It renders as:
-- **Font:** Neo Contact LT Pro 700
-- **Layout:** `display: block` — always on its own line
-- **Size:** 1.2× the parent heading
-- **Color:** Peach gradient fill (or, if section uses non-peach glow, that section's glow)
-
-**Use once per page maximum.** It's the headline word that matters most. If you find yourself reaching for a second em, you're underusing the rest of the type system.
-
-### Headline patterns
-
-1. **Default** — solid cream Greycliff Bold 700. No gradient.
-2. **Inline gradient** — wrap a key word in `<span class="gradient">` for inline color without changing size.
-3. **Big em** — wrap the brand-defining word in `<em>` for the once-per-page Neo Contact moment.
+| **C1** Hairline border, matched bg | Default workhorse |
+| **C2** Borderless, slight surface | Cards on contrasting surface |
+| **C3** Gradient border | "This is the one" |
+| **C4** Depth gradient | Elevation without color |
+| **C5** Fade-to-nothing | Implies "continues below" |
+| **C6** Featured halo | MOST POPULAR tier |
+| **C7** Frosted glass | Floating nav, modals |
+| **C8** Gradient fill | Final CTA only |
+| **C9** Dot vignette | Texture without color |
+| **C10** Animated red border | Featured tier, alive |
+| **C11** Animated silver border | Prestige variant |
+| **C12** Outer glow halo | Guarantee badge, hero objects |
 
 ---
 
-## Logo System
+## Component Vocabulary
 
-- **Wordmark:** Greycliff Bold 700 — "Abundance.AI"
-- **Default lockup:** light wordmark on matte black. This is the only mode for marketing.
-- **Email/print only:** dark wordmark on cream. Never default.
-- **Logo gradient mark:** small 24px rounded square with the Peach gradient — sits beside the wordmark in nav, footer, and small-format usages
+**Pills · 6 inline-keyword states + 2 modifiers** (Pattern C / `/brand`):
 
-**Logo rules:**
-- Never stretch, rotate, or recolor.
-- Never place light logo on light bg or dark logo on dark bg.
-- Never use the wordmark without the brand gradient mark in nav contexts.
-- Logo mark is always Peach gradient — never any other Final 6 color.
+- `.filled` — red gradient surface, cream text (loudest)
+- `.glow` — gradient border + faded transparent red interior glow, warm-cream text (mid)
+- `(default)` — red gradient border, dark interior, red text (quietest)
+- `.solid` — cream fill, red gradient border, red text
+- `.cream` — cream fill, hairline border, red text (restraint)
+- `.ink` — cream fill, hairline border, black text
+- `.silver` (modifier) — swap red gradient for graphite-shine
+- `.label` (modifier) — 20px-radius uppercase stamp
+
+**Underline callouts · 5 variants** for softer-than-pill emphasis:
+- `.uline` (flat red) · `.uline.white` · `.uline.grad` (red gradient) · `.uline.silver` (silver gradient) · `.uline.marker` (hand-drawn marker swipe)
+
+**Buttons:** `.btn.ghost` · `.btn.dark` (silver shine + red undercast) · `.btn.gradient` (sweeping gradient on hover) · `.btn.outline-pill` (cream pill + dark border + gradient circle-arrow — the brand's "decision pill").
 
 ---
 
-## Components
+## Motion
 
-### Buttons
+Required motion behaviors per page (Rule 9):
+1. **Cursor-tied light field** (hero only) — radial glow follows visitor's cursor
+2. **Ambient blob drift** — slow-drifting blurred color blobs
+3. **Pulse glow** — brand marks pulse softly ("alive / running")
+4. **Gradient slide on CTA hover** — CTA backgrounds are 200% wide and slide on hover
+5. **Animated border shine** (C10/C11) — rotating arc on featured cards
 
-| Variant | Background | Text | Use |
-|---|---|---|---|
-| **Primary** | Peach gradient (mid → light) | Dark warm `#3A1810` | Main CTAs, Apply Now, Join the Tribe |
-| **Ghost** | Matte fill, peach gradient border | Cream | Secondary CTAs |
-| **Cream** | Solid cream `#F5F0E8` | Dark `#0F0F0F` | Tertiary or contrast CTAs (especially on Coral/Cerulean section bg) |
+---
 
-**Hover:** primary darkens one step (deep → mid), ghost picks up surface-1 fill.
+## Imagery
 
-**CTA Copy Rules:** Hero buttons never show price. Mid-page CTAs say "Join Abundance Tribe." Final CTA can include "— $97/mo." Button text title-case (not all-uppercase) with arrows for primary actions.
+**The brand-mark "A" glyph** — Neo Contact, upright, gradient-text-filled. Used as a brand monogram in hub-and-spoke centers, glass cubes, founder gallery tiles. See Rule 13.
 
-### Highlight pills · 20px radius
+**Portraits** — Use `.portrait` utility (radial-gradient face-highlight + skin-tone base). Variants: default (warm red), `.cool` (blue-slate), `.warm` (bronze). Sizes: `.sm` (40px), default (64px), `.lg` (92px).
 
-| Variant | Use |
+**Logos** — Client logos render in DM Serif Display, color `--ink-muted`, opacity 0.65 (grayscale-ish). See `/templates` Logo Carousel category for layouts.
+
+**Product/UI mockups** — `.mock-phone` and `.mock-laptop` utilities provide realistic chrome (notch, browser dots, sidebar) with branded interior content (red pipeline rows, dashboard stats).
+
+---
+
+## File Map
+
+| File | Purpose |
 |---|---|
-| `.highlight` | Solid cream with dark text — strong inline emphasis |
-| `.highlight-peach` | Peach gradient with dark text — value/numeric callouts |
-| `.highlight-cream` | Subtle 8% cream fill with cream text + border — soft emphasis |
-
-### Corner radius standards
-
-- **20px** — cards, containers, highlight pills (default)
-- **10px** — buttons
-- **100px** — pill labels (badges, urgency bars, nav CTAs)
-
-No other radii allowed.
+| `/brand` (brand.html) | Live brand reference · tokens, rules, sections, components, motion, content — rendered in context |
+| `/templates` (templates.html) | Template library · 130+ section templates across 32 categories · portable token system |
+| `BRAND.md` (this file) | Foundational doc · content-agnostic · canonical rules |
+| `OFFERS.md` | Offer stack · prices · positioning per product |
+| `/` (index.html) | Homepage · composed from `/templates` primitives · dark with 3 cream stages (Methodology, Founder, Final CTA) |
+| `/selling-system` | Primary offer page |
 
 ---
 
-## Rules of Engagement
+## Building a Client's Brand
 
-The system holds together because every page follows the same rules. Each one prevents a specific failure mode.
+The template library is **portable**. To install a brand-locked `/brand` and `/templates` for a client:
 
-1. **Six colors only.** Peach, Coral, Copper, Mocha, Cerulean, Slate. No new colors.
-2. **Dark mode only.** Every brand surface matte black.
-3. **One em per page.** Neo Contact + peach gradient + own line + 1.2× parent. The page's most important word.
-4. **One glow per section.** Each section picks one of the six. Hero is always Peach.
-5. **135° gradients always.** Top-left to bottom-right. Don't rotate.
-6. **4-stop pattern.** Cream → pale tint → saturated mid → deep anchor. Don't drop the cream start.
-7. **20 / 10 / 100 radii.** Cards/pills 20px. Buttons 10px. Pill labels 100px.
-8. **Greycliff is the default.** Neo Contact ONLY inside `<em>` within h1/h2/h3.
-9. **Color from content.** Photography, product screenshots, abstract art carry the variety — not extra brand colors.
-10. **Buttons always carry peach.** Primary fills the gradient. Ghost borders it.
+1. Copy `brand.html` and `templates.html` to the client repo
+2. Swap `:root` token values (palette, fonts) for their brand
+3. Replace placeholder content (testimonials, logos, names, numbers) with their real content
+4. Adjust the cream-stage rhythm to match their tone (more cream for editorial brands, less for ops-heavy brands)
+5. Ship — they have their own brand-locked design system in 1–2 hours
+
+The HTML/CSS structure stays. Only tokens and content swap.
 
 ---
 
-## Voice & Tone
-
-### We Do
-- Speak directly to the founder — "you," not "founders"
-- Use short, punchy sentences. Then explain.
-- Name the specific problem before offering the solution
-- Be confident without being arrogant
-- Use real numbers from real results
-- Use plain language — no jargon, no buzzwords
-- Make the outcome clear before explaining the mechanism
-
-### We Don't
-- Use em dashes to pivot sentences — it reads as AI
-- Promise outcomes we can't back up yet
-- Use "genuinely," "honestly," or "straightforward"
-- Say "passive income" or "replace yourself completely"
-- Overuse bold text, bullet points, or headers in copy
-- Use generic phrases like "game-changing" or "revolutionary"
-
-### Instead Of → Say This
-- "Build a passive business" → "Build a business that scales without depending on you for everything"
-- "Revolutionary AI-powered framework" → "A system built around how founders actually scale"
-- "Our proven system guarantees results" → "Built from 5+ years of building the systems behind $12M+ in revenue"
-- "This will change your life" → "This will change how you think about scaling your business"
-
----
-
-## Reference
-
-- **Live design system:** [/brand](https://findabundance.ai/brand)
-- **Glow color exploration history:** [/glow-options](https://findabundance.ai/glow-options) — the 29-color exploration that produced the Final 6
-- **Pattern reference for new pages:** [/selling-system](https://findabundance.ai/selling-system) — full DFY offer page using the system
-- **Source of truth in code:** any HTML page using the locked `:root` tokens listed in `/brand` and the `--glow-*` CSS variables
+**Last updated:** May 17, 2026 · Brand System v1.9 + Stage Rhythm + Dark-Mode-Locked Marketing.
