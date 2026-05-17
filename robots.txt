@@ -1,0 +1,7 @@
+# Abundance · findabundance.ai
+# Crawlers welcome on public pages; archive/ is internal only.
+
+User-agent: *
+Disallow: /archive/
+
+Sitemap: https://findabundance.ai/sitemap.xml
