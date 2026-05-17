@@ -1566,26 +1566,27 @@ body.light-mode .uline.white {
 .uline.grad   { background-image: var(--grad-sig); }
 .uline.silver { background-image: var(--grad-graphite-shine); }
 
-/* .uline.marker — hand-drawn marker stroke. SVG data URL paints a
-   wobbly path under the text with rounded line-caps so it reads as
-   "drawn with a felt-tip pen, not stamped." Variants swap the SVG's
-   stroke color via separate URLs. */
+/* .uline.marker — fast marker swipe. A FILLED tapered shape (not a
+   uniform stroke) that starts thick at the low-left, sweeps up to
+   nearly-touch the word bottom around 65% across, and tapers to a
+   thin tip on the right (slightly lower than the peak, but higher
+   than the start). Reads as "one fast stroke with a felt-tip." */
 .uline.marker {
   text-decoration: none;
   background-repeat: no-repeat;
-  background-position: 0 calc(100% + 0.05em);
-  background-size: 100% 0.42em;
-  padding-bottom: 0.18em;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M4 9 C 30 5 60 11 95 7 S 150 4 196 8' stroke='%23ED1C24' stroke-width='6.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: 0 calc(100% + 0.02em);
+  background-size: 100% 0.55em;
+  padding-bottom: 0.22em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M 3 12 Q 60 12 130 4 Q 165 3 197 7 L 197 6.5 Q 165 1 130 2 Q 60 9 3 9 Z' fill='%23ED1C24'/%3E%3C/svg%3E");
 }
 .uline.marker.silver {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M4 9 C 30 5 60 11 95 7 S 150 4 196 8' stroke='%23B5B0A8' stroke-width='6.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M 3 12 Q 60 12 130 4 Q 165 3 197 7 L 197 6.5 Q 165 1 130 2 Q 60 9 3 9 Z' fill='%23B5B0A8'/%3E%3C/svg%3E");
 }
 .uline.marker.white {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M4 9 C 30 5 60 11 95 7 S 150 4 196 8' stroke='%23F5F0E8' stroke-width='6.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M 3 12 Q 60 12 130 4 Q 165 3 197 7 L 197 6.5 Q 165 1 130 2 Q 60 9 3 9 Z' fill='%23F5F0E8'/%3E%3C/svg%3E");
 }
 body.light-mode .uline.marker.white {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M4 9 C 30 5 60 11 95 7 S 150 4 196 8' stroke='%230A0A0A' stroke-width='6.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M 3 12 Q 60 12 130 4 Q 165 3 197 7 L 197 6.5 Q 165 1 130 2 Q 60 9 3 9 Z' fill='%230A0A0A'/%3E%3C/svg%3E");
 }
 
 /* Modifier · .silver — swap the red gradient border (or surface) for
