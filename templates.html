@@ -1,0 +1,2129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abundance · Section Templates</title>
+<meta name="description" content="The Abundance section template library — paste-ready production sections grouped by purpose. Hero, logo bar, pain, benefits, proof, how-it-works, lists, CTA, pricing, FAQ. Light + dark.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   ABUNDANCE · SECTION TEMPLATES · v1.0
+   Production-ready sections, brand-locked, drop-and-paste.
+   Pull tokens from /brand. Pull layout patterns from here.
+   ═══════════════════════════════════════════════════════════════════ */
+
+@font-face {
+  font-family: 'Neo Contact';
+  src: url('/assets/fonts/neo-contact/neo-contact-lt-pro.woff2') format('woff2');
+  font-weight: 400 900; font-style: normal; font-display: swap;
+}
+
+:root {
+  --cream:       #F5F0E8;
+  --cream-soft:  #FAF6EF;
+  --cream-deep:  #ECE5D8;
+  --bg:          #0A0A0A;
+  --surface-1:   #141414;
+  --surface-2:   #1B1B1B;
+  --surface-3:   #242424;
+
+  --ink:         #F5F0E8;
+  --ink-body:    #C9C2B5;
+  --ink-muted:   #807A70;
+  --ink-dark:    #0A0A0A;
+  --ink-dark-soft:  #3A3530;
+  --ink-dark-muted: #6A645B;
+
+  --sig-highlight: #FF5733;
+  --sig:           #ED1C24;
+  --sig-deep:      #B30E14;
+  --sig-anchor:    #7A0712;
+
+  --grad-sig-hero: linear-gradient(135deg,
+    #B30E14 0%, #B30E14 7%,
+    #ED1C24 28%,
+    #FF5733 67%,
+    #B30E14 88%,
+    #7A0712 93%, #7A0712 100%);
+  --grad-sig: linear-gradient(135deg,
+    #FF5733 0%, #FF5733 7%,
+    #ED1C24 40%,
+    #B30E14 72%,
+    #7A0712 93%, #7A0712 100%);
+  --grad-sig-tight: linear-gradient(135deg,
+    #ED1C24 0%, #ED1C24 12%,
+    #B30E14 60%,
+    #7A0712 88%, #7A0712 100%);
+
+  --grad-graphite: linear-gradient(135deg, #DCD8D2 0%, #B5B0A8 35%, #7A7670 70%, #4A4845 100%);
+  --grad-graphite-shine: linear-gradient(135deg, #7A7670 0%, #B5B0A8 30%, #DCD8D2 60%, #7A7670 85%, #4A4845 100%);
+  --grad-horizon: radial-gradient(ellipse 70% 60% at 50% 110%, rgba(255,87,51,0.32) 0%, rgba(179,14,20,0.42) 25%, rgba(122,7,18,0.22) 50%, transparent 75%);
+
+  --hairline:        rgba(255,255,255,0.08);
+  --hairline-strong: rgba(255,255,255,0.18);
+  --hairline-cream:  rgba(10,10,10,0.10);
+  --hairline-cream-strong: rgba(10,10,10,0.18);
+
+  --glass-bg-dark:  rgba(20,20,20,0.55);
+  --glass-bg-cream: rgba(245,240,232,0.65);
+  --glass-blur:     blur(22px) saturate(140%);
+
+  --font-logo:    "Neo Contact", "DM Serif Display", Georgia, serif;
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-sans:    "greycliff-cf", system-ui, -apple-system, sans-serif;
+
+  --t-hero:    clamp(56px, 8vw, 112px);
+  --t-h1:      clamp(44px, 6vw, 80px);
+  --t-h2:      clamp(36px, 4.5vw, 56px);
+  --t-h3:      clamp(20px, 2vw, 26px);
+  --t-body:    17px;
+  --t-small:   15px;
+  --t-micro:   13px;
+
+  --r-stage:   28px;
+  --r-card:    18px;
+  --r-pill:    100px;
+  --r-button:  10px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--t-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body.light-mode { background: var(--cream); color: var(--ink-dark); }
+button { font: inherit; cursor: pointer; border: none; background: none; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* TYPOGRAPHY */
+h1, h2, h3, .display {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.028em;
+  line-height: 1.04;
+}
+h1 em, h2 em, h3 em, .display em {
+  font-family: var(--font-display);
+  font-style: italic; font-weight: 400;
+  -webkit-background-clip: text !important; background-clip: text !important;
+  -webkit-text-fill-color: transparent !important; color: transparent !important;
+  filter: drop-shadow(0 0 14px rgba(237,28,36,0.32));
+}
+h1 em, .display em { background-image: var(--grad-sig-hero) !important; }
+h2 em, h3 em { background-image: var(--grad-sig-tight) !important; }
+body.light-mode h1 em, body.light-mode h2 em, body.light-mode h3 em { filter: none; }
+
+.label, .eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--t-micro);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.label.on-dark { color: var(--ink-body); }
+body.light-mode .label { color: var(--ink-dark-muted); }
+.dot-period {
+  display: inline-block;
+  width: 0.38em; height: 0.38em;
+  background: var(--grad-sig);
+  border-radius: 50%;
+  vertical-align: 0.05em;
+  margin-left: 0.06em;
+  box-shadow: 0 0 18px rgba(179,14,20,0.55);
+}
+
+/* PILLS */
+.pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--hairline-strong);
+  background: rgba(255,255,255,0.05);
+  font-size: var(--t-micro);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-body);
+}
+.pill.filled {
+  background: var(--grad-sig); color: var(--cream);
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(179,14,20,0.35);
+}
+.pill.filled-soft {
+  background: rgba(179,14,20,0.12);
+  border-color: rgba(179,14,20,0.25);
+  color: var(--sig);
+}
+body.light-mode .pill { background: var(--cream-soft); border-color: var(--hairline-cream); color: var(--ink-dark-soft); }
+
+/* BUTTONS */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--r-pill);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn.ghost {
+  background: rgba(255,255,255,0.06);
+  color: var(--ink);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+.btn.ghost:hover { background: rgba(255,255,255,0.10); }
+body.light-mode .btn.ghost { background: rgba(10,10,10,0.05); color: var(--ink-dark); border-color: rgba(10,10,10,0.08); }
+.btn.dark {
+  background: var(--ink-dark); color: var(--cream);
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 6px 18px -6px rgba(237,28,36,0.35);
+}
+.btn.dark:hover { transform: translateY(-1px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.16), 0 10px 26px -8px rgba(237,28,36,0.55); }
+.btn.gradient {
+  background: var(--grad-sig);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  color: var(--cream);
+  box-shadow: 0 0 24px rgba(179,14,20,0.4);
+  transition: background-position 0.5s ease;
+}
+.btn.gradient:hover { background-position: 100% 50%; }
+.btn.outline-pill {
+  padding: 10px 10px 10px 26px;
+  border: 1.5px solid var(--ink-dark);
+  background: var(--cream-soft);
+  color: var(--ink-dark);
+}
+.btn.outline-pill .arrow {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--grad-sig); color: var(--cream);
+  display: grid; place-items: center;
+  box-shadow: 0 0 18px rgba(179,14,20,0.4);
+}
+
+/* AVATARS */
+.av {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--grad-sig);
+  display: grid; place-items: center;
+  font-family: var(--font-sans);
+  font-weight: 700; font-size: 15px; color: var(--cream);
+  flex-shrink: 0;
+}
+.av.sm { width: 32px; height: 32px; font-size: 12px; }
+.av.lg { width: 64px; height: 64px; font-size: 22px; }
+.av.achro { background: linear-gradient(135deg, #555, #222); }
+.av-cluster { display: inline-flex; align-items: center; }
+.av-cluster .av { margin-left: -10px; border: 2px solid var(--bg); }
+.av-cluster .av:first-child { margin-left: 0; }
+body.light-mode .av-cluster .av { border-color: var(--cream); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   PAGE STAGE
+   ═══════════════════════════════════════════════════════════════════ */
+.page {
+  margin: 14px;
+  border-radius: var(--r-stage);
+  overflow: hidden;
+  position: relative;
+  min-height: calc(100vh - 28px);
+  background: var(--bg);
+}
+body.light-mode .page { background: var(--cream); }
+
+/* FLOATING NAV */
+.float-nav {
+  position: fixed;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  z-index: 200;
+  display: flex; align-items: center;
+  gap: 14px;
+  padding: 8px 8px 8px 22px;
+  border-radius: var(--r-pill);
+  background: var(--glass-bg-dark);
+  -webkit-backdrop-filter: var(--glass-blur);
+          backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 18px 50px -12px rgba(0,0,0,0.55);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  max-width: calc(100% - 32px);
+}
+.float-nav.hidden { transform: translateX(-50%) translateY(calc(-100% - 30px)); opacity: 0; }
+.fn-mark {
+  font-family: var(--font-logo);
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.fn-mark em { font-style: normal; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.fn-sep { width: 1px; height: 22px; background: rgba(255,255,255,0.10); }
+.fn-links { display: flex; gap: 2px; }
+.fn-links a {
+  display: inline-flex; align-items: center;
+  padding: 7px 11px;
+  border-radius: var(--r-pill);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-body);
+  white-space: nowrap;
+}
+.fn-links a:hover { background: rgba(255,255,255,0.06); color: var(--ink); }
+.fn-links a.active {
+  background: var(--grad-sig);
+  color: var(--cream);
+  box-shadow: 0 4px 14px -2px rgba(179,14,20,0.35);
+}
+.fn-toggle {
+  display: flex;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--r-pill);
+  padding: 3px;
+}
+.fn-toggle span {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 30px;
+  border-radius: var(--r-pill);
+  color: var(--ink-muted);
+}
+.fn-toggle span svg { width: 14px; height: 14px; }
+.fn-toggle .t-dark {
+  background: var(--grad-sig); color: var(--cream);
+  box-shadow: 0 3px 10px -2px rgba(179,14,20,0.45);
+}
+body.light-mode .fn-toggle .t-dark { background: transparent; box-shadow: none; color: var(--ink-dark-muted); }
+body.light-mode .fn-toggle .t-light { background: var(--grad-sig); color: var(--cream); }
+.fn-burger {
+  display: none;
+  width: 38px; height: 38px;
+  align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--ink);
+}
+.fn-burger svg { width: 18px; height: 18px; }
+body.light-mode .float-nav {
+  background: var(--glass-bg-cream);
+  border-color: rgba(10,10,10,0.08);
+  box-shadow: 0 18px 50px -12px rgba(10,10,10,0.12);
+}
+body.light-mode .fn-mark { color: var(--ink-dark); }
+body.light-mode .fn-sep { background: rgba(10,10,10,0.10); }
+body.light-mode .fn-links a { color: var(--ink-dark-soft); }
+body.light-mode .fn-links a:hover { background: rgba(10,10,10,0.05); color: var(--ink-dark); }
+body.light-mode .fn-burger { background: rgba(10,10,10,0.05); border-color: rgba(10,10,10,0.06); color: var(--ink-dark); }
+
+.fn-mobile {
+  display: none;
+  position: fixed; top: 78px; left: 14px; right: 14px;
+  z-index: 199;
+  background: var(--glass-bg-dark);
+  -webkit-backdrop-filter: var(--glass-blur);
+          backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--r-card);
+  padding: 12px;
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.fn-mobile.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+.fn-mobile a { display: block; padding: 10px 14px; border-radius: 10px; color: var(--ink-body); font-size: 15px; font-weight: 500; }
+.fn-mobile a.active { background: var(--grad-sig); color: var(--cream); }
+body.light-mode .fn-mobile { background: var(--glass-bg-cream); border-color: rgba(10,10,10,0.08); }
+body.light-mode .fn-mobile a { color: var(--ink-dark-soft); }
+
+@media (max-width: 1100px) {
+  .fn-links, .fn-sep { display: none; }
+  .fn-burger { display: inline-flex; }
+  .fn-mobile { display: block; }
+  .float-nav { gap: 10px; padding: 8px 8px 8px 18px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PAGE-INTRO + CATEGORY HEADERS
+   ═══════════════════════════════════════════════════════════════════ */
+.page-hero {
+  padding: clamp(140px, 14vw, 200px) clamp(22px, 5vw, 80px) clamp(50px, 6vw, 90px);
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: ''; position: absolute;
+  top: -100px; right: -100px;
+  width: 460px; height: 460px;
+  background: radial-gradient(circle, rgba(179,14,20,0.32), transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+.page-hero h1 {
+  font-size: clamp(46px, 7vw, 96px);
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  max-width: 22ch;
+  margin: 22px 0 24px;
+  color: inherit;
+}
+.page-hero .lead {
+  font-family: var(--font-sans);
+  font-size: clamp(17px, 1.5vw, 21px);
+  max-width: 60ch;
+  color: var(--ink-body);
+}
+body.light-mode .page-hero .lead { color: var(--ink-dark-soft); }
+
+.cat {
+  padding: clamp(60px, 6vw, 100px) clamp(22px, 5vw, 80px);
+  border-top: 1px solid var(--hairline);
+}
+body.light-mode .cat { border-top-color: var(--hairline-cream); }
+.cat-head { margin-bottom: 40px; display: flex; gap: 24px; align-items: flex-start; }
+.cat-num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(48px, 5vw, 72px);
+  background: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.cat-head .cat-text { flex: 1; }
+.cat-head h2 {
+  font-size: clamp(34px, 4vw, 52px);
+  margin-bottom: 10px;
+  color: inherit;
+}
+.cat-head p {
+  font-size: 17px;
+  max-width: 60ch;
+  color: var(--ink-body);
+}
+body.light-mode .cat-head p { color: var(--ink-dark-soft); }
+@media (max-width: 640px) {
+  .cat-head { flex-direction: column; gap: 12px; }
+}
+
+/* TEMPLATE WRAPPER */
+.tpl {
+  margin-bottom: 28px;
+  border-radius: var(--r-stage);
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  background: var(--surface-1);
+}
+body.light-mode .tpl { background: var(--cream-soft); border-color: var(--hairline-cream); }
+.tpl-strip {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--ink-body);
+  background: rgba(255,255,255,0.02);
+  border-bottom: 1px solid var(--hairline);
+  letter-spacing: 0.04em;
+}
+.tpl-strip strong {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  color: var(--sig-highlight);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.tpl-strip .tpl-classes {
+  margin-left: auto;
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--ink-muted);
+  opacity: 0.8;
+}
+body.light-mode .tpl-strip { background: rgba(10,10,10,0.02); border-bottom-color: var(--hairline-cream); color: var(--ink-dark-soft); }
+body.light-mode .tpl-strip strong { color: var(--sig); }
+body.light-mode .tpl-strip .tpl-classes { color: var(--ink-dark-muted); }
+
+/* SECTION-PREVIEW DEFAULTS — every section uses .t-section as the
+   outer "stage". It gets the inner padding, radius is handled by .tpl. */
+.t-section {
+  padding: clamp(40px, 5vw, 80px) clamp(20px, 4vw, 64px);
+  position: relative;
+  overflow: hidden;
+}
+.t-section.dark { background: var(--bg); color: var(--ink); }
+.t-section.surface { background: var(--surface-1); color: var(--ink); }
+.t-section.cream { background: var(--cream); color: var(--ink-dark); }
+.t-section.cream-soft { background: var(--cream-soft); color: var(--ink-dark); }
+
+/* Common grids */
+.t-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
+.t-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(16px, 2vw, 28px); }
+.t-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(16px, 2vw, 24px); }
+@media (max-width: 820px) {
+  .t-grid-2, .t-grid-3, .t-grid-4 { grid-template-columns: 1fr; }
+}
+@media (min-width: 821px) and (max-width: 1100px) {
+  .t-grid-4 { grid-template-columns: 1fr 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   01 · HEROES
+   ═══════════════════════════════════════════════════════════════════ */
+.hero-01 { text-align: left; min-height: 540px; display: flex; flex-direction: column; justify-content: center; }
+.hero-01::before {
+  content: ''; position: absolute; inset: -20%;
+  background: radial-gradient(circle 600px at 30% 40%, rgba(179,14,20,0.32), transparent 60%);
+  pointer-events: none;
+}
+.hero-01 > * { position: relative; z-index: 1; }
+.hero-01 h1 { font-size: clamp(42px, 6vw, 84px); max-width: 16ch; margin: 24px 0; line-height: 1.02; letter-spacing: -0.03em; }
+.hero-01 .lead { font-size: 19px; max-width: 56ch; color: var(--ink-body); line-height: 1.55; margin-bottom: 32px; }
+.hero-01 .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+body.light-mode .hero-01 .lead { color: var(--ink-dark-soft); }
+
+.hero-02 { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; min-height: 560px; }
+.hero-02 h1 { font-size: clamp(36px, 5vw, 64px); margin: 18px 0; letter-spacing: -0.025em; }
+.hero-02 .lead { color: var(--ink-body); margin-bottom: 28px; max-width: 50ch; }
+body.light-mode .hero-02 .lead { color: var(--ink-dark-soft); }
+.hero-02 .vsl {
+  aspect-ratio: 16/9;
+  border-radius: var(--r-card);
+  background: var(--surface-2);
+  border: 1px solid var(--hairline);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.5);
+}
+.hero-02 .vsl::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(179,14,20,0.40), transparent 70%);
+}
+.hero-02 .vsl .play {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 76px; height: 76px; border-radius: 50%;
+  background: var(--grad-sig); color: var(--cream);
+  display: grid; place-items: center;
+  box-shadow: 0 0 40px rgba(179,14,20,0.55);
+}
+.hero-02 .vsl .time-tag {
+  position: absolute; top: 16px; right: 16px;
+  padding: 4px 10px; border-radius: 4px;
+  background: rgba(0,0,0,0.6); color: var(--ink); font-size: 13px;
+  font-family: ui-monospace, monospace;
+}
+@media (max-width: 820px) { .hero-02 { grid-template-columns: 1fr; min-height: auto; } }
+
+.hero-03 { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: center; min-height: 540px; }
+.hero-03 .num {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(110px, 16vw, 220px);
+  background-image: var(--grad-sig-hero);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 60px rgba(179,14,20,0.30));
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+.hero-03 .num em { font-family: var(--font-display); font-style: italic; }
+.hero-03 .right h1 { font-size: clamp(28px, 3vw, 40px); margin-bottom: 14px; max-width: 18ch; }
+.hero-03 .right .lead { color: var(--ink-body); margin-bottom: 24px; max-width: 40ch; }
+body.light-mode .hero-03 .right .lead { color: var(--ink-dark-soft); }
+.hero-03 .sub { display: block; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: var(--ink-muted); margin-top: 10px; }
+@media (max-width: 820px) { .hero-03 { grid-template-columns: 1fr; min-height: auto; text-align: center; } .hero-03 .right .lead { margin: 0 auto 24px; } }
+
+/* ═══════════════════════════════════════════════════════════════════
+   02 · LOGO CAROUSEL
+   ═══════════════════════════════════════════════════════════════════ */
+.logos-01 { padding: 40px clamp(20px, 4vw, 64px); }
+.logos-01 .logo-strip {
+  display: flex; align-items: center; justify-content: space-around;
+  flex-wrap: wrap; gap: 30px;
+  padding: 26px 0;
+}
+.logos-01 .logo {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.6vw, 22px);
+  color: var(--ink-muted);
+  opacity: 0.65;
+  letter-spacing: -0.01em;
+}
+.logos-01 .eb { display: block; text-align: center; margin-bottom: 16px; }
+body.light-mode .logos-01 .logo { color: var(--ink-dark-muted); }
+
+.logos-02 .logo-row {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 32px;
+  padding: 32px 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  margin: 30px 0 24px;
+}
+.logos-02 .logo { font-family: var(--font-display); font-size: 22px; color: var(--ink-muted); opacity: 0.65; }
+.logos-02 .stats {
+  display: flex; gap: clamp(20px, 4vw, 80px); justify-content: center;
+  text-align: center;
+}
+.logos-02 .stat .n {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(28px, 3vw, 42px);
+  letter-spacing: -0.03em;
+  color: inherit;
+}
+.logos-02 .stat .n em { font-family: var(--font-display); font-style: italic; }
+.logos-02 .stat .l { font-size: 13px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-muted); margin-top: 4px; }
+body.light-mode .logos-02 .logo-row { border-color: var(--hairline-cream); }
+body.light-mode .logos-02 .logo { color: var(--ink-dark-muted); }
+body.light-mode .logos-02 .stat .l { color: var(--ink-dark-muted); }
+
+.logos-03 .grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--hairline);
+  border-left: 1px solid var(--hairline);
+  margin-top: 28px;
+}
+.logos-03 .cell {
+  padding: 28px 16px;
+  display: grid; place-items: center;
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--ink-muted);
+  opacity: 0.65;
+  border-right: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+body.light-mode .logos-03 .grid, body.light-mode .logos-03 .cell { border-color: var(--hairline-cream); }
+body.light-mode .logos-03 .cell { color: var(--ink-dark-muted); }
+@media (max-width: 820px) { .logos-03 .grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* ═══════════════════════════════════════════════════════════════════
+   03 · PAIN POINTS
+   ═══════════════════════════════════════════════════════════════════ */
+.pain-01 { text-align: center; }
+.pain-01 .eb { display: block; margin-bottom: 12px; }
+.pain-01 h2 { max-width: 22ch; margin: 0 auto 56px; font-size: clamp(32px, 4vw, 48px); }
+.pain-01 .cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; text-align: left; }
+.pain-01 .card {
+  padding: 32px 28px;
+  border-radius: var(--r-card);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+}
+.pain-01 .card .q {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 26px;
+  background-image: var(--grad-sig-tight);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  margin-bottom: 14px;
+  line-height: 1.15;
+}
+.pain-01 .card p { font-size: 15px; color: var(--ink-body); line-height: 1.5; }
+body.light-mode .pain-01 .card { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .pain-01 .card p { color: var(--ink-dark-soft); }
+@media (max-width: 820px) { .pain-01 .cards { grid-template-columns: 1fr; } }
+
+.pain-02 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; min-height: 460px; }
+.pain-02 .left h2 { font-size: clamp(34px, 4vw, 52px); margin-bottom: 18px; }
+.pain-02 .left p { color: var(--ink-body); font-size: 17px; max-width: 50ch; }
+body.light-mode .pain-02 .left p { color: var(--ink-dark-soft); }
+.pain-02 .chaos {
+  position: relative; min-height: 360px;
+}
+.pain-02 .chaos .chip {
+  position: absolute;
+  padding: 10px 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-pill);
+  font-family: var(--font-sans);
+  font-size: 14px; font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  animation: pain-tumble 6s ease-in-out infinite;
+}
+@keyframes pain-tumble {
+  0%, 100% { transform: translateY(0) rotate(var(--r, -4deg)); }
+  50% { transform: translateY(12px) rotate(var(--r2, 6deg)); }
+}
+.pain-02 .chaos .chip:nth-child(1) { top: 5%; left: 8%; --r: -6deg; --r2: 4deg; }
+.pain-02 .chaos .chip:nth-child(2) { top: 22%; left: 42%; --r: 5deg; --r2: -8deg; animation-delay: -1.5s; }
+.pain-02 .chaos .chip:nth-child(3) { top: 38%; left: 15%; --r: -3deg; --r2: 7deg; animation-delay: -3s; }
+.pain-02 .chaos .chip:nth-child(4) { top: 55%; left: 50%; --r: 8deg; --r2: -5deg; animation-delay: -2s; }
+.pain-02 .chaos .chip:nth-child(5) { top: 70%; left: 20%; --r: -7deg; --r2: 4deg; animation-delay: -4s; }
+.pain-02 .chaos .chip:nth-child(6) { top: 78%; left: 55%; --r: 4deg; --r2: -6deg; animation-delay: -2.5s; }
+body.light-mode .pain-02 .chaos .chip { background: var(--cream-soft); border-color: var(--hairline-cream); color: var(--ink-dark); }
+@media (max-width: 820px) { .pain-02 { grid-template-columns: 1fr; } }
+
+.pain-03 { text-align: center; }
+.pain-03::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(179,14,20,0.18), transparent 70%);
+  pointer-events: none;
+}
+.pain-03 > * { position: relative; z-index: 1; }
+.pain-03 .q {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(36px, 5vw, 64px);
+  letter-spacing: -0.025em;
+  max-width: 20ch;
+  margin: 0 auto;
+  line-height: 1.1;
+}
+.pain-03 .q em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig-hero); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.pain-03 .by {
+  margin-top: 28px;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+body.light-mode .pain-03 .by { color: var(--ink-dark-muted); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   04 · BENEFITS
+   ═══════════════════════════════════════════════════════════════════ */
+.ben-01 .eb { display: block; margin-bottom: 12px; }
+.ben-01 h2 { max-width: 24ch; margin-bottom: 48px; font-size: clamp(32px, 4vw, 48px); }
+.ben-01 .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+.ben-01 .ben {
+  padding: 32px 28px;
+  border-radius: var(--r-card);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+}
+.ben-01 .ic {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: rgba(179,14,20,0.12);
+  border: 1px solid rgba(179,14,20,0.30);
+  display: grid; place-items: center;
+  color: var(--sig);
+  margin-bottom: 18px;
+}
+.ben-01 .ben h3 { font-size: 22px; margin-bottom: 8px; }
+.ben-01 .ben p { font-size: 15px; color: var(--ink-body); line-height: 1.5; }
+body.light-mode .ben-01 .ben { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .ben-01 .ben p { color: var(--ink-dark-soft); }
+@media (max-width: 820px) { .ben-01 .grid { grid-template-columns: 1fr; } }
+
+.ben-02 { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
+.ben-02 .left h2 { font-size: clamp(36px, 5vw, 56px); margin-bottom: 16px; }
+.ben-02 .left .lead { color: var(--ink-body); margin-bottom: 28px; max-width: 44ch; }
+body.light-mode .ben-02 .left .lead { color: var(--ink-dark-soft); }
+.ben-02 .bullets { display: flex; flex-direction: column; gap: 14px; }
+.ben-02 .bullet { display: flex; gap: 14px; align-items: flex-start; }
+.ben-02 .bullet .ck {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--grad-sig);
+  color: var(--cream);
+  display: grid; place-items: center;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.ben-02 .bullet strong { font-size: 16px; display: block; margin-bottom: 4px; }
+.ben-02 .bullet span { font-size: 14px; color: var(--ink-body); line-height: 1.45; }
+body.light-mode .ben-02 .bullet span { color: var(--ink-dark-soft); }
+.ben-02 .right {
+  aspect-ratio: 4/3;
+  border-radius: var(--r-card);
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 80%, rgba(179,14,20,0.25), transparent 70%),
+    linear-gradient(160deg, var(--surface-2), var(--surface-1));
+  border: 1px solid var(--hairline);
+  position: relative;
+  display: grid; place-items: center;
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.5);
+}
+.ben-02 .right .frame {
+  width: 70%; height: 60%;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--hairline-strong);
+  display: grid; place-items: center;
+  font-size: 13px; color: var(--ink-muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+@media (max-width: 820px) { .ben-02 { grid-template-columns: 1fr; } }
+
+.ben-03 { text-align: center; min-height: 540px; position: relative; }
+.ben-03::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--grad-horizon);
+  pointer-events: none;
+}
+.ben-03 > * { position: relative; z-index: 1; }
+.ben-03 .eb { display: block; margin-bottom: 12px; }
+.ben-03 h2 { font-size: clamp(34px, 4vw, 52px); margin-bottom: 56px; max-width: 22ch; margin-left: auto; margin-right: auto; }
+.ben-03 .hub {
+  position: relative;
+  width: 100%; max-width: 720px;
+  height: 320px;
+  margin: 0 auto;
+}
+.ben-03 .hub-core {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 140px; height: 140px;
+  border-radius: 32px;
+  background: linear-gradient(160deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02));
+  border: 1.5px solid rgba(255,255,255,0.25);
+  -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+  display: grid; place-items: center;
+  font-family: var(--font-display);
+  font-size: 56px; font-style: italic;
+  background-image: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  box-shadow: 0 0 80px rgba(179,14,20,0.40);
+}
+.ben-03 .hub-orbit {
+  position: absolute;
+  padding: 10px 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-pill);
+  font-size: 13px;
+  color: var(--ink);
+  white-space: nowrap;
+  font-weight: 600;
+}
+.ben-03 .hub-orbit:nth-child(2) { top: 8%; left: 18%; }
+.ben-03 .hub-orbit:nth-child(3) { top: 8%; right: 18%; }
+.ben-03 .hub-orbit:nth-child(4) { top: 50%; left: 2%; transform: translateY(-50%); }
+.ben-03 .hub-orbit:nth-child(5) { top: 50%; right: 2%; transform: translateY(-50%); }
+.ben-03 .hub-orbit:nth-child(6) { bottom: 8%; left: 18%; }
+.ben-03 .hub-orbit:nth-child(7) { bottom: 8%; right: 18%; }
+body.light-mode .ben-03 .hub-orbit { background: var(--cream-soft); border-color: var(--hairline-cream); color: var(--ink-dark); }
+@media (max-width: 720px) { .ben-03 .hub { height: 420px; } }
+
+/* ═══════════════════════════════════════════════════════════════════
+   05 · PROOF
+   ═══════════════════════════════════════════════════════════════════ */
+.proof-01 .eb { display: block; margin-bottom: 12px; text-align: center; }
+.proof-01 h2 { text-align: center; font-size: clamp(32px, 4vw, 48px); margin-bottom: 48px; max-width: 22ch; margin-left: auto; margin-right: auto; }
+.proof-01 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.proof-01 .stat {
+  padding: 28px 24px;
+  border-radius: var(--r-card);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+}
+.proof-01 .stat .l { font-size: 13px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-muted); margin-bottom: 12px; font-weight: 700; }
+.proof-01 .stat .n {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 38px;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+.proof-01 .stat .n em {
+  font-family: var(--font-display);
+  font-style: italic;
+  background-image: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.proof-01 .stat .delta {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  background: var(--grad-sig);
+  color: var(--cream);
+  font-size: 12px; font-weight: 700;
+}
+body.light-mode .proof-01 .stat { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .proof-01 .stat .l { color: var(--ink-dark-muted); }
+@media (max-width: 820px) { .proof-01 .stats { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .proof-01 .stats { grid-template-columns: 1fr; } }
+
+.proof-02 {
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(179,14,20,0.20), transparent 70%),
+    var(--bg);
+  text-align: center;
+}
+body.light-mode .proof-02 { background: var(--cream); }
+.proof-02 .eb { display: block; margin-bottom: 18px; }
+.proof-02 .q {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(28px, 3.5vw, 44px);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  max-width: 22ch;
+  margin: 0 auto 32px;
+}
+.proof-02 .q em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig-hero); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.proof-02 .by { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 22px; }
+.proof-02 .by .by-text { text-align: left; font-size: 14px; }
+.proof-02 .by .by-text strong { display: block; color: inherit; }
+.proof-02 .by .by-text span { color: var(--ink-muted); }
+body.light-mode .proof-02 .by .by-text span { color: var(--ink-dark-muted); }
+.proof-02 .logos {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+  gap: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--hairline);
+  margin-top: 22px;
+}
+.proof-02 .logos .logo { font-family: var(--font-display); font-size: 18px; color: var(--ink-muted); opacity: 0.6; }
+body.light-mode .proof-02 .logos { border-top-color: var(--hairline-cream); }
+body.light-mode .proof-02 .logos .logo { color: var(--ink-dark-muted); }
+
+.proof-03 .eb { display: block; margin-bottom: 12px; }
+.proof-03 h2 { margin-bottom: 40px; font-size: clamp(32px, 4vw, 48px); max-width: 22ch; }
+.proof-03 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.proof-03 .card {
+  padding: 28px 26px;
+  border-radius: var(--r-card);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+  display: flex; flex-direction: column; gap: 18px;
+}
+.proof-03 .card .q { font-size: 17px; line-height: 1.45; }
+.proof-03 .card .q em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig-tight); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.proof-03 .card .by-row { display: flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--hairline); }
+.proof-03 .card .by-row strong { display: block; font-size: 14px; }
+.proof-03 .card .by-row span { font-size: 12px; color: var(--ink-muted); }
+body.light-mode .proof-03 .card { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .proof-03 .card .by-row { border-top-color: var(--hairline-cream); }
+body.light-mode .proof-03 .card .by-row span { color: var(--ink-dark-muted); }
+@media (max-width: 820px) { .proof-03 .grid { grid-template-columns: 1fr; } }
+
+/* ═══════════════════════════════════════════════════════════════════
+   06 · HOW IT WORKS
+   ═══════════════════════════════════════════════════════════════════ */
+.how-01 .eb { display: block; margin-bottom: 12px; }
+.how-01 h2 { font-size: clamp(34px, 4vw, 52px); margin-bottom: 48px; max-width: 22ch; }
+.how-01 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.how-01 .step {
+  padding: 28px 22px;
+  border-radius: var(--r-card);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+}
+.how-01 .step .num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 48px;
+  line-height: 1;
+  background-image: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  margin-bottom: 16px;
+}
+.how-01 .step h3 { font-size: 18px; margin-bottom: 8px; }
+.how-01 .step p { font-size: 14px; color: var(--ink-body); line-height: 1.5; }
+body.light-mode .how-01 .step { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .how-01 .step p { color: var(--ink-dark-soft); }
+@media (max-width: 820px) { .how-01 .steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .how-01 .steps { grid-template-columns: 1fr; } }
+
+.how-02 { display: grid; grid-template-columns: 1fr; gap: 0; }
+.how-02 h2 { font-size: clamp(34px, 4vw, 52px); margin-bottom: 48px; max-width: 22ch; }
+.how-02 .timeline { position: relative; padding-left: 56px; }
+.how-02 .timeline::before {
+  content: ''; position: absolute; left: 23px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--sig), var(--sig-deep), transparent);
+}
+.how-02 .item { position: relative; padding-bottom: 36px; }
+.how-02 .item:last-child { padding-bottom: 0; }
+.how-02 .item .dot {
+  position: absolute; left: -48px; top: 6px;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--grad-sig);
+  display: grid; place-items: center;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  color: var(--cream);
+  font-size: 17px;
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 20px rgba(179,14,20,0.40);
+}
+body.light-mode .how-02 .item .dot { border-color: var(--cream); }
+.how-02 .item h3 { font-size: 22px; margin-bottom: 6px; }
+.how-02 .item p { color: var(--ink-body); max-width: 60ch; }
+body.light-mode .how-02 .item p { color: var(--ink-dark-soft); }
+
+.how-03 { text-align: center; }
+.how-03 .eb { display: block; margin-bottom: 14px; }
+.how-03 h2 { font-size: clamp(34px, 4vw, 52px); margin-bottom: 48px; max-width: 22ch; margin-left: auto; margin-right: auto; }
+.how-03 .checks { max-width: 640px; margin: 0 auto; display: grid; gap: 14px; text-align: left; }
+.how-03 .check {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 20px 24px;
+  border-radius: var(--r-card);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+}
+.how-03 .check .ck {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--grad-sig);
+  color: var(--cream);
+  display: grid; place-items: center;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.how-03 .check strong { display: block; margin-bottom: 4px; font-size: 16px; }
+.how-03 .check span { font-size: 14px; color: var(--ink-body); }
+body.light-mode .how-03 .check { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .how-03 .check span { color: var(--ink-dark-soft); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   07 · DETAILED BULLET LISTS
+   ═══════════════════════════════════════════════════════════════════ */
+.list-01 .eb { display: block; margin-bottom: 12px; }
+.list-01 h2 { font-size: clamp(34px, 4vw, 52px); margin-bottom: 48px; max-width: 22ch; }
+.list-01 .cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+.list-01 .col h3 { font-size: 22px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--hairline); }
+body.light-mode .list-01 .col h3 { border-bottom-color: var(--hairline-cream); }
+.list-01 .col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.list-01 .col li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 15px;
+  color: var(--ink-body);
+  line-height: 1.5;
+}
+.list-01 .col li::before {
+  content: '✓';
+  position: absolute; left: 0; top: 0;
+  font-weight: 800;
+  background-image: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+body.light-mode .list-01 .col li { color: var(--ink-dark-soft); }
+@media (max-width: 820px) { .list-01 .cols { grid-template-columns: 1fr; gap: 22px; } }
+
+.list-02 { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
+.list-02 .left .eb { display: block; margin-bottom: 12px; }
+.list-02 .left h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 16px; }
+.list-02 .left p { color: var(--ink-body); font-size: 16px; }
+body.light-mode .list-02 .left p { color: var(--ink-dark-soft); }
+.list-02 .items { display: flex; flex-direction: column; gap: 8px; }
+.list-02 .item {
+  padding: 18px 22px;
+  border-left: 3px solid var(--sig);
+  background: rgba(255,255,255,0.03);
+  border-radius: 0 var(--r-card) var(--r-card) 0;
+}
+.list-02 .item strong { display: block; font-size: 16px; margin-bottom: 4px; }
+.list-02 .item span { font-size: 14px; color: var(--ink-body); }
+body.light-mode .list-02 .item { background: var(--cream-soft); }
+body.light-mode .list-02 .item span { color: var(--ink-dark-soft); }
+@media (max-width: 820px) { .list-02 { grid-template-columns: 1fr; } }
+
+.list-03 .eb { display: block; margin-bottom: 12px; text-align: center; }
+.list-03 h2 { text-align: center; font-size: clamp(34px, 4vw, 52px); margin-bottom: 40px; max-width: 22ch; margin-left: auto; margin-right: auto; }
+.list-03 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 880px; margin: 0 auto; }
+.list-03 .lhead {
+  font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 700; color: var(--ink-muted);
+  margin-bottom: 12px;
+}
+body.light-mode .list-03 .lhead { color: var(--ink-dark-muted); }
+.list-03 ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.list-03 li {
+  padding-left: 22px; position: relative; font-size: 15px;
+  color: var(--ink-body); line-height: 1.5;
+}
+.list-03 .yes li::before { content: '✓'; position: absolute; left: 0; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800; }
+.list-03 .no li::before { content: '✕'; position: absolute; left: 0; color: var(--ink-muted); font-weight: 800; }
+.list-03 .no li { color: var(--ink-muted); text-decoration: line-through; text-decoration-color: rgba(255,255,255,0.15); }
+body.light-mode .list-03 li { color: var(--ink-dark-soft); }
+body.light-mode .list-03 .no li { color: var(--ink-dark-muted); text-decoration-color: rgba(10,10,10,0.15); }
+@media (max-width: 640px) { .list-03 .grid { grid-template-columns: 1fr; } }
+
+/* ═══════════════════════════════════════════════════════════════════
+   08 · CTAs
+   ═══════════════════════════════════════════════════════════════════ */
+.cta-01 { text-align: center; padding-top: clamp(80px, 8vw, 140px); padding-bottom: clamp(80px, 8vw, 140px); }
+.cta-01 .eb { display: block; margin-bottom: 16px; }
+.cta-01 h2 { font-size: clamp(36px, 5vw, 64px); margin-bottom: 40px; max-width: 18ch; margin-left: auto; margin-right: auto; }
+.cta-01 .pill-cta {
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 14px 14px 14px 28px;
+  border: 1.5px solid var(--ink-dark);
+  border-radius: var(--r-pill);
+  background: var(--cream-soft);
+  color: var(--ink-dark);
+  font-size: 17px;
+  font-weight: 700;
+}
+.cta-01.dark .pill-cta { background: var(--cream); border-color: var(--cream); }
+.cta-01 .pill-cta .arr {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--grad-sig);
+  color: var(--cream);
+  display: grid; place-items: center;
+  box-shadow: 0 0 20px rgba(179,14,20,0.4);
+}
+
+.cta-02 {
+  text-align: center;
+  background:
+    radial-gradient(ellipse 60% 60% at 50% 50%, rgba(179,14,20,0.30), transparent 70%),
+    var(--bg);
+}
+body.light-mode .cta-02 {
+  background:
+    radial-gradient(ellipse 60% 60% at 50% 50%, rgba(179,14,20,0.20), transparent 70%),
+    var(--cream);
+}
+.cta-02 h2 { font-size: clamp(30px, 4vw, 44px); max-width: 22ch; margin: 0 auto 24px; }
+.cta-02 .row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+.cta-03 { text-align: center; }
+.cta-03 h2 { font-size: clamp(34px, 4vw, 52px); margin-bottom: 28px; max-width: 22ch; margin-left: auto; margin-right: auto; }
+.cta-03 .row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
+.cta-03 .guarantee {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 14px 24px;
+  border-radius: var(--r-pill);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+  font-size: 14px;
+  color: var(--ink-body);
+}
+.cta-03 .guarantee .badge {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--grad-sig);
+  color: var(--cream);
+  display: grid; place-items: center;
+  font-weight: 800;
+}
+body.light-mode .cta-03 .guarantee { background: var(--cream-soft); border-color: var(--hairline-cream); color: var(--ink-dark-soft); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   09 · PRICING
+   ═══════════════════════════════════════════════════════════════════ */
+.price-01 .eb { display: block; margin-bottom: 12px; text-align: center; }
+.price-01 h2 { text-align: center; font-size: clamp(32px, 4vw, 48px); margin-bottom: 40px; max-width: 22ch; margin-left: auto; margin-right: auto; }
+.price-01 .tiers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.price-01 .tier {
+  padding: 32px 26px;
+  border-radius: var(--r-card);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+  display: flex; flex-direction: column; gap: 18px;
+  position: relative;
+}
+.price-01 .tier.featured {
+  background:
+    linear-gradient(180deg, rgba(179,14,20,0.14), rgba(179,14,20,0.02));
+  border-color: rgba(179,14,20,0.32);
+  box-shadow: 0 30px 80px -20px rgba(179,14,20,0.30);
+}
+.price-01 .featured .badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  padding: 5px 12px; border-radius: var(--r-pill);
+  background: var(--grad-sig);
+  color: var(--cream);
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.14em; text-transform: uppercase;
+}
+.price-01 .tier .nm { font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; }
+.price-01 .tier .pr {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 36px;
+  letter-spacing: -0.03em;
+}
+.price-01 .tier .pr em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.price-01 .tier .ds { font-size: 13px; color: var(--ink-muted); }
+.price-01 .tier ul { list-style: none; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.price-01 .tier li {
+  position: relative; padding-left: 22px;
+  font-size: 13.5px;
+  color: var(--ink-body);
+  line-height: 1.4;
+}
+.price-01 .tier li::before {
+  content: '✓'; position: absolute; left: 0;
+  background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent;
+  font-weight: 800;
+}
+body.light-mode .price-01 .tier { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .price-01 .tier .nm, body.light-mode .price-01 .tier .ds { color: var(--ink-dark-muted); }
+body.light-mode .price-01 .tier li { color: var(--ink-dark-soft); }
+@media (max-width: 1100px) { .price-01 .tiers { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .price-01 .tiers { grid-template-columns: 1fr; } }
+
+.price-02 .eb { display: block; margin-bottom: 12px; text-align: center; }
+.price-02 h2 { text-align: center; font-size: clamp(32px, 4vw, 48px); margin-bottom: 40px; max-width: 22ch; margin-left: auto; margin-right: auto; }
+.price-02 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 980px; margin: 0 auto; }
+.price-02 .col {
+  padding: 36px;
+  border-radius: var(--r-card);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+}
+.price-02 .col .eb-l { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; margin-bottom: 12px; }
+.price-02 .col h3 { font-size: 32px; margin-bottom: 16px; }
+.price-02 .col h3 em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig-tight); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.price-02 .col p { color: var(--ink-body); font-size: 15px; margin-bottom: 22px; }
+.price-02 .col .tiers { display: flex; gap: 18px; padding-top: 22px; border-top: 1px solid var(--hairline); }
+.price-02 .col .tier-mini strong { display: block; font-size: 24px; font-weight: 800; }
+.price-02 .col .tier-mini span { font-size: 13px; color: var(--ink-muted); }
+body.light-mode .price-02 .col { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .price-02 .col .eb-l { color: var(--ink-dark-muted); }
+body.light-mode .price-02 .col p { color: var(--ink-dark-soft); }
+body.light-mode .price-02 .col .tiers { border-top-color: var(--hairline-cream); }
+body.light-mode .price-02 .col .tier-mini span { color: var(--ink-dark-muted); }
+@media (max-width: 820px) { .price-02 .row { grid-template-columns: 1fr; } }
+
+.price-03 { text-align: center; }
+.price-03 .eb { display: block; margin-bottom: 12px; }
+.price-03 h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 40px; max-width: 22ch; margin-left: auto; margin-right: auto; }
+.price-03 .feat-card {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 48px;
+  border-radius: var(--r-stage);
+  background:
+    linear-gradient(180deg, rgba(179,14,20,0.18), rgba(179,14,20,0.04));
+  border: 1px solid rgba(179,14,20,0.30);
+  box-shadow: 0 30px 100px -20px rgba(179,14,20,0.40);
+  position: relative;
+}
+.price-03 .feat-card .badge {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  padding: 7px 16px; border-radius: var(--r-pill);
+  background: var(--grad-sig); color: var(--cream);
+  font-size: 12px; font-weight: 800;
+  letter-spacing: 0.16em; text-transform: uppercase;
+}
+.price-03 .feat-card .nm { font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; margin-bottom: 12px; }
+.price-03 .feat-card .pr {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 72px;
+  letter-spacing: -0.04em;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+.price-03 .feat-card .pr em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig-hero); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.price-03 .feat-card .ds { color: var(--ink-body); margin-bottom: 24px; }
+.price-03 .feat-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; text-align: left; max-width: 320px; margin: 0 auto 28px; }
+.price-03 .feat-card li {
+  position: relative; padding-left: 24px;
+  font-size: 15px;
+  color: var(--ink-body);
+}
+.price-03 .feat-card li::before {
+  content: '✓'; position: absolute; left: 0;
+  background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent;
+  font-weight: 800;
+}
+body.light-mode .price-03 .feat-card .nm { color: var(--ink-dark-muted); }
+body.light-mode .price-03 .feat-card .ds, body.light-mode .price-03 .feat-card li { color: var(--ink-dark-soft); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   10 · FAQ
+   ═══════════════════════════════════════════════════════════════════ */
+.faq-01 .eb { display: block; margin-bottom: 12px; text-align: center; }
+.faq-01 h2 { text-align: center; font-size: clamp(32px, 4vw, 48px); margin-bottom: 40px; max-width: 22ch; margin-left: auto; margin-right: auto; }
+.faq-01 .list { max-width: 720px; margin: 0 auto; }
+.faq-01 .q {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 0;
+  border-top: 1px solid var(--hairline);
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.faq-01 .q:last-child { border-bottom: 1px solid var(--hairline); }
+.faq-01 .q::after {
+  content: '+';
+  font-size: 24px; font-weight: 700;
+  background-image: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+body.light-mode .faq-01 .q { border-top-color: var(--hairline-cream); }
+body.light-mode .faq-01 .q:last-child { border-bottom-color: var(--hairline-cream); }
+
+.faq-02 .eb { display: block; margin-bottom: 12px; }
+.faq-02 h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 40px; max-width: 22ch; }
+.faq-02 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 28px; }
+.faq-02 .qa {
+  padding: 22px 24px;
+  border-radius: var(--r-card);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--hairline);
+}
+.faq-02 .qa strong { display: block; font-size: 16px; margin-bottom: 8px; }
+.faq-02 .qa p { font-size: 14px; color: var(--ink-body); line-height: 1.5; }
+body.light-mode .faq-02 .qa { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .faq-02 .qa p { color: var(--ink-dark-soft); }
+@media (max-width: 820px) { .faq-02 .grid { grid-template-columns: 1fr; } }
+
+.faq-03 { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; }
+.faq-03 .left h2 { font-size: clamp(30px, 4vw, 44px); margin-bottom: 20px; }
+.faq-03 .left p { color: var(--ink-body); margin-bottom: 24px; }
+.faq-03 .left .still { margin-top: 22px; padding: 22px; border-radius: var(--r-card); background: var(--surface-2); border: 1px solid var(--hairline); }
+.faq-03 .left .still strong { display: block; margin-bottom: 8px; }
+.faq-03 .left .still p { font-size: 14px; margin-bottom: 14px; }
+.faq-03 .right .q {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 0;
+  border-top: 1px solid var(--hairline);
+  font-weight: 600;
+}
+.faq-03 .right .q:last-child { border-bottom: 1px solid var(--hairline); }
+.faq-03 .right .q::after { content: '+'; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 24px; font-weight: 700; }
+body.light-mode .faq-03 .left p { color: var(--ink-dark-soft); }
+body.light-mode .faq-03 .left .still { background: var(--cream-soft); border-color: var(--hairline-cream); }
+body.light-mode .faq-03 .right .q { border-top-color: var(--hairline-cream); }
+body.light-mode .faq-03 .right .q:last-child { border-bottom-color: var(--hairline-cream); }
+@media (max-width: 820px) { .faq-03 { grid-template-columns: 1fr; } }
+
+/* ═══════════════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════════════ */
+.page-foot {
+  padding: 56px clamp(22px, 5vw, 80px);
+  border-top: 1px solid var(--hairline);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 18px;
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+body.light-mode .page-foot { border-top-color: var(--hairline-cream); color: var(--ink-dark-muted); }
+.page-foot a { color: inherit; }
+.page-foot a:hover { color: var(--sig); }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="float-nav" id="float-nav">
+    <a class="fn-mark" href="#top">Templates<em>.</em></a>
+    <span class="fn-sep"></span>
+    <nav class="fn-links">
+      <a href="#hero" class="active">Heroes</a>
+      <a href="#logos">Logos</a>
+      <a href="#pain">Pain</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#proof">Proof</a>
+      <a href="#how">How</a>
+      <a href="#lists">Lists</a>
+      <a href="#ctas">CTAs</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="fn-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
+      <span class="t-dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+      <span class="t-light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span>
+    </button>
+    <button class="fn-burger" id="fn-burger" type="button" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </header>
+
+  <div class="fn-mobile" id="fn-mobile">
+    <a href="#hero" class="active">01 · Heroes</a>
+    <a href="#logos">02 · Logos</a>
+    <a href="#pain">03 · Pain</a>
+    <a href="#benefits">04 · Benefits</a>
+    <a href="#proof">05 · Proof</a>
+    <a href="#how">06 · How</a>
+    <a href="#lists">07 · Lists</a>
+    <a href="#ctas">08 · CTAs</a>
+    <a href="#pricing">09 · Pricing</a>
+    <a href="#faq">10 · FAQ</a>
+  </div>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" id="top">
+      <span class="label">ABUNDANCE · SECTION TEMPLATE LIBRARY</span>
+      <h1>Pick a section. <em>Paste it.</em> Ship<span class="dot-period"></span></h1>
+      <p class="lead">
+        Production-ready sections grouped by purpose. Every template is brand-locked, drop-and-paste, and works in both light + dark mode. Pull the closest one when building a new page — reuse beats invent.
+      </p>
+    </section>
+
+    <!-- 01 · HEROES -->
+    <section class="cat" id="hero">
+      <header class="cat-head">
+        <div class="cat-num">01</div>
+        <div class="cat-text"><h2>Hero sections<span class="dot-period"></span></h2><p>Page-openers. Always: headline, sub-paragraph, primary CTA. Variations swap layout, media (VSL / mockup / none), and emphasis pattern.</p></div>
+      </header>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>HE-01</strong> · Cursor-tied glow · centered headline · no media <span class="tpl-classes">.hero-01</span></div>
+        <section class="hero-01 t-section dark">
+          <span class="label on-dark">FOR FOUNDERS DOING $30K–$300K/MO</span>
+          <h1>Stop adding tactics. Install <em>the system.</em><span class="dot-period"></span></h1>
+          <p class="lead">We replace your copywriter, media buyer, and CRM admin with one team. Ads live in 14 days. 5–11× revenue lift in the first quarter.</p>
+          <div class="cta-row">
+            <button class="btn gradient">Apply now →</button>
+            <button class="btn ghost">See pricing</button>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>HE-02</strong> · Asymmetric · headline-left · VSL placeholder right <span class="tpl-classes">.hero-02</span></div>
+        <section class="hero-02 t-section dark">
+          <div>
+            <span class="label on-dark">THE SELLING SYSTEM · INSTALLED</span>
+            <h1>Six hires worth of work. <em>One team.</em></h1>
+            <p class="lead">Watch the 12-minute walkthrough. See exactly what we install in your business — ads, funnels, CRM, the entire revenue engine.</p>
+            <div class="cta-row" style="display:flex;gap:12px;flex-wrap:wrap;">
+              <button class="btn gradient">Apply now →</button>
+              <button class="btn ghost">Read the case studies</button>
+            </div>
+          </div>
+          <div class="vsl">
+            <div class="time-tag">12:04</div>
+            <div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>HE-03</strong> · Stat-led · big number left · pitch right <span class="tpl-classes">.hero-03</span></div>
+        <section class="hero-03 t-section dark">
+          <div class="num">11<em>x</em></div>
+          <div class="right">
+            <span class="label on-dark">CASE STUDY · COACHING COLLECTIVE</span>
+            <h1>From $30K/mo to $140K/mo in <em>90 days.</em></h1>
+            <p class="lead">Sarah fired her agency on day 14. Six months later: 11× revenue, zero copywriters on payroll, founder still sleeps at night.</p>
+            <button class="btn gradient">Read the full story →</button>
+            <span class="sub">3-MIN READ</span>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 02 · LOGO CAROUSEL -->
+    <section class="cat" id="logos">
+      <header class="cat-head">
+        <div class="cat-num">02</div>
+        <div class="cat-text"><h2>Logo carousels<span class="dot-period"></span></h2><p>Quiet trust signals. Place under the hero, above the CTA, or as a band between sections. Variants change density and proximity to stats.</p></div>
+      </header>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>LC-01</strong> · Single-row grayscale strip · "TRUSTED BY" eyebrow <span class="tpl-classes">.logos-01</span></div>
+        <section class="logos-01 t-section dark">
+          <span class="label on-dark eb">TRUSTED BY FOUNDERS AT</span>
+          <div class="logo-strip">
+            <span class="logo">Pellow</span>
+            <span class="logo">Brightline</span>
+            <span class="logo">Halcyon</span>
+            <span class="logo">Inkwell</span>
+            <span class="logo">Verdant</span>
+            <span class="logo">Tessellate</span>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>LC-02</strong> · Logo row + stat band beneath <span class="tpl-classes">.logos-02</span></div>
+        <section class="logos-02 t-section dark">
+          <div class="logo-row">
+            <span class="logo">Pellow</span>
+            <span class="logo">Brightline</span>
+            <span class="logo">Halcyon</span>
+            <span class="logo">Inkwell</span>
+            <span class="logo">Verdant</span>
+            <span class="logo">Tessellate</span>
+          </div>
+          <div class="stats">
+            <div class="stat"><div class="n">100<em>+</em></div><div class="l">Founders</div></div>
+            <div class="stat"><div class="n">$200<em>M</em></div><div class="l">Revenue lifted</div></div>
+            <div class="stat"><div class="n">14<em>d</em></div><div class="l">Ads-live</div></div>
+            <div class="stat"><div class="n">5–11<em>x</em></div><div class="l">Lift in Q1</div></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>LC-03</strong> · 6-cell grid · hairline borders · denser <span class="tpl-classes">.logos-03</span></div>
+        <section class="logos-03 t-section dark">
+          <span class="label on-dark">AS FEATURED IN</span>
+          <div class="grid">
+            <div class="cell">Pellow</div>
+            <div class="cell">Brightline</div>
+            <div class="cell">Halcyon</div>
+            <div class="cell">Inkwell</div>
+            <div class="cell">Verdant</div>
+            <div class="cell">Tessellate</div>
+            <div class="cell">Quanta</div>
+            <div class="cell">Foundry</div>
+            <div class="cell">Northbound</div>
+            <div class="cell">Slate &amp; Co</div>
+            <div class="cell">Linework</div>
+            <div class="cell">Reverb</div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 03 · PAIN POINTS -->
+    <section class="cat" id="pain">
+      <header class="cat-head">
+        <div class="cat-num">03</div>
+        <div class="cat-text"><h2>Pain points<span class="dot-period"></span></h2><p>State the problem before showing the solution. Variants: three "what-if" cards, animated chaos visual, or a single big pain question.</p></div>
+      </header>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>PP-01</strong> · 3 "What if…" cards · centered <span class="tpl-classes">.pain-01</span></div>
+        <section class="pain-01 t-section dark">
+          <span class="label on-dark eb">THE COST OF DOING NOTHING</span>
+          <h2>If nothing changes, what does <em>next quarter</em> look like?</h2>
+          <div class="cards">
+            <div class="card">
+              <div class="q">"What if our<br>ads still flop?"</div>
+              <p>Three more agencies, three more $50K bills, twelve more months of slipping behind on payroll.</p>
+            </div>
+            <div class="card">
+              <div class="q">"What if my best<br>copywriter quits?"</div>
+              <p>The headline machine stops. Open rates crater. The funnel goes cold. Now you're hiring AND running the business.</p>
+            </div>
+            <div class="card">
+              <div class="q">"What if my CRM<br>breaks again?"</div>
+              <p>Leads fall out the bottom. Calls don't get booked. The sales team blames marketing. Marketing blames ops. You eat the loss.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>PP-02</strong> · Headline-left · animated chaos pills right <span class="tpl-classes">.pain-02</span></div>
+        <section class="pain-02 t-section dark">
+          <div class="left">
+            <span class="label on-dark">YOU'RE NOT BEHIND. YOU'RE RUNNING A JUNK DRAWER.</span>
+            <h2>Most founders are <em>drowning</em> in tactics.</h2>
+            <p>Eight tools. Four contractors. A copywriter who's always behind. A CRM nobody knows how to fix. None of it talks to each other. None of it compounds.</p>
+          </div>
+          <div class="chaos">
+            <span class="chip">Copywriter quit</span>
+            <span class="chip">Ad launch slipped</span>
+            <span class="chip">CRM broken</span>
+            <span class="chip">VA on PTO</span>
+            <span class="chip">Pixel misfiring</span>
+            <span class="chip">Stripe paused</span>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>PP-03</strong> · Single big pain question · radial glow <span class="tpl-classes">.pain-03</span></div>
+        <section class="pain-03 t-section dark">
+          <p class="q">What if six months from now,<br>your funnel is <em>already running?</em></p>
+          <div class="by">— EVERY ABUNDANCE CLIENT, EVENTUALLY</div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 04 · BENEFITS -->
+    <section class="cat" id="benefits">
+      <header class="cat-head">
+        <div class="cat-num">04</div>
+        <div class="cat-text"><h2>Benefits<span class="dot-period"></span></h2><p>Show the outcome. Variants: 3-column features with icons, 2-column with mockup, or a hub-and-spoke "we replace X" diagram.</p></div>
+      </header>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>BE-01</strong> · 3-column features · icon + heading + body <span class="tpl-classes">.ben-01</span></div>
+        <section class="ben-01 t-section dark">
+          <span class="label on-dark eb">WHAT YOU GET</span>
+          <h2>One install. <em>One team.</em> Every revenue lever pulled.</h2>
+          <div class="grid">
+            <div class="ben">
+              <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v6H4zM4 14h16v6H4z"/></svg></div>
+              <h3>DFY Ads</h3>
+              <p>Creative, copy, media-buying, optimization — we run the whole ad account. $3K/mo budget gets you 30+ booked calls.</p>
+            </div>
+            <div class="ben">
+              <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12c3-9 15-9 18 0M3 12c3 9 15 9 18 0"/></svg></div>
+              <h3>Full funnel build</h3>
+              <p>Landing page, VSL, lead magnet, application — designed, written, tracked. Live in 14 days.</p>
+            </div>
+            <div class="ben">
+              <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div>
+              <h3>GHL CRM installed</h3>
+              <p>Pipelines, automations, SMS, email, calendar. Your sales team logs in to a working system on day 15.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>BE-02</strong> · Bullets-left · product mockup right · checkmark list <span class="tpl-classes">.ben-02</span></div>
+        <section class="ben-02 t-section dark">
+          <div class="left">
+            <span class="label on-dark">WHAT'S ACTUALLY DIFFERENT</span>
+            <h2>You stop being the bottleneck. <em>Period.</em></h2>
+            <p class="lead">The Selling System replaces the role of marketing-ops-manager. You spend your time selling, fulfilling, and signing checks.</p>
+            <div class="bullets">
+              <div class="bullet"><span class="ck">✓</span><div><strong>Ads live in 14 days.</strong> Not "we'll start strategy." Live, spending, generating leads.</div></div>
+              <div class="bullet"><span class="ck">✓</span><div><strong>CRM that already works.</strong> Pipelines, SMS, email — installed and tested before handoff.</div></div>
+              <div class="bullet"><span class="ck">✓</span><div><strong>Weekly optimization calls.</strong> CPL, show rate, close rate — we tune. You sell.</div></div>
+              <div class="bullet"><span class="ck">✓</span><div><strong>Founder access.</strong> Slack channel with our lead strategist. Reply within 4 hours, M–F.</div></div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="frame">CRM PIPELINE PREVIEW</div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>BE-03</strong> · Hub &amp; spoke · "we replace 6 hires" <span class="tpl-classes">.ben-03</span></div>
+        <section class="ben-03 t-section dark">
+          <span class="label on-dark eb">THE TRUE COST OF SIX HIRES</span>
+          <h2>One team replaces <em>six departments.</em></h2>
+          <div class="hub">
+            <div class="hub-core">A</div>
+            <div class="hub-orbit">Copywriter</div>
+            <div class="hub-orbit">Media buyer</div>
+            <div class="hub-orbit">CRM admin</div>
+            <div class="hub-orbit">Video editor</div>
+            <div class="hub-orbit">Funnel builder</div>
+            <div class="hub-orbit">Strategist</div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 05 · PROOF -->
+    <section class="cat" id="proof">
+      <header class="cat-head">
+        <div class="cat-num">05</div>
+        <div class="cat-text"><h2>Proof<span class="dot-period"></span></h2><p>Show receipts. Variants: stat tiles with deltas, big quote spotlight, or a 3-card testimonial grid.</p></div>
+      </header>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>PF-01</strong> · 4 stat tiles · delta badges <span class="tpl-classes">.proof-01</span></div>
+        <section class="proof-01 t-section dark">
+          <span class="label on-dark eb">THE NUMBERS · LAST 90 DAYS</span>
+          <h2>Receipts, not <em>promises.</em></h2>
+          <div class="stats">
+            <div class="stat"><div class="l">CPL</div><div class="n">$18</div><div class="delta">▼ 42%</div></div>
+            <div class="stat"><div class="l">Show rate</div><div class="n">78<em>%</em></div><div class="delta">▲ 18%</div></div>
+            <div class="stat"><div class="l">Close rate</div><div class="n">38<em>%</em></div><div class="delta">▲ 35%</div></div>
+            <div class="stat"><div class="l">MRR lift</div><div class="n">$94<em>K</em></div><div class="delta">▲ 7×</div></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>PF-02</strong> · Big customer quote · avatar + logo strip <span class="tpl-classes">.proof-02</span></div>
+        <section class="proof-02 t-section dark">
+          <span class="label on-dark eb">ONE FOUNDER'S STORY</span>
+          <p class="q">"In 90 days Abundance closed <em>3× the deals</em> I did all of last year — without me writing a single ad."</p>
+          <div class="by">
+            <div class="av lg">SH</div>
+            <div class="by-text"><strong>Sarah Hendrickson</strong><span>Founder · Coaching Collective</span></div>
+          </div>
+          <div class="logos">
+            <span class="logo">Pellow</span>
+            <span class="logo">Halcyon</span>
+            <span class="logo">Inkwell</span>
+            <span class="logo">Verdant</span>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>PF-03</strong> · 3 testimonial cards <span class="tpl-classes">.proof-03</span></div>
+        <section class="proof-03 t-section dark">
+          <span class="label on-dark eb">WHAT FOUNDERS ARE SAYING</span>
+          <h2>The boring kind of <em>predictable.</em></h2>
+          <div class="grid">
+            <div class="card">
+              <p class="q">"Three weeks in, we'd already replaced our $8K/mo agency. By month two we'd <em>5× the booked calls</em>."</p>
+              <div class="by-row"><div class="av sm">DV</div><div><strong>Dev O.</strong><span>Founder · Halcyon Coaching</span></div></div>
+            </div>
+            <div class="card">
+              <p class="q">"We finally have a <em>predictable lead engine</em> — not just spikes when I post on LinkedIn."</p>
+              <div class="by-row"><div class="av sm">JT</div><div><strong>Jenna T.</strong><span>Founder · Brightline Group</span></div></div>
+            </div>
+            <div class="card">
+              <p class="q">"The CRM alone was worth it. Closed our first <em>$50K month</em> the week after install."</p>
+              <div class="by-row"><div class="av sm">MR</div><div><strong>Marcus R.</strong><span>Founder · Inkwell Studio</span></div></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 06 · HOW IT WORKS -->
+    <section class="cat" id="how">
+      <header class="cat-head">
+        <div class="cat-num">06</div>
+        <div class="cat-text"><h2>How it works<span class="dot-period"></span></h2><p>Walk the prospect through the install. Variants: 4-step horizontal cards, vertical timeline, or a checklist of deliverables.</p></div>
+      </header>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>HW-01</strong> · 4-step process · gradient italic numbers <span class="tpl-classes">.how-01</span></div>
+        <section class="how-01 t-section dark">
+          <span class="label on-dark eb">THE INSTALL · 14 DAYS</span>
+          <h2>Four steps. <em>Then it runs.</em></h2>
+          <div class="steps">
+            <div class="step"><div class="num">1</div><h3>Onboard</h3><p>Brand intake, offer audit, pixel + CRM access, asset gathering.</p></div>
+            <div class="step"><div class="num">2</div><h3>Build</h3><p>Funnel, VSL, ad creative, automations. All shipped by day 10.</p></div>
+            <div class="step"><div class="num">3</div><h3>Launch</h3><p>Ads live, calls booked, pipeline running by day 14.</p></div>
+            <div class="step"><div class="num">4</div><h3>Tune</h3><p>Weekly optimization calls. CPL ↓, show rate ↑, close rate ↑.</p></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>HW-02</strong> · Vertical timeline · gradient spine <span class="tpl-classes">.how-02</span></div>
+        <section class="how-02 t-section dark">
+          <span class="label on-dark eb">WHAT WEEK ONE LOOKS LIKE</span>
+          <h2>Day-by-day, week one of <em>install.</em></h2>
+          <div class="timeline">
+            <div class="item"><div class="dot">1</div><h3>Day 1 · Kickoff</h3><p>90-min strategy call. We pull your offer, audience, current funnel, current CRM. End of call: you have a one-page revenue plan.</p></div>
+            <div class="item"><div class="dot">2</div><h3>Day 3 · Asset intake</h3><p>Brand fonts, headshots, case study data, customer quotes. We load everything into the shared Brand DNA base.</p></div>
+            <div class="item"><div class="dot">3</div><h3>Day 7 · First drafts</h3><p>Funnel page, VSL script, three ad creative concepts. You review on Slack. We iterate in 24 hours.</p></div>
+            <div class="item"><div class="dot">4</div><h3>Day 14 · Ads live</h3><p>Funnel live, ads spending, CRM populated. Sales team trained. We're now in optimization mode.</p></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>HW-03</strong> · Centered "what you get" checklist <span class="tpl-classes">.how-03</span></div>
+        <section class="how-03 t-section dark">
+          <span class="label on-dark eb">EVERYTHING INCLUDED IN INSTALL</span>
+          <h2>Six hires worth of work. <em>One install.</em></h2>
+          <div class="checks">
+            <div class="check"><div class="ck">✓</div><div><strong>Full funnel build</strong><span>Landing page, VSL, lead magnet, application — designed + written + tested.</span></div></div>
+            <div class="check"><div class="ck">✓</div><div><strong>Ads creative pack (9 ads)</strong><span>3 hooks × 3 angles. Image + video. Cleared by Meta before launch.</span></div></div>
+            <div class="check"><div class="ck">✓</div><div><strong>GHL CRM build-out</strong><span>Pipelines, automations, calendars, SMS + email sequences.</span></div></div>
+            <div class="check"><div class="ck">✓</div><div><strong>Sales training</strong><span>2-hour playbook walkthrough + recorded role-play with your closers.</span></div></div>
+            <div class="check"><div class="ck">✓</div><div><strong>Weekly optimization</strong><span>Performance review call every Tuesday for the first 90 days.</span></div></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 07 · DETAILED BULLET LISTS -->
+    <section class="cat" id="lists">
+      <header class="cat-head">
+        <div class="cat-num">07</div>
+        <div class="cat-text"><h2>Detailed bullet lists<span class="dot-period"></span></h2><p>"What's included" / "What you skip" lists. Variants: 3-column with checkmarks, single-column with red rule, or a yes/no comparison grid.</p></div>
+      </header>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>BL-01</strong> · 3-column bullet list · checkmarks <span class="tpl-classes">.list-01</span></div>
+        <section class="list-01 t-section dark">
+          <span class="label on-dark eb">EVERYTHING THAT'S INCLUDED</span>
+          <h2>The whole revenue engine. <em>One contract.</em></h2>
+          <div class="cols">
+            <div class="col"><h3>Acquisition</h3><ul>
+              <li>9-ad creative pack (3 hooks × 3 angles)</li>
+              <li>Daily ad-account management</li>
+              <li>Weekly performance reviews</li>
+              <li>$3K/mo recommended ad spend</li>
+              <li>Lookalike + retargeting audiences</li>
+            </ul></div>
+            <div class="col"><h3>Conversion</h3><ul>
+              <li>Long-form landing page</li>
+              <li>12-min VSL + script</li>
+              <li>Application form + integrations</li>
+              <li>Booked-call confirmation flow</li>
+              <li>SMS + email reminder cadence</li>
+            </ul></div>
+            <div class="col"><h3>Infrastructure</h3><ul>
+              <li>GHL CRM build (custom pipelines)</li>
+              <li>Stripe + payment-link setup</li>
+              <li>Calendar + booking system</li>
+              <li>Meta Pixel + CAPI</li>
+              <li>Conversion + revenue tracking</li>
+            </ul></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>BL-02</strong> · 2-column · headline-left · list-right with red rule <span class="tpl-classes">.list-02</span></div>
+        <section class="list-02 t-section dark">
+          <div class="left">
+            <span class="label on-dark eb">YOU NO LONGER DO</span>
+            <h2>The list of things <em>you stop doing.</em></h2>
+            <p>Every line below is something you currently pay for, manage, or worry about. Day 15: it all becomes ours.</p>
+          </div>
+          <div class="items">
+            <div class="item"><strong>Writing ad copy.</strong><span>We write, you approve. 24-hour iteration cycle.</span></div>
+            <div class="item"><strong>Hiring a media buyer.</strong><span>Our team runs the ad account. You see the dashboard.</span></div>
+            <div class="item"><strong>Fixing the CRM.</strong><span>Built once. Maintained by us. Documented for your team.</span></div>
+            <div class="item"><strong>Coordinating between freelancers.</strong><span>One Slack channel. One team. One point of accountability.</span></div>
+            <div class="item"><strong>Wondering why CPL spiked.</strong><span>Tuesday optimization call answers it before you ask.</span></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>BL-03</strong> · Yes/no comparison grid (centered) <span class="tpl-classes">.list-03</span></div>
+        <section class="list-03 t-section dark">
+          <span class="label on-dark eb">THE TRADE</span>
+          <h2>What you give up. What you <em>get back.</em></h2>
+          <div class="grid">
+            <div class="yes">
+              <div class="lhead">YOU GET</div>
+              <ul>
+                <li>A revenue engine running by day 14</li>
+                <li>Weekly optimization calls</li>
+                <li>Founder Slack access</li>
+                <li>3–11× revenue lift in 90 days</li>
+                <li>Your nights and weekends back</li>
+              </ul>
+            </div>
+            <div class="no">
+              <div class="lhead">YOU GIVE UP</div>
+              <ul>
+                <li>The right to micromanage copy</li>
+                <li>Six freelancers on retainer</li>
+                <li>"I'll write that ad this weekend"</li>
+                <li>The dopamine of fixing the CRM yourself</li>
+                <li>Excuses for why revenue is flat</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 08 · CTAs -->
+    <section class="cat" id="ctas">
+      <header class="cat-head">
+        <div class="cat-num">08</div>
+        <div class="cat-text"><h2>CTAs<span class="dot-period"></span></h2><p>Conversion moments. Variants: final outline-pill mega CTA, mid-page banner CTA, and a CTA with risk-reversal guarantee badge.</p></div>
+      </header>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>CT-01</strong> · Final CTA mega · outline pill + gradient circle-arrow <span class="tpl-classes">.cta-01</span></div>
+        <section class="cta-01 t-section cream">
+          <span class="label eb">READY WHEN YOU ARE</span>
+          <h2>Apply for the next cohort<span class="dot-period"></span></h2>
+          <button class="pill-cta">Apply for the next cohort <span class="arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>CT-02</strong> · Inline CTA banner · centered headline + 2 buttons <span class="tpl-classes">.cta-02</span></div>
+        <section class="cta-02 t-section dark">
+          <h2>See if the Selling System is <em>right for you.</em></h2>
+          <div class="row">
+            <button class="btn gradient">Apply now →</button>
+            <button class="btn ghost">Book a discovery call</button>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>CT-03</strong> · CTA + guarantee badge below <span class="tpl-classes">.cta-03</span></div>
+        <section class="cta-03 t-section dark">
+          <span class="label on-dark">FOUR-FIGURE INVESTMENT · ZERO-RISK PERIOD</span>
+          <h2>Try the system. <em>Keep your money</em> if it doesn't ship.</h2>
+          <div class="row">
+            <button class="btn gradient">Apply now →</button>
+          </div>
+          <div class="guarantee">
+            <div class="badge">★</div>
+            <div><strong>14-day install guarantee.</strong> Ads live in two weeks or your install fee is refunded.</div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 09 · PRICING -->
+    <section class="cat" id="pricing">
+      <header class="cat-head">
+        <div class="cat-num">09</div>
+        <div class="cat-text"><h2>Pricing<span class="dot-period"></span></h2><p>The ask. Variants: 4-tier grid (Launch / Install / Shift / Scale), 2-tier upfront-vs-recurring comparison, or a single featured tier.</p></div>
+      </header>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>PR-01</strong> · 4-tier grid · featured "Install" <span class="tpl-classes">.price-01</span></div>
+        <section class="price-01 t-section dark">
+          <span class="label on-dark eb">THE SELLING SYSTEM · PRICING</span>
+          <h2>Two upfront tiers. <em>Two continuity paths.</em></h2>
+          <div class="tiers">
+            <div class="tier">
+              <div class="nm">Launch</div>
+              <div class="pr">$<em>9K</em></div>
+              <div class="ds">One-time · ads + funnel</div>
+              <ul>
+                <li>DFY Meta ads</li>
+                <li>Funnel build</li>
+                <li>Consult on CRM + sales</li>
+                <li>14-day ads launch</li>
+              </ul>
+              <button class="btn ghost">Apply for Launch</button>
+            </div>
+            <div class="tier featured">
+              <div class="badge">Most popular</div>
+              <div class="nm">Install</div>
+              <div class="pr">$<em>12K</em></div>
+              <div class="ds">One-time · everything in Launch + CRM</div>
+              <ul>
+                <li>Everything in Launch</li>
+                <li>Full GHL CRM build</li>
+                <li>Sales infrastructure</li>
+                <li>Slack channel access</li>
+              </ul>
+              <button class="btn gradient">Apply for Install →</button>
+            </div>
+            <div class="tier">
+              <div class="nm">Shift</div>
+              <div class="pr">$<em>1.5K</em><span style="font-size:14px;color:var(--ink-muted);">/mo</span></div>
+              <div class="ds">From month 4 · coaching only</div>
+              <ul>
+                <li>Group coaching</li>
+                <li>Templates + training</li>
+                <li>Private community</li>
+                <li>Async support</li>
+              </ul>
+              <button class="btn ghost">Shift details</button>
+            </div>
+            <div class="tier">
+              <div class="nm">Scale</div>
+              <div class="pr">$<em>3K</em><span style="font-size:14px;color:var(--ink-muted);">/mo</span></div>
+              <div class="ds">From month 4 · ongoing agency</div>
+              <ul>
+                <li>Scripts + copy</li>
+                <li>Media buying</li>
+                <li>Strategy consulting</li>
+                <li>Continuous optimization</li>
+              </ul>
+              <button class="btn ghost">Scale details</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>PR-02</strong> · 2-column · upfront vs continuity <span class="tpl-classes">.price-02</span></div>
+        <section class="price-02 t-section dark">
+          <span class="label on-dark eb">HOW IT PRICES</span>
+          <h2>Pay once to install. <em>Pay monthly</em> to stay ahead.</h2>
+          <div class="row">
+            <div class="col">
+              <div class="eb-l">UPFRONT · ONE-TIME</div>
+              <h3>Launch / <em>Install</em></h3>
+              <p>Pick Launch ($9K) for ads + funnel only, or Install ($12K) to add the full CRM + sales infrastructure. Both ship in 14 days.</p>
+              <div class="tiers">
+                <div class="tier-mini"><strong>$9K</strong><span>Launch</span></div>
+                <div class="tier-mini"><strong>$12K</strong><span>Install</span></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="eb-l">CONTINUITY · MONTH 4+</div>
+              <h3>Shift / <em>Scale</em></h3>
+              <p>Pick Shift ($1.5K/mo) for coaching + community only, or Scale ($3K/mo) to keep us running ads + media buying after install.</p>
+              <div class="tiers">
+                <div class="tier-mini"><strong>$1.5K/mo</strong><span>Shift</span></div>
+                <div class="tier-mini"><strong>$3K/mo</strong><span>Scale</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>PR-03</strong> · Single featured tier · centered focus <span class="tpl-classes">.price-03</span></div>
+        <section class="price-03 t-section dark">
+          <span class="label on-dark eb">THE FLAGSHIP</span>
+          <h2>The most-installed tier. <em>By far.</em></h2>
+          <div class="feat-card">
+            <div class="badge">Most popular</div>
+            <div class="nm">Install</div>
+            <div class="pr">$<em>12K</em></div>
+            <p class="ds">One-time payment. Klarna + Affirm financing available. Ads live in 14 days, refund if not.</p>
+            <ul>
+              <li>9-ad creative pack</li>
+              <li>Long-form funnel build</li>
+              <li>Full GHL CRM build-out</li>
+              <li>SMS + email sequences</li>
+              <li>14-day install guarantee</li>
+            </ul>
+            <button class="btn gradient">Apply for Install →</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 10 · FAQ -->
+    <section class="cat" id="faq">
+      <header class="cat-head">
+        <div class="cat-num">10</div>
+        <div class="cat-text"><h2>FAQ<span class="dot-period"></span></h2><p>Common objections, answered. Variants: accordion list, two-column grid, or split layout with a "still have questions?" CTA on the side.</p></div>
+      </header>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>FA-01</strong> · Accordion list · plus-icon expander <span class="tpl-classes">.faq-01</span></div>
+        <section class="faq-01 t-section dark">
+          <span class="label on-dark eb">FREQUENTLY ASKED</span>
+          <h2>The questions <em>everyone</em> asks first.</h2>
+          <div class="list">
+            <div class="q">How is this different from a regular ad agency?</div>
+            <div class="q">What do you need from me to start the install?</div>
+            <div class="q">What if my offer isn't dialed in yet?</div>
+            <div class="q">Do you work with non-coaches?</div>
+            <div class="q">How does the 14-day install guarantee work?</div>
+            <div class="q">What happens after month 4?</div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>FA-02</strong> · 2-column FAQ grid <span class="tpl-classes">.faq-02</span></div>
+        <section class="faq-02 t-section dark">
+          <span class="label on-dark eb">FAQ</span>
+          <h2>Everything you'll probably <em>email us</em> about.</h2>
+          <div class="grid">
+            <div class="qa"><strong>How long is the contract?</strong><p>Install is one-time. Continuity (Shift or Scale) is month-to-month after that — cancel anytime, 30-day notice.</p></div>
+            <div class="qa"><strong>Do I need an existing offer?</strong><p>Yes — we install marketing infrastructure, we don't invent your offer. If you don't have an offer yet, the Brand OS audit is the better starting point.</p></div>
+            <div class="qa"><strong>What ad spend should I plan for?</strong><p>$3K/mo minimum to see the system work as designed. Most clients run $5–15K/mo by month 3.</p></div>
+            <div class="qa"><strong>Can I keep my current copywriter?</strong><p>Yes, but most clients let theirs go after seeing what our team ships. We can collaborate either way.</p></div>
+            <div class="qa"><strong>Do you work outside the US?</strong><p>Yes — UK, Canada, Australia, EU. Anywhere Stripe + Meta both operate.</p></div>
+            <div class="qa"><strong>What if the ads don't perform?</strong><p>Tuesday optimization calls. New creative every 14 days. We don't stop until CPL is in range.</p></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl-strip"><strong>FA-03</strong> · Split · left FAQ-CTA · right accordion list <span class="tpl-classes">.faq-03</span></div>
+        <section class="faq-03 t-section dark">
+          <div class="left">
+            <span class="label on-dark">STILL HAVE QUESTIONS?</span>
+            <h2>We'd rather answer <em>before</em> you apply.</h2>
+            <p>If your question isn't here, we'll answer it personally — usually within 4 hours, Monday through Friday.</p>
+            <div class="still">
+              <strong>Talk to a strategist</strong>
+              <p>30-minute call, no pitch. Just answers.</p>
+              <button class="btn gradient">Book a call →</button>
+            </div>
+          </div>
+          <div class="right">
+            <div class="q">How is this different from a regular agency?</div>
+            <div class="q">What do you need from me to start?</div>
+            <div class="q">Can I keep my existing tools (GHL, ClickFunnels)?</div>
+            <div class="q">Do you handle creative production?</div>
+            <div class="q">What if we don't hit 14-day install?</div>
+            <div class="q">How does pricing compare to in-house?</div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <footer class="page-foot">
+      <div>Abundance · Section template library · v1.0 · May 17, 2026</div>
+      <div>Pulled from <a href="/brand">/brand</a> · maintained as the single source of section truth</div>
+    </footer>
+
+  </main>
+
+</div>
+
+<script>
+  /* Theme toggle */
+  (function() {
+    const body = document.body;
+    const stored = localStorage.getItem('abundance-templates-theme');
+    if (stored === 'light') body.classList.add('light-mode');
+    const toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const isLight = body.classList.toggle('light-mode');
+        localStorage.setItem('abundance-templates-theme', isLight ? 'light' : 'dark');
+      });
+    }
+  })();
+
+  /* Float-nav: scroll-spy + auto-hide */
+  (function() {
+    const nav = document.getElementById('float-nav');
+    const mobile = document.getElementById('fn-mobile');
+    const burger = document.getElementById('fn-burger');
+    const links = document.querySelectorAll('.fn-links a, .fn-mobile a');
+    const sectionIds = ['hero','logos','pain','benefits','proof','how','lists','ctas','pricing','faq'];
+    const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+    function setActive(id) {
+      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+    }
+    const visible = new Set();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) visible.add(e.target.id);
+        else visible.delete(e.target.id);
+      });
+      let current = sectionIds[0];
+      for (const id of sectionIds) if (visible.has(id)) current = id;
+      setActive(current);
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+    sections.forEach(s => io.observe(s));
+    setActive(sectionIds[0]);
+
+    let lastY = window.scrollY;
+    let ticking = false;
+    function onScroll() {
+      const y = window.scrollY;
+      if (y < 120) nav.classList.remove('hidden');
+      else if (y > lastY + 4) {
+        nav.classList.add('hidden');
+        if (mobile) mobile.classList.remove('open');
+        if (burger) burger.setAttribute('aria-expanded', 'false');
+      } else if (y < lastY - 4) nav.classList.remove('hidden');
+      lastY = y;
+      ticking = false;
+    }
+    document.addEventListener('scroll', () => {
+      if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
+
+    if (burger && mobile) {
+      burger.addEventListener('click', () => {
+        const open = mobile.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        mobile.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      }));
+    }
+  })();
+</script>
+
+</body>
+</html>
