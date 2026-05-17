@@ -15,10 +15,12 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════════════════════════
-   ABUNDANCE · HOMEPAGE · v2.1
-   Dark-mode locked. Stage rhythm pattern: most sections are dark
-   stages with one of three sections as a CREAM STAGE breath moment.
-   The cream stages have their own native design — not bg-swaps.
+   ABUNDANCE · HOMEPAGE · v2.2
+   Dark-mode locked. LAYOUT RHYTHM pattern: visual variety comes
+   from distinct LAYOUT TYPES (hub-and-spoke, asymmetric split,
+   negative-space hero, grid, timeline, etc.) — not from color
+   changes. Light mode lives only on /brand and /templates for
+   client-demo purposes.
    ═══════════════════════════════════════════════════════════════════ */
 
 @font-face {
@@ -287,62 +289,76 @@ p strong { color: var(--ink); font-weight: 700; }
 .pain .col.good li::before { content: '✓'; position: absolute; left: 0; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800; }
 @media (max-width: 820px) { .pain .grid { grid-template-columns: 1fr; } }
 
-/* ── METHODOLOGY · CREAM STAGE ──
-   First breathing moment. Cream stage with editorial typography,
-   dark text, sig-deep gradient italic. Each pillar card uses a
-   cast shadow for elevation (NOT a glow). Hairline-cream-strong
-   for borders. Different from dark sections by design intent. */
-.method {
-  background: var(--cream);
-  color: var(--ink-dark);
-  padding: clamp(80px, 9vw, 130px) clamp(22px, 5vw, 80px);
-  border-top: none;
-  position: relative;
+/* ── METHODOLOGY · HUB & SPOKE LAYOUT (dark) ──
+   First layout-rhythm shift. Different SHAPE than the 3-col / 4-col
+   grids around it: a central brand-mark glyph with 4 orbiting
+   pillar pills. Reads as a SYSTEM not a list. */
+.method { text-align: center; min-height: 580px; position: relative; }
+.method::before { content: ''; position: absolute; inset: 0; background: var(--grad-horizon); pointer-events: none; }
+.method > * { position: relative; z-index: 1; }
+.method .sec-head { margin-bottom: 56px; }
+.method .hub {
+  position: relative; max-width: 920px; margin: 0 auto;
+  min-height: 360px;
 }
-.method::before, .method::after {
-  /* Soft cream "lift" gradient at edges — no red glow */
-  content: ''; position: absolute; left: 0; right: 0; height: 60px;
+.method .hub-core {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 168px; height: 168px;
+  border-radius: 36px;
+  background: linear-gradient(160deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02));
+  border: 1.5px solid rgba(255,255,255,0.25);
+  -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+  display: grid; place-items: center;
+  /* Brand-mark "A" — Neo Contact upright (Rule 13) */
+  font-family: var(--font-logo); font-weight: 500; font-style: normal;
+  font-size: 72px;
+  background-image: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  box-shadow: 0 0 90px rgba(179,14,20,0.45);
+}
+.method .pillar {
+  position: absolute;
+  padding: 16px 24px; max-width: 220px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--hairline-strong);
+  border-radius: 18px;
+  text-align: left;
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+.method .pillar .letter {
+  font-family: var(--font-display); font-style: italic;
+  font-size: 28px; line-height: 1;
+  background-image: var(--grad-sig);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+.method .pillar h3 { font-size: 17px; color: var(--ink); margin-bottom: 4px; }
+.method .pillar p { font-size: 13px; color: var(--ink-body); line-height: 1.45; }
+.method .pillar.p1 { top: 0%; left: 4%; }
+.method .pillar.p2 { top: 0%; right: 4%; text-align: right; }
+.method .pillar.p2 .letter { text-align: right; display: block; }
+.method .pillar.p3 { bottom: 0%; left: 4%; }
+.method .pillar.p4 { bottom: 0%; right: 4%; text-align: right; }
+.method .pillar.p4 .letter { text-align: right; display: block; }
+/* Spoke lines connecting pillars to the hub */
+.method .hub::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    linear-gradient(125deg, transparent calc(50% - 0.5px), rgba(179,14,20,0.18) calc(50% - 0.5px), rgba(179,14,20,0.18) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+    linear-gradient(55deg, transparent calc(50% - 0.5px), rgba(179,14,20,0.18) calc(50% - 0.5px), rgba(179,14,20,0.18) calc(50% + 0.5px), transparent calc(50% + 0.5px));
+  -webkit-mask-image: radial-gradient(ellipse 30% 35% at 50% 50%, transparent 60%, black 100%);
+          mask-image: radial-gradient(ellipse 30% 35% at 50% 50%, transparent 60%, black 100%);
   pointer-events: none;
 }
-.method::before { top: -1px; background: linear-gradient(to bottom, rgba(10,10,10,0.06), transparent); }
-.method::after  { bottom: -1px; background: linear-gradient(to top, rgba(10,10,10,0.06), transparent); }
-.method > * { position: relative; z-index: 1; }
-.method .sec-head { text-align: center; }
-.method .sec-head .label { color: var(--ink-dark-muted); display: block; margin-bottom: 14px; }
-.method .sec-head h2 { color: var(--ink-dark); font-family: var(--font-sans); font-size: clamp(36px, 4.8vw, 60px); margin: 0 auto 18px; max-width: 22ch; }
-.method .sec-head h2 em {
-  font-family: var(--font-display); font-style: italic;
-  background-image: var(--grad-sig-tight) !important;
-  -webkit-background-clip: text !important; background-clip: text !important;
-  -webkit-text-fill-color: transparent !important; color: transparent !important;
-  filter: none;
+@media (max-width: 820px) {
+  .method .hub { min-height: auto; display: flex; flex-direction: column; gap: 14px; }
+  .method .hub-core { position: relative; transform: none; margin: 0 auto 14px; }
+  .method .hub::before { display: none; }
+  .method .pillar { position: relative; top: auto; left: auto; right: auto; bottom: auto; max-width: 100%; text-align: left; }
+  .method .pillar.p2, .method .pillar.p4 { text-align: left; }
+  .method .pillar.p2 .letter, .method .pillar.p4 .letter { text-align: left; }
 }
-.method .sec-head .lead { color: var(--ink-dark-soft); font-size: 18px; max-width: 56ch; margin: 0 auto; }
-.method .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; max-width: 1200px; margin: 56px auto 0; }
-.method .p {
-  padding: 36px 30px;
-  border-radius: var(--r-card);
-  background: var(--cream-soft);
-  border: 1px solid var(--hairline-cream-strong);
-  box-shadow: 0 14px 40px -16px rgba(10,10,10,0.12), 0 2px 6px -2px rgba(10,10,10,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.method .p:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 24px 60px -16px rgba(179,14,20,0.18), 0 4px 10px -2px rgba(10,10,10,0.06);
-}
-.method .p .letter {
-  font-family: var(--font-display); font-style: italic;
-  font-size: 80px; line-height: 0.85;
-  background-image: var(--grad-sig-tight);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  margin-bottom: 18px;
-  filter: none;
-}
-.method .p h3 { color: var(--ink-dark); font-size: 21px; margin-bottom: 10px; letter-spacing: -0.015em; }
-.method .p p { font-size: 14.5px; color: var(--ink-dark-soft); line-height: 1.55; }
-@media (max-width: 820px) { .method .pillars { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 480px) { .method .pillars { grid-template-columns: 1fr; } }
 
 /* ── HOW IT WORKS ── */
 .how .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1200px; margin: 0 auto; }
@@ -370,92 +386,80 @@ p strong { color: var(--ink); font-weight: 700; }
 .proof .kpi .delta { display: inline-block; margin-top: 8px; padding: 3px 9px; border-radius: var(--r-pill); background: var(--grad-sig); color: var(--cream); font-size: 11px; font-weight: 700; }
 @media (max-width: 820px) { .proof .kpis { grid-template-columns: 1fr 1fr; } }
 
-/* ── FOUNDER STORY · CREAM STAGE ──
-   Second breathing moment. Editorial magazine layout. Cream-soft
-   bg, dark serif-italic emphasis, drop-cap intro paragraph, deep-
-   red gradient signature. Portrait card has a subtle dark hairline
-   border + soft cast shadow (no red glow). Reads as profile copy. */
+/* ── FOUNDER STORY · ASYMMETRIC SPLIT (dark) ──
+   Second layout-rhythm shift. Big portrait card on the left
+   (overflows out of the right column), long-form text right with
+   a vertical red bar accent. Different shape than the surrounding
+   3-col / 4-col grids — magazine-profile feel, but in dark mode. */
 .founder-section {
-  background: var(--cream);
-  color: var(--ink-dark);
   padding: clamp(80px, 9vw, 130px) clamp(22px, 5vw, 80px);
-  border-top: none;
-  position: relative;
+  position: relative; overflow: hidden;
 }
-.founder-section::before, .founder-section::after {
-  content: ''; position: absolute; left: 0; right: 0; height: 60px;
-  pointer-events: none;
+.founder-section::before {
+  content: ''; position: absolute;
+  top: 20%; right: -8%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(179,14,20,0.18), transparent 60%);
+  filter: blur(80px); pointer-events: none;
 }
-.founder-section::before { top: -1px; background: linear-gradient(to bottom, rgba(10,10,10,0.06), transparent); }
-.founder-section::after  { bottom: -1px; background: linear-gradient(to top, rgba(10,10,10,0.06), transparent); }
 .founder-section > * { position: relative; z-index: 1; }
-.founder { display: grid; grid-template-columns: 1fr 1.4fr; gap: 72px; align-items: start; max-width: 1200px; margin: 0 auto; }
+.founder { display: grid; grid-template-columns: 1.1fr 1.4fr; gap: 72px; align-items: start; max-width: 1200px; margin: 0 auto; }
 .founder .portrait-big {
   aspect-ratio: 4/5; border-radius: var(--r-card);
   background:
     radial-gradient(ellipse 40% 30% at 35% 25%, rgba(255,210,190,0.85), transparent 65%),
-    radial-gradient(ellipse 60% 50% at 50% 85%, rgba(80,30,20,0.55), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 50% 85%, rgba(80,30,20,0.7), transparent 70%),
     linear-gradient(160deg, #FF7A55, #B30E14);
-  border: 1px solid var(--hairline-cream-strong);
-  box-shadow: 0 30px 70px -20px rgba(10,10,10,0.22), 0 8px 20px -8px rgba(10,10,10,0.10);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04) inset;
   position: relative;
 }
 .founder .portrait-big .name-tag {
   position: absolute; bottom: 18px; left: 18px;
   padding: 8px 16px; border-radius: var(--r-pill);
-  background: rgba(245,240,232,0.92);
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
-  font-size: 13px; font-weight: 700; color: var(--ink-dark);
+  background: rgba(0,0,0,0.55);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  font-size: 13px; font-weight: 700; color: var(--cream);
   letter-spacing: 0.02em;
-  border: 1px solid rgba(10,10,10,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
 }
-.founder .right { padding-top: 8px; }
-.founder .right .eb { display: block; color: var(--ink-dark-muted); margin-bottom: 14px; }
+.founder .right {
+  padding-top: 8px;
+  border-left: 2px solid rgba(179,14,20,0.30);
+  padding-left: 32px;
+}
+.founder .right .eb { display: block; color: var(--ink-muted); margin-bottom: 14px; letter-spacing: 0.16em; text-transform: uppercase; font-size: 12px; font-weight: 700; }
 .founder .right h2 {
-  color: var(--ink-dark);
+  color: var(--ink);
   font-family: var(--font-sans);
   font-size: clamp(34px, 4.5vw, 56px); letter-spacing: -0.025em;
   line-height: 1.05; margin-bottom: 32px; max-width: 22ch;
 }
-.founder .right h2 em {
-  font-family: var(--font-display); font-style: italic;
-  background-image: var(--grad-sig-tight) !important;
-  -webkit-background-clip: text !important; background-clip: text !important;
-  -webkit-text-fill-color: transparent !important; color: transparent !important;
-  filter: none;
-}
 .founder .right p {
-  color: var(--ink-dark-soft);
+  color: var(--ink-body);
   font-size: 17px; line-height: 1.7;
   margin-bottom: 18px;
   max-width: 60ch;
 }
-.founder .right p:first-of-type::first-letter {
-  /* Drop-cap on the opening paragraph — magazine feel */
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 4.2em;
-  line-height: 0.85;
-  float: left;
-  padding: 4px 12px 0 0;
-  background-image: var(--grad-sig-tight);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-}
-.founder .right p strong { color: var(--ink-dark); font-weight: 700; }
+.founder .right p strong { color: var(--ink); font-weight: 700; }
 .founder .right .sig {
   margin-top: 28px;
   font-family: var(--font-display); font-style: italic;
   font-size: 28px; line-height: 1;
-  background-image: var(--grad-sig-tight);
+  background-image: var(--grad-sig);
   -webkit-background-clip: text; background-clip: text; color: transparent;
-  filter: none;
+  filter: drop-shadow(0 0 14px rgba(237,28,36,0.30));
 }
 .founder .right .title {
   font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--ink-dark-muted); font-weight: 700;
+  color: var(--ink-muted); font-weight: 700;
   margin-top: 6px;
 }
-@media (max-width: 820px) { .founder { grid-template-columns: 1fr; gap: 36px; } .founder .portrait-big { max-width: 340px; } }
+@media (max-width: 820px) {
+  .founder { grid-template-columns: 1fr; gap: 36px; }
+  .founder .portrait-big { max-width: 340px; }
+  .founder .right { border-left: none; padding-left: 0; border-top: 2px solid rgba(179,14,20,0.30); padding-top: 28px; }
+}
 
 /* ── VALUE STACK ── */
 .value { max-width: 760px; margin: 0 auto; }
@@ -520,82 +524,83 @@ p strong { color: var(--ink); font-weight: 700; }
 .urgency .seat.taken { background: var(--grad-sig); border-color: transparent; box-shadow: 0 4px 12px -2px rgba(179,14,20,0.4); }
 .urgency .meta { color: var(--ink-body); font-size: 15px; max-width: 48ch; margin: 0 auto 22px; }
 
-/* ── FINAL CTA · CREAM STAGE ──
-   Third breathing moment. The decision moment. Cream-bg, big dark
-   editorial headline, outline-pill CTA with gradient circle-arrow
-   (the brand's signature "decision pill"). No glow background —
-   instead a subtle horizon-gradient at the bottom drawing the eye
-   to the CTA pill. Cream→dark transition into FAQ below. */
+/* ── FINAL CTA · BIG-NEGATIVE-SPACE LAYOUT (dark) ──
+   Third layout-rhythm shift. Full-bleed dark stage with massive
+   centered headline (hero-scale), single gradient-pill CTA below,
+   horizon glow rising from the bottom. Big negative space —
+   the eye has nowhere to go except down to the CTA. */
 .final-cta {
-  background: var(--cream);
-  color: var(--ink-dark);
-  padding: clamp(110px, 12vw, 180px) clamp(22px, 5vw, 80px) clamp(110px, 12vw, 180px);
+  padding: clamp(140px, 14vw, 220px) clamp(22px, 5vw, 80px);
   text-align: center;
   position: relative;
-  border-top: none;
+  overflow: hidden;
 }
-.final-cta::before, .final-cta::after {
-  content: ''; position: absolute; left: 0; right: 0; height: 60px;
+.final-cta .horizon {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 60%;
+  background:
+    radial-gradient(ellipse 60% 100% at 50% 110%, rgba(255,87,51,0.20), transparent 65%),
+    radial-gradient(ellipse 80% 80% at 50% 100%, rgba(179,14,20,0.30), transparent 70%);
   pointer-events: none;
 }
-.final-cta::before { top: -1px; background: linear-gradient(to bottom, rgba(10,10,10,0.06), transparent); }
-.final-cta::after  { bottom: -1px; background: linear-gradient(to top, rgba(10,10,10,0.06), transparent); }
-.final-cta .horizon {
-  position: absolute; left: 0; right: 0; bottom: 0; height: 280px;
-  background: radial-gradient(ellipse 50% 100% at 50% 100%, rgba(179,14,20,0.10), transparent 70%);
+.final-cta::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1.5px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, transparent 30%, black 90%);
+          mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, transparent 30%, black 90%);
   pointer-events: none;
 }
 .final-cta > * { position: relative; z-index: 1; }
-.final-cta .eb { display: block; color: var(--ink-dark-muted); margin-bottom: 22px; }
+.final-cta .eb { display: block; color: var(--ink-body); margin-bottom: 26px; }
 .final-cta h2 {
-  color: var(--ink-dark);
+  color: var(--ink);
   font-family: var(--font-sans);
-  font-size: clamp(48px, 7vw, 100px); letter-spacing: -0.035em;
-  line-height: 0.98; margin: 0 auto 28px; max-width: 16ch;
+  font-size: clamp(52px, 9vw, 132px); letter-spacing: -0.04em;
+  line-height: 0.95; margin: 0 auto 36px; max-width: 14ch;
 }
 .final-cta h2 em {
   font-family: var(--font-display); font-style: italic;
-  background-image: var(--grad-sig-tight) !important;
+  background-image: var(--grad-sig-hero) !important;
   -webkit-background-clip: text !important; background-clip: text !important;
   -webkit-text-fill-color: transparent !important; color: transparent !important;
-  filter: none;
+  filter: drop-shadow(0 0 32px rgba(237,28,36,0.45));
 }
 .final-cta .lead {
-  color: var(--ink-dark-soft);
-  max-width: 50ch; margin: 0 auto 44px;
-  font-size: 18px; line-height: 1.55;
+  color: var(--ink-body);
+  max-width: 52ch; margin: 0 auto 52px;
+  font-size: 18px; line-height: 1.6;
 }
 .final-cta .pill-cta {
   display: inline-flex; align-items: center; gap: 16px;
-  padding: 14px 14px 14px 32px;
+  padding: 16px 16px 16px 36px;
   border-radius: var(--r-pill);
-  border: 1.5px solid var(--ink-dark);
-  background: var(--cream-soft);
-  color: var(--ink-dark);
-  font-family: var(--font-sans); font-size: 17px; font-weight: 700;
-  box-shadow: 0 12px 32px -10px rgba(10,10,10,0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: var(--grad-sig); background-size: 200% 100%; background-position: 0% 50%;
+  color: var(--cream);
+  font-family: var(--font-sans); font-size: 18px; font-weight: 700;
+  box-shadow: 0 20px 60px -10px rgba(179,14,20,0.55), inset 0 1px 0 rgba(255,255,255,0.20);
+  transition: background-position 0.5s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 .final-cta .pill-cta:hover {
+  background-position: 100% 50%;
   transform: translateY(-2px);
-  box-shadow: 0 20px 50px -10px rgba(179,14,20,0.25);
+  box-shadow: 0 28px 80px -10px rgba(179,14,20,0.70);
 }
 .final-cta .pill-cta .arr {
-  width: 48px; height: 48px;
+  width: 52px; height: 52px;
   border-radius: 50%;
-  background: var(--grad-sig);
+  background: rgba(0,0,0,0.18);
+  border: 1px solid rgba(255,255,255,0.18);
   color: var(--cream);
   display: grid; place-items: center;
-  box-shadow: 0 8px 22px -4px rgba(179,14,20,0.55), inset 0 1px 0 rgba(255,255,255,0.18);
 }
 .final-cta .secondary {
   display: block;
-  margin-top: 24px;
+  margin-top: 28px;
   font-size: 14px;
-  color: var(--ink-dark-muted);
+  color: var(--ink-muted);
   font-weight: 600;
 }
-.final-cta .secondary a { color: var(--sig-deep); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.final-cta .secondary a { color: var(--sig-highlight); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
 
 /* ── FAQ ── */
 .faq { max-width: 800px; margin: 0 auto; }
@@ -727,18 +732,19 @@ p strong { color: var(--ink); font-weight: 700; }
       </div>
     </section>
 
-    <!-- METHODOLOGY · CREAM STAGE -->
-    <section class="method">
+    <!-- METHODOLOGY · HUB & SPOKE (dark, distinct layout) -->
+    <section class="method sec">
       <div class="sec-head">
-        <span class="label">THE FRAMEWORK</span>
+        <span class="label on-dark">THE FRAMEWORK</span>
         <h2>The 4-pillar <em>Selling System.</em></h2>
-        <p class="lead">Every install is built around four pillars. Pull one and the whole system tilts. Keep them in balance and revenue compounds.</p>
+        <p class="lead">Every install orbits four pillars. Pull one and the whole system tilts. Keep them in balance and revenue compounds.</p>
       </div>
-      <div class="pillars">
-        <div class="p"><div class="letter">S</div><h3>Source</h3><p>Where leads come from. Daily ad-account management, fresh creative every 14 days, lookalike + retargeting audiences.</p></div>
-        <div class="p"><div class="letter">E</div><h3>Engage</h3><p>How a stranger becomes a known lead. Long-form funnel, 12-min VSL, application form, SMS + email cadence.</p></div>
-        <div class="p"><div class="letter">C</div><h3>Close</h3><p>How a lead becomes a customer. Sales playbook, recorded role-play, the exact discovery-call script we use.</p></div>
-        <div class="p"><div class="letter">R</div><h3>Retain</h3><p>How a customer becomes a repeat customer. Continuity tiers, founder community, quarterly retreat, compounding.</p></div>
+      <div class="hub">
+        <div class="hub-core">A</div>
+        <div class="pillar p1"><div class="letter">S</div><h3>Source</h3><p>Where leads come from. Daily ad-account management, fresh creative every 14 days.</p></div>
+        <div class="pillar p2"><div class="letter">E</div><h3>Engage</h3><p>How a stranger becomes a known lead. Funnel, VSL, application, follow-up.</p></div>
+        <div class="pillar p3"><div class="letter">C</div><h3>Close</h3><p>How a lead becomes a customer. Sales playbook, recorded role-play, scripts.</p></div>
+        <div class="pillar p4"><div class="letter">R</div><h3>Retain</h3><p>How a customer becomes repeat. Continuity tiers, community, retreats.</p></div>
       </div>
     </section>
 
@@ -772,7 +778,7 @@ p strong { color: var(--ink); font-weight: 700; }
       </div>
     </section>
 
-    <!-- FOUNDER STORY · CREAM STAGE -->
+    <!-- FOUNDER STORY · ASYMMETRIC SPLIT (dark) -->
     <section class="founder-section">
       <div class="founder">
         <div class="portrait-big"><div class="name-tag">Ryan Frost · Founder</div></div>
@@ -924,10 +930,10 @@ p strong { color: var(--ink); font-weight: 700; }
       </div>
     </section>
 
-    <!-- FINAL CTA · CREAM STAGE -->
+    <!-- FINAL CTA · BIG NEGATIVE SPACE (dark) -->
     <section class="final-cta">
       <div class="horizon"></div>
-      <span class="eb">READY WHEN YOU ARE</span>
+      <span class="label on-dark eb">READY WHEN YOU ARE</span>
       <h2>Apply for the <em>next cohort.</em></h2>
       <p class="lead">60-second application. Inside-24-hour response. If you're a fit, you book straight onto the calendar. If you're not, we tell you that too.</p>
       <a href="#apply" class="pill-cta">Apply for the next cohort

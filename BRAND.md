@@ -128,35 +128,53 @@ Three fonts. Three roles. No fourth.
 
 ---
 
-## Stage Rhythm
+## Layout Rhythm — Visual Variety Without Color Variety
 
-The brand is dark-mode primary. To prevent visual monotony on long pages, sprinkle in **cream stages** as breath moments — sections that intentionally invert to a cream background with native cream design (cast shadows instead of glows, hairline-cream borders, `--grad-sig-tight` gradient text instead of HERO, drop-caps and editorial typography where appropriate).
+The brand is **fully dark-mode** on every public marketing page. Light mode is lame compared to dark mode — admit it and stop trying to make light mode happen on landing pages.
 
-**Target rhythm:** ~70% dark stages, ~30% cream stages, spaced roughly every 5–6 sections apart.
+To prevent visual monotony on long pages, **rotate LAYOUT TYPES** rather than swap colors. Every layout shape feels distinct even when every section is on `var(--bg)`. That's how Vercel, Linear, Anthropic, and Apple product pages do it.
 
-**Best candidates for cream stages:**
-- Methodology / framework reveal (the "stop and think" moment)
-- Founder story / personal narrative (magazine-profile feel)
-- Final CTA (the "decision moment")
-- Quote spotlight (single big testimonial)
-- Pricing (intentional gravity)
-- Manifesto / beliefs section
-- Cream-bg Process / How variant
+**Recommended layout rotation across a long page:**
 
-**Cream stages are not user preference — they are design decisions.** The visual mode of each section is locked by its CSS, not by a toggle.
+| Layout type | When to use | Examples |
+|---|---|---|
+| **Full-bleed VSL hero** | Page opener · single focal point | `/`, `/selling-system` heroes |
+| **Logo strip / marquee** | Trust signal · horizontal band | Below hero |
+| **4-column stat strip** | Compressed numbers band | After logos |
+| **2-column before/after** | Pain agitation | Pain section |
+| **Hub-and-spoke** | Methodology · radial focus on a core | Framework reveal |
+| **4-step process cards** | "How it works" | Install timeline |
+| **Asymmetric split (image + long-form text)** | Founder story · case study | Profile sections |
+| **Big quote (centered, dramatic negative space)** | Hero testimonial | Proof moments |
+| **Bento grid (mixed sizes)** | Feature reveal | What's included |
+| **Vertical timeline** | Day-by-day breakdowns | Case study deep-dive |
+| **Stacked deliverables w/ prices** | Value stack | Pre-pricing |
+| **Tier grid** | Pricing | The ask |
+| **Halo card + shield** | Guarantee | Risk reversal |
+| **Big negative space + single CTA** | Final decision moment | Final CTA |
+| **Accordion list** | FAQ | End-of-page |
+| **Mega footer** | Page close | Footer |
+
+**Rule of thumb:** never put two sections with the *same* layout type back-to-back. If your hero is a centered grid, the next section should NOT also be a centered grid.
 
 ---
 
-## Dark Mode Is the Brand · No Auto-Adapt
+## Dark Mode Is the Brand · No Auto-Adapt · No Toggle on Marketing Pages
 
-Marketing pages (`/`, `/selling-system`, `/free`, `/case-studies`, future landing pages) are **dark-mode locked**. There is no user-facing light/dark toggle on these pages. The brand surface is dark because:
+Every public marketing page — `/`, `/selling-system`, `/free`, `/case-studies`, future landing pages — is **dark-mode locked**. No user-facing light/dark toggle. No `prefers-color-scheme` auto-adaptation.
 
-1. Every ad, VSL, and content piece is filmed/designed dark — the funnel is dark end-to-end
-2. The design system (glows, gradients, glass) was built for dark · light translations are weaker
-3. Premium brands force their visual intent (Linear, Vercel, Anthropic, Apple product pages)
-4. Auto-adapting to OS preference splits the audience and weakens brand consistency
+Reasons (in order of importance):
 
-**Exception:** `/brand` and `/templates` keep a manual light/dark toggle as a **documentation feature** — used to demo "here's what stage-rhythm cream sections look like" to prospects and clients. Visitors landing on the actual marketing pages never see this toggle.
+1. **Brand consistency in the funnel.** Every ad, VSL, content piece is dark. A light-mode landing page in the middle creates a micro-shock that registers as "different company."
+2. **The design system was built for dark.** Glows, gradients, glass effects translate weakly to cream. Light versions are objectively weaker.
+3. **Dark mode just looks better.** Vercel, Linear, Anthropic, Apple product pages all force their visual intent. Owned media sets the mood — not the OS.
+4. **Auto-adapt splits the audience.** Some prospects see the strong version, others see the weak version, by random OS preference.
+
+### Exception: `/brand` and `/templates` Keep the Manual Toggle
+
+These two pages are **documentation surfaces**, used to demo capabilities to prospects and clients during onboarding. The toggle lets Frosty show "here's what this section would look like on a cream-stage variant if your brand wanted that." Visitors landing on real marketing pages never see the toggle.
+
+**This is the only exception. Do not add light-mode toggles to any other page.**
 
 ---
 
