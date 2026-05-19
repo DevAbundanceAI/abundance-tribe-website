@@ -13,6 +13,8 @@ All other beats unchanged from v13.
 
 If you're a coach, consultant, or agency owner selling high-ticket services — we will install our proven AI-Powered Ads Selling System inside your business in the next 14 days. And if it does not deliver predictable, pre-qualified appointments to your calendar — month after month, with prospects that are pre-sold and ready to buy — you don't pay. Plus, if you're qualified, you could get this entire system installed for as low as zero dollars down, allowing you to start seeing results before your first payment is ever due.
 
+That's right... Zero Dollars Down...
+
 ---
 
 ## BEAT 2 — Open loop: "How can we make this offer?" *(~10 sec)*
