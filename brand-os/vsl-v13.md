@@ -20,6 +20,8 @@
 
 If you're a coach, consultant, or agency owner selling high-ticket services — we will install our proven AI-Powered Ads Selling System inside your business in the next 14 days. And if it does not deliver predictable, pre-qualified appointments to your calendar — month after month, with prospects that are pre-sold and ready to buy — you don't pay. Plus, if you're qualified, you could get this entire system installed for as low as zero dollars down, allowing you to start seeing results before your first payment is ever due.
 
+That's right... Zero Dollars Down...
+
 ---
 
 ## BEAT 2 — Open loop: "How can we make this offer?" *(~10 sec)*
@@ -50,7 +52,7 @@ In the next few minutes, I'm going to break down five things.
 
 **First** — why it's easier than ever to scale a service business right now. The tools, the leverage, the conditions available to a founder today are unprecedented. Most founders are completely missing them.
 
-**Second** — and at the same time, why it's harder than ever to consistently land high-paying clients. The market shifted. The plays that worked two years ago don't move the needle anymore.
+**Second** — and at the same time, why it's harder than ever to consistently land high-paying clients. The market shifted. The tactics that worked two years ago don't move the needle anymore.
 
 **Third** — the ONE thing missing from almost every service business that explains the chaos. Hint: it's not a better ad. It's not a better closer. It's not another funnel. It's something much bigger than any one of those.
 

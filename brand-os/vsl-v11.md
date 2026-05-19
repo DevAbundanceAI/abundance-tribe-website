@@ -12,7 +12,7 @@
 
 ## BEAT 1 — Cold open: ICP + Offer (14-day install) + Guarantee + Financing *(~30 sec)*
 
-If you're a coach, consultant, or agency owner selling high-ticket services — we will install our proven AI-Powered Ads Selling System inside your business in the next 14 days. And if it does not deliver predictable pre-qualified appointments to your calendar — month after month, with prospects that are pre-sold and ready to buy — you don't pay. Plus, if you're qualified, you could get this entire system installed for as low as zero dollars down, allowing you to start seeing results before your first payment is ever due.
+If you're a coach, consultant, or agency owner selling high-ticket services — we will install our proven AI-Powered Ads Selling System inside your business in the next 14 days. And if it does not deliver predictable, pre-qualified appointments to your calendar — month after month, with prospects that are pre-sold and ready to buy — you don't pay. Plus, if you're qualified, you could get this entire system installed for as low as zero dollars down, allowing you to start seeing results before your first payment is ever due.
 
 ---
 
@@ -26,9 +26,13 @@ Now you might be thinking — how can we possibly make an offer like that? Here'
 
 Over the last five-plus years, we've generated over twelve million dollars in client revenue. Every single one of our clients started with zero go-to-market infrastructure.
 
+For example...
+
 We helped **Smart Sellers Academy** generate $1.3 million in just 15 months. Currently scaling past $225K a month.
 
-Plus more — like **Acquisition Network**, from zero to $2.8 million to date and still climbing. Or **All Done Consulting**, who we helped go from $20K a month to $4.6 million over two and a half years.
+We also helped **Acquisition Network**, launch from zero to $2.8 million in the last two years and still climbing. 
+
+Plus, **All Done Consulting**, who we helped go from $20K a month to $4.6 million in total cash collected revenue only two and a half years.
 
 Plus so many more.
 
