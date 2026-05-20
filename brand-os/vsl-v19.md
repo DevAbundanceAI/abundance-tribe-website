@@ -1,26 +1,48 @@
-# VSL v18 — Consolidated: Frosty's v17 edits + Beat 3 revert + Marketing Gods + VSL writing + 12-systems hybrid + audit-existing restore
+# VSL v19 — Consolidated: Frosty's v18 inline edits + structural tightening (Beat 9 cut, Beat 11 proof relocated to Beat 8)
 
 **Drafted:** 2026-05-20
 **Word count:** ~1,800 words · ~12 min spoken at 145 wpm
-**Total beats:** 11
+**Total beats:** 9 (down from v18's 11)
 
-## Changes from v17
+## Changes from v18
 
-**Consolidated all of Frosty's v17 inline edits, plus:**
+**Structural:**
+1. **Beat 9 (Customization differentiator) cut entirely.** Beat 7's Brand DNA capture + Abundance AI training already does this job. The competitor-contrast framing was a second pass at work already done. ~30 sec reclaimed, "one job per beat" rule preserved.
+2. **Beat 11 (Final proof + sign-off) dissolved.** Brian Durkee + Malik + Big Little Gyms receipts moved into Beat 8 as a proof stack right after the financing reframe. Sign-off line folded into the new Beat 9 (formerly Beat 10) CTA close.
 
-1. **Beat 3 reverted** — fast proof listing with "zero client acquisition infrastructure" pre-frame. ICP-per-client placeholders dropped (per Frosty's note that the previous framing was cleaner and more efficient).
-2. **Beat 6 — Marketing Gods punchline added** at the end of the sales-team rant. Cole/Sabri pattern: dimensional pain stacks → desperate-founder thought-loop punchline.
-3. **Beat 7 training line rewritten** — dropped "DR pantheon actually USE." Now: *"the ones Cole Gordon, Sabri Suby, Hormozi, and Russell Brunson built their empires on."*
-4. **Beat 7 Step 3 expansion — VSL writing added.** Self-referential trust multiplier: "We write your VSL — the same kind of pre-selling, pre-qualifying video you're watching right now."
-5. **Beat 7 Step 3 — concrete system mentions woven in:** triple-confirmation sequence, qualification scoring, lead recovery engine, application filter.
-6. **Beat 7 Step 4 — concrete system mentions added:** follow-up sequences, re-activation campaigns.
-7. **Beat 7 — audit-existing line restored** (was cut from v16 to v17, restored here): handles "I already have stuff in place" objection.
-8. **Silent grammar/typo fixes:** multple → multiple, theire → they're, instal → install, "and that's We install" → "and that's why we install," "When What" → "What."
+**Net effect:** 9 beats. Proof stacks BEFORE the CTA, then one clean close. Cole/Sabri structural pattern.
 
-**Still cut from v16 (Frosty endorsed staying cut):**
-- Brain-washing line (redundant with drinks-own-koolaid)
-- ROAS meta-aside in Beat 5 (rhythm-breaker, "$1 in / $2-$12 out" already does the work)
-- Over-pitching / Yoda block (teaches DR craft, doesn't help conversion — relocated to Reels)
+**All of Frosty's v18 inline content preserved:**
+- Beat 1 "doing more than $15K" framing
+- Beat 3 "We helped... We also helped... Plus we scaled" sequencing
+- Beat 4 "remarkable. However, most founders are completely using them improperly or missing them entirely"
+- Beat 4 "the solution we built... That we Custom-tailor to YOUR business. Install FOR you"
+- Beat 5 "$1 dollar in, and we consistently get $2, $3, $4 — sometimes $12 dollars"
+- Beat 6 "even though you know... that if you were on the call" pause add
+- Beat 6 *Cough cough* removed (Frosty cut)
+- Beat 7 Step 2 "Abundance AI writes the ads, fully trained on your brand, offer, and voice using battle-tested copywriting frameworks"
+- Beat 7 Step 2 "Then we run the daily media buying on Meta. Leading to you having a Predictable qualified pipeline, at a predictable cost."
+- Beat 7 transitions: "Then we move onto Step Three" / "That brings me to Step Four" / "And finally, Step Five"
+- Beat 7 Step 3 "This all leads to better sales leadership resulting in higher conversion rates"
+- Beat 7 Step 4 "we'll install a new mindset forcing the sales reps to actually give a fuck"
+- Beat 7 Step 5 "We Install the Abundance AI Data Layer. Allowing Us To: See the data. Find the leak."
+- Beat 7 DATA payoff rewrite: "That's the number one most important system that every $10 Million Dollar plus company has in place that you're most likely missing."
+- Beat 7 closer addition: "Plus... We'll help you personally install the mindset of doing whatever it fucking takes to scale your business."
+- Beat 8 "Allowing you to invest all of your available budget to go straight towards scaling your business. With the goal of landing new clients before your first payment is ever due."
+- Beat 9 (CTA) "The second you submit your application and schedule your discovery call"
+- Beat 9 (CTA) "the exact 14-day build schedule"
+- Beat 9 (CTA) "$0 down Lever"
+- Beat 9 (CTA) "12 systems running in parallel to those 5 Steps we walked through earlier"
+
+**Silent grammar/typo fixes applied (per Frosty's silent-fix rule):**
+- "higher conversion rates.Th" → "higher conversion rates." (stray Th dropped)
+- "Abundance AI Data Later" → "Abundance AI Data Layer"
+- "what ever it fucking takes" → "whatever it fucking takes"
+- "Here's the timeline looks like" → "Here's what the timeline looks like"
+- "instill all of your available budget" → "invest all of your available budget"
+- "$) dollars down Lever" → "$0 down Lever"
+- "paralell" → "parallel"
+- "However, Most founders" → "However, most founders" (mid-sentence lowercase)
 
 ---
 
@@ -60,7 +82,7 @@ This system has proven to work… and that's why...
 
 ...in the next few minutes, I'm going to break down five things you need to know to scale your business with the rise of AI.
 
-**First** — why it's easier than ever to scale a service business right now. The tools, the leverage, the conditions available to a founder today are remarkable. However, Most founders are completely using them improperly or missing them entirely.
+**First** — why it's easier than ever to scale a service business right now. The tools, the leverage, the conditions available to a founder today are remarkable. However, most founders are completely using them improperly or missing them entirely.
 
 **And second** — while it's the easiest time in history to scale a service business, at the same time, it's harder than ever to consistently land high-paying clients. The market shifted. The tactics that worked two years ago don't move the needle anymore. And prospects don't trust you the way they used to.
 
@@ -124,7 +146,7 @@ That's exactly what we install.
 
 ---
 
-## BEAT 7 — Mechanism: Brand DNA + Abundance AI + 5 Steps *(~200 sec)*
+## BEAT 7 — Mechanism: Brand DNA + Abundance AI + 5 Steps *(~210 sec)*
 
 Here's how it works in plain English.
 
@@ -138,13 +160,13 @@ Then Abundance AI gets to work. Five simple steps:
 
 **Step Two — Get your ads in front of your dream buyers.** Abundance AI writes the ads, fully trained on your brand, offer, and voice using battle-tested copywriting frameworks. Our team of copywriting experts reviews and optimizes the scripts. **You film all of your ads in under 3 hours per month** — **we handle all of the editing.** Then we run the daily media buying on Meta. Leading to you having a Predictable qualified pipeline, at a predictable cost.
 
-Then we move onto **Step Three — We Pre-sell every prospect before they hit your calendar.** **We write your VSL** — the same kind of pre-selling, pre-qualifying video you're watching right now. Same architecture. Custom to your offer, your voice, your ICP. The funnel page that converts the click. The application that filters out the wrong-fit prospects. The qualification scoring system that ranks every applicant. The triple-confirmation sequence that 3x's your show-up rate. The lead recovery engine that captures the 20% who would've otherwise ghosted. This all leads to better sales leadership resulting in higher conversion rates.Th
+Then we move onto **Step Three — We Pre-sell every prospect before they hit your calendar.** **We write your VSL** — the same kind of pre-selling, pre-qualifying video you're watching right now. Same architecture. Custom to your offer, your voice, your ICP. The funnel page that converts the click. The application that filters out the wrong-fit prospects. The qualification scoring system that ranks every applicant. The triple-confirmation sequence that 3x's your show-up rate. The lead recovery engine that captures the 20% who would've otherwise ghosted. 
 
-That brings me to **Step Four — We Make every sales call easier to close.** Abundance AI reads every sales call your team runs. Analyzes who's closeable, who's not, and why. Sales scripts that meet prospects where they're at and we'll install a new mindset forcing the sales reps to actually give a fuck about the prospects they're trying to close. Follow-up sequences that re-engage cold leads. Re-activation campaigns that bring old prospects back to the table. Same team. Same hours. Way more closes.
+That brings me to **Step Four — We Make every sales call easier to close.** Abundance AI reads every sales call your team runs. Analyzes who's closeable, who's not, and why. Sales scripts that meet prospects where they're at and we'll install a new mindset forcing the sales reps to actually give a fuck about the prospects they're trying to close. Follow-up sequences that re-engage cold leads. Re-activation campaigns that bring old prospects back to the table. This all leads to better sales leadership resulting in higher conversion rates. Same team. Same hours. Way more closes.
 
-And finally, **Step Five — We Install the Abundance AI Data Later. Allowing Us To: See the data. Find the leak.** Your dashboard pulls every number into one place. Every ad dollar. Every funnel page. Every KPI. Every call. Every close. You stop guessing where the constraint is. Abundance AI surfaces what to scale, what to kill, what to test next. This allows you to scale your business based on math, not your intuition.
+And finally, **Step Five — We Install the Abundance AI Operating System. Allowing Us To: See the data. Find the leak. Optimize it. And Scale. ** Your dashboard pulls every number into one place. Every ad dollar. Every funnel page. Every call. Every Cost. Every KPI. Every close. You stop guessing where the constraint is. Abundance AI surfaces what to scale, what to kill, what to test next. This allows you to scale your business based on math, not your intuition.
 
-That's the number one most important system that every $10 Million Dollar plus company has in place that you're most likely missing. **DATA** piece I promised you. Every $10 Million Dollar Plus business runs on it. Almost nobody at your level builds it for themselves... and that's why we install it for you.
+That's the number one most important system that every $10 Million Dollar plus company has in place that you're most likely missing. The **DATA** piece I promised you. Every $10 Million Dollar Plus business runs on it. Almost nobody at your level builds it for themselves... and that's why we install it for you.
 
 And if you're already running ads or have pieces of this in place — we audit what you have, fix what's broken upstream and downstream, and rebuild what's leaking. We don't start from scratch unless we need to.
 
@@ -156,35 +178,31 @@ One Foundation. Five Steps. Powered by Abundance AI. Optimized by humans.
 
 And here's exactly what we need from you: weekly approval calls, copy approvals on a 48-hour cadence, and two to four hours of filming per month. We handle everything else.
 
-Plus... We'll help you personally install the mindset of doing what ever it fucking takes to scale your business.
+Plus... We'll help you personally install the mindset of doing whatever it fucking takes to scale your business.
 
 ---
 
-## BEAT 8 — Re-offer + honest timeline + risk reversal *(~60 sec)*
+## BEAT 8 — Re-offer + timeline + risk reversal + proof stack *(~105 sec)*
 
 So here's the offer one more time — now that you've seen how it actually works.
 
 In the next 14 days, we install the AI-Powered Selling System inside your business. Built FROM your Brand DNA. Designed to fill your calendar with pre-sold, qualified appointments — with prospects that are already convinced of your offer, and ready to buy.
 
-**Here's the timeline looks like.** Install completes in 14 days. First qualified appointments typically arrive in weeks three through six as the ads optimize. By day 90, you have predictable monthly volume.
+**Here's what the timeline looks like.** Install completes in 14 days. First qualified appointments typically arrive in weeks three through six as the ads optimize. By day 90, you have predictable monthly volume.
 
-If it doesn't deliver, you don't pay. We keep working at no extra cost until it does. Plus, if you qualify, you can install the whole thing for as low as $0 down. Allowing you to instill all of your available budget to go straight towards scaling your business. With the goal of landing new clients before your first payment is ever due.
+If it doesn't deliver, you don't pay. We keep working at no extra cost until it does. Plus, if you qualify, you can install the whole thing for as low as $0 down. Allowing you to invest all of your available budget to go straight towards scaling your business. With the goal of landing new clients before your first payment is ever due.
 
----
+And the proof this works isn't just our own numbers.
 
-## BEAT 9 — Customization differentiator *(~30 sec)*
+**Brian Durkee** at Promoting Made Simple — 111 sales calls in 60 days, under eighteen-hundred dollars in ad spend. Sixteen dollars per booked call.
 
-Here's what no other agency CAN do.
+**Malik Consolidated** — $1.6 million across the engagement. **Big Little Gyms** — from 15 clients to 189 in 11 months during COVID. Same install. Same architecture.
 
-Every other agency uses the same funnel template across every client. Same hooks. Same sales scripts. Same email sequences with different names dropped in. Their results are average because their inputs are generic.
-
-Abundance AI reads YOUR specific Brand DNA and generates every single piece of copy from THAT. Your ads. Your funnel. Your scripts. Your dashboards. Built FROM you, not a template applied to you. The output is as unique as the input. Which is why our results compound while everyone else's plateau.
-
-(Do we need this Customization differentiator section? or is it redundant?)
+Different industries. Different scale points. Same system.
 
 ---
 
-## BEAT 10 — Final CTA + dual curiosity gaps *(~115 sec)*
+## BEAT 9 — Final CTA + dual curiosity gaps + sign-off *(~115 sec)*
 
 So here's the move. Click below. Apply for a Strategy Call.
 
@@ -196,9 +214,9 @@ The second you submit your application and schedule your discovery call, you get
 
 **Two** — real install timelines from our partnerships. Month one. Month two. Month three. What the actual ramp looks like at different ad-spend levels.
 
-**Three** — exactly how the $) dollars down Lever works. So you walk into our call already knowing whether $0 down applies to you.
+**Three** — exactly how the $0 down Lever works. So you walk into our call already knowing whether $0 down applies to you.
 
-Plus the full walkthrough of the **12 systems** running in paralell to those 5 Steps we walked through earlier.
+Plus the full walkthrough of the **12 systems** running in parallel to those 5 Steps we walked through earlier.
 
 By the time we hop on the Strategy Call, you're up to speed. We skip the basics and go straight to your business.
 
@@ -216,23 +234,11 @@ That diagnostic alone is worth thirty minutes — even if we decide we're not th
 
 And remember — install in 14 days. If we don't deliver, you don't pay. Plus, if you qualify, you can install the whole thing for as low as $0 down.
 
----
- (This final proof section needs to flow better and probably get moved to the end of the re-offer / timeline section)
-## BEAT 11 — Final proof + sign-off *(~45 sec)*
-
-Before you click — two more receipts worth seeing.
-
-**Brian Durkee** at Promoting Made Simple — 111 sales calls in 60 days, under eighteen-hundred dollars in ad spend. Sixteen dollars per booked call.
-
-**Malik Consolidated** — $1.6 million across the engagement. **Big Little Gyms** — from 15 clients to 189 in 11 months during COVID. Same install. Same architecture.
-
-Different industries. Different scale points. Same system.
-
 Click the button. Book your Strategy Call. Let's get the system installed. See you on the inside.
 
 ---
 
-## v18 verification
+## v19 verification
 
 | Beat | Job | Time |
 |------|-----|------|
@@ -242,20 +248,21 @@ Click the button. Book your Strategy Call. Let's get the system installed. See y
 | 4 | Agenda | ~75s |
 | 5 | Founder credibility | ~40s |
 | 6 | Pain → Marketing Gods → EVERYTHING problem | ~145s |
-| 7 | Mechanism (Brand DNA + AI + 5 Steps + audit + 12 systems gate) | ~200s |
-| 8 | Re-offer + honest timeline | ~60s |
-| 9 | Customization differentiator | ~30s |
-| 10 | CTA + dual curiosity gaps | ~115s |
-| 11 | Final proof + sign-off | ~45s |
+| 7 | Mechanism (Brand DNA + AI + 5 Steps + audit + 12 systems gate + mindset closer) | ~210s |
+| 8 | Re-offer + timeline + risk reversal + proof stack | ~105s |
+| 9 | CTA + dual curiosity gaps + sign-off | ~115s |
 
-**Total:** ~720 sec = **~12 min spoken** at 145 wpm.
+**Total:** ~795 sec = **~13.25 min spoken** at 145 wpm.
 
-Cole's sweet spot. Down from v16's 15 min by ~3 minutes — even with the v17 → v18 additions (VSL writing in Step 3, system mentions in Step 4, audit-existing line, Marketing Gods punchline).
+Slightly over v18's ~12 min because Frosty's Beat 7 additions (Step 2 expansion, transitions between steps, mindset closer) added ~30 sec net even after cutting Beat 9. Still inside Cole's acceptable range. If we want to pull back to ~12 min, the easiest trims are in Beat 4 (the agenda is the longest non-mechanism beat) or compressing Beat 7's Step 3 lead-recovery list.
 
-## Next steps (post v18 ship)
+## Structural rule preserved
 
-1. **Read aloud.** Top to bottom, stopwatch on. Find tongue-trips. This is the next blocker.
-2. **Production planning.** What's on screen during each beat? B-roll, dashboard shots, motion graphics.
-3. **Deep Dive video script.** Promised 4 things in Beat 10 + the 12-systems walkthrough — that video needs to exist before the VSL goes live.
-4. **Landing page setup.** Where this VSL lives + the application gate.
-5. **May 22 launch decision.** Strategic call: does the VSL block launch, or does the offer go live without the VSL while production wraps?
+One job per beat. 9 beats, 9 jobs, no overlap. Proof now stacks BEFORE the CTA. Cole/Sabri pattern intact.
+
+## Next steps (post v19 ship)
+
+1. **Read aloud.** Stopwatch on. The Beat 7 → Beat 8 → Beat 9 flow is the main thing to check now that the proof relocated.
+2. **Lock v19 or iterate to v20.**
+3. **Pre-consult video script.** Due Wed May 21.
+4. **Pick 2-3 ad variants + write scripts.** Due Wed-Thu.
