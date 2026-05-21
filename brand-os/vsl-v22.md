@@ -192,7 +192,7 @@ Here's how it works in plain English.
 
 Then our operating team, powered by Abundance AI, gets to work. Five simple steps:
 
-**Step One — We dial in your offer to be cold-traffic friendly.** We go deep inside of your prospects' brain to uncover the number one thing they want to solve, and we craft an offer so compelling... that buying it... becomes inevitable for anyone who comes in contact with it. We restructure your pricing, your positioning, and we install our financing lever onto YOUR offer. So when your prospect lands on your funnel, the money objection is dead before the call.
+**Step One — We dial in your offer to be cold-traffic friendly.** We go deep inside of your prospects' brain to uncover the number one thing they want to solve, and we craft an offer so compelling... that buying it... becomes inevitable for anyone who comes in contact with it. We call this **The 7 Specifics of an Inevitable Offer** — and we'll break it down for you on your Strategy Call. We restructure your pricing, your positioning, and we install our financing lever onto YOUR offer. So when your prospect lands on your funnel, the money objection is dead before the call.
 
 Then comes **Step Two — We Get your ads in front of your dream buyers. And Stalk Them, So Everytime they open their feed. They are seeing you as an AUTHOURITY in your space** Abundance AI writes the ads, fully trained on your brand, offer, and voice using battle-tested copywriting frameworks. Our team of copywriting experts reviews and optimizes the scripts. **You film all of your ads in under 3 hours per month** — **we handle all of the editing.** Then we run the daily media buying on Meta. Leading to you having a Predictable qualified pipeline, at a predictable cost.
 
@@ -267,7 +267,7 @@ However...
 
 Even if you decide not to work with us, you'll walk away with three things:
 
-**One** — exactly which of the 5 Steps is your current bottleneck. Build, Attract, Pre-Sell, Close, or Optimize. So you know where to focus next, no matter what you decide.
+**One** — exactly which of the 5 Steps is your current bottleneck. Build, Attract, Pre-Sell, Close, or Optimize. And which of the **7 Specifics** your offer is missing. So you know where to focus next, no matter what you decide.
 
 **Two** — the exact funnel structure we'd recommend for YOUR business based on where you're at right now. 
 
