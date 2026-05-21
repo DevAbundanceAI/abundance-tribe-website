@@ -51,7 +51,7 @@ We also helped **Acquisition Network** — go from an idea to $2.8 million dolla
 
 Plus we scaled **All Done Consulting** — from $20K a month to $4.6 million dollars in total cash collected revenue in only two and a half years.
 
-This system has proven to work… and that's why...
+This system has proven to work scale those brands and more… and that's why...
 
 ---
 
