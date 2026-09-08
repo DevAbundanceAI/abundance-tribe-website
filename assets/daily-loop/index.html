@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Daily Loop · The Abundance Loop</title>
+<meta name="description" content="A three-minute daily worksheet: set the day in the morning, score it at night.">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
+<link rel="preconnect" href="https://use.typekit.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap">
+<link rel="stylesheet" href="/assets/worksheet.css">
+</head>
+<body>
+
+<div class="bar no-print">
+  <a class="mark" href="/assets/">Abundance<em>.</em></a>
+  <span class="saved" data-status>Loading</span>
+  <button class="btn" type="button" data-clear>Clear</button>
+  <button class="btn btn-go" type="button" data-print>Download PDF</button>
+</div>
+
+<main class="sheets" data-sheet="daily_loop_v1">
+
+<section class="sheet dense">
+  <div class="sheet-head">
+    <div class="brand">The Abundance Loop</div>
+    <div class="meta" style="display:flex;gap:10px;align-items:baseline">Daily &middot; 3-5 min
+      <span class="lbl" style="font-size:11px">Date</span>
+      <input type="date" name="d_date" style="width:150px">
+    </div>
+  </div>
+
+  <h1 class="title">Daily Loop</h1>
+  <p class="lede">Two minutes in the morning to decide who you are today. Three minutes at night to score it honestly. The score is not the point. The trend is.</p>
+
+  <div class="cols">
+
+    <!-- ── MORNING ────────────────────────────────────────────── -->
+    <div>
+      <div class="col-t"><b>Morning</b><span>Set the day</span></div>
+
+      <div class="f">
+        <div class="q">Today I want to show up as&hellip;</div>
+        <input type="text" name="d_showup">
+      </div>
+
+      <div class="f">
+        <div class="q">One thing I can get excited about today is&hellip;</div>
+        <input type="text" name="d_excited">
+      </div>
+
+      <div class="f">
+        <div class="q accent">Today's loop actions</div>
+        <div class="hint">The three that actually move you. Keep them mostly the same day to day.</div>
+        <div class="stack-sm">
+          <div class="f-row"><span class="n">1</span><input type="text" name="a1"></div>
+          <div class="f-row"><span class="n">2</span><input type="text" name="a2"></div>
+          <div class="f-row"><span class="n">3</span><input type="text" name="a3"></div>
+        </div>
+      </div>
+
+      <div class="f">
+        <div class="q">Today's #1 priority</div>
+        <div class="hint">If only one thing gets done, this is it.</div>
+        <input type="text" name="d_priority">
+      </div>
+
+      <div class="f">
+        <div class="q">Someone who needs me on my A-game today is&hellip;</div>
+        <input type="text" name="d_needs_me">
+      </div>
+
+      <div class="f">
+        <div class="q">What could throw me off today?</div>
+        <input type="text" name="d_threat">
+      </div>
+
+      <div class="f">
+        <div class="q">&hellip;and the way my best self would deal with that is&hellip;</div>
+        <textarea name="d_bestself" data-min-lines="4"></textarea>
+      </div>
+    </div>
+
+    <!-- ── EVENING ────────────────────────────────────────────── -->
+    <div>
+      <div class="col-t"><b>Evening</b><span>Score the day</span></div>
+
+      <div class="f">
+        <div class="q accent">Did I keep today's commitments?</div>
+        <div class="hint">Kept &check; &middot; Half &frac12; &middot; Missed &times;</div>
+
+        <div class="rowline">
+          <span class="nm">1</span>
+          <span class="mirror" data-mirror="a1" data-empty="Loop action one"></span>
+          <span class="tri">
+            <label><input type="radio" name="k1" value="1">&check;</label>
+            <label><input type="radio" name="k1" value="0.5">&frac12;</label>
+            <label><input type="radio" name="k1" value="0">&times;</label>
+          </span>
+        </div>
+        <div class="rowline">
+          <span class="nm">2</span>
+          <span class="mirror" data-mirror="a2" data-empty="Loop action two"></span>
+          <span class="tri">
+            <label><input type="radio" name="k2" value="1">&check;</label>
+            <label><input type="radio" name="k2" value="0.5">&frac12;</label>
+            <label><input type="radio" name="k2" value="0">&times;</label>
+          </span>
+        </div>
+        <div class="rowline">
+          <span class="nm">3</span>
+          <span class="mirror" data-mirror="a3" data-empty="Loop action three"></span>
+          <span class="tri">
+            <label><input type="radio" name="k3" value="1">&check;</label>
+            <label><input type="radio" name="k3" value="0.5">&frac12;</label>
+            <label><input type="radio" name="k3" value="0">&times;</label>
+          </span>
+        </div>
+      </div>
+
+      <div class="f">
+        <div class="q accent">How aligned was I today?</div>
+        <div class="hint">1 = nothing like the person I said I'd be. 10 = exactly them.</div>
+        <div class="scale" style="margin-top:6px">
+          <label><input type="radio" name="d_align" value="1">1</label>
+          <label><input type="radio" name="d_align" value="2">2</label>
+          <label><input type="radio" name="d_align" value="3">3</label>
+          <label><input type="radio" name="d_align" value="4">4</label>
+          <label><input type="radio" name="d_align" value="5">5</label>
+          <label><input type="radio" name="d_align" value="6">6</label>
+          <label><input type="radio" name="d_align" value="7">7</label>
+          <label><input type="radio" name="d_align" value="8">8</label>
+          <label><input type="radio" name="d_align" value="9">9</label>
+          <label><input type="radio" name="d_align" value="10">10</label>
+        </div>
+      </div>
+
+      <div class="score-pair" style="margin-top:12px">
+        <div class="score">
+          <div class="lab">Execution</div>
+          <div class="val" data-calc="tri" data-fields="k1,k2,k3">_ / 3</div>
+          <div class="sub">Commitments kept</div>
+        </div>
+        <div class="score">
+          <div class="lab">Alignment</div>
+          <div class="val" data-calc="value" data-fields="d_align">_ / 10</div>
+          <div class="sub">How it felt</div>
+        </div>
+      </div>
+      <div class="note">
+        <div class="note-t">Never merge these two</div>
+        <div class="note-b">You can execute perfectly and feel wrong. You can feel great and do nothing. Each number tells you something the other cannot.</div>
+      </div>
+
+      <div class="f">
+        <div class="q">One win I'm proud of today</div>
+        <input type="text" name="d_win">
+      </div>
+
+      <div class="f">
+        <div class="q">Tomorrow will be better if I&hellip;</div>
+        <input type="text" name="d_tomorrow">
+      </div>
+
+      <div class="f">
+        <div class="q">Today I had an abundance of&hellip;</div>
+        <div class="grid3" style="gap:10px">
+          <input type="text" name="d_ab1">
+          <input type="text" name="d_ab2">
+          <input type="text" name="d_ab3">
+        </div>
+      </div>
+
+      <div class="f">
+        <div class="q">If I were my own coach, the one thing I'd tell myself right now is&hellip;</div>
+        <textarea name="d_coach" data-min-lines="2"></textarea>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sheet-foot">
+    <span>The Abundance Loop &middot; Daily</span>
+    <span>Scores fluctuate. Improve the trend.</span>
+  </div>
+</section>
+
+</main>
+
+<script src="/assets/worksheet.js"></script>
+</body>
+</html>

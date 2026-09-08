@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Weekly Loop · The Abundance Loop</title>
+<meta name="description" content="A ten-minute weekly worksheet: design the week, score it, reset.">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-dark.svg">
+<link rel="preconnect" href="https://use.typekit.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap">
+<link rel="stylesheet" href="/assets/worksheet.css">
+</head>
+<body>
+
+<div class="bar no-print">
+  <a class="mark" href="/assets/">Abundance<em>.</em></a>
+  <span class="saved" data-status>Loading</span>
+  <button class="btn" type="button" data-clear>Clear</button>
+  <button class="btn btn-go" type="button" data-print>Download PDF</button>
+</div>
+
+<main class="sheets" data-sheet="weekly_loop_v1">
+
+<!-- ══ PAGE 1 ══════════════════════════════════════════════════ -->
+<section class="sheet dense">
+  <div class="sheet-head">
+    <div class="brand">The Abundance Loop</div>
+    <div class="meta">Weekly &middot; once a week &middot; 10-12 min</div>
+  </div>
+
+  <h1 class="title">The Week Ahead</h1>
+  <p class="lede">Sunday night or Monday morning. Decide what the week is for before it decides for you.</p>
+
+  <div class="f pair">
+    <div class="f-row"><span class="lbl">Week #</span><input type="number" name="wk_num" class="num" min="1" inputmode="numeric"></div>
+    <div class="f-row"><span class="lbl">Starts</span><input type="date" name="wk_start"></div>
+    <div class="f-row"><span class="lbl">Ends</span><input type="date" name="wk_end" data-date-from="wk_start" data-add-days="6"></div>
+  </div>
+
+  <div class="f box accent">
+    <div class="box-t">One adjustment for this week</div>
+    <div class="hint">Last week told you something. Change one thing, not five.</div>
+    <textarea name="wk_adjust" data-min-lines="2"></textarea>
+  </div>
+
+  <div class="f">
+    <div class="q accent">This week's three commitments</div>
+    <div class="hint">Name the commitment, then the number of times you will do it this week. These stay the same for 90 days.</div>
+    <div class="stack">
+      <div class="f-row"><span class="n">1</span><input type="text" name="cm1" class="wide"><span class="lbl">&times; per week</span><input type="number" name="t1" class="num" min="0" inputmode="numeric"></div>
+      <div class="f-row"><span class="n">2</span><input type="text" name="cm2" class="wide"><span class="lbl">&times; per week</span><input type="number" name="t2" class="num" min="0" inputmode="numeric"></div>
+      <div class="f-row"><span class="n">3</span><input type="text" name="cm3" class="wide"><span class="lbl">&times; per week</span><input type="number" name="t3" class="num" min="0" inputmode="numeric"></div>
+    </div>
+  </div>
+
+  <div class="f days">
+    <div class="q accent">The one thing that matters each day</div>
+    <div class="hint">Not a to-do list. The single thing that would make that day count.</div>
+    <div class="hdr" style="margin-top:8px"><span class="d">Day</span><b>The one thing</b></div>
+    <div class="row"><span class="d">Mon</span><input type="text" name="day_mon"></div>
+    <div class="row"><span class="d">Tue</span><input type="text" name="day_tue"></div>
+    <div class="row"><span class="d">Wed</span><input type="text" name="day_wed"></div>
+    <div class="row"><span class="d">Thu</span><input type="text" name="day_thu"></div>
+    <div class="row"><span class="d">Fri</span><input type="text" name="day_fri"></div>
+    <div class="row"><span class="d">Sat</span><input type="text" name="day_sat"></div>
+    <div class="row"><span class="d">Sun</span><input type="text" name="day_sun"></div>
+  </div>
+
+  <div class="sheet-foot">
+    <span>The Abundance Loop &middot; Weekly &middot; 1 of 3</span>
+    <span>Design the week or react to it. Your choice.</span>
+  </div>
+</section>
+
+<!-- ══ PAGE 2 ══════════════════════════════════════════════════ -->
+<section class="sheet">
+  <div class="sheet-head">
+    <div class="brand">The Abundance Loop</div>
+    <div class="meta">Weekly &middot; Sunday scoring</div>
+  </div>
+
+  <h1 class="title">Score the Week</h1>
+  <p class="lede">Two numbers. One says what you did. One says how it felt. Never average them together.</p>
+
+  <div class="f">
+    <div class="q accent">Commitment scorecard</div>
+    <div class="hint">Write what you actually did, not what you meant to do.</div>
+    <div class="hdr days" style="display:flex;gap:14px;border-bottom:2px solid var(--rule-firm);padding-bottom:6px;margin-top:8px">
+      <b style="flex:1;font-size:12px;letter-spacing:.1em;text-transform:uppercase">Commitment</b>
+      <b style="width:62px;flex:none;font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-align:center">Target</b>
+      <b style="width:62px;flex:none;font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-align:center">Actual</b>
+    </div>
+    <div class="rowline"><span class="nm">1</span><span class="mirror" data-mirror="cm1" data-empty="Commitment one"></span><span class="mirror" data-mirror="t1" data-empty="-" style="flex:none;width:62px;text-align:center;border-bottom:none"></span><input type="number" name="c1" class="num" min="0" inputmode="numeric"></div>
+    <div class="rowline"><span class="nm">2</span><span class="mirror" data-mirror="cm2" data-empty="Commitment two"></span><span class="mirror" data-mirror="t2" data-empty="-" style="flex:none;width:62px;text-align:center;border-bottom:none"></span><input type="number" name="c2" class="num" min="0" inputmode="numeric"></div>
+    <div class="rowline"><span class="nm">3</span><span class="mirror" data-mirror="cm3" data-empty="Commitment three"></span><span class="mirror" data-mirror="t3" data-empty="-" style="flex:none;width:62px;text-align:center;border-bottom:none"></span><input type="number" name="c3" class="num" min="0" inputmode="numeric"></div>
+  </div>
+
+  <div class="score">
+    <div>
+      <div class="lab">Weekly execution score</div>
+      <div class="sub">Everything you did, over everything you said you would do.</div>
+    </div>
+    <div class="val" data-calc="ratio" data-done="c1,c2,c3" data-target="t1,t2,t3">_ %</div>
+  </div>
+
+  <div class="f">
+    <div class="q accent">Six-area alignment pulse</div>
+    <div class="hint">Gut answer. 1 = badly off. 10 = exactly where I want to be.</div>
+    <div class="rowline" style="align-items:flex-start"><span class="nm" style="width:96px">Body</span><span class="st">Sleep, food, training, how the body actually feels</span><div class="scale"><label><input type="radio" name="w_body" value="1">1</label><label><input type="radio" name="w_body" value="2">2</label><label><input type="radio" name="w_body" value="3">3</label><label><input type="radio" name="w_body" value="4">4</label><label><input type="radio" name="w_body" value="5">5</label><label><input type="radio" name="w_body" value="6">6</label><label><input type="radio" name="w_body" value="7">7</label><label><input type="radio" name="w_body" value="8">8</label><label><input type="radio" name="w_body" value="9">9</label><label><input type="radio" name="w_body" value="10">10</label></div></div>
+    <div class="rowline" style="align-items:flex-start"><span class="nm" style="width:96px">Energy</span><span class="st">Steady fuel, or running on fumes and caffeine</span><div class="scale"><label><input type="radio" name="w_energy" value="1">1</label><label><input type="radio" name="w_energy" value="2">2</label><label><input type="radio" name="w_energy" value="3">3</label><label><input type="radio" name="w_energy" value="4">4</label><label><input type="radio" name="w_energy" value="5">5</label><label><input type="radio" name="w_energy" value="6">6</label><label><input type="radio" name="w_energy" value="7">7</label><label><input type="radio" name="w_energy" value="8">8</label><label><input type="radio" name="w_energy" value="9">9</label><label><input type="radio" name="w_energy" value="10">10</label></div></div>
+    <div class="rowline" style="align-items:flex-start"><span class="nm" style="width:96px">Mind</span><span class="st">Clear and calm, or noisy and scattered</span><div class="scale"><label><input type="radio" name="w_mind" value="1">1</label><label><input type="radio" name="w_mind" value="2">2</label><label><input type="radio" name="w_mind" value="3">3</label><label><input type="radio" name="w_mind" value="4">4</label><label><input type="radio" name="w_mind" value="5">5</label><label><input type="radio" name="w_mind" value="6">6</label><label><input type="radio" name="w_mind" value="7">7</label><label><input type="radio" name="w_mind" value="8">8</label><label><input type="radio" name="w_mind" value="9">9</label><label><input type="radio" name="w_mind" value="10">10</label></div></div>
+    <div class="rowline" style="align-items:flex-start"><span class="nm" style="width:96px">Discipline</span><span class="st">Doing it when the mood is gone</span><div class="scale"><label><input type="radio" name="w_discipline" value="1">1</label><label><input type="radio" name="w_discipline" value="2">2</label><label><input type="radio" name="w_discipline" value="3">3</label><label><input type="radio" name="w_discipline" value="4">4</label><label><input type="radio" name="w_discipline" value="5">5</label><label><input type="radio" name="w_discipline" value="6">6</label><label><input type="radio" name="w_discipline" value="7">7</label><label><input type="radio" name="w_discipline" value="8">8</label><label><input type="radio" name="w_discipline" value="9">9</label><label><input type="radio" name="w_discipline" value="10">10</label></div></div>
+    <div class="rowline" style="align-items:flex-start"><span class="nm" style="width:96px">Purpose</span><span class="st">The work means something to me right now</span><div class="scale"><label><input type="radio" name="w_purpose" value="1">1</label><label><input type="radio" name="w_purpose" value="2">2</label><label><input type="radio" name="w_purpose" value="3">3</label><label><input type="radio" name="w_purpose" value="4">4</label><label><input type="radio" name="w_purpose" value="5">5</label><label><input type="radio" name="w_purpose" value="6">6</label><label><input type="radio" name="w_purpose" value="7">7</label><label><input type="radio" name="w_purpose" value="8">8</label><label><input type="radio" name="w_purpose" value="9">9</label><label><input type="radio" name="w_purpose" value="10">10</label></div></div>
+    <div class="rowline" style="align-items:flex-start"><span class="nm" style="width:96px">Connection</span><span class="st">The people who matter got the real me</span><div class="scale"><label><input type="radio" name="w_connection" value="1">1</label><label><input type="radio" name="w_connection" value="2">2</label><label><input type="radio" name="w_connection" value="3">3</label><label><input type="radio" name="w_connection" value="4">4</label><label><input type="radio" name="w_connection" value="5">5</label><label><input type="radio" name="w_connection" value="6">6</label><label><input type="radio" name="w_connection" value="7">7</label><label><input type="radio" name="w_connection" value="8">8</label><label><input type="radio" name="w_connection" value="9">9</label><label><input type="radio" name="w_connection" value="10">10</label></div></div>
+  </div>
+
+  <div class="score">
+    <div>
+      <div class="lab">Weekly alignment score</div>
+      <div class="sub">The average of the six. Watch the low one, not the average.</div>
+    </div>
+    <div class="val" data-calc="avg" data-fields="w_body,w_energy,w_mind,w_discipline,w_purpose,w_connection">_ / 10</div>
+  </div>
+
+  <div class="sheet-foot">
+    <span>The Abundance Loop &middot; Weekly &middot; 2 of 3</span>
+    <span>Two numbers, never merged. Each tells you something different.</span>
+  </div>
+</section>
+
+<!-- ══ PAGE 3 ══════════════════════════════════════════════════ -->
+<section class="sheet">
+  <div class="sheet-head">
+    <div class="brand">The Abundance Loop</div>
+    <div class="meta">Weekly &middot; reflect and reset</div>
+  </div>
+
+  <h1 class="title">Reflect + Reset</h1>
+  <p class="lede">The week already happened. This is where you get paid for it.</p>
+
+  <div class="f">
+    <div class="q accent">Three great things about this week</div>
+    <div class="hint">Small counts. Write them down before you forget they happened.</div>
+    <div class="stack-sm">
+      <div class="f-row"><span class="n">1</span><input type="text" name="wk_g1"></div>
+      <div class="f-row"><span class="n">2</span><input type="text" name="wk_g2"></div>
+      <div class="f-row"><span class="n">3</span><input type="text" name="wk_g3"></div>
+    </div>
+  </div>
+
+  <div class="f">
+    <div class="q">What did I struggle with most this week?</div>
+    <textarea name="wk_struggle" data-min-lines="3"></textarea>
+  </div>
+
+  <div class="f">
+    <div class="q">If a friend brought me that exact struggle, what would I tell them?</div>
+    <div class="hint">You are kinder and smarter with other people. Borrow that.</div>
+    <textarea name="wk_advice" data-min-lines="3"></textarea>
+  </div>
+
+  <div class="f">
+    <div class="q">The biggest lesson from this week is&hellip;</div>
+    <textarea name="wk_lesson" data-min-lines="3"></textarea>
+  </div>
+
+  <div class="f box accent">
+    <div class="box-t">Carry it forward</div>
+    <div class="hint">This becomes next week's one adjustment. Write it on the next sheet before you close this one.</div>
+    <textarea name="wk_carry" data-min-lines="2"></textarea>
+  </div>
+
+  <div class="sheet-foot">
+    <span>The Abundance Loop &middot; Weekly &middot; 3 of 3</span>
+    <span>Commitments change every 90 days, not every Sunday.</span>
+  </div>
+</section>
+
+</main>
+
+<script src="/assets/worksheet.js"></script>
+</body>
+</html>
