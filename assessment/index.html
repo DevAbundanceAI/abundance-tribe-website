@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Growth Assessment · Abundance</title>
+<meta name="description" content="In one week we go through your entire business and hand you the five highest-leverage places AI saves you time, cuts your costs, and makes you more money. Book a 30-minute AI Growth Discovery Call.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="AI Growth Assessment · Abundance">
+<meta property="og:description" content="The five highest-leverage places AI pays off in your business. Verified against your real numbers, in one week.">
+<meta property="og:url" content="https://findabundance.ai/assessment">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   ABUNDANCE · AI GROWTH ASSESSMENT · VSL LANDING PAGE · v1.0
+   Direct-response page. No nav, one action.
+   Brand v1.9 tokens, dark-mode locked.
+   PAGE RULE: no price anywhere. Ever. The number is disclosed
+   on the Discovery Call only.
+   ═══════════════════════════════════════════════════════════════════ */
+
+@font-face {
+  font-family: 'Neo Contact';
+  src: url('/assets/fonts/neo-contact/neo-contact-lt-pro.woff2') format('woff2');
+  font-weight: 400 900; font-style: normal; font-display: swap;
+}
+
+:root {
+  --cream:       #F5F0E8;
+  --cream-soft:  #FAF6EF;
+  --bg:          #0A0A0A;
+  --surface-1:   #141414;
+  --surface-2:   #1B1B1B;
+  --surface-3:   #242424;
+
+  --ink:         #F5F0E8;
+  --ink-body:    #C9C2B5;
+  --ink-muted:   #807A70;
+
+  --sig-highlight: #FF5733;
+  --sig:           #ED1C24;
+  --sig-deep:      #B30E14;
+  --sig-anchor:    #7A0712;
+
+  --grad-sig-hero: linear-gradient(135deg, #B30E14 0%, #B30E14 7%, #ED1C24 28%, #FF5733 67%, #B30E14 88%, #7A0712 93%, #7A0712 100%);
+  --grad-sig: linear-gradient(135deg, #FF5733 0%, #FF5733 7%, #ED1C24 40%, #B30E14 72%, #7A0712 93%, #7A0712 100%);
+  --grad-sig-tight: linear-gradient(135deg, #ED1C24 0%, #ED1C24 12%, #B30E14 60%, #7A0712 88%, #7A0712 100%);
+  --grad-horizon: radial-gradient(ellipse 70% 60% at 50% 110%, rgba(255,87,51,0.32) 0%, rgba(179,14,20,0.42) 25%, rgba(122,7,18,0.22) 50%, transparent 75%);
+
+  --hairline:        rgba(255,255,255,0.08);
+  --hairline-strong: rgba(255,255,255,0.18);
+  --glass-bg-dark:  rgba(20,20,20,0.55);
+  --glass-blur:     blur(22px) saturate(140%);
+
+  --font-logo:    "Neo Contact", "DM Serif Display", Georgia, serif;
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-sans:    "greycliff-cf", system-ui, -apple-system, sans-serif;
+
+  --t-h1:      clamp(34px, 5vw, 62px);
+  --t-h2:      clamp(28px, 3.6vw, 44px);
+  --t-h3:      clamp(19px, 1.9vw, 24px);
+  --t-body:    17px;
+  --t-micro:   13px;
+
+  --r-stage:   28px;
+  --r-card:    18px;
+  --r-pill:    100px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-sans); font-size: var(--t-body);
+  line-height: 1.55; -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; scroll-behavior: smooth;
+}
+button { font: inherit; cursor: pointer; border: none; background: none; }
+[hidden] { display: none !important; }
+a { color: inherit; text-decoration: none; }
+img, video { display: block; max-width: 100%; }
+
+h1, h2, h3 { font-family: var(--font-sans); font-weight: 800; letter-spacing: -0.028em; line-height: 1.06; }
+h1 em, h2 em, h3 em {
+  font-family: var(--font-display); font-style: italic; font-weight: 400;
+  -webkit-background-clip: text !important; background-clip: text !important;
+  -webkit-text-fill-color: transparent !important; color: transparent !important;
+  filter: drop-shadow(0 0 14px rgba(237,28,36,0.32));
+}
+h1 em { background-image: var(--grad-sig-hero) !important; }
+h2 em, h3 em { background-image: var(--grad-sig-tight) !important; }
+
+.label {
+  font-family: var(--font-sans); font-size: var(--t-micro);
+  font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.dot-period {
+  display: inline-block; width: 0.38em; height: 0.38em;
+  background: var(--grad-sig); border-radius: 50%;
+  vertical-align: 0.05em; margin-left: 0.06em;
+  box-shadow: 0 0 18px rgba(179,14,20,0.55);
+}
+
+.wrap { width: 100%; max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+.narrow { max-width: 780px; }
+
+/* ── MASTHEAD (no nav: one action only) ─────────────────────── */
+.masthead {
+  display: flex; align-items: center; justify-content: center;
+  padding: 26px 24px 0;
+}
+.mark {
+  font-family: var(--font-logo); font-size: 23px; font-weight: 400;
+  letter-spacing: 0.01em; color: var(--ink);
+}
+.mark em {
+  font-style: normal; color: var(--sig);
+  text-shadow: 0 0 16px rgba(237,28,36,0.6);
+}
+
+/* ── HERO ───────────────────────────────────────────────────── */
+.hero { position: relative; padding: 40px 0 8px; text-align: center; }
+.hero::before {
+  content: ''; position: absolute; z-index: 0; pointer-events: none;
+  left: 50%; top: 90px; transform: translateX(-50%);
+  width: min(1500px, 150vw); height: 1000px;
+  background: radial-gradient(ellipse 46% 46% at 50% 50%,
+    rgba(255,87,51,0.20) 0%,
+    rgba(179,14,20,0.26) 32%,
+    rgba(122,7,18,0.13) 56%,
+    transparent 74%);
+}
+.hero > * { position: relative; z-index: 1; }
+.hero .label { display: block; margin-bottom: 18px; }
+.hero h1 { font-size: var(--t-h1); margin-bottom: 20px; }
+.hero .lead {
+  font-size: clamp(17px, 1.9vw, 20px); color: var(--ink-body);
+  max-width: 660px; margin: 0 auto;
+}
+.hero .lead strong { color: var(--ink); font-weight: 700; }
+
+/* ── VIDEO + PLAY-GATE ──────────────────────────────────────── */
+.stage { padding: 30px 0 0; position: relative; z-index: 1; }
+.player {
+  position: relative; width: 100%; aspect-ratio: 16 / 9;
+  background: var(--surface-1); border-radius: var(--r-stage);
+  overflow: hidden; border: 1px solid var(--hairline-strong);
+  box-shadow: 0 40px 90px -30px rgba(0,0,0,0.9), 0 0 60px -20px rgba(179,14,20,0.35);
+}
+.player video { width: 100%; height: 100%; object-fit: cover; background: #000; }
+
+/* poster / empty state */
+.poster {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(179,14,20,0.22), transparent 70%),
+    var(--surface-1);
+  text-align: center; padding: 24px; gap: 14px;
+}
+.poster .note { font-size: 14px; color: var(--ink-muted); max-width: 380px; }
+
+/* big play button */
+.playbtn {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  background: rgba(10,10,10,0.35); transition: background 0.25s ease;
+  z-index: 3;
+}
+.playbtn:hover { background: rgba(10,10,10,0.22); }
+.playbtn .disc {
+  width: 84px; height: 84px; border-radius: 50%;
+  background: var(--grad-sig); display: grid; place-items: center;
+  color: var(--cream); box-shadow: 0 0 44px rgba(179,14,20,0.7);
+  transition: transform 0.25s ease;
+}
+.playbtn:hover .disc { transform: scale(1.06); }
+.playbtn .cap {
+  position: absolute; bottom: 26px; left: 0; right: 0;
+  font-size: var(--t-micro); font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-body);
+}
+
+/* sound-on nudge */
+.unmute {
+  position: absolute; top: 16px; right: 16px; z-index: 4;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 15px; border-radius: var(--r-pill);
+  background: var(--glass-bg-dark); backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--hairline-strong);
+  font-size: 13px; font-weight: 700; color: var(--ink);
+}
+
+/* the gate */
+.gate {
+  position: absolute; inset: 0; z-index: 5;
+  display: grid; place-items: center; padding: 22px;
+  background: rgba(10,10,10,0.80);
+  backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+  overflow-y: auto;
+}
+.gate-inner { width: 100%; max-width: 430px; text-align: center; }
+.gate h3 {
+  font-size: clamp(19px, 2.4vw, 25px); margin-bottom: 8px; line-height: 1.15;
+}
+.gate .sub {
+  font-size: 14px; color: var(--ink-body); margin-bottom: 18px;
+}
+.gate form { display: grid; gap: 9px; }
+.gate input {
+  width: 100%; padding: 13px 16px; border-radius: 12px;
+  background: rgba(255,255,255,0.05); color: var(--ink);
+  border: 1px solid var(--hairline-strong);
+  font-family: var(--font-sans); font-size: 15.5px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.gate input::placeholder { color: var(--ink-muted); }
+.gate input:focus {
+  outline: none; border-color: var(--sig);
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 0 0 3px rgba(237,28,36,0.18);
+}
+.gate input[aria-invalid="true"] { border-color: var(--sig); }
+.gate .err {
+  font-size: 13px; color: var(--sig-highlight); min-height: 0;
+  text-align: left; padding-left: 2px;
+}
+.gate .fine {
+  font-size: 12px; color: var(--ink-muted); margin-top: 11px; line-height: 1.5;
+}
+
+/* ── BUTTONS ────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 15px 30px; border-radius: var(--r-pill);
+  font-family: var(--font-sans); font-size: 16px; font-weight: 800;
+  letter-spacing: -0.01em; transition: all 0.2s ease; cursor: pointer;
+}
+.btn.gradient {
+  background: var(--grad-sig); background-size: 200% 100%; background-position: 0% 50%;
+  color: var(--cream); box-shadow: 0 0 30px rgba(179,14,20,0.45);
+  transition: background-position 0.5s ease, transform 0.2s ease;
+}
+.btn.gradient:hover { background-position: 100% 50%; transform: translateY(-1px); }
+.btn.big { padding: 19px 44px; font-size: clamp(17px, 1.9vw, 20px); width: auto; }
+.btn[disabled] { opacity: 0.55; cursor: wait; }
+
+.cta-block { text-align: center; padding: 30px 0 0; }
+.cta-block .btn { max-width: 100%; }
+.cta-sub {
+  display: block; margin-top: 13px; font-size: 15px; color: var(--ink-body);
+}
+.cta-scarcity {
+  display: block; margin-top: 7px;
+  font-size: var(--t-micro); font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-muted);
+}
+
+/* ── PROOF STRIP ────────────────────────────────────────────── */
+.sec { padding: 78px 0; }
+.sec.tight { padding: 58px 0; }
+
+.proof-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--hairline); border: 1px solid var(--hairline);
+  border-radius: var(--r-card); overflow: hidden;
+}
+.proof-strip .cell { background: var(--surface-1); padding: 26px 20px; text-align: center; }
+.proof-strip .n {
+  font-family: var(--font-sans); font-weight: 800; letter-spacing: -0.04em;
+  font-size: clamp(27px, 3.4vw, 40px); line-height: 1;
+  background-image: var(--grad-sig-tight);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.proof-strip .l {
+  margin-top: 9px; font-size: 13.5px; color: var(--ink-muted); line-height: 1.4;
+}
+
+/* ── TAKEAWAYS ──────────────────────────────────────────────── */
+.head { text-align: center; margin-bottom: 40px; }
+.head .label { display: block; margin-bottom: 15px; }
+.head h2 { font-size: var(--t-h2); margin-bottom: 14px; }
+.head p { color: var(--ink-body); max-width: 620px; margin: 0 auto; }
+
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.card {
+  background: var(--surface-1); border: 1px solid var(--hairline);
+  border-radius: var(--r-card); padding: 28px 24px;
+}
+.card .num {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--grad-sig-tight); color: var(--cream);
+  display: grid; place-items: center; font-weight: 800; font-size: 15px;
+  margin-bottom: 16px; box-shadow: 0 0 22px rgba(179,14,20,0.4);
+}
+.card h3 { font-size: var(--t-h3); margin-bottom: 9px; }
+.card p { color: var(--ink-body); font-size: 15.5px; }
+
+.keep-note {
+  margin-top: 22px; text-align: center;
+  font-size: 15px; color: var(--ink-muted);
+}
+.keep-note strong { color: var(--ink-body); font-weight: 700; }
+
+/* ── DISQUALIFIER ───────────────────────────────────────────── */
+.fit {
+  background: var(--surface-1); border: 1px solid var(--hairline);
+  border-radius: var(--r-stage); padding: 40px 36px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 34px;
+}
+.fit h3 { font-size: var(--t-h3); margin-bottom: 16px; }
+.fit ul { list-style: none; display: grid; gap: 11px; }
+.fit li {
+  display: flex; gap: 11px; align-items: flex-start;
+  font-size: 15.5px; color: var(--ink-body); line-height: 1.45;
+}
+.fit li .ic { flex-shrink: 0; margin-top: 2px; }
+.fit .yes .ic { color: var(--sig-highlight); }
+.fit .no .ic { color: var(--ink-muted); }
+.fit .no li { color: var(--ink-muted); }
+
+/* ── CALENDAR ───────────────────────────────────────────────── */
+.cal-shell {
+  background: var(--surface-1); border: 1px solid var(--hairline-strong);
+  border-radius: var(--r-stage); padding: 12px;
+  box-shadow: 0 40px 90px -34px rgba(0,0,0,0.9);
+}
+.cal-shell iframe {
+  width: 100%; min-height: 720px; border: 0; border-radius: 20px;
+  background: var(--cream-soft, #FAF6EF); display: block;
+}
+
+/* ── FOOTER ─────────────────────────────────────────────────── */
+.foot {
+  border-top: 1px solid var(--hairline); padding: 40px 0 56px;
+  text-align: center; color: var(--ink-muted); font-size: 13.5px;
+}
+.foot .mark { font-size: 19px; color: var(--ink-body); }
+.foot .links { margin: 16px 0 14px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.foot .links a { color: var(--ink-muted); }
+.foot .links a:hover { color: var(--ink-body); }
+.foot .disc { max-width: 640px; margin: 0 auto; line-height: 1.6; font-size: 12.5px; }
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .cards { grid-template-columns: 1fr; }
+  .fit { grid-template-columns: 1fr; padding: 32px 24px; gap: 26px; }
+  .proof-strip { grid-template-columns: repeat(2, 1fr); }
+  .sec { padding: 58px 0; }
+}
+@media (max-width: 560px) {
+  .wrap { padding: 0 16px; }
+  .hero { padding: 28px 0 4px; }
+  .player { border-radius: 18px; }
+  .btn.big { padding: 17px 26px; width: 100%; }
+  .playbtn .disc { width: 66px; height: 66px; }
+  .gate { padding: 16px; }
+  .gate-inner { max-width: 100%; }
+  .gate input { padding: 11px 14px; font-size: 16px; }
+  .cal-shell iframe { min-height: 820px; }
+}
+@media (max-width: 480px) {
+  :root { --t-body: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <a class="mark" href="/">Abundance<em>.</em></a>
+</header>
+
+<main>
+
+  <!-- ══ HERO ══════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="label">For business owners with revenue and a team</span>
+      <h1>AI is not going to replace your business. A competitor who uses it <em>better than you will.</em><span class="dot-period"></span></h1>
+      <p class="lead">Watch the video. I break down the five areas of a business where AI actually moves the needle, why nine out of ten owners never see a return, and the order you have to install it in. <strong>Then decide if you want us to find yours.</strong></p>
+    </div>
+  </section>
+
+  <!-- ══ VIDEO + PLAY-GATE ═════════════════════════════════ -->
+  <section class="stage">
+    <div class="wrap">
+      <div class="player" id="player">
+
+        <video id="vsl" playsinline preload="metadata" poster=""></video>
+
+        <!-- empty state, shown only when no video source is wired yet -->
+        <div class="poster" id="poster" hidden>
+          <span class="label">AI Growth Assessment</span>
+          <p class="note">Video source not wired yet. Set <code>VIDEO_URL</code> in the config block at the bottom of this file.</p>
+        </div>
+
+        <!-- big play button -->
+        <button class="playbtn" id="playbtn" type="button" aria-label="Play the video">
+          <span class="disc">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 4 20 12 6 20"/></svg>
+          </span>
+          <span class="cap">Click to play · sound on</span>
+        </button>
+
+        <!-- unmute nudge -->
+        <button class="unmute" id="unmute" type="button" hidden>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>
+          Tap for sound
+        </button>
+
+        <!-- the gate -->
+        <div class="gate" id="gate" hidden>
+          <div class="gate-inner">
+            <h3>Enter your info. The video unlocks and the <em>cheat sheet</em> hits your phone.</h3>
+            <p class="sub">My AI agent texts you the five areas, in seconds. Watch how fast it lands.</p>
+            <form id="gate-form" novalidate>
+              <input type="text"  id="g-name"  name="name"  placeholder="First and last name" autocomplete="name"  required>
+              <input type="email" id="g-email" name="email" placeholder="Email address"       autocomplete="email" required>
+              <input type="tel"   id="g-phone" name="phone" placeholder="Mobile number"        autocomplete="tel"   required>
+              <p class="err" id="g-err" role="alert"></p>
+              <button class="btn gradient" id="g-submit" type="submit">Unlock the video &rarr;</button>
+            </form>
+            <p class="fine">We text the cheat sheet and follow up about the assessment. Message and data rates may apply. Reply STOP to opt out.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- primary CTA, live from the first frame -->
+      <div class="cta-block">
+        <a href="#book" class="btn gradient big" data-cta="hero">See if you qualify &rarr;</a>
+        <span class="cta-sub">Book your 30-minute AI Growth Discovery Call.</span>
+        <span class="cta-scarcity">We take a handful of assessments each week</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROOF ═════════════════════════════════════════════ -->
+  <section class="sec tight">
+    <div class="wrap">
+      <div class="proof-strip">
+        <div class="cell"><div class="n">$11.5M+</div><div class="l">Client revenue generated in six years</div></div>
+        <div class="cell"><div class="n">$4.6M</div><div class="l">All Done Consulting, cash collected in 2.5 years</div></div>
+        <div class="cell"><div class="n">$2.9M</div><div class="l">Acquisition Network, from an idea in two years</div></div>
+        <div class="cell"><div class="n">$1.5M</div><div class="l">Smart Sellers Academy, in eighteen months</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHAT YOU WALK AWAY WITH ═══════════════════════════ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">The 30-minute discovery call</span>
+        <h2>Three answers you keep, <em>either way.</em></h2>
+        <p>Whether we end up working together or not, you get all three off this call.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="num">1</div>
+          <h3>Which area is capping you</h3>
+          <p>Of the five places AI pays off in a business, which one is most likely holding yours back right now.</p>
+        </div>
+        <div class="card">
+          <div class="num">2</div>
+          <h3>Whether you are ready</h3>
+          <p>An honest read on whether your business is ready for AI. If it is not, exactly what you have to put in place first.</p>
+        </div>
+        <div class="card">
+          <div class="num">3</div>
+          <h3>A straight answer on fit</h3>
+          <p>Whether the assessment is worth it for you at all. If it is not a fit, we tell you on the call.</p>
+        </div>
+      </div>
+      <p class="keep-note">The call is free. <strong>If we get inside a business and find nothing worth fixing, we say so.</strong> That has not happened yet.</p>
+    </div>
+  </section>
+
+  <!-- ══ FIT / DISQUALIFIER ════════════════════════════════ -->
+  <section class="sec tight">
+    <div class="wrap narrow">
+      <div class="fit">
+        <div class="yes">
+          <h3>Book the call if</h3>
+          <ul>
+            <li><span class="ic">&#9679;</span> You own a business with real revenue and a team doing the work.</li>
+            <li><span class="ic">&#9679;</span> Your team touches AI here and there, and none of it has changed a number yet.</li>
+            <li><span class="ic">&#9679;</span> You want the answer verified against your own data, not a generic playbook.</li>
+            <li><span class="ic">&#9679;</span> You can act on what we find this quarter, not next year.</li>
+          </ul>
+        </div>
+        <div class="no">
+          <h3>Skip it if</h3>
+          <ul>
+            <li><span class="ic">&#9675;</span> You are pre-revenue or still working out what you sell.</li>
+            <li><span class="ic">&#9675;</span> You want someone to hand you tools instead of fixing the constraint underneath them.</li>
+            <li><span class="ic">&#9675;</span> Your team is already ahead of the AI curve. You do not need this.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CALENDAR ══════════════════════════════════════════ -->
+  <section class="sec" id="book">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Step one</span>
+        <h2>Book your <em>AI Growth Discovery Call.</em></h2>
+        <p>Thirty minutes. We find out if the assessment is a fit, and you leave with the three answers above.</p>
+      </div>
+      <div class="cal-shell">
+        <iframe id="calendar" title="Book your AI Growth Discovery Call" src="" scrolling="no" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="mark">Abundance<em>.</em></span>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/case-studies/">Case studies</a>
+      <a href="mailto:hello@findabundance.ai">hello@findabundance.ai</a>
+    </div>
+    <p class="disc">Results shown are outcomes from specific client engagements over multi-year periods and are not typical or guaranteed. Nothing here is a promise of earnings. Your results depend on your market, your offer, and the work you and your team put in.</p>
+    <p class="disc" style="margin-top:12px">&copy; 2026 Abundance, Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   CONFIG · fill these in as each piece comes online.
+   The page works with every one of them blank, so it can be
+   reviewed and tested before the video and the CRM are wired.
+   ═══════════════════════════════════════════════════════════════════ */
+const CONFIG = {
+  // Direct URL to the VSL file (mp4/webm) or an HLS manifest.
+  // Leave blank until the video is filmed and hosted.
+  VIDEO_URL: '',
+
+  // Poster frame shown before play.
+  POSTER_URL: '',
+
+  // Seconds into the video where the gate fires.
+  // Set this to the exact moment after "watch how fast it hits your phone."
+  // (end of Beat 5, before Beat 6 / the five areas)
+  GATE_SECONDS: 270,
+
+  // GHL inbound webhook that creates the contact and fires the instant SMS.
+  // Blank = the gate still unlocks the video so the page stays testable.
+  WEBHOOK_URL: '',
+
+  // GHL calendar embed for the 30-minute AI Growth Discovery Call.
+  CALENDAR_URL: '',
+
+  // Meta pixel. Blank = no pixel code loads at all.
+  PIXEL_ID: '',
+};
+
+/* ── Meta pixel (only if an ID is set) ───────────────────────── */
+(function () {
+  if (!CONFIG.PIXEL_ID) return;
+  /* eslint-disable */
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+  (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  /* eslint-enable */
+  window.fbq('init', CONFIG.PIXEL_ID);
+  window.fbq('track', 'PageView');
+})();
+
+function track(event, params) {
+  if (window.fbq) window.fbq('track', event, params || {});
+}
+
+/* ── Elements ────────────────────────────────────────────────── */
+const video   = document.getElementById('vsl');
+const poster  = document.getElementById('poster');
+const playbtn = document.getElementById('playbtn');
+const unmute  = document.getElementById('unmute');
+const gate    = document.getElementById('gate');
+const form    = document.getElementById('gate-form');
+const errEl   = document.getElementById('g-err');
+const submit  = document.getElementById('g-submit');
+const calendar = document.getElementById('calendar');
+
+const STORE_KEY = 'abundance_gate_v1';
+
+/* ── Boot ────────────────────────────────────────────────────── */
+let unlocked = false;
+try { unlocked = localStorage.getItem(STORE_KEY) === 'unlocked'; } catch (e) { unlocked = false; }
+
+if (CONFIG.VIDEO_URL) {
+  video.src = CONFIG.VIDEO_URL;
+  if (CONFIG.POSTER_URL) video.poster = CONFIG.POSTER_URL;
+} else {
+  // nothing to play yet: show the empty state, hide the dead control
+  poster.hidden = false;
+  playbtn.hidden = true;
+}
+
+if (CONFIG.CALENDAR_URL) {
+  calendar.src = CONFIG.CALENDAR_URL;
+} else {
+  calendar.closest('.cal-shell').innerHTML =
+    '<div style="padding:60px 24px;text-align:center;color:var(--ink-muted);font-size:14px">' +
+    'Calendar not wired yet. Set <code>CALENDAR_URL</code> in the config block.</div>';
+}
+
+/* ── Play ────────────────────────────────────────────────────── */
+playbtn.addEventListener('click', function () {
+  playbtn.hidden = true;
+  video.muted = false;
+  const p = video.play();
+  if (p && p.catch) {
+    p.catch(function () {
+      // autoplay policy blocked sound: start muted, offer the unmute nudge
+      video.muted = true;
+      video.play().catch(function () { playbtn.hidden = false; });
+      unmute.hidden = false;
+    });
+  }
+  track('ViewContent', { content_name: 'AI Growth Assessment VSL' });
+});
+
+unmute.addEventListener('click', function () {
+  video.muted = false;
+  unmute.hidden = true;
+});
+
+video.addEventListener('pause', function () {
+  if (gate.hidden && !video.ended) playbtn.hidden = false;
+});
+video.addEventListener('play', function () { playbtn.hidden = true; });
+
+/* ── The gate ────────────────────────────────────────────────── */
+function openGate() {
+  if (unlocked) return;
+  video.pause();
+  gate.hidden = false;
+  playbtn.hidden = true;
+  const first = document.getElementById('g-name');
+  if (first) first.focus({ preventScroll: true });
+}
+
+video.addEventListener('timeupdate', function () {
+  if (unlocked) return;
+  if (video.currentTime >= CONFIG.GATE_SECONDS) {
+    // clamp: never let a locked viewer sit past the gate point
+    if (video.currentTime > CONFIG.GATE_SECONDS + 0.5) {
+      video.currentTime = CONFIG.GATE_SECONDS;
+    }
+    openGate();
+  }
+});
+
+// block seeking past the gate while locked
+video.addEventListener('seeking', function () {
+  if (!unlocked && video.currentTime > CONFIG.GATE_SECONDS) {
+    video.currentTime = CONFIG.GATE_SECONDS;
+    openGate();
+  }
+});
+
+/* ── Validation ──────────────────────────────────────────────── */
+function isEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+function digits(v)  { return (v.match(/\d/g) || []).length; }
+
+function markInvalid(el, bad) {
+  el.setAttribute('aria-invalid', bad ? 'true' : 'false');
+}
+
+form.addEventListener('submit', async function (e) {
+  e.preventDefault();
+  const name  = document.getElementById('g-name');
+  const email = document.getElementById('g-email');
+  const phone = document.getElementById('g-phone');
+
+  const problems = [];
+  const nameBad  = name.value.trim().length < 2;
+  const emailBad = !isEmail(email.value.trim());
+  const phoneBad = digits(phone.value) < 10;
+
+  markInvalid(name, nameBad);
+  markInvalid(email, emailBad);
+  markInvalid(phone, phoneBad);
+
+  if (nameBad)  problems.push('your name');
+  if (emailBad) problems.push('a valid email');
+  if (phoneBad) problems.push('a mobile number we can text');
+
+  if (problems.length) {
+    errEl.textContent = 'We need ' + problems.join(', ') + '.';
+    return;
+  }
+
+  errEl.textContent = '';
+  submit.disabled = true;
+  submit.textContent = 'Unlocking...';
+
+  const payload = {
+    name: name.value.trim(),
+    email: email.value.trim(),
+    phone: phone.value.trim(),
+    source: 'ai-growth-assessment-vsl',
+    page: window.location.pathname,
+    gate_seconds: CONFIG.GATE_SECONDS,
+    utm: Object.fromEntries(new URLSearchParams(window.location.search)),
+  };
+
+  if (CONFIG.WEBHOOK_URL) {
+    try {
+      await fetch(CONFIG.WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+    } catch (err) {
+      // The viewer never pays for our plumbing. Unlock anyway,
+      // and keep the lead so it can be retried.
+      try { localStorage.setItem('abundance_gate_pending', JSON.stringify(payload)); } catch (e2) {}
+    }
+  }
+
+  track('Lead', { content_name: 'AI Growth Assessment VSL gate' });
+
+  unlocked = true;
+  try { localStorage.setItem(STORE_KEY, 'unlocked'); } catch (e3) {}
+
+  gate.hidden = true;
+  submit.disabled = false;
+  submit.textContent = 'Unlock the video →';
+  video.play().catch(function () { playbtn.hidden = false; });
+});
+
+/* ── CTA tracking ────────────────────────────────────────────── */
+document.querySelectorAll('[data-cta]').forEach(function (el) {
+  el.addEventListener('click', function () {
+    track('Schedule', { content_name: 'Discovery call CTA', position: el.dataset.cta });
+  });
+});
+</script>
+
+</body>
+</html>
