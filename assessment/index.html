@@ -647,7 +647,50 @@ const CONFIG = {
 
   // Meta pixel. Blank = no pixel code loads at all.
   PIXEL_ID: '',
+
+  // PostHog. Blank = no analytics script loads at all.
+  // Project API key from Settings > Project. Safe to expose, it is write-only.
+  POSTHOG_KEY: '',
+  // 'https://us.i.posthog.com' or 'https://eu.i.posthog.com', matching
+  // whichever region the project was created in.
+  POSTHOG_HOST: 'https://us.i.posthog.com',
 };
+
+/* ── PostHog (only if a key is set) ──────────────────────────────
+   Loaded so we can actually read the A/B split. Every event carries the
+   variant as a registered property, so the funnel can be segmented by it
+   without any extra work at query time.
+
+   Session recording is on, because at this traffic level watching twenty
+   real sessions teaches more than any significance test. All inputs are
+   masked: the gate collects a name, email and phone, and none of that
+   should ever end up in a recording. */
+(function () {
+  if (!CONFIG.POSTHOG_KEY) return;
+  /* eslint-disable */
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){
+  function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]);t[e]=function(){
+  t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",
+  p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host+"/static/array.js",
+  (r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;
+  for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){
+  var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){
+  return u.toString(1)+".people (stub)"},o="init capture register register_once unregister identify reset group alias people.set people.set_once".split(" "),
+  n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  /* eslint-enable */
+  posthog.init(CONFIG.POSTHOG_KEY, {
+    api_host: CONFIG.POSTHOG_HOST,
+    persistence: 'localStorage+cookie',
+    capture_pageview: true,
+    session_recording: { maskAllInputs: true },
+  });
+  // The variant is stamped on <body> at the edge by the Pages Function.
+  // Registering it means every event from here on is segmented by variant.
+  posthog.register({
+    ab_experiment: document.body.dataset.abExperiment || 'none',
+    ab_variant:    document.body.dataset.ab || 'none',
+  });
+})();
 
 /* ── Meta pixel (only if an ID is set) ───────────────────────── */
 (function () {
@@ -663,8 +706,19 @@ const CONFIG = {
   window.fbq('track', 'PageView');
 })();
 
+// Meta's event vocabulary is fixed. PostHog's is ours, so it gets names
+// that read like the funnel rather than like an ad platform.
+const PH_NAME = { Lead: 'vsl_gate_submitted', Schedule: 'discovery_cta_clicked' };
+
+const milestones = {};
+
 function track(event, params) {
   if (window.fbq) window.fbq('track', event, params || {});
+  ph(PH_NAME[event] || event, params);
+}
+
+function ph(name, props) {
+  if (window.posthog) window.posthog.capture(name, props || {});
 }
 
 /* ── Elements ────────────────────────────────────────────────── */
@@ -725,11 +779,40 @@ unmute.addEventListener('click', function () {
 video.addEventListener('pause', function () {
   if (gate.hidden && !video.ended) playbtn.hidden = false;
 });
-video.addEventListener('play', function () { playbtn.hidden = true; });
+video.addEventListener('play', function () {
+  playbtn.hidden = true;
+  if (!milestones.play) { milestones.play = true; ph('vsl_play'); }
+});
+
+/* ── Where people actually stop watching ──────────────────────────
+   Discrete event names rather than one event with a percent property,
+   because PostHog builds funnels out of distinct events. Each one fires
+   at most once per session. */
+const MARKS = [10, 25, 50, 75, 90];
+
+function checkMilestones() {
+  const dur = video.duration;
+  if (!dur || !isFinite(dur)) return;
+  const pct = (video.currentTime / dur) * 100;
+  for (const m of MARKS) {
+    if (pct >= m && !milestones[m]) {
+      milestones[m] = true;
+      ph('vsl_progress_' + m, { percent: m, seconds: Math.round(video.currentTime) });
+    }
+  }
+}
+video.addEventListener('timeupdate', checkMilestones);
+video.addEventListener('ended', function () {
+  if (!milestones.done) { milestones.done = true; ph('vsl_complete'); }
+});
 
 /* ── The gate ────────────────────────────────────────────────── */
 function openGate() {
   if (unlocked) return;
+  if (!milestones.gate) {
+    milestones.gate = true;
+    ph('vsl_gate_shown', { seconds: Math.round(video.currentTime) });
+  }
   video.pause();
   gate.hidden = false;
   playbtn.hidden = true;
