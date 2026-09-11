@@ -673,6 +673,21 @@ const CONFIG = {
    should ever end up in a recording. */
 (function () {
   if (!CONFIG.POSTHOG_KEY) return;
+
+  /* QA opt-out. Visiting ?qa=1 once marks this browser and it stops being
+     counted, permanently, until localStorage is cleared. ?qa=0 undoes it.
+
+     Two reasons this exists. Ryan browses his own site, and a founder
+     reading his own page for thirty minutes looks exactly like an engaged
+     prospect in the numbers. And automated checks have to disguise
+     themselves as a real browser to prove events are sending, which walks
+     straight past PostHog's own bot filter. */
+  try {
+    const qa = new URLSearchParams(location.search).get('qa');
+    if (qa === '1') localStorage.setItem('abundance_qa', '1');
+    if (qa === '0') localStorage.removeItem('abundance_qa');
+    if (localStorage.getItem('abundance_qa') === '1') return;
+  } catch (e) {}
   /* eslint-disable */
   !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){
   function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]);t[e]=function(){
