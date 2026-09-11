@@ -57,7 +57,7 @@ The brand is **dark-mode default**. Tiger's-blood crimson on matte black with se
 |---|---|---|
 | `--ink` | `#F5F0E8` | Primary text on dark |
 | `--ink-body` | `#C9C2B5` | Body text on dark |
-| `--ink-muted` | `#807A70` | Labels/eyebrows on dark |
+| `--ink-muted` | `#8E877C` | Labels/eyebrows on dark |
 | `--ink-dark` | `#0A0A0A` | Primary text on cream |
 | `--ink-dark-soft` | `#3A3530` | Body text on cream |
 | `--ink-dark-muted` | `#6A645B` | Labels/eyebrows on cream |
