@@ -648,6 +648,12 @@ const CONFIG = {
   // Meta pixel. Blank = no pixel code loads at all.
   PIXEL_ID: '',
 
+  // Vidalytics embed id. Blank = the built-in HTML5 player and our own
+  // gate are used, which is what is tested today. Set it and the page
+  // switches to Vidalytics as the player, with OUR submit handler still
+  // writing the lead, because their gate form cannot carry custom fields.
+  VIDALYTICS_EMBED_ID: '',
+
   // PostHog. Blank = no analytics script loads at all.
   // Project API key from Settings > Project. Safe to expose, it is write-only.
   POSTHOG_KEY: '',
@@ -920,6 +926,119 @@ document.querySelectorAll('[data-cta]').forEach(function (el) {
     track('Schedule', { content_name: 'Discovery call CTA', position: el.dataset.cta });
   });
 });
+
+/* ══ VIDALYTICS BRIDGE ════════════════════════════════════════════
+   Their gate form is hard-capped at name, email, phone and one
+   checkbox. There is no custom or hidden field, so the A/B variant and
+   the UTMs cannot ride on their submission. Vidalytics also does not
+   store the lead itself.
+
+   So: their player, their analytics, their native pixel percent events.
+   Our handler on playgate:submit does the lead write, which is what
+   keeps variant and UTM attribution intact all the way into GHL.
+
+   Their embed is an inline script rather than an iframe, so every event
+   is readable straight from this page. No bridge needed. */
+(function () {
+  if (!CONFIG.VIDALYTICS_EMBED_ID) return;
+
+  // stand our own player and gate down
+  [video, poster, playbtn, unmute, gate].forEach(function (el) {
+    if (el) el.hidden = true;
+  });
+  video && video.removeAttribute('src');
+
+  const host = document.createElement('div');
+  host.id = 'vidalytics_embed_' + CONFIG.VIDALYTICS_EMBED_ID;
+  host.style.cssText = 'width:100%;position:relative;padding-top:56.25%;';
+  const player = document.getElementById('player');
+  if (player) player.appendChild(host);
+
+  const tag = document.createElement('script');
+  tag.async = true;
+  tag.src = 'https://fast.vidalytics.com/embeds/' + CONFIG.VIDALYTICS_EMBED_ID + '/embed.js';
+  document.head.appendChild(tag);
+
+  const marks = {};
+  const MARK_PCTS = [10, 25, 50, 75, 90];
+
+  function ready(attempt) {
+    if (typeof window.getVidalyticsPlayer !== 'function') {
+      if ((attempt || 0) > 60) return;
+      return setTimeout(function () { ready((attempt || 0) + 1); }, 250);
+    }
+    window.getVidalyticsPlayer(CONFIG.VIDALYTICS_EMBED_ID).then(wire).catch(function () {});
+  }
+
+  function wire(vp) {
+    vp.on('play', function () {
+      if (!marks.play) { marks.play = true; ph('vsl_play'); }
+    });
+
+    // They expose no percent-watched event, so it is computed from
+    // timeupdate the same way their own timed-CTA example does.
+    vp.on('timeupdate', function () {
+      Promise.all([vp.currentTime(), vp.duration()]).then(function (v) {
+        const t = v[0], d = v[1];
+        if (!d) return;
+        const pct = (t / d) * 100;
+        MARK_PCTS.forEach(function (m) {
+          if (pct >= m && !marks[m]) {
+            marks[m] = true;
+            ph('vsl_progress_' + m, { percent: m, seconds: Math.round(t) });
+          }
+        });
+      }).catch(function () {});
+    });
+
+    vp.on('ended', function () {
+      if (!marks.done) { marks.done = true; ph('vsl_complete'); }
+    });
+
+    vp.on('playgate:show', function () {
+      if (!marks.gate) { marks.gate = true; ph('vsl_gate_shown'); }
+    });
+
+    vp.on('playgate:skip', function () { ph('vsl_gate_skipped'); });
+
+    // The important one. Their gate cannot carry our fields, so we
+    // rebuild the payload here and write the lead ourselves.
+    vp.on('playgate:submit', function (e) {
+      const f = (e && (e.FormValues || e.formValues)) || {};
+      const payload = {
+        name: (f.name || '').trim(),
+        email: (f.email || '').trim(),
+        phone: (f.phone || '').trim(),
+        source: 'ai-growth-assessment-vsl',
+        page: window.location.pathname,
+        gate_seconds: CONFIG.GATE_SECONDS,
+        player: 'vidalytics',
+        experiment: document.body.dataset.abExperiment || '',
+        variant: document.body.dataset.ab || '',
+        utm: Object.fromEntries(new URLSearchParams(window.location.search)),
+      };
+
+      if (CONFIG.WEBHOOK_URL) {
+        fetch(CONFIG.WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        }).catch(function () {
+          try { localStorage.setItem('abundance_gate_pending', JSON.stringify(payload)); } catch (e2) {}
+        });
+      }
+
+      // Their native pixel integration fires percent-watched only. The
+      // gate submission is not covered, so Lead is fired here.
+      track('Lead', { content_name: 'AI Growth Assessment VSL gate' });
+
+      try { localStorage.setItem(STORE_KEY, 'unlocked'); } catch (e3) {}
+    });
+  }
+
+  ready(0);
+})();
+
 </script>
 
 </body>

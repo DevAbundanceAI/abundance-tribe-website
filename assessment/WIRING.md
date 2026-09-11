@@ -103,3 +103,52 @@ visitors. That is fine. The split is running because the video claims it is
 running, and the data accumulates in the background for whenever there is
 enough of it.
 
+
+## Vidalytics: why it is a hybrid, not a swap
+
+Vidalytics hosts the VSL and has its own Play Gate, but two facts stop it
+being a straight swap:
+
+1. **The gate form is hard-capped.** Name, email, phone and one consent
+   checkbox. There is no custom-field or hidden-field facility. So the A/B
+   variant and the UTMs cannot ride on their submission, which would blind the
+   test at exactly the moment that matters.
+2. **Vidalytics does not store the lead.** Their own docs say the gate needs a
+   CRM integration or Zapier to save anything. There is no generic webhook, and
+   the GoHighLevel integration is tag-based rather than field-based.
+
+What makes the hybrid work is that **their embed is an inline script, not an
+iframe**, so every player event is readable straight from the page.
+
+So the split is:
+
+| Job | Owner |
+|---|---|
+| Player, hosting, gate UI | Vidalytics |
+| Retention graph, heatmaps | Vidalytics |
+| Meta pixel percent-watched | Vidalytics native integration |
+| **The lead write** | **Our handler on `playgate:submit`** |
+| Variant + UTM attribution | Ours |
+| Funnel events, session recording | PostHog, ours |
+| Meta `Lead` on gate submit | Ours. Their pixel integration covers percent-watched only |
+
+Set `VIDALYTICS_EMBED_ID` in CONFIG to switch. Blank keeps the built-in HTML5
+player and our own gate, which is what is tested today. Setting it stands our
+player and gate down and wires their events instead.
+
+### Plan tier: probably Starter, not Pro
+
+Their GoHighLevel integration is Pro ($79/mo). **We do not need it**, because
+our own handler writes the lead. That likely puts this on **Starter at $24/mo**,
+which includes Play Gates and the native Meta pixel integration.
+
+One thing that is not documented publicly: whether the player JS API
+(`getVidalyticsPlayer`) is available on Starter. The server-side Public API is
+tier-gated, the client-side one is not documented either way. **Confirm with
+their support before committing**, because the whole hybrid depends on it. If
+the JS API turns out to be Pro-only, the choice is Pro at $79 or keeping our
+own gate.
+
+Also note their percent-watched pixel events do not carry our A/B variant, which
+is why the same milestones are computed again for PostHog off `timeupdate`.
+
