@@ -324,6 +324,56 @@ h2 em, h3 em { background-image: var(--grad-sig-tight) !important; }
 .fit .no .ic { color: var(--ink-muted); }
 .fit .no li { color: var(--ink-muted); }
 
+/* ── THE SHIFT ──────────────────────────────────────────────
+   Old way versus new way, carried by VALUE not by a second hue.
+   The old half recedes into graphite. The new half is a cream
+   stage cut into the dark page, which is the highest-contrast
+   move available without introducing another colour family. */
+.shift { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: stretch; }
+
+.shift .old,
+.shift .new { border-radius: var(--r-stage); padding: 32px 30px; }
+
+.shift .old {
+  background: var(--surface-1);
+  border: 1px solid var(--hairline);
+  filter: saturate(0.15);
+}
+.shift .old .label { color: var(--ink-muted); }
+.shift .old li { color: var(--ink-muted); }
+
+.shift .new {
+  background: var(--cream);
+  border: 1px solid var(--cream);
+  box-shadow: 0 40px 90px -40px rgba(0,0,0,0.9);
+}
+.shift .new .label { color: #B30E14; }
+.shift .new li { color: #3A3530; }
+.shift .new li::marker { color: var(--sig); }
+
+.shift ul { list-style: none; display: grid; gap: 14px; margin-top: 16px; }
+.shift li { font-size: 15.5px; line-height: 1.5; padding-left: 18px; position: relative; }
+.shift li::before {
+  content: ""; position: absolute; left: 0; top: 9px;
+  width: 7px; height: 7px; border-radius: 50%; background: currentColor;
+}
+.shift .new li::before { background: var(--sig); }
+
+.shift .mech {
+  margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(10,10,10,0.14);
+  font-size: 14.5px; line-height: 1.5; color: #6A645B;
+}
+.shift .mech em {
+  font-family: var(--font-sans); font-style: normal; font-weight: 800; color: #B30E14;
+}
+
+.frank { margin-top: 14px; color: var(--ink-muted); font-size: 15px; line-height: 1.55; }
+
+@media (max-width: 800px) {
+  .shift { grid-template-columns: 1fr; }
+  .shift .old, .shift .new { padding: 24px 22px; }
+}
+
 /* ── CALENDAR ───────────────────────────────────────────────── */
 .cal-shell {
   background: var(--surface-1); border: 1px solid var(--hairline-strong);
@@ -388,7 +438,7 @@ h2 em, h3 em { background-image: var(--grad-sig-tight) !important; }
     <div class="wrap">
       <span class="label">For business owners with revenue and a team</span>
       <h1>AI is not going to replace your business. A competitor who uses it <em>better than you will.</em><span class="dot-period"></span></h1>
-      <p class="lead">Watch the video. I break down the five areas of a business where AI actually moves the needle, why nine out of ten owners never see a return, and the order you have to install it in. <strong>Then decide if you want us to find yours.</strong></p>
+      <p class="lead">Watch the video. I break down the five areas of a business where AI actually moves the needle, why most owners never see a return on any of it, and the order you have to install it in. You will not need to hire an AI team or buy another tool to follow along. <strong>Then decide if you want us to find yours.</strong></p>
     </div>
   </section>
 
@@ -458,6 +508,34 @@ h2 em, h3 em { background-image: var(--grad-sig-tight) !important; }
     </div>
   </section>
 
+  <!-- ══ THE SHIFT ═════════════════════════════════════════ -->
+  <section class="sec tight">
+    <div class="wrap narrow">
+      <div class="shift">
+
+        <div class="old">
+          <span class="label">What most owners are doing with AI right now</span>
+          <ul>
+            <li>You buy the tools and your team logs in a few times, and then three months later nobody can point at a single number that moved.</li>
+            <li>Somebody on your team becomes the AI person on top of the job they already have, which means none of it ever gets past experiments.</li>
+            <li>You install whatever worked for a business that looks nothing like yours, because that is what showed up in your feed that week.</li>
+          </ul>
+        </div>
+
+        <div class="new">
+          <span class="label">What actually moves a number</span>
+          <ul>
+            <li>We start from your numbers instead of a tool list, so the first thing you install is the thing that is actually capping you.</li>
+            <li>You get the five areas ranked for your business, plus how to install each one, which means your team stops guessing and starts executing.</li>
+            <li>You fix one constraint at a time, so you get to watch the number move before you spend anything on the next one.</li>
+          </ul>
+          <p class="mech">My partners and I call this <em>Constraint-First AI Mapping</em>, and it is what we run inside every single AI Growth Assessment.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ══ WHAT YOU WALK AWAY WITH ═══════════════════════════ -->
   <section class="sec">
     <div class="wrap">
@@ -518,7 +596,8 @@ h2 em, h3 em { background-image: var(--grad-sig-tight) !important; }
       <div class="head">
         <span class="label">Step one</span>
         <h2>Book your <em>AI Growth Discovery Call.</em></h2>
-        <p>Thirty minutes. We find out if the assessment is a fit, and you leave with the three answers above.</p>
+        <p>Thirty minutes. We find out if the assessment is a fit, and you leave with the three answers above. All you do is show up and answer honest questions about your business, because my partners and I do the digging before and after.</p>
+        <p class="frank">Now, full transparency. We are not an AI agency and I am not going to sell you a stack of prompts. We find the one constraint that is capping your growth, and then we show you how to fix it with AI.</p>
       </div>
       <div class="cal-shell">
         <iframe id="calendar" title="Book your AI Growth Discovery Call" src="" scrolling="no" loading="lazy"></iframe>
