@@ -87,30 +87,40 @@ Three flavors of the tiger's-blood gradient, mapped to typographic role:
 
 ---
 
-### Gradient text: the two-sided constraint (added v1.10)
+### Gradient text: the two-sided constraint (v1.10)
 
 Text gradients have failed twice in opposite directions, so both bounds are
-now written down. Every stop in `--grad-sig-hero` and `--grad-sig-tight` must
+written down. Every stop in `--grad-sig-hero` and `--grad-sig-tight` must
 satisfy BOTH:
 
-1. **Contrast at least 4.5:1 against `--bg` (#0A0A0A).** The original stops
-   bottomed out at `#7A0712` = 1.76:1, so every `<em>` faded to near-invisible
-   at the tail. Large text needs 3.0, body needs 4.5. Hold 4.5.
-2. **Hue within 2 degrees of `--sig` (#ED1C24, hue -2.3deg).** The first fix
-   bought contrast by brightening toward `#FF7A52` (hue +13.9deg), which reads
-   as orange. The brand is red.
+1. **Enough contrast against `--bg` (#0A0A0A), by text size.** WCAG needs 3.0
+   for large text and 4.5 for body. `--grad-sig-hero` only ever renders on h1
+   (34px and up), so its floor is 3.0 and we hold 3.7 for margin.
+   `--grad-sig-tight` renders on h3 as small as 19px, so its floor is the full
+   4.5 and the deepest stop there is the brand red itself.
+2. **Hue within 2 degrees of `--sig` (#ED1C24, hue -2.3deg).** The brand is red.
 
 Those two pull against each other, because in sRGB luminance is dominated by
 the green channel, so the obvious way to brighten a red is to add green, and
 that is exactly the move that turns it orange. **Get luminance from lightness,
-not from hue.** Lighten toward a pale red rather than toward orange.
+not from hue.**
 
-The current stops, all measured:
+**Shape matters too.** The gradient is a specular sweep: deeper red at the
+edges, bright peak around 67%. That depth is the tiger's-blood look and should
+be preserved. The failure mode is not having dark edges, it is having edges so
+dark they stop being legible.
 
-| Stop | Hue drift from `--sig` | Contrast on `#0A0A0A` |
+| | deepest stop | peak | floor contrast |
+|---|---|---|---|
+| Original (broken) | `#7A0712` | `#FF5733` orange | **1.76:1** |
+| Current | `#D4181F` | `#FF5561` | **3.72:1** |
+
+All current stops, measured on `#0A0A0A`:
+
+| Stop | Hue drift | Contrast |
 |---|---|---|
+| `#D4181F` | -0.1deg | 3.72:1 |
 | `#ED1C24` | 0.0deg | 4.52:1 |
-| `#FF3D48` | -1.1deg | 5.67:1 |
 | `#FF4A55` | -1.3deg | 6.00:1 |
 | `#FF5561` | -1.9deg | 6.34:1 |
 
@@ -118,9 +128,7 @@ The current stops, all measured:
 cream text sitting on it, so its dark stops are doing the right job.
 
 `--sig-highlight` (`#FF5733`) sits at hue +10.6deg and is the one orange-leaning
-token in the system. Keep it for small marks only. Never let it dominate a
-gradient.
-
+token in the system. Small marks only. Never let it dominate a gradient.
 
 ## Typography Spine
 
