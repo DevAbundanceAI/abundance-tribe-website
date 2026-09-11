@@ -71,3 +71,35 @@ our plumbing broke.
 16 browser assertions cover gate timing, validation, unlock, persistence, the
 returning viewer, and that no price string renders. Re-run them against a local
 server on any change to the gate.
+
+
+## The A/B split (required, not optional)
+
+The VSL says out loud: *"The funnel you're sitting in right now? Built with AI.
+A/B testing itself as we speak."* The script's own launch gate lists
+**"A/B variant running"** as one of three claims that must be true at launch.
+So this has to be live whenever the video is.
+
+`functions/assessment/_middleware.js` runs the split at the edge:
+
+- **Variant A** is `index.html` as written, the disqualifier headline that
+  mirrors the video's opening line.
+- **Variant B** swaps the h1 only, to the outcome-led version. There is no
+  second HTML file, so B cannot drift out of sync with the rest of the page.
+- 50/50, sticky for 90 days via the `ab_assessment` cookie.
+- `?ab=A` or `?ab=B` forces a variant so you can check either one yourself.
+- Responses are `Cache-Control: no-store` plus `Vary: Cookie`, because a split
+  response must never be served from a shared cache.
+- The assigned variant is stamped on `<body data-ab>` and echoed back in the
+  `X-AB-Variant` header.
+
+**Attribution.** The gate's webhook payload carries `experiment` and `variant`.
+Without those two fields the split runs but tells you nothing, so do not strip
+them when wiring `WEBHOOK_URL`.
+
+**On reading the result.** At $50/day this will not reach significance for
+months. Detecting a 30% relative lift off a 10% baseline needs about 3,500
+visitors. That is fine. The split is running because the video claims it is
+running, and the data accumulates in the background for whenever there is
+enough of it.
+

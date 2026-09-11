@@ -799,6 +799,10 @@ form.addEventListener('submit', async function (e) {
     source: 'ai-growth-assessment-vsl',
     page: window.location.pathname,
     gate_seconds: CONFIG.GATE_SECONDS,
+    // stamped on <body> at the edge by functions/assessment/_middleware.js.
+    // Without this the split runs but nothing is attributable.
+    experiment: document.body.dataset.abExperiment || '',
+    variant: document.body.dataset.ab || '',
     utm: Object.fromEntries(new URLSearchParams(window.location.search)),
   };
 
