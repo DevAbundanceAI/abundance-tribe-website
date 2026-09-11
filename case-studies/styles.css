@@ -21,13 +21,13 @@
   --ink-body:    #C9C2B5;
   --ink-muted:   #8E877C;
 
-  --sig-highlight: #FF5733;
+  --sig-highlight: #FF262E;
   --sig:           #ED1C24;
   --sig-deep:      #B30E14;
   --sig-anchor:    #7A0712;
 
   --grad-sig-hero: linear-gradient(135deg, #D4181F 0%, #D4181F 7%, #ED1C24 28%, #FF262E 67%, #ED1C24 88%, #D4181F 93%, #D4181F 100%);
-  --grad-sig: linear-gradient(135deg, #FF5733 0%, #FF5733 7%, #ED1C24 40%, #B30E14 72%, #7A0712 93%, #7A0712 100%);
+  --grad-sig: linear-gradient(135deg, #7A0712 0%, #8F0C14 22%, #B30E14 50%, #C9161D 76%, #ED1C24 100%);
   --grad-sig-tight: linear-gradient(135deg, #ED1C24 0%, #ED1C24 12%, #FF262E 55%, #ED1C24 88%, #ED1C24 100%);
 
   --hairline:        rgba(255,255,255,0.08);

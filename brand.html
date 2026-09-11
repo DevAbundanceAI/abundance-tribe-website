@@ -68,7 +68,7 @@
   --ink-dark-muted: #6A645B;
 
   /* ─── THE ONE ACCENT — tiger's blood (FIRE-RED · v1.9 vivid pass) ─── */
-  --sig-highlight: #FF5733;   /* fire-orange highlight stop */
+  --sig-highlight: #FF262E;   /* fire-red highlight stop */
   --sig:           #ED1C24;   /* PRIMARY tiger's blood — vivid fire-engine red */
   --sig-deep:      #B30E14;   /* deepening blood red */
   --sig-anchor:    #7A0712;   /* anchor — dark blood, em-tail-legible on black */
@@ -105,11 +105,7 @@
        no deep blood tail. Stays in the readable middle. */
 
   --grad-sig-hero: linear-gradient(135deg, #D4181F 0%, #D4181F 7%, #ED1C24 28%, #FF262E 67%, #ED1C24 88%, #D4181F 93%, #D4181F 100%);
-  --grad-sig: linear-gradient(135deg,
-    #FF5733 0%, #FF5733 7%,
-    #ED1C24 40%,
-    #B30E14 72%,
-    #7A0712 93%, #7A0712 100%);
+  --grad-sig: linear-gradient(135deg, #7A0712 0%, #8F0C14 22%, #B30E14 50%, #C9161D 76%, #ED1C24 100%);
   --grad-sig-tight: linear-gradient(135deg, #ED1C24 0%, #ED1C24 12%, #FF262E 55%, #ED1C24 88%, #ED1C24 100%);
   /* Legacy alias — --grad-sig-shine maps to the hero peak */
   --grad-sig-shine: linear-gradient(135deg,
@@ -133,11 +129,7 @@
     #4A4845 93%, #4A4845 100%);
 
   /* Atmospheric horizon glow (radial, no held-stop logic) */
-  --grad-horizon: radial-gradient(ellipse 70% 60% at 50% 110%,
-                                   rgba(255,87,51,0.32) 0%,
-                                   rgba(179,14,20,0.42) 25%,
-                                   rgba(122,7,18,0.22) 50%,
-                                   transparent 75%);
+  --grad-horizon: radial-gradient(ellipse 70% 60% at 50% 110%, rgba(255,38,46,0.32) 0%, rgba(179,14,20,0.42) 25%, rgba(122,7,18,0.22) 50%, transparent 75%);
 
   /* Dark-on-dark depth (nested surfaces inside dark stages) */
   --grad-depth-soft: linear-gradient(180deg, #1F1F1F 0%, #0F0F0F 100%);
@@ -2356,7 +2348,7 @@ body.light-mode .cont.c9::before {
     conic-gradient(from var(--angle),
       transparent 0deg,
       transparent 220deg,
-      #FF8060 280deg,
+      #FF262E 280deg,
       #FF5733 310deg,
       #B30E14 340deg,
       transparent 360deg) border-box;
@@ -2385,7 +2377,7 @@ body.light-mode .cont.c10 {
     conic-gradient(from var(--angle),
       transparent 0deg,
       transparent 220deg,
-      #FF8060 280deg,
+      #FF262E 280deg,
       #FF5733 310deg,
       #B30E14 340deg,
       transparent 360deg) border-box;

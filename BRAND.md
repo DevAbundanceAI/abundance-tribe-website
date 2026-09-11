@@ -66,7 +66,7 @@ The brand is **dark-mode default**. Tiger's-blood crimson on matte black with se
 
 | Token | Hex | Role |
 |---|---|---|
-| `--sig-highlight` | `#FF5733` | Highlight stop · gradient peak |
+| `--sig-highlight` | `#FF262E` | Highlight stop · gradient peak |
 | `--sig` | `#ED1C24` | **PRIMARY tiger's blood · text & solid accent** |
 | `--sig-deep` | `#B30E14` | Deepening red · borders, deep gradient stop |
 | `--sig-anchor` | `#7A0712` | Anchor blood · dark gradient tail |
@@ -78,7 +78,7 @@ Three flavors of the tiger's-blood gradient, mapped to typographic role:
 | Token | Stops | Use |
 |---|---|---|
 | `--grad-sig-hero` | Specular peak @ 67% | h1 `<em>` only, animated borders |
-| `--grad-sig` | Full sweep (highlight→anchor) | Buttons, pills, badges, surfaces |
+| `--grad-sig` | Anchor→brand red (deep at 0%, brightest at 100%) | Buttons, pills, badges, surfaces. Direction matters: buttons render it at `background-size: 200%` and slide `background-position` 0%→100% on hover, so the gradient must run deep→bright or the hover goes backwards. |
 | `--grad-sig-tight` | Compressed red range | h2/h3 `<em>`, sub-headline emphasis, cream-stage gradient text |
 
 **Achromatic backup:**
