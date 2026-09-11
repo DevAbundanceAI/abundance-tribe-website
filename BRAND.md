@@ -1,6 +1,6 @@
 # Abundance.AI — Brand Guidelines
 
-> **Status:** Locked v1.9 · May 2026 · *Living document — paired with [/brand](https://findabundance.ai/brand) as the rendered source of truth.*
+> **Status:** Locked v1.9 · May 2026 · *Living document — paired with [/brand](https://weareabundance.com/brand) as the rendered source of truth.*
 >
 > **Rule of thumb:** If you have to ask "is this on-brand?", check `/brand` first. If `/brand` doesn't show it, it isn't on-brand yet.
 

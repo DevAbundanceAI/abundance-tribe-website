@@ -9,7 +9,7 @@
 | Element | Definition |
 |---------|-----------|
 | Parent Brand | Abundance.AI |
-| Website | findabundance.ai |
+| Website | weareabundance.com |
 | Core Methodology | The Selling System |
 | Target Market | Coaches, Consultants, Course Creators, Agencies |
 

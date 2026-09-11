@@ -1,7 +1,58 @@
-# Abundance · findabundance.ai
-# Crawlers welcome on public pages; archive/ is internal only.
+# Abundance · weareabundance.com
+# Strategy: maximize AI discoverability. Allow every reputable search and
+# answer-engine crawler. archive/ is internal only.
 
 User-agent: *
+Allow: /
 Disallow: /archive/
 
-Sitemap: https://findabundance.ai/sitemap.xml
+# Explicit allows. Defensive, and documents intent.
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://weareabundance.com/sitemap.xml
