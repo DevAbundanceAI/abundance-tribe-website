@@ -87,48 +87,51 @@ Three flavors of the tiger's-blood gradient, mapped to typographic role:
 
 ---
 
-### Gradient text: the two-sided constraint (v1.10)
+### Gradient text: three dials, all of them bounded (v1.10)
 
-Text gradients have failed twice in opposite directions, so both bounds are
-written down. Every stop in `--grad-sig-hero` and `--grad-sig-tight` must
-satisfy BOTH:
+Text gradients have now failed three times, each time in a different
+direction, so all three dials are written down. Every stop in
+`--grad-sig-hero` and `--grad-sig-tight` must satisfy all three:
 
-1. **Enough contrast against `--bg` (#0A0A0A), by text size.** WCAG needs 3.0
-   for large text and 4.5 for body. `--grad-sig-hero` only ever renders on h1
-   (34px and up), so its floor is 3.0 and we hold 3.7 for margin.
-   `--grad-sig-tight` renders on h3 as small as 19px, so its floor is the full
-   4.5 and the deepest stop there is the brand red itself.
-2. **Hue within 2 degrees of `--sig` (#ED1C24, hue -2.3deg).** The brand is red.
-
-Those two pull against each other, because in sRGB luminance is dominated by
-the green channel, so the obvious way to brighten a red is to add green, and
-that is exactly the move that turns it orange. **Get luminance from lightness,
-not from hue.**
+1. **Contrast, by text size.** `--grad-sig-hero` renders only on h1 (34px+),
+   where WCAG asks 3.0, so hold ~3.7 for margin. `--grad-sig-tight` renders on
+   h3 as small as 19px, so it needs the full 4.5 and its deepest stop is the
+   brand red itself.
+2. **Hue within 2 degrees** of `--sig` (`#ED1C24`, hue -2.3deg). Brightening a
+   red by adding green turns it orange. In sRGB, luminance is dominated by the
+   green channel, so this is the move you instinctively reach for. Don't.
+3. **Lightness within about 6 points of the brand red's 52%.** Brightening by
+   adding white keeps the hue honest but drains saturation, and the result
+   reads as salmon. For reference, real salmon (`#FA8072`) is 71% lightness.
+   A stop at 67% was rejected. **Push the red channel toward 255 and leave
+   green and blue alone.** That buys contrast at full saturation.
 
 **Shape matters too.** The gradient is a specular sweep: deeper red at the
-edges, bright peak around 67%. That depth is the tiger's-blood look and should
-be preserved. The failure mode is not having dark edges, it is having edges so
-dark they stop being legible.
+edges, bright peak around 67%. That depth is the tiger's-blood look. The
+failure was never having dark edges, it was edges so dark they stopped being
+legible.
 
-| | deepest stop | peak | floor contrast |
-|---|---|---|---|
-| Original (broken) | `#7A0712` | `#FF5733` orange | **1.76:1** |
-| Current | `#D4181F` | `#FF5561` | **3.72:1** |
+Current stops, all three dials measured:
 
-All current stops, measured on `#0A0A0A`:
+| Stop | Hue drift | Saturation | Lightness | Contrast |
+|---|---|---|---|---|
+| `#D4181F` | +0.1deg | 80% | 46% | 3.72:1 |
+| `#ED1C24` | 0.0deg | 85% | 52% | 4.52:1 |
+| `#FF262E` | +0.1deg | 100% | 57% | 5.25:1 |
 
-| Stop | Hue drift | Contrast |
+The three failures, for anyone tempted to reopen this:
+
+| Attempt | What moved | Result |
 |---|---|---|
-| `#D4181F` | -0.1deg | 3.72:1 |
-| `#ED1C24` | 0.0deg | 4.52:1 |
-| `#FF4A55` | -1.3deg | 6.00:1 |
-| `#FF5561` | -1.9deg | 6.34:1 |
+| Original | lightness far too low at the edges | `#7A0712` = 1.76:1, faded to invisible |
+| Fix 1 | added green for contrast | `#FF7A52` = hue +13.9deg, read orange |
+| Fix 2 | added white for contrast | `#FF5561` = 67% lightness, read salmon |
 
 `--grad-sig` is exempt. It is a SURFACE gradient for buttons and pills with
-cream text sitting on it, so its dark stops are doing the right job.
+cream text on it, so its dark stops are correct.
 
-`--sig-highlight` (`#FF5733`) sits at hue +10.6deg and is the one orange-leaning
-token in the system. Small marks only. Never let it dominate a gradient.
+`--sig-highlight` (`#FF5733`) is hue +10.6deg, the one orange-leaning token in
+the system. Small marks only, never a dominant gradient stop.
 
 ## Typography Spine
 
