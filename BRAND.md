@@ -1,6 +1,6 @@
 # Abundance.AI — Brand Guidelines
 
-> **Status:** Locked v1.9 · May 2026 · *Living document — paired with [/brand](https://weareabundance.com/brand) as the rendered source of truth.*
+> **Status:** Locked v1.10 · May 2026 · *Living document — paired with [/brand](https://weareabundance.com/brand) as the rendered source of truth.*
 >
 > **Rule of thumb:** If you have to ask "is this on-brand?", check `/brand` first. If `/brand` doesn't show it, it isn't on-brand yet.
 
@@ -86,6 +86,41 @@ Three flavors of the tiger's-blood gradient, mapped to typographic role:
 - `--grad-graphite-shine` — silver shine, prestige variant
 
 ---
+
+### Gradient text: the two-sided constraint (added v1.10)
+
+Text gradients have failed twice in opposite directions, so both bounds are
+now written down. Every stop in `--grad-sig-hero` and `--grad-sig-tight` must
+satisfy BOTH:
+
+1. **Contrast at least 4.5:1 against `--bg` (#0A0A0A).** The original stops
+   bottomed out at `#7A0712` = 1.76:1, so every `<em>` faded to near-invisible
+   at the tail. Large text needs 3.0, body needs 4.5. Hold 4.5.
+2. **Hue within 2 degrees of `--sig` (#ED1C24, hue -2.3deg).** The first fix
+   bought contrast by brightening toward `#FF7A52` (hue +13.9deg), which reads
+   as orange. The brand is red.
+
+Those two pull against each other, because in sRGB luminance is dominated by
+the green channel, so the obvious way to brighten a red is to add green, and
+that is exactly the move that turns it orange. **Get luminance from lightness,
+not from hue.** Lighten toward a pale red rather than toward orange.
+
+The current stops, all measured:
+
+| Stop | Hue drift from `--sig` | Contrast on `#0A0A0A` |
+|---|---|---|
+| `#ED1C24` | 0.0deg | 4.52:1 |
+| `#FF3D48` | -1.1deg | 5.67:1 |
+| `#FF4A55` | -1.3deg | 6.00:1 |
+| `#FF5561` | -1.9deg | 6.34:1 |
+
+`--grad-sig` is exempt. It is a SURFACE gradient for buttons and pills with
+cream text sitting on it, so its dark stops are doing the right job.
+
+`--sig-highlight` (`#FF5733`) sits at hue +10.6deg and is the one orange-leaning
+token in the system. Keep it for small marks only. Never let it dominate a
+gradient.
+
 
 ## Typography Spine
 
