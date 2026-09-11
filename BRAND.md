@@ -130,8 +130,10 @@ The three failures, for anyone tempted to reopen this:
 `--grad-sig` is exempt. It is a SURFACE gradient for buttons and pills with
 cream text on it, so its dark stops are correct.
 
-`--sig-highlight` (`#FF5733`) is hue +10.6deg, the one orange-leaning token in
-the system. Small marks only, never a dominant gradient stop.
+`--sig-highlight` used to be `#FF5733` at hue +10.6deg, the one orange-leaning
+token in the system. It is now `#FF262E` (hue -2.2deg). There is no orange left
+in the accent system at all. The only warm-but-not-red colours remaining are the
+`.portrait` skin-tone gradients, which are warm on purpose.
 
 ## Typography Spine
 
