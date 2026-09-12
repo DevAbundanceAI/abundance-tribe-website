@@ -11,7 +11,12 @@ page-state rules are implemented here, so read that before changing copy.
 - **No price anywhere.** Not on the page, not in the video, not in the ads. The
   number is disclosed on the Discovery Call only. The video calls the assessment
   paid; that word is the filter.
-- **No nav.** One action per page. The masthead wordmark is the only link out.
+- **No nav, and no exits at all.** This is a funnel, not a website page. It must
+  never link back to the site. The masthead wordmark used to be a link and is now
+  a plain `<span>`; the footer's Home and Case studies links are gone. The only
+  remaining `href` that leaves the page is the `mailto:`, kept because it opens a
+  mail client rather than navigating away, and a contactable business is worth
+  more than the attention it costs. One action per page: book the call.
 - Button copy is fixed: **See if you qualify** with the subtext
   **Book your 30-minute AI Growth Discovery Call.**
 - The GHL calendar event is named the same, 30 minutes.
