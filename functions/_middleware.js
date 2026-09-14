@@ -11,6 +11,8 @@
       Done here rather than as a dashboard Redirect Rule so it lives in
       the repo, is reviewable, and cannot be silently lost.
 
+   3. Repo-doc block. Markdown in the repo is internal documentation.
+
    2. Retired-path rescue. /tribe, /shift, /unlocked, /freedom and
       /partner are archived tiers still linked from the old nav script.
       Cloudflare Pages answers unknown paths with the homepage and a 200,
@@ -40,6 +42,13 @@ export async function onRequest(context) {
   const path = url.pathname.replace(/\/+$/, '') || '/';
   if (RETIRED[path]) {
     return Response.redirect(new URL(RETIRED[path], url.origin).toString(), 301);
+  }
+
+  // 3. Repo docs are not pages. Pages serves every file in the repo, so
+  //    BRAND.md, OFFERS.md (retired prices) and the research notes were all
+  //    readable at the domain. Nothing on the site links to a .md file.
+  if (/\.md$/i.test(url.pathname)) {
+    return new Response('Not found', { status: 404, headers: { 'Cache-Control': 'no-store' } });
   }
 
   return next();
