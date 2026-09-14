@@ -59,6 +59,13 @@ Signature marks
 - The dot-period: a small red gradient circle replacing the full stop at the end of the h1. Once per page. It has a soft red glow.
 - The wordmark: "Abundance" in Neo Contact with the trailing period in red gradient.
 
+## Loading the fonts
+
+- Greycliff CF: `<link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">` then `font-family: "greycliff-cf", system-ui, sans-serif`. The Adobe kit is domain-locked to weareabundance.com. If a preview renders on another origin, Adobe will refuse the font and it silently falls back. Whitelist `*.claude.ai` and `*.claudeusercontent.com` in Adobe Fonts > Web Projects > bxi7koh > Domains, or use the stand-in below.
+- DM Serif Display: `<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">` then `font-family: "DM Serif Display", Georgia, serif; font-style: italic`.
+- Neo Contact LT Pro: a local woff2 on the site (`/assets/fonts/neo-contact/neo-contact-lt-pro.woff2`). Not available outside the site; render the wordmark as an image, or fall back to DM Serif Display upright for the wordmark only.
+- Stand-in when Greycliff cannot load (design tools, previews on other domains): **Outfit** from Google Fonts, 800 for headings, 400 and 500 for body. `https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap`. The closest free geometric sans to Greycliff. Never ship it on the live site.
+
 ## Gradient text: the three dials (this cost us three failed attempts)
 
 Every stop in a text gradient must satisfy all three at once:
