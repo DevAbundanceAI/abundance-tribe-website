@@ -64,11 +64,11 @@ the listing so the headline does not have to.
 ## Page map
 
 ```
-/                  the firm: scope, the constraint, three doors, install/run, record, founder, FAQ, book
+/                  the firm: scope, the constraint, three doors, God Mode (the brain, drawn), install/run, record, founder, FAQ, book
   /scale           lane page, nine systems, five growth case studies
   /build           lane page, eight kinds of software, ON-SITE / MachineryMaps / Expert Health
   /ai              the AI page (was the 2026-09-14 morning homepage), intact
-  /case-studies    Scale section (five) + Build section (two clients + our own)
+  /case-studies    Scale section (five) + Build section (two clients + two of our own: Expert Health, HeyFrosty.ai)
 /assessment        the funnel. NO nav, NO exits, ever. Untouched by any of this.
 ```
 
@@ -88,6 +88,7 @@ The reconciled set, matching itsryanfrost.com and the funnel. Nothing else.
 | Big Little Gyms | 15 to 189 clients, 12x, $989K |
 | **Total** | **$11.5M, seven client engagements** (the five above plus ON-SITE and MachineryMaps) |
 | Expert Health | ours, counted separately: 12 products, 9 categories, 48 ad units, live May 2026 |
+| HeyFrosty.ai | ours, counted separately: the AI coworker that does the work, live. The proof behind the God Mode / AI-Powered Growth System claim |
 
 ## Still open
 
