@@ -3,481 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abundance · AI growth systems for founder-led businesses</title>
-<meta name="description" content="We find the one constraint capping your growth and install the fix with AI, alongside your team. Five businesses, $11.5M generated, six years.">
-<meta property="og:title" content="Abundance · AI growth systems for founder-led businesses">
-<meta property="og:description" content="Most AI projects never move a number because they start with tools instead of your constraint. We start with your constraint.">
+<title>Abundance · Go-to-market systems for founder-led businesses</title>
+<meta name="description" content="We build and run the entire go-to-market engine: ads, funnels, CRM, sales process, websites, software, and the AI layer that makes all of it cheaper to run. $11.5M generated across seven engagements.">
+<meta property="og:title" content="Abundance · Go-to-market systems for founder-led businesses">
+<meta property="og:description" content="The constraint moves. Fix the ads and it shows up in the funnel. Fix the funnel and it shows up in sales. A specialist can only fix the one they sell. We own the whole engine.">
 <meta property="og:url" content="https://weareabundance.com/">
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<style>
-/* ═══════════════════════════════════════════════════════════════════
-   ABUNDANCE · HOMEPAGE · v3.0
+<link rel="stylesheet" href="/assets/css/site.css">
+<!-- ═══════════════════════════════════════════════════════════════════
+     ABUNDANCE · HOMEPAGE · v4.0 · the firm
 
-   Rebuilt 2026-09-14 per HOMEPAGE-REBUILD.md. The v2 page sold Cohort
-   04 of the retired Selling System, claimed 100+ businesses and $200M
-   against a real record of five and $11.5M, and ran a countdown to a
-   deadline that did not exist. All of that is gone.
+     v3 (2026-09-14, morning) sold the AI Growth Assessment and now lives
+     at /ai. It was narrower than the business and mismatched against its
+     own proof: five growth-systems case studies backing an AI claim.
 
-   What the page sells now is what the funnel sells: Constraint-First
-   AI Mapping, and one action, the AI Growth Discovery Call.
+     This page is the firm. The noun is "go-to-market systems", the
+     mechanism is "the constraint moves", and there are three doors in:
+     Scale, Build, AI. Every CTA on the site books the same call.
 
-   Rules carried over from BRAND.md v1.10, unchanged:
-   - Dark-mode locked. No toggle, no prefers-color-scheme adapt.
-   - One accent. Tiger's blood and its gradient family, nothing else.
-   - Heading gradients are bounded on contrast AND hue AND lightness.
-     Do not hand-tune a stop here. Read BRAND.md first.
-   - Visual variety comes from rotating LAYOUT TYPES, never colour.
-   - No price anywhere. Same rule as /assessment.
-   ═══════════════════════════════════════════════════════════════════ */
-
-@font-face {
-  font-family: 'Neo Contact';
-  src: url('/assets/fonts/neo-contact/neo-contact-lt-pro.woff2') format('woff2');
-  font-weight: 400 900; font-style: normal; font-display: swap;
-}
-
-:root {
-  --cream:       #F5F0E8;
-  --cream-soft:  #FAF6EF;
-  --cream-deep:  #ECE5D8;
-  --bg:          #0A0A0A;
-  --surface-1:   #141414;
-  --surface-2:   #1B1B1B;
-  --surface-3:   #242424;
-
-  --ink:         #F5F0E8;
-  --ink-body:    #C9C2B5;
-  --ink-muted:   #8E877C;
-  --ink-dark:    #0A0A0A;
-  --ink-dark-soft:  #3A3530;
-  --ink-dark-muted: #6A645B;
-
-  --sig-highlight: #FF262E;
-  --sig:           #ED1C24;
-  --sig-deep:      #B30E14;
-  --sig-anchor:    #7A0712;
-
-  --grad-sig-hero: linear-gradient(135deg, #D4181F 0%, #D4181F 7%, #ED1C24 28%, #FF262E 67%, #ED1C24 88%, #D4181F 93%, #D4181F 100%);
-  --grad-sig: linear-gradient(135deg, #7A0712 0%, #8F0C14 22%, #B30E14 50%, #C9161D 76%, #ED1C24 100%);
-  --grad-sig-tight: linear-gradient(135deg, #ED1C24 0%, #ED1C24 12%, #FF262E 55%, #ED1C24 88%, #ED1C24 100%);
-  --grad-horizon: radial-gradient(ellipse 70% 60% at 50% 110%, rgba(255,38,46,0.32) 0%, rgba(179,14,20,0.42) 25%, rgba(122,7,18,0.22) 50%, transparent 75%);
-
-  --hairline:        rgba(255,255,255,0.08);
-  --hairline-strong: rgba(255,255,255,0.18);
-  --hairline-cream:  rgba(10,10,10,0.10);
-  --hairline-cream-strong: rgba(10,10,10,0.18);
-
-  --glass-bg-dark:  rgba(20,20,20,0.55);
-  --glass-bg-cream: rgba(245,240,232,0.65);
-  --glass-blur:     blur(22px) saturate(140%);
-
-  --font-logo:    "Neo Contact", "DM Serif Display", Georgia, serif;
-  --font-display: "DM Serif Display", Georgia, serif;
-  --font-sans:    "greycliff-cf", system-ui, -apple-system, sans-serif;
-
-  --t-hero:    clamp(56px, 8vw, 112px);
-  --t-h1:      clamp(44px, 6vw, 80px);
-  --t-h2:      clamp(36px, 4.5vw, 56px);
-  --t-h3:      clamp(20px, 2vw, 26px);
-  --t-body:    17px;
-  --t-micro:   13px;
-
-  --r-stage:   28px;
-  --r-card:    18px;
-  --r-pill:    100px;
-  --r-button:  10px;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body {
-  background: var(--bg); color: var(--ink);
-  font-family: var(--font-sans); font-size: var(--t-body);
-  line-height: 1.55; -webkit-font-smoothing: antialiased;
-  overflow-x: hidden; scroll-behavior: smooth;
-}
-button { font: inherit; cursor: pointer; border: none; background: none; }
-a { color: inherit; text-decoration: none; }
-img { display: block; max-width: 100%; }
-/* A component rule with display:block beats the UA's [hidden] rule, which
-   is how the unwired calendar iframe was still reserving 720px of nothing. */
-[hidden] { display: none !important; }
-
-h1, h2, h3 { font-family: var(--font-sans); font-weight: 800; letter-spacing: -0.028em; line-height: 1.04; }
-h1 em, h2 em, h3 em {
-  font-family: var(--font-display); font-style: italic; font-weight: 400;
-  -webkit-background-clip: text !important; background-clip: text !important;
-  -webkit-text-fill-color: transparent !important; color: transparent !important;
-  filter: drop-shadow(0 0 14px rgba(237,28,36,0.32));
-}
-h1 em { background-image: var(--grad-sig-hero) !important; }
-h2 em, h3 em { background-image: var(--grad-sig-tight) !important; }
-
-.label, .eyebrow {
-  font-family: var(--font-sans); font-size: var(--t-micro);
-  font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--ink-muted);
-}
-.label.on-dark { color: var(--ink-body); }
-.dot-period {
-  display: inline-block; width: 0.38em; height: 0.38em;
-  background: var(--grad-sig); border-radius: 50%;
-  vertical-align: 0.05em; margin-left: 0.06em;
-  box-shadow: 0 0 18px rgba(179,14,20,0.55);
-}
-p strong { color: var(--ink); font-weight: 700; }
-
-/* Skip link. The float-nav is fixed and glassy, so a keyboard user
-   needs a way past it that does not depend on seeing focus through it. */
-.skip {
-  position: absolute; left: -9999px; top: 0; z-index: 400;
-  padding: 12px 20px; border-radius: 0 0 var(--r-card) 0;
-  background: var(--sig); color: var(--cream); font-weight: 700;
-}
-.skip:focus { left: 0; }
-
-/* PILLS */
-.pill {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 6px 14px; border-radius: var(--r-pill);
-  border: 1px solid var(--hairline-strong);
-  background: rgba(255,255,255,0.05);
-  font-size: 13px; font-weight: 700;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--ink-body);
-}
-.pill.filled-soft {
-  background: rgba(179,14,20,0.12); border-color: rgba(179,14,20,0.25); color: var(--sig);
-}
-
-/* BUTTONS */
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 12px 24px; border-radius: var(--r-pill);
-  font-family: var(--font-sans); font-size: 15px; font-weight: 700;
-  transition: all 0.2s ease; cursor: pointer; white-space: nowrap;
-}
-.btn.ghost {
-  background: rgba(255,255,255,0.06); color: var(--ink);
-  border: 1px solid rgba(255,255,255,0.10);
-}
-.btn.ghost:hover { background: rgba(255,255,255,0.10); }
-.btn.gradient {
-  background: var(--grad-sig); background-size: 200% 100%; background-position: 0% 50%;
-  color: var(--cream); box-shadow: 0 0 24px rgba(179,14,20,0.4);
-  transition: background-position 0.5s ease;
-}
-.btn.gradient:hover { background-position: 100% 50%; }
-.btn.big { padding: 16px 32px; font-size: 17px; }
-
-/* PAGE STAGE */
-.page { position: relative; }
-
-/* FLOATING NAV. No announce bar above it any more, so it sits higher
-   than it did in v2 and the phone offsets come down with it. */
-.float-nav {
-  position: fixed; top: 22px; left: 50%;
-  transform: translateX(-50%) translateY(0);
-  z-index: 200;
-  display: flex; align-items: center; gap: 14px;
-  padding: 8px 8px 8px 22px; border-radius: var(--r-pill);
-  background: var(--glass-bg-dark);
-  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
-  border: 1px solid rgba(255,255,255,0.10);
-  box-shadow: 0 18px 50px -12px rgba(0,0,0,0.55);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-  max-width: calc(100% - 32px);
-}
-.float-nav.hidden { transform: translateX(-50%) translateY(calc(-100% - 30px)); opacity: 0; }
-.fn-mark { font-family: var(--font-logo); font-size: 19px; font-weight: 500; color: var(--ink); white-space: nowrap; }
-.fn-mark em { font-style: normal; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.fn-sep { width: 1px; height: 22px; background: rgba(255,255,255,0.10); }
-.fn-links { display: flex; gap: 2px; }
-.fn-links a {
-  display: inline-flex; align-items: center;
-  padding: 7px 12px; border-radius: var(--r-pill);
-  font-size: 13px; font-weight: 600; color: var(--ink-body); white-space: nowrap;
-}
-.fn-links a:hover { background: rgba(255,255,255,0.06); color: var(--ink); }
-.fn-burger { display: none; width: 38px; height: 38px; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: var(--ink); }
-.fn-burger svg { width: 18px; height: 18px; }
-.fn-cta { padding: 8px 16px; font-size: 13px; }
-.fn-mobile { display: none; position: fixed; top: 84px; left: 14px; right: 14px; z-index: 199; background: var(--glass-bg-dark); -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur); border: 1px solid rgba(255,255,255,0.10); border-radius: var(--r-card); padding: 12px; transform: translateY(-10px); opacity: 0; pointer-events: none; transition: transform 0.3s ease, opacity 0.3s ease; }
-.fn-mobile.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
-.fn-mobile a { display: block; padding: 10px 14px; border-radius: 10px; color: var(--ink-body); font-size: 15px; font-weight: 500; }
-@media (max-width: 1100px) {
-  .fn-links, .fn-sep, .fn-cta { display: none; }
-  .fn-burger { display: inline-flex; }
-  .fn-mobile { display: block; }
-  .float-nav { gap: 10px; padding: 8px 8px 8px 18px; }
-}
-
-/* SECTION SCAFFOLD */
-.sec { padding: clamp(60px, 7vw, 110px) clamp(22px, 5vw, 80px); position: relative; overflow: hidden; border-top: 1px solid var(--hairline); }
-.sec:first-child { border-top: none; }
-.sec-head { margin-bottom: 48px; text-align: center; }
-.sec-head .label { display: block; margin-bottom: 14px; }
-.sec-head h2 { font-size: clamp(34px, 4.5vw, 56px); margin: 0 auto 18px; max-width: 22ch; }
-.sec-head .lead { font-size: 17px; color: var(--ink-body); max-width: 60ch; margin: 0 auto; }
-
-/* ── HERO · centred, big negative space, cursor-tied light field ── */
-.hero { padding: clamp(150px, 15vw, 210px) clamp(22px, 5vw, 80px) clamp(70px, 8vw, 110px); text-align: center; position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 900px; height: 700px; max-width: 140vw; background: radial-gradient(circle, rgba(179,14,20,0.32), transparent 60%); filter: blur(60px); pointer-events: none; }
-/* Cursor light. Driven by --mx/--my from the script; defaults centred so
-   it reads correctly on touch, where there is no cursor to follow. */
-.hero .light {
-  position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(circle 420px at var(--mx, 50%) var(--my, 38%), rgba(255,38,46,0.16), transparent 70%);
-  transition: background 0.25s ease-out;
-}
-.hero > * { position: relative; z-index: 1; }
-.hero .label { display: block; margin-bottom: 18px; }
-.hero h1 { font-size: clamp(40px, 6.2vw, 84px); max-width: 20ch; margin: 0 auto 22px; line-height: 1.03; }
-.hero .lead { font-size: clamp(17px, 1.5vw, 20px); color: var(--ink-body); max-width: 58ch; margin: 0 auto 36px; }
-.hero .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.hero .cta-sub { display: block; margin-top: 18px; font-size: 14px; color: var(--ink-muted); font-weight: 600; }
-
-/* ── PROOF STRIP · 4-column numbers band ── */
-.stats { padding: 56px clamp(22px, 5vw, 80px); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
-.stats .strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 1100px; margin: 0 auto; }
-.stats .strip > div { padding: 0 16px; border-right: 1px solid var(--hairline); text-align: center; }
-.stats .strip > div:last-child { border-right: none; }
-.stats .strip .n { font-family: var(--font-sans); font-weight: 800; font-size: clamp(34px, 4.2vw, 52px); letter-spacing: -0.03em; line-height: 1; }
-.stats .strip .n em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.stats .strip .l { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); margin-top: 10px; font-weight: 700; }
-.stats .foot-note { text-align: center; margin-top: 30px; font-size: 14px; color: var(--ink-muted); }
-.stats .foot-note a { color: var(--sig-highlight); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
-@media (max-width: 720px) { .stats .strip { grid-template-columns: 1fr 1fr; gap: 16px; } .stats .strip > div { border-right: none; padding: 14px; } }
-
-/* ── OLD WAY / NEW WAY · 2-column ── */
-.pain .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 1100px; margin: 0 auto; }
-.pain .col { padding: 36px 32px; border-radius: var(--r-card); border: 1px solid var(--hairline); background: rgba(255,255,255,0.04); }
-.pain .col.good { background: linear-gradient(180deg, rgba(179,14,20,0.14), rgba(179,14,20,0.02)); border-color: rgba(179,14,20,0.30); box-shadow: 0 20px 60px -20px rgba(179,14,20,0.30); }
-.pain .col .lbl { font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; margin-bottom: 14px; color: var(--ink-muted); }
-.pain .col.good .lbl { background-image: var(--grad-sig-tight); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.pain .col h3 { font-size: 22px; margin-bottom: 16px; }
-.pain .col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.pain .col li { font-size: 15px; color: var(--ink-body); position: relative; padding-left: 24px; line-height: 1.5; }
-.pain .col.bad li::before { content: '✕'; position: absolute; left: 0; color: var(--ink-muted); font-weight: 800; }
-.pain .col.good li::before { content: '✓'; position: absolute; left: 0; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800; }
-.pain .mech { max-width: 60ch; margin: 34px auto 0; text-align: center; font-size: 18px; color: var(--ink-body); line-height: 1.6; }
-.pain .mech em { font-family: var(--font-display); font-style: italic; font-size: 1.1em; background-image: var(--grad-sig-tight); -webkit-background-clip: text; background-clip: text; color: transparent; }
-@media (max-width: 820px) { .pain .grid { grid-template-columns: 1fr; } }
-
-/* ── THE FIVE AREAS · hub and spoke, five points ──
-   A 3x3 grid rather than absolute positioning: four areas on the
-   corners, the brand mark in the middle, God Mode centred underneath
-   as the thing the other four feed. Collapses to one column cleanly,
-   which the old absolutely-positioned 4-pillar hub never did. */
-.areas { position: relative; }
-.areas::before { content: ''; position: absolute; inset: 0; background: var(--grad-horizon); pointer-events: none; }
-.areas > * { position: relative; z-index: 1; }
-.hub {
-  display: grid; grid-template-columns: 1fr auto 1fr;
-  gap: 28px 44px; align-items: center;
-  max-width: 1180px; margin: 0 auto;
-}
-.hub .core {
-  grid-column: 2; grid-row: 2;
-  justify-self: center; align-self: center;
-  width: 132px; height: 132px; border-radius: 50%;
-  display: grid; place-items: center;
-  font-family: var(--font-logo); font-style: normal; font-weight: 500;
-  font-size: 58px; line-height: 1;
-  background-image: var(--grad-sig-hero);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  border: 1px solid rgba(255,38,46,0.28);
-  background-color: rgba(179,14,20,0.06);
-  box-shadow: 0 0 60px -10px rgba(179,14,20,0.55), inset 0 0 40px -12px rgba(179,14,20,0.40);
-  animation: corepulse 4.5s ease-in-out infinite;
-}
-@keyframes corepulse {
-  0%, 100% { box-shadow: 0 0 60px -10px rgba(179,14,20,0.55), inset 0 0 40px -12px rgba(179,14,20,0.40); }
-  50%      { box-shadow: 0 0 88px -6px rgba(255,38,46,0.70),  inset 0 0 52px -10px rgba(179,14,20,0.55); }
-}
-.hub .ring {
-  grid-column: 2; grid-row: 2;
-  width: 250px; height: 250px; border-radius: 50%;
-  border: 1px solid rgba(255,38,46,0.12);
-  justify-self: center; align-self: center;
-  pointer-events: none;
-  animation: ringdrift 22s linear infinite;
-}
-@keyframes ringdrift { from { transform: rotate(0deg) scale(1); } 50% { transform: rotate(180deg) scale(1.04); } to { transform: rotate(360deg) scale(1); } }
-.hub .area { padding: 22px 24px; border-radius: var(--r-card); border: 1px solid var(--hairline); background: rgba(255,255,255,0.035); }
-.hub .area .n { font-family: var(--font-display); font-style: italic; font-size: 15px; background-image: var(--grad-sig-tight); -webkit-background-clip: text; background-clip: text; color: transparent; display: block; margin-bottom: 4px; }
-.hub .area h3 { font-size: 19px; margin-bottom: 8px; }
-.hub .area p { font-size: 14px; color: var(--ink-body); line-height: 1.5; }
-.hub .a1 { grid-column: 1; grid-row: 1; }
-.hub .a2 { grid-column: 3; grid-row: 1; }
-.hub .a3 { grid-column: 1; grid-row: 2; }
-.hub .a4 { grid-column: 3; grid-row: 2; }
-.hub .a5 {
-  grid-column: 2; grid-row: 3; justify-self: center;
-  max-width: 520px; text-align: center;
-  background: linear-gradient(180deg, rgba(179,14,20,0.16), rgba(179,14,20,0.02));
-  border-color: rgba(179,14,20,0.32);
-  box-shadow: 0 24px 70px -22px rgba(179,14,20,0.42);
-}
-.hub .a5 h3 { font-size: 22px; }
-@media (max-width: 960px) {
-  .hub { grid-template-columns: 1fr; gap: 16px; }
-  .hub .core { display: none; }
-  .hub .ring { display: none; }
-  .hub .a1, .hub .a2, .hub .a3, .hub .a4, .hub .a5 { grid-column: 1; grid-row: auto; max-width: none; justify-self: stretch; text-align: left; }
-}
-
-/* ── THE METHOD · 4 process cards ── */
-.how .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1200px; margin: 0 auto; }
-.how .step { padding: 30px 24px; border-radius: var(--r-card); background: rgba(255,255,255,0.04); border: 1px solid var(--hairline); }
-.how .step .num { font-family: var(--font-display); font-style: italic; font-size: 48px; line-height: 1; background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 16px; }
-.how .step h3 { font-size: 19px; margin-bottom: 8px; }
-.how .step p { font-size: 14px; color: var(--ink-body); line-height: 1.5; }
-@media (max-width: 820px) { .how .steps { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 480px) { .how .steps { grid-template-columns: 1fr; } }
-
-/* ── THE RECORD · a ledger, not a brag wall ── */
-.record .ledger { max-width: 980px; margin: 0 auto; border-top: 1px solid var(--hairline); }
-.record .row {
-  display: grid; grid-template-columns: 1.1fr 1.6fr auto auto;
-  gap: 24px; align-items: center;
-  padding: 24px 6px; border-bottom: 1px solid var(--hairline);
-  transition: background 0.2s ease, padding 0.2s ease;
-}
-.record .row:hover { background: rgba(255,255,255,0.03); }
-.record .co { font-size: 18px; font-weight: 700; }
-.record .co span { display: block; font-size: 13px; font-weight: 600; color: var(--ink-muted); margin-top: 3px; }
-.record .built { font-size: 15px; color: var(--ink-body); line-height: 1.5; }
-.record .res { font-family: var(--font-sans); font-weight: 800; font-size: 26px; letter-spacing: -0.03em; text-align: right; white-space: nowrap; }
-.record .res em { font-family: var(--font-display); font-style: italic; background-image: var(--grad-sig-tight); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.record .go { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--hairline-strong); display: grid; place-items: center; color: var(--ink-muted); flex-shrink: 0; transition: all 0.2s ease; }
-.record .row:hover .go { border-color: rgba(255,38,46,0.45); color: var(--sig-highlight); transform: translateX(3px); }
-.record .go svg { width: 15px; height: 15px; }
-.record .after { text-align: center; margin-top: 38px; }
-.record .disc { max-width: 70ch; margin: 22px auto 0; text-align: center; font-size: 13px; color: var(--ink-muted); line-height: 1.6; }
-@media (max-width: 860px) {
-  .record .row { grid-template-columns: 1fr auto; gap: 8px 18px; }
-  .record .built { grid-column: 1 / -1; order: 3; }
-  .record .res { text-align: right; font-size: 22px; }
-  .record .go { display: none; }
-}
-
-/* ── FOUNDER · asymmetric split ── */
-.founder-section { padding: clamp(70px, 8vw, 120px) clamp(22px, 5vw, 80px); position: relative; overflow: hidden; border-top: 1px solid var(--hairline); }
-.founder-section::before {
-  content: ''; position: absolute; top: 0; right: -10%;
-  width: 700px; height: 700px; max-width: 120vw;
-  background: radial-gradient(circle, rgba(179,14,20,0.18), transparent 62%);
-  filter: blur(70px); pointer-events: none;
-}
-.founder-section > * { position: relative; z-index: 1; }
-.founder { display: grid; grid-template-columns: 1.1fr 1.4fr; gap: 72px; align-items: start; max-width: 1200px; margin: 0 auto; }
-.founder .portrait-big {
-  aspect-ratio: 4 / 5; border-radius: var(--r-stage); position: relative; overflow: hidden;
-  background: var(--surface-1);
-  border: 1px solid var(--hairline);
-}
-.founder .portrait-big img { width: 100%; height: 100%; object-fit: cover; object-position: 54% 22%; }
-/* Floor of dark under the photo so the glass name-tag always has contrast. */
-.founder .portrait-big::after {
-  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 42%;
-  background: linear-gradient(180deg, transparent, rgba(10,10,10,0.72));
-  pointer-events: none;
-}
-.founder .portrait-big .name-tag {
-  position: absolute; left: 18px; bottom: 18px;
-  padding: 8px 16px; border-radius: var(--r-pill);
-  background: var(--glass-bg-dark);
-  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
-  border: 1px solid rgba(255,255,255,0.12);
-  font-size: 13px; font-weight: 700; color: var(--ink);
-}
-.founder .right { padding-top: 8px; }
-.founder .right .label { display: block; margin-bottom: 14px; }
-.founder .right h2 { font-size: clamp(32px, 3.8vw, 48px); margin-bottom: 24px; max-width: 18ch; }
-.founder .right p { color: var(--ink-body); font-size: 17px; line-height: 1.68; margin-bottom: 18px; max-width: 58ch; }
-.founder .right .sig { margin-top: 30px; font-family: var(--font-display); font-style: italic; font-size: 26px; background-image: var(--grad-sig-tight); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.founder .right .title { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; margin-top: 6px; }
-@media (max-width: 820px) {
-  .founder { grid-template-columns: 1fr; gap: 36px; }
-  .founder .portrait-big { max-width: 340px; }
-}
-
-/* ── FAQ · a real accordion, with answers in it ── */
-.faq { max-width: 820px; margin: 0 auto; }
-.faq details { border-top: 1px solid var(--hairline); }
-.faq details:last-of-type { border-bottom: 1px solid var(--hairline); }
-.faq summary {
-  display: flex; justify-content: space-between; align-items: center; gap: 20px;
-  padding: 24px 0; font-size: 17px; font-weight: 600; cursor: pointer;
-  list-style: none;
-}
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary::after {
-  content: '+'; font-size: 26px; font-weight: 700; line-height: 1; flex-shrink: 0;
-  background-image: var(--grad-sig-tight); -webkit-background-clip: text; background-clip: text; color: transparent;
-  transition: transform 0.2s ease;
-}
-.faq details[open] summary::after { content: '−'; }
-.faq summary:hover { color: var(--ink); }
-.faq summary:focus-visible { outline: 2px solid var(--sig); outline-offset: 4px; border-radius: 4px; }
-.faq .a { padding: 0 44px 26px 0; color: var(--ink-body); font-size: 16px; line-height: 1.7; max-width: 66ch; }
-
-/* ── BOOK · the one action ── */
-.book { position: relative; text-align: center; border-top: 1px solid var(--hairline); padding: clamp(80px, 9vw, 130px) clamp(22px, 5vw, 80px); overflow: hidden; }
-.book .horizon {
-  position: absolute; left: 0; right: 0; bottom: 0; height: 60%;
-  background:
-    radial-gradient(ellipse 60% 100% at 50% 110%, rgba(255,38,46,0.20), transparent 65%),
-    radial-gradient(ellipse 80% 80% at 50% 100%, rgba(179,14,20,0.30), transparent 70%);
-  pointer-events: none;
-}
-.book > * { position: relative; z-index: 1; }
-.book .label { display: block; margin-bottom: 16px; }
-.book h2 { font-size: clamp(38px, 5.5vw, 72px); max-width: 16ch; margin: 0 auto 22px; line-height: 1.02; }
-.book .lead { font-size: 18px; color: var(--ink-body); max-width: 56ch; margin: 0 auto 36px; line-height: 1.6; }
-.book .answers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 900px; margin: 0 auto 44px; text-align: left; }
-.book .ans { padding: 20px 22px; border-radius: var(--r-card); border: 1px solid var(--hairline); background: rgba(255,255,255,0.035); }
-.book .ans .n { font-family: var(--font-display); font-style: italic; font-size: 26px; line-height: 1; background-image: var(--grad-sig-tight); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 10px; }
-.book .ans h3 { font-size: 17px; margin-bottom: 6px; }
-.book .ans p { font-size: 14px; color: var(--ink-body); line-height: 1.5; }
-.book .cal-shell {
-  max-width: 900px; margin: 0 auto;
-  border-radius: var(--r-stage); border: 1px solid var(--hairline);
-  background: var(--surface-1); overflow: hidden; min-height: 200px;
-}
-.book .cal-shell iframe { width: 100%; min-height: 720px; border: 0; display: block; }
-.book .cal-empty { padding: 56px 28px; color: var(--ink-muted); font-size: 15px; }
-.book .cal-empty strong { display: block; color: var(--ink-body); font-size: 17px; margin-bottom: 8px; }
-.book .cal-empty code { font-family: ui-monospace, monospace; font-size: 13px; color: var(--sig-highlight); }
-.book .fallback { margin-top: 26px; font-size: 14px; color: var(--ink-muted); }
-.book .fallback a { color: var(--sig-highlight); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
-@media (max-width: 820px) { .book .answers { grid-template-columns: 1fr; } }
-
-/* ── FOOTER ── */
-.foot { padding: 56px clamp(22px, 5vw, 80px) 32px; border-top: 1px solid var(--hairline); }
-.foot .top { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--hairline); margin-bottom: 24px; }
-.foot .brand-col .logo { font-family: var(--font-logo); font-size: 28px; font-weight: 500; margin-bottom: 14px; display: block; }
-.foot .brand-col .logo em { background-image: var(--grad-sig); -webkit-background-clip: text; background-clip: text; color: transparent; font-style: normal; }
-.foot .brand-col p { color: var(--ink-body); font-size: 14px; max-width: 42ch; }
-.foot .col h4 { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; margin-bottom: 18px; }
-.foot .col a { display: block; padding: 5px 0; font-size: 14px; color: var(--ink-body); }
-.foot .col a:hover { color: var(--sig); }
-.foot .disc { font-size: 12px; color: var(--ink-muted); line-height: 1.65; max-width: 90ch; margin-bottom: 18px; }
-.foot .bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--ink-muted); }
-@media (max-width: 820px) { .foot .top { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 480px) { .foot .top { grid-template-columns: 1fr; gap: 28px; } }
-
-/* Motion is decorative here, so all of it comes off for anyone who has
-   asked the OS to stop it. */
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-}
-</style>
+     Sources: abundance-os/clients/README.md ("software plus agency
+     services plus coaching"), the 5 Steps / 12 Systems architecture in
+     the Airtable strategy base, and the reconciled proof numbers that
+     match itsryanfrost.com.
+     ═══════════════════════════════════════════════════════════════════ -->
 <link rel="canonical" href="https://weareabundance.com/">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -487,17 +39,14 @@ p strong { color: var(--ink); font-weight: 700; }
 <a class="skip" href="#main">Skip to content</a>
 <div class="page">
 
-  <!-- FLOATING NAV. The retired ladder (/tribe, /shift, /unlocked,
-       /freedom, /partner) is gone from here. Those paths still 301 in
-       functions/_middleware.js, but nothing on this page points at them. -->
   <header class="float-nav" id="float-nav">
-    <a class="fn-mark" href="#top">Abundance<em>.</em></a>
+    <a class="fn-mark" href="/">Abundance<em>.</em></a>
     <span class="fn-sep"></span>
     <nav class="fn-links" aria-label="Primary">
-      <a href="#areas">The five areas</a>
-      <a href="#how">How it works</a>
-      <a href="#record">The record</a>
-      <a href="#faq">FAQ</a>
+      <a href="/scale/">Scale</a>
+      <a href="/build/">Build</a>
+      <a href="/ai/">AI</a>
+      <a href="/case-studies/">Case studies</a>
     </nav>
     <a href="#book" class="btn gradient fn-cta">Book the call</a>
     <button class="fn-burger" id="fn-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="fn-mobile">
@@ -506,173 +55,194 @@ p strong { color: var(--ink); font-weight: 700; }
   </header>
 
   <div class="fn-mobile" id="fn-mobile">
-    <a href="#areas">The five areas</a>
-    <a href="#how">How it works</a>
-    <a href="#record">The record</a>
-    <a href="#faq">FAQ</a>
+    <a href="/scale/">Scale</a>
+    <a href="/build/">Build</a>
+    <a href="/ai/">AI</a>
+    <a href="/case-studies/">Case studies</a>
     <a href="#book">Book the call</a>
   </div>
 
   <main id="main">
 
     <!-- ══ HERO ══════════════════════════════════════════════
-         Outcome-led headline in the "X without Y" shape. This is the
-         angle that does not fit the VSL gate page, whose h1 has to
-         mirror the video's disqualifier opening. It belongs here. -->
+         Declarative, not a DR hook. The ads point at /assessment now,
+         so this page catches people who already met us, looked us up,
+         or were referred. They are asking what the firm is and whether
+         it can actually do this, not to be persuaded from cold. -->
     <section class="hero" id="top">
       <div class="light" id="hero-light" aria-hidden="true"></div>
-      <span class="label">For owners with real revenue and a team</span>
-      <h1>Put AI to work on the one thing capping your growth. <em>Without hiring an AI team.</em><span class="dot-period"></span></h1>
-      <p class="lead">We are not an AI agency and we will not hand you a stack of prompts. We start from your numbers, find the constraint that is actually holding the business back, and install the fix with the team you already have. You get to watch that number move before you spend anything on the next one.</p>
+      <span class="label">Go-to-market systems for founder-led businesses</span>
+      <h1>We build and run the entire <em>go-to-market engine.</em><span class="dot-period"></span></h1>
+      <p class="sub">Ads, funnels, CRM, sales process, websites, software, and the AI layer that makes all of it cheaper to run. One team, accountable for the whole thing, and your people own what gets built.</p>
+      <p class="mech"><strong>Why one firm owns all of it:</strong> the constraint moves. Fix the ads and the bottleneck shows up in the funnel. Fix the funnel and it shows up in sales. A specialist can only fix the one they sell.</p>
       <div class="cta-row">
-        <a href="#book" class="btn gradient big">Book the AI Growth Discovery Call &rarr;</a>
-        <a href="#how" class="btn ghost big">See how it works</a>
+        <a href="#book" class="btn gradient big">Book a discovery call &rarr;</a>
+        <a href="/case-studies/" class="btn ghost big">See the work</a>
       </div>
       <span class="cta-sub">Thirty minutes. You leave with three answers either way.</span>
     </section>
 
     <!-- ══ PROOF STRIP ═══════════════════════════════════════
-         Every number here is the reconciled set and matches
-         itsryanfrost.com. Five businesses, $11.5M. Nothing else goes
-         in this band without a case study behind it. -->
+         Reconciled set, matches itsryanfrost.com. Seven client
+         engagements: five growth installs plus ON-SITE and MachineryMaps.
+         Expert Health is our own and is counted separately. -->
     <section class="stats">
       <div class="strip">
         <div><div class="n">$11.5<em>M</em></div><div class="l">Generated for clients</div></div>
-        <div><div class="n">5</div><div class="l">Businesses</div></div>
+        <div><div class="n">7</div><div class="l">Client engagements</div></div>
         <div><div class="n">6<em>yr</em></div><div class="l">Doing this</div></div>
         <div><div class="n">12<em>&times;</em></div><div class="l">Best client growth</div></div>
       </div>
-      <p class="foot-note">Every number on this page traces back to a written case study. <a href="/case-studies/">Read all five</a>.</p>
+      <p class="foot-note">Every number on this page traces back to a written case study. <a href="/case-studies/">Read them all</a>.</p>
     </section>
 
-    <!-- ══ OLD WAY / NEW WAY ═════════════════════════════════ -->
-    <section class="sec pain">
+    <!-- ══ THE MECHANISM · the constraint moves ══════════════
+         The one picture that turns "we do everything" from a red flag
+         into a reason. Five stages, one marker, and it keeps moving. -->
+    <section class="sec chain-sec" id="why">
       <div class="sec-head">
-        <span class="label">Why most AI spend disappears</span>
-        <h2>A year of AI projects, and <em>nothing moved.</em></h2>
-        <p class="lead">This is the pattern in almost every business we get into. It is not a discipline problem. It is a sequencing problem.</p>
+        <span class="label">Why one firm owns all of it</span>
+        <h2>The constraint <em>moves.</em></h2>
+        <p class="lead">Every business has exactly one thing capping it at any given moment. The problem is that fixing it does not end the job. It relocates it.</p>
       </div>
-      <div class="grid">
-        <div class="col bad">
-          <div class="lbl">What usually happens</div>
-          <h3>Tools first</h3>
-          <ul>
-            <li>You bought the tools and your team logged in a few times, and three months later nobody can point at a single number that moved.</li>
-            <li>Somebody became the AI person on top of the job they already had, so none of it ever got past experiments.</li>
-            <li>You installed what worked for a business that looks nothing like yours, because that is what showed up in the feed that week.</li>
-            <li>Every vendor you talk to opens with their product instead of your numbers.</li>
-          </ul>
-        </div>
-        <div class="col good">
-          <div class="lbl">What actually moves a number</div>
-          <h3>Constraint first</h3>
-          <ul>
-            <li>We start from your numbers, so the first thing you install is the thing that is actually capping you.</li>
-            <li>You get the five areas ranked for your business, plus how to install each one, so your team stops guessing and starts executing.</li>
-            <li>You fix one constraint at a time, which means you watch the number move before you spend anything on the next one.</li>
-            <li>We work above your team, not instead of it. Your people execute, and they own what gets built.</li>
-          </ul>
-        </div>
+      <div class="chain" aria-label="The five stages of the engine">
+        <div class="node"><span class="k">One</span><h3>Offer</h3><p>What you sell, to whom, at what promise. Wrong here and nothing downstream can save it.</p><span class="mark" aria-hidden="true"></span></div>
+        <div class="node"><span class="k">Two</span><h3>Traffic</h3><p>Ads, content, search. The part everyone buys first, and the part that only works if the next three do.</p><span class="mark" aria-hidden="true"></span></div>
+        <div class="node"><span class="k">Three</span><h3>Funnel</h3><p>The page, the video, the application, the follow-up. Where a stranger becomes a booked call, or quietly does not.</p><span class="mark" aria-hidden="true"></span></div>
+        <div class="node"><span class="k">Four</span><h3>Sales</h3><p>The process, the reps, the CRM, the numbers you can actually trust. Where most of the leak lives.</p><span class="mark" aria-hidden="true"></span></div>
+        <div class="node"><span class="k">Five</span><h3>Delivery</h3><p>Onboarding, fulfilment, retention, the software underneath. Where growth either compounds or eats the team.</p><span class="mark" aria-hidden="true"></span></div>
       </div>
-      <p class="mech">We call this <em>Constraint-First AI Mapping</em>, and it runs inside every engagement we take.</p>
+      <p class="caption">Fix the ads and the bottleneck shows up in the funnel. Fix the funnel and it shows up in sales. Fix sales and it shows up in delivery. <strong>A specialist can only fix the one they sell, so they stop where their invoice stops.</strong> We own the whole engine, which means we go where the constraint is.</p>
     </section>
 
-    <!-- ══ THE FIVE AREAS · hub and spoke ════════════════════ -->
-    <section class="sec areas" id="areas">
+    <!-- ══ THREE LANES ═══════════════════════════════════════ -->
+    <section class="sec" id="lanes">
       <div class="sec-head">
-        <span class="label">Where AI actually pays</span>
-        <h2>Five areas. <em>One of them is yours.</em></h2>
-        <p class="lead">In every business we get inside, the return shows up in the same five places. Which one is capping you is a question about your numbers, not about whatever was trending that week.</p>
+        <span class="label">Three ways in</span>
+        <h2>One engine. <em>Three doors.</em></h2>
+        <p class="lead">Most people come to us through one of these. Every engagement ends up touching all three, because that is where the constraint goes.</p>
       </div>
-      <div class="hub">
-        <div class="area a1">
-          <span class="n">Area one</span>
-          <h3>Marketing</h3>
-          <p>Ads audited and rebuilt against real performance data instead of guesses. A funnel per audience in minutes rather than weeks. And your business showing up inside ChatGPT, Gemini and Perplexity when your buyers ask them who to use.</p>
-        </div>
-        <div class="area a2">
-          <span class="n">Area two</span>
-          <h3>Sales</h3>
-          <p>The CRM updates itself. Dead pipeline gets reactivated. Every lead gets followed up within minutes even when a rep drops the ball. And you see the real numbers instead of the ones that get reported to you.</p>
-        </div>
-        <div class="ring" aria-hidden="true"></div>
-        <div class="core" aria-hidden="true">A</div>
-        <div class="area a3">
-          <span class="n">Area three</span>
-          <h3>Fulfillment</h3>
-          <p>Onboarding, recaps, first drafts and client success stop eating your best people's weeks. The work still gets reviewed by a human, it just stops starting from a blank page.</p>
-        </div>
-        <div class="area a4">
-          <span class="n">Area four</span>
-          <h3>Operations</h3>
-          <p>Software you rent every month gets replaced by tools built for how your business actually runs. That is real cost off the P and L, and technology you own rather than lease.</p>
-        </div>
-        <div class="area a5">
-          <span class="n">Area five</span>
-          <h3>God Mode</h3>
-          <p>An AI coworker trained on your entire business. Every SOP, every sales call, every campaign, every number. Your team asks it what to fix first, and it already has the answer and the draft of the fix.</p>
-        </div>
+      <div class="lanes">
+        <a class="lane" href="/scale/">
+          <span class="job">Demand and revenue</span>
+          <h3>Scale<em>.</em></h3>
+          <p class="desc">Get more customers, convert more of them, and see the numbers that prove it.</p>
+          <ul>
+            <li>Meta and Google ads</li>
+            <li>Creative and organic content</li>
+            <li>Funnels, VSLs and applications</li>
+            <li>SEO and AI search visibility</li>
+            <li>CRM, pipeline and follow-up</li>
+            <li>Sales process and dashboards</li>
+          </ul>
+          <p class="proof"><strong>$11.5M generated</strong> across five growth installs, every one from zero.</p>
+          <span class="go">See how we scale <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </a>
+        <a class="lane" href="/build/">
+          <span class="job">The software that sells</span>
+          <h3>Build<em>.</em></h3>
+          <p class="desc">Websites, storefronts and custom software that take orders and run the business. Built to be owned, not rented.</p>
+          <ul>
+            <li>Websites and landing pages</li>
+            <li>Storefronts and checkout</li>
+            <li>Marketplaces and client portals</li>
+            <li>CRM builds and automations</li>
+            <li>Internal tools and dashboards</li>
+            <li>Regulated-category builds</li>
+          </ul>
+          <p class="proof"><strong>ON-SITE Rentals</strong>, from a brochure site to a live storefront that takes signed, paid orders.</p>
+          <span class="go">See what we build <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </a>
+        <a class="lane" href="/ai/">
+          <span class="job">Leverage across both</span>
+          <h3>AI<em>.</em></h3>
+          <p class="desc">Find the one constraint capping your growth and fix it with AI, with the team you already have.</p>
+          <ul>
+            <li>Constraint-First AI Mapping</li>
+            <li>The five areas, ranked for your business</li>
+            <li>AI in marketing and sales</li>
+            <li>AI in fulfilment and operations</li>
+            <li>God Mode, an AI coworker on your whole business</li>
+            <li>Showing up inside ChatGPT and Perplexity</li>
+          </ul>
+          <p class="proof"><strong>The AI Growth Assessment</strong> is where most engagements start.</p>
+          <span class="go">See the AI work <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </a>
       </div>
     </section>
 
-    <!-- ══ THE METHOD ════════════════════════════════════════ -->
+    <!-- ══ HOW AN ENGAGEMENT RUNS · install, then run ════════
+         The offer ladder, without prices. Install a system first (the
+         Selling System, or the AI-Powered Growth System that knows the
+         whole business). Then either run it with us or run it yourself.
+         If the install is not the right first step, coaching is the
+         floor. What each one costs is a conversation, not a page. -->
     <section class="sec how" id="how">
       <div class="sec-head">
-        <span class="label">Constraint-First AI Mapping</span>
-        <h2>Four steps. <em>Then your team runs it.</em></h2>
-        <p class="lead">The order is the whole point. Most AI work fails at step two, because nobody did step one.</p>
+        <span class="label">How an engagement runs</span>
+        <h2>Install first. <em>Then run it.</em></h2>
+        <p class="lead">Every engagement has the same shape. We install a system you own, then you decide how much of running it you want us for.</p>
       </div>
-      <div class="steps">
-        <div class="step"><div class="num">1</div><h3>Map</h3><p>We get into your numbers, your stack and your process. Not a questionnaire. We look at what the business actually does and where the money actually stops.</p></div>
-        <div class="step"><div class="num">2</div><h3>Rank</h3><p>The five areas get scored against your business, so you know which one is capping you, what it is worth to fix, and what has to be true before it can be fixed.</p></div>
-        <div class="step"><div class="num">3</div><h3>Install</h3><p>We build the fix with your team rather than around them. They learn it while it goes in, which is why it is still running after we leave.</p></div>
-        <div class="step"><div class="num">4</div><h3>Measure</h3><p>One constraint at a time. The number moves, or we say plainly that it did not, and then we go to the next one.</p></div>
+      <div class="steps" style="grid-template-columns: repeat(3, 1fr); max-width: 1100px;">
+        <div class="step"><div class="num">1</div><h3>Install</h3><p>One of two systems, built into your business and handed to your team. <strong>The Selling System</strong>: the full engine from offer to close, the thing the five growth case studies are. Or <strong>the AI-Powered Growth System</strong>: an AI trained on everything about your business, wired into your numbers, so your team asks it what to fix first and it already knows.</p></div>
+        <div class="step"><div class="num">2</div><h3>Run</h3><p>Once it is in, most owners keep us on to run it. That takes one of three forms depending on what the constraint is: we run the channels as an ongoing team, we advise the people who run them, or we coach the founder who runs everything. Same system underneath either way.</p></div>
+        <div class="step"><div class="num">3</div><h3>Or start with coaching</h3><p>If an install is not the right first step yet, the floor is one-on-one coaching with Ryan. No team, no build, no software. The same constraint-first method, applied to you and your calendar, until the business is ready for the system.</p></div>
       </div>
     </section>
 
-    <!-- ══ THE RECORD ════════════════════════════════════════
-         A ledger rather than a testimonial wall. Reads like a firm.
-         Figures match /case-studies/ and itsryanfrost.com. -->
+    <!-- ══ THE RECORD ════════════════════════════════════════ -->
     <section class="sec record" id="record">
       <div class="sec-head">
         <span class="label">The record</span>
-        <h2>Five businesses. <em>$11.5M generated.</em></h2>
-        <p class="lead">Every one of them started without a real growth system. Every one ended up with one that was built, documented, and handed to the team that runs it today.</p>
+        <h2>Seven engagements. <em>$11.5M generated.</em></h2>
+        <p class="lead">Five growth engines built from zero, and two products built to take money online. Every one documented and handed to the team that runs it.</p>
       </div>
       <div class="ledger">
         <a class="row" href="/case-studies/all-done-consulting/">
-          <div class="co">All Done Consulting<span>Growth partner &middot; 2022 to 2024</span></div>
+          <div class="co">All Done Consulting<span>Scale &middot; 2022 to 2024</span></div>
           <div class="built">Webinar funnels, book-a-call funnels, email automation and full launch systems, built from nothing across a two and a half year embedded partnership.</div>
           <div class="res">$4.6<em>M</em></div>
           <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a class="row" href="/case-studies/acquisition-network/">
-          <div class="co">Acquisition Network<span>Founding partner &middot; 2 years</span></div>
-          <div class="built">Started at zero. No lead flow, no sales process, no CRM. We built the offer positioning, the acquisition engine, the sales process and the KPI reporting.</div>
+          <div class="co">Acquisition Network<span>Scale &middot; 2024 to 2026</span></div>
+          <div class="built">Started at zero. We built the offer positioning, the acquisition engine, the sales process and the KPI reporting, then exited cleanly with the system running.</div>
           <div class="res">$2.9<em>M</em></div>
           <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a class="row" href="/case-studies/malik-consolidated/">
-          <div class="co">Malik Consolidated<span>Growth marketing &middot; 2023 to 2024</span></div>
-          <div class="built">Funnel strategy, CRM workflows and campaign execution built on top of limited existing infrastructure, into a full lead-to-close system.</div>
+          <div class="co">Malik Consolidated<span>Scale &middot; 2023 to 2024</span></div>
+          <div class="built">Partial infrastructure that never talked to itself. The work was connection: one flow, automated handoffs, and the leaks between systems closed.</div>
           <div class="res">$1.6<em>M</em></div>
           <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a class="row" href="/case-studies/smart-sellers-academy/">
-          <div class="co">Smart Sellers Academy<span>Active &middot; since January 2025</span></div>
-          <div class="built">Engaged with zero GTM infrastructure. Lead generation, sales process, funnel architecture, CRM pipeline and KPI dashboards, all still running.</div>
+          <div class="co">Smart Sellers Academy<span>Scale &middot; active since January 2025</span></div>
+          <div class="built">Engaged with zero GTM infrastructure. Lead generation, sales process, funnel architecture, CRM pipeline and a live KPI warehouse the team decides against weekly.</div>
           <div class="res">$1.5<em>M</em></div>
           <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a class="row" href="/case-studies/big-little-gyms/">
-          <div class="co">Big Little Gyms<span>Growth ops lead &middot; 2020 to 2021</span></div>
-          <div class="built">Acquisition, fulfillment and client experience systems that took the business from 15 to 189 clients in 11 months, through COVID, without breaking.</div>
+          <div class="co">Big Little Gyms<span>Scale &middot; 2020 to 2021</span></div>
+          <div class="built">Acquisition, fulfilment and client experience systems that took the business from 15 to 189 clients in 11 months, through COVID, without breaking.</div>
           <div class="res">12<em>&times;</em></div>
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="row" href="/case-studies/on-site-rentals/">
+          <div class="co">ON-SITE Rentals<span>Build &middot; live September 2026</span></div>
+          <div class="built">A Phoenix crane and heavy-equipment operator, moved off a WordPress brochure onto a storefront that captures the quote, signs the agreement, holds the deposit and books the call.</div>
+          <div class="res">Live</div>
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="row" href="/case-studies/machinerymaps/">
+          <div class="co">MachineryMaps<span>Build &middot; in build, 2026</span></div>
+          <div class="built">The marketplace underneath ON-SITE. Same codebase, architected multi-vendor from day one, so the first storefront becomes vendor one of many without being built twice.</div>
+          <div class="res">In build</div>
           <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
       </div>
       <div class="after"><a href="/case-studies/" class="btn ghost">Read the full case studies &rarr;</a></div>
-      <p class="disc">These are outcomes from specific engagements over multi-year periods. They are not typical, they are not a promise of earnings, and your results depend on your market, your offer, and the work your team puts in.</p>
+      <p class="disc">And one of our own: <a href="/case-studies/expert-health/" style="color:var(--sig-highlight);text-decoration:underline;text-underline-offset:3px">Expert Health</a>, a telehealth brand we co-founded, built from zero, and run today. Every capability on this site is in production there. Results shown are outcomes from specific engagements over multi-year periods. They are not typical, they are not a promise of earnings, and your results depend on your market, your offer, and the work your team puts in.</p>
     </section>
 
     <!-- ══ FOUNDER ═══════════════════════════════════════════ -->
@@ -684,10 +254,10 @@ p strong { color: var(--ink); font-weight: 700; }
         </div>
         <div class="right">
           <span class="label">Who you actually work with</span>
-          <h2>I install myself above your team, <em>not inside it.</em></h2>
-          <p>I have spent six years installing growth engines for founder-led companies. Five of them are written up on this site, and together they generated $11.5M. The pattern was the same every time. The founder was the constraint, and no amount of extra tooling ever fixed that.</p>
-          <p>Today I am co-founder and president of Expert Health, a telehealth and peptide brand running on the same playbook. That business is where everything gets tested before it goes anywhere near a client. AI search is its number one source of leads and purchases right now, which is not something I read in a newsletter. It is my own dashboard.</p>
-          <p>So when we get into your business, you are not hiring an agency that wants to hold your ad account forever. You are getting someone who sets the standard, finds the constraint, and makes sure your team can run what gets built once we are done.</p>
+          <h2>The same team writes the offer, builds the software, buys the media, <em>and reports the numbers.</em></h2>
+          <p>I have spent six years installing growth engines for founder-led companies. Seven of them are written up on this site, and the five growth installs generated $11.5M between them. The pattern was the same every time: the founder was the constraint, and no single vendor could follow the bottleneck once it moved.</p>
+          <p>So we stopped selling pieces. My partners and I run one team that covers the whole engine, from the offer to the software underneath it, and I stay accountable for the outcome rather than for a deliverable.</p>
+          <p>The fastest way to judge whether someone can build your business is whether they have built their own. I am co-founder and president of Expert Health, a telehealth brand we built from zero on exactly this playbook. Everything we sell is running in production there before it goes anywhere near a client.</p>
           <div class="sig">Ryan Frost</div>
           <div class="title">Founder &middot; Abundance</div>
         </div>
@@ -702,24 +272,24 @@ p strong { color: var(--ink); font-weight: 700; }
       </div>
       <div class="faq">
         <details>
-          <summary>Are you an AI agency?</summary>
-          <div class="a">No. An agency wants to own a channel and keep billing you for it. We find the constraint that is capping growth, install the fix with your team, and leave them owning it. If the honest answer is that you do not need anything from us yet, you get told that on the call.</div>
+          <summary>Are you an agency?</summary>
+          <div class="a">Not in the way that word usually means. An agency owns a channel and bills you for it every month, and it stops where its invoice stops. We are accountable for the whole engine, we install the fix with your team, and we leave them owning it. If the honest answer is that you do not need anything from us yet, you get told that on the call.</div>
         </details>
         <details>
-          <summary>Does my team need to be technical?</summary>
-          <div class="a">No, and nobody on it needs to become the AI person. That role is one of the main reasons these projects stall. The install happens with the people you already have, doing the jobs they already do.</div>
+          <summary>What does "the entire go-to-market engine" actually include?</summary>
+          <div class="a">Everything between a stranger and a paying customer, and the software underneath it. Offer and positioning. Ads, creative, organic and search. The funnel, the video, the application, the follow-up. CRM, pipeline and sales process. Websites, storefronts and custom tools. And the AI layer that makes all of it cheaper to run. The three lane pages break each part down.</div>
+        </details>
+        <details>
+          <summary>Can we hire you for just one piece?</summary>
+          <div class="a">Yes, and most engagements start that way. We still begin from your numbers rather than from the piece you asked for, because the thing you noticed is often not the thing that is capping you. If it turns out the ads are fine and the sales process is the leak, we say so before you spend on ads.</div>
+        </details>
+        <details>
+          <summary>Do you build software or just marketing?</summary>
+          <div class="a">Both, on purpose. Marketing that lands on a site that cannot take an order is wasted. Software nobody sends traffic to is a hobby. The ON-SITE Rentals and MachineryMaps case studies are the build side, the five growth installs are the marketing side, and Expert Health is both at once.</div>
         </details>
         <details>
           <summary>What actually happens on the discovery call?</summary>
-          <div class="a">Thirty minutes on your business. You leave with three things. Which of the five areas is most likely capping you. Whether your business is ready for AI at all, and if it is not, what has to go in first. And a straight answer on whether working together is worth it for you. You keep all three either way.</div>
-        </details>
-        <details>
-          <summary>Our data is a mess. Is that a problem?</summary>
-          <div class="a">It is normal, and it is usually part of the finding. We would rather know early, because a constraint sitting in your reporting is far cheaper to fix than a year of decisions made on numbers nobody trusts.</div>
-        </details>
-        <details>
-          <summary>How quickly does anything move?</summary>
-          <div class="a">You fix one constraint at a time and you watch that number before spending on the next one. That is deliberate, and it is also why we will not quote you a timeline before we have seen your numbers. Anyone who does is guessing.</div>
+          <div class="a">Thirty minutes on your business. You leave with three things. Which stage of the engine is most likely capping you. Whether your business is ready for what you are asking for, and if it is not, what has to go in first. And a straight answer on whether working together is worth it. You keep all three either way.</div>
         </details>
         <details>
           <summary>What does it cost?</summary>
@@ -728,10 +298,7 @@ p strong { color: var(--ink); font-weight: 700; }
       </div>
     </section>
 
-    <!-- ══ BOOK · the one action on the page ═════════════════
-         Calendar comes from CONFIG.CALENDAR_URL at the bottom of this
-         file. Blank until GHL is built, and the section degrades to an
-         explicit empty state plus a mailto rather than a dead iframe. -->
+    <!-- ══ BOOK · the one action on the site ═════════════════ -->
     <section class="book" id="book">
       <div class="horizon" aria-hidden="true"></div>
       <span class="label on-dark">Step one</span>
@@ -740,13 +307,13 @@ p strong { color: var(--ink); font-weight: 700; }
       <div class="answers">
         <div class="ans">
           <div class="n">1</div>
-          <h3>Which area is capping you</h3>
-          <p>Of the five places AI pays off in a business, which one is most likely holding yours back right now.</p>
+          <h3>Which stage is capping you</h3>
+          <p>Of the five stages of the engine, which one is most likely holding your business back right now.</p>
         </div>
         <div class="ans">
           <div class="n">2</div>
           <h3>Whether you are ready</h3>
-          <p>An honest read on whether your business is ready for AI, and if it is not, exactly what has to go in first.</p>
+          <p>An honest read on whether the business is ready for what you are asking for, and if it is not, exactly what has to go in first.</p>
         </div>
         <div class="ans">
           <div class="n">3</div>
@@ -765,18 +332,22 @@ p strong { color: var(--ink); font-weight: 700; }
       <p class="fallback">Prefer email? <a href="mailto:hello@weareabundance.com">hello@weareabundance.com</a></p>
     </section>
 
-    <!-- ══ FOOTER ════════════════════════════════════════════ -->
     <footer class="foot">
-      <div class="top">
+      <div class="top four">
         <div class="brand-col">
           <span class="logo">Abundance<em>.</em></span>
-          <p>We find the one constraint that is capping growth, and install the fix with AI alongside the team you already have. Your people own what gets built.</p>
+          <p>We build and run the entire go-to-market engine for founder-led businesses. Your team owns what gets built.</p>
         </div>
         <div class="col">
-          <h4>The work</h4>
-          <a href="#areas">The five areas</a>
-          <a href="#how">How it works</a>
+          <h4>What we do</h4>
+          <a href="/scale/">Scale</a>
+          <a href="/build/">Build</a>
+          <a href="/ai/">AI</a>
+        </div>
+        <div class="col">
+          <h4>Proof</h4>
           <a href="/case-studies/">Case studies</a>
+          <a href="/case-studies/expert-health/">Our own: Expert Health</a>
         </div>
         <div class="col">
           <h4>Talk to us</h4>
@@ -795,95 +366,12 @@ p strong { color: var(--ink); font-weight: 700; }
 </div>
 
 <script>
-/* ═══════════════════════════════════════════════════════════════════
-   CONFIG · the homepage has exactly one thing left to wire.
-
-   The page renders correctly with it blank, so this can be reviewed
-   before GHL exists. Same pattern as /assessment/index.html.
-   ═══════════════════════════════════════════════════════════════════ */
-const CONFIG = {
-  // GHL calendar embed for the 30-minute AI Growth Discovery Call.
-  // Must be the same calendar and the same event name as /assessment,
-  // or the two funnels report against different events.
-  CALENDAR_URL: '',
-};
-
-/* ── Calendar. Only swap in the iframe once there is a URL for it. ── */
-(function () {
-  var frame = document.getElementById('calendar');
-  var empty = document.getElementById('cal-empty');
-  if (!frame || !empty) return;
-  if (CONFIG.CALENDAR_URL) {
-    frame.src = CONFIG.CALENDAR_URL;
-    frame.hidden = false;
-    empty.hidden = true;
-  }
-})();
-
-/* ── Float-nav auto-hide on scroll ── */
-(function () {
-  var nav = document.getElementById('float-nav');
-  var mobile = document.getElementById('fn-mobile');
-  var burger = document.getElementById('fn-burger');
-  if (!nav) return;
-  var lastY = window.scrollY;
-  var ticking = false;
-
-  function onScroll() {
-    var y = window.scrollY;
-    if (y < 120) nav.classList.remove('hidden');
-    else if (y > lastY + 4) {
-      nav.classList.add('hidden');
-      if (mobile) mobile.classList.remove('open');
-      if (burger) burger.setAttribute('aria-expanded', 'false');
-    } else if (y < lastY - 4) nav.classList.remove('hidden');
-    lastY = y;
-    ticking = false;
-  }
-
-  document.addEventListener('scroll', function () {
-    if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
-  }, { passive: true });
-
-  if (burger && mobile) {
-    burger.addEventListener('click', function () {
-      var open = mobile.classList.toggle('open');
-      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    mobile.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        mobile.classList.remove('open');
-        burger.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-})();
-
-/* ── Cursor-tied light field in the hero (Rule 9, motion 1).
-      Pointer only, and off entirely under reduced motion. ── */
-(function () {
-  var hero = document.querySelector('.hero');
-  var light = document.getElementById('hero-light');
-  if (!hero || !light) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (!window.matchMedia('(pointer: fine)').matches) return;
-
-  var queued = false, px = 50, py = 38;
-  hero.addEventListener('pointermove', function (e) {
-    var r = hero.getBoundingClientRect();
-    px = ((e.clientX - r.left) / r.width) * 100;
-    py = ((e.clientY - r.top) / r.height) * 100;
-    if (!queued) {
-      queued = true;
-      window.requestAnimationFrame(function () {
-        light.style.setProperty('--mx', px + '%');
-        light.style.setProperty('--my', py + '%');
-        queued = false;
-      });
-    }
-  }, { passive: true });
-})();
+/* CONFIG · the one thing left to wire on this page. Same calendar and
+   the same event name as /assessment and every other page, or the
+   funnels report against different events. */
+window.CONFIG = { CALENDAR_URL: '' };
 </script>
+<script src="/assets/js/site.js" defer></script>
 
 </body>
 </html>
