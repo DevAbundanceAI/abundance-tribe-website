@@ -558,3 +558,8 @@ p strong { color: var(--ink); font-weight: 700; }
 
 /* A link inside an area card (the God Mode card points at HeyFrosty). */
 .hub .area p a { color: var(--sig-highlight); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+
+/* Hero exclusions: three scannable lines instead of a paragraph. */
+.hero .nots { list-style: none; display: flex; flex-direction: column; gap: 8px; max-width: 54ch; margin: 0 auto 22px; font-size: clamp(16px, 1.35vw, 19px); color: var(--ink-body); text-align: left; }
+.hero .nots li { position: relative; padding-left: 22px; line-height: 1.45; }
+.hero .nots li::before { content: ''; position: absolute; left: 0; top: 0.62em; width: 8px; height: 8px; border-radius: 50%; background: var(--grad-sig); box-shadow: 0 0 10px rgba(255,38,46,0.5); }
