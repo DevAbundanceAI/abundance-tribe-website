@@ -18,6 +18,11 @@
       Cloudflare Pages answers unknown paths with the homepage and a 200,
       so today those links quietly serve the wrong page while looking
       fine. A real 301 is more honest and keeps the link equity.
+
+   4. Archive block. The same retired pages also sit under /archive/, and
+      Pages served every one of them at 200. They carry retired prices
+      and proof that contradicts the reconciled set, so the 301 above was
+      only closing the front door. They stay in the repo for reference.
    ═══════════════════════════════════════════════════════════════════ */
 
 const CANONICAL = 'weareabundance.com';
@@ -49,6 +54,14 @@ export async function onRequest(context) {
   //    readable at the domain. Nothing on the site links to a .md file.
   if (/\.md$/i.test(url.pathname)) {
     return new Response('Not found', { status: 404, headers: { 'Cache-Control': 'no-store' } });
+  }
+
+  // 4. The archived tier pages. /tribe and /partner 301 above, but their
+  //    files live on at /archive/tribe and /archive/partner and were being
+  //    served whole: $197/mo and $397/mo price tables, and $12M and $2.8M
+  //    proof that no longer reconciles. Send them where the live ones go.
+  if (/^\/archive(\/|$)/i.test(url.pathname)) {
+    return Response.redirect(new URL('/', url.origin).toString(), 301);
   }
 
   return next();
