@@ -32,6 +32,13 @@ const OLD_HOSTS = ['findabundance.ai', 'www.findabundance.ai',
 const RETIRED = {
   '/tribe': '/', '/shift': '/', '/unlocked': '/',
   '/freedom': '/', '/partner': '/',
+  // Both of these were still serving a retired offer. /selling-system
+  // carried a $27,500/mo price table and $12M of proof that does not
+  // reconcile; /free sold a $97/mo membership and was not even noindexed,
+  // so it was the one retired page a crawler could still pick up. Nothing
+  // on the live site links to either. The files stay in the repo, so
+  // rebuilding either one as a real page is still open.
+  '/selling-system': '/', '/free': '/',
 };
 
 export async function onRequest(context) {

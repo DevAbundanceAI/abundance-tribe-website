@@ -92,11 +92,13 @@ The reconciled set, matching itsryanfrost.com and the funnel. Nothing else.
 
 ## Still open
 
-Maintained in `SESSION-LOG.md` (newest session first). Short version as of 2026-09-16: GoDaddy forwarding for tryabundance.ai; buyer-first rewrite of the `/scale` and `/build` heroes; `templates.html` cleanup; retire or rebuild `/selling-system` and `/free`; old case-study prose; make the repo private; `CALENDAR_URL` / `/api/lead` / video wiring; Claude Design theory-only sync; lawyer pass on `/privacy` and `/terms`; the Run-tier offer document.
+Maintained in `SESSION-LOG.md` (newest session first). Short version as of 2026-09-17: GoDaddy forwarding for tryabundance.ai; make the repo private; `CALENDAR_URL` / `/api/lead` / video wiring; Claude Design theory-only sync; lawyer pass on `/privacy` and `/terms`; the Run-tier offer document.
 
 ## Legal and docs
 
 - `/privacy/` and `/terms/` are live, noindex, linked from every footer except `/assessment` (no exits).
 - Repo `.md` files return 404 at the domain (middleware). The repo is still public on GitHub.
+- `/archive/*`, `/selling-system` and `/free` 301 to the homepage (middleware). All three were serving retired offers with prices and proof that does not reconcile. The files stay in the repo.
+- `templates.html` is a template library, not a page of claims. Every name, quote, guarantee, price and track-record number in it is a bracketed placeholder, because `BRAND.md` says the library gets copied into client repos.
 - `DESIGN-SYSTEM-FOR-CLAUDE.md` is the one-file design brief for design tools.
 - Competitor teardowns live in `abundance-os/research/competitors/` (private), not here.
