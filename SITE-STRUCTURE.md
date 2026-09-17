@@ -92,23 +92,11 @@ The reconciled set, matching itsryanfrost.com and the funnel. Nothing else.
 
 ## Still open
 
-- **`selling-system.html`** and **`/free`** still sell retired offers. Both are
-  out of the sitemap. Retire or rebuild.
-- **`templates.html`** carries 48 instances of the fabricated proof (Sarah
-  Hendrickson, Coaching Collective, Cohort 04, $200M). It is a live page used to
-  demo to prospects. Same cleanup the homepage got. Also `TR-01/02/03` is used
-  twice (Transformation and Training), which is fine in a gallery and fatal in
-  a component library.
-- **The five old case-study pages** keep their original em dashes and the
-  $135K / $225K run-rate figures in body copy. Pre-existing prose, its own pass.
-- **`assets/js/nav.js`** still renders the dead ladder. Only `/free` and the
-  archive pages load it.
-- **`CALENDAR_URL`** is blank on every page until GHL exists. Each page degrades
-  to an explicit empty state plus a mailto.
-- **`/api/lead`**: the webhook URL must land as a Cloudflare secret, never in
-  this public repo.
-- **Design-sync**: this repo has no compiled component library (zero React in
-  11,000 lines of `brand.html` + `templates.html`), so the Claude Design import
-  cannot ship real components without a build that does not exist yet. Deferred.
-  If it happens: clean `templates.html` first, curate ~35 sections, exclude the
-  23 pricing / scarcity / guarantee / cohort-bar templates outright.
+Maintained in `SESSION-LOG.md` (newest session first). Short version as of 2026-09-16: GoDaddy forwarding for tryabundance.ai; buyer-first rewrite of the `/scale` and `/build` heroes; `templates.html` cleanup; retire or rebuild `/selling-system` and `/free`; old case-study prose; make the repo private; `CALENDAR_URL` / `/api/lead` / video wiring; Claude Design theory-only sync; lawyer pass on `/privacy` and `/terms`; the Run-tier offer document.
+
+## Legal and docs
+
+- `/privacy/` and `/terms/` are live, noindex, linked from every footer except `/assessment` (no exits).
+- Repo `.md` files return 404 at the domain (middleware). The repo is still public on GitHub.
+- `DESIGN-SYSTEM-FOR-CLAUDE.md` is the one-file design brief for design tools.
+- Competitor teardowns live in `abundance-os/research/competitors/` (private), not here.
