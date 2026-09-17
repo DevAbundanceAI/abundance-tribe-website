@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abundance · Section Templates</title>
-<meta name="description" content="The Abundance section template library — paste-ready production sections grouped by purpose. Hero, logo bar, pain, benefits, proof, how-it-works, lists, CTA, pricing, FAQ. Light + dark.">
+<meta name="description" content="The Abundance section template library. Paste-ready production sections grouped by purpose. Hero, logo bar, pain, benefits, proof, how-it-works, lists, CTA, pricing, FAQ. Light + dark.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/bxi7koh.css">
@@ -388,6 +388,36 @@ body.light-mode .fn-mobile a { color: var(--ink-dark-soft); }
   color: var(--ink-body);
 }
 body.light-mode .page-hero .lead { color: var(--ink-dark-soft); }
+
+/* Sample-content notice. Every name, quote, number and price in this library
+   is a placeholder in [square brackets]. The library is portable: BRAND.md
+   says it gets copied into client repos, so nothing in here may read as a
+   real claim about Abundance or about anyone else. */
+.sample-note {
+  max-width: 60ch;
+  margin: 28px 0 0;
+  padding: 16px 20px;
+  border: 1px solid var(--hairline-strong);
+  border-left: 3px solid var(--sig);
+  border-radius: 10px;
+  background: rgba(237,28,36,0.05);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-body);
+}
+.sample-note strong { color: var(--ink); font-weight: 700; }
+.sample-note code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.08);
+  color: var(--sig-highlight);
+}
+body.light-mode .sample-note { color: var(--ink-dark-soft); border-color: var(--hairline-cream-strong); }
+body.light-mode .sample-note strong { color: var(--ink-dark); }
+body.light-mode .sample-note code { background: rgba(10,10,10,0.06); color: var(--sig-deep); }
 
 .cat {
   padding: clamp(60px, 6vw, 100px) clamp(22px, 5vw, 80px);
@@ -4084,7 +4114,17 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
       <span class="label">ABUNDANCE · SECTION TEMPLATE LIBRARY</span>
       <h1>Pick a section. <em>Paste it.</em> Ship<span class="dot-period"></span></h1>
       <p class="lead">
-        Production-ready sections grouped by purpose. Every template is brand-locked, drop-and-paste, and works in both light + dark mode. Pull the closest one when building a new page — reuse beats invent.
+        Production-ready sections grouped by purpose. Every template is brand-locked, drop-and-paste, and works in both light + dark mode. Pull the closest one when building a new page. Reuse beats invent.
+      </p>
+      <p class="sample-note">
+        <strong>Everything below is sample content.</strong> Every name, company,
+        quote, testimonial, guarantee and price is a placeholder written in
+        <code>[square brackets]</code>. None of it is a real claim about
+        Abundance or about a client, and none of it may ship as written. This
+        library is portable and gets copied into client repos, so fill the
+        brackets with that client's own facts before anything goes live.
+        Abundance's own proof is the reconciled set on <code>/case-studies</code>,
+        and Abundance pages carry no price and no scarcity.
       </p>
     </section>
 
@@ -4114,7 +4154,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <div>
             <span class="label on-dark">THE SELLING SYSTEM · INSTALLED</span>
             <h1>Six hires worth of work. <em>One team.</em></h1>
-            <p class="lead">Watch the 12-minute walkthrough. See exactly what we install in your business — ads, funnels, CRM, the entire revenue engine.</p>
+            <p class="lead">Watch the 12-minute walkthrough. See exactly what we install in your business: ads, funnels, CRM, the entire revenue engine.</p>
             <div class="cta-row" style="display:flex;gap:12px;flex-wrap:wrap;">
               <button class="btn gradient">Apply now →</button>
               <button class="btn ghost">Read the case studies</button>
@@ -4133,9 +4173,9 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <section class="hero-03 t-section dark">
           <div class="num">11<em>x</em></div>
           <div class="right">
-            <span class="label on-dark">CASE STUDY · COACHING COLLECTIVE</span>
+            <span class="label on-dark">CASE STUDY · [COMPANY]</span>
             <h1>From $30K/mo to $140K/mo in <em>90 days.</em></h1>
-            <p class="lead">Sarah fired her agency on day 14. Six months later: 11× revenue, zero copywriters on payroll, founder still sleeps at night.</p>
+            <p class="lead">[One-line result story. Who they dropped, how long it took, and what the founder got back.]</p>
             <button class="btn gradient">Read the full story →</button>
             <span class="sub">3-MIN READ</span>
           </div>
@@ -4148,19 +4188,19 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <div class="left">
             <span class="label on-dark">YOUR CRM · IN YOUR POCKET</span>
             <h1>Every booked call. <em>Every dollar closed.</em> Live, on your phone.</h1>
-            <p class="lead">GHL mobile, set up by us. Every lead, every pipeline stage, every Stripe receipt — synced and ready. You sleep, the system runs.</p>
+            <p class="lead">GHL mobile, set up by us. Every lead, every pipeline stage, every Stripe receipt, all synced and ready. You sleep, the system runs.</p>
             <div class="ctas">
               <button class="btn gradient">Apply now →</button>
               <button class="btn ghost">See a demo</button>
             </div>
           </div>
           <div class="mock-phone">
-            <div class="pr hot"><span>Sarah H. · $12K Install</span><span class="amt">CLOSED</span></div>
+            <div class="pr hot"><span>[Name 1] · [Tier]</span><span class="amt">CLOSED</span></div>
             <div class="pr warm"><span>Marcus R. · Discovery</span><span class="amt">2:00P</span></div>
             <div class="pr"><span>Dev O. · Application</span><span class="amt">NEW</span></div>
             <div class="pr"><span>Jenna T. · Discovery</span><span class="amt">3:30P</span></div>
-            <div class="pr"><span>Pellow · Renewal</span><span class="amt">$3K</span></div>
-            <div class="pr"><span>Halcyon · Discovery</span><span class="amt">FRI</span></div>
+            <div class="pr"><span>[Client 1] · Renewal</span><span class="amt">$3K</span></div>
+            <div class="pr"><span>[Client 3] · Discovery</span><span class="amt">FRI</span></div>
           </div>
         </section>
       </div>
@@ -4168,11 +4208,11 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
       <div class="tpl">
         <div class="tpl-strip"><strong>HE-05</strong> · Full-bleed atmospheric background · text overlay <span class="tpl-classes">.hero-05</span></div>
         <section class="hero-05 t-section">
-          <span class="label on-dark">THE SELLING SYSTEM · COHORT 04</span>
+          <span class="label on-dark">THE SELLING SYSTEM · [COHORT]</span>
           <h1>Six hires worth of work. <em>One install.</em> <em>14 days.</em></h1>
-          <p class="lead">Ads, funnel, CRM, sales infrastructure — installed and humming in two weeks. After that, we tune. You sell.</p>
+          <p class="lead">Ads, funnel, CRM and sales infrastructure, all installed and humming in two weeks. After that, we tune. You sell.</p>
           <div class="cta-row">
-            <button class="btn gradient">Apply for Cohort 04 →</button>
+            <button class="btn gradient">Apply for [cohort] →</button>
             <button class="btn ghost">Watch the 12-min walkthrough</button>
           </div>
         </section>
@@ -4203,9 +4243,9 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
       <div class="tpl">
         <div class="tpl-strip"><strong>HE-07</strong> · Centered VSL · 16:9 · headline above, CTA below <span class="tpl-classes">.hero-07</span></div>
         <section class="hero-07 t-section dark">
-          <span class="label on-dark eb">12-MIN WALKTHROUGH · SARAH'S INSTALL</span>
-          <h1>Watch how we install <em>$200M in revenue</em> in 14 days flat.</h1>
-          <p class="lead">Sarah's real account, day 1 to day 14. Every ad, every funnel page, every CRM stage. No edits. No fluff.</p>
+          <span class="label on-dark eb">[RUNTIME] WALKTHROUGH · [CLIENT] INSTALL</span>
+          <h1>Watch how we install <em>[$X]M in revenue</em> in 14 days flat.</h1>
+          <p class="lead">[Whose account, and the window it covers. Say what is on screen and that nothing is edited.]</p>
           <div class="vsl-frame">
             <div class="time-tag">12:04</div>
             <div class="play"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div>
@@ -4222,7 +4262,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <div class="tpl-strip"><strong>HE-08</strong> · Centered reel · 9:16 · stats flanking left/right <span class="tpl-classes">.hero-08</span></div>
         <section class="hero-08 t-section dark">
           <h1>One reel. <em>One install.</em> One quarter to $140K/mo.</h1>
-          <p class="lead">Sarah recorded this on day 90. Watch the founder explain — in her own words — what changed.</p>
+          <p class="lead">[When the client recorded this, and what they walk through in their own words.]</p>
           <div class="grid">
             <div class="side">
               <div class="stat-row"><div class="stat-l">REVENUE</div><div class="stat-n">$30K → $140<em>K</em></div></div>
@@ -4232,7 +4272,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             <div class="reel">
               <div class="duration">2:14</div>
               <div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div>
-              <div class="cap">"3× the deals I closed <em>all of last year.</em>"</div>
+              <div class="cap">"[Pull quote. The number, then <em>the span it covers.</em>]"</div>
             </div>
             <div class="side">
               <div class="stat-row right"><div class="stat-l">CPL DROP</div><div class="stat-n"><em>42</em>%</div></div>
@@ -4250,7 +4290,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
       <div class="tpl">
         <div class="tpl-strip"><strong>HE-09</strong> · Centered VSL + stats strip below <span class="tpl-classes">.hero-09</span></div>
         <section class="hero-09 t-section dark">
-          <span class="label on-dark eb">COHORT 04 · 6 SEATS LEFT</span>
+          <span class="label on-dark eb">[COHORT] · 6 SEATS LEFT</span>
           <h1>Press play. See exactly what <em>installs in 14 days.</em></h1>
           <div class="vsl-frame">
             <div class="badge">▶ WATCH</div>
@@ -4258,13 +4298,13 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             <div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div>
           </div>
           <div class="strip">
-            <div><div class="n">$200<em>M</em></div><div class="l">Revenue lifted</div></div>
-            <div><div class="n">100<em>+</em></div><div class="l">Founders</div></div>
+            <div><div class="n">[$X]<em>M</em></div><div class="l">Revenue lifted</div></div>
+            <div><div class="n">[N]<em>+</em></div><div class="l">Founders</div></div>
             <div><div class="n">14<em>d</em></div><div class="l">Install</div></div>
             <div><div class="n">5–11<em>x</em></div><div class="l">Q1 lift</div></div>
           </div>
           <div class="cta-row">
-            <button class="btn gradient">Apply for Cohort 04 →</button>
+            <button class="btn gradient">Apply for [cohort] →</button>
             <button class="btn ghost">Book a strategy call</button>
           </div>
         </section>
@@ -4283,12 +4323,12 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <section class="logos-01 t-section dark">
           <span class="label on-dark eb">TRUSTED BY FOUNDERS AT</span>
           <div class="logo-strip">
-            <span class="logo">Pellow</span>
-            <span class="logo">Brightline</span>
-            <span class="logo">Halcyon</span>
-            <span class="logo">Inkwell</span>
-            <span class="logo">Verdant</span>
-            <span class="logo">Tessellate</span>
+            <span class="logo">[Client 1]</span>
+            <span class="logo">[Client 2]</span>
+            <span class="logo">[Client 3]</span>
+            <span class="logo">[Client 4]</span>
+            <span class="logo">[Client 5]</span>
+            <span class="logo">[Client 6]</span>
           </div>
         </section>
       </div>
@@ -4297,16 +4337,16 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <div class="tpl-strip"><strong>LC-02</strong> · Logo row + stat band beneath <span class="tpl-classes">.logos-02</span></div>
         <section class="logos-02 t-section dark">
           <div class="logo-row">
-            <span class="logo">Pellow</span>
-            <span class="logo">Brightline</span>
-            <span class="logo">Halcyon</span>
-            <span class="logo">Inkwell</span>
-            <span class="logo">Verdant</span>
-            <span class="logo">Tessellate</span>
+            <span class="logo">[Client 1]</span>
+            <span class="logo">[Client 2]</span>
+            <span class="logo">[Client 3]</span>
+            <span class="logo">[Client 4]</span>
+            <span class="logo">[Client 5]</span>
+            <span class="logo">[Client 6]</span>
           </div>
           <div class="stats">
-            <div class="stat"><div class="n">100<em>+</em></div><div class="l">Founders</div></div>
-            <div class="stat"><div class="n">$200<em>M</em></div><div class="l">Revenue lifted</div></div>
+            <div class="stat"><div class="n">[N]<em>+</em></div><div class="l">Founders</div></div>
+            <div class="stat"><div class="n">[$X]<em>M</em></div><div class="l">Revenue lifted</div></div>
             <div class="stat"><div class="n">14<em>d</em></div><div class="l">Ads-live</div></div>
             <div class="stat"><div class="n">5–11<em>x</em></div><div class="l">Lift in Q1</div></div>
           </div>
@@ -4318,12 +4358,12 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <section class="logos-03 t-section dark">
           <span class="label on-dark">AS FEATURED IN</span>
           <div class="grid">
-            <div class="cell">Pellow</div>
-            <div class="cell">Brightline</div>
-            <div class="cell">Halcyon</div>
-            <div class="cell">Inkwell</div>
-            <div class="cell">Verdant</div>
-            <div class="cell">Tessellate</div>
+            <div class="cell">[Client 1]</div>
+            <div class="cell">[Client 2]</div>
+            <div class="cell">[Client 3]</div>
+            <div class="cell">[Client 4]</div>
+            <div class="cell">[Client 5]</div>
+            <div class="cell">[Client 6]</div>
             <div class="cell">Quanta</div>
             <div class="cell">Foundry</div>
             <div class="cell">Northbound</div>
@@ -4337,34 +4377,34 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
       <div class="tpl">
         <div class="tpl-strip"><strong>LC-04</strong> · Infinite marquee scroll · auto-animated <span class="tpl-classes">.logos-04</span></div>
         <section class="logos-04 t-section dark">
-          <span class="label on-dark eb">100+ FOUNDERS · ONE SYSTEM</span>
+          <span class="label on-dark eb">[N] FOUNDERS · ONE SYSTEM</span>
           <div class="track">
-            <span class="logo">Pellow</span><span class="logo">Brightline</span><span class="logo">Halcyon</span>
-            <span class="logo">Inkwell</span><span class="logo">Verdant</span><span class="logo">Tessellate</span>
+            <span class="logo">[Client 1]</span><span class="logo">[Client 2]</span><span class="logo">[Client 3]</span>
+            <span class="logo">[Client 4]</span><span class="logo">[Client 5]</span><span class="logo">[Client 6]</span>
             <span class="logo">Quanta</span><span class="logo">Foundry</span><span class="logo">Northbound</span>
-            <span class="logo">Pellow</span><span class="logo">Brightline</span><span class="logo">Halcyon</span>
-            <span class="logo">Inkwell</span><span class="logo">Verdant</span><span class="logo">Tessellate</span>
+            <span class="logo">[Client 1]</span><span class="logo">[Client 2]</span><span class="logo">[Client 3]</span>
+            <span class="logo">[Client 4]</span><span class="logo">[Client 5]</span><span class="logo">[Client 6]</span>
             <span class="logo">Quanta</span><span class="logo">Foundry</span><span class="logo">Northbound</span>
           </div>
         </section>
       </div>
 
       <div class="tpl">
-        <div class="tpl-strip"><strong>LC-05</strong> · Logos flanking a big stat ($200M lifted) <span class="tpl-classes">.logos-05</span></div>
+        <div class="tpl-strip"><strong>LC-05</strong> · Logos flanking a big stat ([$X]M lifted) <span class="tpl-classes">.logos-05</span></div>
         <section class="logos-05 t-section dark">
           <div class="stack">
-            <span class="logo">Pellow</span>
-            <span class="logo">Brightline</span>
-            <span class="logo">Halcyon</span>
-            <span class="logo">Verdant</span>
+            <span class="logo">[Client 1]</span>
+            <span class="logo">[Client 2]</span>
+            <span class="logo">[Client 3]</span>
+            <span class="logo">[Client 5]</span>
           </div>
           <div>
-            <div class="big">$200<em>M</em></div>
+            <div class="big">[$X]<em>M</em></div>
             <div class="big-sub">REVENUE LIFTED · LAST 24 MONTHS</div>
           </div>
           <div class="stack">
-            <span class="logo">Inkwell</span>
-            <span class="logo">Tessellate</span>
+            <span class="logo">[Client 4]</span>
+            <span class="logo">[Client 6]</span>
             <span class="logo">Foundry</span>
             <span class="logo">Quanta</span>
           </div>
@@ -4375,16 +4415,16 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <div class="tpl-strip"><strong>LC-06</strong> · Customer quote left · 3×2 logo grid right <span class="tpl-classes">.logos-06</span></div>
         <section class="logos-06 t-section dark">
           <div>
-            <p class="quote">"Half the founders we know switched to <em>Abundance</em> after seeing what Sarah closed in Q3."</p>
-            <div class="by">— A FELLOW FOUNDER, PROBABLY</div>
+            <p class="quote">"[Referral-style quote. Who else moved, and what they saw. Keep <em>the emphasis</em> on the trigger.]"</p>
+            <div class="by">[ATTRIBUTION]</div>
           </div>
           <div class="logos">
-            <div class="cell">Pellow</div>
-            <div class="cell">Brightline</div>
-            <div class="cell">Halcyon</div>
-            <div class="cell">Verdant</div>
-            <div class="cell">Inkwell</div>
-            <div class="cell">Tessellate</div>
+            <div class="cell">[Client 1]</div>
+            <div class="cell">[Client 2]</div>
+            <div class="cell">[Client 3]</div>
+            <div class="cell">[Client 5]</div>
+            <div class="cell">[Client 4]</div>
+            <div class="cell">[Client 6]</div>
           </div>
         </section>
       </div>
@@ -4442,7 +4482,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <div class="tpl-strip"><strong>PP-03</strong> · Single big pain question · radial glow <span class="tpl-classes">.pain-03</span></div>
         <section class="pain-03 t-section dark">
           <p class="q">What if six months from now,<br>your funnel is <em>already running?</em></p>
-          <div class="by">— EVERY ABUNDANCE CLIENT, EVENTUALLY</div>
+          <div class="by">[ATTRIBUTION]</div>
         </section>
       </div>
 
@@ -4483,7 +4523,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <section class="pain-05 t-section">
           <span class="label on-dark eb">THE STAT THAT KEEPS US UP AT NIGHT</span>
           <div class="n">73<em>%</em></div>
-          <p class="body">of coaches stuck under $50K/mo blame "marketing" — but actually have no <em>installed system</em> to blame.</p>
+          <p class="body">of coaches stuck under $50K/mo blame "marketing", but actually have no <em>installed system</em> to blame.</p>
           <span class="src">SOURCE · ABUNDANCE 2026 FOUNDER SURVEY (N=412)</span>
         </section>
       </div>
@@ -4497,7 +4537,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             <div class="item"><div class="num">1</div><div><h3>You're the funnel.</h3><p>If you don't post, leads stop. If you don't write the email, nothing goes out. The "system" lives in your head.</p></div></div>
             <div class="item"><div class="num">2</div><div><h3>Ads spike, then crater.</h3><p>One creative does well, you scale, it fatigues, you panic. Repeat every 14 days. Nobody's running a real ad account.</p></div></div>
             <div class="item"><div class="num">3</div><div><h3>The CRM is "almost done."</h3><p>It's been almost done for nine months. Leads fall through. Show rate is whatever Calendly gives you.</p></div></div>
-            <div class="item"><div class="num">4</div><div><h3>Revenue is flat — but you're working more.</h3><p>You closed $45K last month. You closed $45K this month. You worked 70 hours both times.</p></div></div>
+            <div class="item"><div class="num">4</div><div><h3>Revenue is flat, but you're working more.</h3><p>You closed $45K last month. You closed $45K this month. You worked 70 hours both times.</p></div></div>
           </div>
         </section>
       </div>
@@ -4519,12 +4559,12 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             <div class="ben">
               <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v6H4zM4 14h16v6H4z"/></svg></div>
               <h3>DFY Ads</h3>
-              <p>Creative, copy, media-buying, optimization — we run the whole ad account. $3K/mo budget gets you 30+ booked calls.</p>
+              <p>Creative, copy, media-buying, optimization. We run the whole ad account. [$D/mo] budget gets you 30+ booked calls.</p>
             </div>
             <div class="ben">
               <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12c3-9 15-9 18 0M3 12c3 9 15 9 18 0"/></svg></div>
               <h3>Full funnel build</h3>
-              <p>Landing page, VSL, lead magnet, application — designed, written, tracked. Live in 14 days.</p>
+              <p>Landing page, VSL, lead magnet, application: designed, written, tracked. Live in 14 days.</p>
             </div>
             <div class="ben">
               <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div>
@@ -4544,8 +4584,8 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             <p class="lead">The Selling System replaces the role of marketing-ops-manager. You spend your time selling, fulfilling, and signing checks.</p>
             <div class="bullets">
               <div class="bullet"><span class="ck">✓</span><div><strong>Ads live in 14 days.</strong> Not "we'll start strategy." Live, spending, generating leads.</div></div>
-              <div class="bullet"><span class="ck">✓</span><div><strong>CRM that already works.</strong> Pipelines, SMS, email — installed and tested before handoff.</div></div>
-              <div class="bullet"><span class="ck">✓</span><div><strong>Weekly optimization calls.</strong> CPL, show rate, close rate — we tune. You sell.</div></div>
+              <div class="bullet"><span class="ck">✓</span><div><strong>CRM that already works.</strong> Pipelines, SMS, email, all installed and tested before handoff.</div></div>
+              <div class="bullet"><span class="ck">✓</span><div><strong>Weekly optimization calls.</strong> CPL, show rate, close rate. We tune, you sell.</div></div>
               <div class="bullet"><span class="ck">✓</span><div><strong>Founder access.</strong> Slack channel with our lead strategist. Reply within 4 hours, M–F.</div></div>
             </div>
           </div>
@@ -4574,9 +4614,9 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
               <circle cx="175" cy="12" r="2.5" fill="#ED1C24"/>
             </svg>
             <div class="pipeline">
-              <div class="row"><span class="who">Sarah H. · $12K Install</span><span class="stage hot">Closed</span></div>
+              <div class="row"><span class="who">[Name 1] · [Tier]</span><span class="stage hot">Closed</span></div>
               <div class="row"><span class="who">Marcus R. · Discovery call</span><span class="stage warm">Booked</span></div>
-              <div class="row"><span class="who">Dev O. · $9K Launch</span><span class="stage hot">Closed</span></div>
+              <div class="row"><span class="who">Dev O. · [$A] Launch</span><span class="stage hot">Closed</span></div>
               <div class="row"><span class="who">Jenna T. · Application</span><span class="stage cool">New lead</span></div>
             </div>
           </div>
@@ -4615,7 +4655,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <div class="row">
             <div>
               <h3>2. A funnel that converts.</h3>
-              <p>Landing page, VSL, application, follow-up email + SMS — written, tested, and tracked. Live in 14 days.</p>
+              <p>Landing page, VSL, application, follow-up email + SMS: written, tested, and tracked. Live in 14 days.</p>
             </div>
             <div class="image cool"><div class="ic">F</div></div>
           </div>
@@ -4636,7 +4676,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <h2>The whole revenue engine, <em>in one card.</em></h2>
           <div class="bento">
             <div class="b big red">
-              <div><h3>The full Selling System</h3><p>Ads, funnel, VSL, CRM, payment links, sales playbook — every revenue lever pulled by one team. Live in 14 days. Tuned weekly thereafter.</p></div>
+              <div><h3>The full Selling System</h3><p>Ads, funnel, VSL, CRM, payment links, sales playbook. Every revenue lever pulled by one team. Live in 14 days. Tuned weekly thereafter.</p></div>
               <div class="vis"></div>
             </div>
             <div class="b"><div><h3>9 ad creatives</h3><p>3 hooks × 3 angles. Image + video.</p></div><div class="vis"></div></div>
@@ -4660,7 +4700,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <div class="panel">
             <div>
               <h3>Acquisition · how leads arrive</h3>
-              <p>Daily ad-account management, weekly performance reviews, $3K/mo recommended ad spend, fresh creative every 14 days. By month two you're paying less per lead than you ever have.</p>
+              <p>Daily ad-account management, weekly performance reviews, [$D/mo] recommended ad spend, fresh creative every 14 days. By month two you're paying less per lead than you ever have.</p>
               <ul>
                 <li>9-creative ad pack at install (3 × 3 matrix)</li>
                 <li>Lookalike + retargeting audiences</li>
@@ -4708,16 +4748,16 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <div class="tpl-strip"><strong>PF-02</strong> · Big customer quote · avatar + logo strip <span class="tpl-classes">.proof-02</span></div>
         <section class="proof-02 t-section dark">
           <span class="label on-dark eb">ONE FOUNDER'S STORY</span>
-          <p class="q">"In 90 days Abundance closed <em>3× the deals</em> I did all of last year — without me writing a single ad."</p>
+          <p class="q">"[Client quote. One outcome, one timeframe, in their own words, with <em>the number they care about</em> emphasised.]"</p>
           <div class="by">
             <div class="portrait lg">SH</div>
-            <div class="by-text"><strong>Sarah Hendrickson</strong><span>Founder · Coaching Collective</span></div>
+            <div class="by-text"><strong>[Client name]</strong><span>[Role] · [Company]</span></div>
           </div>
           <div class="logos">
-            <span class="logo">Pellow</span>
-            <span class="logo">Halcyon</span>
-            <span class="logo">Inkwell</span>
-            <span class="logo">Verdant</span>
+            <span class="logo">[Client 1]</span>
+            <span class="logo">[Client 3]</span>
+            <span class="logo">[Client 4]</span>
+            <span class="logo">[Client 5]</span>
           </div>
         </section>
       </div>
@@ -4729,16 +4769,16 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <h2>The boring kind of <em>predictable.</em></h2>
           <div class="grid">
             <div class="card">
-              <p class="q">"Three weeks in, we'd already replaced our $8K/mo agency. By month two we'd <em>5× the booked calls</em>."</p>
-              <div class="by-row"><div class="portrait sm cool">DV</div><div><strong>Dev O.</strong><span>Founder · Halcyon Coaching</span></div></div>
+              <p class="q">"[Short client quote. What changed and how fast, with <em>the result</em> emphasised.]"</p>
+              <div class="by-row"><div class="portrait sm cool">DV</div><div><strong>[Name 2]</strong><span>[Role] · [Company]</span></div></div>
             </div>
             <div class="card">
-              <p class="q">"We finally have a <em>predictable lead engine</em> — not just spikes when I post on LinkedIn."</p>
-              <div class="by-row"><div class="portrait sm warm">JT</div><div><strong>Jenna T.</strong><span>Founder · Brightline Group</span></div></div>
+              <p class="q">"[Short client quote. The before and after in one line, with <em>the payoff</em> emphasised.]"</p>
+              <div class="by-row"><div class="portrait sm warm">JT</div><div><strong>[Name 3]</strong><span>[Role] · [Company]</span></div></div>
             </div>
             <div class="card">
-              <p class="q">"The CRM alone was worth it. Closed our first <em>$50K month</em> the week after install."</p>
-              <div class="by-row"><div class="portrait sm">MR</div><div><strong>Marcus R.</strong><span>Founder · Inkwell Studio</span></div></div>
+              <p class="q">"[Short client quote. The specific thing that worked, and <em>what it produced</em>.]"</p>
+              <div class="by-row"><div class="portrait sm">MR</div><div><strong>[Name 4]</strong><span>[Role] · [Company]</span></div></div>
             </div>
           </div>
         </section>
@@ -4752,7 +4792,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <div class="card">
             <div class="who">
               <div class="portrait lg">SH</div>
-              <div class="who-text"><strong>Sarah Hendrickson</strong><span>Founder · Coaching Collective</span></div>
+              <div class="who-text"><strong>[Client name]</strong><span>[Role] · [Company]</span></div>
             </div>
             <div class="ba before"><span class="lbl">Before · Q2</span><span class="n">$30K/mo</span></div>
             <div class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
@@ -4770,22 +4810,22 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             <div class="vcard">
               <div class="vframe"><div class="duration">2:14</div><div class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div></div>
               <div class="meta">
-                <div class="by"><div class="portrait sm">SH</div><div><strong>Sarah Hendrickson</strong><span>Coaching Collective</span></div></div>
-                <div class="q">"In 90 days, <em>3× the deals</em> I closed all of last year."</div>
+                <div class="by"><div class="portrait sm">SH</div><div><strong>[Client name]</strong><span>[Company]</span></div></div>
+                <div class="q">"[Card quote. The window, then <em>the number</em> it produced.]"</div>
               </div>
             </div>
             <div class="vcard">
               <div class="vframe"><div class="duration">3:42</div><div class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div></div>
               <div class="meta">
-                <div class="by"><div class="portrait sm cool">DV</div><div><strong>Dev O.</strong><span>Halcyon Coaching</span></div></div>
-                <div class="q">"By month two we'd <em>5× the booked calls</em> at half the CPL."</div>
+                <div class="by"><div class="portrait sm cool">DV</div><div><strong>[Name 2]</strong><span>[Company]</span></div></div>
+                <div class="q">"[Card quote. <em>What doubled</em>, and what it cost to get there.]"</div>
               </div>
             </div>
             <div class="vcard">
               <div class="vframe"><div class="duration">1:58</div><div class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div></div>
               <div class="meta">
-                <div class="by"><div class="portrait sm warm">JT</div><div><strong>Jenna T.</strong><span>Brightline Group</span></div></div>
-                <div class="q">"Finally a <em>predictable lead engine</em> — not just LinkedIn spikes."</div>
+                <div class="by"><div class="portrait sm warm">JT</div><div><strong>[Name 3]</strong><span>[Company]</span></div></div>
+                <div class="q">"[Card quote. <em>The state they reached</em>, against what they had before.]"</div>
               </div>
             </div>
           </div>
@@ -4873,7 +4913,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <span class="label on-dark eb">EVERYTHING INCLUDED IN INSTALL</span>
           <h2>Six hires worth of work. <em>One install.</em></h2>
           <div class="checks">
-            <div class="check"><div class="ck">✓</div><div><strong>Full funnel build</strong><span>Landing page, VSL, lead magnet, application — designed + written + tested.</span></div></div>
+            <div class="check"><div class="ck">✓</div><div><strong>Full funnel build</strong><span>Landing page, VSL, lead magnet, application: designed + written + tested.</span></div></div>
             <div class="check"><div class="ck">✓</div><div><strong>Ads creative pack (9 ads)</strong><span>3 hooks × 3 angles. Image + video. Cleared by Meta before launch.</span></div></div>
             <div class="check"><div class="ck">✓</div><div><strong>GHL CRM build-out</strong><span>Pipelines, automations, calendars, SMS + email sequences.</span></div></div>
             <div class="check"><div class="ck">✓</div><div><strong>Sales training</strong><span>2-hour playbook walkthrough + recorded role-play with your closers.</span></div></div>
@@ -4945,12 +4985,12 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <div class="vid">
             <div class="duration">8:24</div>
             <div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div>
-            <div class="cap">Inside the <em>14-day install</em> · Sarah's account, week one.</div>
+            <div class="cap">Inside the <em>[timeframe]</em> · [client] account, week one.</div>
           </div>
           <div class="right">
             <span class="label on-dark eb">WALKTHROUGH</span>
             <h2>Watch the actual <em>install</em> happen.</h2>
-            <p>Eight minutes. The strategist screen-shares Sarah's account from day 1 to day 14. You see every artifact get built.</p>
+            <p>[Runtime, whose account is on screen, the window it covers, and what the viewer watches get built.]</p>
             <ul>
               <li>Day-by-day timeline of what ships</li>
               <li>Real ad creative + the CPL it hit</li>
@@ -4979,7 +5019,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
               <li>9-ad creative pack (3 hooks × 3 angles)</li>
               <li>Daily ad-account management</li>
               <li>Weekly performance reviews</li>
-              <li>$3K/mo recommended ad spend</li>
+              <li>[$D/mo] recommended ad spend</li>
               <li>Lookalike + retargeting audiences</li>
             </ul></div>
             <div class="col"><h3>Conversion</h3><ul>
@@ -5067,7 +5107,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <div class="tpl-strip"><strong>BL-05</strong> · Without/With us · centered 2-col comparison <span class="tpl-classes">.list-05</span></div>
         <section class="list-05 t-section dark">
           <span class="label on-dark eb">THE DELTA</span>
-          <h2>What a normal week looks like — <em>before</em> vs <em>after.</em></h2>
+          <h2>What a normal week looks like, <em>before</em> vs <em>after.</em></h2>
           <div class="grid">
             <div class="col without">
               <span class="lbl">WITHOUT US</span>
@@ -5106,12 +5146,12 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             <div class="line"><div class="what"><strong>Senior copywriter</strong><span>Full-time · 1 hire</span></div><div class="val">$8K/mo</div></div>
             <div class="line"><div class="what"><strong>Media buyer + retainer</strong><span>Agency relationship · 1 retainer</span></div><div class="val">$6K/mo</div></div>
             <div class="line"><div class="what"><strong>CRM admin + automations</strong><span>Contractor · 1 hire</span></div><div class="val">$4K/mo</div></div>
-            <div class="line"><div class="what"><strong>Video editor</strong><span>Freelance · 1 contractor</span></div><div class="val">$3K/mo</div></div>
-            <div class="line"><div class="what"><strong>Funnel builder + designer</strong><span>Freelance · 1 contractor</span></div><div class="val">$3K/mo</div></div>
+            <div class="line"><div class="what"><strong>Video editor</strong><span>Freelance · 1 contractor</span></div><div class="val">[$D/mo]</div></div>
+            <div class="line"><div class="what"><strong>Funnel builder + designer</strong><span>Freelance · 1 contractor</span></div><div class="val">[$D/mo]</div></div>
             <div class="line"><div class="what"><strong>Strategy consultant</strong><span>Fractional · 1 hire</span></div><div class="val">$2K/mo</div></div>
           </div>
           <div class="total"><strong>Total · a la carte</strong><div class="val">$26K/mo</div></div>
-          <div class="total" style="margin-top: 14px; border-top: 2px solid var(--ink-muted);"><strong>Total · with Abundance Scale</strong><div class="val" style="background-image: var(--grad-graphite-shine);">$3K/mo</div></div>
+          <div class="total" style="margin-top: 14px; border-top: 2px solid var(--ink-muted);"><strong>Total · with Abundance Scale</strong><div class="val" style="background-image: var(--grad-graphite-shine);">[$D/mo]</div></div>
         </section>
       </div>
     </section>
@@ -5197,11 +5237,11 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <div class="tpl-strip"><strong>CT-06</strong> · Halo-card CTA with badge <span class="tpl-classes">.cta-06</span></div>
         <section class="cta-06 t-section dark">
           <div class="card">
-            <div class="badge">Cohort 04 · 6 seats left</div>
+            <div class="badge">[Cohort] · 6 seats left</div>
             <h2>Reserve your <em>install slot.</em></h2>
             <p>We onboard 8 founders per cohort. Once the seats fill, we close enrollment for the quarter. Apply now to lock yours.</p>
             <div class="row">
-              <button class="btn gradient">Apply for Cohort 04 →</button>
+              <button class="btn gradient">Apply for [cohort] →</button>
               <button class="btn ghost">See what's included</button>
             </div>
           </div>
@@ -5284,19 +5324,19 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             <div class="col">
               <div class="eb-l">UPFRONT · ONE-TIME</div>
               <h3>Launch / <em>Install</em></h3>
-              <p>Pick Launch ($9K) for ads + funnel only, or Install ($12K) to add the full CRM + sales infrastructure. Both ship in 14 days.</p>
+              <p>Pick Launch ([$A]) for ads + funnel only, or Install ([$B]) to add the full CRM + sales infrastructure. Both ship in 14 days.</p>
               <div class="tiers">
-                <div class="tier-mini"><strong>$9K</strong><span>Launch</span></div>
-                <div class="tier-mini"><strong>$12K</strong><span>Install</span></div>
+                <div class="tier-mini"><strong>[$A]</strong><span>Launch</span></div>
+                <div class="tier-mini"><strong>[$B]</strong><span>Install</span></div>
               </div>
             </div>
             <div class="col">
               <div class="eb-l">CONTINUITY · MONTH 4+</div>
               <h3>Shift / <em>Scale</em></h3>
-              <p>Pick Shift ($1.5K/mo) for coaching + community only, or Scale ($3K/mo) to keep us running ads + media buying after install.</p>
+              <p>Pick Shift ([$C/mo]) for coaching + community only, or Scale ([$D/mo]) to keep us running ads + media buying after install.</p>
               <div class="tiers">
-                <div class="tier-mini"><strong>$1.5K/mo</strong><span>Shift</span></div>
-                <div class="tier-mini"><strong>$3K/mo</strong><span>Scale</span></div>
+                <div class="tier-mini"><strong>[$C/mo]</strong><span>Shift</span></div>
+                <div class="tier-mini"><strong>[$D/mo]</strong><span>Scale</span></div>
               </div>
             </div>
           </div>
@@ -5438,11 +5478,11 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <span class="label on-dark eb">FAQ</span>
           <h2>Everything you'll probably <em>email us</em> about.</h2>
           <div class="grid">
-            <div class="qa"><strong>How long is the contract?</strong><p>Install is one-time. Continuity (Shift or Scale) is month-to-month after that — cancel anytime, 30-day notice.</p></div>
-            <div class="qa"><strong>Do I need an existing offer?</strong><p>Yes — we install marketing infrastructure, we don't invent your offer. If you don't have an offer yet, the Brand OS audit is the better starting point.</p></div>
-            <div class="qa"><strong>What ad spend should I plan for?</strong><p>$3K/mo minimum to see the system work as designed. Most clients run $5–15K/mo by month 3.</p></div>
+            <div class="qa"><strong>How long is the contract?</strong><p>Install is one-time. Continuity (Shift or Scale) is month-to-month after that, cancel anytime, 30-day notice.</p></div>
+            <div class="qa"><strong>Do I need an existing offer?</strong><p>Yes. We install marketing infrastructure. We do not invent your offer. If you don't have an offer yet, the Brand OS audit is the better starting point.</p></div>
+            <div class="qa"><strong>What ad spend should I plan for?</strong><p>[$D/mo] minimum to see the system work as designed. Most clients run $5–15K/mo by month 3.</p></div>
             <div class="qa"><strong>Can I keep my current copywriter?</strong><p>Yes, but most clients let theirs go after seeing what our team ships. We can collaborate either way.</p></div>
-            <div class="qa"><strong>Do you work outside the US?</strong><p>Yes — UK, Canada, Australia, EU. Anywhere Stripe + Meta both operate.</p></div>
+            <div class="qa"><strong>Do you work outside the US?</strong><p>Yes, UK, Canada, Australia, EU. Anywhere Stripe + Meta both operate.</p></div>
             <div class="qa"><strong>What if the ads don't perform?</strong><p>Tuesday optimization calls. New creative every 14 days. We don't stop until CPL is in range.</p></div>
           </div>
         </section>
@@ -5454,7 +5494,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <div class="left">
             <span class="label on-dark">STILL HAVE QUESTIONS?</span>
             <h2>We'd rather answer <em>before</em> you apply.</h2>
-            <p>If your question isn't here, we'll answer it personally — usually within 4 hours, Monday through Friday.</p>
+            <p>If your question isn't here, we'll answer it personally, usually within 4 hours, Monday through Friday.</p>
             <div class="still">
               <strong>Talk to a strategist</strong>
               <p>30-minute call, no pitch. Just answers.</p>
@@ -5485,7 +5525,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           </div>
           <div class="q">Is there a payment plan?</div>
           <div class="q">Do Klarna and Affirm both work?</div>
-          <div class="q">What's included at the $9K vs $12K tier?</div>
+          <div class="q">What's included at the [$A] vs [$B] tier?</div>
           <div class="q">Are there any hidden fees?</div>
           <div class="q">Do you charge for revisions?</div>
         </section>
@@ -5497,7 +5537,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <span class="label on-dark eb">QUICK ANSWERS</span>
           <h2>The eight questions <em>everyone asks.</em></h2>
           <div class="grid">
-            <div class="tile"><div class="ic">$</div><strong>Pricing?</strong><p>$9K Launch or $12K Install upfront. $1.5K–$3K/mo continuity.</p></div>
+            <div class="tile"><div class="ic">$</div><strong>Pricing?</strong><p>[$A] Launch or [$B] Install upfront. $1.5K–[$D/mo] continuity.</p></div>
             <div class="tile"><div class="ic">⚡</div><strong>How fast?</strong><p>Ads live in 14 days. Refund if we miss it.</p></div>
             <div class="tile"><div class="ic">i</div><strong>What's included?</strong><p>Ads, funnel, VSL, CRM, payment links, sales training.</p></div>
             <div class="tile"><div class="ic">✓</div><strong>Do you work with my niche?</strong><p>Coaches, consultants, course creators, agencies.</p></div>
@@ -5517,19 +5557,19 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <div class="list">
             <div class="qa">
               <h3>How is this different from a regular ad agency?</h3>
-              <p>Most agencies hand you a report. We hand you a working system. Ads, funnel, CRM, and sales infrastructure are all installed, integrated, and tested together — by the same team. You don't coordinate four vendors. You don't pay four retainers. You don't lose conversions in the gaps between them.</p>
+              <p>Most agencies hand you a report. We hand you a working system. Ads, funnel, CRM, and sales infrastructure are all installed, integrated, and tested together, by the same team. You don't coordinate four vendors. You don't pay four retainers. You don't lose conversions in the gaps between them.</p>
             </div>
             <div class="qa">
               <h3>What if my offer isn't dialed in yet?</h3>
-              <p>Then the Brand OS / offer audit is the right starting point — not the install. We'll be honest: if your offer isn't converting in calls today, installing more lead-gen will just pour leads into a leaky bucket. We can do the audit first ($3K), then come back to the install when the offer is sharp.</p>
+              <p>Then the Brand OS / offer audit is the right starting point, not the install. We'll be honest: if your offer isn't converting in calls today, installing more lead-gen will just pour leads into a leaky bucket. We can do the audit first ($3K), then come back to the install when the offer is sharp.</p>
             </div>
             <div class="qa">
               <h3>What happens if I want to cancel mid-cohort?</h3>
-              <p>The upfront install (Launch or Install) is one-time and non-refundable AFTER day 14 — that's when our team has delivered the heaviest work (creative, funnel, CRM build). The 14-day install guarantee covers you BEFORE that: if we miss the deadline, we refund the install fee. Continuity tiers (Shift, Scale) are month-to-month with 30-day notice.</p>
+              <p>The upfront install (Launch or Install) is one-time and non-refundable AFTER day 14. That is when our team has delivered the heaviest work (creative, funnel, CRM build). The 14-day install guarantee covers you BEFORE that: if we miss the deadline, we refund the install fee. Continuity tiers (Shift, Scale) are month-to-month with 30-day notice.</p>
             </div>
             <div class="qa">
               <h3>Do you replace my whole team or work alongside them?</h3>
-              <p>Either. Most clients let go of their copywriter and media buyer within 60 days because we ship faster and cheaper. But we work fine alongside an in-house team — we just take ownership of the lanes we own (ads, funnel, CRM) and stay out of yours (fulfillment, ops, founder content).</p>
+              <p>Either. Most clients let go of their copywriter and media buyer within 60 days because we ship faster and cheaper. But we work fine alongside an in-house team. We just take ownership of the lanes we own (ads, funnel, CRM) and stay out of yours (fulfillment, ops, founder content).</p>
             </div>
           </div>
         </section>
@@ -5546,8 +5586,8 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <div class="tpl-strip"><strong>ST-01</strong> · 4-stat horizontal strip · hairline borders <span class="tpl-classes">.stats-01</span></div>
         <section class="stats-01 t-section dark">
           <div class="strip">
-            <div><div class="n">$200<em>M</em></div><div class="l">Revenue lifted</div></div>
-            <div><div class="n">100<em>+</em></div><div class="l">Founders</div></div>
+            <div><div class="n">[$X]<em>M</em></div><div class="l">Revenue lifted</div></div>
+            <div><div class="n">[N]<em>+</em></div><div class="l">Founders</div></div>
             <div><div class="n">14<em>d</em></div><div class="l">Avg install</div></div>
             <div><div class="n">5–11<em>x</em></div><div class="l">Q1 lift</div></div>
           </div>
@@ -5558,8 +5598,8 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <section class="stats-02 t-section">
           <span class="label on-dark eb">RECEIPTS · LAST 24 MONTHS</span>
           <div class="strip">
-            <div><div class="n">$200<em>M</em></div><div class="l">Lifted</div></div>
-            <div><div class="n">100<em>+</em></div><div class="l">Founders</div></div>
+            <div><div class="n">[$X]<em>M</em></div><div class="l">Lifted</div></div>
+            <div><div class="n">[N]<em>+</em></div><div class="l">Founders</div></div>
             <div><div class="n">14<em>d</em></div><div class="l">Install</div></div>
           </div>
         </section>
@@ -5568,8 +5608,8 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <div class="tpl-strip"><strong>ST-03</strong> · 5 stat tiles with icons <span class="tpl-classes">.stats-03</span></div>
         <section class="stats-03 t-section dark">
           <div class="strip">
-            <div class="tile"><div class="ic">$</div><div class="n">$200<em>M</em></div><div class="l">Lifted</div></div>
-            <div class="tile"><div class="ic">▲</div><div class="n">100<em>+</em></div><div class="l">Founders</div></div>
+            <div class="tile"><div class="ic">$</div><div class="n">[$X]<em>M</em></div><div class="l">Lifted</div></div>
+            <div class="tile"><div class="ic">▲</div><div class="n">[N]<em>+</em></div><div class="l">Founders</div></div>
             <div class="tile"><div class="ic">⚡</div><div class="n">14<em>d</em></div><div class="l">Install</div></div>
             <div class="tile"><div class="ic">x</div><div class="n">5–11<em>x</em></div><div class="l">Q1 lift</div></div>
             <div class="tile"><div class="ic">★</div><div class="n">78<em>%</em></div><div class="l">Show rate</div></div>
@@ -5663,10 +5703,10 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <section class="bonus-01 t-section dark">
           <span class="label on-dark eb">PLUS · FIVE INSTALL BONUSES</span>
           <h2>Bonuses you don't pay for. <em>Worth $4,800.</em></h2>
-          <p class="lead">Apply during Cohort 04 and these five drop in for free. They alone usually justify the install fee.</p>
+          <p class="lead">Apply during [Cohort] and these five drop in for free. They alone usually justify the install fee.</p>
           <div class="stack">
             <div class="bonus"><div class="tag">1</div><div class="what"><strong>Brand DNA audit</strong><span class="ws">Bonus 01 · added at install</span><p>Two-hour offer + positioning audit. We lock your hook before the first ad spends a dollar.</p></div><div class="price"><span class="crossed">$1,500</span><span class="val">FREE</span></div></div>
-            <div class="bonus"><div class="tag">2</div><div class="what"><strong>9-template swipe file</strong><span class="ws">Bonus 02 · delivered day 1</span><p>Headlines, hooks, email scripts, SMS copy — every template our top clients use.</p></div><div class="price"><span class="crossed">$800</span><span class="val">FREE</span></div></div>
+            <div class="bonus"><div class="tag">2</div><div class="what"><strong>9-template swipe file</strong><span class="ws">Bonus 02 · delivered day 1</span><p>Headlines, hooks, email scripts, SMS copy, every template our top clients use.</p></div><div class="price"><span class="crossed">$800</span><span class="val">FREE</span></div></div>
             <div class="bonus"><div class="tag">3</div><div class="what"><strong>Conversion-rate teardown</strong><span class="ws">Bonus 03 · day 30</span><p>30-min Loom from the strategist analyzing your first month's data. Concrete fixes only.</p></div><div class="price"><span class="crossed">$600</span><span class="val">FREE</span></div></div>
             <div class="bonus"><div class="tag">4</div><div class="what"><strong>Closer scorecard</strong><span class="ws">Bonus 04 · day 45</span><p>We review 5 of your sales-call recordings and score them against our framework.</p></div><div class="price"><span class="crossed">$1,200</span><span class="val">FREE</span></div></div>
             <div class="bonus"><div class="tag">5</div><div class="what"><strong>Quarterly Q&amp;A retreat (virtual)</strong><span class="ws">Bonus 05 · ongoing</span><p>Live 2-hour Q&amp;A with the Abundance team and your fellow cohort founders.</p></div><div class="price"><span class="crossed">$700</span><span class="val">FREE</span></div></div>
@@ -5676,7 +5716,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
       <div class="tpl">
         <div class="tpl-strip"><strong>BS-02</strong> · 3-column bonus cards with corner badges <span class="tpl-classes">.bonus-02</span></div>
         <section class="bonus-02 t-section dark">
-          <span class="label on-dark eb">THREE BONUSES · COHORT 04 ONLY</span>
+          <span class="label on-dark eb">THREE BONUSES · [COHORT] ONLY</span>
           <h2>The bonuses we <em>only ship</em> with this cohort.</h2>
           <div class="grid">
             <div class="b"><div class="badge">Bonus 01</div><h3>Brand DNA audit</h3><p>Two-hour offer + positioning audit. We lock your hook before the first ad spends a dollar.</p><div class="val"><span class="crossed">Was $1,500</span><span class="free">FREE</span></div></div>
@@ -5691,7 +5731,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <div class="left">
             <span class="label on-dark eb">UNFAIR BONUSES</span>
             <h2>The fastest way to <em>break even</em> on this install.</h2>
-            <p>The bonuses below alone are worth $4,800 in agency time. They drop in automatically when you apply during Cohort 04. Most clients say these are what tipped them.</p>
+            <p>The bonuses below alone are worth $4,800 in agency time. They drop in automatically when you apply during [Cohort]. Most clients say these are what tipped them.</p>
             <div class="total-pill">$4,800 in bonuses · yours free</div>
           </div>
           <div class="right">
@@ -5718,12 +5758,12 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <span class="label on-dark eb">RISK REVERSAL · OUR PROMISE</span>
           <h2>If we don't ship in 14 days, <em>we refund the install.</em></h2>
           <div class="body">
-            <p>The Selling System is built around a 14-day install. That's not a marketing phrase — it's a contract.</p>
-            <p>If we miss the deadline for any reason on our side, your install fee comes back to you. No "fine print." No "well technically." A simple Stripe refund inside 48 hours, and you keep every asset we shipped along the way.</p>
-            <p>The reason we can promise this: we've now installed 100+ of these, and the average is 11 days. Two weeks is genuinely the worst-case for us. If it isn't, that's our problem to solve, not yours.</p>
+            <p>[State the promise plainly in one line, and say that it is contractual rather than a marketing phrase.]</p>
+            <p>[Say exactly what triggers the guarantee, exactly what the client gets back, and how fast. Name what they keep either way.]</p>
+            <p>[Say why the promise is safe to make: the volume behind it and the real average. Close on who carries the risk.]</p>
           </div>
-          <div class="sig">— Ryan Frost</div>
-          <div class="name">FOUNDER · ABUNDANCE</div>
+          <div class="sig">[Founder name]</div>
+          <div class="name">[ROLE] · [COMPANY]</div>
         </section>
       </div>
       <div class="tpl">
@@ -5733,12 +5773,12 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <div class="right">
             <span class="label on-dark eb">THE 14-DAY INSTALL GUARANTEE</span>
             <h2>Live in two weeks, <em>or you don't pay.</em></h2>
-            <p>The install fee covers a 14-day delivery. If we miss it on our side, we refund the install in full and you keep every asset.</p>
+            <p>[One-line version of the same promise: what is covered, what happens if it is missed, and what the client keeps.]</p>
             <ul class="pts">
-              <li>Full refund inside 48 hours of missed deadline</li>
-              <li>You keep the funnel, the ads, the CRM build, all of it</li>
-              <li>No "well technically" clauses · simple and binary</li>
-              <li>Applies to both Launch ($9K) and Install ($12K) tiers</li>
+              <li>[What is refunded, and how fast]</li>
+              <li>[What the client keeps either way]</li>
+              <li>[The clause that makes it binary]</li>
+              <li>[Which tiers it applies to]</li>
             </ul>
           </div>
         </section>
@@ -5754,13 +5794,13 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             </div>
             <h2>Three guarantees. <em>Zero "fine print."</em></h2>
             <div class="body">
-              <p>Every Abundance client gets three guarantees in writing — included in the install agreement, not pitched and forgotten.</p>
-              <p>If we miss the 14-day delivery, we refund. If you cancel mid-build, you keep every asset we shipped. And the install fee is the install fee — no add-ons, surcharges, or "you'll need to upgrade to..." midway through.</p>
+              <p>[Say how many guarantees, that they are in writing, and where they live in the agreement.]</p>
+              <p>[The three guarantees in one paragraph, each in a single clause: the delivery one, the cancellation one, and the pricing one.]</p>
             </div>
             <div class="three">
-              <div class="pt"><strong>Install guarantee</strong><span>Live by day 14 or your install fee is refunded.</span></div>
-              <div class="pt"><strong>Asset guarantee</strong><span>Cancel mid-build, keep every asset we delivered.</span></div>
-              <div class="pt"><strong>Price guarantee</strong><span>One install fee. No add-ons. No surcharges.</span></div>
+              <div class="pt"><strong>[Guarantee 1]</strong><span>[The delivery promise, in one line.]</span></div>
+              <div class="pt"><strong>[Guarantee 2]</strong><span>[The cancellation promise, in one line.]</span></div>
+              <div class="pt"><strong>[Guarantee 3]</strong><span>[The pricing promise, in one line.]</span></div>
             </div>
           </div>
         </section>
@@ -5771,29 +5811,29 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
     <section class="cat" id="urgency">
       <header class="cat-head">
         <div class="cat-num">15</div>
-        <div class="cat-text"><h2>Urgency / scarcity<span class="dot-period"></span></h2><p>Cohort closing, seats remaining, countdown. Place near each CTA. Use sparingly — once per page, max twice.</p></div>
+        <div class="cat-text"><h2>Urgency / scarcity<span class="dot-period"></span></h2><p>Cohort closing, seats remaining, countdown. Place near each CTA, once per page. <strong>Abundance pages do not use this category:</strong> the site rule bans countdowns, seats and scarcity. Only use it where the cap is real and you can show it.</p></div>
       </header>
       <div class="tpl">
         <div class="tpl-strip"><strong>UR-01</strong> · Countdown clock · 4-segment timer <span class="tpl-classes">.urgent-01</span></div>
         <section class="urgent-01 t-section dark">
-          <span class="label on-dark eb">COHORT 04 CLOSES</span>
-          <h2>Applications close <em>Friday at midnight.</em></h2>
+          <span class="label on-dark eb">[COHORT] CLOSES</span>
+          <h2>Applications close <em>[day and time].</em></h2>
           <div class="countdown">
             <div class="seg"><div class="n">02</div><div class="l">Days</div></div>
             <div class="seg"><div class="n">14</div><div class="l">Hours</div></div>
             <div class="seg"><div class="n">38</div><div class="l">Minutes</div></div>
             <div class="seg"><div class="n">52</div><div class="l">Seconds</div></div>
           </div>
-          <p class="meta">After Friday, applications reopen in 10 weeks for Cohort 05. If you're ready, we move now.</p>
-          <button class="btn gradient">Apply for Cohort 04 →</button>
+          <p class="meta">[When applications reopen, and what happens if they are ready now.]</p>
+          <button class="btn gradient">Apply for [cohort] →</button>
         </section>
       </div>
       <div class="tpl">
         <div class="tpl-strip"><strong>UR-02</strong> · Seat-row visualization · 8 chairs · 6 taken <span class="tpl-classes">.urgent-02</span></div>
         <section class="urgent-02 t-section dark">
           <div class="card">
-            <span class="label on-dark eb">8 SEATS · COHORT 04</span>
-            <h2>Only <em>2 install slots</em> left this quarter.</h2>
+            <span class="label on-dark eb">[N] SEATS · [COHORT]</span>
+            <h2>Only <em>[N] slots</em> left this quarter.</h2>
             <div class="seats">
               <div class="seat taken"></div>
               <div class="seat taken"></div>
@@ -5804,19 +5844,19 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
               <div class="seat"></div>
               <div class="seat"></div>
             </div>
-            <p class="meta">We cap each cohort at 8 founders so our delivery team can hit the 14-day install timeline. Once the seats fill, we close.</p>
+            <p class="meta">[Why the cap exists, in terms of delivery capacity. Only write this where the cap is real.]</p>
             <button class="btn gradient">Reserve a seat →</button>
           </div>
         </section>
       </div>
       <div class="tpl">
-        <div class="tpl-strip"><strong>UR-03</strong> · Live progress bar · 78% filled pulse <span class="tpl-classes">.urgent-03</span></div>
+        <div class="tpl-strip"><strong>UR-03</strong> · Live progress bar · filled pulse <span class="tpl-classes">.urgent-03</span></div>
         <section class="urgent-03 t-section dark">
-          <div class="pulse"><div class="dot"></div>LIVE · COHORT 04 FILLING</div>
-          <h2>Cohort 04 is <em>78% full</em> with 3 days left.</h2>
-          <p class="meta">We open enrollment for 10 days each quarter. Once seats fill, we close until next quarter.</p>
+          <div class="pulse"><div class="dot"></div>LIVE · [COHORT] FILLING</div>
+          <h2>[Cohort] is <em>[N]% full</em> with [N] days left.</h2>
+          <p class="meta">[The enrollment window and what happens when it closes.]</p>
           <div class="progress-bar"></div>
-          <div class="progress-meta">6 of 8 install slots taken · 2 remaining</div>
+          <div class="progress-meta">[N] of [N] slots taken · [N] remaining</div>
           <div style="margin-top: 24px;"><button class="btn gradient">Apply now →</button></div>
         </section>
       </div>
@@ -5831,15 +5871,15 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
       <div class="tpl">
         <div class="tpl-strip"><strong>FN-01</strong> · Portrait left · multi-paragraph story right · signature <span class="tpl-classes">.founder-01</span></div>
         <section class="founder-01 t-section dark">
-          <div class="portrait-big"><div class="name-tag">Ryan Frost · Founder</div></div>
+          <div class="portrait-big"><div class="name-tag">[Founder name] · [Role]</div></div>
           <div class="right">
             <span class="label on-dark eb">WHO BUILT THIS</span>
-            <h2>I built the system <em>I needed in 2022.</em></h2>
-            <p>In 2022 I was the founder of a coaching business doing $30K/mo and grinding 70 hours a week to keep it there. Three different agencies. Four freelancers. A Slack channel that pinged every nine minutes.</p>
-            <p>Every month I had to be the funnel, the copywriter, AND the closer. Every month I wondered if next month would be the one where it finally compounded. It never did.</p>
-            <p>So I built the Selling System — first for me, then for a handful of founders who watched what I did. Today we've installed it for 100+ businesses. Every one of them stopped being the funnel.</p>
-            <div class="sig">Ryan Frost</div>
-            <div class="title">FOUNDER · ABUNDANCE</div>
+            <h2>I built the system <em>I needed in [year].</em></h2>
+            <p>[Set the scene: the year, the business, the number it was stuck at, and the hours it took. Then the vendors and the noise, in short fragments.]</p>
+            <p>[The repeating monthly pattern, the roles the founder had to play, and the thing that never arrived.]</p>
+            <p>[What they built, who it was for first, and where it runs now. Close on the single change it makes.]</p>
+            <div class="sig">[Founder name]</div>
+            <div class="title">[ROLE] · [COMPANY]</div>
           </div>
         </section>
       </div>
@@ -5849,9 +5889,9 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <div class="portrait-round"></div>
           <span class="label on-dark eb">FROM THE FOUNDER</span>
           <h2>Why I built this in the first place</h2>
-          <p class="quote">"I needed a system that didn't need <em>me</em>. The Selling System is what I built. Now we install it for you."</p>
+          <p class="quote">"[Founder quote. The problem they had, what they built, and what they do with it now. Keep <em>the emphasis</em> short.]"</p>
           <div class="sig-row">
-            <strong>Ryan Frost</strong><span>· Founder, Abundance · @weareabundance</span>
+            <strong>[Founder name]</strong><span>· [Role], [Company] · [@handle]</span>
           </div>
         </section>
       </div>
@@ -5865,11 +5905,11 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             <div class="photo">A</div>
           </div>
           <div class="right">
-            <span class="label on-dark eb">MEET RYAN</span>
+            <span class="label on-dark eb">MEET [FOUNDER]</span>
             <h2>Built it. <em>Tested it.</em> Now we install it for you.</h2>
-            <p>Ryan founded Abundance in 2023 after spending 18 months running the system inside his own coaching business — replacing a $15K/mo stack of agencies and contractors with one integrated build.</p>
-            <p>Today the Selling System runs in 100+ founder-led businesses, from coaching collectives to mid-market agencies. The team that ships your install: copywriters, media buyers, GHL engineers, and a strategist who's seen this pattern 100+ times.</p>
-            <p>Ryan lives in Austin, runs a 2-hour Friday Q&amp;A inside the founder community, and personally reviews the first month of every install.</p>
+            <p>[When the founder started the company, and what they were running before that made them build it.]</p>
+            <p>[Where the system runs today, and the range of businesses it runs in. Then the roles that ship an install: copywriters, media buyers, CRM engineers, and a strategist.]</p>
+            <p>[Where the founder is, the one recurring thing they show up for, and what they still do personally.]</p>
           </div>
         </section>
       </div>
@@ -5957,7 +5997,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <h2>The 4-pillar <em>Selling System.</em></h2>
           <p class="sub">Every install is built around four pillars. Pull one and the whole system tilts. Keep them in balance and the revenue compounds.</p>
           <div class="pillars">
-            <div class="p"><div class="letter">S</div><h3>Source</h3><p>Where leads come from. Ads, content, partnerships, referrals — the inputs.</p></div>
+            <div class="p"><div class="letter">S</div><h3>Source</h3><p>Where leads come from. Ads, content, partnerships, referrals, the inputs.</p></div>
             <div class="p"><div class="letter">E</div><h3>Engage</h3><p>How a stranger becomes a known lead. Funnel, VSL, application.</p></div>
             <div class="p"><div class="letter">C</div><h3>Close</h3><p>How a lead becomes a customer. Sales call, playbook, scripts.</p></div>
             <div class="p"><div class="letter">R</div><h3>Retain</h3><p>How a customer becomes a repeat customer. Continuity, community, results.</p></div>
@@ -6007,10 +6047,10 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <div class="tpl-strip"><strong>CS-01</strong> · Hero strip · 4 big stats below <span class="tpl-classes">.case-01</span></div>
         <section class="case-01 t-section dark">
           <div class="head">
-            <div class="who"><div class="portrait lg">SH</div><div><strong>Sarah Hendrickson</strong><span>Founder · Coaching Collective</span></div></div>
+            <div class="who"><div class="portrait lg">SH</div><div><strong>[Client name]</strong><span>[Role] · [Company]</span></div></div>
             <div class="meta">
               <div class="m"><div class="lbl">INDUSTRY</div><strong>Group Coaching</strong></div>
-              <div class="m"><div class="lbl">TIER</div><strong>Install ($12K)</strong></div>
+              <div class="m"><div class="lbl">TIER</div><strong>Install ([$B])</strong></div>
               <div class="m"><div class="lbl">TIMELINE</div><strong>90 days</strong></div>
             </div>
             <div class="cta"><button class="btn ghost">Read full</button></div>
@@ -6028,10 +6068,10 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <section class="case-02 t-section dark">
           <div class="left">
             <span class="label on-dark eb">CASE STUDY · Q3 2026</span>
-            <h2>Sarah's 90 days, <em>in her words.</em></h2>
-            <p class="quote">"On day 14 the ads went live. By day 30 I'd stopped writing copy entirely. By day 90 I'd 4× my revenue with the same fulfillment team."</p>
-            <p>The install replaced a $9K/mo stack of contractors and let her focus on the part of the business she actually wanted to do: deliver coaching.</p>
-            <div class="by"><div class="portrait sm">SH</div><div><strong>Sarah Hendrickson</strong><span>Founder · Coaching Collective</span></div></div>
+            <h2>[Client]'s first quarter, <em>in their words.</em></h2>
+            <p class="quote">"[Case-study quote. Three checkpoints in order, ending on the result and what did not have to change.]"</p>
+            <p>The install replaced a [$A]/mo stack of contractors and let her focus on the part of the business she actually wanted to do: deliver coaching.</p>
+            <div class="by"><div class="portrait sm">SH</div><div><strong>[Client name]</strong><span>[Role] · [Company]</span></div></div>
           </div>
           <div class="right">
             <div class="dash"><div class="l">MONTHLY REVENUE</div><div class="n">$140<em>K</em></div><svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0 50 L40 44 L80 30 L120 24 L160 12 L200 8" fill="none" stroke="#ED1C24" stroke-width="2.5"/></svg></div>
@@ -6043,13 +6083,13 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
       <div class="tpl">
         <div class="tpl-strip"><strong>CS-03</strong> · Day-by-day timeline · 5 milestones <span class="tpl-classes">.case-03</span></div>
         <section class="case-03 t-section dark">
-          <div class="head"><span class="label on-dark eb">SARAH'S 90 DAYS</span><h2>Day-by-day, <em>the install's first quarter.</em></h2></div>
+          <div class="head"><span class="label on-dark eb">[CLIENT] · FIRST QUARTER</span><h2>Day-by-day, <em>the install's first quarter.</em></h2></div>
           <div class="timeline">
-            <div class="item"><div class="dot">1</div><div class="day">DAY 1 · KICKOFF</div><h3>Discovery + audit</h3><p>90-minute strategy call. We mapped Sarah's offer, audience, current funnel, current CRM. End of call: a one-page revenue plan.</p></div>
-            <div class="item"><div class="dot">2</div><div class="day">DAY 14 · LAUNCH</div><h3>Ads live · first leads</h3><p>Funnel live, 9 ads running, GHL pipeline populated. Sarah's sales team trained on the playbook.</p><span class="stat">First leads · $14 CPL</span></div>
+            <div class="item"><div class="dot">1</div><div class="day">DAY 1 · KICKOFF</div><h3>Discovery + audit</h3><p>90-minute strategy call. We mapped [the client]'s offer, audience, current funnel, current CRM. End of call: a one-page revenue plan.</p></div>
+            <div class="item"><div class="dot">2</div><div class="day">DAY 14 · LAUNCH</div><h3>Ads live · first leads</h3><p>Funnel live, 9 ads running, GHL pipeline populated. [The client]'s sales team trained on the playbook.</p><span class="stat">First leads · $14 CPL</span></div>
             <div class="item"><div class="dot">3</div><div class="day">DAY 30 · OPTIMIZE</div><h3>CPL down 42%</h3><p>First creative refresh. Top hook scaled to 70% of spend. Show rate above 72%.</p><span class="stat">CPL · $18 · 42% reduction</span></div>
             <div class="item"><div class="dot">4</div><div class="day">DAY 60 · COMPOUND</div><h3>$94K month closed</h3><p>Three referrals from recent buyers. Repeat clients re-enrolled at $5K tier. Close rate hit 38%.</p><span class="stat">MRR · $94K · 3.1× baseline</span></div>
-            <div class="item"><div class="dot">5</div><div class="day">DAY 90 · SCALE</div><h3>$140K month</h3><p>Sarah moved to Scale tier. Stopped writing copy entirely. Hired a fulfillment coach with the new margin.</p><span class="stat">MRR · $140K · 4.6× baseline</span></div>
+            <div class="item"><div class="dot">5</div><div class="day">DAY 90 · SCALE</div><h3>$140K month</h3><p>[What the client moved to, what they stopped doing, and what the new margin paid for.]</p><span class="stat">MRR · $140K · 4.6× baseline</span></div>
           </div>
         </section>
       </div>
@@ -6069,9 +6109,9 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <p class="sub">No long form. No "schedule a discovery call" pitch. Submit, and if you're a fit we land on your calendar within 24 hours.</p>
           <div class="form">
             <label>YOUR NAME</label>
-            <div class="field">Sarah Hendrickson</div>
+            <div class="field">[Client name]</div>
             <label>BEST EMAIL</label>
-            <div class="field">sarah@coachingcollective.com</div>
+            <div class="field">name@company.com</div>
             <label>CURRENT MONTHLY REVENUE</label>
             <div class="field">$30K – $50K</div>
             <label>WHAT'S YOUR OFFER (1 SENTENCE)</label>
@@ -6085,7 +6125,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <div class="tpl-strip"><strong>AP-02</strong> · Split · pitch + 3-step "why apply" left · form right <span class="tpl-classes">.app-02</span></div>
         <section class="app-02 t-section dark">
           <div class="left">
-            <span class="label on-dark">APPLY FOR COHORT 04</span>
+            <span class="label on-dark">APPLY FOR [COHORT]</span>
             <h2>Three reasons to <em>apply now.</em></h2>
             <p>The application takes 60 seconds. The decision takes 24 hours. The install takes 14 days. That's the entire timeline.</p>
             <div class="why">
@@ -6101,7 +6141,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             <div class="field">Business name + website</div>
             <div class="field">Current monthly revenue</div>
             <div class="field">What's your offer? (1 sentence)</div>
-            <div class="submit">Apply for Cohort 04 →</div>
+            <div class="submit">Apply for [Cohort] →</div>
           </div>
         </section>
       </div>
@@ -6141,14 +6181,14 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <div class="tpl-strip"><strong>AN-01</strong> · Full-bleed gradient bar with CTA link <span class="tpl-classes">.announce-01</span></div>
         <section class="announce-01">
           <span class="pill">▶ NEW</span>
-          <span>Cohort 04 enrollment closes Friday at midnight ET.</span>
+          <span>[Cohort] enrollment closes Friday at midnight ET.</span>
           <a href="#">Apply now →</a>
         </section>
       </div>
       <div class="tpl">
         <div class="tpl-strip"><strong>AN-02</strong> · Dark bar · pulsing live dot · right-aligned CTA <span class="tpl-classes">.announce-02</span></div>
         <section class="announce-02">
-          <div class="left"><div class="dot"></div><span><strong>LIVE</strong> · Cohort 04 · 2 install slots remaining</span></div>
+          <div class="left"><div class="dot"></div><span><strong>LIVE</strong> · [Cohort] · 2 install slots remaining</span></div>
           <div class="right"><span>Closes Friday</span><a href="#">Reserve a seat →</a></div>
         </section>
       </div>
@@ -6156,7 +6196,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <div class="tpl-strip"><strong>AN-03</strong> · Tinted alert · icon + message + dismiss <span class="tpl-classes">.announce-03</span></div>
         <section class="announce-03">
           <div class="ic">!</div>
-          <div class="msg"><strong>Cohort 04 closing soon.</strong> Apply by Friday for the lock-in install price. After, it goes up 25% for Cohort 05.</div>
+          <div class="msg"><strong>[Cohort] closing soon.</strong> Apply by Friday for the lock-in install price. After, it goes up 25% for [Cohort].</div>
           <div class="x">✕</div>
         </section>
       </div>
@@ -6196,7 +6236,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <section class="header-03 t-section dark" style="padding: 0;">
           <div class="logo">Abundance<em>.</em></div>
           <div class="right-cta">
-            <span>Cohort 04 closes Friday</span>
+            <span>[Cohort] closes Friday</span>
             <a>Apply now →</a>
           </div>
         </section>
@@ -6215,9 +6255,9 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <div class="top">
             <div class="brand-col">
               <span class="logo">Abundance<em>.</em></span>
-              <p>We install Selling Systems for coaches, consultants, and agencies — 14-day delivery, then we tune.</p>
+              <p>We install Selling Systems for coaches, consultants, and agencies, 14-day delivery, then we tune.</p>
             </div>
-            <div class="col"><h4>Product</h4><a>The Selling System</a><a>Launch ($9K)</a><a>Install ($12K)</a><a>Shift ($1.5K/mo)</a><a>Scale ($3K/mo)</a></div>
+            <div class="col"><h4>Product</h4><a>The Selling System</a><a>Launch ([$A])</a><a>Install ([$B])</a><a>Shift ([$C/mo])</a><a>Scale ([$D/mo])</a></div>
             <div class="col"><h4>Proof</h4><a>Case Studies</a><a>Founder Stories</a><a>The Numbers</a><a>Press</a></div>
             <div class="col"><h4>Company</h4><a>About</a><a>Founder</a><a>Hiring</a><a>Press kit</a></div>
             <div class="col"><h4>Legal</h4><a>Privacy</a><a>Terms</a><a>Earnings disclaimer</a></div>
@@ -6257,7 +6297,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <div class="tpl-strip"><strong>SK-01</strong> · Frosted pill · pulse + apply button <span class="tpl-classes">.sticky-cta</span></div>
         <section class="t-section dark" style="padding: 60px clamp(22px, 5vw, 80px); display: grid; place-items: center;">
           <div class="sticky-cta">
-            <div class="what"><div class="pulse"></div><div><strong>Cohort 04 · 2 seats left</strong><span>Applications close Friday at midnight</span></div></div>
+            <div class="what"><div class="pulse"></div><div><strong>[Cohort] · 2 seats left</strong><span>Applications close Friday at midnight</span></div></div>
             <button class="btn gradient">Apply now →</button>
           </div>
         </section>
@@ -6266,7 +6306,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <div class="tpl-strip"><strong>SK-02</strong> · Full-width band · message + 2 CTAs <span class="tpl-classes">.sticky-cta</span></div>
         <section class="t-section dark" style="padding: 60px clamp(22px, 5vw, 80px); display: grid; place-items: center;">
           <div class="sticky-cta" style="max-width: 100%; border-radius: var(--r-card);">
-            <div class="what"><div class="pulse"></div><div><strong>Save your install slot for Cohort 04</strong><span>$12K install · 14-day guarantee · 6 of 8 seats filled</span></div></div>
+            <div class="what"><div class="pulse"></div><div><strong>Save your install slot for [Cohort]</strong><span>[$B] install · 14-day guarantee · 6 of 8 seats filled</span></div></div>
             <div style="display: flex; gap: 10px;"><button class="btn ghost">Book a call</button><button class="btn gradient">Apply now →</button></div>
           </div>
         </section>
@@ -6282,13 +6322,13 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
       <div class="tpl">
         <div class="tpl-strip"><strong>KP-01</strong> · Single hero metric · portrait + from→to + duration <span class="tpl-classes">.kpi-01</span></div>
         <section class="kpi-01 t-section dark">
-          <span class="label on-dark eb">CASE STUDY · COACHING COLLECTIVE</span>
+          <span class="label on-dark eb">CASE STUDY · [COMPANY]</span>
           <h2>One founder. One install. <em>One number that changed.</em></h2>
           <div class="card">
             <div class="who">
               <div class="portrait">SH</div>
-              <strong>Sarah Hendrickson</strong>
-              <span>Founder · Coaching Collective</span>
+              <strong>[Client name]</strong>
+              <span>[Role] · [Company]</span>
             </div>
             <div class="from-to">
               <div class="label">MONTHLY REVENUE</div>
@@ -6301,7 +6341,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
       <div class="tpl">
         <div class="tpl-strip"><strong>KP-02</strong> · 4-metric KPI grid · from→to + delta badge <span class="tpl-classes">.kpi-02</span></div>
         <section class="kpi-02 t-section dark">
-          <span class="label on-dark eb">SARAH'S 4 KEY METRICS</span>
+          <span class="label on-dark eb">[CLIENT] · 4 KEY METRICS</span>
           <h2>Four numbers that <em>moved together.</em></h2>
           <div class="grid">
             <div class="k"><div class="l">REVENUE</div><div class="pair"><span class="from">$30K</span><span class="arr">→</span><span class="to">$140<em>K</em></span></div><span class="delta">▲ 4.6×</span></div>
@@ -6318,7 +6358,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <span class="label on-dark eb">FROM THIS · TO THIS</span>
           <div class="banner">$30K/mo<span class="arr">→</span><em>$140K</em>/mo</div>
           <div class="timeframe">In 90 days · with the Selling System</div>
-          <div class="by">— SARAH HENDRICKSON · COACHING COLLECTIVE</div>
+          <div class="by">[CLIENT NAME] · [COMPANY]</div>
         </section>
       </div>
     </section>
@@ -6335,12 +6375,12 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <span class="label on-dark eb">SIX FOUNDERS · IN THEIR OWN WORDS</span>
           <h2>Hear it from the founders <em>who installed it.</em></h2>
           <div class="grid">
-            <div class="v"><div class="dur">2:14</div><div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="meta"><div class="portrait sm">SH</div><div><strong>Sarah H.</strong><span>$30K → $140K</span></div></div></div>
-            <div class="v"><div class="dur">3:42</div><div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="meta"><div class="portrait sm cool">DV</div><div><strong>Dev O.</strong><span>5× booked calls</span></div></div></div>
-            <div class="v"><div class="dur">1:58</div><div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="meta"><div class="portrait sm warm">JT</div><div><strong>Jenna T.</strong><span>$45K → $110K</span></div></div></div>
-            <div class="v"><div class="dur">2:52</div><div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="meta"><div class="portrait sm">MR</div><div><strong>Marcus R.</strong><span>$50K month in week 3</span></div></div></div>
-            <div class="v"><div class="dur">4:11</div><div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="meta"><div class="portrait sm cool">PR</div><div><strong>Priya R.</strong><span>3× show rate</span></div></div></div>
-            <div class="v"><div class="dur">3:08</div><div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="meta"><div class="portrait sm warm">AK</div><div><strong>Alex K.</strong><span>Zero burnout, 2× rev</span></div></div></div>
+            <div class="v"><div class="dur">2:14</div><div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="meta"><div class="portrait sm">SH</div><div><strong>[Name 1]</strong><span>$30K → $140K</span></div></div></div>
+            <div class="v"><div class="dur">3:42</div><div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="meta"><div class="portrait sm cool">DV</div><div><strong>[Name 2]</strong><span>5× booked calls</span></div></div></div>
+            <div class="v"><div class="dur">1:58</div><div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="meta"><div class="portrait sm warm">JT</div><div><strong>[Name 3]</strong><span>$45K → $110K</span></div></div></div>
+            <div class="v"><div class="dur">2:52</div><div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="meta"><div class="portrait sm">MR</div><div><strong>[Name 4]</strong><span>$50K month in week 3</span></div></div></div>
+            <div class="v"><div class="dur">4:11</div><div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="meta"><div class="portrait sm cool">PR</div><div><strong>[Name 5]</strong><span>3× show rate</span></div></div></div>
+            <div class="v"><div class="dur">3:08</div><div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="meta"><div class="portrait sm warm">AK</div><div><strong>[Name 6]</strong><span>Zero burnout, 2× rev</span></div></div></div>
           </div>
         </section>
       </div>
@@ -6350,7 +6390,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <div class="feat">
             <div class="badge">▶ FEATURED</div>
             <div class="play"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div>
-            <div class="cap">"In 90 days, <em>3× the deals</em> I closed all of last year." · Sarah H.</div>
+            <div class="cap">"[Pull quote from the video, one sentence, <em>number emphasised</em>.]" · [Name 1]</div>
           </div>
           <div class="side">
             <div class="v"><div class="play"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="nm">Dev O. · 3:42</div></div>
@@ -6367,7 +6407,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             <h2>Nine founders. <em>One install.</em> Each their own arc.</h2>
           </div>
           <div class="grid-9">
-            <div class="vt"><div class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="nm">SARAH H.</div></div>
+            <div class="vt"><div class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="nm">[NAME 1]</div></div>
             <div class="vt"><div class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="nm">DEV O.</div></div>
             <div class="vt"><div class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="nm">JENNA T.</div></div>
             <div class="vt"><div class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div><div class="nm">MARCUS R.</div></div>
@@ -6398,12 +6438,12 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
               <div class="body">
                 <div class="meta"><span class="tag">FRAMEWORK</span><span>· 8 MIN READ · MAY 14, 2026</span></div>
                 <h3>The 4-pillar Selling System, explained for the first time</h3>
-                <p>Source, Engage, Close, Retain. Why every founder-led business needs all four pillars active to compound — and what happens when even one is missing.</p>
+                <p>Source, Engage, Close, Retain. Why every founder-led business needs all four pillars active to compound, and what happens when even one is missing.</p>
               </div>
             </article>
             <aside class="latest">
               <article class="post"><div class="img">B</div><div class="body"><strong>Why "more leads" is rarely the problem</strong><span class="tag">DR · 4 MIN</span></div></article>
-              <article class="post"><div class="img cool">C</div><div class="body"><strong>The $12K install math, completely transparent</strong><span class="tag">PRICING · 6 MIN</span></div></article>
+              <article class="post"><div class="img cool">C</div><div class="body"><strong>The [$B] install math, completely transparent</strong><span class="tag">PRICING · 6 MIN</span></div></article>
               <article class="post"><div class="img">D</div><div class="body"><strong>How we hit 14-day install on every cohort</strong><span class="tag">OPERATIONS · 5 MIN</span></div></article>
             </aside>
           </div>
@@ -6470,7 +6510,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
               <div class="body">
                 <div class="meta">DIRECT RESPONSE · 4 MIN · MAY 09</div>
                 <h3>Why "more leads" is rarely the problem</h3>
-                <p>Show rate and close rate compound. Lead volume is the third lever — never the first.</p>
+                <p>Show rate and close rate compound. Lead volume is the third lever, never the first.</p>
               </div>
               <div class="arr">→</div>
             </article>
@@ -6478,7 +6518,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
               <div class="img">C</div>
               <div class="body">
                 <div class="meta">PRICING · 6 MIN · MAY 02</div>
-                <h3>The $12K install math, completely transparent</h3>
+                <h3>The [$B] install math, completely transparent</h3>
                 <p>What every contractor would charge, what we charge, where the margin actually goes.</p>
               </div>
               <div class="arr">→</div>
@@ -6488,7 +6528,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
               <div class="body">
                 <div class="meta">OPERATIONS · 5 MIN · APR 26</div>
                 <h3>How we hit 14-day install on every cohort</h3>
-                <p>The internal SOP — asset intake, build sprint, optimization cadence. Nothing held back.</p>
+                <p>The internal SOP, asset intake, build sprint, optimization cadence. Nothing held back.</p>
               </div>
               <div class="arr">→</div>
             </article>
@@ -6504,7 +6544,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         <div class="cat-text"><h2>Free training sections<span class="dot-period"></span></h2><p>Lead-magnet video gate. Single training landing, training carousel, or multi-module curriculum. For the /free route.</p></div>
       </header>
       <div class="tpl">
-        <div class="tpl-strip"><strong>TR-01</strong> · Single training landing · video + form <span class="tpl-classes">.train-01</span></div>
+        <div class="tpl-strip"><strong>TN-01</strong> · Single training landing · video + form <span class="tpl-classes">.train-01</span></div>
         <section class="train-01 t-section dark">
           <div class="left">
             <span class="label on-dark eb">FREE TRAINING · 32 MINUTES</span>
@@ -6531,7 +6571,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         </section>
       </div>
       <div class="tpl">
-        <div class="tpl-strip"><strong>TR-02</strong> · 3 free trainings · carousel-style cards <span class="tpl-classes">.train-02</span></div>
+        <div class="tpl-strip"><strong>TN-02</strong> · 3 free trainings · carousel-style cards <span class="tpl-classes">.train-02</span></div>
         <section class="train-02 t-section dark">
           <div class="head">
             <span class="label on-dark eb">FREE TRAINING LIBRARY · 3 VIDEOS</span>
@@ -6581,7 +6621,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
         </section>
       </div>
       <div class="tpl">
-        <div class="tpl-strip"><strong>TR-03</strong> · Multi-module curriculum · 4 lesson tiles <span class="tpl-classes">.train-03</span></div>
+        <div class="tpl-strip"><strong>TN-03</strong> · Multi-module curriculum · 4 lesson tiles <span class="tpl-classes">.train-03</span></div>
         <section class="train-03 t-section dark">
           <span class="label on-dark eb">THE 4-MODULE CURRICULUM</span>
           <h2>Four modules. <em>Two hours.</em> The whole install logic.</h2>
@@ -6590,7 +6630,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             <div class="mod"><div class="num">1</div><div class="dur">32 MIN</div><h3>Source · how leads arrive</h3><p>Paid acquisition, the 9-creative ad framework, and what spend levels actually unlock.</p></div>
             <div class="mod"><div class="num">2</div><div class="dur">28 MIN</div><h3>Engage · funnel + VSL</h3><p>How the landing page, VSL, and application work together to qualify before a call.</p></div>
             <div class="mod"><div class="num">3</div><div class="dur">36 MIN</div><h3>Close · the call playbook</h3><p>The exact discovery-call script, objection responses, and pricing-call structure.</p></div>
-            <div class="mod"><div class="num">4</div><div class="dur">25 MIN</div><h3>Retain · continuity ladder</h3><p>How Shift and Scale compound the install — and why month 4 is the inflection point.</p></div>
+            <div class="mod"><div class="num">4</div><div class="dur">25 MIN</div><h3>Retain · continuity ladder</h3><p>How Shift and Scale compound the install, and why month 4 is the inflection point.</p></div>
           </div>
           <div class="all-cta"><button class="btn gradient">Unlock all 4 modules · Free →</button></div>
         </section>
@@ -6601,7 +6641,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
     <section class="cat" id="forms">
       <header class="cat-head">
         <div class="cat-num">29</div>
-        <div class="cat-text"><h2>Forms<span class="dot-period"></span></h2><p>Contact, multi-step wizards, file upload. Different from the application form (#20) — these are inline lead/contact captures and document collection.</p></div>
+        <div class="cat-text"><h2>Forms<span class="dot-period"></span></h2><p>Contact, multi-step wizards, file upload. Different from the application form (#20), these are inline lead/contact captures and document collection.</p></div>
       </header>
       <div class="tpl">
         <div class="tpl-strip"><strong>FM-01</strong> · Contact form with contact info on left <span class="tpl-classes">.form-01</span></div>
@@ -6617,9 +6657,9 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             </div>
           </div>
           <form class="form">
-            <div class="row2"><div><span class="lbl-form">FIRST NAME</span><div class="fld" style="margin-top: 6px;">Sarah</div></div><div><span class="lbl-form">LAST NAME</span><div class="fld" style="margin-top: 6px;">Hendrickson</div></div></div>
+            <div class="row2"><div><span class="lbl-form">FIRST NAME</span><div class="fld" style="margin-top: 6px;">[First]</div></div><div><span class="lbl-form">LAST NAME</span><div class="fld" style="margin-top: 6px;">[Last]</div></div></div>
             <span class="lbl-form">EMAIL</span>
-            <div class="fld">sarah@coachingcollective.com</div>
+            <div class="fld">name@company.com</div>
             <span class="lbl-form">SUBJECT</span>
             <div class="fld">Question about Install vs Scale</div>
             <span class="lbl-form">MESSAGE</span>
@@ -6665,7 +6705,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <h2>Drop your <em>brand kit.</em></h2>
           <form class="form">
             <span class="lbl-form">YOUR NAME</span>
-            <div class="fld">Sarah Hendrickson</div>
+            <div class="fld">[Client name]</div>
             <span class="lbl-form">UPLOAD FILES</span>
             <div class="upload">
               <div class="ic">⬆</div>
@@ -6806,7 +6846,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
           <div class="left">
             <span class="label on-dark eb">30-MIN STRATEGY CALL</span>
             <h2>Talk to a <em>strategist.</em> No pitch.</h2>
-            <p>Bring your numbers, your offer, and your biggest current bottleneck. We'll tell you whether an install is the right move — and if not, what is.</p>
+            <p>Bring your numbers, your offer, and your biggest current bottleneck. We'll tell you whether an install is the right move, and if not, what is.</p>
             <div class="meta">
               <div class="meta-row"><div class="ic">⏱</div><div><strong>30 minutes</strong><span>Zoom · audio + screenshare</span></div></div>
               <div class="meta-row"><div class="ic">●</div><div><strong>Free · no pressure</strong><span>We don't pitch on this call</span></div></div>
@@ -6874,8 +6914,8 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             <span class="logo">Abundance<em>.</em></span>
             <div class="pitch">Welcome back. Your <em>Selling System</em> is waiting.</div>
             <div>
-              <p class="quote">"3× the deals I closed all of last year — without me writing a single ad."</p>
-              <div class="by">— SARAH H. · COACHING COLLECTIVE</div>
+              <p class="quote">"[Quote. The number, and what they stopped doing to get it.]"</p>
+              <div class="by">[NAME 1] · [COMPANY]</div>
             </div>
           </div>
           <div class="form-side">
@@ -6883,7 +6923,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             <p class="sub">Welcome back to the founder console.</p>
             <div class="form">
               <span class="lbl-form">EMAIL</span>
-              <div class="fld">sarah@coachingcollective.com</div>
+              <div class="fld">name@company.com</div>
               <span class="lbl-form">PASSWORD</span>
               <div class="fld">•••••••••••</div>
               <div class="submit-btn">Sign in →</div>
@@ -6901,7 +6941,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             <p class="sub">Pick up where you left off.</p>
             <div class="form">
               <span class="lbl-form">EMAIL</span>
-              <div class="fld">sarah@coachingcollective.com</div>
+              <div class="fld">name@company.com</div>
               <span class="lbl-form">PASSWORD</span>
               <div class="fld">•••••••••••</div>
               <div class="forgot"><a>Forgot password?</a></div>
@@ -6922,7 +6962,7 @@ body.light-mode .auth-03 .note { color: var(--ink-dark-muted); }
             <div class="ic-big"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></div>
             <h2>Sign in with a magic link</h2>
             <p class="sub">No password required. We'll email you a one-tap sign-in link inside 30 seconds.</p>
-            <div class="field-pill"><input type="email" placeholder="sarah@coachingcollective.com"><button class="btn gradient" style="padding: 10px 16px; font-size: 13px;">Send link →</button></div>
+            <div class="field-pill"><input type="email" placeholder="name@company.com"><button class="btn gradient" style="padding: 10px 16px; font-size: 13px;">Send link →</button></div>
             <div class="note">Or <a style="color: var(--sig);">use your password</a> instead</div>
           </div>
         </section>
